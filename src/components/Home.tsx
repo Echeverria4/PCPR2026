@@ -8,9 +8,10 @@ interface HomeProps {
   wrongCount: number;
   materiaFoco: SubjectId | null;
   onIniciar: (mode: QuizMode, materia?: SubjectId) => void;
+  onResetarMateria: (materia: SubjectId) => void;
 }
 
-export default function Home({ stats, wrongCount, materiaFoco, onIniciar }: HomeProps) {
+export default function Home({ stats, wrongCount, materiaFoco, onIniciar, onResetarMateria }: HomeProps) {
   const statsPorMateria = new Map(stats.map((s) => [s.materia, s]));
   const totalQuestoes = SUBJECTS.reduce(
     (soma, s) => soma + (QUESTOES_POR_MATERIA[s.id]?.length ?? 0),
@@ -80,24 +81,45 @@ export default function Home({ stats, wrongCount, materiaFoco, onIniciar }: Home
           const acuracia = st ? Math.round(st.acuracia * 100) : null;
           const disponiveis = QUESTOES_POR_MATERIA[s.id]?.length ?? 0;
           return (
-            <button
+            <div
               key={s.id}
               className="materia-card"
               style={{ "--cor-materia": s.cor } as CSSProperties}
-              onClick={() => onIniciar("materia", s.id)}
-              disabled={disponiveis === 0}
             >
-              <div className="materia-nome">{s.nome}</div>
-              <div className="materia-meta">
-                <span>{s.peso} questões na prova</span>
-                <span>{acuracia !== null ? `${acuracia}% de acerto` : `${disponiveis} no banco`}</span>
-              </div>
-              {st && (
-                <div className="materia-barra">
-                  <div className="materia-barra-fill" style={{ width: `${acuracia}%` }} />
+              <button
+                className="materia-play"
+                onClick={() => onIniciar("materia", s.id)}
+                disabled={disponiveis === 0}
+              >
+                <div className="materia-nome">{s.nome}</div>
+                <div className="materia-meta">
+                  <span>{s.peso} questões na prova</span>
+                  <span>{acuracia !== null ? `${acuracia}% de acerto` : `${disponiveis} no banco`}</span>
                 </div>
+                {st && (
+                  <div className="materia-barra">
+                    <div className="materia-barra-fill" style={{ width: `${acuracia}%` }} />
+                  </div>
+                )}
+              </button>
+              {st && st.respondidas > 0 && (
+                <button
+                  className="materia-reset"
+                  title={`Zerar progresso de ${s.nome}`}
+                  onClick={() => {
+                    if (
+                      window.confirm(
+                        `Zerar as ${st.respondidas} resposta(s) registradas de ${s.nome}? Essa ação não pode ser desfeita.`,
+                      )
+                    ) {
+                      onResetarMateria(s.id);
+                    }
+                  }}
+                >
+                  ↺
+                </button>
               )}
-            </button>
+            </div>
           );
         })}
       </div>

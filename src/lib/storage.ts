@@ -133,6 +133,24 @@ export function salvarProvaRealResultado(
   return atualizado;
 }
 
+export async function resetAttemptsMateria(materia: SubjectId): Promise<AttemptRecord[]> {
+  const restantes = getLocalAttempts().filter((a) => a.materia !== materia);
+  writeLocal(LS_ATTEMPTS, restantes);
+  writeLocal(
+    LS_WRONG,
+    getWrongQueue().filter((id) => !id.startsWith(`${materia}-`)),
+  );
+
+  if (isSupabaseConfigured && supabase) {
+    const userId = await getCurrentUserId();
+    if (userId) {
+      await supabase.from("attempts").delete().eq("user_id", userId).eq("materia", materia);
+    }
+  }
+
+  return restantes;
+}
+
 export function focoRecomendado(
   stats: SubjectStats[],
   pesos: Record<SubjectId, number>,

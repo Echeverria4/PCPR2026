@@ -9,7 +9,14 @@ import Quiz from "./components/Quiz";
 import Result from "./components/Result";
 import Auth from "./components/Auth";
 import { supabase, isSupabaseConfigured } from "./lib/supabase";
-import { computeStats, focoRecomendado, getLocalAttempts, getWrongQueue, syncRemoteAttempts } from "./lib/storage";
+import {
+  computeStats,
+  focoRecomendado,
+  getLocalAttempts,
+  getWrongQueue,
+  resetAttemptsMateria,
+  syncRemoteAttempts,
+} from "./lib/storage";
 import { buildSessaoMateria, buildSessaoProva, buildSessaoRevisao, buildSessaoTreinoAlvo } from "./lib/quizEngine";
 import { SUBJECT_WEIGHTS } from "./data/subjects";
 import type { AttemptRecord, Question, QuizMode, QuizSessionResult, SubjectId, SubjectStats } from "./lib/types";
@@ -88,6 +95,12 @@ export default function App() {
     setView("result");
   }
 
+  async function resetarMateria(materia: SubjectId) {
+    const restantes = await resetAttemptsMateria(materia);
+    setAttempts(restantes);
+    setWrongCount(getWrongQueue().length);
+  }
+
   function voltarHome() {
     setSessao(null);
     setResultado(null);
@@ -115,7 +128,13 @@ export default function App() {
       onTrocarAba={(aba) => setView(aba)}
     >
       {view === "home" && (
-        <Home stats={stats} wrongCount={wrongCount} materiaFoco={materiaFoco} onIniciar={iniciarQuiz} />
+        <Home
+          stats={stats}
+          wrongCount={wrongCount}
+          materiaFoco={materiaFoco}
+          onIniciar={iniciarQuiz}
+          onResetarMateria={resetarMateria}
+        />
       )}
       {view === "conteudo" && <Conteudo />}
       {view === "videos" && <Videos />}

@@ -356,6 +356,45 @@ button {
   border-color: var(--cor-materia, var(--ouro));
 }
 
+.materia-play {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.materia-play:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.materia-reset {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--borda);
+  border-radius: 50%;
+  background: var(--bg-card);
+  color: var(--texto-fraco);
+  font-size: 0.85rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.materia-reset:hover {
+  border-color: var(--cor-materia, var(--ouro));
+  color: var(--texto);
+}
+
 .materia-nome {
   font-weight: 600;
   font-size: 0.92rem;
