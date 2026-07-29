@@ -683,6 +683,65 @@ button {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--raio-peq);
+  overflow: hidden;
+  background: #000;
+  margin-bottom: 12px;
+}
+
+.video-embed-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-embed-capa {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-embed-capa::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.35));
+}
+
+.video-embed-play {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 40px;
+  border-radius: var(--raio-peq);
+  background: rgba(20, 20, 20, 0.75);
+  color: #fff;
+  font-size: 1.1rem;
+  transition: background 0.15s, transform 0.15s;
+}
+
+.video-embed-capa:hover .video-embed-play {
+  background: #ff0000;
+  transform: scale(1.08);
+}
+
 .video-titulo {
   font-family: var(--fonte-titulo);
   color: var(--ouro-forte);

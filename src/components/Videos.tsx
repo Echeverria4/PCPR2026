@@ -2,10 +2,36 @@ import { useState, type CSSProperties } from "react";
 import { SUBJECTS } from "../data/subjects";
 import { VIDEOS_GERAL, VIDEOS_POR_MATERIA } from "../data/videos";
 import type { SubjectId, VideoRecurso } from "../lib/types";
+import { extrairYoutubeId, youtubeEmbedUrl, youtubeThumbUrl } from "../lib/youtube";
 
 function VideoCard({ video }: { video: VideoRecurso }) {
+  const [tocando, setTocando] = useState(false);
+  const videoId = extrairYoutubeId(video.url);
+
   return (
     <article className="video-card">
+      {videoId ? (
+        <div className="video-embed">
+          {tocando ? (
+            <iframe
+              className="video-embed-frame"
+              src={youtubeEmbedUrl(videoId)}
+              title={video.titulo}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          ) : (
+            <button
+              className="video-embed-capa"
+              style={{ backgroundImage: `url("${youtubeThumbUrl(videoId)}")` }}
+              onClick={() => setTocando(true)}
+              aria-label={`Assistir ${video.titulo}`}
+            >
+              <span className="video-embed-play">▶</span>
+            </button>
+          )}
+        </div>
+      ) : null}
       <h3 className="video-titulo">{video.titulo}</h3>
       <div className="video-canal">{video.canal}</div>
       {video.dica && <p className="video-dica">{video.dica}</p>}
