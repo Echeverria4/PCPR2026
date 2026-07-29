@@ -23,19 +23,19 @@
 }
 
 :root {
-  --bg: #070c14;
-  --bg-elevado: #121a2b;
-  --bg-card: #141d30;
-  --borda: #263149;
-  --borda-forte: #3d4b6a;
-  --texto: #e8ecf4;
-  --texto-fraco: #8b96af;
-  --ouro: #d4a72c;
-  --ouro-forte: #f0c14b;
-  --aco: #5b7291;
-  --verde: #2fbf71;
-  --vermelho: #e5484d;
-  --azul: #4fa3e3;
+  --bg: #eef1f6;
+  --bg-elevado: #ffffff;
+  --bg-card: #ffffff;
+  --borda: #d7dee8;
+  --borda-forte: #aab6c7;
+  --texto: #1a2436;
+  --texto-fraco: #5b6778;
+  --ouro: #c9982c;
+  --ouro-forte: #8a6410;
+  --aco: #33526f;
+  --verde: #1f8a4c;
+  --vermelho: #c92a2a;
+  --azul: #1f6fa8;
   --fonte-titulo: "Georgia", "Times New Roman", serif;
   --fonte-corpo: system-ui, -apple-system, "Segoe UI", sans-serif;
   --fonte-mono: "Consolas", "SF Mono", monospace;
@@ -56,7 +56,7 @@ body,
 
 body {
   margin: 0;
-  background: radial-gradient(ellipse at top, #101c30 0%, var(--bg) 60%);
+  background: radial-gradient(ellipse at top, #ffffff 0%, var(--bg) 60%);
   color: var(--texto);
   font-family: var(--fonte-corpo);
   -webkit-font-smoothing: antialiased;
@@ -113,9 +113,9 @@ button {
   padding: 14px 20px;
   border-top: 3px solid var(--ouro);
   border-bottom: 1px solid var(--borda-forte);
-  background: rgba(7, 12, 20, 0.92);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(6px);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.08);
 }
 
 .topbar-titulo {
@@ -149,7 +149,7 @@ button {
   border: 2px solid var(--ouro);
   border-radius: 6px;
   padding: 4px;
-  box-shadow: 0 0 0 1px rgba(240, 193, 75, 0.25), 0 2px 6px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 0 0 1px rgba(201, 152, 44, 0.3), 0 2px 6px rgba(15, 23, 42, 0.18);
   flex-shrink: 0;
 }
 
@@ -196,7 +196,7 @@ button {
 
 .botao:hover {
   border-color: var(--ouro);
-  background: #1a2439;
+  background: #e7edf6;
 }
 
 .botao:active {
@@ -208,7 +208,7 @@ button {
   color: #241a03;
   border: none;
   font-weight: 700;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 2px 6px rgba(0, 0, 0, 0.35);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 2px 6px rgba(15, 23, 42, 0.2);
 }
 
 .botao-ouro:hover {
@@ -231,7 +231,7 @@ button {
   gap: 4px;
   padding: 0 20px;
   border-bottom: 1px solid var(--borda);
-  background: rgba(11, 17, 28, 0.6);
+  background: rgba(255, 255, 255, 0.5);
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
@@ -265,7 +265,7 @@ button {
 .tab-ativa {
   color: var(--ouro-forte);
   border-bottom-color: var(--ouro);
-  background: rgba(212, 167, 44, 0.07);
+  background: rgba(201, 152, 44, 0.1);
 }
 
 /* ---------- Main content ---------- */
@@ -385,7 +385,7 @@ button {
 .modo-card:hover {
   border-color: var(--ouro);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
 }
 
 .modo-card:disabled {
@@ -437,7 +437,7 @@ button {
 
 .materia-card:hover {
   border-color: var(--cor-materia, var(--ouro));
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
 }
 
 .materia-play {
@@ -498,7 +498,7 @@ button {
   margin-top: 8px;
   height: 5px;
   border-radius: 3px;
-  background: #0e1524;
+  background: #dde3ec;
   overflow: hidden;
 }
 
@@ -532,7 +532,7 @@ button {
   background: var(--bg-card);
   border-radius: var(--raio);
   padding: 20px 22px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
 }
 
 .conteudo-topico-titulo {
@@ -650,7 +650,7 @@ button {
   background: var(--bg-card);
   border-radius: var(--raio);
   padding: 14px 16px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
 }
 
 .aposta-tema {
@@ -680,7 +680,7 @@ button {
   background: var(--bg-card);
   border-radius: var(--raio);
   padding: 16px 18px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
 }
 
 .video-embed {
@@ -769,14 +769,14 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  border-color: #d93a3a;
-  color: #ff6b6b;
+  border-color: #c92a2a;
+  color: #c92a2a;
   text-decoration: none;
 }
 
 .botao-youtube:hover {
-  background: rgba(217, 58, 58, 0.12);
-  border-color: #ff6b6b;
+  background: rgba(201, 42, 42, 0.1);
+  border-color: #a01f1f;
 }
 
 /* ---------- Provas reais ---------- */
@@ -793,7 +793,7 @@ button {
   background: var(--bg-card);
   border-radius: var(--raio);
   padding: 16px 18px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
 }
 
 .prova-topo {
@@ -914,7 +914,7 @@ button {
   border-radius: var(--raio-peq);
   padding: 4px 10px;
   margin-bottom: 12px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.2);
 }
 
 .questao-enunciado {
@@ -1068,7 +1068,7 @@ button {
   border-radius: var(--raio);
   background: var(--bg-card);
   margin-bottom: 24px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.1);
 }
 
 .resultado-numero {
@@ -1122,7 +1122,7 @@ button {
   background: var(--bg-card);
   border-radius: var(--raio);
   padding: 28px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.1);
 }
 
 .auth-card h2 {
