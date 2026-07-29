@@ -1,6 +1,7 @@
 import type { CSSProperties } from "react";
 import { SUBJECTS, EDITAL_INFO } from "../data/subjects";
 import { QUESTOES_POR_MATERIA } from "../data/questions";
+import { dicaDoDia } from "../data/dicas";
 import type { QuizMode, SubjectId, SubjectStats } from "../lib/types";
 
 interface HomeProps {
@@ -20,9 +21,16 @@ export default function Home({ stats, wrongCount, materiaFoco, onIniciar, onRese
   const materiaFocoNome = materiaFoco
     ? SUBJECTS.find((s) => s.id === materiaFoco)?.nome
     : null;
+  const dica = dicaDoDia();
+  const materiaDica = SUBJECTS.find((s) => s.id === dica.materia);
 
   return (
     <>
+      <div className="dica-dia" style={{ "--cor-materia": materiaDica?.cor } as CSSProperties}>
+        <span className="dica-dia-tag">💡 Dica do dia · {materiaDica?.nome}</span>
+        <p className="dica-dia-texto">{dica.texto}</p>
+      </div>
+
       <div className="edital-faixa">
         <div className="edital-item">
           <strong>{EDITAL_INFO.dataProva}</strong>

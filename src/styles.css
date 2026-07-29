@@ -244,6 +244,42 @@ button {
 }
 
 /* ---------- Home ---------- */
+.dica-dia {
+  position: relative;
+  border: 1px solid var(--borda);
+  background: var(--bg-card);
+  border-radius: var(--raio);
+  padding: 12px 16px 12px 20px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.dica-dia::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--cor-materia, var(--ouro));
+}
+
+.dica-dia-tag {
+  display: block;
+  font-family: var(--fonte-cond);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--cor-materia, var(--ouro-forte));
+  margin-bottom: 4px;
+}
+
+.dica-dia-texto {
+  font-size: 0.86rem;
+  color: var(--texto);
+  margin: 0;
+}
+
 .edital-faixa {
   border: 1px solid var(--borda);
   background: var(--bg-card);
