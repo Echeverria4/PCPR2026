@@ -88,6 +88,7 @@ export interface AttemptRecord {
   materia: SubjectId;
   acertou: boolean;
   respondidaEm: string;
+  tempoMs?: number;
 }
 
 export interface SubjectStats {

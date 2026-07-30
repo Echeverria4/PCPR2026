@@ -6,6 +6,7 @@ import Videos from "./components/Videos";
 import ProvasReais from "./components/ProvasReais";
 import Apostas from "./components/Apostas";
 import Concurso from "./components/Concurso";
+import Tempos from "./components/Tempos";
 import Quiz from "./components/Quiz";
 import Result from "./components/Result";
 import Auth from "./components/Auth";
@@ -22,9 +23,19 @@ import { buildSessaoMateria, buildSessaoProva, buildSessaoRevisao, buildSessaoTr
 import { SUBJECT_WEIGHTS } from "./data/subjects";
 import type { AttemptRecord, Question, QuizMode, QuizSessionResult, SubjectId, SubjectStats } from "./lib/types";
 
-type View = "home" | "conteudo" | "videos" | "provas" | "apostas" | "concurso" | "quiz" | "result" | "auth";
+type View =
+  | "home"
+  | "conteudo"
+  | "videos"
+  | "provas"
+  | "apostas"
+  | "concurso"
+  | "tempos"
+  | "quiz"
+  | "result"
+  | "auth";
 
-const ABAS_PRINCIPAIS: View[] = ["home", "conteudo", "videos", "provas", "apostas", "concurso"];
+const ABAS_PRINCIPAIS: View[] = ["home", "conteudo", "videos", "provas", "apostas", "concurso", "tempos"];
 
 interface SessaoAtiva {
   mode: QuizMode;
@@ -126,7 +137,8 @@ export default function App() {
         view === "videos" ||
         view === "provas" ||
         view === "apostas" ||
-        view === "concurso"
+        view === "concurso" ||
+        view === "tempos"
           ? view
           : "home"
       }
@@ -146,6 +158,7 @@ export default function App() {
       {view === "provas" && <ProvasReais />}
       {view === "apostas" && <Apostas />}
       {view === "concurso" && <Concurso />}
+      {view === "tempos" && <Tempos attempts={attempts} />}
       {view === "quiz" && sessao && (
         <Quiz questions={sessao.questions} modo={sessao.mode} onFinalizar={finalizarQuiz} onSair={voltarHome} />
       )}

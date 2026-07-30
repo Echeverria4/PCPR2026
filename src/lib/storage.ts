@@ -73,6 +73,7 @@ export async function recordAttempt(attempt: AttemptRecord): Promise<void> {
     materia: attempt.materia,
     acertou: attempt.acertou,
     respondida_em: attempt.respondidaEm,
+    tempo_ms: attempt.tempoMs ?? null,
   });
 }
 
@@ -84,7 +85,7 @@ export async function syncRemoteAttempts(): Promise<AttemptRecord[]> {
 
   const { data, error } = await supabase
     .from("attempts")
-    .select("question_id, materia, acertou, respondida_em")
+    .select("question_id, materia, acertou, respondida_em, tempo_ms")
     .eq("user_id", userId)
     .order("respondida_em", { ascending: true })
     .limit(MAX_ATTEMPTS_LOCAL);
@@ -96,6 +97,7 @@ export async function syncRemoteAttempts(): Promise<AttemptRecord[]> {
     materia: row.materia as SubjectId,
     acertou: row.acertou,
     respondidaEm: row.respondida_em,
+    tempoMs: row.tempo_ms ?? undefined,
   }));
 
   writeLocal(LS_ATTEMPTS, remote.slice(-MAX_ATTEMPTS_LOCAL));

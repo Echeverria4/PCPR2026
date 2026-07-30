@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { AttemptRecord, Question, QuizMode } from "../lib/types";
 import { recordAttempt } from "../lib/storage";
+import { formatarSegundos } from "../lib/format";
 
 const LETRAS = ["A", "B", "C", "D", "E"];
 
@@ -20,9 +21,27 @@ export default function Quiz({ questions, modo, onFinalizar, onSair }: QuizProps
   const [iaTexto, setIaTexto] = useState("");
   const [iaErro, setIaErro] = useState<string | null>(null);
   const [iaPergunta, setIaPergunta] = useState("");
+  const [segundosQuestao, setSegundosQuestao] = useState(0);
+  const inicioQuestaoRef = useRef(Date.now());
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const [tempoRespostaMs, setTempoRespostaMs] = useState<number | null>(null);
 
   const questao = questions[indice];
   const ultimaQuestao = indice === questions.length - 1;
+
+  // Cronômetro da questão atual: começa ao entrar na questão, congela ao responder
+  // (ver escolher()), reinicia na próxima questão. Sair do quiz (Encerrar, ou o fim
+  // natural do simulado) desmonta este componente, o que já limpa o interval sozinho.
+  useEffect(() => {
+    inicioQuestaoRef.current = Date.now();
+    setSegundosQuestao(0);
+    intervalRef.current = setInterval(() => {
+      setSegundosQuestao(Math.round((Date.now() - inicioQuestaoRef.current) / 1000));
+    }, 1000);
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [indice]);
 
   if (!questao) {
     return (
@@ -37,6 +56,9 @@ export default function Quiz({ questions, modo, onFinalizar, onSair }: QuizProps
 
   function escolher(idx: number) {
     if (selecionada !== null) return;
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    const tempoMs = Date.now() - inicioQuestaoRef.current;
+    setTempoRespostaMs(tempoMs);
     setSelecionada(idx);
     const acertou = idx === questao.correta;
     const registro: AttemptRecord = {
@@ -44,6 +66,7 @@ export default function Quiz({ questions, modo, onFinalizar, onSair }: QuizProps
       materia: questao.materia,
       acertou,
       respondidaEm: new Date().toISOString(),
+      tempoMs,
     };
     setRespostas((prev) => [...prev, registro]);
     void recordAttempt(registro);
@@ -56,6 +79,7 @@ export default function Quiz({ questions, modo, onFinalizar, onSair }: QuizProps
     }
     setIndice((i) => i + 1);
     setSelecionada(null);
+    setTempoRespostaMs(null);
     setIaAberto(false);
     setIaTexto("");
     setIaErro(null);
@@ -112,6 +136,9 @@ export default function Quiz({ questions, modo, onFinalizar, onSair }: QuizProps
     <div>
       <div className="quiz-header">
         <span>{rotuloModo[modo]}</span>
+        <span className={`quiz-cronometro ${selecionada !== null ? "quiz-cronometro-parado" : ""}`}>
+          ⏱ {formatarSegundos(segundosQuestao)}
+        </span>
         <span>
           Questão {indice + 1} de {questions.length}
         </span>
@@ -152,6 +179,11 @@ export default function Quiz({ questions, modo, onFinalizar, onSair }: QuizProps
           <div className="explicacao">
             <strong>{selecionada === questao.correta ? "Correto. " : "Incorreto. "}</strong>
             {questao.explicacao}
+            {tempoRespostaMs !== null && (
+              <div className="questao-tempo-resposta">
+                ⏱ Respondida em {formatarSegundos(tempoRespostaMs / 1000)}
+              </div>
+            )}
           </div>
         )}
 

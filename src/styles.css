@@ -718,6 +718,60 @@ button {
   color: var(--ouro-forte);
 }
 
+/* ---------- Tempos (aba de cronometragem) ---------- */
+.tempos-tabela-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--borda-forte);
+  border-radius: var(--raio);
+  background: var(--bg-card);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.tempos-tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+.tempos-tabela th,
+.tempos-tabela td {
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--borda);
+}
+
+.tempos-tabela th {
+  color: var(--texto-fraco);
+  font-family: var(--fonte-cond);
+  font-weight: 600;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: var(--bg-elevado);
+}
+
+.tempos-tabela tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.tempos-valor {
+  font-family: var(--fonte-mono);
+  color: var(--ouro-forte);
+}
+
+.tempos-acertou {
+  color: var(--verde);
+}
+
+.tempos-errou {
+  color: var(--vermelho);
+}
+
+.tempos-quando {
+  color: var(--texto-fraco);
+}
+
 .taf-tentativas {
   color: var(--texto-fraco);
   white-space: normal;
@@ -1051,6 +1105,16 @@ button {
   font-family: var(--fonte-mono);
 }
 
+.quiz-cronometro {
+  font-weight: 700;
+  color: var(--azul);
+  letter-spacing: 0.02em;
+}
+
+.quiz-cronometro-parado {
+  color: var(--texto-fraco);
+}
+
 .progresso-barra {
   height: 6px;
   border-radius: 3px;
@@ -1160,6 +1224,13 @@ button {
 
 .explicacao strong {
   color: var(--ouro-forte);
+}
+
+.questao-tempo-resposta {
+  margin-top: 10px;
+  font-family: var(--fonte-mono);
+  font-size: 0.78rem;
+  color: var(--texto-fraco);
 }
 
 .quiz-acoes {
