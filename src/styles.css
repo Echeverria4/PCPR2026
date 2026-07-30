@@ -610,6 +610,160 @@ button {
   color: var(--ouro-forte);
 }
 
+/* ---------- Concurso (aba de informações) ---------- */
+.concurso-link-inscricao {
+  display: inline-block;
+  margin: 4px 0 8px;
+  text-decoration: none;
+}
+
+.concurso-subtitulo {
+  font-family: var(--fonte-cond);
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ouro-forte);
+  margin: 26px 0 10px;
+}
+
+.concurso-lista-titulo {
+  margin: 14px 0 8px;
+  font-family: var(--fonte-cond);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+}
+
+.concurso-fases {
+  margin: 0 0 8px;
+  padding-left: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.concurso-fases li {
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.concurso-lista {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.concurso-lista li {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--texto);
+}
+
+.taf-tabela-wrap {
+  margin-bottom: 20px;
+}
+
+.taf-tabela-titulo {
+  font-family: var(--fonte-cond);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--azul);
+  margin: 0 0 10px;
+}
+
+.taf-tabela-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--borda-forte);
+  border-radius: var(--raio);
+  background: var(--bg-card);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.taf-tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+.taf-tabela th,
+.taf-tabela td {
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--borda);
+}
+
+.taf-tabela th {
+  color: var(--texto-fraco);
+  font-family: var(--fonte-cond);
+  font-weight: 600;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: var(--bg-elevado);
+}
+
+.taf-tabela tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.taf-tabela td strong {
+  color: var(--ouro-forte);
+}
+
+.taf-tentativas {
+  color: var(--texto-fraco);
+  white-space: normal;
+  min-width: 180px;
+}
+
+.concurso-permissoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.concurso-permissao {
+  border: 1px solid var(--borda-forte);
+  border-radius: var(--raio);
+  padding: 18px 20px;
+  background: var(--bg-card);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.concurso-permissao h4 {
+  margin: 0 0 10px;
+  font-family: var(--fonte-cond);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.concurso-permissao-ok {
+  border-left: 4px solid var(--verde);
+}
+
+.concurso-permissao-ok h4 {
+  color: var(--verde);
+}
+
+.concurso-permissao-nao {
+  border-left: 4px solid var(--vermelho);
+}
+
+.concurso-permissao-nao h4 {
+  color: var(--vermelho);
+}
+
 /* ---------- Apostas ---------- */
 .aposta-subtitulo {
   font-family: var(--fonte-cond);

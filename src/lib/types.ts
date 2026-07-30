@@ -67,6 +67,20 @@ export interface ProvaRealResultado {
   quando: string;
 }
 
+export interface TafFaixas {
+  ate29: string;
+  de30a39: string;
+  de40a49: string;
+  mais50: string;
+}
+
+export interface TafExercicio {
+  ordem: string;
+  nome: string;
+  tentativas: string;
+  faixas: TafFaixas;
+}
+
 export type QuizMode = "materia" | "prova" | "revisao" | "treino-alvo";
 
 export interface AttemptRecord {

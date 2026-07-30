@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { isSupabaseConfigured } from "../lib/supabase";
 import pcprBrasao from "../assets/pcpr-brasao.png";
 
-type AbaPrincipal = "home" | "conteudo" | "videos" | "provas" | "apostas";
+type AbaPrincipal = "home" | "conteudo" | "videos" | "provas" | "apostas" | "concurso";
 
 interface LayoutProps {
   children: ReactNode;
@@ -93,6 +93,12 @@ export default function Layout({
               onClick={() => onTrocarAba("apostas")}
             >
               🎯 Apostas
+            </button>
+            <button
+              className={`tab ${abaAtiva === "concurso" ? "tab-ativa" : ""}`}
+              onClick={() => onTrocarAba("concurso")}
+            >
+              📋 Concurso
             </button>
           </nav>
         )}
