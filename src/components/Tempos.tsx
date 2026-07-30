@@ -10,8 +10,12 @@ interface TemposProps {
 
 const QUESTAO_POR_ID = new Map(BANCO.map((q) => [q.id, q]));
 
+function somaMs(valores: number[]): number {
+  return valores.reduce((a, b) => a + b, 0);
+}
+
 function mediaMs(valores: number[]): number {
-  return valores.length > 0 ? valores.reduce((a, b) => a + b, 0) / valores.length : 0;
+  return valores.length > 0 ? somaMs(valores) / valores.length : 0;
 }
 
 export default function Tempos({ attempts }: TemposProps) {
@@ -64,6 +68,7 @@ export default function Tempos({ attempts }: TemposProps) {
     .slice()
     .sort((a, b) => new Date(b.respondidaEm).getTime() - new Date(a.respondidaEm).getTime());
   const tempos = registros.map((r) => r.tempoMs!);
+  const total = somaMs(tempos);
   const media = mediaMs(tempos);
   const maisRapida = tempos.length > 0 ? Math.min(...tempos) : 0;
   const maisLenta = tempos.length > 0 ? Math.max(...tempos) : 0;
@@ -88,6 +93,10 @@ export default function Tempos({ attempts }: TemposProps) {
             <div className="edital-item">
               <strong>{registros.length}</strong>
               <span>Questões com tempo registrado</span>
+            </div>
+            <div className="edital-item">
+              <strong>{formatarSegundos(total / 1000)}</strong>
+              <span>Tempo total na matéria</span>
             </div>
             <div className="edital-item">
               <strong>{formatarSegundos(media / 1000)}</strong>
