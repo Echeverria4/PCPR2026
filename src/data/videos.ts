@@ -135,10 +135,16 @@ export const VIDEOS_POR_MATERIA: Partial<Record<SubjectId, VideoRecurso[]>> = {
       dica: "Bom para fixar Contestado, ciclos econômicos e emancipação.",
     },
     {
-      titulo: "Aula de História do Paraná para concurso (ALEP)",
-      canal: "YouTube",
-      url: "https://www.youtube.com/watch?v=_K6HIGlXbhk",
-      dica: "Mesmo conteúdo regional cobrado no edital.",
+      titulo: "História do Paraná - Aula 10 - Emancipação Política da Província",
+      canal: "Marcos Pizzolatto",
+      url: "https://www.youtube.com/watch?v=-6fMgDWX4ak",
+      dica: "Direto no ponto que mais cai: a emancipação política do Paraná.",
+    },
+    {
+      titulo: "História do Paraná (Os ciclos econômicos): o ciclo da erva-mate",
+      canal: "Conteúdos de História",
+      url: "https://www.youtube.com/watch?v=dNPGlntUzOo",
+      dica: "Cobre o ciclo econômico mais cobrado em prova, junto com o tropeirismo e a madeira.",
     },
   ],
   con: [
