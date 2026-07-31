@@ -610,6 +610,34 @@ button {
   color: var(--ouro-forte);
 }
 
+/* ---------- Modelos mentais ---------- */
+.modelo-mental-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modelo-mental-card {
+  border: 1px solid var(--borda-forte);
+  background: var(--bg-card);
+  border-radius: var(--raio);
+  padding: 20px 22px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.modelo-mental-gancho {
+  font-family: var(--fonte-cond);
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 0.01em;
+  color: var(--verde);
+  margin: 0 0 12px;
+  padding: 10px 14px;
+  background: rgba(47, 191, 113, 0.12);
+  border-left: 3px solid var(--verde);
+  border-radius: var(--raio-peq);
+}
+
 /* ---------- Concurso (aba de informações) ---------- */
 .concurso-link-inscricao {
   display: inline-block;
@@ -1486,7 +1514,8 @@ button {
   .video-card,
   .prova-card,
   .aposta-card,
-  .conteudo-card {
+  .conteudo-card,
+  .modelo-mental-card {
     padding: 14px;
   }
 

@@ -7,6 +7,7 @@ import ProvasReais from "./components/ProvasReais";
 import Apostas from "./components/Apostas";
 import Concurso from "./components/Concurso";
 import Tempos from "./components/Tempos";
+import ModelosMentais from "./components/ModelosMentais";
 import Quiz from "./components/Quiz";
 import Result from "./components/Result";
 import Auth from "./components/Auth";
@@ -31,11 +32,21 @@ type View =
   | "apostas"
   | "concurso"
   | "tempos"
+  | "modelos-mentais"
   | "quiz"
   | "result"
   | "auth";
 
-const ABAS_PRINCIPAIS: View[] = ["home", "conteudo", "videos", "provas", "apostas", "concurso", "tempos"];
+const ABAS_PRINCIPAIS: View[] = [
+  "home",
+  "conteudo",
+  "videos",
+  "provas",
+  "apostas",
+  "concurso",
+  "tempos",
+  "modelos-mentais",
+];
 
 interface SessaoAtiva {
   mode: QuizMode;
@@ -138,7 +149,8 @@ export default function App() {
         view === "provas" ||
         view === "apostas" ||
         view === "concurso" ||
-        view === "tempos"
+        view === "tempos" ||
+        view === "modelos-mentais"
           ? view
           : "home"
       }
@@ -159,6 +171,7 @@ export default function App() {
       {view === "apostas" && <Apostas />}
       {view === "concurso" && <Concurso />}
       {view === "tempos" && <Tempos attempts={attempts} />}
+      {view === "modelos-mentais" && <ModelosMentais />}
       {view === "quiz" && sessao && (
         <Quiz questions={sessao.questions} modo={sessao.mode} onFinalizar={finalizarQuiz} onSair={voltarHome} />
       )}

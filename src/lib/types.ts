@@ -40,6 +40,13 @@ export interface ConteudoTopico {
   curiosidade?: string;
 }
 
+export interface ModeloMental {
+  topico: string;
+  origem: "oficial" | "aposta";
+  gancho: string;
+  modelo: string;
+}
+
 export interface VideoRecurso {
   titulo: string;
   canal: string;
