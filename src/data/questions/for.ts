@@ -347,4 +347,148 @@ export const QUESTOES_FOR: Question[] = [
       "O \"Bertillonage\" (antropometria judiciária), criado por Alphonse Bertillon no fim do século XIX, identificava indivíduos por medidas corporais padronizadas (altura, comprimento de membros, crânio etc.). Foi progressivamente substituído pela datiloscopia (impressões digitais), método mais preciso, estável ao longo da vida e de aplicação mais simples, consagrado no Brasil pelo Sistema de Vucetich.",
     origem: "banco",
   },
+  {
+    id: "for-022",
+    materia: "for",
+    topico: "Local de crime: isolamento, preservação e etapas do exame pericial",
+    enunciado:
+      "Ao chegar primeiro a um local onde acabou de ocorrer um crime, antes mesmo da chegada da equipe pericial, o dever do policial responsável pelo primeiro atendimento é, principalmente:",
+    alternativas: [
+      "Recolher os principais vestígios visíveis e levá-los à delegacia para agilizar a perícia.",
+      "Isolar e preservar o local, impedindo alteração, contaminação ou desaparecimento de vestígios, sem manuseá-los.",
+      "Permitir a entrada de familiares da vítima para reconhecimento imediato do corpo.",
+      "Aguardar em local afastado, sem qualquer interferência sobre o acesso ao local.",
+      "Liberar o local assim que fizer o registro fotográfico com o próprio celular.",
+    ],
+    correta: 1,
+    explicacao:
+      "O dever da primeira autoridade a chegar ao local — geralmente o policial que atende a ocorrência — é isolar e preservar a cena, impedindo alteração, contaminação ou desaparecimento de vestígios, sem manusear objetos, até a chegada da perícia especializada. Recolher vestígios, permitir entrada de terceiros ou liberar o local prematuramente compromete a integridade da prova pericial.",
+    origem: "banco",
+  },
+  {
+    id: "for-023",
+    materia: "for",
+    topico: "Local de crime: isolamento, preservação e etapas do exame pericial",
+    enunciado:
+      "Assinale a sequência que representa corretamente as etapas clássicas do exame pericial em local de crime:",
+    alternativas: [
+      "Coleta de vestígios, preservação do local, registro fotográfico, laudo pericial, reconhecimento geral.",
+      "Preservação do local, reconhecimento geral da cena, registro fotográfico/planimétrico, busca e coleta de vestígios, elaboração do laudo.",
+      "Laudo pericial, reconhecimento geral, preservação do local, coleta de vestígios, registro fotográfico.",
+      "Registro fotográfico, laudo pericial, preservação do local, reconhecimento geral, coleta de vestígios.",
+      "Coleta de vestígios, laudo pericial, preservação do local, registro fotográfico, reconhecimento geral.",
+    ],
+    correta: 1,
+    explicacao:
+      "A sequência lógica do exame pericial em local de crime é: preservação do local, reconhecimento geral da cena, registro fotográfico e planimétrico, busca e coleta de vestígios (com uso de luvas, embalagens adequadas e etiquetagem) e, por fim, elaboração do laudo pericial — alterar essa ordem compromete a integridade da investigação, já que a coleta ou o laudo não podem anteceder a preservação e o reconhecimento inicial da cena.",
+    origem: "banco",
+  },
+  {
+    id: "for-024",
+    materia: "for",
+    topico: "Necropsia x exame de corpo de delito — diferenças e finalidades",
+    enunciado:
+      "Em relação à distinção entre necropsia e exame de corpo de delito, é correto afirmar que:",
+    alternativas: [
+      "Os dois termos são sinônimos absolutos, sem qualquer diferença conceitual.",
+      "A necropsia é um exame específico realizado em cadáver para determinar a causa mortis, enquanto o exame de corpo de delito é conceito processual mais amplo, cabível também sobre pessoa viva, objetos ou local.",
+      "O exame de corpo de delito só pode ser realizado em cadáver, nunca em pessoa viva.",
+      "A necropsia é obrigatória em todo processo penal, independentemente de haver ou não vestígios materiais.",
+      "O exame de corpo de delito é uma modalidade específica de necropsia, restrita a casos de morte violenta.",
+    ],
+    correta: 1,
+    explicacao:
+      "A necropsia (autópsia) é exame pericial específico da tanatologia forense, realizado em cadáver para determinar causa mortis e reconstituir a dinâmica dos fatos. Já o exame de corpo de delito é conceito processual penal mais amplo (art. 158 do CPP): perícia obrigatória sempre que a infração deixar vestígios materiais, podendo recair sobre pessoa viva (lesão corporal), morta, objetos ou o próprio local — a necropsia é, portanto, uma espécie de corpo de delito quando a vítima é cadáver, mas o gênero é mais abrangente.",
+    origem: "banco",
+  },
+  {
+    id: "for-025",
+    materia: "for",
+    topico: "Necropsia x exame de corpo de delito — diferenças e finalidades",
+    enunciado:
+      "Em um caso de lesão corporal grave em vítima sobrevivente, o exame pericial cabível para comprovar a materialidade do crime é:",
+    alternativas: [
+      "A necropsia, já que todo crime contra a pessoa exige exame post mortem.",
+      "O exame de corpo de delito, realizado em pessoa viva, para atestar a existência e a extensão da lesão.",
+      "A antropometria judiciária (Bertillonage).",
+      "O exame necroscópico complementar.",
+      "A perícia grafotécnica.",
+    ],
+    correta: 1,
+    explicacao:
+      "O exame de corpo de delito, previsto no art. 158 do CPP, é a perícia cabível sempre que a infração deixar vestígios materiais, podendo recair sobre pessoa viva — como no caso de lesão corporal — para atestar a existência e a extensão da lesão, comprovando a materialidade do crime. A necropsia é exclusiva de cadáver, e as demais opções (antropometria, exame necroscópico, grafotécnica) não se aplicam à comprovação de lesão corporal em vítima sobrevivente.",
+    origem: "banco",
+  },
+  {
+    id: "for-026",
+    materia: "for",
+    topico: "Perfil genético (DNA) e bancos de dados forenses (RNIC)",
+    enunciado:
+      "A legislação brasileira que autoriza a coleta de material biológico para identificação do perfil genético de condenados por crimes hediondos ou dolosos com violência grave contra pessoa é a:",
+    alternativas: [
+      "Lei 9.455/1997.",
+      "Lei 12.654/2012, alterada pela Lei 13.964/2019 (Pacote Anticrime).",
+      "Lei 8.072/1990.",
+      "Lei 13.709/2018 (LGPD).",
+      "Lei 11.340/2006 (Lei Maria da Penha).",
+    ],
+    correta: 1,
+    explicacao:
+      "A Lei 12.654/2012, alterada pela Lei 13.964/2019 (Pacote Anticrime), autoriza a coleta de material biológico para identificação do perfil genético de condenados por crimes hediondos ou dolosos com violência grave contra pessoa. As demais leis tratam de temas distintos: tortura (9.455/97), crimes hediondos em geral (8.072/90), proteção de dados (LGPD) e violência doméstica (Maria da Penha).",
+    origem: "banco",
+  },
+  {
+    id: "for-027",
+    materia: "for",
+    topico: "Perfil genético (DNA) e bancos de dados forenses (RNIC)",
+    enunciado:
+      "O banco de dados nacional que armazena e cruza perfis genéticos, permitindo relacionar vestígios de diferentes locais de crime ao mesmo indivíduo, mesmo em investigações de estados diferentes, é conhecido pela sigla:",
+    alternativas: [
+      "AFIS.",
+      "RNIC (Rede Nacional de Perfis Genéticos e Banco Nacional de Perfis Genéticos).",
+      "SINIC.",
+      "INFOSEG.",
+      "COAF.",
+    ],
+    correta: 1,
+    explicacao:
+      "O RNIC (Rede Nacional de Perfis Genéticos e Banco Nacional de Perfis Genéticos) armazena e cruza perfis genéticos nacionalmente, permitindo relacionar vestígios de diferentes locais de crime ao mesmo indivíduo, mesmo entre estados diferentes — função equivalente, na papiloscopia, ao AFIS (sistema automatizado de identificação de impressões digitais). SINIC e INFOSEG são sistemas de informações criminais mais gerais, e o COAF (hoje UIF) trata de inteligência financeira, não de perfis genéticos.",
+    origem: "banco",
+  },
+  {
+    id: "for-028",
+    materia: "for",
+    topico: "Balística: percussão, tiro à queima-roupa e curta/média/longa distância",
+    enunciado:
+      "A lesão que apresenta marca de \"boca de mina\" (impressão do cano da arma) e queimadura pelos gases do disparo é característica do tiro:",
+    alternativas: [
+      "A longa distância.",
+      "A média distância.",
+      "A curta distância.",
+      "À queima-roupa (encostado).",
+      "Indireto, por ricochete.",
+    ],
+    correta: 3,
+    explicacao:
+      "No tiro à queima-roupa (ou encostado), o cano da arma toca ou quase toca a pele, deixando marca de \"boca de mina\" (impressão do cano) e, por vezes, queimadura pelos gases do disparo — é a distância mais próxima possível entre arma e alvo. Nos tiros a curta e média distância há resíduos de pólvora ao redor do orifício, mas sem a impressão do cano; a longa distância não deixa qualquer resíduo de pólvora.",
+    origem: "banco",
+  },
+  {
+    id: "for-029",
+    materia: "for",
+    topico: "Balística: percussão, tiro à queima-roupa e curta/média/longa distância",
+    enunciado:
+      "No mecanismo de disparo de uma arma de fogo, a peça que golpeia a espoleta do cartucho, iniciando a ignição da pólvora que impulsiona o projétil, é denominada:",
+    alternativas: [
+      "Culatra.",
+      "Percussor.",
+      "Extrator.",
+      "Estriamento do cano.",
+      "Alma do cano.",
+    ],
+    correta: 1,
+    explicacao:
+      "O percussor é a peça que golpeia a espoleta do cartucho, iniciando a ignição da pólvora que impulsiona o projétil — é o mecanismo central da percussão. A culatra é a parte posterior da arma que veda a câmara no momento do disparo; o extrator remove o estojo deflagrado; o estriamento e a alma do cano dizem respeito à trajetória e à identificação balística do projétil, não ao mecanismo de ignição.",
+    origem: "banco",
+  },
 ];

@@ -221,4 +221,76 @@ export const QUESTOES_CONT: Question[] = [
       "O \"caixa dois\" consiste na manutenção de contabilidade paralela e não declarada, ocultando receitas, despesas ou movimentações financeiras reais — usado tanto para sonegação fiscal quanto para financiar propinas ou caixa de campanha ilegal, dificultando a fiscalização e a rastreabilidade dos recursos.",
     origem: "banco",
   },
+  {
+    id: "cont-015",
+    materia: "cont",
+    topico: "Estrutura do balanço patrimonial (Ativo Circulante/Não Circulante, Passivo, PL)",
+    enunciado:
+      "No balanço patrimonial, os bens e direitos realizáveis em até 12 meses, como caixa, estoques e contas a receber, são classificados como:",
+    alternativas: [
+      "Ativo Não Circulante.",
+      "Ativo Circulante.",
+      "Passivo Circulante.",
+      "Patrimônio Líquido.",
+      "Passivo Não Circulante.",
+    ],
+    correta: 1,
+    explicacao:
+      "O Ativo Circulante reúne os bens e direitos realizáveis em até 12 meses, como caixa, estoques e contas a receber — distinto do Ativo Não Circulante (realizável a longo prazo, investimentos, imobilizado e intangível), que abrange itens de realização superior a um ano.",
+    origem: "banco",
+  },
+  {
+    id: "cont-016",
+    materia: "cont",
+    topico: "Estrutura do balanço patrimonial (Ativo Circulante/Não Circulante, Passivo, PL)",
+    enunciado:
+      "No balanço patrimonial, o Patrimônio Líquido representa:",
+    alternativas: [
+      "O total de obrigações de curto prazo da entidade.",
+      "A diferença entre ativos e passivos — o que sobra para os sócios.",
+      "O total de bens e direitos realizáveis em até 12 meses.",
+      "A soma de todas as contas a receber de clientes.",
+      "O total de obrigações de longo prazo da entidade.",
+    ],
+    correta: 1,
+    explicacao:
+      "O Patrimônio Líquido representa a diferença entre ativos e passivos — o que sobra para os sócios após o cumprimento de todas as obrigações da entidade. O balanço patrimonial deve sempre se equilibrar: Ativo = Passivo + Patrimônio Líquido.",
+    origem: "banco",
+  },
+  {
+    id: "cont-017",
+    materia: "cont",
+    topico: "Indícios contábeis de lavagem de dinheiro em perícia contábil",
+    enunciado:
+      "O fracionamento de depósitos bancários realizado com o objetivo de evitar a comunicação obrigatória de operações suspeitas a órgãos de controle, como o COAF, é fenômeno conhecido tecnicamente como:",
+    alternativas: [
+      "Smurfing.",
+      "Hedge.",
+      "Leasing.",
+      "Factoring.",
+      "Compliance.",
+    ],
+    correta: 0,
+    explicacao:
+      "\"Smurfing\" é o fracionamento de depósitos em valores menores, realizado justamente para evitar a comunicação obrigatória de operações suspeitas a órgãos de controle como o COAF (atual UIF) — indício clássico investigado em perícia contábil voltada à lavagem de dinheiro. Hedge, leasing, factoring e compliance são institutos financeiros/administrativos lícitos, sem relação direta com esse tipo de fraude.",
+    origem: "banco",
+  },
+  {
+    id: "cont-018",
+    materia: "cont",
+    topico: "Indícios contábeis de lavagem de dinheiro em perícia contábil",
+    enunciado:
+      "São indícios contábeis clássicos investigados em perícia voltada à identificação de lavagem de dinheiro:",
+    alternativas: [
+      "Movimentação financeira compatível com a renda declarada e ausência de empresas de fachada.",
+      "Uso de empresas de fachada, incompatibilidade patrimonial e transações com paraísos fiscais sem justificativa econômica aparente.",
+      "Pagamento pontual de tributos e regularidade cadastral perante a Receita Federal.",
+      "Emissão regular de notas fiscais compatíveis com o volume de vendas declarado.",
+      "Manutenção de reservas de capital em conformidade com a Lei das Sociedades Anônimas.",
+    ],
+    correta: 1,
+    explicacao:
+      "Indícios clássicos de lavagem de dinheiro incluem movimentação financeira incompatível com a atividade econômica declarada, uso de empresas de fachada (sem estrutura operacional real, mas com faturamento elevado), fracionamento de depósitos (smurfing), superfaturamento/subfaturamento e transações com paraísos fiscais sem justificativa econômica — as demais alternativas descrevem, ao contrário, sinais de regularidade contábil.",
+    origem: "banco",
+  },
 ];

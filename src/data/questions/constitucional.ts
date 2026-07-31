@@ -232,4 +232,112 @@ export const QUESTOES_CON: Question[] = [
       "O art. 5º, II, da CF consagra o princípio da legalidade (em sentido amplo), segundo o qual as obrigações dos indivíduos só podem decorrer de lei, e não de atos infralegais — um dos pilares do Estado Democrático de Direito.",
     origem: "banco",
   },
+  {
+    id: "con-015",
+    materia: "con",
+    topico: "Estado de defesa e estado de sítio — diferenças e requisitos",
+    enunciado:
+      "Quanto à decretação do estado de defesa e do estado de sítio, é correto afirmar que:",
+    alternativas: [
+      "Ambos exigem autorização prévia do Congresso Nacional antes da decretação pelo Presidente.",
+      "O estado de defesa é decretado diretamente pelo Presidente, devendo ser submetido ao Congresso em até 24 horas; o estado de sítio exige autorização prévia do Congresso.",
+      "O estado de sítio pode ser decretado diretamente pelo Presidente, sem qualquer controle do Congresso.",
+      "Nenhum dos dois institutos está sujeito a prazo determinado.",
+      "O estado de defesa exige autorização prévia do Congresso, e o estado de sítio é decretado diretamente pelo Presidente.",
+    ],
+    correta: 1,
+    explicacao:
+      "O estado de defesa (art. 136 da CF) é decretado diretamente pelo Presidente, ouvidos o Conselho da República e o Conselho de Defesa Nacional, devendo ser submetido ao Congresso Nacional em até 24 horas para aprovação por maioria absoluta. Já o estado de sítio (art. 137), mais grave e abrangente, exige autorização prévia do Congresso Nacional antes mesmo da decretação — a inversão dessa ordem é o erro típico cobrado em prova.",
+    origem: "banco",
+  },
+  {
+    id: "con-016",
+    materia: "con",
+    topico: "Estado de defesa e estado de sítio — diferenças e requisitos",
+    enunciado:
+      "São hipóteses constitucionalmente previstas para a decretação do estado de sítio (art. 137 da CF):",
+    alternativas: [
+      "Calamidade pública restrita a um único município.",
+      "Comoção grave de repercussão nacional, ineficácia do estado de defesa, ou declaração de guerra/resposta a agressão armada estrangeira.",
+      "Simples aumento nos índices de criminalidade em uma região metropolitana.",
+      "Greve geral de servidores públicos estaduais.",
+      "Solicitação do Governador de Estado ao STF.",
+    ],
+    correta: 1,
+    explicacao:
+      "O estado de sítio é cabível em caso de comoção grave de repercussão nacional, ineficácia do estado de defesa (decretado anteriormente e que não surtiu efeito), ou declaração de guerra/resposta a agressão armada estrangeira — hipóteses mais graves e abrangentes que as do estado de defesa, que trata de instabilidade institucional ou calamidade em locais restritos e determinados.",
+    origem: "banco",
+  },
+  {
+    id: "con-017",
+    materia: "con",
+    topico: "Repartição de competências em segurança pública (União, Estados, Municípios)",
+    enunciado:
+      "Segundo o art. 144 da CF, à União cabem os seguintes órgãos de segurança pública, com atuação em crimes de repercussão interestadual/internacional e fiscalização de fronteiras/rodovias federais:",
+    alternativas: [
+      "Polícia Civil, Polícia Militar e Corpo de Bombeiros Militar.",
+      "Polícia Federal, Polícia Rodoviária Federal e Polícia Ferroviária Federal.",
+      "Guarda Municipal e Polícia Civil.",
+      "Polícia Militar e Guarda Municipal, exclusivamente.",
+      "Corpo de Bombeiros Militar e Polícia Civil.",
+    ],
+    correta: 1,
+    explicacao:
+      "À União cabem a Polícia Federal, a Polícia Rodoviária Federal e a Polícia Ferroviária Federal (art. 144, incisos I a III, da CF). Polícia Civil, Polícia Militar e Corpo de Bombeiros Militar são órgãos estaduais, subordinados ao Governador do Estado, e a Guarda Municipal é órgão facultativo dos Municípios.",
+    origem: "banco",
+  },
+  {
+    id: "con-018",
+    materia: "con",
+    topico: "Repartição de competências em segurança pública (União, Estados, Municípios)",
+    enunciado:
+      "As guardas municipais, cuja criação é facultada aos Municípios pelo art. 144, §8º, da CF, têm como destinação constitucional:",
+    alternativas: [
+      "A investigação criminal e a apuração de infrações penais em geral, em substituição à Polícia Civil.",
+      "A proteção de bens, serviços e instalações municipais, com competência mais restrita que as polícias estaduais e federais.",
+      "O policiamento ostensivo geral, em substituição integral à Polícia Militar.",
+      "O exercício de poder de polícia judiciária federal em âmbito municipal.",
+      "A fiscalização de rodovias federais que cruzem o território do Município.",
+    ],
+    correta: 1,
+    explicacao:
+      "As guardas municipais destinam-se à proteção de bens, serviços e instalações municipais, com competência mais restrita que as polícias estaduais e federais, não substituindo suas funções de investigação (privativa da Polícia Civil/Federal) ou policiamento ostensivo geral (função constitucional da Polícia Militar).",
+    origem: "banco",
+  },
+  {
+    id: "con-019",
+    materia: "con",
+    topico: "Controle de constitucionalidade difuso x concentrado",
+    enunciado:
+      "No controle difuso de constitucionalidade, exercido por qualquer juiz ou tribunal de forma incidental, a decisão produz, em regra, efeitos:",
+    alternativas: [
+      "Erga omnes e vinculantes, desde a primeira decisão em qualquer grau de jurisdição.",
+      "Inter partes, restritos ao processo em que a questão foi discutida, salvo suspensão da norma pelo Senado Federal (art. 52, X, da CF).",
+      "Retroativos apenas para o futuro (ex nunc), nunca podendo retroagir.",
+      "Vinculantes apenas para tribunais estaduais, nunca para o STF.",
+      "Automáticos sobre toda a legislação análoga do país, independentemente de qualquer outro ato.",
+    ],
+    correta: 1,
+    explicacao:
+      "No controle difuso, a inconstitucionalidade é discutida como questão prejudicial ao mérito dentro de um processo comum, produzindo efeitos inter partes — salvo se o Senado Federal suspender a execução da norma (art. 52, X, da CF), ato que amplia o efeito da decisão. Isso contrasta com o controle concentrado, exercido exclusivamente pelo STF via ADI/ADC/ADPF, cujas decisões têm efeito erga omnes e vinculante.",
+    origem: "banco",
+  },
+  {
+    id: "con-020",
+    materia: "con",
+    topico: "Controle de constitucionalidade difuso x concentrado",
+    enunciado:
+      "O controle concentrado de constitucionalidade, exercido por meio de ADI, ADC e ADPF, é característico por:",
+    alternativas: [
+      "Poder ser exercido por qualquer juiz de primeiro grau, de forma incidental.",
+      "Ser exercido exclusivamente pelo STF, mediante ações diretas ajuizadas por legitimados taxativos, com efeito erga omnes e vinculante.",
+      "Depender da suspensão da norma pelo Senado Federal para produzir qualquer efeito.",
+      "Produzir efeitos restritos apenas às partes do processo em que a ação foi proposta.",
+      "Ser cabível apenas em processos penais que envolvam servidores públicos.",
+    ],
+    correta: 1,
+    explicacao:
+      "O controle concentrado é exercido exclusivamente pelo STF, por meio de ações diretas específicas (ADI, ADC, ADPF), ajuizadas por legitimados taxativos previstos na Constituição, produzindo efeito erga omnes e vinculante em relação aos demais órgãos do Judiciário e à Administração Pública — diferentemente do controle difuso, que pode ser exercido por qualquer juiz e produz, em regra, efeitos inter partes.",
+    origem: "banco",
+  },
 ];

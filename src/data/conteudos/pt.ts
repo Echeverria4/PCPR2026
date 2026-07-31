@@ -162,4 +162,74 @@ O Acordo Ortográfico de 1990 eliminou o trema em português do Brasil, extingui
       "'Não sei por que ele confessou; ninguém entendeu o porquê da atitude.' — 'por que' (separado, sem acento) em pergunta indireta; 'porquê' (substantivo, com artigo) equivale a 'motivo'.",
     ],
   },
+  {
+    materia: "pt",
+    topico: "Figuras de linguagem (metáfora, metonímia, ironia, eufemismo, hipérbole)",
+    origem: "aposta",
+    texto: `As figuras de linguagem são recursos expressivos que se afastam do sentido literal ou da construção sintática "neutra" para produzir efeitos de sentido, ênfase ou persuasão. As figuras de palavras (ou semânticas) alteram o significado: metáfora é a substituição de um termo por outro com base em uma semelhança implícita, sem conectivo comparativo ("o delegado é uma raposa"); metonímia é a substituição de um termo por outro que mantém com ele uma relação de contiguidade lógica — parte pelo todo, autor pela obra, causa pelo efeito, continente pelo conteúdo ("a caneta é mais forte que a espada", "bebeu o copo todo"); ironia é a afirmação de algo com a intenção de comunicar o oposto, geralmente com tom crítico, identificável pelo contexto; eufemismo suaviza uma informação desagradável ou constrangedora ("faleceu" em vez de "morreu"); hipérbole é o exagero proposital para intensificar uma ideia ("chorei rios de lágrimas").
+
+Já as figuras de construção (sintáticas) alteram a estrutura da frase sem necessariamente mudar o sentido literal das palavras: elipse (omissão de um termo subentendido pelo contexto), zeugma (omissão de um termo já mencionado anteriormente, evitando repetição), anáfora (repetição proposital de uma palavra no início de versos ou frases sucessivas) e polissíndeto (repetição de conectivos, geralmente "e", entre elementos de uma enumeração).
+
+Em prova, a banca costuma apresentar um trecho de texto motivador e pedir que o candidato identifique corretamente qual figura foi empregada e o efeito de sentido pretendido — daí a importância de reconhecer a diferença entre metáfora (comparação implícita, baseada em semelhança) e metonímia (relação de contiguidade lógica, não de semelhança).`,
+    exemplos: [
+      "'Ele engoliu a história sem pestanejar.' — metáfora: 'engolir' substitui 'acreditar', com base numa semelhança implícita entre aceitar algo facilmente e engolir sem mastigar.",
+      "'A viatura chegou e prendeu o suspeito.' — metonímia: 'a viatura' (o veículo, continente) está no lugar de 'os policiais' (quem de fato prendeu), relação de contiguidade lógica.",
+    ],
+  },
+  {
+    materia: "pt",
+    topico: "Funções da linguagem (referencial, emotiva, conativa, poética, fática, metalinguística)",
+    origem: "aposta",
+    texto: `As funções da linguagem descrevem qual elemento do processo comunicativo (emissor, receptor, mensagem, canal, código, contexto/referente) está em foco em um determinado texto, segundo o modelo clássico de Roman Jakobson.
+
+A função referencial (ou denotativa) centra-se no referente/contexto, buscando informar de forma objetiva, como em notícias e textos científicos. A função emotiva (ou expressiva) centra-se no emissor, revelando sentimentos e estados de ânimo, marcada por primeira pessoa e interjeições. A função conativa (ou apelativa) centra-se no receptor, buscando convencê-lo ou incitá-lo a uma ação, típica de propagandas — usa verbos no imperativo e pronomes de segunda pessoa. A função fática centra-se no canal de comunicação, verificando ou prolongando o contato entre emissor e receptor ("alô", "você está me ouvindo?"). A função metalinguística centra-se no próprio código, usando a linguagem para explicar a linguagem, como um dicionário que define palavras. A função poética centra-se na mensagem em si, na forma como ela é elaborada estilisticamente, típica de poemas e slogans publicitários elaborados.
+
+Na prova, a banca apresenta um trecho curto — um anúncio, uma tirinha, um diálogo — e pede a identificação da função predominante, o que exige perguntar: para qual elemento do processo comunicativo esse texto está voltado?`,
+    exemplos: [
+      "'Compre já e ganhe frete grátis!' — função conativa: verbo no imperativo ('compre'), texto voltado a convencer o receptor a agir.",
+      "'Substantivo é a classe de palavras que nomeia seres, objetos e sentimentos.' — função metalinguística: a linguagem é usada para explicar um conceito da própria linguagem.",
+    ],
+  },
+  {
+    materia: "pt",
+    topico: "Vícios de linguagem (ambiguidade involuntária, cacofonia, pleonasmo vicioso, solecismo)",
+    origem: "aposta",
+    texto: `Vícios de linguagem são desvios da norma culta que comprometem a clareza, a elegância ou a correção de uma frase, geralmente apontados em questões que pedem a identificação do erro ou a reescrita correta.
+
+A ambiguidade involuntária (diferente da ambiguidade poética, recurso estilístico) ocorre quando a construção da frase permite mais de uma interpretação sem que essa fosse a intenção do autor, geralmente por má colocação de pronome, adjunto ou oração. A cacofonia é o efeito sonoro desagradável ou ambíguo criado pela junção de sílabas finais de uma palavra com as iniciais da seguinte ("por cada", "boca dela"), que a norma culta recomenda evitar reescrevendo a frase. O pleonasmo vicioso é a repetição desnecessária e não intencional de uma mesma ideia, sem efeito estilístico ("subir para cima", "entrar para dentro") — diferente do pleonasmo estilístico ou de reforço, usado propositalmente para dar ênfase ("vi com meus próprios olhos"), que é figura de linguagem, não vício. O solecismo é o erro de sintaxe que viola as normas de concordância, regência ou colocação pronominal ("fazem dois anos" em vez de "faz dois anos", já que "fazer" indicando tempo é impessoal).
+
+A banca costuma cobrar esses vícios pedindo a reescrita de uma frase problemática ou a identificação de qual vício está presente em um trecho — exigindo que o candidato reconheça o erro e saiba qual é a versão gramaticalmente adequada.`,
+    exemplos: [
+      "'Subiu para cima da mesa e desceu para baixo depois.' — pleonasmo vicioso: 'para cima' e 'para baixo' repetem informação já contida nos verbos 'subir' e 'descer', sem efeito estilístico.",
+      "'Vi ela na rua ontem.' — solecismo de pronome: a norma culta exige o pronome oblíquo tônico precedido de preposição ('vi-a'), não o pronome reto 'ela' como objeto direto.",
+    ],
+  },
+  {
+    materia: "pt",
+    topico: "Colocação pronominal (próclise, mesóclise, ênclise)",
+    origem: "aposta",
+    texto: `A colocação pronominal trata da posição dos pronomes oblíquos átonos (me, te, se, o, a, lhe, nos, vos, os, as, lhes) em relação ao verbo, havendo três posições possíveis: próclise (pronome antes do verbo), mesóclise (pronome no meio do verbo, apenas em futuro do presente ou futuro do pretérito) e ênclise (pronome depois do verbo, ligado por hífen).
+
+A próclise é obrigatória diante de palavras que criam um ambiente de atração do pronome para antes do verbo: palavras negativas (não, nunca, ninguém), pronomes relativos e indefinidos, conjunções subordinativas, advérbios (quando não separados do verbo por vírgula) e frases exclamativas/interrogativas iniciadas por palavra de sentido negativo ou interrogativo. A mesóclise só é usada em verbos no futuro do presente ou futuro do pretérito, e apenas quando não há palavra atrativa antes do verbo — hoje é praticamente restrita à linguagem formal e jurídica ("dar-se-á", "far-se-ia"). A ênclise é a posição-padrão em orações sem palavra atrativa, especialmente quando o verbo inicia a oração ou está no imperativo afirmativo, gerúndio (sem preposição "em") ou infinitivo impessoal.
+
+Na linguagem formal e nos documentos oficiais, a norma culta é rigorosa quanto a essas regras, o que torna o tema recorrente em provas objetivas de português para cargos que exigem redação formal, como o de policial civil, que produz relatórios, laudos e ofícios.`,
+    exemplos: [
+      "'Não se preocupe com o resultado.' — próclise obrigatória: a palavra negativa 'não' atrai o pronome 'se' para antes do verbo.",
+      "'Entregar-lhe-ei o documento amanhã.' — mesóclise: verbo no futuro do presente ('entregarei'), sem palavra atrativa antes, permitindo o pronome no meio do verbo.",
+    ],
+  },
+  {
+    materia: "pt",
+    topico: "Redação oficial e correspondência administrativa (padrão culto, impessoalidade, concisão)",
+    origem: "aposta",
+    texto: `A redação oficial é o conjunto de normas que regem a elaboração de documentos administrativos — ofícios, memorandos, atas, relatórios, despachos — produzidos por órgãos públicos, e se orienta por princípios que a distinguem de outros gêneros textuais.
+
+A impessoalidade exige que o texto trate de assuntos de interesse público, sem marcas de opinião pessoal ou emotividade do redator, evitando a primeira pessoa do singular em favor da terceira pessoa ou da voz passiva. A clareza e a concisão exigem frases diretas, objetivas, sem prolixidade nem informação redundante, mas sem sacrificar a precisão terminológica. A formalidade e o padrão culto exigem o uso das normas gramaticais e de vocabulário técnico e polido, evitando gírias, coloquialismos e regionalismos. A uniformidade determina que os documentos sigam sempre o mesmo padrão de forma e estrutura, o que facilita a tramitação e o arquivamento.
+
+Para o cargo de perito ou investigador, essa competência tem aplicação prática direta: laudos periciais, boletins de ocorrência e relatórios de investigação precisam seguir esse mesmo padrão de objetividade e impessoalidade, tornando o tema diretamente ligado à rotina profissional do cargo — o que aumenta a chance de a banca cruzá-lo com um texto motivador de contexto policial.`,
+    exemplos: [
+      "'Este órgão vem informar que...' (redação oficial correta, impessoal) em vez de 'Eu quero informar que...' (marca indevida de primeira pessoa e informalidade).",
+      "Um relatório policial que descreve 'o veículo apresentava danos na lateral direita' (objetivo, impessoal) é mais adequado ao padrão de redação oficial do que 'o carro estava todo destruído, um verdadeiro desastre' (subjetivo, informal).",
+    ],
+  },
 ];

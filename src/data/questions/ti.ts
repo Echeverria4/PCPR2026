@@ -465,4 +465,184 @@ export const QUESTOES_TI: Question[] = [
       "Ao aplicar estilos de título (Título 1, Título 2 etc.) ao texto, o Word permite inserir um Sumário automático (aba Referências), que gera e atualiza a numeração e a lista de tópicos automaticamente conforme o documento é editado — diferentemente da numeração manual, que não se atualiza sozinha quando o conteúdo muda.",
     origem: "banco",
   },
+  {
+    id: "ti-029",
+    materia: "ti",
+    topico: "Golpes digitais recentes (phishing, engenharia social, golpe do Pix, deepfake em fraude)",
+    enunciado:
+      "Uma vítima recebe uma ligação em que a voz, muito semelhante à de um familiar, pede com urgência uma transferência via Pix, alegando estar em uma emergência. Posteriormente, verifica-se que a voz foi gerada artificialmente para simular a do familiar. Esse golpe caracteriza o uso de:",
+    alternativas: [
+      "Phishing tradicional por e-mail.",
+      "Deepfake de áudio (voz clonada por IA) associado a engenharia social.",
+      "Smishing, golpe realizado exclusivamente por SMS.",
+      "Ataque de força bruta a senhas bancárias.",
+      "Man-in-the-middle em rede Wi-Fi pública.",
+    ],
+    correta: 1,
+    explicacao:
+      "O caso descreve um deepfake de áudio: a voz do familiar é clonada por inteligência artificial para simular autenticidade, combinada com engenharia social (exploração da urgência e da confiança da vítima) para induzir a transferência via Pix. Não há e-mail (phishing tradicional) nem SMS (smishing) envolvidos, tampouco quebra de senha por tentativa e erro (força bruta) ou interceptação de tráfego de rede (man-in-the-middle).",
+    origem: "banco",
+  },
+  {
+    id: "ti-030",
+    materia: "ti",
+    topico: "Golpes digitais recentes (phishing, engenharia social, golpe do Pix, deepfake em fraude)",
+    enunciado:
+      "A técnica de manipulação psicológica que explora urgência, medo ou confiança da vítima, servindo de base conceitual para golpes como phishing, vishing e o golpe do WhatsApp clonado, é denominada:",
+    alternativas: [
+      "Engenharia reversa.",
+      "Engenharia social.",
+      "Criptoanálise.",
+      "Pentest (teste de invasão).",
+      "Sniffing de pacotes.",
+    ],
+    correta: 1,
+    explicacao:
+      "Engenharia social é a técnica-base de manipulação psicológica que explora emoções como urgência, medo ou confiança para induzir a vítima a agir contra seus próprios interesses (fornecer dados, fazer transferências), sustentando golpes como phishing, vishing e clonagem de WhatsApp. Engenharia reversa e criptoanálise são técnicas de análise de sistemas/códigos; pentest é teste autorizado de segurança; sniffing é interceptação técnica de pacotes de rede — nenhum desses é o conceito de manipulação psicológica descrito.",
+    origem: "banco",
+  },
+  {
+    id: "ti-031",
+    materia: "ti",
+    topico: "Inteligência artificial aplicada à investigação e riscos (viés algorítmico, deepfake como prova)",
+    enunciado:
+      "Um sistema de reconhecimento facial usado por uma corporação policial apresenta taxa de falsos positivos significativamente maior para determinado grupo demográfico do que para outros, em razão da composição dos dados usados em seu treinamento. Esse fenômeno é conhecido como:",
+    alternativas: [
+      "Overfitting do modelo.",
+      "Viés algorítmico.",
+      "Ataque adversarial.",
+      "Latência de processamento.",
+      "Criptografia assimétrica.",
+    ],
+    correta: 1,
+    explicacao:
+      "Viés algorítmico ocorre quando um sistema de IA reproduz ou amplifica preconceitos presentes nos dados usados em seu treinamento, gerando resultados desproporcionalmente incorretos (como falsos positivos) para determinados grupos — risco central no uso de reconhecimento facial em segurança pública. Overfitting é um problema técnico de generalização do modelo; ataque adversarial é manipulação proposital da entrada para enganar o modelo; latência e criptografia são conceitos de desempenho e segurança de dados, não relacionados ao viés descrito.",
+    origem: "banco",
+  },
+  {
+    id: "ti-032",
+    materia: "ti",
+    topico: "Inteligência artificial aplicada à investigação e riscos (viés algorítmico, deepfake como prova)",
+    enunciado:
+      "Diante da apresentação de um vídeo como prova em um inquérito, havendo suspeita de que o conteúdo tenha sido manipulado por inteligência artificial (deepfake), o procedimento tecnicamente correto é:",
+    alternativas: [
+      "Aceitar o vídeo automaticamente, pois toda gravação digital tem presunção de autenticidade.",
+      "Descartar o vídeo automaticamente, pois todo conteúdo digital é passível de manipulação.",
+      "Submeter o vídeo a perícia técnica especializada para atestar sua autenticidade antes de sua valoração como prova.",
+      "Substituir o vídeo por depoimento testemunhal, que tem valor probatório superior.",
+      "Publicar o vídeo em redes sociais para verificação coletiva por usuários.",
+    ],
+    correta: 2,
+    explicacao:
+      "A fragilidade de conteúdo digital potencialmente gerado ou manipulado por IA exige perícia técnica especializada, capaz de atestar (ou não) a autenticidade do material antes de sua valoração como prova em processo penal — não cabe presunção automática de autenticidade nem descarte automático, tampouco substituição por outro meio de prova sem análise técnica, ou verificação por terceiros fora da cadeia formal de perícia.",
+    origem: "banco",
+  },
+  {
+    id: "ti-033",
+    materia: "ti",
+    topico: "Computação em nuvem (IaaS, PaaS, SaaS) e armazenamento de evidências digitais",
+    enunciado:
+      "Um provedor de nuvem que entrega ao cliente apenas a infraestrutura virtual básica (servidores, armazenamento, rede), deixando a cargo do próprio cliente a instalação e o gerenciamento do sistema operacional e das aplicações, está oferecendo o modelo de serviço:",
+    alternativas: [
+      "SaaS (Software as a Service).",
+      "PaaS (Platform as a Service).",
+      "IaaS (Infrastructure as a Service).",
+      "DaaS (Desktop as a Service).",
+      "BaaS (Backend as a Service).",
+    ],
+    correta: 2,
+    explicacao:
+      "IaaS (Infrastructure as a Service) entrega apenas a infraestrutura virtual básica — servidores, armazenamento e rede —, cabendo ao cliente instalar e gerenciar o sistema operacional e as aplicações. PaaS já entrega uma plataforma pronta (sistema operacional e ferramentas), poupando esse gerenciamento; SaaS entrega o software pronto para uso final, sem qualquer gestão de infraestrutura ou plataforma pelo cliente.",
+    origem: "banco",
+  },
+  {
+    id: "ti-034",
+    materia: "ti",
+    topico: "Computação em nuvem (IaaS, PaaS, SaaS) e armazenamento de evidências digitais",
+    enunciado:
+      "Quando evidências digitais de um crime (e-mails, backups, mensagens) estão armazenadas em servidores de computação em nuvem, um desafio jurídico-técnico adicional em relação a dispositivos físicos apreendidos é:",
+    alternativas: [
+      "A impossibilidade técnica de qualquer acesso a dados hospedados remotamente.",
+      "A questão da jurisdição do provedor e a necessidade de ordem judicial específica para acesso a dados hospedados fora do dispositivo físico apreendido.",
+      "A ausência total de necessidade de cadeia de custódia para provas digitais em nuvem.",
+      "A obrigatoriedade de destruição dos dados após 24 horas da apreensão do dispositivo.",
+      "A exclusividade de acesso aos dados apenas pelo próprio usuário titular da conta.",
+    ],
+    correta: 1,
+    explicacao:
+      "Dados hospedados em nuvem levantam a questão da jurisdição do provedor (que pode estar sediado em outro país ou estado) e a necessidade de ordem judicial específica para autorizar o acesso a esses dados, distinta da simples apreensão física do dispositivo do investigado. A cadeia de custódia continua plenamente exigível para provas digitais em nuvem, o acesso remoto é tecnicamente possível mediante os procedimentos legais cabíveis, e não há regra de destruição automática de dados em 24 horas.",
+    origem: "banco",
+  },
+  {
+    id: "ti-035",
+    materia: "ti",
+    topico: "OSINT (investigação em fontes abertas) e coleta de evidência em redes sociais",
+    enunciado:
+      "A coleta e análise de informações disponíveis publicamente (redes sociais, registros públicos, metadados de imagens) para fins de investigação, sem necessidade de quebra de sigilo ou autorização judicial, é conhecida pela sigla:",
+    alternativas: [
+      "SIGINT (Signals Intelligence).",
+      "HUMINT (Human Intelligence).",
+      "OSINT (Open Source Intelligence).",
+      "GEOINT (Geospatial Intelligence).",
+      "IMINT (Imagery Intelligence).",
+    ],
+    correta: 2,
+    explicacao:
+      "OSINT (Open Source Intelligence) é a coleta e análise de informações disponíveis publicamente, sem necessidade de autorização judicial, já que os dados já são abertos ao público — usada na investigação policial para localizar suspeitos, mapear redes de relacionamento e verificar álibis. SIGINT refere-se à interceptação de sinais/comunicações, HUMINT à inteligência obtida por fontes humanas, GEOINT à análise de dados geoespaciais e IMINT à análise de imagens — categorias distintas de inteligência, não baseadas em fontes abertas.",
+    origem: "banco",
+  },
+  {
+    id: "ti-036",
+    materia: "ti",
+    topico: "OSINT (investigação em fontes abertas) e coleta de evidência em redes sociais",
+    enunciado:
+      "Ao coletar uma publicação em rede social como possível evidência em uma investigação, o cuidado técnico mais adequado para preservar sua integridade probatória, prevenindo alegação de que o conteúdo foi editado ou apagado, é:",
+    alternativas: [
+      "Memorizar o conteúdo e relatá-lo de próprio punho no relatório final.",
+      "Compartilhar a publicação na própria conta oficial do órgão investigativo.",
+      "Capturar o conteúdo por meio de captura de tela com metadados preservados, ata notarial ou ferramentas de hash que garantam integridade.",
+      "Aguardar que a própria plataforma social forneça, espontaneamente, uma cópia autenticada do conteúdo.",
+      "Solicitar à vítima que descreva verbalmente o que viu na publicação.",
+    ],
+    correta: 2,
+    explicacao:
+      "A preservação técnica adequada de conteúdo de redes sociais como evidência envolve captura de tela com metadados, ata notarial ou ferramentas de hash que atestem a integridade do arquivo capturado — já que publicações podem ser editadas ou apagadas a qualquer momento. Memorização e relato verbal não preservam o conteúdo original; compartilhar publicamente pode até prejudicar a investigação; e depender de fornecimento espontâneo pela plataforma não é procedimento técnico controlado pela própria investigação.",
+    origem: "banco",
+  },
+  {
+    id: "ti-037",
+    materia: "ti",
+    topico: "LGPD aplicada ao tratamento de dados em investigação criminal (bases legais, exceções de segurança pública)",
+    enunciado:
+      "Em relação à aplicação da Lei Geral de Proteção de Dados (Lei 13.709/2018) às atividades de investigação e repressão de infrações penais, é correto afirmar que:",
+    alternativas: [
+      "A LGPD se aplica integralmente a essas atividades, sem qualquer exceção.",
+      "A LGPD exclui expressamente de suas regras gerais o tratamento de dados para fins exclusivos de segurança pública e investigação penal, remetendo-o a legislação específica.",
+      "A LGPD proíbe totalmente o tratamento de dados pessoais por autoridades policiais, mesmo com autorização judicial.",
+      "A LGPD só se aplica a empresas privadas, nunca a órgãos públicos de qualquer natureza.",
+      "A LGPD substituiu integralmente o Código de Processo Penal nas questões de prova digital.",
+    ],
+    correta: 1,
+    explicacao:
+      "A LGPD prevê expressamente que suas regras gerais não se aplicam ao tratamento de dados pessoais realizado para fins exclusivos de segurança pública, defesa nacional, segurança do Estado ou investigação e repressão de infrações penais, remetendo essas atividades a legislação específica (ainda pendente de regulamentação mais detalhada) — o que não significa ausência total de limites, já que princípios como finalidade, necessidade e proporcionalidade continuam orientando a atuação estatal.",
+    origem: "banco",
+  },
+  {
+    id: "ti-038",
+    materia: "ti",
+    topico: "LGPD aplicada ao tratamento de dados em investigação criminal (bases legais, exceções de segurança pública)",
+    enunciado:
+      "Ainda que a LGPD exclua de suas regras gerais o tratamento de dados para fins de investigação penal, a atuação da autoridade policial nesse tratamento permanece limitada, entre outros, pelo princípio de que o dado só pode ser tratado:",
+    alternativas: [
+      "Por qualquer servidor público, independentemente de vínculo com a investigação.",
+      "De forma genérica e ilimitada, sempre que houver qualquer investigação em curso no órgão.",
+      "Por órgão específico, de forma proporcional e para finalidade determinada relacionada à investigação.",
+      "Apenas mediante pagamento de taxa ao titular dos dados.",
+      "Exclusivamente por ordem direta do Poder Legislativo.",
+    ],
+    correta: 2,
+    explicacao:
+      "Mesmo fora do alcance das regras gerais da LGPD, o tratamento de dados para fins de segurança pública e investigação penal deve ser realizado por órgão específico, de forma proporcional e nunca de modo genérico ou ilimitado — os princípios de finalidade, necessidade e proporcionalidade continuam orientando essa atuação estatal, equilibrando o direito à privacidade do investigado com a efetividade da persecução penal.",
+    origem: "banco",
+  },
 ];

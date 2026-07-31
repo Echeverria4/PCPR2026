@@ -222,4 +222,112 @@ export const QUESTOES_ADM: Question[] = [
       "Mesmo na responsabilidade objetiva, o dever de indenizar pode ser excluído quando se rompe o nexo causal entre a conduta estatal e o dano — como na culpa exclusiva da vítima (nesse caso o Estado nada deve, ou responde apenas proporcionalmente em caso de culpa concorrente) e na força maior (evento externo, imprevisível e inevitável). A ausência de dolo do agente é irrelevante, justamente por se tratar de responsabilidade objetiva.",
     origem: "banco",
   },
+  {
+    id: "adm-015",
+    materia: "adm",
+    topico: "Poderes administrativos (hierárquico, disciplinar, de polícia, regulamentar)",
+    enunciado:
+      "O poder administrativo que fundamenta a prerrogativa de restringir ou condicionar o uso de bens, direitos e atividades privadas em favor do interesse público, da segurança, da ordem e da saúde coletiva, sendo o mais diretamente relacionado à atividade policial fiscalizatória, é o poder:",
+    alternativas: [
+      "Hierárquico.",
+      "De polícia.",
+      "Disciplinar.",
+      "Regulamentar.",
+      "Discricionário, considerado autônomo dos demais.",
+    ],
+    correta: 1,
+    explicacao:
+      "O poder de polícia (art. 78 do CTN) é a prerrogativa de restringir ou condicionar o uso de bens, direitos e atividades privadas em favor do interesse público, da segurança, da ordem e da saúde coletiva — é o poder que mais interessa à atividade policial, pois fundamenta ações fiscalizatórias e restritivas do Estado, diferente do poder hierárquico (organização interna), disciplinar (apuração de infrações funcionais) e regulamentar (edição de decretos/regulamentos).",
+    origem: "banco",
+  },
+  {
+    id: "adm-016",
+    materia: "adm",
+    topico: "Poderes administrativos (hierárquico, disciplinar, de polícia, regulamentar)",
+    enunciado:
+      "O poder administrativo que permite à Administração organizar seus órgãos internamente em relação de subordinação, dando ordens, fiscalizando, delegando e avocando competências, é o poder:",
+    alternativas: [
+      "Regulamentar.",
+      "Hierárquico.",
+      "De polícia.",
+      "Disciplinar.",
+      "Vinculado, exercido sem qualquer margem de decisão.",
+    ],
+    correta: 1,
+    explicacao:
+      "O poder hierárquico organiza os órgãos internamente em relação de subordinação, permitindo dar ordens, fiscalizar, delegar e avocar competências — distinto do poder disciplinar (apuração de infrações e aplicação de sanções), do poder de polícia (restrição de atividades privadas) e do poder regulamentar (edição de atos gerais para dar fiel execução às leis).",
+    origem: "banco",
+  },
+  {
+    id: "adm-017",
+    materia: "adm",
+    topico: "Processo Administrativo Disciplinar (PAD) — fases e princípios",
+    enunciado:
+      "Assinale a alternativa que apresenta corretamente a sequência das fases clássicas do Processo Administrativo Disciplinar (PAD):",
+    alternativas: [
+      "Julgamento, instauração, instrução, defesa, relatório.",
+      "Instauração, instrução, defesa, relatório, julgamento.",
+      "Defesa, instrução, instauração, julgamento, relatório.",
+      "Relatório, defesa, instrução, instauração, julgamento.",
+      "Instrução, instauração, relatório, defesa, julgamento.",
+    ],
+    correta: 1,
+    explicacao:
+      "As fases clássicas do PAD são: instauração (portaria que designa comissão processante e delimita os fatos investigados), instrução (coleta de provas, oitiva de testemunhas, interrogatório do acusado), defesa (alegações finais do servidor), relatório (parecer conclusivo da comissão) e julgamento (decisão da autoridade competente) — alterar essa ordem viola o devido processo legal.",
+    origem: "banco",
+  },
+  {
+    id: "adm-018",
+    materia: "adm",
+    topico: "Processo Administrativo Disciplinar (PAD) — fases e princípios",
+    enunciado:
+      "O princípio do PAD segundo o qual a Administração deve buscar a realidade dos fatos, não se limitando ao que consta formalmente registrado nos autos, é o princípio da:",
+    alternativas: [
+      "Oficialidade.",
+      "Verdade material.",
+      "Legalidade estrita.",
+      "Presunção de veracidade dos atos administrativos.",
+      "Autotutela.",
+    ],
+    correta: 1,
+    explicacao:
+      "O princípio da verdade material determina que, no PAD, busca-se a realidade dos fatos, não apenas o que consta formalmente nos autos — permitindo à comissão processante produzir provas adicionais de ofício para esclarecer a verdade. A oficialidade, por sua vez, é o princípio pelo qual a Administração impulsiona o processo de ofício, sem depender de provocação do interessado.",
+    origem: "banco",
+  },
+  {
+    id: "adm-019",
+    materia: "adm",
+    topico: "Regime jurídico dos servidores públicos (estatutário x celetista) e vacância",
+    enunciado:
+      "O regime jurídico típico de servidores efetivos, incluindo policiais civis, de natureza institucional (e não contratual), unilateralmente alterável pelo poder público dentro dos limites constitucionais, e que garante estabilidade após cumprimento de estágio probatório, é o regime:",
+    alternativas: [
+      "Celetista, regido pela CLT.",
+      "Estatutário, disciplinado por lei específica.",
+      "Contratual temporário, de excepcional interesse público.",
+      "De emprego público, típico de empresas estatais.",
+      "Comissionado, de livre nomeação e exoneração.",
+    ],
+    correta: 1,
+    explicacao:
+      "O regime estatutário é disciplinado por lei específica (estatuto), de natureza institucional e não contratual, unilateralmente alterável pelo poder público dentro dos limites constitucionais — é o regime típico de servidores efetivos, incluindo policiais civis, garantindo estabilidade após cumprimento de estágio probatório. O regime celetista, por sua vez, é de natureza contratual, mais comum em empregos públicos de empresas estatais.",
+    origem: "banco",
+  },
+  {
+    id: "adm-020",
+    materia: "adm",
+    topico: "Regime jurídico dos servidores públicos (estatutário x celetista) e vacância",
+    enunciado:
+      "Sobre as formas de vacância de cargo público, é correto afirmar que a diferença essencial entre exoneração e demissão está em que:",
+    alternativas: [
+      "Exoneração e demissão são sinônimos, sem qualquer distinção jurídica relevante.",
+      "A exoneração ocorre a pedido ou de ofício, sem caráter punitivo, enquanto a demissão é penalidade disciplinar aplicada em razão de infração funcional.",
+      "A demissão é sempre reversível, e a exoneração é sempre definitiva.",
+      "Somente a exoneração pode ser aplicada a servidores estáveis.",
+      "A demissão independe de processo administrativo disciplinar prévio.",
+    ],
+    correta: 1,
+    explicacao:
+      "A exoneração ocorre a pedido do próprio servidor ou de ofício pela Administração, sem caráter punitivo (por exemplo, ao final do estágio probatório mal avaliado, ou por conveniência da Administração em cargo em comissão), enquanto a demissão é penalidade disciplinar aplicada em razão de infração funcional apurada em processo administrativo disciplinar, com contraditório e ampla defesa — distinguir as duas é um dos pontos mais cobrados sobre o tema.",
+    origem: "banco",
+  },
 ];

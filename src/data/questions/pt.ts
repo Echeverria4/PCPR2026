@@ -457,4 +457,183 @@ export const QUESTOES_PT: Question[] = [
       "\"Onde\" deve ser empregado exclusivamente para retomar um antecedente que indique lugar físico (\"a delegacia onde...\"). Para retomar circunstâncias, situações ou motivos abstratos, usa-se \"em que\"/\"no qual\" e variações. O pronome relativo \"cujo\" (e flexões cujo/cuja/cujos/cujas) estabelece relação de posse, concorda em gênero e número com o substantivo que o segue (não com o antecedente) e NUNCA é seguido de artigo definido nem de outro possessivo.",
     origem: "banco",
   },
+  {
+    id: "pt-027",
+    materia: "pt",
+    topico: "Figuras de linguagem (metáfora, metonímia, ironia, eufemismo, hipérbole)",
+    enunciado:
+      "\"O delegado, com décadas de experiência, era uma raposa velha nos interrogatórios.\" A figura de linguagem predominante no trecho é:",
+    alternativas: [
+      "Metonímia, pois substitui o delegado por outro termo de sentido próximo.",
+      "Metáfora, pois compara implicitamente o delegado a uma raposa, sem conectivo comparativo.",
+      "Eufemismo, pois suaviza uma característica negativa do delegado.",
+      "Ironia, pois afirma o oposto do que se quer comunicar.",
+      "Hipérbole, pois exagera propositalmente uma qualidade do delegado.",
+    ],
+    correta: 1,
+    explicacao:
+      "Trata-se de metáfora: o delegado é diretamente identificado como \"uma raposa velha\" (astuta, experiente), sem o uso de conectivo comparativo como \"como\" — se houvesse \"como uma raposa\", seria comparação/símile, figura distinta da metáfora. Não há substituição por proximidade lógica (metonímia), suavização de algo negativo (eufemismo), inversão de sentido (ironia) nem exagero numérico ou de intensidade (hipérbole).",
+    origem: "banco",
+  },
+  {
+    id: "pt-028",
+    materia: "pt",
+    topico: "Figuras de linguagem (metáfora, metonímia, ironia, eufemismo, hipérbole)",
+    enunciado:
+      "\"O bairro inteiro compareceu ao velório para prestar as últimas homenagens ao policial que partiu.\" A expressão sublinhada é exemplo de:",
+    alternativas: [
+      "Metáfora, por comparar implicitamente a morte a uma viagem.",
+      "Hipérbole, por exagerar o número de pessoas presentes no velório.",
+      "Eufemismo, por suavizar a menção direta à morte do policial.",
+      "Metonímia, por usar o continente (bairro) pelo conteúdo (moradores).",
+      "Catacrese, por empregar um termo por falta de outro mais específico.",
+    ],
+    correta: 2,
+    explicacao:
+      "\"Partiu\" é eufemismo: suaviza a menção direta e crua à morte (\"morreu\"), amenizando o impacto emocional da informação — recurso comum em textos que tratam de temas sensíveis como óbito. Não há comparação implícita (metáfora), exagero de quantidade (hipérbole) nem substituição do todo pela parte ou de continente por conteúdo (metonímia) na expressão destacada.",
+    origem: "banco",
+  },
+  {
+    id: "pt-029",
+    materia: "pt",
+    topico: "Funções da linguagem (referencial, emotiva, conativa, poética, fática, metalinguística)",
+    enunciado:
+      "\"Denuncie já! Sua ligação pode salvar uma vida.\" A função da linguagem predominante nesse texto publicitário é:",
+    alternativas: [
+      "Referencial, por priorizar informações objetivas sobre o contexto.",
+      "Emotiva, por expressar os sentimentos do emissor em primeira pessoa.",
+      "Fática, por testar se o canal de comunicação está aberto.",
+      "Conativa, por usar o imperativo para persuadir o receptor a agir.",
+      "Metalinguística, por explicar o funcionamento da própria linguagem.",
+    ],
+    correta: 3,
+    explicacao:
+      "A função conativa (ou apelativa) centra-se no receptor, buscando persuadi-lo a uma ação — marca típica é o uso do modo imperativo (\"Denuncie já!\"), como ocorre no trecho. Não há prioridade em informar objetivamente um fato (referencial), expressão de sentimento do emissor (emotiva), teste do canal de comunicação (fática) nem explicação sobre a própria linguagem (metalinguística).",
+    origem: "banco",
+  },
+  {
+    id: "pt-030",
+    materia: "pt",
+    topico: "Funções da linguagem (referencial, emotiva, conativa, poética, fática, metalinguística)",
+    enunciado:
+      "Em um dicionário, a entrada \"inquérito: procedimento administrativo de investigação preliminar conduzido pela autoridade policial\" exemplifica predominantemente a função da linguagem:",
+    alternativas: [
+      "Poética, por explorar a forma da mensagem como recurso estético.",
+      "Metalinguística, por usar a linguagem para definir/explicar a própria linguagem.",
+      "Emotiva, por expressar a opinião pessoal de quem escreveu a definição.",
+      "Fática, por manter aberto o canal entre emissor e receptor.",
+      "Conativa, por buscar convencer o leitor a adotar determinada conduta.",
+    ],
+    correta: 1,
+    explicacao:
+      "A função metalinguística ocorre quando a linguagem é usada para explicar ou definir a própria linguagem — é exatamente o que faz uma entrada de dicionário, que usa palavras para definir o significado de outra palavra (\"inquérito\"). Não há exploração estética da forma (poética), expressão de sentimento (emotiva), teste do canal (fática) nem apelo para uma ação do leitor (conativa).",
+    origem: "banco",
+  },
+  {
+    id: "pt-031",
+    materia: "pt",
+    topico: "Vícios de linguagem (ambiguidade involuntária, cacofonia, pleonasmo vicioso, solecismo)",
+    enunciado:
+      "\"O escrivão entregou o laudo para o perito depois de encontrá-lo na sala de evidências.\" O vício de linguagem presente na frase é:",
+    alternativas: [
+      "Cacofonia, pela junção sonora desagradável entre duas palavras.",
+      "Pleonasmo vicioso, pela repetição desnecessária de uma ideia.",
+      "Solecismo, por erro de concordância verbal.",
+      "Ambiguidade involuntária, pois não fica claro se \"encontrá-lo\" refere-se ao laudo ou ao perito.",
+      "Barbarismo, pelo emprego de uma palavra fora da norma culta.",
+    ],
+    correta: 3,
+    explicacao:
+      "A frase é ambígua de forma não intencional: o pronome \"o\" em \"encontrá-lo\" pode retomar tanto \"o laudo\" quanto \"o perito\", sem que o contexto resolva com clareza qual foi encontrado na sala de evidências — diferente da ambiguidade proposital, usada como recurso estético em textos literários ou publicitários. Não há som desagradável na junção de palavras (cacofonia), repetição de ideia (pleonasmo vicioso) nem erro de concordância (solecismo).",
+    origem: "banco",
+  },
+  {
+    id: "pt-032",
+    materia: "pt",
+    topico: "Vícios de linguagem (ambiguidade involuntária, cacofonia, pleonasmo vicioso, solecismo)",
+    enunciado:
+      "\"Fizemos um breve resumo e um elo de ligação entre os depoimentos das testemunhas.\" O vício de linguagem presente é:",
+    alternativas: [
+      "Solecismo, por erro de regência verbal.",
+      "Cacofonia, pela junção sonora indesejada de duas palavras.",
+      "Pleonasmo vicioso, pela repetição de ideias já implícitas nos termos \"breve\" (que já indica resumo) e \"elo\" (que já indica ligação).",
+      "Ambiguidade involuntária, por admitir mais de uma leitura possível.",
+      "Neologismo, pela criação de uma palavra inexistente na língua.",
+    ],
+    correta: 2,
+    explicacao:
+      "Há pleonasmo vicioso em \"breve resumo\" (resumo já pressupõe brevidade/síntese) e em \"elo de ligação\" (elo já significa ligação), repetições desnecessárias que não acrescentam sentido — diferente do pleonasmo estilístico, usado propositalmente para dar ênfase em textos literários. Não há erro de regência ou concordância (solecismo), som desagradável (cacofonia), duplo sentido (ambiguidade) nem palavra inexistente (neologismo).",
+    origem: "banco",
+  },
+  {
+    id: "pt-033",
+    materia: "pt",
+    topico: "Colocação pronominal (próclise, mesóclise, ênclise)",
+    enunciado: "Assinale a alternativa em que a colocação pronominal está de acordo com a norma-padrão.",
+    alternativas: [
+      "Entregar-lhe-ei o relatório assim que possível.",
+      "Nunca lhe entreguei o documento solicitado.",
+      "Me entregue o relatório imediatamente.",
+      "O delegado entregou-lhe o mandado, e o agente cumpriu-o.",
+      "As duas primeiras alternativas estão corretas.",
+    ],
+    correta: 4,
+    explicacao:
+      "Estão corretas: \"Entregar-lhe-ei\" emprega mesóclise, exigida com verbo no futuro do presente sem palavra atrativa antes dele; e \"Nunca lhe entreguei\" emprega próclise, exigida após advérbio de sentido negativo (\"nunca\"), palavra atrativa. Já \"Me entregue\" fere a norma culta ao iniciar frase com pronome oblíquo átono em ênclise disfarçada de próclise; a última alternativa (\"cumpriu-o\") está correta isoladamente, mas a opção que reúne as duas primeiras é a mais completa e também correta.",
+    origem: "banco",
+  },
+  {
+    id: "pt-034",
+    materia: "pt",
+    topico: "Colocação pronominal (próclise, mesóclise, ênclise)",
+    enunciado:
+      "Assinale a alternativa em que a colocação pronominal DESRESPEITA a norma-padrão.",
+    alternativas: [
+      "Quem o solicitou foi o próprio delegado.",
+      "Comunicar-vos-ei o resultado assim que o laudo for concluído.",
+      "Me chame assim que o laudo estiver pronto.",
+      "Entregar-lhe-ei o mandado pessoalmente.",
+      "Devolveu-se o objeto apreendido à vítima após a perícia.",
+    ],
+    correta: 2,
+    explicacao:
+      "\"Me chame assim que o laudo estiver pronto\" fere a norma-padrão por iniciar o período com pronome oblíquo átono em próclise sem que haja, antes do verbo, qualquer palavra atrativa (advérbio, pronome relativo/indefinido, conjunção subordinativa ou negação) — a norma culta rejeita começar frase com pronome átono; o correto seria a ênclise \"Chame-me\". Nas demais alternativas a colocação está correta: próclise após pronome relativo (\"quem o solicitou\"), mesóclise em verbo no futuro do presente sem palavra atrativa (\"Comunicar-vos-ei\", \"Entregar-lhe-ei\") e ênclise em início de oração afirmativa (\"Devolveu-se\").",
+    origem: "banco",
+  },
+  {
+    id: "pt-035",
+    materia: "pt",
+    topico: "Redação oficial e correspondência administrativa (padrão culto, impessoalidade, concisão)",
+    enunciado:
+      "Em conformidade com os princípios da redação oficial, é INCORRETO afirmar que o texto administrativo deve:",
+    alternativas: [
+      "Ser redigido com impessoalidade, evitando marcas de opinião pessoal do redator.",
+      "Seguir o padrão culto da língua, com vocabulário técnico e formal.",
+      "Priorizar a clareza e a concisão, evitando rodeios desnecessários.",
+      "Adotar linguagem rebuscada e prolixa, valorizando períodos longos como sinal de formalidade.",
+      "Manter uniformidade de estrutura entre documentos do mesmo tipo.",
+    ],
+    correta: 3,
+    explicacao:
+      "É justamente o oposto do que a redação oficial recomenda: prolixidade e rebuscamento desnecessário contrariam o princípio da clareza e concisão, que exige transmitir a informação de forma direta, com o menor número de palavras que preserve o sentido completo — formalidade não se confunde com period longos ou vocabulário difícil por si só. As demais alternativas descrevem corretamente princípios da redação oficial: impessoalidade, padrão culto e uniformidade.",
+    origem: "banco",
+  },
+  {
+    id: "pt-036",
+    materia: "pt",
+    topico: "Redação oficial e correspondência administrativa (padrão culto, impessoalidade, concisão)",
+    enunciado:
+      "Um agente policial precisa redigir um documento relatando, de forma descritiva e impessoal, os fatos apurados durante uma diligência. O expediente de redação oficial mais adequado a essa finalidade é:",
+    alternativas: [
+      "O ofício, por se tratar de comunicação externa entre órgãos distintos.",
+      "O memorando, por se tratar de comunicação interna ágil entre setores.",
+      "O relatório, por se tratar de exposição descritiva e detalhada de fatos apurados.",
+      "A ata, por se tratar de registro de reunião com pauta e deliberações.",
+      "A circular, por se tratar de comunicação padronizada a múltiplos destinatários.",
+    ],
+    correta: 2,
+    explicacao:
+      "O relatório é o expediente próprio para expor, de forma descritiva, impessoal e detalhada, fatos apurados — é o formato usado, por exemplo, em boletins de ocorrência e relatórios de diligência policial. O ofício destina-se à comunicação externa entre órgãos; o memorando, à comunicação interna ágil; a ata, ao registro formal de reunião; e a circular, à comunicação padronizada dirigida a múltiplos destinatários simultaneamente — nenhum desses é o formato voltado à exposição detalhada de fatos apurados em diligência.",
+    origem: "banco",
+  },
 ];

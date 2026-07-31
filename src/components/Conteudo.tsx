@@ -41,6 +41,34 @@ export default function Conteudo() {
 
   const subject = SUBJECTS.find((s) => s.id === materiaSelecionada)!;
   const topicos = CONTEUDO_POR_MATERIA[materiaSelecionada] ?? [];
+  const oficiais = topicos.filter((t) => t.origem !== "aposta");
+  const apostas = topicos.filter((t) => t.origem === "aposta");
+
+  function renderCard(t: (typeof topicos)[number], i: number) {
+    return (
+      <article key={i} className="conteudo-card">
+        <h3 className="conteudo-topico-titulo">{t.topico}</h3>
+        <p className="conteudo-texto">{t.texto}</p>
+
+        {t.exemplos && (
+          <div className="conteudo-exemplos">
+            <h4>Exemplos</h4>
+            <ol>
+              {t.exemplos.map((ex, j) => (
+                <li key={j}>{ex}</li>
+              ))}
+            </ol>
+          </div>
+        )}
+
+        {t.curiosidade && (
+          <div className="conteudo-curiosidade">
+            <strong>Curiosidade:</strong> {t.curiosidade}
+          </div>
+        )}
+      </article>
+    );
+  }
 
   return (
     <>
@@ -57,31 +85,23 @@ export default function Conteudo() {
       {topicos.length === 0 ? (
         <div className="vazio">Conteúdo desta matéria ainda em preparação.</div>
       ) : (
-        <div className="conteudo-lista">
-          {topicos.map((t, i) => (
-            <article key={i} className="conteudo-card">
-              <h3 className="conteudo-topico-titulo">{t.topico}</h3>
-              <p className="conteudo-texto">{t.texto}</p>
-
-              {t.exemplos && (
-                <div className="conteudo-exemplos">
-                  <h4>Exemplos</h4>
-                  <ol>
-                    {t.exemplos.map((ex, j) => (
-                      <li key={j}>{ex}</li>
-                    ))}
-                  </ol>
-                </div>
+        <>
+          {oficiais.length > 0 && (
+            <>
+              {apostas.length > 0 && (
+                <h3 className="aposta-subtitulo">📖 Tópicos oficiais ({oficiais.length})</h3>
               )}
+              <div className="conteudo-lista">{oficiais.map((t, i) => renderCard(t, i))}</div>
+            </>
+          )}
 
-              {t.curiosidade && (
-                <div className="conteudo-curiosidade">
-                  <strong>Curiosidade:</strong> {t.curiosidade}
-                </div>
-              )}
-            </article>
-          ))}
-        </div>
+          {apostas.length > 0 && (
+            <>
+              <h3 className="aposta-subtitulo">🎯 Apostas ({apostas.length})</h3>
+              <div className="conteudo-lista">{apostas.map((t, i) => renderCard(t, i))}</div>
+            </>
+          )}
+        </>
       )}
     </>
   );

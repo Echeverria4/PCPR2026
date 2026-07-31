@@ -60,4 +60,34 @@ export const CONTEUDO_LEG: ConteudoTopico[] = [
       "Um cidadão solicita, sem apresentar qualquer justificativa, acesso a dados sobre gastos públicos de uma secretaria estadual. O órgão não pode exigir motivação do pedido e deve responder em até 20 dias, prorrogáveis por mais 10, nos termos da Lei de Acesso à Informação.",
     ],
   },
+  {
+    materia: "leg",
+    topico: "Estrutura organizacional da PCPR (delegacias, carreiras, hierarquia)",
+    origem: "aposta",
+    texto: `A Polícia Civil do Paraná organiza-se territorialmente e por especialização de matéria. Territorialmente, existem as delegacias distritais/circunscricionais, responsáveis pela apuração de infrações penais ocorridas em uma área geográfica delimitada (bairro, município ou conjunto de municípios), atendendo à demanda geral de ocorrências daquela região. Paralelamente, existem as delegacias especializadas, organizadas por natureza do crime investigado, e não por território, como as delegacias de homicídios, de crimes contra a criança e o adolescente, de repressão a entorpecentes, de crimes cibernéticos e de proteção à mulher (DEAM) — concentrando expertise técnica em tipos específicos de investigação que exigem conhecimento mais aprofundado do que a rotina genérica de uma delegacia distrital comporta. No topo da estrutura de comando está o Delegado-Geral da Polícia Civil, com o apoio de órgãos de cúpula como o Conselho Superior de Polícia. Quanto às carreiras, o Quadro Próprio da Polícia Civil (QPPC) organiza-se, pela LC 259/2023, em Delegado de Polícia (chefia da unidade policial, direção do inquérito), Agente de Polícia Judiciária (execução de diligências investigativas, cumprimento de mandados, apoio direto ao inquérito) e Papiloscopista Policial (identificação datiloscópica) — cada carreira com atribuições distintas, mas articuladas em torno do mesmo objetivo institucional de apuração de infrações penais.`,
+    exemplos: [
+      "Um caso de estupro de vulnerável ocorrido em determinado bairro não é necessariamente investigado pela delegacia distrital daquele bairro: por envolver crime contra criança e adolescente, tende a ser encaminhado à delegacia especializada correspondente, que concentra expertise técnica específica nesse tipo de investigação.",
+      "Dentro de uma mesma delegacia, o Delegado de Polícia preside o inquérito e define as linhas de investigação, enquanto o Agente de Polícia Judiciária executa diligências práticas determinadas por ele, como oitivas, diligências de campo e cumprimento de mandados — divisão de atribuições típica da hierarquia funcional entre as duas carreiras.",
+    ],
+  },
+  {
+    materia: "leg",
+    topico: "Regime disciplinar e deveres/proibições do servidor (Lei Estadual 6.174/1970)",
+    origem: "aposta",
+    texto: `A Lei Estadual nº 6.174/1970 é o Estatuto dos Funcionários Civis do Paraná, norma geral aplicável aos servidores públicos estaduais, incluindo os policiais civis no que não for disciplinado de forma específica pela legislação orgânica e pela LC 259/2023. O regime disciplinar previsto no estatuto estrutura-se em torno de deveres funcionais (como assiduidade, zelo, urbanidade e obediência às ordens legais superiores) e proibições (como valer-se do cargo para obter proveito pessoal, ausentar-se do serviço sem autorização, ou receber propina). O descumprimento desses deveres ou a incidência em condutas proibidas sujeita o servidor a um processo administrativo disciplinar (PAD), instaurado para apurar a infração com observância do contraditório e da ampla defesa, podendo resultar em penalidades graduadas conforme a gravidade da conduta: advertência (verbal ou escrita, para faltas leves), suspensão (afastamento temporário, com perda de vencimentos, para faltas de gravidade intermediária) e demissão (a penalidade mais grave, reservada a infrações que tornem incompatível a permanência do servidor no serviço público, como improbidade ou abandono de cargo). A gradação da pena deve observar critérios de proporcionalidade, considerando a natureza e a gravidade da infração, os danos causados ao serviço público e os antecedentes funcionais do servidor.`,
+    exemplos: [
+      "Um servidor que se atrasa reiteradamente sem justificativa pode ser advertido inicialmente; se a conduta persistir ou se agravar, pode ser aplicada suspensão, com perda de vencimentos pelo período do afastamento — a penalidade avança conforme a reincidência e a gravidade.",
+      "Um servidor flagrado exigindo vantagem indevida para não lavrar um auto de infração comete conduta gravíssima, incompatível com a permanência no serviço público, sujeitando-se, após regular PAD com contraditório e ampla defesa, à pena de demissão.",
+    ],
+  },
+  {
+    materia: "leg",
+    topico: "Alterações legislativas de 2025/2026 na estrutura da Polícia Civil do PR",
+    origem: "aposta",
+    texto: `Concursos com edital publicado próximo à vigência de normas recém-editadas tendem a explorar justamente essas mudanças recentes, por dois motivos: são menos conhecidas pelos candidatos que estudam por materiais de anos anteriores, e costumam refletir a preocupação mais atual da própria instituição organizadora. No caso do concurso da PCPR, a própria Lei Orgânica (Lei Estadual nº 23.213/2026), promulgada no ano do certame, e eventuais atualizações supervenientes à LC 259/2023 (regime jurídico do QPPC) são os candidatos naturais a esse tipo de cobrança, já que tratam diretamente da estrutura, das atribuições e do regime funcional da própria carreira para a qual o candidato está prestando concurso. Resoluções do Conselho Superior de Polícia (CSP) editadas no período que antecede a prova, especialmente as que tratam de procedimentos do próprio concurso (como critérios de heteroidentificação, cronograma ou normas de convocação), também costumam ser monitoradas de perto pela organização do certame e podem aparecer em questões de atualidades institucionais. A recomendação prática é acompanhar o Diário Oficial do Estado do Paraná e os canais oficiais da Polícia Civil e da banca organizadora nas semanas finais antes da prova, revisando especificamente o que foi publicado ou alterado desde o lançamento do edital, sem depender exclusivamente de materiais de estudo produzidos antes dessas mudanças.`,
+    exemplos: [
+      "Uma resolução do CSP publicada poucos meses antes da prova, alterando um procedimento interno de tramitação de inquéritos, tem maior chance de ser cobrada do que um dispositivo antigo e já amplamente conhecido do estatuto de 1970, justamente por sua novidade e relevância imediata para a instituição.",
+      "Um candidato que revisa o Diário Oficial do Estado nas semanas finais antes da prova identifica uma atualização recente na Lei Orgânica da PCPR sobre a estrutura de uma delegacia especializada — informação que um material de estudo elaborado antes da publicação da lei não conseguiria conter.",
+    ],
+  },
 ];

@@ -219,4 +219,106 @@ export const QUESTOES_RLM: Question[] = [
       "A conjunção (p ∧ q) só é verdadeira quando ambos os termos, p e q, são simultaneamente verdadeiros; basta que um deles seja falso para que toda a conjunção seja falsa — o oposto do comportamento da disjunção inclusiva (p ∨ q).",
     origem: "banco",
   },
+  {
+    id: "rlm-015",
+    materia: "rlm",
+    topico: "Sequências lógicas e sequências numéricas",
+    enunciado:
+      "Na sequência numérica 3, 6, 12, 24, 48, ..., o próximo termo é obtido pela regra de formação:",
+    alternativas: [
+      "Somar 6 ao termo anterior.",
+      "Multiplicar o termo anterior por 2 (progressão geométrica de razão 2).",
+      "Somar os dois termos anteriores (padrão de Fibonacci).",
+      "Subtrair 3 do termo anterior.",
+      "Elevar o termo anterior ao quadrado.",
+    ],
+    correta: 1,
+    explicacao:
+      "A sequência 3, 6, 12, 24, 48 segue uma progressão geométrica de razão 2: cada termo é o dobro do anterior (3×2=6, 6×2=12, 12×2=24, 24×2=48), portanto o próximo termo seria 96. A estratégia de calcular a razão entre termos consecutivos (em vez da diferença) é o que revela padrões multiplicativos como este.",
+    origem: "banco",
+  },
+  {
+    id: "rlm-016",
+    materia: "rlm",
+    topico: "Sequências lógicas e sequências numéricas",
+    enunciado:
+      "Na sequência de letras A, C, F, J, O, ..., usando a posição de cada letra no alfabeto como chave numérica (A=1, C=3, F=6, J=10, O=15), o padrão de formação identificado é:",
+    alternativas: [
+      "Soma-se sempre 2 posições no alfabeto a cada termo.",
+      "As diferenças entre as posições aumentam progressivamente: +2, +3, +4, +5, seguindo esse mesmo incremento até o próximo termo.",
+      "Multiplica-se a posição anterior por 2 a cada termo.",
+      "A sequência é aleatória, sem padrão identificável.",
+      "Subtrai-se 1 posição a cada termo, com sinal alternado.",
+    ],
+    correta: 1,
+    explicacao:
+      "Convertendo as letras em posições alfabéticas (A=1, C=3, F=6, J=10, O=15), as diferenças entre termos consecutivos são +2, +3, +4, +5 — um incremento progressivo. Seguindo o padrão, o próximo salto seria +6, levando à posição 21, que corresponde à letra U — a técnica de calcular as diferenças entre termos consecutivos antes de buscar padrões mais complexos é o que revela essa regra.",
+    origem: "banco",
+  },
+  {
+    id: "rlm-017",
+    materia: "rlm",
+    topico: "Princípios de contagem: arranjo, combinação e permutação simples",
+    enunciado:
+      "Uma comissão de 3 pessoas deve ser formada a partir de um grupo de 10 candidatos, sem distinção de função entre os membros escolhidos (a ordem de escolha não altera o grupo final). O princípio de contagem adequado para calcular o número de comissões possíveis é:",
+    alternativas: [
+      "Permutação simples, pois todos os elementos disponíveis entram no agrupamento.",
+      "Combinação, pois apenas parte dos elementos é escolhida e a ordem não importa.",
+      "Arranjo, pois apenas parte dos elementos é escolhida e a ordem importa.",
+      "Princípio multiplicativo aplicado sem qualquer fórmula específica de contagem.",
+      "Progressão aritmética, já que o número de candidatos é fixo.",
+    ],
+    correta: 1,
+    explicacao:
+      "Como apenas parte dos 10 candidatos é escolhida (3 pessoas) e a ordem de escolha não altera o grupo final (a comissão é a mesma independentemente da ordem em que os membros foram selecionados), o princípio de contagem correto é a combinação — diferente do arranjo, que se aplica quando a ordem importa (ex.: definir cargos distintos dentro da comissão).",
+    origem: "banco",
+  },
+  {
+    id: "rlm-018",
+    materia: "rlm",
+    topico: "Princípios de contagem: arranjo, combinação e permutação simples",
+    enunciado:
+      "De quantas formas 5 corredores podem ser posicionados em 5 raias distintas de uma pista, considerando que cada raia é única e todos os corredores participam da corrida? O princípio de contagem aplicável é:",
+    alternativas: [
+      "Combinação, pois a ordem entre os corredores não importa.",
+      "Permutação simples, pois todos os elementos disponíveis entram no agrupamento e a ordem (raia) importa.",
+      "Arranjo, pois apenas parte dos corredores participa.",
+      "Princípio aditivo, somando o número de raias ao número de corredores.",
+      "Combinação com repetição, pois um corredor pode ocupar mais de uma raia.",
+    ],
+    correta: 1,
+    explicacao:
+      "Como todos os 5 corredores disponíveis entram no agrupamento (nenhum fica de fora) e a ordem (qual raia cada um ocupa) importa e gera resultados distintos, o princípio de contagem correto é a permutação simples (5! = 120 formas possíveis) — diferente da combinação, que seria usada se a ordem não importasse.",
+    origem: "banco",
+  },
+  {
+    id: "rlm-019",
+    materia: "rlm",
+    topico: "Diagramas lógicos (conjuntos, Venn) aplicados a problemas com dados do enunciado",
+    enunciado:
+      "Ao construir um diagrama de Venn para organizar dados de uma pesquisa com dois conjuntos que se sobrepõem, a técnica mais segura de preenchimento é:",
+    alternativas: [
+      "Preencher primeiro as regiões exclusivas de cada conjunto, e só depois a interseção.",
+      "Preencher de dentro para fora: primeiro a interseção dos conjuntos (o núcleo central), depois as regiões exclusivas, subtraindo o que já foi alocado no centro.",
+      "Preencher em qualquer ordem, pois o resultado final independe da sequência adotada.",
+      "Preencher apenas o total da união, sem detalhar as regiões internas.",
+      "Preencher primeiro o total geral da pesquisa, ignorando as interseções.",
+    ],
+    correta: 1,
+    explicacao:
+      "A técnica mais segura é sempre preencher o diagrama de dentro para fora: primeiro a interseção de todos os conjuntos (o núcleo central), depois as interseções de dois em dois subtraindo o que já foi preenchido no centro, e só por último as regiões exclusivas de cada conjunto, subtraindo tudo que já foi alocado — inverter essa ordem costuma levar a contagens duplicadas ou incompletas.",
+    origem: "banco",
+  },
+  {
+    id: "rlm-020",
+    materia: "rlm",
+    topico: "Diagramas lógicos (conjuntos, Venn) aplicados a problemas com dados do enunciado",
+    enunciado:
+      "Em uma pesquisa com 100 pessoas, 60 leem o jornal A, 45 leem o jornal B, e 25 leem ambos os jornais. Usando a fórmula da união de dois conjuntos, o número de pessoas que leem pelo menos um dos jornais é:",
+    alternativas: ["105", "80", "70", "85", "95"],
+    correta: 1,
+    explicacao:
+      "Pela fórmula n(A∪B) = n(A) + n(B) − n(A∩B): 60 + 45 − 25 = 80 pessoas leem pelo menos um dos jornais. A subtração da interseção evita a contagem duplicada das 25 pessoas que leem ambos os jornais, que de outra forma seriam somadas duas vezes.",
+    origem: "banco",
+  },
 ];

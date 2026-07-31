@@ -202,4 +202,70 @@ export const QUESTOES_EST: Question[] = [
       "População é o conjunto completo de elementos de interesse do estudo; amostra é um subconjunto dela, selecionado (idealmente de forma aleatória e representativa) para permitir inferências estatísticas sobre a população total sem a necessidade de examinar cada elemento individualmente.",
     origem: "banco",
   },
+  {
+    id: "est-015",
+    materia: "est",
+    topico: "Correlação e regressão linear simples (noções)",
+    enunciado:
+      "O coeficiente de correlação de Pearson (r), que varia de -1 a +1, quando apresenta valor próximo de -1, indica que:",
+    alternativas: [
+      "Não há relação linear entre as duas variáveis.",
+      "Há correlação negativa forte: quando uma variável aumenta, a outra tende a diminuir.",
+      "Há correlação positiva forte: quando uma variável aumenta, a outra também aumenta.",
+      "As duas variáveis são idênticas.",
+      "A relação entre as variáveis é necessariamente de causalidade.",
+    ],
+    correta: 1,
+    explicacao:
+      "Valores de r próximos de -1 indicam correlação negativa forte: quando uma variável aumenta, a outra tende a diminuir. Valores próximos de +1 indicam correlação positiva forte, e valores próximos de 0 indicam ausência de relação linear. Correlação, seja positiva ou negativa, nunca implica causalidade por si só.",
+    origem: "banco",
+  },
+  {
+    id: "est-016",
+    materia: "est",
+    topico: "Correlação e regressão linear simples (noções)",
+    enunciado:
+      "Um estudo observou que, em determinado município, o número de sorveterias e o número de afogamentos aumentam juntos durante o verão, apresentando alta correlação positiva. A interpretação estatisticamente correta desse achado é que:",
+    alternativas: [
+      "As sorveterias necessariamente causam os afogamentos, devendo ser fiscalizadas.",
+      "Correlação não implica causalidade — o aumento de ambas as variáveis provavelmente decorre de um terceiro fator comum, como a maior frequência a praias/piscinas no calor.",
+      "Os afogamentos necessariamente causam o aumento no consumo de sorvete.",
+      "A correlação apresentada invalida qualquer análise estatística posterior sobre o tema.",
+      "Esse tipo de correlação só pode ser medido pela regressão linear múltipla, nunca pelo coeficiente de Pearson.",
+    ],
+    correta: 1,
+    explicacao:
+      "É fundamental lembrar que correlação não implica causalidade — duas variáveis podem se mover juntas por coincidência ou por um terceiro fator comum (nesse caso, o calor do verão, que aumenta tanto o consumo de sorvete quanto a frequência a locais com risco de afogamento), sem que uma cause diretamente a outra.",
+    origem: "banco",
+  },
+  {
+    id: "est-017",
+    materia: "est",
+    topico: "Distribuição normal — noções e leitura de gráfico",
+    enunciado:
+      "Na distribuição normal, representada pela clássica curva em forma de sino simétrica em torno da média, é correto afirmar que:",
+    alternativas: [
+      "Média, mediana e moda coincidem no centro da curva.",
+      "A média é sempre maior que a mediana e a moda.",
+      "A curva é sempre assimétrica à direita.",
+      "O desvio-padrão não tem qualquer relação com a dispersão dos dados nessa distribuição.",
+      "A moda está sempre nas extremidades da curva, nunca no centro.",
+    ],
+    correta: 0,
+    explicacao:
+      "Na distribuição normal, média, mediana e moda coincidem no centro da curva, que é simétrica em torno desse valor central — quando essas três medidas se distanciam, isso indica assimetria (à esquerda ou à direita), afastando-se do padrão normal.",
+    origem: "banco",
+  },
+  {
+    id: "est-018",
+    materia: "est",
+    topico: "Distribuição normal — noções e leitura de gráfico",
+    enunciado:
+      "Segundo a regra empírica (regra 68-95-99,7) aplicável à distribuição normal, a proporção aproximada de valores que ficam a até 2 desvios-padrão da média é de:",
+    alternativas: ["50%", "68%", "95%", "99,7%", "100%"],
+    correta: 2,
+    explicacao:
+      "Pela regra 68-95-99,7: aproximadamente 68% dos valores ficam a até 1 desvio-padrão da média, cerca de 95% a até 2 desvios-padrão, e por volta de 99,7% a até 3 desvios-padrão — regra usada para leitura rápida da dispersão de dados que seguem uma distribuição normal.",
+    origem: "banco",
+  },
 ];

@@ -252,4 +252,112 @@ export const QUESTOES_DH: Question[] = [
       "A Agenda 2030, adotada pela Assembleia Geral da ONU, é um compromisso político global (soft law, sem força vinculante formal), estruturado em 17 ODS e 169 metas, aplicável a todos os países (desenvolvidos e em desenvolvimento), a serem alcançados até 2030 — sucedendo os Objetivos de Desenvolvimento do Milênio (ODM, 2000-2015).",
     origem: "banco",
   },
+  {
+    id: "dh-015",
+    materia: "dh",
+    topico: "Uso progressivo e diferenciado da força — protocolos internacionais",
+    enunciado:
+      "O princípio do uso progressivo e diferenciado da força determina que o agente de segurança pública deve:",
+    alternativas: [
+      "Empregar sempre o nível máximo de força disponível, para garantir segurança na abordagem.",
+      "Escalonar sua resposta conforme o nível de resistência ou ameaça apresentado, começando pelo nível mínimo necessário e só avançando a níveis mais intensos se estritamente necessário e proporcional.",
+      "Utilizar exclusivamente armas de menor potencial ofensivo, mesmo diante de ameaça letal iminente.",
+      "Aguardar autorização judicial prévia antes de qualquer uso de força em flagrante.",
+      "Empregar força letal como primeira resposta em qualquer situação de resistência.",
+    ],
+    correta: 1,
+    explicacao:
+      "O uso progressivo e diferenciado da força exige que o agente escalone sua resposta conforme o nível de resistência ou ameaça apresentado, começando pelo nível mínimo necessário (presença policial, verbalização) e só avançando para níveis mais intensos (contenção física, armas de menor potencial ofensivo, força letal) se estritamente necessário e proporcional — nunca partindo do nível máximo, nem dependendo de autorização judicial prévia para agir.",
+    origem: "banco",
+  },
+  {
+    id: "dh-016",
+    materia: "dh",
+    topico: "Uso progressivo e diferenciado da força — protocolos internacionais",
+    enunciado:
+      "O documento internacional de referência que orienta os parâmetros de proporcionalidade, legalidade e necessidade no uso da força e armas de fogo por funcionários responsáveis pela aplicação da lei, adotado pela ONU em 1990, é:",
+    alternativas: [
+      "A Convenção contra a Tortura de 1984.",
+      "Os Princípios Básicos sobre o Uso da Força e Armas de Fogo pelos Funcionários Responsáveis pela Aplicação da Lei.",
+      "O Pacto de San José da Costa Rica.",
+      "A Declaração Universal dos Direitos Humanos de 1948.",
+      "O Protocolo de Istambul.",
+    ],
+    correta: 1,
+    explicacao:
+      "Os Princípios Básicos sobre o Uso da Força e Armas de Fogo pelos Funcionários Responsáveis pela Aplicação da Lei (ONU, 1990) são o parâmetro internacional de referência para o uso progressivo da força, orientando também a Portaria Interministerial 4.226/2010 no Brasil, com diretrizes sobre proporcionalidade, legalidade, necessidade e prestação de contas.",
+    origem: "banco",
+  },
+  {
+    id: "dh-017",
+    materia: "dh",
+    topico: "Tortura (Lei 9.455/97) e mecanismos de prevenção",
+    enunciado:
+      "Segundo a Lei 9.455/1997, o agente público que tem o dever de evitar a tortura praticada por terceiro e se omite diante dela:",
+    alternativas: [
+      "Não responde criminalmente, pois a omissão não é penalmente relevante em crimes de tortura.",
+      "Responde pelo crime de tortura na modalidade omissiva imprópria.",
+      "Responde apenas por infração administrativa, nunca penal.",
+      "Responde por prevaricação, nunca pelo crime de tortura propriamente dito.",
+      "Só responde se tiver presenciado fisicamente todo o ato de tortura.",
+    ],
+    correta: 1,
+    explicacao:
+      "A Lei 9.455/97 admite a modalidade omissiva imprópria: o agente público que tem o dever jurídico de evitar a tortura e se omite diante dela também responde pelo crime, e não apenas por infração administrativa ou por prevaricação — a lei equipara sua omissão à conduta comissiva para fins de responsabilização penal.",
+    origem: "banco",
+  },
+  {
+    id: "dh-018",
+    materia: "dh",
+    topico: "Tortura (Lei 9.455/97) e mecanismos de prevenção",
+    enunciado:
+      "O Sistema Nacional de Prevenção e Combate à Tortura, instituído pela Lei 12.847/2013, é composto pelo Comitê Nacional e pelo Mecanismo Nacional de Prevenção e Combate à Tortura, cuja principal atribuição é:",
+    alternativas: [
+      "Julgar processos criminais por crime de tortura em primeira instância.",
+      "Monitorar locais de privação de liberdade, prevenindo e combatendo a prática de tortura.",
+      "Substituir a atuação do Ministério Público na persecução penal de crimes de tortura.",
+      "Conceder indulto a condenados por crime de tortura.",
+      "Fiscalizar exclusivamente estabelecimentos prisionais federais, excluindo os estaduais.",
+    ],
+    correta: 1,
+    explicacao:
+      "O Comitê Nacional e o Mecanismo Nacional de Prevenção e Combate à Tortura, criados pela Lei 12.847/2013, são responsáveis por monitorar locais de privação de liberdade (presídios, delegacias, hospitais psiquiátricos, entre outros), prevenindo e combatendo a tortura — não têm função jurisdicional, nem substituem o Ministério Público, e sua atuação abrange estabelecimentos estaduais e federais.",
+    origem: "banco",
+  },
+  {
+    id: "dh-019",
+    materia: "dh",
+    topico: "Execução penal e direitos da pessoa presa (LEP)",
+    enunciado:
+      "Segundo a Lei de Execução Penal (Lei 7.210/1984), a remição de pena consiste em:",
+    alternativas: [
+      "Perdão total da pena, concedido por decreto presidencial.",
+      "Redução do tempo de pena por dias trabalhados ou estudados pelo condenado durante o cumprimento da pena.",
+      "Extinção da punibilidade pelo decurso do prazo prescricional.",
+      "Substituição da pena privativa de liberdade por pena de multa.",
+      "Anulação da sentença condenatória por vício processual.",
+    ],
+    correta: 1,
+    explicacao:
+      "A remição é a redução do tempo de pena por dias trabalhados ou estudados pelo condenado durante o cumprimento da pena — mecanismo previsto na LEP que busca incentivar a ressocialização, sem se confundir com indulto/perdão presidencial, prescrição, substituição de pena ou anulação de sentença.",
+    origem: "banco",
+  },
+  {
+    id: "dh-020",
+    materia: "dh",
+    topico: "Execução penal e direitos da pessoa presa (LEP)",
+    enunciado:
+      "A progressão de regime prisional, prevista na LEP como forma de individualização da pena, está condicionada ao cumprimento de:",
+    alternativas: [
+      "Apenas requisitos subjetivos (bom comportamento), sendo irrelevante o tempo de pena cumprido.",
+      "Requisitos objetivos (tempo de pena cumprido) e subjetivos (bom comportamento carcerário).",
+      "Exclusivamente o pagamento de fiança arbitrada pelo juízo da execução.",
+      "Autorização do Ministério Público, dispensada a decisão judicial.",
+      "Requisitos apenas objetivos, sendo irrelevante o comportamento do preso.",
+    ],
+    correta: 1,
+    explicacao:
+      "A progressão de regime é condicionada ao cumprimento cumulativo de requisitos objetivos (fração mínima de tempo de pena cumprido, variável conforme o crime) e subjetivos (bom comportamento carcerário, atestado pelo diretor do estabelecimento) — a ausência de qualquer um deles impede a progressão, que depende de decisão judicial fundamentada, não bastando manifestação do Ministério Público ou pagamento de fiança.",
+    origem: "banco",
+  },
 ];

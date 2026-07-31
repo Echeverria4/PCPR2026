@@ -395,4 +395,148 @@ export const QUESTOES_PP: Question[] = [
       "A prisão temporária tem prazo de 5 dias, prorrogável por igual período em caso de extrema e comprovada necessidade (regra geral), e de 30 dias, prorrogável por igual período, nos crimes hediondos e equiparados (Lei 8.072/90). É cabível apenas durante a investigação, mediante representação da autoridade policial ou requerimento do Ministério Público, jamais decretada de ofício pelo juiz.",
     origem: "banco",
   },
+  {
+    id: "pp-023",
+    materia: "pp",
+    topico: "Audiência de custódia — prazo, finalidade e consequências da ausência",
+    enunciado:
+      "Toda pessoa presa em flagrante delito deve ser apresentada a um juiz em audiência de custódia no prazo de:",
+    alternativas: [
+      "48 horas, prorrogáveis por igual período mediante justificativa da autoridade policial.",
+      "24 horas.",
+      "5 dias, contados da lavratura do auto de prisão em flagrante.",
+      "72 horas, improrrogáveis.",
+      "10 dias, salvo em comarcas do interior.",
+    ],
+    correta: 1,
+    explicacao:
+      "A audiência de custódia deve ocorrer em até 24 horas da prisão, conforme a Convenção Americana de Direitos Humanos, regulamentação do CNJ e o art. 310 do CPP, permitindo ao juiz verificar a legalidade e a necessidade da prisão, checar eventual tortura ou maus-tratos, e decidir sobre conversão em preventiva, liberdade provisória ou relaxamento.",
+    origem: "banco",
+  },
+  {
+    id: "pp-024",
+    materia: "pp",
+    topico: "Audiência de custódia — prazo, finalidade e consequências da ausência",
+    enunciado:
+      "A não realização da audiência de custódia dentro do prazo legal tem como consequência jurídica:",
+    alternativas: [
+      "A nulidade automática e insanável da prisão em flagrante, independentemente de qualquer outro fator.",
+      "Nenhuma consequência, pois se trata de mera recomendação sem efeito prático.",
+      "Não torna a prisão automaticamente nula, mas é fator considerado para o relaxamento se a demora for injustificada e prejudicar o preso.",
+      "A conversão automática em prisão preventiva, independentemente de decisão judicial fundamentada.",
+      "A soltura imediata e definitiva do preso, sem possibilidade de nova prisão pelos mesmos fatos.",
+    ],
+    correta: 2,
+    explicacao:
+      "A ausência de realização da audiência de custódia no prazo não torna a prisão automaticamente nula, mas é fator considerado para o relaxamento se a demora for injustificada e prejudicar o preso — não há nulidade automática nem soltura definitiva, e a conversão em preventiva sempre exige decisão judicial fundamentada, não sendo consequência automática da demora.",
+    origem: "banco",
+  },
+  {
+    id: "pp-025",
+    materia: "pp",
+    topico: "Provas ilícitas e prova ilícita por derivação (teoria dos frutos da árvore envenenada)",
+    enunciado:
+      "A teoria dos \"frutos da árvore envenenada\", incorporada ao art. 157, §1º, do CPP, estabelece que:",
+    alternativas: [
+      "Provas lícitas descobertas em razão de uma prova ilícita anterior também são inadmissíveis, por contaminação derivada.",
+      "Somente a prova ilícita originária é inadmissível; as provas dela derivadas permanecem sempre válidas.",
+      "Toda prova obtida por policial, ainda que lícita, é presumidamente contaminada.",
+      "A prova ilícita pode ser utilizada se beneficiar exclusivamente a acusação.",
+      "A contaminação da prova só se aplica a interceptações telefônicas.",
+    ],
+    correta: 0,
+    explicacao:
+      "Pela teoria dos frutos da árvore envenenada (fruits of the poisonous tree), incorporada ao art. 157, §1º, do CPP, se a prova inicial (árvore) é ilícita, as provas dela derivadas (frutos), ainda que lícitas em si, também são contaminadas e devem ser desentranhadas dos autos — ressalvadas as exceções da fonte independente e da descoberta inevitável.",
+    origem: "banco",
+  },
+  {
+    id: "pp-026",
+    materia: "pp",
+    topico: "Provas ilícitas e prova ilícita por derivação (teoria dos frutos da árvore envenenada)",
+    enunciado:
+      "São reconhecidas pela jurisprudência como exceções à teoria dos frutos da árvore envenenada, admitindo a prova derivada mesmo havendo ilicitude anterior:",
+    alternativas: [
+      "A confissão do acusado e o testemunho de terceiros, sempre.",
+      "A fonte independente e a descoberta inevitável.",
+      "A urgência da investigação e o interesse público, isoladamente considerados.",
+      "A autorização posterior do juiz, ainda que informal.",
+      "A gravidade do crime investigado, por si só.",
+    ],
+    correta: 1,
+    explicacao:
+      "As exceções reconhecidas pela jurisprudência são a fonte independente (quando a prova derivada teria sido obtida de qualquer forma, por outro caminho lícito) e a descoberta inevitável (quando, mesmo sem a ilicitude, a prova seria inevitavelmente descoberta pelos meios investigativos em curso) — mera urgência, gravidade do crime ou autorização informal não afastam a contaminação.",
+    origem: "banco",
+  },
+  {
+    id: "pp-027",
+    materia: "pp",
+    topico: "Colaboração premiada — requisitos e benefícios",
+    enunciado:
+      "São requisitos centrais para a validade da colaboração premiada prevista na Lei 12.850/2013:",
+    alternativas: [
+      "Voluntariedade da colaboração e efetividade do resultado, não bastando meras alegações sem comprovação.",
+      "Coação do investigado pela autoridade policial e sigilo absoluto até o trânsito em julgado.",
+      "Confissão integral de todos os corréus e ausência de participação do Ministério Público.",
+      "Homologação automática, independentemente de análise judicial do conteúdo do acordo.",
+      "Concordância unânime de todos os corréus delatados.",
+    ],
+    correta: 0,
+    explicacao:
+      "A Lei 12.850/2013 exige voluntariedade da colaboração e efetividade do resultado como requisitos centrais — meras alegações sem comprovação não bastam. O acordo deve ser formalizado com participação do Ministério Público e homologado judicialmente, não podendo decorrer de coação, nem depender de concordância dos delatados.",
+    origem: "banco",
+  },
+  {
+    id: "pp-028",
+    materia: "pp",
+    topico: "Colaboração premiada — requisitos e benefícios",
+    enunciado:
+      "Entre os benefícios possíveis ao colaborador que celebra acordo de colaboração premiada homologado judicialmente, está:",
+    alternativas: [
+      "Anistia automática, extensível a todos os corréus do processo.",
+      "Perdão judicial ou redução de pena em até dois terços, ou substituição da pena privativa de liberdade por restritiva de direitos.",
+      "Imunidade penal vitalícia para quaisquer crimes futuros.",
+      "Dispensa automática de qualquer forma de ressarcimento do dano causado.",
+      "Sigilo processual eterno, mesmo após o trânsito em julgado da sentença.",
+    ],
+    correta: 1,
+    explicacao:
+      "Os benefícios possíveis vão do perdão judicial à redução de pena em até dois terços, ou substituição da pena privativa de liberdade por restritiva de direitos, sempre formalizados por acordo homologado judicialmente, com participação do Ministério Público — não há anistia automática extensível a terceiros, nem imunidade vitalícia para crimes futuros.",
+    origem: "banco",
+  },
+  {
+    id: "pp-029",
+    materia: "pp",
+    topico: "Cadeia de custódia da prova (arts. 158-A a 158-F do CPP)",
+    enunciado:
+      "A cadeia de custódia da prova, introduzida no CPP pelo Pacote Anticrime (Lei 13.964/2019), tem como finalidade principal:",
+    alternativas: [
+      "Acelerar o trâmite processual, dispensando a produção de laudo pericial formal.",
+      "Documentar e preservar a história de um vestígio, desde sua descoberta até seu descarte, garantindo idoneidade e rastreabilidade da prova.",
+      "Substituir a perícia oficial por perícia particular contratada pelas partes.",
+      "Autorizar o descarte imediato de vestígios não utilizados na denúncia.",
+      "Transferir a responsabilidade pela guarda da prova exclusivamente ao Ministério Público.",
+    ],
+    correta: 1,
+    explicacao:
+      "A cadeia de custódia é o conjunto de procedimentos que documenta e preserva a história de um vestígio, desde sua descoberta no local de crime até seu descarte, garantindo a idoneidade e a rastreabilidade da prova, com registro de cada pessoa que teve contato com ele — não substitui a perícia oficial nem acelera o processo por si só.",
+    origem: "banco",
+  },
+  {
+    id: "pp-030",
+    materia: "pp",
+    topico: "Cadeia de custódia da prova (arts. 158-A a 158-F do CPP)",
+    enunciado:
+      "A quebra da cadeia de custódia de um vestígio, mesmo quando o vestígio em si é autêntico, pode comprometer a validade da prova em juízo porque:",
+    alternativas: [
+      "Toda prova pericial é automaticamente nula após 30 dias de sua coleta.",
+      "A perda de rastreabilidade e o manuseio sem registro colocam em dúvida se o vestígio não foi alterado, substituído ou contaminado ao longo do processo.",
+      "A legislação exige que o vestígio seja destruído após qualquer falha de registro.",
+      "O Ministério Público perde automaticamente a titularidade da ação penal.",
+      "A cadeia de custódia só se aplica a provas documentais, não a vestígios materiais.",
+    ],
+    correta: 1,
+    explicacao:
+      "A quebra da cadeia de custódia — perda de rastreabilidade, manuseio sem registro, troca de embalagem inadequada — pode comprometer a validade da prova em juízo, ainda que o vestígio em si seja autêntico, por colocar em dúvida se ele não foi alterado, substituído ou contaminado ao longo do processo, e não por qualquer prazo automático de invalidade ou perda de titularidade da ação penal.",
+    origem: "banco",
+  },
 ];

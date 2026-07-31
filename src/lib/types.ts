@@ -38,6 +38,7 @@ export interface ConteudoTopico {
   texto: string;
   exemplos?: [string, string];
   curiosidade?: string;
+  origem?: "oficial" | "aposta";
 }
 
 export interface ModeloMental {

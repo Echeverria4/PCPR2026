@@ -312,4 +312,148 @@ export const QUESTOES_PEN: Question[] = [
       "Embora a Lei 8.072/1990 vede a fiança para crimes hediondos e equiparados, essa vedação não se confunde com a vedação à liberdade provisória: se ausentes os requisitos que autorizariam a prisão preventiva (art. 312 do CPP), o acusado pode obter liberdade provisória sem fiança — distinção consolidada na jurisprudência do STF e do STJ.",
     origem: "banco",
   },
+  {
+    id: "pen-019",
+    materia: "pen",
+    topico: "Crimes hediondos (Lei 8.072/90) — rol e efeitos da hediondez",
+    enunciado:
+      "O rol de crimes hediondos previsto na Lei 8.072/1990 é considerado, pela doutrina e jurisprudência majoritárias, um rol:",
+    alternativas: [
+      "Exemplificativo, podendo o juiz reconhecer outros crimes como hediondos por analogia, em razão de sua gravidade concreta.",
+      "Taxativo (numerus clausus): um crime só é hediondo se estiver expressamente listado ou equiparado por lei.",
+      "Meramente indicativo, sem qualquer efeito prático sobre o regime de cumprimento de pena.",
+      "Aberto, a ser complementado por resolução do CNJ conforme a gravidade do caso.",
+      "Aplicável apenas a réus reincidentes, não a réus primários.",
+    ],
+    correta: 1,
+    explicacao:
+      "O rol de crimes hediondos é taxativo (numerus clausus): um crime só é hediondo se estiver expressamente listado ou equiparado por lei, não bastando ser grave aos olhos do intérprete — não há espaço para reconhecimento por analogia, tampouco complementação por resolução do CNJ.",
+    origem: "banco",
+  },
+  {
+    id: "pen-020",
+    materia: "pen",
+    topico: "Crimes hediondos (Lei 8.072/90) — rol e efeitos da hediondez",
+    enunciado:
+      "Entre os crimes que, embora não constem literalmente do rol de crimes hediondos, são a eles equiparados por força de lei, para todos os efeitos legais, estão:",
+    alternativas: [
+      "Furto qualificado e estelionato.",
+      "Tortura, tráfico de drogas e terrorismo.",
+      "Lesão corporal culposa e ameaça.",
+      "Injúria e difamação qualificadas.",
+      "Receptação simples e apropriação indébita.",
+    ],
+    correta: 1,
+    explicacao:
+      "A Lei 8.072/90 equipara a tortura, o tráfico de drogas e o terrorismo aos crimes hediondos para efeitos legais, ainda que tecnicamente não constem do rol taxativo original — recebendo, assim, as mesmas consequências penais mais severas (regime, progressão, vedação à fiança).",
+    origem: "banco",
+  },
+  {
+    id: "pen-021",
+    materia: "pen",
+    topico: "Feminicídio — qualificadora, e Lei Maria da Penha na prática",
+    enunciado:
+      "O feminicídio, incluído no Código Penal pela Lei 13.104/2015, é tecnicamente classificado como:",
+    alternativas: [
+      "Crime autônomo, distinto do homicídio, com tipo penal próprio no art. 121-A.",
+      "Qualificadora do homicídio (art. 121, §2º-A), aplicável quando o crime é cometido contra mulher por razões da condição de sexo feminino.",
+      "Causa de diminuição de pena aplicável ao homicídio simples.",
+      "Contravenção penal, sujeita apenas a pena de multa.",
+      "Circunstância atenuante, considerada apenas na dosimetria da pena.",
+    ],
+    correta: 1,
+    explicacao:
+      "O feminicídio é qualificadora do homicídio (art. 121, §2º-A, do CP), incluída pela Lei 13.104/2015, aplicável quando o crime é cometido contra mulher por razões da condição de sexo feminino — o que se configura em violência doméstica e familiar ou em menosprezo/discriminação à condição de mulher — e não um tipo penal autônomo, causa de diminuição, contravenção ou atenuante.",
+    origem: "banco",
+  },
+  {
+    id: "pen-022",
+    materia: "pen",
+    topico: "Feminicídio — qualificadora, e Lei Maria da Penha na prática",
+    enunciado:
+      "A Lei Maria da Penha (Lei 11.340/2006), no que diz respeito à criação de novos tipos penais, deve ser corretamente compreendida como uma lei que:",
+    alternativas: [
+      "Cria diversos tipos penais inéditos de violência doméstica, substituindo o Código Penal nessa matéria.",
+      "Não tipifica crimes novos: cria mecanismos de proteção à mulher em situação de violência doméstica e familiar, como as medidas protetivas de urgência.",
+      "Aplica-se exclusivamente a violência física, excluindo violência psicológica, sexual, patrimonial e moral.",
+      "Somente pode ser aplicada mediante representação da vítima, em qualquer hipótese de violência.",
+      "Revogou expressamente o crime de feminicídio, substituindo-o por medida protetiva.",
+    ],
+    correta: 1,
+    explicacao:
+      "A Lei Maria da Penha não tipifica crimes novos: cria mecanismos de proteção à mulher em situação de violência doméstica e familiar, como as medidas protetivas de urgência (afastamento do agressor do lar, proibição de aproximação e contato), os Juizados especializados, e reconhece cinco formas de violência (física, psicológica, sexual, patrimonial e moral) — indo muito além da violência física.",
+    origem: "banco",
+  },
+  {
+    id: "pen-023",
+    materia: "pen",
+    topico: "Crimes cibernéticos no Código Penal (invasão de dispositivo — art. 154-A)",
+    enunciado:
+      "O crime de invasão de dispositivo informático alheio, tipificado no art. 154-A do Código Penal pela Lei 12.737/2012 (\"Lei Carolina Dieckmann\"), exige, para sua caracterização:",
+    alternativas: [
+      "Que o dispositivo esteja necessariamente conectado à internet no momento da invasão.",
+      "A violação indevida de mecanismo de segurança, com o fim de obter, adulterar ou destruir dados/informações sem autorização do titular, ou instalar vulnerabilidades para obter vantagem ilícita.",
+      "Que a invasão resulte, obrigatoriamente, em prejuízo econômico comprovado à vítima.",
+      "Autorização judicial prévia para sua investigação, mesmo em flagrante.",
+      "Que o agente seja necessariamente funcionário da empresa proprietária do dispositivo.",
+    ],
+    correta: 1,
+    explicacao:
+      "O art. 154-A do CP tipifica a invasão de dispositivo informático alheio, conectado ou não à rede, mediante violação indevida de mecanismo de segurança, com o fim de obter, adulterar ou destruir dados/informações sem autorização do titular, ou instalar vulnerabilidades para obter vantagem ilícita — o prejuízo econômico é apenas causa de aumento de pena, não elemento essencial do tipo, e a conexão à internet não é requisito.",
+    origem: "banco",
+  },
+  {
+    id: "pen-024",
+    materia: "pen",
+    topico: "Crimes cibernéticos no Código Penal (invasão de dispositivo — art. 154-A)",
+    enunciado:
+      "Quanto à ação penal cabível no crime de invasão de dispositivo informático (art. 154-A do CP), a regra geral é a de que se trata de ação penal:",
+    alternativas: [
+      "Pública incondicionada, em qualquer hipótese.",
+      "Pública condicionada à representação, salvo se cometida contra a administração pública.",
+      "Privada, cabendo exclusivamente à vítima o oferecimento da queixa-crime.",
+      "Pública condicionada à requisição do Ministro da Justiça.",
+      "Pública incondicionada apenas quando há prejuízo econômico comprovado.",
+    ],
+    correta: 1,
+    explicacao:
+      "O crime do art. 154-A do CP é, em regra, de ação penal pública condicionada à representação, salvo se cometido contra a administração pública direta ou indireta de qualquer dos Poderes, ou contra empresas concessionárias de serviços públicos, hipóteses em que a ação penal passa a ser pública incondicionada.",
+    origem: "banco",
+  },
+  {
+    id: "pen-025",
+    materia: "pen",
+    topico: "Excludentes de ilicitude (legítima defesa, estrito cumprimento do dever legal) aplicadas à atuação policial",
+    enunciado:
+      "Para a caracterização da legítima defesa (art. 25 do CP) na atuação policial em confronto armado, são requisitos indispensáveis:",
+    alternativas: [
+      "Agressão injusta, atual ou iminente, a direito próprio ou alheio, repelida com meios necessários e uso moderado desses meios.",
+      "Ordem expressa e prévia do superior hierárquico, autorizando o uso da força letal.",
+      "Comprovação posterior de que o agredido efetivamente portava arma de fogo.",
+      "Autorização judicial concedida antes do confronto.",
+      "Que a agressão tenha cessado no momento da reação do policial.",
+    ],
+    correta: 0,
+    explicacao:
+      "A legítima defesa exige agressão injusta, atual ou iminente (não cessada, nem meramente hipotética futura), a direito próprio ou alheio, repelida com meios necessários e uso moderado desses meios — requisitos que, na atuação policial, costumam ser escrutinados com rigor em casos de confronto armado, sem depender de ordem superior prévia ou autorização judicial.",
+    origem: "banco",
+  },
+  {
+    id: "pen-026",
+    materia: "pen",
+    topico: "Excludentes de ilicitude (legítima defesa, estrito cumprimento do dever legal) aplicadas à atuação policial",
+    enunciado:
+      "A excludente de ilicitude do estrito cumprimento do dever legal, aplicável a agentes públicos no exercício regular de suas funções, tem como elemento central o fato de que o cumprimento deve ser:",
+    alternativas: [
+      "Discricionário, cabendo ao agente decidir livremente os limites de sua atuação, sem parâmetro legal.",
+      "\"Estrito\" — dentro dos limites legais e regulamentares —, e não uma extrapolação da função, sendo o excesso, doloso ou culposo, punível e capaz de retirar a proteção legal.",
+      "Baseado exclusivamente na boa-fé subjetiva do agente, independentemente de proporcionalidade.",
+      "Aplicável apenas a agentes de alta patente hierárquica, nunca a agentes de execução direta.",
+      "Restrito a situações de flagrante delito, não se aplicando ao cumprimento de mandados judiciais.",
+    ],
+    correta: 1,
+    explicacao:
+      "A chave da excludente é que o cumprimento seja \"estrito\" — dentro dos limites legais e regulamentares — e não uma extrapolação da função, como a aplicação proporcional da força para deter um suspeito ou executar um mandado. O excesso, doloso ou culposo, é punível e retira a proteção legal, daí a importância prática do tema para quem atua diretamente em situações de uso da força.",
+    origem: "banco",
+  },
 ];

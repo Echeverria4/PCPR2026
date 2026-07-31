@@ -76,6 +76,7 @@ export default function Apostas() {
               <article key={a.tema} className="aposta-card">
                 <h4 className="aposta-tema">{a.tema}</h4>
                 <p className="aposta-motivo">{a.motivo}</p>
+                <p className="aposta-contexto">{a.contexto}</p>
               </article>
             ))}
           </div>

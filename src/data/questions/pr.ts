@@ -220,4 +220,112 @@ export const QUESTOES_PR: Question[] = [
       "A Copel, historicamente controlada pelo Estado do Paraná, passou por um processo de privatização concluído em 2023, com a pulverização do controle acionário entre investidores privados — um dos temas econômicos mais relevantes e recentes do estado, com potencial de cobrança em provas atuais.",
     origem: "banco",
   },
+  {
+    id: "pr-015",
+    materia: "pr",
+    topico: "Segurança pública no Paraná — programas e indicadores recentes",
+    enunciado:
+      "A segurança pública no Estado do Paraná é organizada em torno da Polícia Civil, da Polícia Militar e do Corpo de Bombeiros Militar, sob coordenação de qual órgão estadual?",
+    alternativas: [
+      "Secretaria de Estado da Segurança Pública.",
+      "Ministério da Justiça e Segurança Pública.",
+      "Instituto de Segurança Pública do Paraná (ISP-PR), isoladamente.",
+      "Procuradoria-Geral de Justiça do Paraná.",
+      "Casa Civil do Governo do Estado.",
+    ],
+    correta: 0,
+    explicacao:
+      "A segurança pública paranaense é coordenada pela Secretaria de Estado da Segurança Pública, à qual se vinculam a Polícia Civil, a Polícia Militar e o Corpo de Bombeiros Militar. O Ministério da Justiça e Segurança Pública é órgão federal; o ISP-PR é órgão de produção de indicadores e estatísticas, não de coordenação institucional.",
+    origem: "banco",
+  },
+  {
+    id: "pr-016",
+    materia: "pr",
+    topico: "Segurança pública no Paraná — programas e indicadores recentes",
+    enunciado:
+      "Entre os desafios de segurança pública mais associados às regiões de fronteira do Paraná, como Foz do Iguaçu, destacam-se:",
+    alternativas: [
+      "Crimes cibernéticos exclusivamente, sem relação com o comércio físico transfronteiriço.",
+      "Contrabando, descaminho e crimes transnacionais, ligados ao intenso fluxo de mercadorias e pessoas na fronteira.",
+      "Crimes eleitorais, tema exclusivo de períodos de eleição.",
+      "Crimes ambientais restritos à pesca predatória em rios internacionais.",
+      "Violência doméstica, sem qualquer especificidade regional fronteiriça.",
+    ],
+    correta: 1,
+    explicacao:
+      "As regiões de fronteira do Paraná, como Foz do Iguaçu, enfrentam desafios específicos ligados a contrabando, descaminho e crimes transnacionais, decorrentes do intenso fluxo de mercadorias e pessoas na fronteira com Paraguai e Argentina — desafio distinto do perfil de criminalidade concentrado na Região Metropolitana de Curitiba.",
+    origem: "banco",
+  },
+  {
+    id: "pr-017",
+    materia: "pr",
+    topico: "Economia paranaense — agronegócio e Porto de Paranaguá",
+    enunciado:
+      "O polo produtivo concentrado nos municípios de Cascavel e Toledo, no Oeste do Paraná, é reconhecido nacionalmente pela liderança na:",
+    alternativas: [
+      "Produção e exportação de carne de frango.",
+      "Extração de minério de ferro.",
+      "Produção de vinhos finos de altitude.",
+      "Fabricação de veículos automotores.",
+      "Extração de petróleo em águas profundas.",
+    ],
+    correta: 0,
+    explicacao:
+      "O polo formado por Cascavel e Toledo, no Oeste do Paraná, concentra a liderança nacional na produção e exportação de carne de frango, ao lado da forte produção de soja e milho que caracteriza o agronegócio paranaense como um todo.",
+    origem: "banco",
+  },
+  {
+    id: "pr-018",
+    materia: "pr",
+    topico: "Economia paranaense — agronegócio e Porto de Paranaguá",
+    enunciado:
+      "O Porto de Paranaguá, estrutural para o escoamento de soja, milho e farelo produzidos no Paraná e em outros estados do Centro-Sul do Brasil, é frequentemente associado, do ponto de vista da segurança pública, a riscos de:",
+    alternativas: [
+      "Desvio de carga, contrabando e fraudes em operações de comércio exterior.",
+      "Tráfico de animais silvestres exclusivamente, sem relação com cargas agrícolas.",
+      "Crimes eleitorais durante períodos de embarque de safra.",
+      "Pirataria marítima em alto-mar, tema afeto exclusivamente à Marinha.",
+      "Falsificação de documentos de identidade civil.",
+    ],
+    correta: 0,
+    explicacao:
+      "O intenso fluxo de mercadorias de alto valor pelo Porto de Paranaguá — um dos maiores portos graneleiros da América Latina — torna a região portuária um ponto sensível do ângulo da segurança pública, associado a riscos de desvio de carga, contrabando e fraudes em operações de comércio exterior, conexão que costuma cruzar economia estadual com o perfil de atuação policial.",
+    origem: "banco",
+  },
+  {
+    id: "pr-019",
+    materia: "pr",
+    topico: "Datas comemorativas e símbolos oficiais do Paraná",
+    enunciado:
+      "A emancipação política do Estado do Paraná, com seu desmembramento da Província de São Paulo, é comemorada em:",
+    alternativas: [
+      "7 de setembro, mesma data da Independência do Brasil.",
+      "19 de dezembro, data de vigência da Lei nº 704/1853.",
+      "15 de novembro, data da Proclamação da República.",
+      "24 de janeiro, data de fundação da cidade de Curitiba.",
+      "1º de janeiro, início do ano civil.",
+    ],
+    correta: 1,
+    explicacao:
+      "O Paraná comemora sua emancipação política em 19 de dezembro, data em que entrou em vigor a Lei nº 704/1853, que o desmembrou da Província de São Paulo — data distinta da fundação de Curitiba (24 de janeiro) e de datas nacionais como a Independência e a Proclamação da República.",
+    origem: "banco",
+  },
+  {
+    id: "pr-020",
+    materia: "pr",
+    topico: "Datas comemorativas e símbolos oficiais do Paraná",
+    enunciado:
+      "A ave símbolo do Estado do Paraná, associada popularmente à disseminação da semente da araucária (pinheiro-do-paraná), é:",
+    alternativas: [
+      "O tucano-toco.",
+      "A gralha-azul.",
+      "O bem-te-vi.",
+      "O quero-quero.",
+      "A arara-azul.",
+    ],
+    correta: 1,
+    explicacao:
+      "A gralha-azul é a ave símbolo do Paraná, associada popularmente à disseminação da semente da araucária (pinheiro-do-paraná), a árvore símbolo do estado, que também aparece no brasão de armas paranaense — as demais aves listadas não têm esse vínculo simbólico oficial com o estado.",
+    origem: "banco",
+  },
 ];

@@ -259,4 +259,112 @@ export const QUESTOES_LEG: Question[] = [
       "O art. 11 da LAI estabelece resposta imediata ou, quando não for possível, em até 20 dias, prorrogável por mais 10 dias mediante justificativa expressa comunicada ao solicitante. Além disso, a LAI não exige que o requerente motive o pedido de acesso à informação (art. 10, §3º).",
     origem: "banco",
   },
+  {
+    id: "leg-016",
+    materia: "leg",
+    topico: "Estrutura organizacional da PCPR (delegacias, carreiras, hierarquia)",
+    enunciado:
+      "Sobre a estrutura de carreiras da Polícia Civil do Paraná, é correto afirmar que:",
+    alternativas: [
+      "Existe uma única carreira, com atribuições idênticas para todos os servidores.",
+      "As carreiras se organizam de forma distinta (Delegado, Agente, Escrivão, Papiloscopista, entre outras), cada uma com atribuições específicas dentro da polícia judiciária.",
+      "Somente a carreira de Delegado integra formalmente a Polícia Civil, as demais são cargos comissionados.",
+      "A estrutura territorial não distingue Capital/Região Metropolitana de unidades do Interior.",
+      "A hierarquia institucional é definida exclusivamente por tempo de serviço, sem cargo de chefia.",
+    ],
+    correta: 1,
+    explicacao:
+      "A Polícia Civil do Paraná organiza-se em carreiras distintas — Delegado, Agente, Escrivão, Papiloscopista, entre outras —, cada uma com atribuições específicas dentro da atividade de polícia judiciária, distribuídas territorialmente entre unidades da Capital/Região Metropolitana de Curitiba e do Interior, sob hierarquia institucional própria com o Delegado-Geral no topo da estrutura administrativa estadual.",
+    origem: "banco",
+  },
+  {
+    id: "leg-017",
+    materia: "leg",
+    topico: "Estrutura organizacional da PCPR (delegacias, carreiras, hierarquia)",
+    enunciado:
+      "No topo da estrutura administrativa estadual da Polícia Civil do Paraná, respondendo pela cadeia de comando institucional, encontra-se o(a):",
+    alternativas: [
+      "Secretário de Segurança Pública.",
+      "Delegado-Geral.",
+      "Corregedor-Geral.",
+      "Comandante-Geral da Polícia Militar.",
+      "Chefe de Gabinete do Governador.",
+    ],
+    correta: 1,
+    explicacao:
+      "O Delegado-Geral está no topo da estrutura administrativa estadual da Polícia Civil, com delegados titulares respondendo por cada unidade (delegacias regionais, seccionais e especializadas). O Secretário de Segurança Pública é autoridade do Poder Executivo com atribuições mais amplas, que abrangem as diversas forças de segurança, mas não se confunde com a chefia interna da carreira policial civil.",
+    origem: "banco",
+  },
+  {
+    id: "leg-018",
+    materia: "leg",
+    topico: "Regime disciplinar e deveres/proibições do servidor (Lei Estadual 6.174/1970)",
+    enunciado:
+      "A Lei Estadual 6.174/1970, que disciplina direitos, deveres e o regime disciplinar dos servidores públicos civis do Paraná, prevê como penalidades disciplinares, em ordem crescente de gravidade:",
+    alternativas: [
+      "Multa, prisão administrativa e demissão.",
+      "Advertência, suspensão e demissão, proporcionais à gravidade da falta.",
+      "Somente demissão, para qualquer infração funcional.",
+      "Repreensão verbal, sem qualquer registro formal.",
+      "Afastamento remunerado, único e exclusivo.",
+    ],
+    correta: 1,
+    explicacao:
+      "O regime disciplinar da Lei Estadual 6.174/1970 (Estatuto dos Funcionários Públicos Civis do Paraná) prevê penalidades escalonadas — advertência, suspensão e demissão — proporcionais à gravidade da falta, aplicadas mediante processo administrativo que assegure contraditório e ampla defesa, não havendo previsão de multa ou prisão administrativa como penalidade funcional.",
+    origem: "banco",
+  },
+  {
+    id: "leg-019",
+    materia: "leg",
+    topico: "Regime disciplinar e deveres/proibições do servidor (Lei Estadual 6.174/1970)",
+    enunciado:
+      "Entre as condutas vedadas ao servidor público estadual pelo Estatuto (Lei 6.174/1970), inclui-se:",
+    alternativas: [
+      "Buscar capacitação profissional continuada.",
+      "Valer-se do cargo para obter vantagens indevidas para si ou para outrem.",
+      "Comunicar irregularidades de que tenha conhecimento à autoridade competente.",
+      "Zelar pela economia e conservação do patrimônio público.",
+      "Cumprir as ordens superiores, exceto quando manifestamente ilegais.",
+    ],
+    correta: 1,
+    explicacao:
+      "As proibições do Estatuto vedam condutas como valer-se do cargo para obter vantagens indevidas para si ou para outrem, ausentar-se do serviço sem autorização e revelar informação sigilosa. As demais alternativas descrevem, na verdade, deveres funcionais (zelo, comunicação de irregularidades, capacitação, obediência a ordens legais), não proibições.",
+    origem: "banco",
+  },
+  {
+    id: "leg-020",
+    materia: "leg",
+    topico: "Alterações legislativas de 2025/2026 na estrutura da Polícia Civil do PR",
+    enunciado:
+      "A norma que trata do regime jurídico da carreira policial civil do Paraná, com destaque por ser uma das legislações mais recentes listadas no edital, é a:",
+    alternativas: [
+      "Lei Estadual 6.174/1970.",
+      "Lei Complementar Estadual 259/2023.",
+      "Constituição Estadual do Paraná de 1989.",
+      "Lei Federal 13.964/2019 (Pacote Anticrime).",
+      "Decreto-Lei 3.689/1941 (CPP).",
+    ],
+    correta: 1,
+    explicacao:
+      "A Lei Complementar Estadual 259/2023 trata do regime jurídico da carreira policial civil do Paraná e é uma das normas mais recentes expressamente listadas no edital, o que a torna alvo preferencial de cobrança, já que bancas como a FGV tendem a testar os dispositivos mais novos, e não apenas a redação original de leis mais antigas como o Estatuto de 1970.",
+    origem: "banco",
+  },
+  {
+    id: "leg-021",
+    materia: "leg",
+    topico: "Alterações legislativas de 2025/2026 na estrutura da Polícia Civil do PR",
+    enunciado:
+      "Diante da tendência histórica de bancas examinadoras, como a FGV, cobrarem a legislação mais recentemente publicada sobre a estrutura da Polícia Civil do Paraná, a estratégia de estudo mais adequada é:",
+    alternativas: [
+      "Ignorar normas publicadas após a divulgação do edital, pois não podem ser cobradas.",
+      "Revisar, próximo à data da prova, eventuais alterações pontuais publicadas no Diário Oficial do Estado que ainda não constem do material de estudo inicial.",
+      "Estudar apenas a redação original das leis mais antigas, sem verificar alterações.",
+      "Memorizar exclusivamente o texto da Constituição Federal, que prevalece sobre normas estaduais.",
+      "Desconsiderar leis complementares, pois não integram a legislação orgânica.",
+    ],
+    correta: 1,
+    explicacao:
+      "Como o próprio edital já lista normas recentes entre os tópicos oficiais (como a LC 259/2023 e a Lei 23.213/2026), a tendência histórica da FGV é cobrar justamente os dispositivos mais novos. Por isso, vale revisar, próximo à data do exame, se houve alguma alteração pontual publicada no Diário Oficial do Estado que ainda não constava do material de estudo inicial — desconsiderar normas recentes ou legais complementares seria estratégia contrária ao próprio padrão de cobrança da banca.",
+    origem: "banco",
+  },
 ];
