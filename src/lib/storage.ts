@@ -74,6 +74,7 @@ export async function recordAttempt(attempt: AttemptRecord): Promise<void> {
     acertou: attempt.acertou,
     respondida_em: attempt.respondidaEm,
     tempo_ms: attempt.tempoMs ?? null,
+    modo: attempt.modo ?? null,
   });
 }
 
@@ -85,7 +86,7 @@ export async function syncRemoteAttempts(): Promise<AttemptRecord[]> {
 
   const { data, error } = await supabase
     .from("attempts")
-    .select("question_id, materia, acertou, respondida_em, tempo_ms")
+    .select("question_id, materia, acertou, respondida_em, tempo_ms, modo")
     .eq("user_id", userId)
     .order("respondida_em", { ascending: true })
     .limit(MAX_ATTEMPTS_LOCAL);
@@ -98,6 +99,7 @@ export async function syncRemoteAttempts(): Promise<AttemptRecord[]> {
     acertou: row.acertou,
     respondidaEm: row.respondida_em,
     tempoMs: row.tempo_ms ?? undefined,
+    modo: (row.modo as AttemptRecord["modo"]) ?? undefined,
   }));
 
   writeLocal(LS_ATTEMPTS, remote.slice(-MAX_ATTEMPTS_LOCAL));
@@ -107,7 +109,12 @@ export async function syncRemoteAttempts(): Promise<AttemptRecord[]> {
 export function computeStats(attempts: AttemptRecord[]): SubjectStats[] {
   const bySubject = new Map<SubjectId, { respondidas: number; acertos: number }>();
 
-  for (const a of attempts) {
+  // Tentativas feitas na "Revisão dos errados" partem de questões que já erramos antes —
+  // contá-las no % de acerto infla artificialmente o desempenho da matéria, já que o
+  // acerto ali é só "acertar de segunda vez", não domínio real do conteúdo.
+  const paraStats = attempts.filter((a) => a.modo !== "revisao");
+
+  for (const a of paraStats) {
     const cur = bySubject.get(a.materia) ?? { respondidas: 0, acertos: 0 };
     cur.respondidas += 1;
     if (a.acertou) cur.acertos += 1;

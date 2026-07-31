@@ -67,6 +67,7 @@ export default function Quiz({ questions, modo, onFinalizar, onSair }: QuizProps
       acertou,
       respondidaEm: new Date().toISOString(),
       tempoMs,
+      modo,
     };
     setRespostas((prev) => [...prev, registro]);
     void recordAttempt(registro);

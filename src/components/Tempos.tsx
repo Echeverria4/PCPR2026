@@ -24,6 +24,10 @@ export default function Tempos({ attempts }: TemposProps) {
   const comTempoPorMateria = new Map<SubjectId, AttemptRecord[]>();
   for (const a of attempts) {
     if (a.tempoMs === undefined) continue;
+    // Respostas da "Revisão dos errados" são questões que já vimos antes — não entram
+    // na tabela de tempos nem no cálculo de média/mais rápida/mais lenta, senão o tempo
+    // de quem já sabe a resposta contamina a estatística de primeira leitura da matéria.
+    if (a.modo === "revisao") continue;
     const lista = comTempoPorMateria.get(a.materia) ?? [];
     lista.push(a);
     comTempoPorMateria.set(a.materia, lista);

@@ -89,6 +89,7 @@ export interface AttemptRecord {
   acertou: boolean;
   respondidaEm: string;
   tempoMs?: number;
+  modo?: QuizMode;
 }
 
 export interface SubjectStats {
