@@ -34,14 +34,14 @@ export const MODELOS_MENTAIS_LEG: ModeloMental[] = [
     origem: "oficial",
     gancho: "Já tem identidade civil? Só identifica criminalmente em exceção",
     modelo:
-      "A regra é que quem já tem carteira de identidade não precisa de identificação criminal (datiloscópica/fotográfica); a lei lista as exceções — dúvida sobre a identidade, documento suspeito, crime que exija — em que ela passa a ser obrigatória mesmo assim.",
+      "A regra é que quem tem documento civil não passa por identificação criminal. O art. 3º abre 7 exceções: rasura, documento insuficiente, documentos conflitantes, despacho do juiz, outros nomes, documento gasto, antigo ou expedido em local distante e, desde a Lei 15.295/2025, denúncia recebida por crime com grave violência, crime sexual, pornografia infantil do ECA ou organização criminosa armada. Só a do juiz (IV) depende de decisão judicial. A identificação é datiloscópica e fotográfica, e ganha DNA nos incisos IV e VII e no flagrante pelos crimes do VII. Depois, três saídas: nada de antecedentes antes do trânsito (art. 6º), retirada da foto a pedido se não houver condenação (art. 7º) e exclusão do perfil na absolvição ou 20 anos após cumprir a pena (art. 7º-A). Na LEP, todo condenado à reclusão em regime inicial fechado dá DNA ao entrar no presídio.",
   },
   {
     topico: "Lei 13.869/2019 (Abuso de Autoridade)",
     origem: "oficial",
     gancho: "Abuso de autoridade exige dolo específico de prejudicar ou se beneficiar",
     modelo:
-      "Não basta o agente errar ou exceder no cumprimento do dever — a lei exige a intenção específica de prejudicar outrem, beneficiar a si mesmo ou agir por mero capricho ou satisfação pessoal. É tema sensível justamente porque separa erro de conduta de crime.",
+      "Não basta o agente errar ou exceder no cumprimento do dever: a lei exige a intenção específica de prejudicar outrem, beneficiar a si ou a terceiro, ou agir por capricho ou satisfação pessoal. Não há forma culposa, e divergência de interpretação não é crime. Grave os números do plantão: nota de culpa em 24 horas, mandado de busca só entre 5h e 21h, nada de interrogatório no repouso noturno sem flagrante ou consentimento assistido. A perda do cargo só vem na reincidência e precisa de motivação, e a ação é pública incondicionada.",
   },
   {
     topico: "LGPD e Lei de Acesso à Informação (12.527/2011)",

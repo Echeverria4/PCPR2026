@@ -137,6 +137,10 @@ export const DICAS: DicaDia[] = [
     texto: "Código Disciplinar da PCPR (21.894) x Estatuto (6.174): demissão prescreve em 5 anos x 4 anos; inassiduidade com mais de 45 faltas alternadas em 1 ano x 60 faltas interpoladas em 12 meses; sem advertência x advertência verbal; suspensão com metade do subsídio x conversão em multa de 50%; recurso com efeito suspensivo x sem efeito suspensivo. Abandono é 30 dias consecutivos nas duas.",
   },
   {
+    materia: "leg",
+    texto: "Lei 15.295/2025 (em vigor em janeiro de 2026, dentro do corte do edital): o art. 9º-A da LEP passou a exigir DNA de todo condenado à reclusão em regime inicial fechado, no ingresso no presídio. Na Lei 12.037, entrou o inciso VII do art. 3º (denúncia recebida por crime com grave violência, crime sexual, pornografia infantil do ECA ou organização criminosa armada), com coleta de perfil genético também no flagrante por esses crimes. Banco nacional: BNPG, e a rede que integra os bancos estaduais é a RIBPG.",
+  },
+  {
     materia: "pp",
     texto: "Provas derivadas das ilícitas também são inadmissíveis (CPP, art. 157, §1º), salvo quando não houver nexo causal com a ilícita ou quando puderem ser obtidas por fonte independente; o §2º define fonte independente com a lógica da descoberta inevitável. O §5º (o juiz que conheceu a prova inadmissível não pode sentenciar) foi declarado inconstitucional pelo STF nas ADIs do Pacote Anticrime.",
   },

@@ -422,38 +422,40 @@ export const QUESTOES_FOR: Question[] = [
   {
     id: "for-026",
     materia: "for",
-    topico: "Perfil genético (DNA) e bancos de dados forenses (RNIC)",
+    topico: "Perfil genético (DNA) e bancos de dados forenses (RIBPG)",
     enunciado:
-      "A legislação brasileira que autoriza a coleta de material biológico para identificação do perfil genético de condenados por crimes hediondos ou dolosos com violência grave contra pessoa é a:",
+      "Após a Lei nº 15.295/2025, o art. 9º-A da Lei de Execução Penal passou a dispor, sobre a identificação do perfil genético do condenado, que",
     alternativas: [
-      "Lei 9.455/1997.",
-      "Lei 12.654/2012, alterada pela Lei 13.964/2019 (Pacote Anticrime).",
-      "Lei 8.072/1990.",
-      "Lei 13.709/2018 (LGPD).",
-      "Lei 11.340/2006 (Lei Maria da Penha).",
+      "a coleta da amostra biológica será realizada por agente público treinado, respeitada a cadeia de custódia, e a elaboração do laudo caberá a perito oficial.",
+      "a coleta e o laudo devem ser feitos pelo mesmo perito oficial, sob pena de nulidade da prova.",
+      "a coleta pode ser feita por qualquer pessoa indicada pelo diretor do presídio, dispensada a cadeia de custódia.",
+      "o laudo pode ser elaborado pelo Delegado de Polícia, desde que acompanhado de duas testemunhas.",
+      "a coleta depende do consentimento do condenado, e sua recusa não gera nenhuma consequência disciplinar.",
     ],
-    correta: 1,
+    correta: 0,
     explicacao:
-      "A Lei 12.654/2012, alterada pela Lei 13.964/2019 (Pacote Anticrime), autoriza a coleta de material biológico para identificação do perfil genético de condenados por crimes hediondos ou dolosos com violência grave contra pessoa. As demais leis tratam de temas distintos: tortura (9.455/97), crimes hediondos em geral (8.072/90), proteção de dados (LGPD) e violência doméstica (Maria da Penha).",
+      "Art. 9º-A da LEP, na redação da Lei 15.295/2025. O §7º diz que a coleta será realizada por agente público treinado e respeitará os procedimentos de cadeia de custódia definidos em lei e complementados pelo órgão de perícia oficial. O §9º reserva a elaboração do laudo ao perito oficial. Antes, a redação de 2019 exigia perito oficial tanto para a coleta quanto para o laudo. A recusa do condenado em se submeter ao procedimento constitui falta grave (§8º).",
     origem: "banco",
+    fonte: "Lei 7.210/1984 (LEP), art. 9º-A, com redação da Lei 15.295/2025",
   },
   {
     id: "for-027",
     materia: "for",
-    topico: "Perfil genético (DNA) e bancos de dados forenses (RNIC)",
+    topico: "Perfil genético (DNA) e bancos de dados forenses (RIBPG)",
     enunciado:
-      "O banco de dados nacional que armazena e cruza perfis genéticos, permitindo relacionar vestígios de diferentes locais de crime ao mesmo indivíduo, mesmo em investigações de estados diferentes, é conhecido pela sigla:",
+      "O sistema que integra os bancos de perfis genéticos da União, dos Estados e do Distrito Federal, permitindo o compartilhamento e a comparação de perfis para relacionar vestígios de diferentes locais de crime ao mesmo indivíduo, mesmo em investigações de estados diferentes, é a",
     alternativas: [
-      "AFIS.",
-      "RNIC (Rede Nacional de Perfis Genéticos e Banco Nacional de Perfis Genéticos).",
-      "SINIC.",
-      "INFOSEG.",
-      "COAF.",
+      "Rede Integrada de Bancos de Perfis Genéticos (RIBPG).",
+      "AFIS, sistema automatizado de identificação de impressões digitais.",
+      "SINIC, sistema nacional de informações criminais.",
+      "INFOSEG, rede de informações de segurança pública.",
+      "COAF, conselho de controle de atividades financeiras.",
     ],
-    correta: 1,
+    correta: 0,
     explicacao:
-      "O RNIC (Rede Nacional de Perfis Genéticos e Banco Nacional de Perfis Genéticos) armazena e cruza perfis genéticos nacionalmente, permitindo relacionar vestígios de diferentes locais de crime ao mesmo indivíduo, mesmo entre estados diferentes — função equivalente, na papiloscopia, ao AFIS (sistema automatizado de identificação de impressões digitais). SINIC e INFOSEG são sistemas de informações criminais mais gerais, e o COAF (hoje UIF) trata de inteligência financeira, não de perfis genéticos.",
+      "O Decreto 7.950/2013 instituiu, no âmbito do Ministério da Justiça e Segurança Pública, o Banco Nacional de Perfis Genéticos (BNPG) e a Rede Integrada de Bancos de Perfis Genéticos (RIBPG). O BNPG armazena perfis genéticos para subsidiar a apuração de crimes e é administrado por perito criminal federal. A RIBPG permite o compartilhamento e a comparação de perfis entre os bancos da União, dos Estados e do Distrito Federal, que aderem por acordo de cooperação técnica. O AFIS trata de impressões digitais, não de DNA.",
     origem: "banco",
+    fonte: "Decreto 7.950/2013",
   },
   {
     id: "for-028",
@@ -490,5 +492,62 @@ export const QUESTOES_FOR: Question[] = [
     explicacao:
       "O percussor é a peça que golpeia a espoleta do cartucho, iniciando a ignição da pólvora que impulsiona o projétil — é o mecanismo central da percussão. A culatra é a parte posterior da arma que veda a câmara no momento do disparo; o extrator remove o estojo deflagrado; o estriamento e a alma do cano dizem respeito à trajetória e à identificação balística do projétil, não ao mecanismo de ignição.",
     origem: "banco",
+  },
+  {
+    id: "for-030",
+    materia: "for",
+    topico: "Perfil genético (DNA) e bancos de dados forenses (RIBPG)",
+    enunciado:
+      "Segundo o art. 9º-A, §5º, da Lei de Execução Penal, com a redação da Lei nº 15.295/2025, a amostra biológica coletada do condenado",
+    alternativas: [
+      "só pode ser usada para permitir a identificação pelo perfil genético, vedada a fenotipagem genética.",
+      "pode ser usada para fenotipagem, a fim de estimar a cor dos olhos e da pele de suspeitos desconhecidos.",
+      "pode ser usada em pesquisas científicas sobre predisposição a doenças, desde que anonimizada.",
+      "pode ser compartilhada com laboratórios privados para fins de testes de paternidade.",
+      "deve ser guardada integralmente e por tempo indeterminado, vedado qualquer descarte.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 9º-A, §5º, da LEP (redação da Lei 15.295/2025): a amostra só pode ser utilizada para o único e exclusivo fim de permitir a identificação pelo perfil genético, não estando autorizada a fenotipagem genética. A redação de 2019 também proibia a busca familiar, e a Lei 15.295 retirou essa proibição. Pelo §6º, identificado o perfil, a amostra é descartada, guardando-se material suficiente para eventual nova perícia, vedado qualquer outro uso.",
+    origem: "banco",
+    fonte: "Lei 7.210/1984 (LEP), art. 9º-A, com redação da Lei 15.295/2025",
+  },
+  {
+    id: "for-031",
+    materia: "for",
+    topico: "Perfil genético (DNA) e bancos de dados forenses (RIBPG)",
+    enunciado:
+      "Nos crimes hediondos e equiparados, a Lei de Execução Penal (art. 9º-A, §10, incluído pela Lei nº 15.295/2025) estabelece que o processamento dos vestígios biológicos coletados em locais de crime e corpos de delito e a inclusão dos perfis no banco deverão ser realizados, se possível, em até",
+    alternativas: [
+      "30 dias, contados da recepção da amostra pelo laboratório de DNA.",
+      "10 dias, contados da coleta no local de crime.",
+      "60 dias, contados da instauração do inquérito policial.",
+      "90 dias, contados do recebimento da denúncia.",
+      "1 ano, contado da prisão do suspeito.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 9º-A, §10, da LEP (incluído pela Lei 15.295/2025): nos crimes hediondos e equiparados, o processamento dos vestígios biológicos coletados em locais de crime e corpos de delito e a inclusão dos perfis genéticos no banco deverão ser realizados, se possível, em até 30 dias contados da recepção da amostra pelo laboratório de DNA.",
+    origem: "banco",
+    fonte: "Lei 7.210/1984 (LEP), art. 9º-A, com redação da Lei 15.295/2025",
+  },
+  {
+    id: "for-032",
+    materia: "for",
+    topico: "Perfil genético (DNA) e bancos de dados forenses (RIBPG)",
+    enunciado:
+      "Um condenado à reclusão em regime inicial fechado se recusa a fornecer material biológico para a identificação do perfil genético ao ingressar no estabelecimento prisional. Pela Lei de Execução Penal, essa recusa",
+    alternativas: [
+      "constitui falta grave.",
+      "é um direito do condenado, sem nenhuma consequência, porque ninguém é obrigado a produzir prova contra si.",
+      "constitui crime de desobediência, que deve ser apurado em inquérito próprio.",
+      "constitui apenas falta leve, punida com advertência verbal.",
+      "torna nula a condenação, que deve ser revista pelo juízo da execução.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 9º-A, §8º, da LEP: constitui falta grave a recusa do condenado em submeter-se ao procedimento de identificação do perfil genético. Se ele não foi identificado no ingresso, deve ser identificado durante o cumprimento da pena (§4º). O titular tem acesso aos seus dados nos bancos e aos documentos da cadeia de custódia, para que a defesa possa contraditá-los (§3º).",
+    origem: "banco",
+    fonte: "Lei 7.210/1984 (LEP), art. 9º-A, com redação da Lei 15.295/2025",
   },
 ];

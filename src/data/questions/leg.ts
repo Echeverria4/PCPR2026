@@ -222,18 +222,19 @@ export const QUESTOES_LEG: Question[] = [
     materia: "leg",
     topico: "Lei 12.037/2009 (Identificação Criminal)",
     enunciado:
-      "Além da identificação datiloscópica e fotográfica, a legislação prevê a coleta de perfil genético como forma de identificação criminal, sendo aplicável obrigatoriamente aos condenados por:",
+      "De acordo com a Lei nº 12.037/2009, com as alterações da Lei nº 15.295/2025, a identificação criminal do civilmente identificado incluirá a coleta de material biológico para a obtenção do perfil genético",
     alternativas: [
-      "Qualquer contravenção penal, independentemente da pena",
-      "Crimes hediondos ou praticados, dolosamente, com violência de natureza grave contra pessoa",
-      "Crimes de menor potencial ofensivo, exclusivamente",
-      "Crimes culposos de trânsito",
-      "Qualquer crime, sem distinção de natureza ou gravidade",
+      "quando for essencial às investigações, segundo despacho da autoridade judiciária, e quando houver recebimento da denúncia pelos crimes do art. 3º, VII, como o praticado com grave violência contra a pessoa, valendo também na prisão em flagrante por esses crimes.",
+      "em todas as hipóteses do art. 3º, inclusive quando o documento apresentado tiver rasura ou for insuficiente para identificar o indiciado.",
+      "apenas após o trânsito em julgado de condenação por crime hediondo, vedada a coleta durante a investigação.",
+      "somente quando o indiciado consentir por escrito, na presença de advogado.",
+      "sempre que o crime investigado for punido com reclusão, independentemente de decisão judicial ou de recebimento da denúncia.",
     ],
-    correta: 1,
+    correta: 0,
     explicacao:
-      "O art. 9º-A da Lei de Execução Penal (LEP), em articulação com a Lei 12.037/2009, determina a coleta obrigatória de perfil genético dos condenados por crime hediondo ou por crime praticado, dolosamente, com violência de natureza grave contra pessoa, para fins de banco de dados de perfis genéticos.",
+      "Art. 5º, §1º, da Lei 12.037 (redação da Lei 15.295/2025): nas hipóteses dos incisos IV e VII do art. 3º, a identificação criminal incluirá a coleta de material biológico para o perfil genético. O inciso IV é a identificação essencial às investigações, por despacho do juiz. O inciso VII é o recebimento da denúncia por crime com grave violência contra a pessoa, crime contra a liberdade sexual ou sexual contra vulnerável, crimes dos arts. 240 a 241-C do ECA ou organização criminosa armada. O §2º estende a coleta à prisão em flagrante por esses crimes. Nas demais hipóteses do art. 3º, como rasura ou documento insuficiente, a identificação é só datiloscópica e fotográfica.",
     origem: "banco",
+    fonte: "Lei 12.037/2009, art. 5º, com redação da Lei 15.295/2025",
   },
   {
     id: "leg-014",
@@ -1294,5 +1295,385 @@ export const QUESTOES_LEG: Question[] = [
       "Art. 6º, V, da Lei 23.213: a PCPR cadastra os custodiados recolhidos durante o tempo indispensável à lavratura do flagrante, com encaminhamento obrigatório ao sistema prisional logo após o ato. A regra acompanha a Lei 14.735, que veda a custódia de preso e de adolescente infrator nas dependências da polícia civil, salvo interesse fundamentado da investigação (art. 40).",
     origem: "banco",
     fonte: "Lei Estadual 23.213/2026 (PR)",
+  },
+  {
+    id: "leg-070",
+    materia: "leg",
+    topico: "Lei 12.037/2009 (Identificação Criminal)",
+    enunciado:
+      "Com a redação dada pela Lei nº 15.295/2025, o art. 9º-A da Lei de Execução Penal determina que será submetido obrigatoriamente à identificação do perfil genético, mediante extração de DNA, por ocasião do ingresso no estabelecimento prisional, o",
+    alternativas: [
+      "condenado à pena de reclusão em regime inicial fechado.",
+      "condenado por crime hediondo ou por crime doloso praticado com violência de natureza grave contra pessoa, exclusivamente.",
+      "preso provisório, qualquer que seja o crime, logo após a audiência de custódia.",
+      "condenado a qualquer pena privativa de liberdade, inclusive detenção em regime aberto.",
+      "condenado que consentir com a coleta, já que a extração de DNA não pode ser imposta.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 9º-A da LEP, na redação da Lei 15.295/2025, em vigor desde janeiro de 2026: o critério passou a ser a pena e o regime, e não mais o tipo de crime. Todo condenado à reclusão em regime inicial fechado tem o DNA colhido ao ingressar no estabelecimento prisional, por técnica adequada e indolor. A redação de 2012 falava em crimes hediondos e dolosos com violência grave, e a de 2019 em crimes violentos, contra a vida e sexuais. Quem não foi identificado no ingresso deve sê-lo durante o cumprimento da pena (§4º), e a recusa do condenado constitui falta grave (§8º).",
+    origem: "banco",
+    fonte: "Lei 7.210/1984 (LEP), art. 9º-A, com redação da Lei 15.295/2025",
+  },
+  {
+    id: "leg-071",
+    materia: "leg",
+    topico: "Lei 12.037/2009 (Identificação Criminal)",
+    enunciado:
+      "Segundo a Lei nº 12.037/2009, a menção à identificação criminal do indiciado em atestados de antecedentes",
+    alternativas: [
+      "é vedada antes do trânsito em julgado da sentença condenatória, assim como em informações não destinadas ao juízo criminal.",
+      "é obrigatória desde o indiciamento, para alertar futuros empregadores.",
+      "é permitida após o recebimento da denúncia, ainda que não haja trânsito em julgado.",
+      "depende apenas de autorização do Delegado de Polícia que presidiu o inquérito.",
+      "é livre, porque a identificação criminal é ato público e não sigiloso.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 6º da Lei 12.037: é vedado mencionar a identificação criminal do indiciado em atestados de antecedentes ou em informações não destinadas ao juízo criminal, antes do trânsito em julgado da sentença condenatória. A regra protege a presunção de inocência.",
+    origem: "banco",
+    fonte: "Lei 12.037/2009",
+  },
+  {
+    id: "leg-072",
+    materia: "leg",
+    topico: "Lei 12.037/2009 (Identificação Criminal)",
+    enunciado:
+      "Nos termos da Lei nº 12.037/2009, com a redação dada pela Lei nº 13.964/2019 (Pacote Anticrime), a exclusão dos perfis genéticos dos bancos de dados ocorrerá",
+    alternativas: [
+      "no caso de absolvição do acusado ou, no caso de condenação, mediante requerimento, após decorridos 20 anos do cumprimento da pena.",
+      "no término do prazo estabelecido em lei para a prescrição do delito, em qualquer caso.",
+      "automaticamente, 5 anos após o arquivamento do inquérito ou a extinção da pena.",
+      "somente por decisão do Superior Tribunal de Justiça, a pedido da defesa.",
+      "em hipótese alguma, porque o perfil genético incluído no banco é permanente.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 7º-A da Lei 12.037, na redação da Lei 13.964/2019: o perfil é excluído (I) na absolvição do acusado; ou (II) na condenação, mediante requerimento, depois de 20 anos do cumprimento da pena. A redação original, de 2012, ligava a exclusão ao prazo de prescrição do delito, e é justamente essa a pegadinha mais comum.",
+    origem: "banco",
+    fonte: "Lei 12.037/2009",
+  },
+  {
+    id: "leg-073",
+    materia: "leg",
+    topico: "Lei 12.037/2009 (Identificação Criminal)",
+    enunciado:
+      "Um indiciado foi identificado criminalmente durante o inquérito policial, mas o Ministério Público não ofereceu denúncia e o inquérito foi definitivamente arquivado. Pela Lei nº 12.037/2009, ele",
+    alternativas: [
+      "pode requerer a retirada da identificação fotográfica do inquérito, desde que apresente provas de sua identificação civil.",
+      "tem a identificação fotográfica retirada de ofício, sem necessidade de requerimento.",
+      "não pode pedir a retirada, porque a identificação criminal é definitiva.",
+      "só pode pedir a retirada depois de 5 anos do arquivamento.",
+      "precisa ajuizar ação de indenização para obter a destruição das impressões digitais.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 7º da Lei 12.037: no caso de não oferecimento da denúncia, de sua rejeição ou de absolvição, é facultado ao indiciado ou ao réu, após o arquivamento definitivo do inquérito ou o trânsito em julgado da sentença, requerer a retirada da identificação fotográfica do inquérito ou processo, desde que apresente provas de sua identificação civil. É uma faculdade, que depende de requerimento.",
+    origem: "banco",
+    fonte: "Lei 12.037/2009",
+  },
+  {
+    id: "leg-074",
+    materia: "leg",
+    topico: "Lei 12.037/2009 (Identificação Criminal)",
+    enunciado:
+      "Para os fins da Lei nº 12.037/2009, a identificação civil pode ser atestada por",
+    alternativas: [
+      "carteira de identidade, carteira de trabalho, carteira profissional, passaporte, carteira de identificação funcional ou outro documento público que permita a identificação, equiparando-se a eles os documentos de identificação militares.",
+      "carteira de identidade, exclusivamente, por ser o único documento com a impressão digital do titular.",
+      "qualquer documento, inclusive particular, como crachá de empresa ou carteira de estudante.",
+      "carteira de identidade ou passaporte, vedada a equiparação dos documentos militares aos civis.",
+      "certidão de nascimento acompanhada de declaração de duas testemunhas.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 2º da Lei 12.037: a identificação civil é atestada por carteira de identidade, carteira de trabalho, carteira profissional, passaporte, carteira de identificação funcional ou outro documento público que permita a identificação do indiciado. O parágrafo único equipara aos documentos civis os documentos de identificação militares.",
+    origem: "banco",
+    fonte: "Lei 12.037/2009",
+  },
+  {
+    id: "leg-075",
+    materia: "leg",
+    topico: "Lei 12.037/2009 (Identificação Criminal)",
+    enunciado:
+      "A Lei nº 15.295/2025 incluiu o inciso VII no art. 3º da Lei nº 12.037/2009, que autoriza a identificação criminal do civilmente identificado quando houver recebimento da denúncia pelo juiz por determinados crimes. Está entre esses crimes o",
+    alternativas: [
+      "crime previsto no art. 2º da Lei nº 12.850/2013 (organização criminosa), quando a organização utilizar ou tiver à sua disposição armas de fogo.",
+      "crime de furto simples, desde que o réu seja reincidente.",
+      "crime de menor potencial ofensivo, quando o autor do fato não comparecer ao Juizado.",
+      "crime contra a honra praticado pela internet.",
+      "crime de tráfico de drogas privilegiado, qualquer que seja a quantidade apreendida.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 3º, VII, da Lei 12.037 (incluído pela Lei 15.295/2025): cabe a identificação criminal quando houver recebimento da denúncia por (a) crime praticado com grave violência contra a pessoa; (b) crime contra a liberdade sexual ou crime sexual contra vulnerável; (c) crimes contra criança ou adolescente dos arts. 240, 241, 241-A, 241-B e 241-C do ECA; e (d) crime do art. 2º da Lei 12.850 quando a organização criminosa utilizar ou tiver à sua disposição armas de fogo. Nesses casos, a identificação inclui o perfil genético (art. 5º, §1º).",
+    origem: "banco",
+    fonte: "Lei 12.037/2009, art. 3º, VII, incluído pela Lei 15.295/2025",
+  },
+  {
+    id: "leg-076",
+    materia: "leg",
+    topico: "Lei 13.869/2019 (Abuso de Autoridade)",
+    enunciado:
+      "Nos termos da Lei nº 13.869/2019, as condutas nela descritas constituem crime de abuso de autoridade quando praticadas pelo agente",
+    alternativas: [
+      "com a finalidade específica de prejudicar outrem ou beneficiar a si mesmo ou a terceiro, ou, ainda, por mero capricho ou satisfação pessoal.",
+      "com dolo genérico ou culpa grave, bastando a imprudência no exercício da função.",
+      "em qualquer hipótese, desde que cause prejuízo material comprovado à vítima.",
+      "apenas quando houver obtenção de vantagem econômica para si ou para outrem.",
+      "com culpa, nas modalidades de negligência, imprudência ou imperícia.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 1º, §1º, da Lei 13.869: as condutas só são crime quando praticadas com a finalidade específica de prejudicar outrem ou beneficiar a si mesmo ou a terceiro, ou por mero capricho ou satisfação pessoal. É o chamado dolo específico. Não há modalidade culposa. O §2º completa a ideia: a divergência na interpretação de lei ou na avaliação de fatos e provas não configura abuso.",
+    origem: "banco",
+    fonte: "Lei 13.869/2019",
+  },
+  {
+    id: "leg-077",
+    materia: "leg",
+    topico: "Lei 13.869/2019 (Abuso de Autoridade)",
+    enunciado:
+      "Quanto à ação penal nos crimes de abuso de autoridade, a Lei nº 13.869/2019 estabelece que eles são de ação penal",
+    alternativas: [
+      "pública incondicionada, admitida a ação privada subsidiária no prazo de 6 meses, contado do fim do prazo para o oferecimento da denúncia.",
+      "pública condicionada à representação do ofendido, no prazo decadencial de 6 meses.",
+      "privada, cabendo ao ofendido oferecer queixa-crime em até 30 dias.",
+      "pública condicionada à requisição do Ministro da Justiça.",
+      "pública incondicionada, vedada em qualquer caso a ação privada subsidiária.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 3º da Lei 13.869: os crimes são de ação penal pública incondicionada. Se o Ministério Público não agir no prazo legal, cabe ação privada subsidiária da pública (§1º), exercida em 6 meses contados do fim do prazo para a denúncia (§2º). O MP pode aditar a queixa, repudiá-la e oferecer denúncia substitutiva.",
+    origem: "banco",
+    fonte: "Lei 13.869/2019",
+  },
+  {
+    id: "leg-078",
+    materia: "leg",
+    topico: "Lei 13.869/2019 (Abuso de Autoridade)",
+    enunciado:
+      "Um policial civil foi condenado, pela primeira vez, por crime de abuso de autoridade. Quanto aos efeitos da condenação de inabilitação para o exercício de cargo e de perda do cargo, a Lei nº 13.869/2019 determina que",
+    alternativas: [
+      "dependem de reincidência em crime de abuso de autoridade, não são automáticos e devem ser declarados motivadamente na sentença.",
+      "são automáticos e decorrem de qualquer condenação, independentemente de fundamentação.",
+      "dependem apenas de a pena aplicada ser superior a 4 anos.",
+      "só podem ser aplicados em processo administrativo, nunca na sentença penal.",
+      "a inabilitação é permanente, e a perda do cargo depende de decisão do Governador.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 4º da Lei 13.869: são efeitos da condenação (I) tornar certa a obrigação de indenizar; (II) a inabilitação para cargo, mandato ou função pública por 1 a 5 anos; e (III) a perda do cargo, do mandato ou da função. Pelo parágrafo único, os efeitos dos incisos II e III dependem de reincidência em crime de abuso de autoridade, não são automáticos e devem ser declarados motivadamente na sentença. Na primeira condenação, portanto, não há perda do cargo por esse fundamento.",
+    origem: "banco",
+    fonte: "Lei 13.869/2019",
+  },
+  {
+    id: "leg-079",
+    materia: "leg",
+    topico: "Lei 13.869/2019 (Abuso de Autoridade)",
+    enunciado:
+      "Entre as penas restritivas de direitos substitutivas das privativas de liberdade previstas na Lei nº 13.869/2019, está a",
+    alternativas: [
+      "suspensão do exercício do cargo, da função ou do mandato, de 1 a 6 meses, com perda dos vencimentos e das vantagens.",
+      "suspensão do cargo por até 2 anos, mantida a remuneração integral.",
+      "proibição definitiva de exercer qualquer função pública.",
+      "cassação dos direitos políticos por 8 anos.",
+      "transferência compulsória para outro município, sem perda de vencimentos.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 5º da Lei 13.869: as penas restritivas de direitos são (I) prestação de serviços à comunidade ou a entidades públicas e (II) suspensão do exercício do cargo, da função ou do mandato, de 1 a 6 meses, com perda dos vencimentos e das vantagens. O parágrafo único permite aplicá-las de forma autônoma ou cumulativa.",
+    origem: "banco",
+    fonte: "Lei 13.869/2019",
+  },
+  {
+    id: "leg-080",
+    materia: "leg",
+    topico: "Lei 13.869/2019 (Abuso de Autoridade)",
+    enunciado:
+      "Uma equipe policial, com mandado de busca e apreensão domiciliar válido, ingressa na residência do investigado às 22h, sem situação de flagrante, socorro ou desastre. Pela Lei nº 13.869/2019, a conduta",
+    alternativas: [
+      "configura crime de abuso de autoridade, porque é crime cumprir mandado de busca domiciliar após as 21h ou antes das 5h.",
+      "é lícita, porque o mandado judicial autoriza o cumprimento a qualquer hora.",
+      "só seria crime se o ingresso ocorresse depois da meia-noite.",
+      "é mera falta disciplinar, sem repercussão penal.",
+      "é lícita se o Delegado de Polícia autorizar por escrito a diligência noturna.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 22, §1º, III, da Lei 13.869: incorre na pena de violação de domicílio quem cumpre mandado de busca e apreensão domiciliar após as 21h ou antes das 5h. Pelo §2º, não há crime se o ingresso for para prestar socorro ou quando houver fundados indícios de flagrante delito ou de desastre. A pena é de detenção de 1 a 4 anos e multa.",
+    origem: "banco",
+    fonte: "Lei 13.869/2019",
+  },
+  {
+    id: "leg-081",
+    materia: "leg",
+    topico: "Lei 13.869/2019 (Abuso de Autoridade)",
+    enunciado:
+      "A Lei nº 13.869/2019 tipifica como abuso de autoridade submeter o preso a interrogatório policial durante o período de repouso noturno. Não há crime, porém,",
+    alternativas: [
+      "se o preso foi capturado em flagrante delito ou se ele, devidamente assistido, consentir em prestar declarações.",
+      "se o interrogatório for gravado em vídeo, ainda que sem o consentimento do preso.",
+      "se o Delegado de Polícia justificar a urgência no próprio termo de interrogatório.",
+      "se o preso for reincidente ou responder por crime hediondo.",
+      "se o interrogatório durar menos de uma hora.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 18 da Lei 13.869: é crime submeter o preso a interrogatório policial durante o repouso noturno, salvo se capturado em flagrante delito ou se ele, devidamente assistido, consentir em prestar declarações. A pena é de detenção de 6 meses a 2 anos e multa.",
+    origem: "banco",
+    fonte: "Lei 13.869/2019",
+  },
+  {
+    id: "leg-082",
+    materia: "leg",
+    topico: "Lei 13.869/2019 (Abuso de Autoridade)",
+    enunciado:
+      "Durante o interrogatório em delegacia, o preso declara que vai exercer o direito ao silêncio. Mesmo assim, o responsável pelo ato continua a fazer perguntas. Pela Lei nº 13.869/2019, essa conduta",
+    alternativas: [
+      "configura crime de abuso de autoridade, assim como prosseguir com o interrogatório de quem optou por ser assistido por advogado, sem a presença dele.",
+      "é lícita, porque o silêncio só pode ser exercido em juízo.",
+      "é lícita, desde que as perguntas sejam registradas no termo.",
+      "só é crime se o preso for menor de 21 anos.",
+      "configura apenas nulidade processual, sem repercussão penal.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 15, parágrafo único, da Lei 13.869: incorre na pena do caput quem prossegue com o interrogatório (I) de pessoa que tenha decidido exercer o direito ao silêncio; ou (II) de pessoa que tenha optado por ser assistida por advogado ou defensor público, sem a presença do seu patrono. O caput pune constranger a depor, sob ameaça de prisão, quem deve guardar segredo em razão de função, ministério, ofício ou profissão.",
+    origem: "banco",
+    fonte: "Lei 13.869/2019",
+  },
+  {
+    id: "leg-083",
+    materia: "leg",
+    topico: "Lei 13.869/2019 (Abuso de Autoridade)",
+    enunciado:
+      "O crime de violência institucional (art. 15-A da Lei nº 13.869/2019, incluído pela Lei nº 14.321/2022) consiste em submeter a vítima de infração penal ou a testemunha de crimes violentos a procedimentos desnecessários, repetitivos ou invasivos que a levem a reviver, sem estrita necessidade, a situação de violência. Sobre esse crime, é correto afirmar que",
+    alternativas: [
+      "a pena é aumentada de 2/3 se o agente público permitir que terceiro intimide a vítima de crimes violentos, e aplicada em dobro se o próprio agente a intimidar.",
+      "a pena é aplicada em dobro se o agente permitir que terceiro intimide a vítima, e triplicada se o próprio agente a intimidar.",
+      "só pode ser praticado por magistrado, durante audiência judicial.",
+      "exige que a vítima seja criança ou adolescente.",
+      "é punido apenas com multa, por ser infração de menor potencial ofensivo sem pena de prisão.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 15-A da Lei 13.869 (incluído pela Lei 14.321/2022): pena de detenção de 3 meses a 1 ano e multa. Pelo §1º, se o agente público permitir que terceiro intimide a vítima de crimes violentos, gerando revitimização, a pena é aumentada de 2/3. Pelo §2º, se o próprio agente intimidar a vítima, a pena é aplicada em dobro. Qualquer agente público pode praticá-lo, inclusive na fase policial.",
+    origem: "banco",
+    fonte: "Lei 13.869/2019",
+  },
+  {
+    id: "leg-084",
+    materia: "leg",
+    topico: "Lei 13.869/2019 (Abuso de Autoridade)",
+    enunciado:
+      "O advogado de um investigado pede acesso aos autos do inquérito policial. A Lei nº 13.869/2019 tipifica como crime negar ao interessado, ao seu defensor ou advogado acesso aos autos, ou impedir a obtenção de cópias,",
+    alternativas: [
+      "ressalvado o acesso a peças relativas a diligências em curso, ou que indiquem a realização de diligências futuras, cujo sigilo seja imprescindível.",
+      "sem nenhuma ressalva, de modo que todas as peças devem ser franqueadas, inclusive as de diligências em andamento.",
+      "apenas depois de concluído o inquérito e oferecida a denúncia.",
+      "somente quando o advogado apresentar autorização judicial expressa.",
+      "apenas no procedimento administrativo, não se aplicando ao inquérito policial.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 32 da Lei 13.869: é crime negar ao interessado, ao seu defensor ou advogado acesso aos autos de investigação preliminar, termo circunstanciado, inquérito ou outro procedimento investigatório, assim como impedir a obtenção de cópias, ressalvado o acesso a peças relativas a diligências em curso, ou que indiquem diligências futuras, cujo sigilo seja imprescindível. A regra conversa com a Súmula Vinculante 14 do STF. A pena é de detenção de 6 meses a 2 anos e multa.",
+    origem: "banco",
+    fonte: "Lei 13.869/2019",
+  },
+  {
+    id: "leg-085",
+    materia: "leg",
+    topico: "Lei 13.869/2019 (Abuso de Autoridade)",
+    enunciado:
+      "Logo após cumprir um mandado de prisão, o responsável pelas investigações publica em rede social que o preso “é o autor do homicídio”, antes de concluídas as apurações e de formalizada a acusação. Pela Lei nº 13.869/2019, a conduta",
+    alternativas: [
+      "configura crime de abuso de autoridade, consistente em antecipar, por meio de comunicação, inclusive rede social, atribuição de culpa.",
+      "é lícita, em razão do princípio da publicidade dos atos administrativos.",
+      "só seria crime se a publicação mostrasse o rosto do preso.",
+      "configura apenas infração ética, sem tipificação penal.",
+      "é lícita se o preso confessou informalmente no momento da prisão.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 38 da Lei 13.869: é crime o responsável pelas investigações antecipar, por meio de comunicação, inclusive rede social, atribuição de culpa, antes de concluídas as apurações e formalizada a acusação. A pena é de detenção de 6 meses a 2 anos e multa. Expor o preso à curiosidade pública mediante violência ou grave ameaça é outro crime (art. 13, I).",
+    origem: "banco",
+    fonte: "Lei 13.869/2019",
+  },
+  {
+    id: "leg-086",
+    materia: "leg",
+    topico: "Lei 13.869/2019 (Abuso de Autoridade)",
+    enunciado:
+      "Segundo a Lei nº 13.869/2019, incorre na mesma pena de quem deixa de comunicar a prisão em flagrante à autoridade judiciária no prazo legal aquele que",
+    alternativas: [
+      "deixa de entregar ao preso, no prazo de 24 horas, a nota de culpa assinada pela autoridade, com o motivo da prisão e os nomes do condutor e das testemunhas.",
+      "deixa de entregar ao preso a nota de culpa no prazo de 72 horas.",
+      "deixa de comunicar a prisão à família apenas quando o preso for menor de idade.",
+      "deixa de lavrar o boletim de ocorrência no mesmo dia da prisão.",
+      "deixa de apresentar o preso à imprensa para identificação.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 12 da Lei 13.869: é crime deixar injustificadamente de comunicar prisão em flagrante à autoridade judiciária no prazo legal. Pelo parágrafo único, incorre na mesma pena quem deixa de comunicar imediatamente a prisão temporária ou preventiva ao juiz que a decretou; deixa de comunicar imediatamente a prisão e o local onde o preso está à família ou à pessoa por ele indicada; ou deixa de entregar ao preso, em 24 horas, a nota de culpa. A pena é de detenção de 6 meses a 2 anos e multa.",
+    origem: "banco",
+    fonte: "Lei 13.869/2019",
+  },
+  {
+    id: "leg-087",
+    materia: "leg",
+    topico: "Lei 13.869/2019 (Abuso de Autoridade)",
+    enunciado:
+      "A Lei nº 13.869/2019 considera crime requisitar a instauração ou instaurar procedimento investigatório contra alguém à falta de qualquer indício da prática de crime, de ilícito funcional ou de infração administrativa. Segundo a lei, não há crime quando se tratar de",
+    alternativas: [
+      "sindicância ou investigação preliminar sumária, devidamente justificada.",
+      "inquérito policial instaurado por requisição do Ministério Público, em qualquer caso.",
+      "procedimento instaurado com base em denúncia anônima, sem nenhuma diligência prévia.",
+      "procedimento contra servidor em estágio probatório.",
+      "investigação instaurada por Delegado de Polícia com mais de 10 anos de carreira.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 27 da Lei 13.869: é crime requisitar instauração ou instaurar procedimento investigatório de infração penal ou administrativa à falta de qualquer indício. O parágrafo único afasta o crime quando se tratar de sindicância ou investigação preliminar sumária, devidamente justificada. A pena é de detenção de 6 meses a 2 anos e multa.",
+    origem: "banco",
+    fonte: "Lei 13.869/2019",
+  },
+  {
+    id: "leg-088",
+    materia: "leg",
+    topico: "Lei 13.869/2019 (Abuso de Autoridade)",
+    enunciado:
+      "Um policial civil foi absolvido em ação penal por abuso de autoridade, e a sentença reconheceu que ele agiu em estrito cumprimento de dever legal. Pela Lei nº 13.869/2019, essa sentença",
+    alternativas: [
+      "faz coisa julgada no âmbito cível e no administrativo-disciplinar.",
+      "não produz nenhum efeito fora do processo penal, porque as esferas são totalmente independentes.",
+      "só faz coisa julgada no cível, podendo a Corregedoria punir o policial pelo mesmo fato com base na excludente.",
+      "vincula apenas o processo administrativo, e não a ação de indenização.",
+      "precisa ser homologada pelo Conselho Superior da Polícia Civil para produzir efeitos.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 8º da Lei 13.869: faz coisa julgada no âmbito cível e no administrativo-disciplinar a sentença penal que reconhecer que o ato foi praticado em estado de necessidade, legítima defesa, estrito cumprimento de dever legal ou exercício regular de direito. A regra geral é a independência das esferas (arts. 6º e 7º), mas não se pode mais discutir a existência ou a autoria do fato quando já decididas no juízo criminal.",
+    origem: "banco",
+    fonte: "Lei 13.869/2019",
+  },
+  {
+    id: "leg-089",
+    materia: "leg",
+    topico: "Lei 13.869/2019 (Abuso de Autoridade)",
+    enunciado:
+      "Para os efeitos da Lei nº 13.869/2019, é agente público, podendo ser sujeito ativo do crime de abuso de autoridade,",
+    alternativas: [
+      "todo aquele que exerce, ainda que transitoriamente ou sem remuneração, por qualquer forma de investidura ou vínculo, mandato, cargo, emprego ou função em órgão ou entidade abrangidos pela lei.",
+      "apenas o servidor público efetivo e estável, excluídos os ocupantes de cargo em comissão.",
+      "apenas as autoridades policiais e judiciárias, excluídos os membros do Legislativo.",
+      "apenas quem recebe remuneração dos cofres públicos há mais de 1 ano.",
+      "apenas o servidor federal, cabendo aos Estados legislar sobre os seus servidores.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 2º da Lei 13.869: é sujeito ativo qualquer agente público, servidor ou não, da administração direta, indireta ou fundacional de qualquer dos Poderes da União, dos Estados, do Distrito Federal, dos Municípios e de Território, incluindo servidores e militares, membros do Legislativo, do Executivo, do Judiciário, do Ministério Público e dos tribunais ou conselhos de contas. Pelo parágrafo único, agente público é todo aquele que exerce, ainda que transitoriamente ou sem remuneração, mandato, cargo, emprego ou função.",
+    origem: "banco",
+    fonte: "Lei 13.869/2019",
   },
 ];

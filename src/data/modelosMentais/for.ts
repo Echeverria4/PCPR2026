@@ -65,11 +65,11 @@ export const MODELOS_MENTAIS_FOR: ModeloMental[] = [
       "Necropsia (autópsia) é o exame do cadáver para determinar causa e circunstância da morte. Exame de corpo de delito é mais amplo: qualquer prova material que comprove a existência do crime, podendo ser em pessoa viva (lesão corporal) ou em coisa (arrombamento) — nem todo corpo de delito envolve morte.",
   },
   {
-    topico: "Perfil genético (DNA) e bancos de dados forenses (RNIC)",
+    topico: "Perfil genético (DNA) e bancos de dados forenses (RIBPG)",
     origem: "aposta",
     gancho: "DNA identifica quem é; o banco de dados lembra quem já foi",
     modelo:
-      "O perfil genético usa regiões específicas do DNA, não o genoma inteiro, para gerar um código comparável entre amostras. O RNIC (Rede Integrada de Banco de Perfis Genéticos) armazena esses perfis de condenados e vestígios de crimes para cruzar casos não resolvidos no futuro.",
+      "O perfil genético usa regiões específicas do DNA, não o genoma inteiro, para gerar um código comparável entre amostras. O Banco Nacional de Perfis Genéticos (BNPG) guarda os perfis de condenados e de vestígios, e a RIBPG (Rede Integrada de Bancos de Perfis Genéticos) cruza os bancos da União e dos Estados para ligar casos não resolvidos. Desde a Lei 15.295/2025, todo condenado à reclusão em regime inicial fechado tem o DNA colhido ao entrar no presídio.",
   },
   {
     topico: "Balística: percussão, tiro à queima-roupa e curta/média/longa distância",
