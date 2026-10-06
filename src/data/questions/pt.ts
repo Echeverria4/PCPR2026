@@ -626,14 +626,14 @@ export const QUESTOES_PT: Question[] = [
       "Um agente policial precisa redigir um documento relatando, de forma descritiva e impessoal, os fatos apurados durante uma diligência. O expediente de redação oficial mais adequado a essa finalidade é:",
     alternativas: [
       "O ofício, por se tratar de comunicação externa entre órgãos distintos.",
-      "O memorando, por se tratar de comunicação interna ágil entre setores.",
+      "O despacho, por se tratar de decisão da autoridade sobre o andamento de um processo.",
       "O relatório, por se tratar de exposição descritiva e detalhada de fatos apurados.",
       "A ata, por se tratar de registro de reunião com pauta e deliberações.",
       "A circular, por se tratar de comunicação padronizada a múltiplos destinatários.",
     ],
     correta: 2,
     explicacao:
-      "O relatório é o expediente próprio para expor, de forma descritiva, impessoal e detalhada, fatos apurados — é o formato usado, por exemplo, em boletins de ocorrência e relatórios de diligência policial. O ofício destina-se à comunicação externa entre órgãos; o memorando, à comunicação interna ágil; a ata, ao registro formal de reunião; e a circular, à comunicação padronizada dirigida a múltiplos destinatários simultaneamente — nenhum desses é o formato voltado à exposição detalhada de fatos apurados em diligência.",
+      "O relatório é o expediente próprio para expor, de forma descritiva, impessoal e detalhada, fatos apurados — é o formato usado, por exemplo, em boletins de ocorrência e relatórios de diligência policial. O ofício é o expediente de comunicação oficial (desde a 3ª edição do Manual de Redação da Presidência da República, de 2018, o memorando e o aviso foram abolidos e toda comunicação no padrão ofício, interna ou externa, se chama ofício); o despacho registra a decisão da autoridade num processo; a ata, ao registro formal de reunião; e a circular, à comunicação padronizada dirigida a múltiplos destinatários simultaneamente — nenhum desses é o formato voltado à exposição detalhada de fatos apurados em diligência.",
     origem: "banco",
   },
 ];

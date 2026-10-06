@@ -222,7 +222,7 @@ Na linguagem formal e nos documentos oficiais, a norma culta é rigorosa quanto 
     materia: "pt",
     topico: "Redação oficial e correspondência administrativa (padrão culto, impessoalidade, concisão)",
     origem: "aposta",
-    texto: `A redação oficial é o conjunto de normas que regem a elaboração de documentos administrativos — ofícios, memorandos, atas, relatórios, despachos — produzidos por órgãos públicos, e se orienta por princípios que a distinguem de outros gêneros textuais.
+    texto: `A redação oficial é o conjunto de normas que regem a elaboração de documentos administrativos — ofícios, atas, relatórios, despachos — produzidos por órgãos públicos, e se orienta por princípios que a distinguem de outros gêneros textuais. Desde a 3ª edição do Manual de Redação da Presidência da República (2018), não existem mais o memorando e o aviso: toda comunicação no padrão ofício, interna ou externa, chama-se ofício, com as variações ofício circular, ofício conjunto e ofício conjunto circular.
 
 A impessoalidade exige que o texto trate de assuntos de interesse público, sem marcas de opinião pessoal ou emotividade do redator, evitando a primeira pessoa do singular em favor da terceira pessoa ou da voz passiva. A clareza e a concisão exigem frases diretas, objetivas, sem prolixidade nem informação redundante, mas sem sacrificar a precisão terminológica. A formalidade e o padrão culto exigem o uso das normas gramaticais e de vocabulário técnico e polido, evitando gírias, coloquialismos e regionalismos. A uniformidade determina que os documentos sigam sempre o mesmo padrão de forma e estrutura, o que facilita a tramitação e o arquivamento.
 

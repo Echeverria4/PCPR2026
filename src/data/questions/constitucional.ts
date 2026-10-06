@@ -138,7 +138,7 @@ export const QUESTOES_CON: Question[] = [
     enunciado:
       "No sistema brasileiro de controle de constitucionalidade, a principal diferença entre o controle DIFUSO e o controle CONCENTRADO é que:",
     alternativas: [
-      "O controle difuso pode ser exercido por qualquer juiz ou tribunal, incidentalmente, em um caso concreto; o controle concentrado é exercido, em regra, exclusivamente pelo STF, por meio de ações diretas, com efeitos erga omnes.",
+      "O controle difuso pode ser exercido por qualquer juiz ou tribunal, incidentalmente, em um caso concreto; o controle concentrado em face da Constituição Federal é exercido pelo STF, por meio de ações diretas, com efeitos erga omnes.",
       "O controle difuso só pode ser exercido pelo STF, e o concentrado por qualquer juiz.",
       "Ambos os controles produzem exclusivamente efeitos entre as partes do processo (inter partes).",
       "O controle concentrado só existe nos Estados Unidos, não sendo adotado no Brasil.",
@@ -319,7 +319,7 @@ export const QUESTOES_CON: Question[] = [
     ],
     correta: 1,
     explicacao:
-      "No controle difuso, a inconstitucionalidade é discutida como questão prejudicial ao mérito dentro de um processo comum, produzindo efeitos inter partes — salvo se o Senado Federal suspender a execução da norma (art. 52, X, da CF), ato que amplia o efeito da decisão. Isso contrasta com o controle concentrado, exercido exclusivamente pelo STF via ADI/ADC/ADPF, cujas decisões têm efeito erga omnes e vinculante.",
+      "No controle difuso, a inconstitucionalidade é discutida como questão prejudicial ao mérito dentro de um processo comum, produzindo efeitos inter partes — salvo se o Senado Federal suspender a execução da norma (art. 52, X, da CF), ato que amplia o efeito da decisão. Isso contrasta com o controle concentrado, exercido pelo STF via ADI/ADC/ADPF em face da Constituição Federal, cujas decisões têm efeito erga omnes e vinculante.",
     origem: "banco",
   },
   {
@@ -330,14 +330,14 @@ export const QUESTOES_CON: Question[] = [
       "O controle concentrado de constitucionalidade, exercido por meio de ADI, ADC e ADPF, é característico por:",
     alternativas: [
       "Poder ser exercido por qualquer juiz de primeiro grau, de forma incidental.",
-      "Ser exercido exclusivamente pelo STF, mediante ações diretas ajuizadas por legitimados taxativos, com efeito erga omnes e vinculante.",
+      "Ser exercido, em face da Constituição Federal, pelo STF, mediante ações diretas ajuizadas por legitimados taxativos, com efeito erga omnes e vinculante.",
       "Depender da suspensão da norma pelo Senado Federal para produzir qualquer efeito.",
       "Produzir efeitos restritos apenas às partes do processo em que a ação foi proposta.",
       "Ser cabível apenas em processos penais que envolvam servidores públicos.",
     ],
     correta: 1,
     explicacao:
-      "O controle concentrado é exercido exclusivamente pelo STF, por meio de ações diretas específicas (ADI, ADC, ADPF), ajuizadas por legitimados taxativos previstos na Constituição, produzindo efeito erga omnes e vinculante em relação aos demais órgãos do Judiciário e à Administração Pública — diferentemente do controle difuso, que pode ser exercido por qualquer juiz e produz, em regra, efeitos inter partes.",
+      "Em face da Constituição Federal, o controle concentrado é exercido pelo STF, por meio de ações diretas específicas (ADI, ADC, ADPF), ajuizadas por legitimados taxativos previstos na Constituição, produzindo efeito erga omnes e vinculante em relação aos demais órgãos do Judiciário e à Administração Pública — diferentemente do controle difuso, que pode ser exercido por qualquer juiz e produz, em regra, efeitos inter partes. Os Tribunais de Justiça também exercem controle concentrado, mas tendo a Constituição Estadual como parâmetro (representação de inconstitucionalidade, art. 125, §2º, da CF).",
     origem: "banco",
   },
 ];
