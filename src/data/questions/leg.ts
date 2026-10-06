@@ -2174,4 +2174,175 @@ export const QUESTOES_LEG: Question[] = [
     origem: "banco",
     fonte: "LC Estadual 259/2023, art. 26-A, com redação da LC 285/2025",
   },
+  {
+    id: "leg-116",
+    materia: "leg",
+    topico: "Estrutura organizacional da PCPR (delegacias, carreiras, hierarquia)",
+    enunciado:
+      "Um Delegado de Polícia de classe inferior e um Delegado de classe mais elevada trabalham juntos em uma equipe de investigação, com Agentes de Polícia Judiciária e um Papiloscopista. Segundo a Lei Estadual nº 23.213/2026,",
+    alternativas: [
+      "o Delegado de classe mais elevada tem precedência hierárquica sobre o de classe inferior no trabalho em equipe, e os Agentes e o Papiloscopista guardam correlação hierárquica ligada à função que desempenham na unidade, fixada por regulamento ou por designação da autoridade policial.",
+      "não há hierarquia entre os Delegados, porque todos ocupam o mesmo cargo e têm a mesma independência funcional.",
+      "o Agente de Polícia Judiciária mais antigo tem precedência sobre o Delegado de classe inferior.",
+      "a hierarquia entre Agentes e Papiloscopista é fixada pela antiguidade no serviço público, sem relação com a função exercida.",
+      "o Papiloscopista, por ser perito, tem precedência sobre os Agentes e sobre os Delegados em qualquer situação.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 8º da Lei 23.213: a hierarquia se alicerça na ordenação da autoridade nos diferentes níveis da estrutura. Art. 9º: dentro do mesmo cargo prevalece a hierarquia da função (caput). Os Delegados de classe mais elevada têm precedência sobre os de classe inferior quando na mesma unidade ou em trabalho em equipe, ressalvada a hierarquia da função (§1º). Sempre se observa a precedência da carreira de Delegado sobre as demais (§2º). Agente de Polícia Judiciária, Papiloscopista e Agente de Operações guardam correlação hierárquica pela função que desempenham na unidade, estabelecida por regulamento ou por designação da autoridade policial (§3º).",
+    origem: "banco",
+    fonte: "Lei Estadual 23.213/2026 (PR), art. 9º",
+  },
+  {
+    id: "leg-117",
+    materia: "leg",
+    topico: "Estrutura organizacional da PCPR (delegacias, carreiras, hierarquia)",
+    enunciado:
+      "Na estrutura organizacional básica da PCPR definida pela Lei Estadual nº 23.213/2026, a Escola Superior de Polícia Civil (ESPC), o Departamento de Tecnologia da Informação e Inovação (DTI) e o Instituto de Identificação integram, respectivamente, os níveis",
+    alternativas: [
+      "Instrumental, Instrumental e de Execução.",
+      "de Assessoramento, Instrumental e Instrumental.",
+      "de Execução, de Assessoramento e de Direção Superior.",
+      "Instrumental, de Assessoramento e Instrumental.",
+      "de Direção Superior, de Execução e de Assessoramento.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 10 da Lei 23.213. O Nível Instrumental reúne a Coordenadoria de Operações Integradas (COI), a ESPC, o Departamento de Planejamento, Administração e Finanças (DPAF) e o DTI, e cuida das atividades-meio e técnico-especializadas (§3º). O Nível de Execução reúne o Instituto de Identificação e os Departamentos e Unidades de Polícia Judiciária e Investigação Criminal, e exerce a polícia administrativa e judiciária, a investigação criminal e a identificação humana (§4º). O Assessoramento (Chefia de Gabinete, Assessorias Técnicas, DIP e DCI) assessora diretamente o Delegado-Geral (§2º). A Direção Superior (Delegacia-Geral, CSP e CGP) dirige, coordena, controla, normatiza e supervisiona (§1º). Pegadinha: o Instituto de Identificação não é órgão-meio, é de Execução.",
+    origem: "banco",
+    fonte: "Lei Estadual 23.213/2026 (PR), art. 10, III e IV",
+  },
+  {
+    id: "leg-118",
+    materia: "leg",
+    topico: "Estrutura organizacional da PCPR (delegacias, carreiras, hierarquia)",
+    enunciado:
+      "Sobre a chefia da Polícia Civil do Paraná na Lei Estadual nº 23.213/2026, é correto afirmar que o Delegado-Geral",
+    alternativas: [
+      "preside o Conselho Superior de Polícia e designa os Delegados-Gerais Adjuntos Administrativo e Operacional, escolhidos entre os Delegados em atividade da classe mais elevada.",
+      "é eleito pelo Conselho Superior de Polícia entre os Delegados de qualquer classe, para mandato de dois anos.",
+      "é nomeado pelo Secretário de Estado da Segurança Pública, e os Adjuntos são nomeados pelo Governador.",
+      "não integra o Conselho Superior de Polícia, que é presidido pelo Corregedor-Geral.",
+      "tem um único Adjunto, que acumula as atividades administrativas e operacionais.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 11 da Lei 23.213: o Delegado-Geral, chefe da PCPR, é nomeado pelo Governador e escolhido entre os Delegados em atividade e da classe mais elevada. Entre suas atribuições (art. 12) estão presidir o CSP (II), propor ao CSP mensagem ao Governador para criar e extinguir cargos e unidades (IV) e designar autoridades policiais, em caráter especial, para investigações de grande repercussão ou que exijam conhecimento técnico-especializado (IX). O art. 13 prevê um Delegado-Geral Adjunto Administrativo e um Adjunto Operacional, designados pelo Delegado-Geral entre Delegados em atividade da classe mais elevada. O Administrativo cuida da gestão, do orçamento e da avaliação de desempenho (art. 14), e o Operacional, das operações, da investigação e da integração com outros órgãos (art. 15).",
+    origem: "banco",
+    fonte: "Lei Estadual 23.213/2026 (PR), arts. 11 a 15",
+  },
+  {
+    id: "leg-119",
+    materia: "leg",
+    topico: "Estrutura organizacional da PCPR (delegacias, carreiras, hierarquia)",
+    enunciado:
+      "Pela Lei Estadual nº 23.213/2026, o Departamento Estadual de Polícia Especializada (DPE) e o Departamento de Repressão a Crimes Cibernéticos (DRCC) têm competências distintas. É correto afirmar que",
+    alternativas: [
+      "o DPE cuida das investigações de delitos de trânsito, contra o meio ambiente, contra o consumidor e de crimes informáticos, além da atuação em grandes eventos, da fiscalização de produtos controlados e do registro online de boletins de ocorrência, enquanto o DRCC coordena as investigações de crimes cibernéticos de média e alta complexidade em todo o Estado.",
+      "o DRCC é responsável pelo registro online de boletins de ocorrência, e o DPE, pelos crimes cibernéticos de alta complexidade.",
+      "o DPE só atua na capital, e o DRCC só no interior do Estado.",
+      "o DRCC cuida dos crimes contra o consumidor e o meio ambiente praticados por meio da internet, e o DPE, dos crimes de trânsito.",
+      "o DPE foi extinto pela Lei nº 23.213/2026, e suas competências passaram ao DRCC.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 38 da Lei 23.213: ao DPE cabem as investigações dos delitos de trânsito, contra o meio ambiente, contra o consumidor e dos crimes informáticos (I) e a atuação em grandes eventos, a fiscalização de produtos controlados e o registro online de boletins de ocorrência (II). Art. 41: ao DRCC cabe coordenar investigações de crimes cibernéticos de média e alta complexidade, praticados pela internet ou por dispositivos digitais, com atuação em todo o Estado (I), além de desarticular grupos que usem meios cibernéticos, como fraudes eletrônicas, estelionatos virtuais, invasões de dispositivos, crimes contra a honra na internet, exploração sexual infantojuvenil e crimes de ódio (II). Os dois estão entre os departamentos dos incisos I a IX do art. 32, que atuam em todo o Estado (art. 50).",
+    origem: "banco",
+    fonte: "Lei Estadual 23.213/2026 (PR), arts. 38 e 41",
+  },
+  {
+    id: "leg-120",
+    materia: "leg",
+    topico: "Estrutura organizacional da PCPR (delegacias, carreiras, hierarquia)",
+    enunciado:
+      "Uma Delegacia de Polícia do interior investiga um homicídio e apreende o celular do suspeito, mas não tem estrutura para analisar os vestígios digitais. À luz da Lei Estadual nº 23.213/2026,",
+    alternativas: [
+      "o Departamento de Repressão a Crimes Cibernéticos (DRCC) pode apoiar técnica e operacionalmente a investigação, quando solicitado ou por determinação superior, em regime de cooperação e sem avocar o inquérito.",
+      "o DRCC deve avocar o inquérito, porque qualquer investigação com vestígio digital passa a ser de sua competência exclusiva.",
+      "o DRCC só pode atuar em investigações instauradas na capital do Estado.",
+      "a delegacia deve remeter o inquérito à Polícia Federal, porque a análise de celulares é competência da União.",
+      "o apoio do DRCC depende de autorização judicial prévia e específica para cada diligência.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 41, III, da Lei 23.213: compete ao DRCC apoiar técnica e operacionalmente as unidades policiais de todo o Estado nas investigações que envolvam elementos ou vestígios digitais, quando solicitado ou por determinação superior. Pelo art. 51, é vedada a avocação de inquérito: a unidade especializada pode atuar em cooperação com o Delegado responsável, se o interesse público exigir, e a avocação ou redistribuição só ocorre de forma excepcional, por despacho fundamentado do superior hierárquico (parágrafo único). O acesso aos dados do aparelho segue as regras próprias de prova, mas a lei não condiciona o apoio técnico do DRCC a uma ordem judicial.",
+    origem: "banco",
+    fonte: "Lei Estadual 23.213/2026 (PR), arts. 41, III, e 51",
+  },
+  {
+    id: "leg-121",
+    materia: "leg",
+    topico: "Estrutura organizacional da PCPR (delegacias, carreiras, hierarquia)",
+    enunciado:
+      "Sobre as unidades territoriais da PCPR previstas na Lei Estadual nº 23.213/2026, é correto afirmar que",
+    alternativas: [
+      "as Subdivisões de Polícia do Interior (SDP) são unidades de atuação regional subordinadas ao Departamento de Polícia do Interior (DPI), e as Centrais Regionais de Flagrante (CRF) exercem as funções cartorárias de formalização dos procedimentos de natureza flagrancial.",
+      "o Departamento de Polícia da Região Metropolitana (DPMETRO) coordena as unidades de todo o interior do Estado.",
+      "as Subdivisões de Polícia do Interior são subordinadas ao Departamento de Polícia da Capital (DPCAP).",
+      "as Centrais Regionais de Flagrante são criadas por lei estadual e atuam só na capital.",
+      "os Postos Policiais de Atendimento ao Cidadão (PPAC) presidem inquéritos policiais nos municípios menores.",
+    ],
+    correta: 0,
+    explicacao:
+      "Lei 23.213: o DPCAP coordena as atividades na capital (art. 42), o DPMETRO nos municípios da Região Metropolitana de Curitiba (art. 43) e o DPI no interior (art. 44). As SDP são unidades regionais subordinadas ao DPI (art. 45), e as Delegacias de Polícia executam as investigações e a polícia judiciária em sua circunscrição (art. 46). As CRF são regulamentadas por ato do Conselho Superior de Polícia, têm atribuição em todo o Estado, podem ser estruturadas em macrorregiões e exercem as funções cartorárias dos procedimentos flagranciais (art. 47). Aos PPAC cabem só a orientação ao cidadão e o registro de boletins de ocorrência (art. 48).",
+    origem: "banco",
+    fonte: "Lei Estadual 23.213/2026 (PR), arts. 42 a 48",
+  },
+  {
+    id: "leg-122",
+    materia: "leg",
+    topico: "Estrutura organizacional da PCPR (delegacias, carreiras, hierarquia)",
+    enunciado:
+      "Segundo a Lei Estadual nº 23.213/2026, os Departamentos de Polícia Judiciária e Investigação Criminal (como DHPP, DENARC, DRACO, DPV e DRCC) são dirigidos por",
+    alternativas: [
+      "Delegados de Polícia em atividade, preferencialmente da classe mais elevada da carreira, escolhidos e designados pelo Delegado-Geral.",
+      "Delegados eleitos pelos servidores lotados no respectivo departamento.",
+      "Delegados obrigatoriamente da classe mais elevada, nomeados pelo Governador.",
+      "Agentes de Polícia Judiciária da classe mais elevada, designados pelo Conselho Superior de Polícia.",
+      "Delegados aposentados, contratados em cargo em comissão pelo Secretário de Segurança Pública.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 49 da Lei 23.213: os Departamentos dos incisos I a XII do art. 32 são dirigidos por Delegados de Polícia em atividade, preferencialmente da classe mais elevada, escolhidos e designados pelo Delegado-Geral. A regra tem um acréscimo para o DOESP (art. 40): seu diretor é Delegado com curso específico de Operações Táticas Especiais, escolhido e designado pelo Delegado-Geral. Note o “preferencialmente”, o mesmo termo que a CE-PR usa para o comando da PC (art. 47). Já o Delegado-Geral deve ser da classe mais elevada, sem a palavra “preferencialmente” (art. 11).",
+    origem: "banco",
+    fonte: "Lei Estadual 23.213/2026 (PR), arts. 40 e 49",
+  },
+  {
+    id: "leg-123",
+    materia: "leg",
+    topico: "Estrutura organizacional da PCPR (delegacias, carreiras, hierarquia)",
+    enunciado:
+      "Quanto ao funcionamento da PCPR, a Lei Estadual nº 23.213/2026 estabelece que",
+    alternativas: [
+      "se admite a prestação de serviço voluntário, vedada em qualquer caso a atuação na atividade-fim de polícia judiciária, e a classificação das unidades policiais e a distribuição do efetivo são feitas por resolução do Conselho Superior de Polícia.",
+      "o serviço voluntário pode alcançar a atividade-fim de polícia judiciária, desde que sob supervisão de Delegado.",
+      "a contratação de terceiros é vedada para quaisquer atividades da Polícia Civil, inclusive as administrativas.",
+      "a estrutura organizacional interna e as atribuições específicas das unidades são definidas por resolução do Corregedor-Geral.",
+      "as unidades policiais são classificadas exclusivamente pela antiguidade de sua criação.",
+    ],
+    correta: 0,
+    explicacao:
+      "Lei 23.213: as unidades são classificadas pela localização geográfica, densidade demográfica, demanda e complexidade e necessidade de habilidades específicas, e a classificação e a distribuição do efetivo são feitas por resolução do CSP (art. 53). A estrutura interna e o detalhamento das atribuições dos órgãos são regulamentados por decreto do Governador (art. 56). As atividades administrativas (auxiliares, instrumentais ou acessórias) admitem execução indireta, por contratação de terceiros (art. 57). O serviço voluntário é admitido, vedada em qualquer caso a atuação na atividade-fim de polícia judiciária (art. 58).",
+    origem: "banco",
+    fonte: "Lei Estadual 23.213/2026 (PR), arts. 53, 56, 57 e 58",
+  },
+  {
+    id: "leg-124",
+    materia: "leg",
+    topico: "Estrutura organizacional da PCPR (delegacias, carreiras, hierarquia)",
+    enunciado:
+      "Um trabalhador morre em acidente de trabalho em uma obra, e em outro caso uma adolescente é vítima de violência praticada pelo padrasto. Pela distribuição de competências da Lei Estadual nº 23.213/2026, as investigações cabem, respectivamente, às unidades subordinadas ao",
+    alternativas: [
+      "Departamento Estadual de Homicídios e Proteção à Pessoa (DHPP) e ao Departamento Estadual de Proteção a Vulneráveis (DPV).",
+      "Departamento Estadual de Polícia Especializada (DPE) e ao Departamento Estadual de Homicídios e Proteção à Pessoa (DHPP).",
+      "Departamento de Operações Especiais (DOESP) e ao Departamento de Polícia da Capital (DPCAP).",
+      "Departamento Estadual de Proteção a Vulneráveis (DPV) e ao Departamento Estadual de Combate a Crimes Patrimoniais (DCCP).",
+      "Departamento Estadual de Combate à Corrupção (DECCOR) e ao Departamento Estadual de Proteção a Vulneráveis (DPV).",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 33 da Lei 23.213: o DHPP coordena as investigações dos crimes dolosos contra a vida, de pessoas desaparecidas, dos crimes contra a saúde pública e dos acidentes de trabalho. Art. 39: o DPV coordena as investigações dos crimes em que são vítimas crianças, adolescentes e mulheres em contexto de violência doméstica, e a apuração dos atos infracionais de adolescentes. Pegadinha: acidente de trabalho fica com o DHPP, não com o DPE, que cuida de trânsito, meio ambiente, consumidor e crimes informáticos (art. 38).",
+    origem: "banco",
+    fonte: "Lei Estadual 23.213/2026 (PR), arts. 33 e 39",
+  },
 ];
