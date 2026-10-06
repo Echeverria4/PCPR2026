@@ -1361,4 +1361,472 @@ export const QUESTOES_TI: Question[] = [
       "O formato padrão do LibreOffice é o OpenDocument (ODF), padrão aberto e normatizado (ISO/IEC 26300): .odt no Writer, .ods no Calc e .odp no Impress. O Writer abre e salva documentos do Word (.docx e o antigo .doc) — ao salvar fora do ODF, apenas avisa sobre possíveis perdas de formatação — e exporta diretamente para PDF (Arquivo > Exportar como PDF), sem programas adicionais. O Word atual usa por padrão o .docx (o .doc é o formato das versões até 2003) e também abre e salva .odt. Por ser aberto, o ODF pode ser lido por diferentes programas, inclusive o Microsoft 365 e o Google Docs. O PDF preserva a aparência do documento em qualquer equipamento e é o formato usual para versões finais.",
     origem: "banco",
   },
+  {
+    id: "ti-078",
+    materia: "ti",
+    topico: "Redes de computadores",
+    enunciado:
+      "Em um curso sobre investigação de crimes cibernéticos, o instrutor apresentou o modelo de referência OSI, que divide a comunicação em rede em sete camadas, e pediu aos agentes que relacionassem algumas delas às respectivas funções.\n\n1. Física\n2. Enlace\n3. Rede\n4. Transporte\n5. Aplicação\n\n( ) Endereçamento lógico (IP) e roteamento dos pacotes entre redes diferentes.\n( ) Transmissão dos bits pelo meio físico, na forma de sinais elétricos, luminosos ou de rádio.\n( ) Comunicação fim a fim entre os processos, identificados por portas, com controle de fluxo e, no TCP, entrega confiável.\n( ) Protocolos usados diretamente pelos programas, como HTTP, SMTP e DNS.\n( ) Entrega de quadros entre dispositivos da mesma rede local, com base no endereço físico (MAC).\n\nA sequência correta, de cima para baixo, é:",
+    alternativas: [
+      "3, 1, 4, 5, 2.",
+      "2, 1, 4, 5, 3.",
+      "3, 1, 5, 4, 2.",
+      "4, 1, 3, 5, 2.",
+      "3, 2, 4, 5, 1.",
+    ],
+    correta: 0,
+    explicacao:
+      "O modelo OSI (norma ISO/IEC 7498-1) tem sete camadas, de baixo para cima: física, enlace, rede, transporte, sessão, apresentação e aplicação. A física transmite os bits pelo meio (cabo, fibra, ondas de rádio); a de enlace entrega quadros dentro da mesma rede local, pelo endereço MAC — é a camada do switch e do Wi-Fi; a de rede cuida do endereço IP e do roteamento entre redes — é a camada do roteador; a de transporte faz a comunicação fim a fim entre processos, identificados por portas, com o TCP (orientado a conexão e confiável) ou o UDP (mais leve, sem garantias); e a de aplicação reúne os protocolos usados pelos programas, como HTTP, SMTP e DNS. A camada de sessão controla o diálogo entre as aplicações, e a de apresentação trata do formato, da compressão e da criptografia dos dados. O modelo TCP/IP, o efetivamente usado na internet, agrupa as funções em quatro camadas: acesso à rede (física e enlace do OSI), internet (rede), transporte e aplicação (sessão, apresentação e aplicação do OSI). Sequência: 3, 1, 4, 5, 2.",
+    origem: "banco",
+  },
+  {
+    id: "ti-079",
+    materia: "ti",
+    topico: "Redes de computadores",
+    enunciado:
+      "Na apuração do vazamento de senhas em uma pequena repartição, o perito constatou que o invasor havia instalado um programa de captura de tráfego (sniffer) em um dos computadores da rede local. As estações estavam ligadas a um hub, conectado, por sua vez, ao roteador do provedor de internet.\n\nSobre os equipamentos envolvidos, assinale a afirmativa correta.",
+    alternativas: [
+      "O hub, da camada física, repete o sinal para todas as portas, o que permitia ao sniffer ver o tráfego das outras estações; o switch, da camada de enlace, entrega cada quadro só ao destinatário, pelo endereço MAC.",
+      "O hub e o switch funcionam da mesma forma, pois ambos encaminham cada pacote somente à porta de destino, com base no endereço IP, de modo que a captura só pode ter ocorrido no roteador do provedor.",
+      "O roteador opera na camada de enlace e encaminha os pacotes pelo endereço MAC, razão pela qual é o equipamento que permite à rede local se comunicar com a internet e com as redes de outras unidades.",
+      "A substituição do hub por um switch elimina qualquer possibilidade de interceptação na rede local, o que dispensa, a partir daí, o uso de protocolos com criptografia, como HTTPS e SSH, nas estações.",
+      "O switch opera na camada de aplicação e lê o conteúdo das mensagens para decidir a porta de saída, enquanto o hub opera na camada de transporte e controla as conexões e as portas TCP de cada estação.",
+    ],
+    correta: 0,
+    explicacao:
+      "O hub é um repetidor de várias portas, da camada física: tudo o que chega por uma porta é repetido para todas as outras, de modo que qualquer estação, com a placa de rede em modo promíscuo, enxerga o tráfego alheio — o cenário ideal para o sniffer. O switch, da camada de enlace, aprende em que porta está cada endereço MAC (tabela MAC) e encaminha cada quadro só ao destinatário, o que dificulta a captura, mas não a impede: o envenenamento de ARP e o espelhamento de portas ainda permitem interceptar o tráfego, por isso protocolos cifrados, como HTTPS e SSH, continuam indispensáveis. O roteador, da camada de rede, interliga redes diferentes, como a rede local e a internet, e escolhe o caminho dos pacotes pelo endereço IP. Existem switches de camada 3, com funções de roteamento, mas o switch convencional trabalha com o MAC, e não com o IP.",
+    origem: "banco",
+  },
+  {
+    id: "ti-080",
+    materia: "ti",
+    topico: "Segurança em redes, dispositivos móveis e nuvem (responsabilidade compartilhada, zero trust)",
+    enunciado:
+      "Durante a análise de um incidente na rede de um cartório, o técnico executou o comando “arp -a” em uma das estações e verificou que o endereço IP do gateway padrão (192.168.1.1) estava associado ao mesmo endereço MAC de outro computador da rede. Constatou-se, em seguida, que todo o tráfego da estação passava por esse computador antes de chegar ao roteador.\n\nO cenário descrito caracteriza",
+    alternativas: [
+      "envenenamento de ARP (ARP spoofing): respostas ARP falsas associam o IP do gateway ao MAC do atacante, que passa a intermediar o tráfego da rede local (man-in-the-middle).",
+      "envenenamento de DNS, em que o servidor de nomes passa a traduzir o endereço IP do gateway em um nome de domínio falso, controlado pelo atacante fora da rede local.",
+      "negação de serviço distribuída, em que milhares de computadores infectados enviam requisições ao gateway até torná-lo indisponível para a estação e para toda a rede.",
+      "falsificação no protocolo DHCP, que é o responsável por associar os endereços IP aos endereços MAC de cada estação na tabela exibida pelo comando “arp -a”.",
+      "funcionamento regular do NAT, que traduz o endereço MAC do gateway para o endereço MAC da estação que concentra o tráfego de saída da rede local para a internet.",
+    ],
+    correta: 0,
+    explicacao:
+      "O ARP (Address Resolution Protocol) descobre qual endereço MAC corresponde a um endereço IP dentro da rede local: a estação pergunta, em broadcast, quem tem o IP 192.168.1.1 e guarda a resposta em sua tabela (cache ARP), que o comando “arp -a” exibe. Como o ARP não autentica as respostas, um atacante na mesma rede pode enviar respostas falsas dizendo que o IP do gateway pertence ao seu MAC (ARP spoofing ou ARP poisoning). A vítima passa a mandar o tráfego para ele, que o lê, altera ou repassa ao gateway verdadeiro — é o ataque do intermediário (man-in-the-middle). O indício típico é justamente o IP do gateway com o MAC de outra máquina da rede. Defesas: inspeção dinâmica de ARP (DAI) nos switches, segmentação da rede e protocolos cifrados, que mantêm o conteúdo ilegível mesmo se interceptado. O DNS traduz nomes em IPs, o DHCP distribui os IPs e o NAT traduz endereços IP; nenhum deles associa IP a MAC. No IPv6, essa função é do protocolo NDP (descoberta de vizinhos).",
+    origem: "banco",
+  },
+  {
+    id: "ti-081",
+    materia: "ti",
+    topico: "Internet, intranet e extranet; IPv4/IPv6, portas e protocolos (HTTP/HTTPS, FTP, SSH, DHCP, NAT, proxy)",
+    enunciado:
+      "A equipe de TI reservou para a rede de uma nova delegacia o bloco 192.168.10.0/26.\n\nA máscara de sub-rede correspondente e a quantidade de endereços utilizáveis pelas estações (hosts) nesse bloco são, respectivamente,",
+    alternativas: [
+      "255.255.255.192 e 62 endereços, de 192.168.10.1 a 192.168.10.62.",
+      "255.255.255.0 e 254 endereços, de 192.168.10.1 a 192.168.10.254.",
+      "255.255.255.192 e 64 endereços, de 192.168.10.0 a 192.168.10.63.",
+      "255.255.255.224 e 30 endereços, de 192.168.10.1 a 192.168.10.30.",
+      "255.255.192.0 e 16.382 endereços, de 192.168.0.1 a 192.168.63.254.",
+    ],
+    correta: 0,
+    explicacao:
+      "O “/26” (notação CIDR) indica que os 26 primeiros bits do endereço identificam a rede, sobrando 32 − 26 = 6 bits para os hosts. Em binário, a máscara tem 26 bits iguais a 1: 11111111.11111111.11111111.11000000, ou seja, 255.255.255.192 (128 + 64 = 192 no último octeto). Com 6 bits, o bloco tem 2⁶ = 64 endereços, dos quais dois são reservados: o primeiro (192.168.10.0) identifica a própria rede, e o último (192.168.10.63) é o endereço de broadcast. Sobram 64 − 2 = 62 endereços para as estações, de .1 a .62. Fórmula: hosts = 2 elevado a (32 − prefixo), menos 2. Referências úteis: /24 = 255.255.255.0 (254 hosts); /25 = 255.255.255.128 (126); /26 = 255.255.255.192 (62); /27 = 255.255.255.224 (30); /28 = 255.255.255.240 (14); /30 = 255.255.255.252 (2 hosts, usada em ligações ponto a ponto entre roteadores).",
+    origem: "banco",
+  },
+  {
+    id: "ti-082",
+    materia: "ti",
+    topico: "Internet, intranet e extranet; IPv4/IPv6, portas e protocolos (HTTP/HTTPS, FTP, SSH, DHCP, NAT, proxy)",
+    enunciado:
+      "Em uma unidade policial, o computador A tem o endereço 172.16.5.100 e o computador B, o endereço 172.16.5.130, ambos com a máscara 255.255.255.128 e ligados ao mesmo switch. A rede não tem roteador configurado, e os dois computadores não conseguem se comunicar diretamente.\n\nA explicação técnica correta é:",
+    alternativas: [
+      "com a máscara /25, há duas sub-redes no bloco 172.16.5.0, de .0 a .127 e de .128 a .255; A e B estão em sub-redes diferentes e dependem de um roteador para se comunicar.",
+      "os dois endereços pertencem à faixa pública da internet, e o switch bloqueia, por segurança, a comunicação direta entre endereços públicos ligados à mesma rede local.",
+      "a máscara 255.255.255.128 admite apenas dois hosts por sub-rede, e esses dois endereços já estão ocupados pelo switch e pelo servidor DHCP da unidade policial.",
+      "os endereços estão na mesma sub-rede, e a falha só pode decorrer de defeito físico no cabo de rede de um dos computadores ou na porta do switch em que ele está ligado.",
+      "o switch só encaminha quadros entre computadores com endereços IP consecutivos, de modo que A e B deveriam receber endereços sequenciais do servidor DHCP da unidade.",
+    ],
+    correta: 0,
+    explicacao:
+      "A máscara 255.255.255.128 corresponde a /25: 25 bits de rede e 7 de host, o que dá 128 endereços por sub-rede. O último octeto se divide em dois blocos: de 0 a 127 (rede 172.16.5.0, broadcast 172.16.5.127) e de 128 a 255 (rede 172.16.5.128, broadcast 172.16.5.255). O computador A (.100) está na primeira sub-rede, e o B (.130), na segunda. Antes de enviar dados, cada máquina aplica a máscara: se o destino está na mesma sub-rede, entrega diretamente, pela rede local (via ARP e switch); se não está, envia o pacote ao gateway padrão, o roteador, que faz a passagem entre as redes. Sem roteador, A e B não se comunicam, ainda que ligados ao mesmo switch. Cada sub-rede /25 tem 126 endereços utilizáveis (128 − 2), e 172.16.5.x pertence à faixa privada 172.16.0.0/12.",
+    origem: "banco",
+  },
+  {
+    id: "ti-083",
+    materia: "ti",
+    topico: "Internet, intranet e extranet; IPv4/IPv6, portas e protocolos (HTTP/HTTPS, FTP, SSH, DHCP, NAT, proxy)",
+    enunciado:
+      "A vítima de um golpe entregou na delegacia capturas de tela em que o golpista, para intimidá-la, exibia “o IP do computador” usado na fraude: 192.168.0.15. Ao mesmo tempo, os registros fornecidos por um provedor de aplicação indicavam, para os acessos à conta usada no golpe, os endereços 177.45.20.8 e 172.40.10.3.\n\nSobre esses endereços, é correto afirmar que",
+    alternativas: [
+      "192.168.0.15 é privado e só identifica um aparelho dentro de alguma rede local; 177.45.20.8 e 172.40.10.3 são públicos e, com data, hora e fuso, podem levar o provedor de conexão ao assinante.",
+      "os três endereços são privados, pois os endereços iniciados pelo algarismo 1 são reservados às redes domésticas e corporativas, e nenhum deles permite identificar o golpista.",
+      "172.40.10.3 é privado, pois toda a faixa iniciada por 172 é reservada às redes internas, e apenas 177.45.20.8 pode ser usado para identificar o assinante da conexão.",
+      "192.168.0.15 identifica com exatidão o computador do golpista na internet, bastando requisitar os dados cadastrais ao provedor responsável por essa faixa de endereços.",
+      "177.45.20.8 é privado, pois são privados todos os endereços cujo primeiro número é maior que 127, e apenas 172.40.10.3 e 192.168.0.15 são endereços públicos.",
+    ],
+    correta: 0,
+    explicacao:
+      "A RFC 1918 reserva três faixas do IPv4 para redes privadas: 10.0.0.0/8 (de 10.0.0.0 a 10.255.255.255), 172.16.0.0/12 (de 172.16.0.0 a 172.31.255.255) e 192.168.0.0/16 (de 192.168.0.0 a 192.168.255.255). Esses endereços se repetem em milhões de redes domésticas e corporativas e não circulam na internet: o NAT do roteador os troca pelo IP público. Assim, 192.168.0.15 só indica um aparelho dentro de alguma rede local; não há provedor responsável por ele, e ele não identifica ninguém. Já 177.45.20.8 e 172.40.10.3 são públicos — atenção: 172.40 fica fora do intervalo privado, que vai só de 172.16 a 172.31. São os IPs públicos, com data, hora e fuso e, se houver CGNAT, com a porta lógica de origem, que permitem ao provedor de conexão apontar o assinante, mediante requisição na forma da lei. Outras faixas especiais: 127.0.0.0/8 (loopback, a própria máquina), 169.254.0.0/16 (APIPA, atribuído automaticamente quando o DHCP falha) e 100.64.0.0/10 (espaço compartilhado usado pelas operadoras no CGNAT).",
+    origem: "banco",
+  },
+  {
+    id: "ti-084",
+    materia: "ti",
+    topico: "Internet, intranet e extranet; IPv4/IPv6, portas e protocolos (HTTP/HTTPS, FTP, SSH, DHCP, NAT, proxy)",
+    enunciado:
+      "Um agente não conseguia acessar os sistemas da delegacia pelo notebook funcional. Ao executar o comando “ipconfig” no Windows, observou que o adaptador de rede exibia o endereço IPv4 169.254.37.12, com máscara 255.255.0.0 e nenhum gateway padrão. Em seguida, o comando “ping 127.0.0.1” obteve resposta normal.\n\nAnalise as afirmativas a seguir.\n\nI. O endereço 169.254.37.12 foi atribuído automaticamente pelo próprio Windows (APIPA), o que indica que o notebook não obteve configuração de um servidor DHCP.\n\nII. A resposta ao “ping 127.0.0.1” comprova que o notebook tem acesso à internet, pois esse é o endereço do servidor DNS do provedor.\n\nIII. Com esse endereço e sem gateway padrão, o notebook não alcança a internet, pois endereços da faixa 169.254.0.0/16 servem apenas à comunicação dentro do próprio segmento de rede local.\n\nEstá correto o que se afirma em",
+    alternativas: [
+      "I e III, apenas.",
+      "I, apenas.",
+      "II, apenas.",
+      "II e III, apenas.",
+      "I, II e III.",
+    ],
+    correta: 0,
+    explicacao:
+      "Quando o Windows está configurado para obter o IP automaticamente e nenhum servidor DHCP responde (servidor fora do ar, cabo desconectado, falha de autenticação no Wi-Fi, porta do switch bloqueada), ele se autoatribui um endereço da faixa 169.254.0.0/16, com máscara 255.255.0.0: é o APIPA, ou endereço de link local (RFC 3927). Esse endereço não é roteável e vem sem gateway, então só serve à comunicação no próprio segmento local; para o técnico, um 169.254 é sinal de falha no DHCP (I e III corretas). Já 127.0.0.1 é o endereço de loopback (localhost), que aponta para a própria máquina: o ping para ele só testa a pilha TCP/IP do sistema e é respondido mesmo sem cabo nem Wi-Fi, sem provar nada sobre o acesso à rede ou à internet (II errada). No IPv6, o loopback é ::1, e os endereços de link local começam por fe80. Próximos passos do diagnóstico: conferir o cabo ou o Wi-Fi e usar “ipconfig /release” e “ipconfig /renew” para pedir de novo a configuração ao DHCP.",
+    origem: "banco",
+  },
+  {
+    id: "ti-085",
+    materia: "ti",
+    topico: "Internet, redes, TCP/IP, DNS, VPN, firewall",
+    enunciado:
+      "Na sala de análise de uma delegacia, dois computadores apresentaram problemas diferentes.\n\n• Computador 1: o agente acessa normalmente a impressora de rede e a pasta compartilhada do servidor local, mas não abre nenhum site nem alcança endereços da internet, mesmo quando digita diretamente o número IP.\n• Computador 2: o agente consegue abrir um portal digitando no navegador o endereço IP do servidor, mas, ao digitar o nome do site, recebe a mensagem de que o endereço não foi encontrado.\n\nAs causas mais prováveis dos problemas dos computadores 1 e 2 são, respectivamente,",
+    alternativas: [
+      "gateway padrão ausente ou incorreto; falha na resolução de nomes (DNS).",
+      "falha na resolução de nomes (DNS); gateway padrão ausente ou incorreto.",
+      "cabo de rede desconectado; falha na resolução de nomes (DNS).",
+      "falha no servidor DHCP; bloqueio de cookies pelo navegador.",
+      "gateway padrão ausente ou incorreto; conflito de endereço IP na rede local.",
+    ],
+    correta: 0,
+    explicacao:
+      "No computador 1, tudo o que está na mesma rede local funciona (impressora, servidor de arquivos), mas nada fora dela é alcançado, nem pelo número IP: o problema está na saída da rede, isto é, no gateway padrão, o endereço do roteador ao qual a máquina entrega os pacotes destinados a outras redes. Cabo, placa, IP e máscara estão funcionando, tanto que a comunicação local ocorre. No computador 2, a conectividade existe, pois o site abre pelo IP, mas o nome não é convertido em endereço: é falha de DNS, seja no servidor configurado, seja no acesso a ele. Um conflito de IP também prejudicaria o acesso pelo número. Para testar: “ping” para o IP do gateway e para um IP externo; “nslookup” seguido do nome do site, para verificar a resolução; “ipconfig /all”, para conferir o gateway e os servidores DNS recebidos. Se o DHCP tivesse falhado, a máquina estaria com um endereço 169.254.x.x e não alcançaria a impressora nem o servidor local.",
+    origem: "banco",
+  },
+  {
+    id: "ti-086",
+    materia: "ti",
+    topico: "Internet, redes, TCP/IP, DNS, VPN, firewall",
+    enunciado:
+      "Ao investigar um site falso que imitava o portal de um banco, a equipe consultou os registros DNS do domínio usado na fraude e encontrou os tipos listados a seguir.\n\n1. A\n2. AAAA\n3. MX\n4. CNAME\n5. PTR\n\nRelacione cada tipo de registro à sua função.\n\n( ) Indica o servidor responsável por receber as mensagens de correio eletrônico do domínio.\n( ) Associa o nome de domínio a um endereço IPv6.\n( ) Cria um apelido, apontando um nome para outro nome, o canônico.\n( ) Associa o nome de domínio a um endereço IPv4.\n( ) Faz a resolução reversa, associando um endereço IP a um nome.\n\nA sequência correta, de cima para baixo, é:",
+    alternativas: [
+      "3, 2, 4, 1, 5.",
+      "3, 1, 4, 2, 5.",
+      "4, 2, 3, 1, 5.",
+      "3, 2, 5, 1, 4.",
+      "5, 2, 4, 1, 3.",
+    ],
+    correta: 0,
+    explicacao:
+      "O DNS guarda, para cada domínio, registros de tipos diferentes. O registro A associa o nome a um endereço IPv4; o AAAA (“quatro A”, porque o endereço IPv6, de 128 bits, tem quatro vezes o tamanho do IPv4, de 32 bits) associa o nome a um endereço IPv6. O MX (mail exchanger) indica o servidor que recebe os e-mails do domínio. O CNAME cria um apelido: www.exemplo.com.br pode apontar para exemplo.com.br, que tem o registro A. O PTR faz a resolução reversa, do IP para o nome, em zonas especiais (in-addr.arpa, no IPv4). Outros tipos: NS (servidores autoritativos do domínio), SOA (dados de autoridade da zona) e TXT (texto livre, usado, por exemplo, pelo SPF, pelo DKIM e pelo DMARC, que combatem a falsificação de remetente). Na investigação, os registros A e AAAA mostram onde o site está hospedado, e o MX, qual provedor recebe os e-mails do domínio — informações que orientam a quem dirigir as requisições. Sequência: 3, 2, 4, 1, 5.",
+    origem: "banco",
+  },
+  {
+    id: "ti-087",
+    materia: "ti",
+    topico: "Internet, redes, TCP/IP, DNS, VPN, firewall",
+    enunciado:
+      "Servidores da Polícia Civil receberam mensagens com o link https://policiacivil.pr.gov.br.validacao-cadastro.com/login?ref=intranet, que levava a uma página idêntica à de acesso aos sistemas do órgão.\n\nAo analisar o endereço, o agente concluiu corretamente que",
+    alternativas: [
+      "o domínio efetivamente registrado é validacao-cadastro.com, e “policiacivil.pr.gov.br” é apenas um subdomínio criado pelo titular desse domínio, sem relação com o domínio oficial do órgão.",
+      "o link é oficial, pois contém o domínio policiacivil.pr.gov.br e usa o protocolo HTTPS, cujo certificado só é emitido para órgãos públicos e instituições financeiras.",
+      "o domínio registrado é policiacivil.pr.gov.br, e “validacao-cadastro.com” é uma pasta interna do servidor oficial, criada para o recadastramento dos servidores.",
+      "o trecho “login?ref=intranet” comprova que a página está hospedada na intranet da Polícia Civil, acessível apenas pela rede interna das unidades.",
+      "o domínio de nível superior (TLD) do endereço é .gov.br, o que garante que ele foi registrado por um órgão de governo e afasta a hipótese de fraude.",
+    ],
+    correta: 0,
+    explicacao:
+      "Os nomes de domínio são lidos da direita para a esquerda, do mais geral para o mais específico. No nome policiacivil.pr.gov.br.validacao-cadastro.com, o domínio de nível superior é .com, e o domínio registrado é validacao-cadastro.com; tudo o que está à esquerda (policiacivil.pr.gov.br) são subdomínios, que o titular desse domínio cria livremente. O nome do servidor termina na primeira barra depois de “https://”: “/login” é o caminho de uma página no servidor, e “?ref=intranet” é um parâmetro da requisição (query string), que nada diz sobre onde o site está. O HTTPS também não prova legitimidade, pois o golpista pode obter, até gratuitamente, um certificado válido para o domínio que controla. Domínios .gov.br, estes sim, são restritos a órgãos públicos — mas aqui o .gov.br não está no fim do nome. Na investigação, o passo seguinte é consultar os dados de registro (WHOIS) do domínio — no Registro.br, para domínios .br, ou na entidade registradora, para os demais — e seus registros DNS, para identificar titular, hospedagem e provedores a oficiar.",
+    origem: "banco",
+  },
+  {
+    id: "ti-088",
+    materia: "ti",
+    topico: "Segurança em redes, dispositivos móveis e nuvem (responsabilidade compartilhada, zero trust)",
+    enunciado:
+      "Após um ataque que redirecionou os clientes de um provedor regional para cópias falsas de sites bancários, embora eles digitassem corretamente os endereços, o relatório técnico mencionou envenenamento do cache DNS e recomendou a adoção de DNSSEC.\n\nSobre o tema, avalie se as afirmativas a seguir são verdadeiras (V) ou falsas (F).\n\n( ) No envenenamento de cache DNS, respostas falsas são inseridas no servidor de resolução, que passa a devolver aos usuários o endereço IP escolhido pelo atacante.\n( ) O DNSSEC assina digitalmente os registros do DNS, permitindo verificar a autenticidade e a integridade das respostas, mas não cifra as consultas.\n( ) O DNS sobre HTTPS (DoH) cifra as consultas entre o dispositivo e o servidor de resolução, dificultando que terceiros na rede as leiam ou alterem.\n( ) Como o ataque atingiu o DNS, os usuários teriam percebido a fraude, pois a barra do navegador exibiria o IP do servidor falso, e não o nome do banco.\n\nAs afirmativas são, respectivamente,",
+    alternativas: [
+      "V, V, V, F.",
+      "V, F, V, F.",
+      "V, V, F, V.",
+      "F, V, V, F.",
+      "V, F, F, V.",
+    ],
+    correta: 0,
+    explicacao:
+      "No envenenamento de cache (DNS cache poisoning), o atacante consegue que o servidor de resolução do provedor guarde uma resposta falsa; todos os clientes que consultarem aquele nome recebem o IP do servidor fraudulento, enquanto a barra de endereços continua mostrando o nome correto do site — por isso o golpe é tão eficaz, e a quarta afirmativa é falsa. É a versão em larga escala do pharming, que também pode ser feito alterando o arquivo hosts ou as configurações de DNS do roteador da vítima. O DNSSEC acrescenta assinaturas digitais aos registros, e o resolvedor verifica se a resposta veio do servidor autoritativo e não foi alterada: garante autenticidade e integridade, mas não confidencialidade. A confidencialidade das consultas vem do DNS sobre HTTPS (DoH) ou sobre TLS (DoT). Uma última barreira é o certificado digital: em regra, o servidor falso não tem certificado válido para o domínio do banco, e o navegador exibe um alerta, que o usuário não deve ignorar.",
+    origem: "banco",
+  },
+  {
+    id: "ti-089",
+    materia: "ti",
+    topico: "Internet, intranet e extranet; IPv4/IPv6, portas e protocolos (HTTP/HTTPS, FTP, SSH, DHCP, NAT, proxy)",
+    enunciado:
+      "No relatório de uma varredura feita na rede de uma prefeitura vítima de ransomware, o perito listou as portas TCP abertas em um servidor exposto à internet.\n\n1. 3389\n2. 445\n3. 993\n4. 587\n5. 21\n\nRelacione cada porta ao serviço que normalmente a utiliza.\n\n( ) Envio de e-mail do programa do usuário ao servidor (submissão), com autenticação.\n( ) Compartilhamento de arquivos e impressoras em redes Windows.\n( ) Área de trabalho remota do Windows.\n( ) Canal de controle do FTP, na transferência de arquivos.\n( ) Acesso às caixas de correio pelo IMAP protegido por TLS.\n\nA sequência correta, de cima para baixo, é:",
+    alternativas: [
+      "4, 2, 1, 5, 3.",
+      "3, 2, 1, 5, 4.",
+      "4, 1, 2, 5, 3.",
+      "4, 2, 1, 3, 5.",
+      "5, 2, 1, 4, 3.",
+    ],
+    correta: 0,
+    explicacao:
+      "3389 é a porta padrão do RDP, a área de trabalho remota do Windows; 445, do SMB, usado no compartilhamento de arquivos e impressoras do Windows; 993, do IMAP sobre TLS (o IMAP sem criptografia usa a 143); 587, da submissão de e-mails pelo programa do usuário ao servidor, com autenticação (a 25 fica para a troca entre servidores, e a 465 é a submissão com TLS desde o início da conexão); e 21, do canal de controle do FTP (a 20 é usada para os dados, no modo ativo). O POP3 usa a 110 e, protegido por TLS, a 995. O caso é típico: RDP e SMB expostos à internet estão entre as principais portas de entrada de ransomware — o RDP, por senhas fracas ou vazadas e por força bruta; o SMB, por falhas como a explorada pelo WannaCry em 2017 (SMBv1, porta 445). A boa prática é não expor esses serviços diretamente: acesso só por VPN, com MFA, e bloqueio no firewall. Sequência: 4, 2, 1, 5, 3.",
+    origem: "banco",
+  },
+  {
+    id: "ti-090",
+    materia: "ti",
+    topico: "Segurança em redes, dispositivos móveis e nuvem (responsabilidade compartilhada, zero trust)",
+    enunciado:
+      "A Polícia Civil vai contratar soluções de proteção de perímetro e pediu à equipe técnica um resumo dos tipos de firewall.\n\n1. Filtro de pacotes (sem estado)\n2. Firewall com inspeção de estado (stateful)\n3. Firewall de aplicação web (WAF)\n4. Firewall de nova geração (NGFW)\n\n( ) Mantém uma tabela das conexões em andamento e só aceita pacotes de resposta que pertençam a uma conexão legitimamente estabelecida.\n( ) Examina cada pacote isoladamente, pelas informações do cabeçalho — endereços IP de origem e de destino, portas e protocolo —, sem considerar o contexto da conexão.\n( ) Combina a inspeção de estado com a identificação de aplicações e de usuários, a inspeção profunda de pacotes e funções integradas de prevenção de intrusão.\n( ) Protege sites e sistemas web analisando o conteúdo das requisições HTTP e HTTPS, para bloquear ataques como a injeção de SQL e o cross-site scripting (XSS).\n\nA sequência correta, de cima para baixo, é:",
+    alternativas: [
+      "2, 1, 4, 3.",
+      "1, 2, 4, 3.",
+      "2, 1, 3, 4.",
+      "4, 1, 2, 3.",
+      "2, 3, 4, 1.",
+    ],
+    correta: 0,
+    explicacao:
+      "O filtro de pacotes, a geração mais simples, decide pacote a pacote com base no cabeçalho (IP de origem e de destino, porta, protocolo), sem memória: é rápido, mas não percebe se um pacote “de resposta” pertence de fato a uma conexão aberta. O firewall com inspeção de estado (stateful) guarda uma tabela de conexões e aceita o tráfego de retorno apenas das conexões iniciadas legitimamente. O WAF atua na camada de aplicação, diante dos servidores web, e examina o conteúdo das requisições para barrar injeção de SQL, XSS e outros ataques à aplicação — o que filtros de porta não fazem, pois o ataque chega pela porta 443, que precisa ficar aberta. O NGFW reúne tudo em um só equipamento: inspeção de estado, identificação da aplicação (e não só da porta), controle por usuário, inspeção profunda de pacotes (inclusive do tráfego cifrado, quando configurado) e IPS integrado. Nenhum firewall substitui atualizações, MFA e treinamento: ele não detém, por exemplo, o usuário que entrega a senha em uma página de phishing. Sequência: 2, 1, 4, 3.",
+    origem: "banco",
+  },
+  {
+    id: "ti-091",
+    materia: "ti",
+    topico: "Internet, intranet e extranet; IPv4/IPv6, portas e protocolos (HTTP/HTTPS, FTP, SSH, DHCP, NAT, proxy)",
+    enunciado:
+      "Em uma investigação, constatou-se que: (1) os acessos de um suspeito a um fórum criminoso partiam de um servidor intermediário contratado no exterior, que repassava aos sites visitados as requisições feitas pelo computador do suspeito; e (2) o próprio fórum ficava atrás de um serviço que recebia todas as conexões vindas da internet, distribuía a carga e ocultava o endereço IP do servidor que de fato hospedava o conteúdo.\n\nOs intermediários descritos em (1) e (2) são, respectivamente,",
+    alternativas: [
+      "um proxy direto (forward proxy), que atua em nome do cliente, e um proxy reverso, que atua em nome do servidor.",
+      "um proxy reverso, que atua em nome do cliente, e um proxy direto, que atua em nome do servidor.",
+      "um servidor DNS, que traduz os nomes dos sites visitados, e um servidor DHCP, que distribui os endereços IP do fórum.",
+      "um firewall de filtro de pacotes, que cifra as requisições do suspeito, e uma VPN, que armazena em cache o conteúdo do fórum.",
+      "um roteador doméstico com NAT, que oculta o MAC do suspeito, e um switch de camada 2, que encaminha os quadros do fórum pelo endereço MAC.",
+    ],
+    correta: 0,
+    explicacao:
+      "O proxy direto (forward proxy) fica do lado do cliente: o computador envia a ele as requisições, e é o proxy que as repassa aos sites, de modo que o destino registra o IP do proxy, e não o do usuário. Em empresas e órgãos públicos, serve para filtrar conteúdo, guardar cache e registrar os acessos; usado por criminosos, mascara a origem. O proxy reverso fica do lado do servidor: recebe as conexões vindas da internet e as encaminha aos servidores internos, fazendo balanceamento de carga, cache, terminação do TLS e proteção (muitas vezes com WAF), além de ocultar o IP real da hospedagem. Serviços de CDN e de proteção contra DDoS funcionam como proxy reverso. Na investigação, isso significa que o IP registrado pelo site pode ser o do proxy usado pelo suspeito, e que o IP que responde pelo domínio pode ser o do proxy reverso: nos dois casos, é preciso requisitar dados ao operador do intermediário para chegar à origem ou à hospedagem real.",
+    origem: "banco",
+  },
+  {
+    id: "ti-092",
+    materia: "ti",
+    topico: "Segurança em redes, dispositivos móveis e nuvem (responsabilidade compartilhada, zero trust)",
+    enunciado:
+      "Na revisão da rede sem fio de uma delegacia, o técnico encontrou o roteador com o WPS ativado, o nome da rede (SSID) oculto, filtragem por endereço MAC e criptografia WPA2-Personal com a senha “delegacia2026”, compartilhada por todos os servidores.\n\nSobre a segurança dessa configuração, analise as afirmativas a seguir.\n\nI. Ocultar o SSID e filtrar por endereço MAC não detêm um invasor determinado, pois o nome da rede aparece no tráfego dos dispositivos que se conectam a ela e o endereço MAC autorizado pode ser clonado.\n\nII. O WPS deve ser desativado, pois seu PIN de oito dígitos pode ser descoberto por força bruta em poucas horas.\n\nIII. No WPA2-Personal, quem captura a negociação inicial (handshake) de uma conexão pode testar senhas fora do ar, por dicionário, o que torna uma senha previsível como a da delegacia especialmente arriscada; o WPA3, com o método SAE, foi criado para resistir a esse tipo de ataque.\n\nIV. A troca do WPA2 pelo WEP aumentaria a segurança, pois o WEP é o padrão mais recente e usa chaves maiores.\n\nEstá correto o que se afirma em",
+    alternativas: [
+      "I, II e III, apenas.",
+      "I e II, apenas.",
+      "II e III, apenas.",
+      "III e IV, apenas.",
+      "I, II, III e IV.",
+    ],
+    correta: 0,
+    explicacao:
+      "O WEP, do padrão original do Wi-Fi, é o mais antigo e foi quebrado: sua chave pode ser recuperada em minutos, por isso a IV é falsa. O WPA2 usa AES (CCMP) e ainda é aceitável, mas, no modo Personal (senha compartilhada, ou PSK), quem captura o handshake pode testar milhões de senhas por segundo fora do ar, e senhas curtas ou previsíveis caem rápido (III correta). O WPA3 substitui a PSK pelo SAE (autenticação simultânea de iguais), que impede o ataque de dicionário offline e oferece sigilo futuro (forward secrecy). O WPS permite conectar com um PIN de oito dígitos, verificado em duas metades, o que reduz as combinações a cerca de 11 mil e permite descobri-lo por força bruta em horas (II correta). SSID oculto e filtro de MAC são só obscuridade: o nome aparece nas solicitações dos dispositivos, e o MAC autorizado pode ser copiado (I correta). Em órgãos públicos, o recomendado é o modo Enterprise (802.1X, com servidor RADIUS), em que cada servidor usa a própria credencial: o desligamento de alguém não obriga a trocar a senha de todos, e os acessos ficam individualizados nos registros.",
+    origem: "banco",
+  },
+  {
+    id: "ti-093",
+    materia: "ti",
+    topico: "Redes de computadores",
+    enunciado:
+      "Considere as situações a seguir, relativas à estrutura de comunicação de uma Polícia Civil.\n\n1. O relógio inteligente de um agente sincroniza dados com o celular dele por Bluetooth.\n2. Os computadores de uma delegacia, instalados no mesmo prédio, estão ligados por cabos a um switch central.\n3. As unidades policiais de uma mesma capital são interligadas por uma rede de fibra óptica que cobre a área urbana.\n4. A sede, em Curitiba, comunica-se com as delegacias do interior do Estado por meio de enlaces de operadoras de telecomunicações.\n\nQuanto à abrangência geográfica, as redes descritas em 1, 2, 3 e 4 classificam-se, respectivamente, como",
+    alternativas: [
+      "PAN, LAN, MAN e WAN.",
+      "LAN, PAN, WAN e MAN.",
+      "PAN, MAN, LAN e WAN.",
+      "WAN, LAN, MAN e PAN.",
+      "PAN, LAN, WAN e MAN.",
+    ],
+    correta: 0,
+    explicacao:
+      "Pela abrangência, a PAN (rede pessoal) liga dispositivos de uma mesma pessoa a poucos metros, como o Bluetooth entre relógio e celular; a LAN (rede local) cobre uma sala, um andar ou um prédio — o caso da delegacia, cujas estações se ligam a um switch central, em topologia física em estrela, a mais comum nas redes Ethernet atuais (se uma estação falha, as demais seguem funcionando, mas a falha do equipamento central derruba o segmento); a MAN (rede metropolitana) cobre uma cidade ou região metropolitana; e a WAN (rede de longa distância) interliga cidades, estados ou países, normalmente por meio de operadoras — a internet é a maior WAN que existe. Outras topologias: barramento (todos em um único cabo, cujo rompimento afeta a rede inteira), anel (cada nó ligado ao seguinte, formando um circuito fechado) e malha (vários caminhos redundantes, típica dos backbones da internet, com alta tolerância a falhas). WLAN é a LAN sem fio (Wi-Fi). Resposta: PAN, LAN, MAN e WAN.",
+    origem: "banco",
+  },
+  {
+    id: "ti-094",
+    materia: "ti",
+    topico: "Segurança em redes, dispositivos móveis e nuvem (responsabilidade compartilhada, zero trust)",
+    enunciado:
+      "O portal de serviços de uma Polícia Civil ficou fora do ar por várias horas. A análise mostrou que o servidor recebeu, ao mesmo tempo, milhões de pedidos de abertura de conexão TCP vindos de dezenas de milhares de endereços IP diferentes — em grande parte, câmeras de segurança e roteadores domésticos infectados —, sem que nenhuma das conexões fosse concluída.\n\nO ataque descrito é",
+    alternativas: [
+      "uma negação de serviço distribuída (DDoS), executada por uma botnet, na modalidade SYN flood, que esgota os recursos do servidor com conexões TCP deixadas pela metade.",
+      "uma negação de serviço simples (DoS), pois o que caracteriza a modalidade distribuída é o uso de um único computador de grande capacidade de processamento.",
+      "um ataque de ransomware, já que a indisponibilidade de um portal decorre necessariamente da criptografia dos arquivos armazenados no servidor.",
+      "um ataque do intermediário (man-in-the-middle), em que o atacante lê o conteúdo das conexões entre os cidadãos e o portal sem interrompê-las.",
+      "um ataque de força bruta contra as senhas dos usuários do portal, que seria contido apenas com a exigência de senhas mais longas e complexas.",
+    ],
+    correta: 0,
+    explicacao:
+      "A negação de serviço (DoS) busca tornar um serviço indisponível, atingindo o pilar da disponibilidade, sem necessariamente invadir nada. Quando parte de muitas origens ao mesmo tempo, é distribuída (DDoS); as origens costumam formar uma botnet, rede de dispositivos infectados e controlados remotamente — câmeras, roteadores e outros aparelhos da internet das coisas com senha padrão são alvos clássicos, como na botnet Mirai, de 2016. No SYN flood, o atacante explora o aperto de mão em três etapas (three-way handshake) do TCP: envia o SYN, o servidor responde com SYN-ACK e reserva recursos, mas o ACK final nunca chega, e milhões de conexões “meio abertas” esgotam a capacidade do servidor. Outras modalidades: inundação de UDP ou de ICMP e ataques de amplificação (por DNS ou NTP, com IP de origem falsificado). Mitigação: serviços anti-DDoS e CDN, SYN cookies, limitação de taxa e filtragem no provedor. Na esfera penal, a conduta pode configurar o crime do art. 266, §1º, do Código Penal, que pune quem interrompe serviço telemático ou de informação de utilidade pública, ou impede ou dificulta o seu restabelecimento.",
+    origem: "banco",
+  },
+  {
+    id: "ti-095",
+    materia: "ti",
+    topico: "Redes de computadores",
+    enunciado:
+      "Para verificar a disponibilidade de um servidor investigado, um agente executou o comando “ping” para o endereço IP dele e não obteve resposta. Em seguida, executou o “tracert” (traceroute) e viu a lista dos roteadores pelos quais os pacotes passavam, até que as respostas cessaram. Mesmo assim, o site hospedado no servidor abriu normalmente no navegador.\n\nA interpretação tecnicamente correta é:",
+    alternativas: [
+      "o ping usa mensagens ICMP de eco, que firewalls podem bloquear, e o silêncio não prova que o servidor esteja desligado; o tracert mostra os roteadores do caminho até onde as respostas cessam.",
+      "a ausência de resposta ao ping comprova que o servidor está desligado, e o site exibido no navegador é necessariamente uma cópia antiga guardada no cache do computador do agente.",
+      "o ping testa apenas a porta 443 do servidor, e o tracert mede a velocidade de download do site, em megabytes por segundo, a partir do último roteador exibido na lista de saltos.",
+      "o tracert identifica o endereço residencial do responsável pelo servidor a partir do último roteador da lista, o que dispensa requisições ao provedor de hospedagem e à operadora.",
+      "o ping e o tracert usam o protocolo DNS para localizar o servidor e só funcionam com nomes de domínio, nunca com endereços IP digitados diretamente no Prompt de Comando.",
+    ],
+    correta: 0,
+    explicacao:
+      "O ping envia mensagens ICMP Echo Request e espera Echo Reply, medindo se há resposta e o tempo de ida e volta (latência). Muitos servidores e firewalls bloqueiam o ICMP por segurança, então o silêncio no ping não significa que a máquina esteja desligada — tanto que o site, servido pela porta 443 do TCP, continuou acessível. O tracert (Windows) ou traceroute (Linux) envia pacotes com TTL crescente (1, 2, 3...); cada roteador que descarta um pacote por TTL esgotado devolve uma mensagem ICMP de “tempo excedido”, revelando-se como um salto do caminho. Quando um equipamento não responde, aparecem asteriscos. A ferramenta mostra a rota e a latência de cada trecho, mas não identifica pessoas nem endereços físicos; a identificação do responsável depende das informações do provedor ou da hospedagem, obtidas na forma da lei. O ICMP não usa portas, e os dois comandos aceitam tanto nomes quanto endereços IP.",
+    origem: "banco",
+  },
+  {
+    id: "ti-096",
+    materia: "ti",
+    topico: "Redes de computadores",
+    enunciado:
+      "Na resposta a um incidente em uma estação Windows suspeita de estar infectada, o técnico usou, no Prompt de Comando, os comandos listados a seguir.\n\n1. ipconfig /all\n2. netstat -ano\n3. nslookup\n4. ipconfig /displaydns\n5. arp -a\n\nRelacione cada comando à informação que ele fornece.\n\n( ) Exibe as conexões de rede ativas e as portas em escuta, com o número do processo (PID) responsável por cada uma.\n( ) Consulta servidores DNS para descobrir o endereço IP associado a um nome de domínio, ou o inverso.\n( ) Mostra a configuração completa dos adaptadores: endereço IP, máscara, gateway, servidores DNS, servidor DHCP e endereço físico (MAC).\n( ) Lista a tabela que relaciona os endereços IP da rede local aos respectivos endereços MAC.\n( ) Exibe o cache de resolução de nomes, com os domínios consultados recentemente pela máquina.\n\nA sequência correta, de cima para baixo, é:",
+    alternativas: [
+      "2, 3, 1, 5, 4.",
+      "2, 3, 4, 5, 1.",
+      "3, 2, 1, 5, 4.",
+      "2, 3, 1, 4, 5.",
+      "5, 3, 1, 2, 4.",
+    ],
+    correta: 0,
+    explicacao:
+      "O “netstat -ano” lista todas as conexões e as portas em escuta (-a), em formato numérico (-n), com o PID do processo dono de cada uma (-o) — útil para achar um malware que se comunica com um servidor de comando e controle; o PID pode ser conferido no Gerenciador de Tarefas. O “nslookup” consulta o DNS (do nome para o IP e, na consulta reversa, do IP para o nome). O “ipconfig /all” traz a configuração completa dos adaptadores, inclusive o endereço físico (MAC), o servidor DHCP e a validade da concessão. O “arp -a” mostra a tabela ARP, com os pares IP e MAC da rede local, útil para detectar o envenenamento de ARP. O “ipconfig /displaydns” exibe o cache DNS, que revela domínios acessados recentemente — dado volátil, que se perde com o “ipconfig /flushdns” ou com o desligamento da máquina e, por isso, deve ser coletado antes, segundo a ordem de volatilidade. Sequência: 2, 3, 1, 5, 4.",
+    origem: "banco",
+  },
+  {
+    id: "ti-097",
+    materia: "ti",
+    topico: "Internet, redes, TCP/IP, DNS, VPN, firewall",
+    enunciado:
+      "A Polícia Civil vai interligar, por meio da internet, as redes das delegacias regionais à rede da sede, e também permitir que agentes em diligência acessem os sistemas internos pelo notebook funcional.\n\nSobre as soluções de VPN aplicáveis, assinale a afirmativa correta.",
+    alternativas: [
+      "A interligação das regionais à sede usa VPN site a site, entre os equipamentos de borda, sem software nas estações; o acesso em diligência usa VPN de acesso remoto, com cliente no notebook.",
+      "A VPN site a site exige que cada estação das delegacias regionais tenha um cliente de VPN instalado e que cada usuário se autentique individualmente no túnel a cada acesso.",
+      "O IPsec opera na camada de aplicação e só funciona por meio do navegador, enquanto a VPN SSL/TLS opera na camada de rede e exige equipamentos dedicados nas duas pontas do túnel.",
+      "Com o túnel dividido (split tunneling) ativado, todo o tráfego do notebook, inclusive o acesso a sites comuns, passa obrigatoriamente pelo túnel e pelo firewall da sede.",
+      "Por cifrar o tráfego, a VPN dispensa a autenticação multifator e protege o notebook contra o malware que já esteja instalado na própria máquina do agente em diligência.",
+    ],
+    correta: 0,
+    explicacao:
+      "A VPN site a site liga redes inteiras: um túnel permanente, normalmente IPsec, entre os equipamentos de borda das duas pontas (firewalls ou roteadores), transparente para os usuários, que não precisam instalar nada. A VPN de acesso remoto liga um dispositivo individual à rede da organização, por meio de um cliente (IPsec ou SSL/TLS) e com autenticação do usuário, de preferência com MFA. O IPsec trabalha na camada de rede e protege todo o tráfego IP; a VPN SSL/TLS trabalha acima da camada de transporte, usa em geral a porta 443 — o que facilita atravessar firewalls de redes de hotéis e aeroportos — e pode funcionar até pelo navegador. No túnel dividido (split tunneling), só o tráfego destinado à rede interna passa pela VPN, e o restante vai direto para a internet, o que alivia o link da sede, mas tira esse tráfego da proteção corporativa; por isso muitos órgãos adotam o túnel completo (full tunnel). A VPN protege o trajeto, não a ponta: um notebook infectado leva o malware para dentro do túnel.",
+    origem: "banco",
+  },
+  {
+    id: "ti-098",
+    materia: "ti",
+    topico: "Navegadores e correio eletrônico (cookies, cache, navegação privativa, SMTP, POP3, IMAP, Cc/Cco)",
+    enunciado:
+      "Ao analisar o cabeçalho completo (código-fonte) de um e-mail de extorsão recebido por uma vereadora, o agente encontrou, entre outros, os campos a seguir, na ordem em que aparecem.\n\nReceived: from mx.provedor-vitima.com.br by caixa.provedor-vitima.com.br; 03 Oct 2026 10:15:42 -0300\nReceived: from envio.exemplo.net (203.0.113.45) by mx.provedor-vitima.com.br; 03 Oct 2026 10:15:40 -0300\nFrom: “Gabinete do Prefeito” <prefeito@prefeitura.exemplo.gov.br>\n\nSobre a análise desse cabeçalho, é correto afirmar que",
+    alternativas: [
+      "cada servidor insere seu Received no topo, e o trajeto se lê de baixo para cima; o registro do provedor da vítima, que recebeu a conexão de 203.0.113.45, vale mais que o From, que pode ser forjado.",
+      "o campo From comprova que a mensagem foi enviada pelo gabinete do prefeito, pois o protocolo SMTP impede que o remetente altere esse campo ao redigir e enviar a mensagem.",
+      "o primeiro campo Received, no topo do cabeçalho, corresponde ao servidor de origem, no qual a mensagem foi redigida, e é o único registro que interessa à investigação.",
+      "o endereço 203.0.113.45 pertence necessariamente ao computador pessoal do autor da extorsão, o que dispensa requisições ao provedor ou à empresa responsável por esse endereço.",
+      "a indicação “-0300” revela que a mensagem foi redigida três horas antes de ser recebida, o que permite estimar o tempo gasto pelo autor na redação do texto da extorsão.",
+    ],
+    correta: 0,
+    explicacao:
+      "Cada servidor de e-mail por onde a mensagem passa acrescenta uma linha Received no topo do cabeçalho; por isso o trajeto é lido de baixo para cima: a linha mais baixa está mais perto da origem, e a mais alta, do destino. As linhas registradas pelos servidores do provedor da vítima são as mais confiáveis, pois não estão sob controle do remetente; as que estiverem abaixo delas podem ter sido forjadas. No exemplo, o servidor de entrada (mx) do provedor da vítima registrou ter recebido a conexão do IP 203.0.113.45, ponto de partida para requisitar dados ao responsável por esse endereço — que pode ser um servidor de e-mail, um serviço de envio ou uma máquina comprometida, e não necessariamente o computador do autor. O campo From é preenchido pelo próprio remetente e, por si só, o SMTP não o autentica; SPF, DKIM e DMARC ajudam a detectar a falsificação, e seus resultados costumam aparecer no campo Authentication-Results. O “-0300” é o fuso horário (UTC−3, o de Brasília), dado essencial para converter o horário ao requisitar registros de conexão.",
+    origem: "banco",
+  },
+  {
+    id: "ti-099",
+    materia: "ti",
+    topico: "Rastreamento e recuperação de informações (IP, porta lógica, registros de conexão e de aplicação, dados cadastrais, arquivos apagados)",
+    enunciado:
+      "Uma rede social informou que ameaças a um servidor público partiram do IP 198.51.100.20, às 14h05min32s do dia 02/10/2026 (horário de Brasília), com a porta lógica de origem 51544. O endereço pertence à rede de uma empresa, na qual cerca de 300 computadores navegam pela internet compartilhando esse único IP público, por meio de NAT no firewall, e recebem endereços privados de um servidor DHCP.\n\nPara individualizar o computador utilizado, a equipe deve buscar, com as cautelas legais,",
+    alternativas: [
+      "os registros de tradução do NAT do firewall, que ligam o IP público e a porta, naquele horário, a um IP privado, e os do DHCP, que mostram qual máquina usava esse IP privado no momento.",
+      "apenas o endereço MAC informado pela rede social, pois esse endereço viaja pela internet junto com cada pacote e identifica diretamente o computador de origem das mensagens.",
+      "o registro A do DNS do domínio da empresa, que associa cada computador interno ao IP público compartilhado e à porta lógica de origem usada em cada conexão com a internet.",
+      "a tabela ARP de qualquer computador da internet que tenha recebido as mensagens, já que ela relaciona os IPs públicos aos computadores internos de origem de cada conexão.",
+      "somente o IP público informado, que, por si só, identifica de modo inequívoco qual dos 300 computadores da empresa foi utilizado no envio das ameaças ao servidor público.",
+    ],
+    correta: 0,
+    explicacao:
+      "Quando muitas máquinas saem para a internet por um único IP público, o NAT — mais precisamente a tradução com portas, ou PAT — distingue as conexões pela porta de origem: o firewall registra, por exemplo, que a conexão do IP privado 10.0.0.57, porta 49210, foi traduzida para 198.51.100.20, porta 51544. Por isso a porta lógica e o horário exato, com o fuso, são indispensáveis. Achado o IP privado, os registros de concessão do DHCP mostram qual equipamento, identificado pelo MAC e pelo nome da máquina, usava aquele endereço naquele instante, já que os IPs privados mudam com o tempo. Depois, os registros de autenticação ligam a máquina ao usuário que estava conectado. O endereço MAC não chega à rede social: ele só vale dentro do segmento local e é substituído a cada salto entre roteadores. O DNS não guarda o mapeamento das conexões, e a tabela ARP só contém vizinhos da mesma rede local. É a mesma lógica do CGNAT das operadoras, aplicada dentro da empresa.",
+    origem: "banco",
+  },
+  {
+    id: "ti-100",
+    materia: "ti",
+    topico: "Redes de computadores",
+    enunciado:
+      "Para a nova sede de uma delegacia regional, a equipe técnica comparou os meios de transmissão disponíveis.\n\nAvalie se as afirmativas a seguir são verdadeiras (V) ou falsas (F).\n\n( ) A fibra óptica transmite pulsos de luz, é imune a interferências eletromagnéticas e alcança distâncias muito maiores que o cabo de par trançado.\n( ) O cabo de par trançado com conector RJ-45, nas redes Ethernet, alcança até 2 quilômetros por segmento, sem necessidade de switches ou repetidores intermediários.\n( ) No Wi-Fi, a faixa de 2,4 GHz costuma ter maior alcance e atravessar melhor as paredes, enquanto a de 5 GHz oferece velocidades maiores e sofre menos interferência, mas com alcance menor.\n( ) O NFC, usado em pagamentos por aproximação, opera a poucos centímetros de distância, enquanto o Bluetooth alcança, em geral, cerca de 10 metros.\n\nAs afirmativas são, respectivamente,",
+    alternativas: [
+      "V, F, V, V.",
+      "V, V, V, F.",
+      "F, F, V, V.",
+      "V, F, F, V.",
+      "V, V, F, F.",
+    ],
+    correta: 0,
+    explicacao:
+      "A fibra óptica transmite luz por um núcleo de vidro ou plástico: não sofre interferência eletromagnética, é mais difícil de interceptar e alcança de centenas de metros (multimodo) a dezenas de quilômetros ou mais (monomodo). O par trançado (categorias 5e, 6 e 6A, conector RJ-45) é o cabo mais comum das redes locais, com limite de 100 metros por segmento entre o equipamento e o switch; para distâncias maiores, usam-se switches intermediários ou fibra (segunda afirmativa falsa). No Wi-Fi, frequências mais baixas se propagam mais longe e atravessam melhor os obstáculos, por isso a de 2,4 GHz alcança mais, porém é congestionada (micro-ondas, Bluetooth, redes vizinhas) e tem poucos canais; a de 5 GHz (e a de 6 GHz, no Wi-Fi 6E) tem mais canais e velocidade, com menor alcance. O NFC funciona a poucos centímetros, o que reduz o risco de interceptação à distância, e o Bluetooth alcança, em geral, cerca de 10 metros. Sequência: V, F, V, V.",
+    origem: "banco",
+  },
+  {
+    id: "ti-101",
+    materia: "ti",
+    topico: "Redes de computadores",
+    enunciado:
+      "Para enviar ao Instituto de Criminalística, pela rede, a imagem forense de um pen drive, com 3 GB, um agente dispõe de um link com velocidade de upload de 100 Mbps, integralmente disponível durante toda a transferência.\n\nDesconsiderando as perdas causadas pelos protocolos e adotando 1 GB = 1.000 MB e 1 byte = 8 bits, o tempo mínimo da transferência é de",
+    alternativas: [
+      "4 minutos.",
+      "30 segundos.",
+      "24 segundos.",
+      "40 minutos.",
+      "4 horas.",
+    ],
+    correta: 0,
+    explicacao:
+      "Velocidades de rede são medidas em bits por segundo (Mbps, megabits por segundo), e tamanhos de arquivo, em bytes (MB, GB). Como 1 byte = 8 bits, 3 GB = 3.000 MB = 24.000 megabits. Dividindo por 100 megabits por segundo: 24.000 ÷ 100 = 240 segundos, ou 4 minutos. A pegadinha clássica é dividir 3.000 MB por 100 e chegar a 30 segundos, esquecendo que o link é medido em bits: um link de 100 Mbps transfere, no máximo, 12,5 MB por segundo. Na prática, o tempo é maior, por causa dos cabeçalhos dos protocolos, das retransmissões e da latência. Depois da transferência, convém conferir o hash da imagem, para comprovar que a cópia chegou íntegra.",
+    origem: "banco",
+  },
+  {
+    id: "ti-102",
+    materia: "ti",
+    topico: "Internet, intranet e extranet; IPv4/IPv6, portas e protocolos (HTTP/HTTPS, FTP, SSH, DHCP, NAT, proxy)",
+    enunciado:
+      "Sobre o protocolo IPv6, analise as afirmativas a seguir.\n\nI. O IPv6 não utiliza broadcast; para alcançar vários dispositivos ao mesmo tempo, usa multicast.\n\nII. O endereço de loopback do IPv6, equivalente ao 127.0.0.1 do IPv4, é ::1.\n\nIII. Na forma abreviada, a sequência “::” pode ser usada várias vezes no mesmo endereço, uma para cada bloco de grupos de zeros.\n\nIV. No IPv6, a função do ARP é exercida pelo protocolo de descoberta de vizinhos (NDP), que usa mensagens ICMPv6.\n\nEstá correto o que se afirma em",
+    alternativas: [
+      "I, II e IV, apenas.",
+      "I e II, apenas.",
+      "II e III, apenas.",
+      "I, III e IV, apenas.",
+      "I, II, III e IV.",
+    ],
+    correta: 0,
+    explicacao:
+      "O IPv6 eliminou o broadcast, substituído pelo multicast (e pelo anycast), o que reduz o tráfego desnecessário na rede (I correta). Seu loopback é ::1, isto é, 127 bits zero seguidos de um bit 1 (II correta). O “::” substitui uma sequência de grupos de zeros consecutivos, mas só pode aparecer uma vez no endereço: se aparecesse duas vezes, não seria possível saber quantos grupos cada um representa (III errada). Assim, 2001:0db8:0000:0000:0000:0000:0000:0001 abrevia-se 2001:db8::1, já que os zeros à esquerda de cada grupo também podem ser omitidos. A descoberta do endereço físico do vizinho, feita no IPv4 pelo ARP, cabe no IPv6 ao NDP (Neighbor Discovery Protocol), baseado no ICMPv6, que também serve para descobrir roteadores e para a autoconfiguração de endereços, o SLAAC (IV correta). Outros endereços especiais: fe80::/10 (link local, equivalente ao 169.254 do IPv4) e 2001:db8::/32 (reservado para documentação e exemplos).",
+    origem: "banco",
+  },
+  {
+    id: "ti-103",
+    materia: "ti",
+    topico: "Segurança em redes, dispositivos móveis e nuvem (responsabilidade compartilhada, zero trust)",
+    enunciado:
+      "Em um órgão público, vários computadores passaram a receber, ao serem ligados, um gateway padrão e um servidor DNS diferentes dos oficiais, e os usuários começaram a ser direcionados a páginas falsas de login. Descobriu-se um pequeno equipamento, ligado clandestinamente a um ponto de rede, que respondia às solicitações de configuração automática antes do servidor oficial.\n\nO caso descreve",
+    alternativas: [
+      "um servidor DHCP clandestino (rogue DHCP), que responde antes do oficial, entrega gateway e DNS maliciosos e põe o atacante no meio do tráfego; uma defesa é o DHCP snooping.",
+      "um ataque de força bruta ao WPS do roteador sem fio, já que o protocolo DHCP só funciona em redes Wi-Fi e não pode ser usado em pontos de rede cabeados da repartição.",
+      "um conflito de endereço IP, situação que ocorre sempre que dois ou mais computadores da mesma rede recebem o mesmo gateway padrão e o mesmo servidor DNS.",
+      "o funcionamento normal do DHCP, que autentica o servidor por certificado digital antes de aceitar a configuração e, por isso, dispensa outras medidas de proteção.",
+      "um ataque de negação de serviço por inundação de ICMP, que altera remotamente os servidores DNS configurados manualmente em cada uma das estações da rede do órgão.",
+    ],
+    correta: 0,
+    explicacao:
+      "O DHCP funciona em quatro mensagens, resumidas na sigla DORA: o cliente envia em broadcast um Discover; os servidores respondem com um Offer; o cliente pede a configuração oferecida (Request); e o servidor confirma (Acknowledge), entregando IP, máscara, gateway, servidores DNS e o prazo da concessão (lease). Como o protocolo não autentica o servidor, o cliente costuma aceitar a primeira oferta que chega. Um servidor clandestino (rogue DHCP) pode, assim, indicar como gateway ou DNS uma máquina do atacante, que passa a intermediar o tráfego (man-in-the-middle) ou a desviar os nomes para páginas falsas. Defesas: o DHCP snooping nos switches, que só aceita ofertas vindas das portas autorizadas, e o controle de acesso à rede (802.1X), que impede que equipamentos não autorizados funcionem nos pontos de rede. A falsificação de DHCP é o equivalente, na configuração automática, do envenenamento de ARP na rede local.",
+    origem: "banco",
+  },
 ];
