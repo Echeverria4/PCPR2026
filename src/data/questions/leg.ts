@@ -37,18 +37,19 @@ export const QUESTOES_LEG: Question[] = [
     materia: "leg",
     topico: "Constituição do Estado do Paraná",
     enunciado:
-      "A Polícia Civil, no âmbito estadual, tem como função constitucional principal, ressalvada a competência da União:",
+      "A Polícia Civil, no âmbito estadual, tem como função constitucional principal, ressalvada a competência da União,",
     alternativas: [
-      "Realizar exclusivamente o policiamento ostensivo e a preservação da ordem pública",
-      "Exercer as funções de polícia judiciária e a apuração de infrações penais, exceto as militares",
-      "Controlar o trânsito em rodovias estaduais",
-      "Fiscalizar exclusivamente crimes ambientais",
-      "Substituir o Ministério Público na promoção da ação penal",
+      "exercer as funções de polícia judiciária e a apuração das infrações penais, exceto as militares.",
+      "realizar exclusivamente o policiamento ostensivo e a preservação da ordem pública.",
+      "controlar o trânsito nas rodovias estaduais.",
+      "fiscalizar exclusivamente os crimes ambientais.",
+      "substituir o Ministério Público na promoção da ação penal.",
     ],
-    correta: 1,
+    correta: 0,
     explicacao:
-      "Conforme o art. 144, §4º, da Constituição Federal, às polícias civis, dirigidas por delegados de polícia de carreira, incumbem, ressalvada a competência da União, as funções de polícia judiciária e a apuração de infrações penais, exceto as militares.",
+      "Art. 144, §4º, da CF: às polícias civis, dirigidas por delegados de polícia de carreira, incumbem, ressalvada a competência da União, as funções de polícia judiciária e a apuração de infrações penais, exceto as militares. O art. 47 da Constituição do Estado do Paraná repete a regra: a Polícia Civil é instituição permanente e essencial à função da segurança pública, com incumbência de exercer as funções de polícia judiciária e as apurações das infrações penais, exceto as militares. O policiamento ostensivo é da Polícia Militar (art. 48 da CE-PR), e a ação penal pública é do Ministério Público.",
     origem: "banco",
+    fonte: "CF, art. 144, §4º; CE-PR, art. 47",
   },
   {
     id: "leg-004",
@@ -147,18 +148,19 @@ export const QUESTOES_LEG: Question[] = [
     materia: "leg",
     topico: "Constituição do Estado do Paraná",
     enunciado:
-      "A Constituição do Estado do Paraná apresenta uma peculiaridade na estruturação de sua segurança pública em relação a diversos outros entes federativos: ela prevê, como órgão próprio integrante do sistema de segurança pública estadual, além da Polícia Civil e da Polícia Militar:",
+      "Sobre a Polícia Científica do Paraná, prevista no art. 50 da Constituição do Estado, o Supremo Tribunal Federal decidiu (ADI 2.575) que ela",
     alternativas: [
-      "A Guarda Municipal, com atribuições de polícia judiciária",
-      "A Polícia Científica, como órgão autônomo",
-      "A Polícia Rodoviária Estadual, com competência de trânsito federal",
-      "A Polícia Penal, subordinada à Polícia Civil",
-      "O Corpo de Bombeiros Civil, distinto do Corpo de Bombeiros Militar",
+      "pode existir como órgão autônomo de perícia, com estrutura própria e separado da Polícia Civil, mas não é órgão de segurança pública, porque o rol do art. 144 da Constituição Federal é taxativo.",
+      "é órgão de segurança pública, porque os Estados podem criar livremente outras polícias além das previstas no art. 144 da Constituição Federal.",
+      "deve obrigatoriamente integrar a estrutura da Polícia Civil, sendo vedada a perícia oficial autônoma.",
+      "foi extinta, e as perícias criminais do Estado passaram a ser feitas pela Polícia Federal.",
+      "deve ser dirigida por Delegado de Polícia da classe mais elevada, já que a perícia é atividade de polícia judiciária.",
     ],
-    correta: 1,
+    correta: 0,
     explicacao:
-      "A Constituição do Estado do Paraná prevê a Polícia Científica como órgão próprio da estrutura de segurança pública estadual — peculiaridade paranaense, já que em diversos outros estados a perícia criminal está vinculada organicamente à Polícia Civil, sem autonomia institucional própria.",
+      "Na ADI 2.575 (2020), o STF deu interpretação conforme à expressão “Polícia Científica” do art. 50 da Constituição do Paraná para afastar o caráter de órgão de segurança pública. O rol do art. 144 da CF é taxativo, e os Estados não podem criar órgão de segurança pública diferente dos ali previstos (no plano estadual, Polícia Civil, Polícia Militar, Corpo de Bombeiros Militar e Polícia Penal). Isso não impede que a perícia oficial funcione como órgão autônomo, desvinculado da Polícia Civil: no Paraná, a Polícia Científica tem estrutura própria, cuida das perícias de criminalística e médico-legais e é dirigida por perito de carreira da classe mais elevada. Antes, na ADI 2.616, o STF declarou inconstitucional por inteiro, por vício de iniciativa, a EC 10/2001, que tinha incluído a Polícia Científica no rol de órgãos do art. 46.",
     origem: "banco",
+    fonte: "CE-PR, art. 50; STF, ADI 2.575 e ADI 2.616",
   },
   {
     id: "leg-010",
@@ -1675,5 +1677,347 @@ export const QUESTOES_LEG: Question[] = [
       "Art. 2º da Lei 13.869: é sujeito ativo qualquer agente público, servidor ou não, da administração direta, indireta ou fundacional de qualquer dos Poderes da União, dos Estados, do Distrito Federal, dos Municípios e de Território, incluindo servidores e militares, membros do Legislativo, do Executivo, do Judiciário, do Ministério Público e dos tribunais ou conselhos de contas. Pelo parágrafo único, agente público é todo aquele que exerce, ainda que transitoriamente ou sem remuneração, mandato, cargo, emprego ou função.",
     origem: "banco",
     fonte: "Lei 13.869/2019",
+  },
+  {
+    id: "leg-090",
+    materia: "leg",
+    topico: "Constituição do Estado do Paraná",
+    enunciado:
+      "Com as Emendas Constitucionais nº 50/2021 e nº 53/2022, o art. 46 da Constituição do Estado do Paraná passou a prever que a segurança pública é exercida pelos seguintes órgãos:",
+    alternativas: [
+      "Polícia Civil, Polícia Militar, Polícia Penal e Corpo de Bombeiros Militar.",
+      "Polícia Civil, Polícia Militar, Polícia Científica e Guarda Municipal.",
+      "Polícia Civil e Polícia Militar, apenas, com o Corpo de Bombeiros integrando a Polícia Militar.",
+      "Polícia Civil, Polícia Militar, Polícia Rodoviária Estadual e Polícia Científica.",
+      "Polícia Civil, Polícia Penal e Guarda Municipal, cabendo à Polícia Militar apenas a defesa civil.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 46 da CE-PR: a segurança pública, dever do Estado, direito e responsabilidade de todos, é exercida pela Polícia Civil (I), pela Polícia Militar (II), pela Polícia Penal (IV, incluída pela EC 50/2021) e pelo Corpo de Bombeiros Militar (V, incluído pela EC 53/2022). O inciso III, Polícia Científica, veio da EC 10/2001, declarada inconstitucional pelo STF na ADI 2.616, e na ADI 2.575 o STF afastou o caráter de órgão de segurança pública da Polícia Científica. Guarda Municipal e polícia rodoviária estadual não constam do rol.",
+    origem: "banco",
+    fonte: "CE-PR, art. 46, com as EC 50/2021 e 53/2022",
+  },
+  {
+    id: "leg-091",
+    materia: "leg",
+    topico: "Constituição do Estado do Paraná",
+    enunciado:
+      "Nos termos do art. 47 da Constituição do Estado do Paraná, a Polícia Civil é dirigida por",
+    alternativas: [
+      "delegado de polícia, preferencialmente da classe mais elevada da carreira, e é instituição permanente e essencial à função da segurança pública.",
+      "delegado de polícia obrigatoriamente da classe mais elevada, escolhido em lista tríplice formada pelo Conselho da Polícia Civil.",
+      "Secretário de Estado da Segurança Pública, que deve ser delegado de polícia aposentado.",
+      "qualquer policial civil estável, eleito pelos integrantes das carreiras policiais civis.",
+      "membro do Ministério Público, que exerce o controle externo da atividade policial.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 47, caput, da CE-PR: a Polícia Civil, dirigida por delegado de polícia, preferencialmente da classe mais elevada da carreira, é instituição permanente e essencial à função da segurança pública, com incumbência de exercer as funções de polícia judiciária e as apurações das infrações penais, exceto as militares. Atenção à palavra “preferencialmente”: a Constituição não exige a classe mais elevada nem prevê lista tríplice.",
+    origem: "banco",
+    fonte: "CE-PR, art. 47, caput",
+  },
+  {
+    id: "leg-092",
+    materia: "leg",
+    topico: "Constituição do Estado do Paraná",
+    enunciado:
+      "Segundo a Constituição do Estado do Paraná, o Conselho da Polícia Civil é órgão",
+    alternativas: [
+      "consultivo, normativo e deliberativo, para fins de controle do ingresso, ascensão funcional, hierarquia e regime disciplinar das carreiras policiais civis.",
+      "apenas consultivo, sem poder de deliberação, vinculado ao Ministério Público.",
+      "de controle externo da atividade policial, composto exclusivamente por representantes da sociedade civil.",
+      "jurisdicional, competente para julgar os crimes praticados por policiais civis em serviço.",
+      "deliberativo apenas sobre o orçamento da Polícia Civil, sem atribuições sobre ingresso ou disciplina.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 47, §2º, da CE-PR: o Conselho da Polícia Civil é órgão consultivo, normativo e deliberativo, para fins de controle do ingresso, ascensão funcional, hierarquia e regime disciplinar das carreiras policiais civis. Os três adjetivos e as quatro finalidades costumam ser trocados nas alternativas. O controle externo da atividade policial é do Ministério Público (art. 129, VII, da CF), e julgar crimes é função do Judiciário.",
+    origem: "banco",
+    fonte: "CE-PR, art. 47, §2º",
+  },
+  {
+    id: "leg-093",
+    materia: "leg",
+    topico: "Constituição do Estado do Paraná",
+    enunciado:
+      "A Constituição do Estado do Paraná, no art. 47, estabelece que",
+    alternativas: [
+      "a função policial civil se fundamenta na hierarquia e na disciplina, e o cargo de Delegado de Polícia integra, para todos os fins, as carreiras jurídicas do Estado.",
+      "a função policial civil se fundamenta na hierarquia e na disciplina militares, e o Delegado de Polícia integra a carreira do Ministério Público.",
+      "os cargos policiais civis podem ser providos por concurso público ou por indicação do Conselho da Polícia Civil.",
+      "o Delegado de Polícia tem as garantias de vitaliciedade e inamovibilidade, como os magistrados.",
+      "a função policial civil não se submete a hierarquia, por ser atividade técnica de investigação.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 47 da CE-PR: a função policial civil fundamenta-se na hierarquia e disciplina (§1º); os cargos policiais civis são providos por concurso público de provas e títulos (§3º); e o cargo de Delegado de Polícia integra, para todos os fins, as carreiras jurídicas do Estado (§4º, incluído pela EC 27/2010). A hierarquia e a disciplina “militares” são próprias da Polícia Militar (art. 48). Integrar as carreiras jurídicas não dá ao Delegado as garantias da magistratura nem o coloca no Ministério Público.",
+    origem: "banco",
+    fonte: "CE-PR, art. 47, §§1º, 3º e 4º",
+  },
+  {
+    id: "leg-094",
+    materia: "leg",
+    topico: "Constituição do Estado do Paraná",
+    enunciado:
+      "Pelo art. 47, §5º, da Constituição do Estado do Paraná, a remuneração dos delegados e policiais civis é fixada",
+    alternativas: [
+      "na forma de subsídio, em parcela única, conforme o art. 39, §4º, da Constituição Federal.",
+      "por vencimento básico acrescido de adicionais por tempo de serviço e de gratificação de risco de vida.",
+      "por ato do Delegado-Geral, de acordo com a produtividade de cada unidade policial.",
+      "por subsídio, permitido o acréscimo de gratificação de função policial e de adicional de produtividade.",
+      "por convenção coletiva negociada entre o Estado e o sindicato da categoria.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 47, §5º, da CE-PR (redação da EC 30/2012): a remuneração dos delegados e policiais civis é fixada na forma de subsídio, em parcela única, conforme o art. 39, §4º, da CF, em face do art. 144, §9º, da CF. Parcela única significa que é vedado acrescentar gratificação, adicional, abono, prêmio ou verba de representação. A Polícia Penal também recebe por subsídio (art. 50-A, §5º).",
+    origem: "banco",
+    fonte: "CE-PR, art. 47, §5º",
+  },
+  {
+    id: "leg-095",
+    materia: "leg",
+    topico: "Constituição do Estado do Paraná",
+    enunciado:
+      "De acordo com a Constituição do Estado do Paraná, com a redação da EC nº 53/2022, a Polícia Militar e o Corpo de Bombeiros Militar",
+    alternativas: [
+      "são comandados por oficial da ativa do último posto do quadro de oficiais combatentes da respectiva corporação, são forças auxiliares e reserva do Exército e, como a Polícia Civil e a Polícia Penal, subordinam-se ao Governador do Estado.",
+      "são comandados pelo Delegado-Geral da Polícia Civil em situações de calamidade pública.",
+      "subordinam-se diretamente ao Comandante do Exército, e não ao Governador do Estado.",
+      "são comandados por oficial da reserva remunerada, escolhido pela Assembleia Legislativa.",
+      "formam uma única corporação, porque o Corpo de Bombeiros continua integrando a Polícia Militar.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 49 da CE-PR (redação da EC 53/2022): a Polícia Militar e o Corpo de Bombeiros Militar, comandados por oficial da ativa do último posto do quadro de oficiais combatentes da respectiva corporação, forças auxiliares e reserva do Exército, a Polícia Civil e a Polícia Penal subordinam-se ao Governador do Estado e são regidas por legislação especial. O Corpo de Bombeiros deixou de integrar a Polícia Militar e virou órgão próprio (art. 46, V). A regra segue o art. 144, §6º, da CF.",
+    origem: "banco",
+    fonte: "CE-PR, art. 49, com a EC 53/2022",
+  },
+  {
+    id: "leg-096",
+    materia: "leg",
+    topico: "Constituição do Estado do Paraná",
+    enunciado:
+      "Segundo o art. 48 da Constituição do Estado do Paraná, com a redação da EC nº 53/2022, cabem à Polícia Militar",
+    alternativas: [
+      "a polícia ostensiva, a preservação da ordem pública e o policiamento de trânsito urbano e rodoviário, de florestas e de mananciais, além de outras funções definidas em lei.",
+      "as funções de polícia judiciária e a apuração das infrações penais comuns.",
+      "a prevenção e o combate a incêndio, as buscas e os salvamentos, como atribuições exclusivas da corporação.",
+      "a guarda e a segurança dos estabelecimentos penais do Estado.",
+      "a realização das perícias criminais e médico-legais nos locais de crime.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 48 da CE-PR (redação da EC 53/2022): à Polícia Militar, força estadual, instituição permanente e regular, organizada com base na hierarquia e disciplina militares, cabem a polícia ostensiva, a preservação da ordem pública, o policiamento de trânsito urbano e rodoviário, de florestas e de mananciais, além de outras formas e funções definidas em lei. A EC 53/2022 tirou do art. 48 a defesa civil, a prevenção e o combate a incêndio, as buscas, os salvamentos e os socorros públicos, porque o Corpo de Bombeiros Militar virou órgão próprio. Polícia judiciária é da Polícia Civil, a segurança dos presídios é da Polícia Penal e a perícia é da Polícia Científica.",
+    origem: "banco",
+    fonte: "CE-PR, art. 48, com a EC 53/2022",
+  },
+  {
+    id: "leg-097",
+    materia: "leg",
+    topico: "Constituição do Estado do Paraná",
+    enunciado:
+      "A Emenda Constitucional nº 50/2021 incluiu na Constituição do Estado do Paraná a Polícia Penal, que",
+    alternativas: [
+      "é organizada em estrutura administrativa própria, denominada Departamento de Polícia Penal do Estado do Paraná (DEPPEN), com ingresso exclusivamente por concurso público e remuneração por subsídio.",
+      "é subordinada à Polícia Civil e dirigida pelo Delegado-Geral.",
+      "levou à extinção dos cargos de Agente Penitenciário, com a exoneração dos ocupantes e a realização de novo concurso.",
+      "pode admitir servidores por indicação do Diretor do DEPPEN, dispensado o concurso público.",
+      "exerce as funções de polícia judiciária nos crimes praticados dentro dos estabelecimentos penais.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 50-A da CE-PR (EC 50/2021): a Polícia Penal é instituição permanente e essencial à segurança pública, incumbida da segurança dos estabelecimentos penais e de outros setores vinculados à execução penal. Ela se fundamenta na hierarquia e na disciplina (§1º), o ingresso é exclusivamente por concurso público (§2º), os cargos de Agente Penitenciário foram transformados em Policial Penal (§3º), há um Conselho da Polícia Penal (§4º), a remuneração é por subsídio (§5º) e a estrutura própria é o DEPPEN (§6º). Ela se subordina ao Governador (art. 49), não à Polícia Civil. A apuração de crimes cometidos nos presídios continua com a Polícia Civil.",
+    origem: "banco",
+    fonte: "CE-PR, art. 50-A, incluído pela EC 50/2021",
+  },
+  {
+    id: "leg-098",
+    materia: "leg",
+    topico: "LGPD e Lei de Acesso à Informação (12.527/2011)",
+    enunciado:
+      "Um cidadão pede, pelo site oficial da Polícia Civil, dados estatísticos sobre ocorrências registradas em uma delegacia. Pela Lei de Acesso à Informação, o órgão",
+    alternativas: [
+      "não pode exigir que ele informe os motivos do pedido, e as exigências de identificação do requerente não podem inviabilizar a solicitação.",
+      "pode negar o pedido se o requerente não justificar o seu interesse pessoal na informação.",
+      "só pode receber pedidos apresentados pessoalmente, em papel e com firma reconhecida.",
+      "deve exigir que o pedido seja feito por advogado constituído, com procuração.",
+      "só pode atender pedidos de quem comprovar residência no Estado do Paraná.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 10 da LAI: qualquer interessado pode apresentar pedido de acesso, por qualquer meio legítimo, com a identificação do requerente e a especificação da informação. O §1º proíbe exigências de identificação que inviabilizem a solicitação, o §2º manda oferecer alternativa de pedido pelos sítios oficiais na internet e o §3º veda quaisquer exigências relativas aos motivos determinantes da solicitação de informações de interesse público.",
+    origem: "banco",
+    fonte: "Lei 12.527/2011, art. 10",
+  },
+  {
+    id: "leg-099",
+    materia: "leg",
+    topico: "LGPD e Lei de Acesso à Informação (12.527/2011)",
+    enunciado:
+      "Negado o acesso a uma informação, a Lei nº 12.527/2011 assegura ao interessado",
+    alternativas: [
+      "recurso no prazo de 10 dias a contar da ciência, dirigido à autoridade hierarquicamente superior à que proferiu a decisão, que deve se manifestar em 5 dias.",
+      "recurso no prazo de 5 dias, dirigido ao próprio servidor que negou o pedido, que decide em 10 dias.",
+      "recurso no prazo de 15 dias, apresentado diretamente ao Poder Judiciário, vedada a via administrativa.",
+      "apenas o mandado de segurança, porque a decisão administrativa que nega acesso é irrecorrível.",
+      "recurso no prazo de 30 dias ao Ministério Público, que decide em igual prazo.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 15 da LAI: no caso de indeferimento de acesso a informações ou às razões da negativa, o interessado pode recorrer no prazo de 10 dias a contar da sua ciência. O recurso vai à autoridade hierarquicamente superior à que exarou a decisão impugnada, que deve se manifestar em 5 dias (parágrafo único). O art. 14 garante ao requerente o direito de obter o inteiro teor da decisão de negativa. Não confundir com o prazo de resposta ao pedido, que é de até 20 dias, prorrogáveis por mais 10 (art. 11).",
+    origem: "banco",
+    fonte: "Lei 12.527/2011, art. 15",
+  },
+  {
+    id: "leg-100",
+    materia: "leg",
+    topico: "LGPD e Lei de Acesso à Informação (12.527/2011)",
+    enunciado:
+      "Pela Lei de Acesso à Informação, pode ser classificada como sigilosa, por ser imprescindível à segurança da sociedade ou do Estado, a informação cuja divulgação possa",
+    alternativas: [
+      "comprometer atividades de inteligência, bem como de investigação ou fiscalização em andamento, relacionadas com a prevenção ou repressão de infrações.",
+      "causar constrangimento político ao governante, ainda que sem risco à segurança da sociedade.",
+      "revelar condutas de agentes públicos que tenham violado direitos humanos.",
+      "expor o órgão a críticas da imprensa sobre o uso de recursos públicos.",
+      "revelar o número de inquéritos instaurados pela delegacia no ano anterior.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 23 da LAI: são passíveis de classificação as informações cuja divulgação possa, entre outras hipóteses, pôr em risco a defesa e a soberania nacionais, a vida, a segurança ou a saúde da população, a segurança de instituições ou de altas autoridades e (inciso VIII) comprometer atividades de inteligência, bem como de investigação ou fiscalização em andamento, relacionadas com a prevenção ou repressão de infrações. Constrangimento político ou críticas não justificam sigilo, e as condutas que violam direitos humanos praticadas por agentes públicos não podem ter acesso restrito (art. 21, parágrafo único). Além disso, a LAI não afasta os demais sigilos legais nem o segredo de justiça (art. 22).",
+    origem: "banco",
+    fonte: "Lei 12.527/2011, art. 23, VIII",
+  },
+  {
+    id: "leg-101",
+    materia: "leg",
+    topico: "LGPD e Lei de Acesso à Informação (12.527/2011)",
+    enunciado:
+      "Segundo a Lei nº 12.527/2011, as informações ou documentos que versem sobre condutas que impliquem violação dos direitos humanos praticada por agentes públicos ou a mando de autoridades públicas",
+    alternativas: [
+      "não poderão ser objeto de restrição de acesso.",
+      "podem ser classificados como ultrassecretos, com sigilo de até 25 anos.",
+      "têm acesso restrito por até 100 anos, por conterem informações pessoais dos agentes envolvidos.",
+      "só podem ser divulgados após o trânsito em julgado da condenação dos agentes.",
+      "dependem de autorização do Ministério Público para serem divulgados.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 21 da LAI: não pode ser negado acesso à informação necessária à tutela judicial ou administrativa de direitos fundamentais. O parágrafo único vai além: informações ou documentos sobre condutas que impliquem violação dos direitos humanos praticada por agentes públicos ou a mando de autoridades públicas não poderão ser objeto de restrição de acesso. Destruir ou subtrair documentos sobre essas violações é conduta ilícita do agente (art. 32, VII).",
+    origem: "banco",
+    fonte: "Lei 12.527/2011, art. 21",
+  },
+  {
+    id: "leg-102",
+    materia: "leg",
+    topico: "LGPD e Lei de Acesso à Informação (12.527/2011)",
+    enunciado:
+      "As informações pessoais relativas à intimidade, à vida privada, à honra e à imagem, nos termos da Lei de Acesso à Informação,",
+    alternativas: [
+      "têm acesso restrito, independentemente de classificação de sigilo, pelo prazo máximo de 100 anos a contar da sua produção, a agentes públicos legalmente autorizados e à pessoa a que se referirem.",
+      "devem ser classificadas como reservadas, com prazo máximo de sigilo de 5 anos.",
+      "tornam-se automaticamente públicas depois de 25 anos da sua produção.",
+      "podem ser divulgadas a qualquer interessado, independentemente de consentimento, por estarem em poder de órgão público.",
+      "ficam restritas por 50 anos, prorrogáveis uma única vez por igual período.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 31, §1º, I, da LAI: as informações pessoais relativas à intimidade, vida privada, honra e imagem têm acesso restrito, independentemente de classificação de sigilo e pelo prazo máximo de 100 anos a contar da sua produção, a agentes públicos legalmente autorizados e à pessoa a que se referirem. A divulgação ou o acesso por terceiros depende de previsão legal ou de consentimento expresso da pessoa (inciso II). O consentimento é dispensado, por exemplo, para cumprimento de ordem judicial, para a defesa de direitos humanos e para a proteção do interesse público e geral preponderante (§3º). Os prazos de 25, 15 e 5 anos são das informações classificadas como sigilosas (art. 24), e não das pessoais.",
+    origem: "banco",
+    fonte: "Lei 12.527/2011, art. 31",
+  },
+  {
+    id: "leg-103",
+    materia: "leg",
+    topico: "LGPD e Lei de Acesso à Informação (12.527/2011)",
+    enunciado:
+      "Investigado em processo disciplinar, um servidor alega que informações sobre sua vida privada, juntadas aos autos, não podem ser usadas, porque a Lei de Acesso à Informação protege as informações pessoais. Pela Lei nº 12.527/2011,",
+    alternativas: [
+      "a restrição de acesso às informações relativas à vida privada, à honra e à imagem não pode ser invocada para prejudicar processo de apuração de irregularidades em que o titular das informações estiver envolvido.",
+      "o servidor tem razão, e o processo disciplinar deve ser arquivado.",
+      "as informações só podem ser usadas com o consentimento expresso e escrito do servidor.",
+      "as informações só poderão ser usadas depois de 100 anos da sua produção.",
+      "a proteção só deixa de valer depois que o servidor for condenado criminalmente.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 31, §4º, da LAI: a restrição de acesso à informação relativa à vida privada, honra e imagem de pessoa não poderá ser invocada com o intuito de prejudicar processo de apuração de irregularidades em que o titular das informações estiver envolvido, bem como em ações voltadas para a recuperação de fatos históricos de maior relevância. Quem obtém acesso a essas informações responde pelo seu uso indevido (§2º).",
+    origem: "banco",
+    fonte: "Lei 12.527/2011, art. 31, §4º",
+  },
+  {
+    id: "leg-104",
+    materia: "leg",
+    topico: "LGPD e Lei de Acesso à Informação (12.527/2011)",
+    enunciado:
+      "Sobre a classificação de informações sigilosas na Lei de Acesso à Informação, é correto afirmar que",
+    alternativas: [
+      "transcorrido o prazo de classificação ou consumado o evento que defina o seu termo final, a informação se torna automaticamente de acesso público, e na classificação deve ser usado o critério menos restritivo possível.",
+      "vencido o prazo, a informação continua sigilosa até que a autoridade publique ato expresso de desclassificação.",
+      "o prazo de sigilo é contado da data em que a informação foi pedida pela primeira vez por algum interessado.",
+      "em caso de dúvida, deve ser adotado sempre o grau de sigilo mais restritivo, por precaução.",
+      "o termo final do sigilo deve ser sempre uma data certa, vedado vinculá-lo a um evento.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 24 da LAI: os prazos máximos são de 25 anos (ultrassecreta), 15 anos (secreta) e 5 anos (reservada), contados da data de produção da informação. O termo final pode ser um evento que ocorra antes do fim do prazo máximo (§3º). Transcorrido o prazo ou consumado o evento, a informação torna-se automaticamente de acesso público (§4º). Na classificação, observa-se o interesse público e usa-se o critério menos restritivo possível, considerando a gravidade do risco e o prazo máximo (§5º). As informações que possam pôr em risco a segurança do Presidente, do Vice e de seus cônjuges e filhos são reservadas até o término do mandato em exercício ou do último mandato, em caso de reeleição (§2º).",
+    origem: "banco",
+    fonte: "Lei 12.527/2011, art. 24",
+  },
+  {
+    id: "leg-105",
+    materia: "leg",
+    topico: "LGPD e Lei de Acesso à Informação (12.527/2011)",
+    enunciado:
+      "Pela Lei de Acesso à Informação, com a redação da Lei nº 14.129/2021, o serviço de busca e de fornecimento de informação",
+    alternativas: [
+      "é gratuito, podendo ser cobrado só o valor necessário ao ressarcimento dos custos quando houver reprodução de documentos, com isenção para quem não puder pagar sem prejuízo do próprio sustento ou da família.",
+      "é cobrado por taxa fixada pelo órgão, proporcional ao tempo gasto na busca da informação.",
+      "é gratuito apenas para quem comprovar renda inferior a um salário mínimo.",
+      "é sempre gratuito, inclusive a reprodução de documentos, vedada qualquer cobrança.",
+      "depende do pagamento prévio de emolumentos, como nos serviços de cartório.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 12 da LAI (redação da Lei 14.129/2021): o serviço de busca e de fornecimento de informação é gratuito. O órgão só pode cobrar o valor necessário ao ressarcimento dos custos dos serviços e dos materiais quando houver reprodução de documentos (§1º). Fica isento desse ressarcimento quem não puder pagar sem prejuízo do sustento próprio ou da família, declarando a situação nos termos da Lei 7.115/1983 (§2º).",
+    origem: "banco",
+    fonte: "Lei 12.527/2011, art. 12, com redação da Lei 14.129/2021",
+  },
+  {
+    id: "leg-106",
+    materia: "leg",
+    topico: "LGPD e Lei de Acesso à Informação (12.527/2011)",
+    enunciado:
+      "Para a Lei de Acesso à Informação, constitui conduta ilícita que gera responsabilidade do agente público",
+    alternativas: [
+      "recusar-se a fornecer informação requerida, retardar deliberadamente o seu fornecimento ou fornecê-la intencionalmente de forma incorreta, incompleta ou imprecisa.",
+      "fornecer informação de interesse público a quem não informou os motivos do pedido.",
+      "divulgar na internet, sem requerimento, informações de interesse coletivo produzidas pelo órgão.",
+      "negar acesso a informação classificada como secreta enquanto não vencido o prazo de sigilo.",
+      "permitir que a própria pessoa a que se referem as informações pessoais tenha acesso a elas.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 32 da LAI: entre as condutas ilícitas estão recusar, retardar ou fornecer intencionalmente de forma incorreta a informação (I); utilizar indevidamente, subtrair, destruir ou ocultar informação (II); agir com dolo ou má-fé na análise dos pedidos (III); divulgar ou permitir acesso indevido a informação sigilosa ou pessoal (IV); impor sigilo para obter proveito pessoal ou ocultar ato ilegal (V); ocultar informação sigilosa da revisão de autoridade superior (VI); e destruir documentos sobre violações de direitos humanos (VII). Para os servidores regidos pela Lei 8.112, a punição mínima é a suspensão (§1º, II), e o agente pode responder também por improbidade administrativa (§2º). Divulgar informação de interesse coletivo sem requerimento não é ilícito: é dever do órgão (art. 8º).",
+    origem: "banco",
+    fonte: "Lei 12.527/2011, art. 32",
+  },
+  {
+    id: "leg-107",
+    materia: "leg",
+    topico: "LGPD e Lei de Acesso à Informação (12.527/2011)",
+    enunciado:
+      "Pela Lei nº 12.527/2011, a divulgação de informações de interesse coletivo ou geral produzidas ou custodiadas pelos órgãos e entidades públicas",
+    alternativas: [
+      "deve ser promovida independentemente de requerimentos, sendo obrigatória a divulgação em sítios oficiais da internet.",
+      "só ocorre mediante pedido formal de algum interessado.",
+      "é facultativa, ficando a critério de cada autoridade.",
+      "é proibida na internet, por razões de segurança da informação, e deve ser feita apenas em murais físicos.",
+      "só é obrigatória para os órgãos da União, sem alcançar Estados e Municípios.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 8º da LAI (transparência ativa): é dever dos órgãos e entidades públicas promover, independentemente de requerimentos, a divulgação em local de fácil acesso das informações de interesse coletivo ou geral que produzam ou custodiem. O §2º torna obrigatória a divulgação em sítios oficiais da internet, e o §4º dispensa dela os Municípios de até 10.000 habitantes, que continuam obrigados a divulgar em tempo real a execução orçamentária e financeira. A LAI vale para a União, os Estados, o Distrito Federal e os Municípios (art. 1º).",
+    origem: "banco",
+    fonte: "Lei 12.527/2011, art. 8º",
   },
 ];

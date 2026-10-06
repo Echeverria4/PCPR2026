@@ -4,9 +4,9 @@ export const MODELOS_MENTAIS_LEG: ModeloMental[] = [
   {
     topico: "Constituição do Estado do Paraná",
     origem: "oficial",
-    gancho: "É a CF em miniatura, mas só vale dentro do Paraná",
+    gancho: "Quatro órgãos no art. 46, e a Polícia Científica fica de fora",
     modelo:
-      "Reproduz a lógica e boa parte dos princípios da Constituição Federal, mas trata da organização especificamente estadual — Poderes, segurança pública estadual, PCPR. Nas questões, o pulo do gato é notar quando o enunciado troca \"União\" por \"Estado do Paraná\".",
+      "Art. 46: Polícia Civil, Polícia Militar, Polícia Penal (EC 50/2021) e Corpo de Bombeiros Militar (EC 53/2022). Polícia Civil (art. 47): dirigida por delegado, preferencialmente da classe mais elevada; polícia judiciária e apuração das infrações, exceto as militares; hierarquia e disciplina; Conselho da Polícia Civil consultivo, normativo e deliberativo; Delegado nas carreiras jurídicas; subsídio. PM (art. 48): polícia ostensiva e ordem pública. Todos se subordinam ao Governador (art. 49). Polícia Penal (art. 50-A): presídios, DEPPEN. Polícia Científica (art. 50): perícia autônoma, com estrutura própria, mas não é órgão de segurança pública (STF, ADI 2.575: o rol do art. 144 é taxativo).",
   },
   {
     topico: "LC Estadual 259/2023 (regime jurídico da PCPR)",

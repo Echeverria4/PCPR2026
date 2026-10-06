@@ -138,6 +138,10 @@ export const DICAS: DicaDia[] = [
   },
   {
     materia: "leg",
+    texto: "Constituição do PR: o art. 46 tem quatro órgãos (Polícia Civil, Polícia Militar, Polícia Penal e Corpo de Bombeiros Militar). A Polícia Científica (art. 50) é perícia autônoma, com estrutura própria, mas o STF decidiu (ADI 2.575) que ela não é órgão de segurança pública, porque o rol do art. 144 da CF é taxativo. Alternativa que chama a Polícia Científica de órgão de segurança pública está errada. E a PC é dirigida por delegado “preferencialmente” da classe mais elevada.",
+  },
+  {
+    materia: "leg",
     texto: "Lei 15.295/2025 (em vigor em janeiro de 2026, dentro do corte do edital): o art. 9º-A da LEP passou a exigir DNA de todo condenado à reclusão em regime inicial fechado, no ingresso no presídio. Na Lei 12.037, entrou o inciso VII do art. 3º (denúncia recebida por crime com grave violência, crime sexual, pornografia infantil do ECA ou organização criminosa armada), com coleta de perfil genético também no flagrante por esses crimes. Banco nacional: BNPG, e a rede que integra os bancos estaduais é a RIBPG.",
   },
   {

@@ -229,13 +229,13 @@ export const QUESTOES_PR: Question[] = [
     alternativas: [
       "Secretaria de Estado da Segurança Pública.",
       "Ministério da Justiça e Segurança Pública.",
-      "Instituto de Segurança Pública do Paraná (ISP-PR), isoladamente.",
+      "Centro de Análise, Planejamento e Estatística (CAPE), isoladamente.",
       "Procuradoria-Geral de Justiça do Paraná.",
       "Casa Civil do Governo do Estado.",
     ],
     correta: 0,
     explicacao:
-      "A segurança pública paranaense é coordenada pela Secretaria de Estado da Segurança Pública, à qual se vinculam a Polícia Civil, a Polícia Militar e o Corpo de Bombeiros Militar. O Ministério da Justiça e Segurança Pública é órgão federal; o ISP-PR é órgão de produção de indicadores e estatísticas, não de coordenação institucional.",
+      "A segurança pública paranaense é coordenada pela Secretaria de Estado da Segurança Pública, à qual se vinculam a Polícia Civil, a Polícia Militar e o Corpo de Bombeiros Militar. O Ministério da Justiça e Segurança Pública é órgão federal; o CAPE, da própria SESP, produz análises e estatísticas criminais, mas não coordena as forças de segurança.",
     origem: "banco",
   },
   {
