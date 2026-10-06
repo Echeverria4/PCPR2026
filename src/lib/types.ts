@@ -30,6 +30,8 @@ export interface Question {
   correta: 0 | 1 | 2 | 3 | 4;
   explicacao: string;
   origem?: "banco" | "ia";
+  /** Prova real em que a questão se baseou (ex.: "FGV · PC-AM 2022 · Investigador (adaptada)"). Só preencher quando a questão veio de fato de uma prova consultada. */
+  fonte?: string;
 }
 
 export interface ConteudoTopico {
@@ -67,6 +69,15 @@ export interface ProvaReal {
   semana: string;
   detalhe: string;
   links: ProvaLink[];
+}
+
+/** Como a FGV cobra a matéria: exibido no topo da aba Conteúdo. */
+export interface RaioX {
+  resumo: string;
+  temasQuentes: string[];
+  pegadinhas: string[];
+  dicasRetaFinal: string[];
+  fontes: ProvaLink[];
 }
 
 export interface ProvaRealResultado {

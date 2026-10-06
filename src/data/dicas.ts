@@ -14,7 +14,7 @@ export interface DicaDia {
 export const DICAS: DicaDia[] = [
   {
     materia: "pt",
-    texto: "Crase só existe diante de palavra feminina que aceita o artigo 'a'. Antes de verbo, nunca tem crase.",
+    texto: "Crase é a fusão da preposição 'a' com o artigo 'a' (ou com o 'a' inicial de aquele, aquela, aquilo): o termo regente precisa pedir 'a' e a palavra seguinte precisa aceitar o artigo feminino. Antes de verbo e de palavra masculina não há crase, salvo quando fica implícita a expressão 'à moda de' (bife à milanesa).",
   },
   {
     materia: "ti",
@@ -30,11 +30,11 @@ export const DICAS: DicaDia[] = [
   },
   {
     materia: "pp",
-    texto: "Prisão em flagrante não é modalidade de prisão cautelar — é ato administrativo que antecede a análise judicial.",
+    texto: "A doutrina chama o flagrante de prisão precautelar: ele não se sustenta sozinho. Em até 24 horas da prisão, o juiz faz a audiência de custódia e, fundamentadamente, relaxa a prisão ilegal, converte em preventiva (requisitos do art. 312 e medidas do art. 319 insuficientes) ou concede liberdade provisória, com ou sem fiança (CPP, art. 310).",
   },
   {
     materia: "pen",
-    texto: "Na tentativa (art. 14, II, CP), o agente não consegue completar a execução por circunstâncias alheias à sua vontade.",
+    texto: "Tentativa (CP, art. 14, II): iniciada a execução, o crime não se consuma por circunstâncias alheias à vontade do agente. Na tentativa imperfeita a execução é interrompida; na perfeita (crime falho) o agente esgota os atos de execução e mesmo assim o resultado não ocorre. Pena: a do crime consumado, diminuída de 1/3 a 2/3 (parágrafo único).",
   },
   {
     materia: "con",
@@ -42,11 +42,11 @@ export const DICAS: DicaDia[] = [
   },
   {
     materia: "adm",
-    texto: "Os atributos do ato administrativo são presunção de legitimidade, autoexecutoriedade e imperatividade — nem todo ato tem os três ao mesmo tempo.",
+    texto: "Atributos do ato administrativo (PATI): presunção de legitimidade e veracidade, autoexecutoriedade, tipicidade e imperatividade. Presunção e tipicidade estão em todo ato; imperatividade e autoexecutoriedade não (licença e certidão não são imperativas, e a cobrança de multa não é autoexecutória).",
   },
   {
     materia: "dh",
-    texto: "O uso da força pela polícia deve seguir a proporcionalidade e ser o último recurso, conforme protocolos de uso progressivo da força.",
+    texto: "Uso da força (Lei 13.060/2014, art. 2º): os órgãos de segurança pública devem priorizar instrumentos de menor potencial ofensivo e obedecer à legalidade, à necessidade e à razoabilidade e proporcionalidade. Não é legítimo atirar em pessoa em fuga desarmada ou sem risco imediato, nem em veículo que fura bloqueio, salvo risco de morte ou lesão. O Decreto 12.341/2024 regulamenta a lei e soma precaução, responsabilização e não discriminação.",
   },
   {
     materia: "pr",
@@ -74,19 +74,19 @@ export const DICAS: DicaDia[] = [
   },
   {
     materia: "for",
-    texto: "Papiloscopia clássica trabalha com três tipos fundamentais de desenho digital: arco, presilha e verticilo.",
+    texto: "No sistema datiloscópico de Vucetich, adotado no Brasil, são quatro os tipos fundamentais: arco (sem delta), presilha interna (delta à direita do observador), presilha externa (delta à esquerda do observador) e verticilo (dois deltas). A divisão em três grupos (arco, presilha e verticilo) é a de Galton.",
   },
   {
     materia: "leg",
-    texto: "Delegado de Polícia dirige a Polícia Civil (art. 144, §4º, CF) — atenção a esse detalhe em questões que testam a literalidade do artigo.",
+    texto: "CF, art. 144, §4º: às polícias civis, dirigidas por delegados de polícia de carreira, incumbem, ressalvada a competência da União, as funções de polícia judiciária e a apuração de infrações penais, exceto as militares. Pelo §6º (EC 104/2019), elas se subordinam ao Governador, junto com as polícias militares, os bombeiros militares e as polícias penais estaduais.",
   },
   {
     materia: "pp",
-    texto: "Audiência de custódia deve ocorrer em até 24 horas da prisão, para apresentação da pessoa presa a um juiz.",
+    texto: "Audiência de custódia: em até 24 horas após a prisão, com o preso, a defesa e o MP (CPP, art. 310). A Lei 15.358/2026 passou a prever no caput do art. 310 a realização por videoconferência em tempo real. Para o STF, a audiência é devida em toda modalidade de prisão, não só no flagrante.",
   },
   {
     materia: "pen",
-    texto: "Legítima defesa exige agressão injusta, atual ou iminente, e reação com meios necessários e uso moderado (art. 25, CP).",
+    texto: "Legítima defesa (CP, art. 25): repelir injusta agressão, atual ou iminente, a direito seu ou de outrem, usando moderadamente dos meios necessários. O parágrafo único (Pacote Anticrime) diz que também está em legítima defesa o agente de segurança pública que repele agressão ou risco de agressão a vítima mantida refém durante a prática de crimes.",
   },
   {
     materia: "con",
@@ -94,15 +94,15 @@ export const DICAS: DicaDia[] = [
   },
   {
     materia: "adm",
-    texto: "Poder de polícia é a atividade da Administração que restringe direitos individuais em prol do interesse coletivo — base teórica da atuação policial.",
+    texto: "Poder de polícia (CTN, art. 78) é a atividade da Administração que limita ou disciplina direito, interesse ou liberdade em razão do interesse público. Não confunda: a polícia administrativa atua sobre bens, direitos e atividades, em regra de forma preventiva; a polícia judiciária, função da Polícia Civil, apura infrações penais já ocorridas e atua sobre pessoas.",
   },
   {
     materia: "dh",
-    texto: "Tortura (Lei 9.455/97) é crime próprio quando praticado por agente público no exercício da função, com pena aumentada.",
+    texto: "Tortura (Lei 9.455/1997) é, em regra, crime comum: ser agente público é causa de aumento de 1/6 a 1/3 (art. 1º, §4º, I), e a condenação gera perda do cargo e interdição pelo dobro da pena (§5º). Quem se omite tendo o dever de evitar ou apurar responde com detenção de 1 a 4 anos (§2º). A Lei 15.410/2026 incluiu o inciso III: submeter mulher, reiteradamente, a intenso sofrimento físico ou mental no contexto de violência doméstica e familiar.",
   },
   {
     materia: "pr",
-    texto: "Curitiba foi capital planejada com foco em urbanismo desde os anos 1970 (Plano Diretor / IPPUC) — pode cair em atualidades do PR.",
+    texto: "Curitiba virou referência em urbanismo: Plano Agache (1943), criação do IPPUC em 1965 e Plano Diretor de 1966. Nos anos 1970 vieram a Rua das Flores, primeiro calçadão de pedestres do país (1972), e os ônibus expressos em canaletas exclusivas (1974), embrião do BRT.",
   },
   {
     materia: "cont",
@@ -126,7 +126,7 @@ export const DICAS: DicaDia[] = [
   },
   {
     materia: "for",
-    texto: "Tanatologia forense: livor mortis (mancha), rigor mortis (rigidez) e algor mortis (resfriamento) surgem nessa ordem após a morte.",
+    texto: "Tanatologia: o resfriamento (algor mortis) começa logo após a morte; os livores (livor mortis) aparecem em cerca de 30 minutos a 2 horas e se fixam por volta de 8 a 12 horas; a rigidez (rigor mortis) surge em 1 a 2 horas, começando pela mandíbula e pela nuca (lei de Nysten), generaliza-se em cerca de 8 horas e se desfaz na mesma ordem.",
   },
   {
     materia: "leg",
@@ -134,23 +134,23 @@ export const DICAS: DicaDia[] = [
   },
   {
     materia: "pp",
-    texto: "Prova ilícita por derivação também é inadmissível, salvo fonte independente ou descoberta inevitável (teoria dos frutos da árvore envenenada).",
+    texto: "Provas derivadas das ilícitas também são inadmissíveis (CPP, art. 157, §1º), salvo quando não houver nexo causal com a ilícita ou quando puderem ser obtidas por fonte independente; o §2º define fonte independente com a lógica da descoberta inevitável. O §5º (o juiz que conheceu a prova inadmissível não pode sentenciar) foi declarado inconstitucional pelo STF nas ADIs do Pacote Anticrime.",
   },
   {
     materia: "pen",
-    texto: "Feminicídio é qualificadora do homicídio (art. 121, §2º-A, CP) — não é tipo penal autônomo.",
+    texto: "Desde a Lei 14.994/2024, o feminicídio é crime autônomo (CP, art. 121-A: matar mulher por razões da condição do sexo feminino), com reclusão de 20 a 40 anos, e deixou de ser qualificadora do homicídio. Continua hediondo (Lei 8.072, art. 1º, I-B).",
   },
   {
     materia: "con",
-    texto: "Controle de constitucionalidade difuso pode ser exercido por qualquer juiz no caso concreto; o concentrado é, em regra, exclusivo do STF via ADI/ADC/ADPF.",
+    texto: "Controle difuso: qualquer juiz ou tribunal, no caso concreto (nos tribunais, com reserva de plenário, art. 97). Controle concentrado: o STF julga ADI, ADC, ADO e ADPF tendo a Constituição Federal como parâmetro, e os Tribunais de Justiça julgam a representação de inconstitucionalidade de leis estaduais e municipais em face da Constituição Estadual (art. 125, §2º).",
   },
   {
     materia: "adm",
-    texto: "Improbidade administrativa (Lei 14.230/2021) exige dolo em todas as modalidades — a culpa deixou de ser suficiente após a reforma de 2021.",
+    texto: "Desde a Lei 14.230/2021, só existe improbidade dolosa: a modalidade culposa acabou. No Tema 1.199, o STF decidiu que essa revogação não alcança condenações já transitadas em julgado, mas vale para os processos sem condenação definitiva, e que os novos prazos de prescrição não retroagem.",
   },
   {
     materia: "dh",
-    texto: "A Lei Maria da Penha prevê medidas protetivas de urgência que podem ser concedidas em até 48 horas do pedido.",
+    texto: "Medidas protetivas: a autoridade policial remete o pedido ao juiz em 48 horas (Lei 11.340, art. 12, III) e o juiz decide em 48 horas (art. 18). Elas são concedidas independentemente de tipificação penal, de ação penal ou cível, de inquérito ou de boletim de ocorrência e vigoram enquanto persistir o risco (art. 19, §§5º e 6º). Descumpri-las é crime (art. 24-A).",
   },
   {
     materia: "pr",
@@ -166,7 +166,7 @@ export const DICAS: DicaDia[] = [
   },
   {
     materia: "rlm",
-    texto: "Em uma condicional (se P, então Q), só ela é falsa quando P é verdadeiro e Q é falso — nos outros três casos, é verdadeira.",
+    texto: "A condicional (se P, então Q) só é falsa quando P é verdadeiro e Q é falso; nos outros três casos é verdadeira. Equivalências: se não Q, então não P (contrapositiva) e não P ou Q. Negação: P e não Q.",
   },
   {
     materia: "pt",
@@ -178,11 +178,11 @@ export const DICAS: DicaDia[] = [
   },
   {
     materia: "for",
-    texto: "Cadeia de custódia começa no reconhecimento do vestígio no local do crime, não apenas quando ele chega ao laboratório.",
+    texto: "A cadeia de custódia começa com a preservação do local de crime ou com procedimentos policiais ou periciais em que se detecte a existência de vestígio (CPP, art. 158-A, §1º). O agente que reconhece um elemento como de potencial interesse pericial fica responsável por preservá-lo (§2º); o reconhecimento é a primeira das etapas do art. 158-B.",
   },
   {
     materia: "leg",
-    texto: "Fique de olho em alterações de 2025/2026 na estrutura da PCPR — a banca FGV costuma cobrar a norma mais recente do edital.",
+    texto: "Item 25.15 do edital: só cai legislação que entrou em vigor até 03/07/2026, e o item 25.15.1 estende a cobrança às súmulas, aos repetitivos e à jurisprudência dominante dos Tribunais Superiores. Leis que entraram em vigor depois, como a 15.517/2026 (furto e roubo de combustíveis), ficam de fora.",
   },
   {
     materia: "pp",
@@ -194,15 +194,15 @@ export const DICAS: DicaDia[] = [
   },
   {
     materia: "con",
-    texto: "Cláusulas pétreas (art. 60, §4º, CF) não podem ser abolidas nem por emenda constitucional, mesmo por maioria qualificada.",
+    texto: "Cláusulas pétreas (CF, art. 60, §4º): não será sequer objeto de deliberação a proposta de emenda tendente a abolir a forma federativa, o voto direto, secreto, universal e periódico, a separação dos Poderes e os direitos e garantias individuais. Emenda pode ampliá-las ou ajustá-las; o que se proíbe é a tendência a aboli-las.",
   },
   {
     materia: "adm",
-    texto: "Prescrição em PAD (processo administrativo disciplinar) começa a correr, em regra, da data do fato ou de quando a autoridade tomou conhecimento.",
+    texto: "Código Disciplinar da PCPR (Lei Estadual 21.894/2024, art. 62): prescreve em 2 anos a transgressão punível com repreensão ou suspensão e em 5 anos a punível com demissão ou cassação de aposentadoria ou disponibilidade. O prazo corre do dia em que a transgressão se consumou (art. 63), e a transgressão que também é crime segue o prazo penal, se não for menor.",
   },
   {
     materia: "dh",
-    texto: "A LEP garante direitos à pessoa presa mesmo durante a execução da pena — direitos humanos não cessam com a prisão.",
+    texto: "LEP, art. 3º: ao condenado e ao internado são assegurados todos os direitos não atingidos pela sentença ou pela lei, sem distinção de natureza racial, social, religiosa ou política. A Constituição garante ao preso o respeito à integridade física e moral (art. 5º, XLIX).",
   },
   {
     materia: "pr",

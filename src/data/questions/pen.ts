@@ -156,17 +156,17 @@ export const QUESTOES_PEN: Question[] = [
     materia: "pen",
     topico: "Crimes contra o patrimônio",
     enunciado:
-      "Desde a alteração promovida pela Lei nº 13.964/2019 (Pacote Anticrime), a ação penal no crime de estelionato (art. 171, caput, do CP) passou a ser, em regra:",
+      "Com a Lei nº 15.397/2026, a ação penal no crime de estelionato (art. 171 do CP) passou a ser, em regra:",
     alternativas: [
-      "Pública incondicionada, em qualquer hipótese",
-      "Privada exclusiva",
-      "Pública condicionada à representação do ofendido",
-      "Popular",
-      "Pública incondicionada apenas se a vítima for idosa",
+      "Pública condicionada à representação do ofendido, como previa o §5º incluído pelo Pacote Anticrime.",
+      "Pública incondicionada, pois a Lei 15.397/2026 revogou o §5º do art. 171.",
+      "Privada exclusiva, mediante queixa-crime.",
+      "Pública condicionada à requisição do Ministro da Justiça.",
+      "Pública incondicionada apenas quando a vítima for a Administração Pública.",
     ],
-    correta: 2,
+    correta: 1,
     explicacao:
-      "O art. 171, §5º, do CP, incluído pelo Pacote Anticrime, tornou a ação penal do estelionato, em regra, pública condicionada à representação da vítima, ressalvadas exceções (como quando a vítima é a Administração Pública, criança/adolescente ou pessoa com deficiência mental, ou nos casos de estelionato eletrônico contra idoso/vulnerável, que seguem regra diversa).",
+      "O Pacote Anticrime (Lei 13.964/2019) havia incluído o §5º no art. 171, tornando a ação penal do estelionato condicionada à representação, com exceções (Administração Pública, criança ou adolescente, pessoa com deficiência mental, maior de 70 anos ou incapaz). A Lei 15.397/2026 (de 30/04/2026, publicada no DOU de 04/05/2026, com vigência imediata) revogou o §5º: a ação voltou a ser pública incondicionada em todos os casos. A mesma lei aumentou as penas de furto, roubo, estelionato e receptação, elevou a fraude eletrônica (§2º-A) para 4 a 8 anos e criou a figura da cessão de conta bancária para crimes, a \"conta laranja\" (art. 171, §2º, VII).",
     origem: "banco",
   },
   {
@@ -202,7 +202,7 @@ export const QUESTOES_PEN: Question[] = [
     ],
     correta: 1,
     explicacao:
-      "O art. 28 da Lei 11.343/2006 (posse de drogas para consumo pessoal) não comina pena privativa de liberdade, prevendo apenas advertência sobre os efeitos das drogas, prestação de serviços à comunidade e medida educativa de comparecimento a programa/curso — ao contrário do tráfico (art. 33), que prevê reclusão de 5 a 15 anos.",
+      "O art. 28 da Lei 11.343/2006 (posse de drogas para consumo pessoal) não comina pena privativa de liberdade, prevendo apenas advertência sobre os efeitos das drogas, prestação de serviços à comunidade e medida educativa de comparecimento a programa/curso — ao contrário do tráfico (art. 33), que prevê reclusão de 5 a 15 anos. Atenção: no RE 635.659 (Tema 506, 2024), o STF decidiu que portar maconha para uso pessoal não é crime, e sim ilícito administrativo sem efeitos penais, presumindo-se usuário quem tiver até 40 g ou 6 plantas fêmeas, até que o Congresso legisle. Para as demais drogas, o art. 28 continua sendo crime.",
     origem: "banco",
   },
   {
@@ -351,37 +351,37 @@ export const QUESTOES_PEN: Question[] = [
   {
     id: "pen-021",
     materia: "pen",
-    topico: "Feminicídio — qualificadora, e Lei Maria da Penha na prática",
+    topico: "Feminicídio (art. 121-A do CP) e Lei Maria da Penha na prática",
     enunciado:
-      "O feminicídio, incluído no Código Penal pela Lei 13.104/2015, é tecnicamente classificado como:",
+      "Sobre o feminicídio, à luz da legislação em vigor, é correto afirmar que:",
     alternativas: [
-      "Crime autônomo, distinto do homicídio, com tipo penal próprio no art. 121-A.",
-      "Qualificadora do homicídio (art. 121, §2º-A), aplicável quando o crime é cometido contra mulher por razões da condição de sexo feminino.",
-      "Causa de diminuição de pena aplicável ao homicídio simples.",
-      "Contravenção penal, sujeita apenas a pena de multa.",
-      "Circunstância atenuante, considerada apenas na dosimetria da pena.",
+      "É crime autônomo (art. 121-A do CP), com pena de reclusão de 20 a 40 anos, e figura no rol de crimes hediondos.",
+      "Continua sendo qualificadora do homicídio (art. 121, §2º, VI, do CP), com pena de 12 a 30 anos, como previa a Lei 13.104/2015.",
+      "Configura-se sempre que a vítima for mulher, independentemente de a morte decorrer de violência doméstica ou de menosprezo à condição de mulher.",
+      "Por ser crime autônomo, deixou de ser hediondo, já que o rol da Lei 8.072/1990 só abrange as formas qualificadas do homicídio.",
+      "É julgado pelo juiz singular, e não pelo Tribunal do Júri, por estar fora do capítulo dos crimes contra a vida.",
     ],
-    correta: 1,
+    correta: 0,
     explicacao:
-      "O feminicídio é qualificadora do homicídio (art. 121, §2º-A, do CP), incluída pela Lei 13.104/2015, aplicável quando o crime é cometido contra mulher por razões da condição de sexo feminino — o que se configura em violência doméstica e familiar ou em menosprezo/discriminação à condição de mulher — e não um tipo penal autônomo, causa de diminuição, contravenção ou atenuante.",
+      "Desde a Lei 14.994/2024 (Pacote Antifeminicídio), o feminicídio é crime autônomo, tipificado no art. 121-A do CP, com pena de reclusão de 20 a 40 anos — deixou de ser a qualificadora do art. 121, §2º, VI, criada pela Lei 13.104/2015. Continua no capítulo dos crimes contra a vida (logo, é julgado pelo Tribunal do Júri) e é hediondo (art. 1º, I-B, da Lei 8.072/1990). Exige razões da condição do sexo feminino — violência doméstica e familiar ou menosprezo/discriminação à condição de mulher (art. 121-A, §1º): não basta a vítima ser mulher.",
     origem: "banco",
   },
   {
     id: "pen-022",
     materia: "pen",
-    topico: "Feminicídio — qualificadora, e Lei Maria da Penha na prática",
+    topico: "Feminicídio (art. 121-A do CP) e Lei Maria da Penha na prática",
     enunciado:
-      "A Lei Maria da Penha (Lei 11.340/2006), no que diz respeito à criação de novos tipos penais, deve ser corretamente compreendida como uma lei que:",
+      "A Lei Maria da Penha (Lei 11.340/2006), quanto à matéria penal, deve ser corretamente compreendida como uma lei que:",
     alternativas: [
       "Cria diversos tipos penais inéditos de violência doméstica, substituindo o Código Penal nessa matéria.",
-      "Não tipifica crimes novos: cria mecanismos de proteção à mulher em situação de violência doméstica e familiar, como as medidas protetivas de urgência.",
-      "Aplica-se exclusivamente a violência física, excluindo violência psicológica, sexual, patrimonial e moral.",
-      "Somente pode ser aplicada mediante representação da vítima, em qualquer hipótese de violência.",
+      "Prevê sobretudo mecanismos de proteção, como as medidas protetivas de urgência, mas tipifica um crime próprio: o descumprimento de decisão que defere medida protetiva (art. 24-A).",
+      "Aplica-se exclusivamente à violência física, excluindo violência psicológica, sexual, patrimonial e moral.",
+      "Não contém nenhum tipo penal, de modo que o descumprimento de medida protetiva configura apenas o crime de desobediência (art. 330 do CP).",
       "Revogou expressamente o crime de feminicídio, substituindo-o por medida protetiva.",
     ],
     correta: 1,
     explicacao:
-      "A Lei Maria da Penha não tipifica crimes novos: cria mecanismos de proteção à mulher em situação de violência doméstica e familiar, como as medidas protetivas de urgência (afastamento do agressor do lar, proibição de aproximação e contato), os Juizados especializados, e reconhece cinco formas de violência (física, psicológica, sexual, patrimonial e moral) — indo muito além da violência física.",
+      "A Lei Maria da Penha é, sobretudo, uma lei de proteção: reconhece cinco formas de violência (física, psicológica, sexual, patrimonial e moral) e cria as medidas protetivas de urgência e os juizados especializados. Mas tipifica um crime próprio: descumprir decisão judicial que defere medida protetiva (art. 24-A, incluído pela Lei 13.641/2018), hoje punido com reclusão de 2 a 5 anos e multa (Lei 14.994/2024). No flagrante, só o juiz pode conceder fiança (§2º), e a pena aumenta de 1/3 até a metade se o agressor violar as áreas de exclusão ou a tornozeleira (§4º, Lei 15.383/2026). O tipo foi criado justamente porque o STJ entendia que o descumprimento não configurava o crime de desobediência.",
     origem: "banco",
   },
   {
@@ -389,17 +389,17 @@ export const QUESTOES_PEN: Question[] = [
     materia: "pen",
     topico: "Crimes cibernéticos no Código Penal (invasão de dispositivo — art. 154-A)",
     enunciado:
-      "O crime de invasão de dispositivo informático alheio, tipificado no art. 154-A do Código Penal pela Lei 12.737/2012 (\"Lei Carolina Dieckmann\"), exige, para sua caracterização:",
+      "Segundo a redação atual do art. 154-A do Código Penal (dada pela Lei 14.155/2021), o crime de invasão de dispositivo informático:",
     alternativas: [
-      "Que o dispositivo esteja necessariamente conectado à internet no momento da invasão.",
-      "A violação indevida de mecanismo de segurança, com o fim de obter, adulterar ou destruir dados/informações sem autorização do titular, ou instalar vulnerabilidades para obter vantagem ilícita.",
-      "Que a invasão resulte, obrigatoriamente, em prejuízo econômico comprovado à vítima.",
-      "Autorização judicial prévia para sua investigação, mesmo em flagrante.",
-      "Que o agente seja necessariamente funcionário da empresa proprietária do dispositivo.",
+      "Exige que o dispositivo esteja conectado à internet no momento da invasão.",
+      "Dispensa a violação de mecanismo de segurança: basta invadir dispositivo de uso alheio com o fim de obter, adulterar ou destruir dados sem autorização do usuário, ou de instalar vulnerabilidades para obter vantagem ilícita.",
+      "Só se consuma se houver violação indevida de mecanismo de segurança, como senha ou biometria.",
+      "Exige prejuízo econômico comprovado, sem o qual o fato é atípico.",
+      "É punido com detenção, de 3 meses a 1 ano, sendo infração de menor potencial ofensivo em qualquer modalidade.",
     ],
     correta: 1,
     explicacao:
-      "O art. 154-A do CP tipifica a invasão de dispositivo informático alheio, conectado ou não à rede, mediante violação indevida de mecanismo de segurança, com o fim de obter, adulterar ou destruir dados/informações sem autorização do titular, ou instalar vulnerabilidades para obter vantagem ilícita — o prejuízo econômico é apenas causa de aumento de pena, não elemento essencial do tipo, e a conexão à internet não é requisito.",
+      "A Lei 14.155/2021 reescreveu o art. 154-A: retirou a exigência de \"violação indevida de mecanismo de segurança\", passou a falar em dispositivo \"de uso alheio\" e elevou a pena para reclusão de 1 a 4 anos e multa (antes, detenção de 3 meses a 1 ano). O prejuízo econômico é só causa de aumento (§2º, de 1/3 a 2/3), e a obtenção de comunicações privadas, segredos ou informações sigilosas, ou o controle remoto do aparelho, qualifica o crime (§3º, 2 a 5 anos). O dispositivo pode estar \"conectado ou não\" à rede.",
     origem: "banco",
   },
   {

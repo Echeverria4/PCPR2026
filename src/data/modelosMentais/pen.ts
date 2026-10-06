@@ -48,21 +48,21 @@ export const MODELOS_MENTAIS_PEN: ModeloMental[] = [
     origem: "aposta",
     gancho: "Hediondo não é \"crime feio\", é rol taxativo da Lei 8.072/90",
     modelo:
-      "Só é hediondo o que está expressamente listado na lei — homicídio qualificado, latrocínio, estupro, entre outros — não é uma categoria aberta por gravidade subjetiva. Os efeitos são concretos: regime inicial mais severo, progressão de pena mais lenta, vedação a alguns benefícios.",
+      "Só é hediondo o que está expressamente listado na lei — homicídio qualificado, latrocínio, estupro, feminicídio, entre outros —; não é uma categoria aberta por gravidade. Os efeitos são concretos: sem anistia, graça, indulto ou fiança, temporária de 30 + 30 dias e progressão bem mais lenta (70% a 85% da pena, pela Lei Antifacção, contra 1/6 a 30% nos crimes comuns). O regime inicial fechado obrigatório caiu no STF (HC 111.840).",
   },
   {
-    topico: "Feminicídio — qualificadora, e Lei Maria da Penha na prática",
+    topico: "Feminicídio (art. 121-A do CP) e Lei Maria da Penha na prática",
     origem: "aposta",
     gancho: "Feminicídio é matar mulher por razões de gênero, não é qualquer homicídio de mulher",
     modelo:
-      "É qualificadora do homicídio quando há violência doméstica/familiar ou menosprezo/discriminação à condição de mulher — precisa desse motivador específico, não basta a vítima ser mulher. Conecta direto com a Lei Maria da Penha na hora de entender o contexto de violência doméstica.",
+      "Desde a Lei 14.994/2024 é crime autônomo (art. 121-A, 20 a 40 anos, hediondo) quando há violência doméstica/familiar ou menosprezo/discriminação à condição de mulher — precisa desse motivador específico, não basta a vítima ser mulher. Conecta direto com a Lei Maria da Penha: o próprio policial pode afastar o agressor do lar quando o município não é sede de comarca e não há delegado disponível (art. 12-C), e descumprir medida protetiva é crime (art. 24-A, 2 a 5 anos, fiança só pelo juiz).",
   },
   {
     topico: "Crimes cibernéticos no Código Penal (invasão de dispositivo — art. 154-A)",
     origem: "aposta",
     gancho: "Art. 154-A é o \"hackear\" tipificado dentro do Código Penal",
     modelo:
-      "É a invasão de dispositivo informático alheio, violando mecanismo de segurança, para obter, adulterar ou destruir dados. É o mesmo artigo que aparece em Legislação Digital, na matéria de Tecnologia — dominar esse artigo vale para duas matérias ao mesmo tempo.",
+      "É invadir dispositivo informático de uso alheio para obter, adulterar ou destruir dados sem autorização do usuário, ou para instalar vulnerabilidades — desde 2021 (Lei 14.155) não precisa mais violar mecanismo de segurança, e a pena é de reclusão de 1 a 4 anos (2 a 5 se obtém comunicações privadas, segredos ou controle remoto). É o mesmo artigo que aparece em Legislação Digital, na matéria de Tecnologia — dominar esse artigo vale para duas matérias ao mesmo tempo.",
   },
   {
     topico: "Excludentes de ilicitude (legítima defesa, estrito cumprimento do dever legal) aplicadas à atuação policial",

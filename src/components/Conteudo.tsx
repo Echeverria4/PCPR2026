@@ -1,7 +1,46 @@
 import { useState, type CSSProperties } from "react";
 import { SUBJECTS } from "../data/subjects";
 import { CONTEUDO_POR_MATERIA } from "../data/conteudos";
-import type { SubjectId } from "../lib/types";
+import { RAIO_X } from "../data/raioX";
+import type { RaioX, SubjectId } from "../lib/types";
+
+function ColunaRaioX({ titulo, classe, itens }: { titulo: string; classe: string; itens: string[] }) {
+  if (itens.length === 0) return null;
+  return (
+    <div className={`raiox-coluna ${classe}`}>
+      <h4>{titulo}</h4>
+      <ul>
+        {itens.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function CaixaRaioX({ raioX }: { raioX: RaioX }) {
+  return (
+    <section className="raiox">
+      <h3 className="raiox-titulo">🔍 Raio-X FGV</h3>
+      <p className="raiox-resumo">{raioX.resumo}</p>
+      <div className="raiox-grade">
+        <ColunaRaioX titulo="Temas quentes" classe="raiox-quentes" itens={raioX.temasQuentes} />
+        <ColunaRaioX titulo="Pegadinhas da banca" classe="raiox-pegadinhas" itens={raioX.pegadinhas} />
+        <ColunaRaioX titulo="Reta final" classe="raiox-reta" itens={raioX.dicasRetaFinal} />
+      </div>
+      {raioX.fontes.length > 0 && (
+        <div className="raiox-fontes">
+          <span>Fontes:</span>
+          {raioX.fontes.map((f) => (
+            <a key={f.url} href={f.url} target="_blank" rel="noopener noreferrer">
+              {f.label}
+            </a>
+          ))}
+        </div>
+      )}
+    </section>
+  );
+}
 
 export default function Conteudo() {
   const [materiaSelecionada, setMateriaSelecionada] = useState<SubjectId | null>(null);
@@ -43,6 +82,7 @@ export default function Conteudo() {
   const topicos = CONTEUDO_POR_MATERIA[materiaSelecionada] ?? [];
   const oficiais = topicos.filter((t) => t.origem !== "aposta");
   const apostas = topicos.filter((t) => t.origem === "aposta");
+  const raioX = RAIO_X[materiaSelecionada];
 
   function renderCard(t: (typeof topicos)[number], i: number) {
     return (
@@ -81,6 +121,8 @@ export default function Conteudo() {
       >
         {subject.nome}
       </h2>
+
+      {raioX && <CaixaRaioX raioX={raioX} />}
 
       {topicos.length === 0 ? (
         <div className="vazio">Conteúdo desta matéria ainda em preparação.</div>

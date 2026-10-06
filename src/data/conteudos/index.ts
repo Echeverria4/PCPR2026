@@ -1,6 +1,8 @@
 import type { ConteudoTopico, SubjectId } from "../../lib/types";
 import { CONTEUDO_PT } from "./pt";
 import { CONTEUDO_TI } from "./ti";
+import { CONTEUDO_TI_SEGURANCA } from "./ti-seguranca";
+import { CONTEUDO_TI_CRIMES } from "./ti-crimes";
 import { CONTEUDO_FOR } from "./for";
 import { CONTEUDO_LEG } from "./leg";
 import { CONTEUDO_PP } from "./pp";
@@ -15,7 +17,7 @@ import { CONTEUDO_RLM } from "./rlm";
 
 export const CONTEUDO_POR_MATERIA: Record<SubjectId, ConteudoTopico[]> = {
   pt: CONTEUDO_PT,
-  ti: CONTEUDO_TI,
+  ti: [...CONTEUDO_TI, ...CONTEUDO_TI_SEGURANCA, ...CONTEUDO_TI_CRIMES],
   for: CONTEUDO_FOR,
   leg: CONTEUDO_LEG,
   pp: CONTEUDO_PP,

@@ -1,14 +1,18 @@
 import { EDITAL_INFO } from "../data/subjects";
 import {
   CONCURSO_CHEGADA,
+  CONCURSO_DIA_DA_PROVA,
   CONCURSO_DOCUMENTOS,
   CONCURSO_ESCOLARIDADE,
   CONCURSO_FASES,
   CONCURSO_INSCRICAO,
+  CONCURSO_LEGISLACAO_COBRADA,
+  CONCURSO_LIMITES_AGENTE,
   CONCURSO_OBSERVACAO_ELETRONICOS,
   CONCURSO_PERMITIDO,
   CONCURSO_PROIBIDO,
   CONCURSO_PROVA,
+  CONCURSO_RETIFICACOES,
   TAF_FEMININO,
   TAF_INFO,
   TAF_MASCULINO,
@@ -56,8 +60,8 @@ export default function Concurso() {
     <>
       <h2 className="secao-titulo">Informações do concurso</h2>
       <p className="conteudo-intro">
-        Dados oficiais extraídos do Edital 01/2026 PCPR (banca FGV) — cargo de Agente de Polícia
-        Judiciária. Sempre confira o edital e o site oficial antes de qualquer decisão importante.
+        Dados oficiais extraídos do Edital 01/2026 PCPR (banca FGV) e da 1ª Retificação (Edital
+        02/2026) — cargo de Agente de Polícia Judiciária. Sempre confira o edital e o site oficial antes de qualquer decisão importante.
       </p>
 
       <div className="edital-faixa">
@@ -95,6 +99,35 @@ export default function Concurso() {
         ↗ Fazer inscrição / acompanhar o concurso no site oficial da FGV
       </a>
 
+      <h3 className="concurso-subtitulo">Retificações e comunicados oficiais</h3>
+      <div className="retificacoes-lista">
+        {CONCURSO_RETIFICACOES.map((r) => (
+          <article key={r.titulo} className="conteudo-card retificacao-card">
+            <div className="retificacao-topo">
+              <span className="retificacao-data">{r.data}</span>
+              <strong>{r.titulo}</strong>
+            </div>
+            <ul className="concurso-lista">
+              {r.pontos.map((p) => (
+                <li key={p}>{p}</li>
+              ))}
+            </ul>
+            <a className="botao prova-link" href={r.url} target="_blank" rel="noopener noreferrer">
+              ↗ Abrir documento oficial
+            </a>
+          </article>
+        ))}
+      </div>
+
+      <h3 className="concurso-subtitulo">Legislação que cai na prova (item 25.15)</h3>
+      <div className="conteudo-card">
+        <ul className="concurso-lista">
+          {CONCURSO_LEGISLACAO_COBRADA.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </div>
+
       <h3 className="concurso-subtitulo">Data e local da prova objetiva</h3>
       <div className="conteudo-card">
         <p className="conteudo-texto">
@@ -105,6 +138,44 @@ export default function Concurso() {
         </p>
         <p className="conteudo-texto">{CONCURSO_PROVA.locaisDivulgacao}</p>
         <p className="conteudo-texto">{CONCURSO_PROVA.observacaoOutrasFases}</p>
+      </div>
+
+      <h3 className="concurso-subtitulo">Dia da prova: tempo, cartão e aprovação</h3>
+      <div className="conteudo-card">
+        <ul className="concurso-lista">
+          {CONCURSO_DIA_DA_PROVA.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+        <h4 className="concurso-lista-titulo">Limite de classificação na objetiva · Agente (item 9.18)</h4>
+        <div className="taf-tabela-scroll">
+          <table className="taf-tabela">
+            <thead>
+              <tr>
+                <th>Região</th>
+                <th>Ampla concorrência</th>
+                <th>Afrodescendentes</th>
+                <th>Pessoas com deficiência</th>
+              </tr>
+            </thead>
+            <tbody>
+              {CONCURSO_LIMITES_AGENTE.map((l) => (
+                <tr key={l.regiao}>
+                  <td>
+                    <strong>{l.regiao}</strong>
+                  </td>
+                  <td>{l.ampla}</td>
+                  <td>{l.afro}</td>
+                  <td>{l.pcd}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="conteudo-texto concurso-nota">
+          Além desses limites, quem empatar na última posição de cada lista também é convocado para as
+          demais fases (item 9.18.3).
+        </p>
       </div>
 
       <h3 className="concurso-subtitulo">Fases do concurso</h3>

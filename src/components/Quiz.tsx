@@ -152,7 +152,10 @@ export default function Quiz({ questions, modo, onFinalizar, onSair }: QuizProps
       </div>
 
       <div className="questao-card">
-        <span className="questao-tag">{questao.topico}</span>
+        <div className="questao-tags">
+          <span className="questao-tag">{questao.topico}</span>
+          {questao.fonte && <span className="questao-tag questao-tag-fonte">{questao.fonte}</span>}
+        </div>
         <p className="questao-enunciado">{questao.enunciado}</p>
 
         <div className="alternativas">

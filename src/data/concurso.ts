@@ -25,7 +25,8 @@ export const CONCURSO_PROVA = {
   data: "11 de outubro de 2026 (domingo)",
   horario: "13h às 18h (horário de Brasília/DF)",
   cidades: ["Curitiba/PR", "Londrina/PR", "Cascavel/PR"],
-  locaisDivulgacao: "Locais de prova divulgados a partir de 05/10/2026, no site oficial do concurso.",
+  locaisDivulgacao:
+    "Os locais de prova são divulgados a partir de 05/10/2026 no site oficial do concurso (item 9.2). Confira o seu local assim que sair e planeje o trajeto: o candidato não pode alegar desconhecimento do local ou do horário (item 9.4).",
   observacaoOutrasFases:
     "As demais fases presenciais (TAF, avaliação psicológica, curso de formação etc.) ocorrem somente em Curitiba/PR.",
 };
@@ -145,4 +146,53 @@ export const TAF_FEMININO: TafExercicio[] = [
     tentativas: "1 tentativa única",
     faixas: { ate29: "2.000 m", de30a39: "1.900 m", de40a49: "1.800 m", mais50: "1.600 m" },
   },
+];
+
+/** Regras de tempo e de marcação do dia da prova objetiva (itens 9 e 11 do Edital 01/2026). */
+export const CONCURSO_DIA_DA_PROVA = [
+  "Chegue até 11h30: o edital exige 1h30 de antecedência (item 11.1). Os portões fecham às 12h30, 30 minutos antes do início, e ninguém entra depois disso (item 11.2).",
+  "São 100 questões em 5 horas, das 13h às 18h. Isso dá 3 minutos por questão, já contando o preenchimento do cartão de respostas. Reserve os últimos 20 minutos para o cartão.",
+  "Ninguém sai da sala antes das 16h. O edital exige permanência mínima de 3 horas após o início, sob pena de a prova não ser corrigida (itens 11.13 e 11.14).",
+  "O caderno de questões só vai embora com quem sair a partir das 17h30, nos 30 minutos finais (item 11.19). Anotar o gabarito para levar é proibido (item 11.19.1).",
+  "Não existe desconto por erro. Questão em branco, com duas marcações ou rasurada vale zero (item 9.10): marque todas, mesmo no chute.",
+  "Marque o cartão com caneta esferográfica azul ou preta, de material transparente, preenchendo o campo inteiro. O cartão não é substituído por erro do candidato (itens 9.11 e 9.12).",
+  "Para passar na objetiva é preciso fazer no mínimo 50 pontos (50% de acertos) e ainda ficar dentro do limite de classificação da sua região e da sua forma de concorrência (item 9.18).",
+  "Recurso contra o gabarito preliminar: 2 dias úteis, contados do primeiro dia útil seguinte à publicação (item 20.1).",
+];
+
+/** Limites de classificação na prova objetiva para seguir às demais fases — Agente de Polícia Judiciária (item 9.18). */
+export const CONCURSO_LIMITES_AGENTE = [
+  { regiao: "Região 1 · Interior do Estado", ampla: "1.360", afro: "160", pcd: "80" },
+  { regiao: "Região 2 · Curitiba e Região Metropolitana", ampla: "340", afro: "40", pcd: "20" },
+];
+
+/** Retificações e comunicados oficiais relevantes (página do concurso na FGV, consultada em 05/10/2026). */
+export const CONCURSO_RETIFICACOES = [
+  {
+    data: "30/07/2026",
+    titulo: "Edital 02/2026 · 1ª Retificação",
+    url: "https://conhecimento.fgv.br/sites/default/files/concursos/edital-02-2026-pcpr-retificacao.docx-1.pdf",
+    pontos: [
+      "Novo item 25.15.1: em TODAS as matérias valem a legislação, a doutrina, as súmulas (vinculantes ou não), os recursos repetitivos e a jurisprudência dominante dos Tribunais Superiores. Estude as súmulas e as teses do STF e do STJ, não só a letra da lei.",
+      "Item 5.6 do Agente reescrito: a Lei Estadual 6.174/1970 continua no edital (provimento, vacância, direitos, vantagens, deveres, proibições, responsabilidades civil, administrativa e penal, ética e sigilo funcional), mas sindicância e processo administrativo disciplinar saíram deste item. O PAD segue cobrado pelo Código Disciplinar da PCPR (item 5.5) e por Direito Administrativo (item 9.7).",
+      "Exame de saúde: ter uma condição do Anexo V não gera inaptidão automática. A junta médica precisa demonstrar, de forma fundamentada, repercussão funcional no cargo (itens 12.14.1 e 12.14.2). No caso do daltonismo, só incapacita a perda completa da visão de cores, a acromatopsia.",
+      "Títulos: o Grupo VII do Agente passou a incluir também o servidor de quadro oficial de perícia da União, dos Estados ou do DF, ao lado de agente socioeducativo e guarda municipal (0,5 ponto por ano completo, até 2 pontos).",
+    ],
+  },
+  {
+    data: "13/08/2026",
+    titulo: "Comunicado · prorrogação do pagamento da taxa",
+    url: "https://conhecimento.fgv.br/sites/default/files/concursos/comunicado-pcpr.pdf",
+    pontos: [
+      "O pagamento da taxa de inscrição foi prorrogado até 18/08/2026. O período de inscrições não foi reaberto.",
+    ],
+  },
+];
+
+/** Item 25.15 do edital + item 25.15.1 (1ª retificação): qual legislação pode ser cobrada na prova. */
+export const CONCURSO_LEGISLACAO_COBRADA = [
+  "Só cai a legislação (e cada alteração de lei) com entrada em vigor até a publicação do edital, assinado em 03/07/2026 (item 25.15). Vale a data de entrada em vigor, não a data da lei: uma lei publicada antes do edital, mas cuja vacatio legis terminou depois, também fica de fora.",
+  "Lei que entrou em vigor depois do edital só cairia se fosse incluída expressamente no Anexo I por retificação. A 1ª retificação (30/07/2026) não acrescentou nenhuma lei nova ao conteúdo do Agente: só reescreveu o item 5.6.",
+  "Exemplo: a Lei 15.517, de 22/09/2026 (furto e roubo de combustíveis, arts. 155 e 157 do CP), é posterior ao edital e NÃO cai. Já o Marco Legal do Combate ao Crime Organizado (Lei 15.358/2026), em vigor desde março de 2026, está expressamente no Anexo I e cai.",
+  "Além da letra da lei, em todas as matérias valem a doutrina, as súmulas (vinculantes ou não), os recursos repetitivos e a jurisprudência dominante dos Tribunais Superiores (item 25.15.1).",
 ];

@@ -1,6 +1,8 @@
 import type { Question, SubjectId } from "../../lib/types";
 import { QUESTOES_PT } from "./pt";
 import { QUESTOES_TI } from "./ti";
+import { QUESTOES_TI_SEGURANCA } from "./ti-seguranca";
+import { QUESTOES_TI_CRIMES } from "./ti-crimes";
 import { QUESTOES_FOR } from "./for";
 import { QUESTOES_LEG } from "./leg";
 import { QUESTOES_PP } from "./pp";
@@ -15,7 +17,7 @@ import { QUESTOES_RLM } from "./rlm";
 
 export const QUESTOES_POR_MATERIA: Record<SubjectId, Question[]> = {
   pt: QUESTOES_PT,
-  ti: QUESTOES_TI,
+  ti: [...QUESTOES_TI, ...QUESTOES_TI_SEGURANCA, ...QUESTOES_TI_CRIMES],
   for: QUESTOES_FOR,
   leg: QUESTOES_LEG,
   pp: QUESTOES_PP,

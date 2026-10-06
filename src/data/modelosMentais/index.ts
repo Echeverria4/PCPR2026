@@ -1,6 +1,8 @@
 import type { ModeloMental, SubjectId } from "../../lib/types";
 import { MODELOS_MENTAIS_PT } from "./pt";
 import { MODELOS_MENTAIS_TI } from "./ti";
+import { MODELOS_MENTAIS_TI_SEGURANCA } from "./ti-seguranca";
+import { MODELOS_MENTAIS_TI_CRIMES } from "./ti-crimes";
 import { MODELOS_MENTAIS_FOR } from "./for";
 import { MODELOS_MENTAIS_LEG } from "./leg";
 import { MODELOS_MENTAIS_PP } from "./pp";
@@ -15,7 +17,7 @@ import { MODELOS_MENTAIS_RLM } from "./rlm";
 
 export const MODELOS_MENTAIS_POR_MATERIA: Record<SubjectId, ModeloMental[]> = {
   pt: MODELOS_MENTAIS_PT,
-  ti: MODELOS_MENTAIS_TI,
+  ti: [...MODELOS_MENTAIS_TI, ...MODELOS_MENTAIS_TI_SEGURANCA, ...MODELOS_MENTAIS_TI_CRIMES],
   for: MODELOS_MENTAIS_FOR,
   leg: MODELOS_MENTAIS_LEG,
   pp: MODELOS_MENTAIS_PP,

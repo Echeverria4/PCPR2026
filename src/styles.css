@@ -1174,6 +1174,27 @@ button {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
+.questao-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.questao-tags .questao-tag {
+  margin-bottom: 0;
+}
+
+.questao-tag-fonte {
+  color: var(--texto);
+  background: transparent;
+  border: 1px solid var(--borda-forte);
+  box-shadow: none;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
 .questao-tag {
   display: inline-block;
   font-family: var(--fonte-cond);
@@ -1193,6 +1214,7 @@ button {
   font-size: 1.02rem;
   line-height: 1.55;
   margin-bottom: 18px;
+  white-space: pre-wrap;
 }
 
 .alternativas {
@@ -1462,6 +1484,145 @@ button {
   font-size: 0.72rem;
   color: var(--texto-fraco);
   border-top: 1px solid var(--borda);
+}
+
+/* ---------- Concurso: retificações e notas ---------- */
+.retificacoes-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.retificacao-topo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 12px;
+  margin-bottom: 10px;
+}
+
+.retificacao-topo strong {
+  font-family: var(--fonte-titulo);
+  color: var(--ouro-forte);
+  font-size: 1rem;
+}
+
+.retificacao-data {
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: var(--raio-peq);
+  background: var(--bg-elevado);
+  border: 1px solid var(--borda-forte);
+  color: var(--texto-fraco);
+}
+
+.retificacao-card .prova-link {
+  display: inline-block;
+  margin-top: 12px;
+}
+
+.concurso-nota {
+  margin-top: 12px;
+  font-size: 0.84rem;
+  color: var(--texto-fraco);
+}
+
+/* ---------- Raio-X FGV ---------- */
+.raiox {
+  margin: 0 0 22px;
+  border: 1px solid var(--ouro);
+  background: linear-gradient(180deg, rgba(202, 160, 58, 0.1), rgba(202, 160, 58, 0.03)), var(--bg-card);
+  border-radius: var(--raio);
+  padding: 18px 22px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.raiox-titulo {
+  font-family: var(--fonte-cond);
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ouro-forte);
+  margin: 0 0 8px;
+}
+
+.raiox-resumo {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin: 0 0 14px;
+}
+
+.raiox-grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.raiox-coluna {
+  background: var(--bg-elevado);
+  border-radius: var(--raio);
+  padding: 12px 14px;
+  border-left: 3px solid var(--cor-raiox, var(--azul));
+}
+
+.raiox-coluna h4 {
+  margin: 0 0 8px;
+  font-family: var(--fonte-cond);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--cor-raiox, var(--azul));
+}
+
+.raiox-coluna ul {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.raiox-coluna li {
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.raiox-quentes {
+  --cor-raiox: var(--vermelho);
+}
+
+.raiox-pegadinhas {
+  --cor-raiox: var(--ouro-forte);
+}
+
+.raiox-reta {
+  --cor-raiox: var(--verde);
+}
+
+.raiox-fontes {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  font-size: 0.78rem;
+  color: var(--texto-fraco);
+}
+
+.raiox-fontes a {
+  color: var(--azul);
+}
+
+@media (max-width: 640px) {
+  .raiox {
+    padding: 14px;
+  }
+
+  .raiox-grade {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ---------- Responsivo: tablet ---------- */
