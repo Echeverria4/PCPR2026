@@ -355,36 +355,38 @@ export const QUESTOES_LEG: Question[] = [
     materia: "leg",
     topico: "Alterações legislativas de 2025/2026 na estrutura da Polícia Civil do PR",
     enunciado:
-      "A norma que trata do regime jurídico da carreira policial civil do Paraná, com destaque por ser uma das legislações mais recentes listadas no edital, é a:",
+      "Um Agente de Polícia Judiciária pede exoneração com dois anos de exercício no cargo para assumir outro emprego. Pela LC nº 259/2023, com a redação da LC nº 289/2025, ele",
     alternativas: [
-      "Lei Estadual 6.174/1970.",
-      "Lei Complementar Estadual 259/2023.",
-      "Constituição Estadual do Paraná de 1989.",
-      "Lei Federal 13.964/2019 (Pacote Anticrime).",
-      "Decreto-Lei 3.689/1941 (CPP).",
+      "deve ressarcir ao erário estadual os gastos com sua formação técnico-profissional, proporcionalmente ao tempo de serviço, em procedimento com contraditório e ampla defesa que busque solução consensual.",
+      "não deve nada, porque a exoneração a pedido é direito do servidor e não gera nenhum ônus.",
+      "deve ressarcir integralmente os gastos com a formação, qualquer que seja o tempo de serviço, por desconto automático na última remuneração.",
+      "só teria de ressarcir os gastos se tivesse menos de um ano de exercício.",
+      "não pode ser exonerado antes de cinco anos de exercício, salvo para assumir outro cargo policial.",
     ],
-    correta: 1,
+    correta: 0,
     explicacao:
-      "A Lei Complementar Estadual 259/2023 trata do regime jurídico da carreira policial civil do Paraná e é uma das normas mais recentes expressamente listadas no edital, o que a torna alvo preferencial de cobrança, já que bancas como a FGV tendem a testar os dispositivos mais novos, e não apenas a redação original de leis mais antigas como o Estatuto de 1970.",
+      "Art. 11-A da LC 259 (incluído pela LC 289/2025): o servidor policial civil que pedir exoneração antes de completar três anos de exercício no cargo para o qual foi nomeado deve ressarcir ao erário estadual os gastos com sua formação técnico-profissional, proporcionalmente ao tempo de serviço, por meio de procedimento que assegure o contraditório e a ampla defesa, visando à solução consensual. Quem sai sem quitar débito com a Fazenda é inscrito em Dívida Ativa (art. 44-A, §6º).",
     origem: "banco",
+    fonte: "LC Estadual 259/2023, art. 11-A, com redação da LC 289/2025",
   },
   {
     id: "leg-021",
     materia: "leg",
     topico: "Alterações legislativas de 2025/2026 na estrutura da Polícia Civil do PR",
     enunciado:
-      "Diante da tendência histórica de bancas examinadoras, como a FGV, cobrarem a legislação mais recentemente publicada sobre a estrutura da Polícia Civil do Paraná, a estratégia de estudo mais adequada é:",
+      "Pela LC nº 259/2023, com a redação dada pela LC nº 285/2025, o policial civil recém-empossado",
     alternativas: [
-      "Ignorar normas publicadas após a divulgação do edital, pois não podem ser cobradas.",
-      "Revisar, próximo à data da prova, eventuais alterações pontuais publicadas no Diário Oficial do Estado que ainda não constem do material de estudo inicial.",
-      "Estudar apenas a redação original das leis mais antigas, sem verificar alterações.",
-      "Memorizar exclusivamente o texto da Constituição Federal, que prevalece sobre normas estaduais.",
-      "Desconsiderar leis complementares, pois não integram a legislação orgânica.",
+      "é matriculado de imediato no curso de formação técnico-profissional e, enquanto não o concluir, não pode exercer ato relacionado à atividade-fim, salvo em estágio supervisionado.",
+      "pode exercer todas as atribuições do cargo desde a posse e faz o curso de formação só depois do estágio probatório.",
+      "só toma posse depois de aprovado no curso de formação, que é etapa do concurso, sem remuneração.",
+      "escolhe a primeira lotação logo após a posse, pela classificação nas provas objetivas do concurso.",
+      "fica dispensado do curso de formação se já tiver exercido cargo policial em outro Estado.",
     ],
-    correta: 1,
+    correta: 0,
     explicacao:
-      "Como o próprio edital já lista normas recentes entre os tópicos oficiais (como a LC 259/2023 e a Lei 23.213/2026), a tendência histórica da FGV é cobrar justamente os dispositivos mais novos. Por isso, vale revisar, próximo à data do exame, se houve alguma alteração pontual publicada no Diário Oficial do Estado que ainda não constava do material de estudo inicial — desconsiderar normas recentes ou legais complementares seria estratégia contrária ao próprio padrão de cobrança da banca.",
+      "Com a LC 285/2025, o curso de formação deixou de ser etapa do concurso e passou a ocorrer depois da posse. Pelo art. 19, os empossados são convocados e matriculados de imediato no curso, na Escola Superior de Polícia Civil, e pelo art. 26 a matrícula corresponde à data de entrada em exercício. O art. 22, §1º, diz que, enquanto não concluir o curso, o policial não pode exercer qualquer ato relacionado à atividade-fim, salvo em estágio supervisionado. A primeira lotação é escolhida ao final do curso, pela classificação final nele obtida (art. 19, §§1º e 2º).",
     origem: "banco",
+    fonte: "LC Estadual 259/2023, arts. 19 e 22, com redação da LC 285/2025",
   },
   {
     id: "leg-022",
@@ -2019,5 +2021,157 @@ export const QUESTOES_LEG: Question[] = [
       "Art. 8º da LAI (transparência ativa): é dever dos órgãos e entidades públicas promover, independentemente de requerimentos, a divulgação em local de fácil acesso das informações de interesse coletivo ou geral que produzam ou custodiem. O §2º torna obrigatória a divulgação em sítios oficiais da internet, e o §4º dispensa dela os Municípios de até 10.000 habitantes, que continuam obrigados a divulgar em tempo real a execução orçamentária e financeira. A LAI vale para a União, os Estados, o Distrito Federal e os Municípios (art. 1º).",
     origem: "banco",
     fonte: "Lei 12.527/2011, art. 8º",
+  },
+  {
+    id: "leg-108",
+    materia: "leg",
+    topico: "Alterações legislativas de 2025/2026 na estrutura da Polícia Civil do PR",
+    enunciado:
+      "Ao final do curso de formação técnico-profissional, a ordem de escolha da primeira unidade de lotação dos novos policiais civis, segundo a LC nº 259/2023 (redação da LC nº 285/2025), leva em conta",
+    alternativas: [
+      "exclusivamente a classificação final obtida no curso de formação técnico-profissional específico, entre as unidades definidas pelo Conselho Superior como prioritárias e de provimento imediato.",
+      "a classificação final no concurso público, somada à nota do curso de formação.",
+      "a ordem de inscrição no concurso público.",
+      "o local de residência do policial, com preferência para quem mora na comarca da unidade.",
+      "sorteio público realizado pela Escola Superior de Polícia Civil.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 19, §1º, da LC 259 (redação da LC 285/2025): ao final do curso de formação, os policiais civis são convocados para escolher a primeira unidade de lotação, dentre as definidas pelo Conselho Superior da Polícia Civil como prioritárias e de provimento imediato. O §2º diz que a ordem de escolha leva em conta, exclusivamente, a classificação final obtida no curso de formação técnico-profissional específico. Ou seja, a nota da prova não decide a lotação: o desempenho no curso, sim.",
+    origem: "banco",
+    fonte: "LC Estadual 259/2023, art. 19, §§1º e 2º, com redação da LC 285/2025",
+  },
+  {
+    id: "leg-109",
+    materia: "leg",
+    topico: "Alterações legislativas de 2025/2026 na estrutura da Polícia Civil do PR",
+    enunciado:
+      "Sobre o exame pré-admissional nos concursos da Polícia Civil do Paraná, a LC nº 259/2023, com as alterações das LC nº 285/2025 e nº 289/2025, prevê que",
+    alternativas: [
+      "o candidato deve apresentar exame toxicológico, arcando integralmente com os custos, e o pedido de reclassificação para o final da lista, uma vez deferido, é irrevogável.",
+      "o exame toxicológico é custeado pelo Estado e só é exigido no concurso de Delegado.",
+      "a convocação para o exame pré-admissional gera direito adquirido à nomeação.",
+      "o pedido de reclassificação para o final da lista pode ser desfeito a qualquer tempo, antes da nomeação.",
+      "a Administração não pode convocar para o exame candidatos além do número de vagas.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 15 da LC 259: os aprovados em todas as fases são convocados para a perícia médica (exame pré-admissional). A convocação não gera direito adquirido à nomeação, e a Administração pode convocar além do número de vagas para repor o efetivo com rapidez (§1º). O edital pode permitir pedido de reclassificação para o final da lista de classificados (§2º), e o deferimento é irrevogável, faz perder o direito à nomeação naquela posição e não pode ser revisto (§3º). A LC 289/2025 incluiu o §4º: o candidato apresenta exame toxicológico no pré-admissional e arca integralmente com os custos.",
+    origem: "banco",
+    fonte: "LC Estadual 259/2023, art. 15, com redação das LC 285/2025 e 289/2025",
+  },
+  {
+    id: "leg-110",
+    materia: "leg",
+    topico: "Alterações legislativas de 2025/2026 na estrutura da Polícia Civil do PR",
+    enunciado:
+      "Pelo art. 44-A da LC nº 259/2023, incluído pela LC nº 289/2025, o policial civil",
+    alternativas: [
+      "perde o subsídio do dia quando faltar ao serviço ou se retirar antes de findar o período de trabalho, salvo motivo previsto em lei, e nas faltas sucessivas são computados os sábados, domingos e feriados intercalados.",
+      "perde só metade do subsídio do dia em que faltar, sem cômputo dos fins de semana intercalados.",
+      "pode ter até dez faltas por mês relevadas, independentemente de atestado médico.",
+      "que falta a um plantão perde apenas as horas de trabalho, sem alcançar o período destinado ao descanso.",
+      "pode ter o subsídio penhorado para pagamento de qualquer dívida particular.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 44-A da LC 259 (LC 289/2025): o policial perde metade do subsídio durante o afastamento por condenação definitiva que não resulte em demissão (I) e o subsídio do dia quando faltar ou sair antes do fim do expediente, salvo motivo legal (II). Nas faltas sucessivas contam-se sábados, domingos e feriados intercalados (§1º). No plantão, a falta abrange também o período de descanso (§3º). Podem ser relevadas até três faltas por mês, se motivadas por doença comprovada por atestado (§4º). O subsídio não sofre descontos nem penhora, salvo pensão alimentícia judicial e reposição ou indenização à Fazenda, em parcelas de até um quinto do subsídio (§5º).",
+    origem: "banco",
+    fonte: "LC Estadual 259/2023, art. 44-A, com redação da LC 289/2025",
+  },
+  {
+    id: "leg-111",
+    materia: "leg",
+    topico: "Alterações legislativas de 2025/2026 na estrutura da Polícia Civil do PR",
+    enunciado:
+      "A LC nº 289/2025 incluiu o art. 47-A na LC nº 259/2023, segundo o qual o policial civil estável lotado em unidade policial de difícil provimento",
+    alternativas: [
+      "tem o interstício para promoção reduzido pela metade, desde que esteja lotado ali há pelo menos três anos consecutivos e resida em município da comarca da unidade há pelo menos três anos consecutivos, até o limite de três níveis na carreira.",
+      "é promovido automaticamente a cada ano, dispensada a avaliação de desempenho.",
+      "tem o interstício reduzido pela metade desde o primeiro dia de lotação, sem limite de níveis.",
+      "recebe adicional de 50% sobre o subsídio enquanto permanecer na unidade.",
+      "tem o interstício reduzido a um terço, desde que resida na capital do Estado.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 47-A da LC 259 (LC 289/2025): o interstício normal é de dois anos no nível (art. 47, II). Para o estável lotado em unidade de difícil provimento, ele cai pela metade, se o policial estiver lotado nessa unidade há no mínimo três anos consecutivos (I) e residir em município da comarca da unidade há no mínimo três anos consecutivos (II). A contagem reduzida só começa depois de cumpridos esses requisitos (§1º), e o benefício vale no máximo por três níveis (§3º). O Conselho Superior define as unidades de difícil provimento (§2º). A pena de suspensão interrompe a contagem (§4º, I). Pela regra de transição, essa promoção só ocorre a partir da promoção de maio de 2027 (art. 82, §6º).",
+    origem: "banco",
+    fonte: "LC Estadual 259/2023, art. 47-A, com redação da LC 289/2025",
+  },
+  {
+    id: "leg-112",
+    materia: "leg",
+    topico: "Alterações legislativas de 2025/2026 na estrutura da Polícia Civil do PR",
+    enunciado:
+      "A LC nº 259/2023, com a redação da LC nº 289/2025, veda ao servidor policial civil",
+    alternativas: [
+      "trabalhar sob as ordens do cônjuge, companheiro ou parente até o segundo grau, consanguíneo ou afim, salvo quando não houver no município outra unidade policial.",
+      "trabalhar na mesma unidade que parente de qualquer grau, sem exceção.",
+      "trabalhar sob as ordens de parente até o quarto grau, ainda que não haja outra unidade policial no município.",
+      "ser lotado no município em que reside a sua família.",
+      "casar-se com outro policial civil lotado na mesma unidade.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 64-A da LC 259 (LC 289/2025): é vedado ao servidor policial civil trabalhar sob as ordens do cônjuge, companheiro ou parente até o segundo grau, consanguíneo ou afim, salvo quando não houver no município outra unidade policial. A vedação é de subordinação (trabalhar sob as ordens), não de simples lotação conjunta, e o limite é o segundo grau.",
+    origem: "banco",
+    fonte: "LC Estadual 259/2023, art. 64-A, com redação da LC 289/2025",
+  },
+  {
+    id: "leg-113",
+    materia: "leg",
+    topico: "Alterações legislativas de 2025/2026 na estrutura da Polícia Civil do PR",
+    enunciado:
+      "Entre os direitos e garantias assegurados aos policiais civis em atividade pelo art. 72, §1º, da LC nº 259/2023, com a redação da LC nº 289/2025, está",
+    alternativas: [
+      "o recolhimento em unidade prisional exclusiva para policiais, para cumprimento de prisão provisória ou de sentença condenatória transitada em julgado, com pronta comunicação da prisão ao chefe imediato.",
+      "a imunidade à prisão em flagrante, salvo por crime hediondo.",
+      "o porte de arma de fogo apenas em serviço, vedado na inatividade.",
+      "a dispensa de comparecer como testemunha em audiências judiciais sobre fatos do serviço.",
+      "o direito de só ser preso por ordem escrita do Delegado-Geral.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 72, §1º, da LC 259 (LC 289/2025): entre outros direitos, o policial civil tem identidade funcional com fé pública e validade nacional (I), porte de arma com validade nacional, salvo impedimento por saúde mental (II), recolhimento em unidade prisional exclusiva para policiais (IV), pronta comunicação da prisão ao chefe imediato e ao representante da categoria (V), precedência nas audiências em que for testemunha de fato do serviço (IX), atuação sem revelar a condição de policial, no interesse do serviço (XII), presença de representante da Polícia Civil na lavratura do flagrante (XIV) e porte de armas mesmo na inatividade (XXIX). Aos aposentados valem os incisos I, II, IV e V (§7º). Não há imunidade à prisão em flagrante.",
+    origem: "banco",
+    fonte: "LC Estadual 259/2023, art. 72, §1º, com redação da LC 289/2025",
+  },
+  {
+    id: "leg-114",
+    materia: "leg",
+    topico: "Alterações legislativas de 2025/2026 na estrutura da Polícia Civil do PR",
+    enunciado:
+      "Pelo art. 3º da LC nº 259/2023, com a redação da LC nº 289/2025, todos os ocupantes de cargos efetivos da Polícia Civil, nos limites de suas atribuições legais e respeitada a hierarquia e a disciplina, devem atuar com",
+    alternativas: [
+      "imparcialidade, objetividade, tecnicidade e cientificidade.",
+      "discricionariedade plena, subordinação ao Ministério Público e sigilo absoluto.",
+      "publicidade irrestrita, eficiência e economicidade.",
+      "celeridade, informalidade e preferência pela versão da vítima.",
+      "autonomia funcional, vitaliciedade e inamovibilidade.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 3º, §3º, da LC 259 (incluído pela LC 289/2025): todos os ocupantes de cargos efetivos da Polícia Civil, nos limites de suas atribuições legais, respeitada a hierarquia e disciplina, devem atuar com imparcialidade, objetividade, tecnicidade e cientificidade. O §1º, também na redação de 2025, diz que esses cargos são permanentes, típicos de Estado e essenciais, e que suas atividades, com risco à vida, devem ser exercidas exclusivamente pelos ocupantes dos cargos da carreira, sob regime jurídico próprio. O §2º veda outras atividades remuneradas, salvo o magistério.",
+    origem: "banco",
+    fonte: "LC Estadual 259/2023, art. 3º, §§1º e 3º, com redação da LC 289/2025",
+  },
+  {
+    id: "leg-115",
+    materia: "leg",
+    topico: "Alterações legislativas de 2025/2026 na estrutura da Polícia Civil do PR",
+    enunciado:
+      "Um aluno policial civil, durante o curso de formação técnico-profissional, comete transgressão prevista no Código Disciplinar da PCPR (Lei nº 21.894/2024). Pela LC nº 259/2023, com a redação da LC nº 285/2025,",
+    alternativas: [
+      "a direção da Escola Superior de Polícia Civil encaminha a documentação à Corregedoria-Geral, e a apuração tramita de forma prioritária, porque as normas da Lei nº 21.894/2024 se aplicam aos alunos matriculados.",
+      "o Código Disciplinar não se aplica ao aluno, que responde só ao regimento interno da Escola.",
+      "a própria Escola julga a transgressão e pode aplicar diretamente a pena de demissão.",
+      "a apuração fica suspensa até o fim do curso, para não prejudicar a formação do aluno.",
+      "a transgressão só pode ser apurada depois do estágio probatório.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 26-A da LC 259 (LC 285/2025): aplicam-se aos alunos as normas da Lei 21.894/2024 (§2º). A transgressão leva a direção da Escola Superior a encaminhar a documentação à Corregedoria-Geral, para apurar a responsabilidade (§3º), e essa apuração tramita de forma prioritária do início ao fim (§4º). A reprovação em qualquer disciplina do curso acarreta a imediata demissão (§1º), e o reprovado, até o fim do processo, fica preferencialmente lotado na Escola, em atividades só administrativas e sem ajuda de custo em eventual lotação posterior (§7º). A vida social e interpessoal do aluno é acompanhada e avaliada em disciplina própria (§6º).",
+    origem: "banco",
+    fonte: "LC Estadual 259/2023, art. 26-A, com redação da LC 285/2025",
   },
 ];
