@@ -13,10 +13,44 @@ export const CONTEUDO_PP: ConteudoTopico[] = [
   {
     materia: "pp",
     topico: "Prisão em flagrante e outras prisões",
-    texto: `A prisão em flagrante, disciplinada pelos arts. 301 a 310 do CPP, pode ser efetuada por qualquer pessoa (facultativo) ou deve ser efetuada pelas autoridades policiais e seus agentes (obrigatório). O art. 302 do CPP distingue as modalidades de flagrante: próprio (o agente está cometendo ou acaba de cometer a infração), impróprio ou quase-flagrante (o agente é perseguido, logo após, em situação que faça presumir ser o autor) e presumido ou ficto (o agente é encontrado, logo depois, com instrumentos, armas ou objetos que façam presumir ser o autor). Distinguem-se ainda o flagrante esperado, válido, em que a polícia apenas aguarda a consumação de um crime já planejado sem induzir sua prática, do flagrante preparado ou provocado, ilegal, em que um agente provocador induz o autor a praticar um crime que, pela própria armação, jamais se consumaria — hipótese de crime impossível, conforme a Súmula 145 do STF. Já o flagrante forjado, em que provas são fabricadas para incriminar inocente, é nulo e configura, ele próprio, ilícito penal. Efetuada a prisão, a comunicação deve ser imediata ao juiz competente, à família do preso ou pessoa por ele indicada, e ao Ministério Público (art. 5º, LXII, CF, e art. 306 do CPP), seguida da audiência de custódia, em que o preso é apresentado a um juiz em até 24 horas. Entre as prisões cautelares de natureza processual, destacam-se ainda a prisão preventiva — cabível em qualquer fase da investigação ou do processo, mediante decisão fundamentada que demonstre a presença de seus pressupostos legais — e a prisão temporária, exclusiva da fase investigatória, cabível apenas para os crimes taxativamente elencados em lei.`,
+    texto: `A prisão em flagrante (arts. 301 a 310 do CPP) é facultativa para qualquer pessoa e obrigatória para as autoridades policiais e seus agentes. O art. 302 do CPP traz as modalidades:
+- próprio: o agente está cometendo ou acaba de cometer a infração;
+- impróprio ou quase-flagrante: o agente é perseguido logo após, em situação que faça presumir ser o autor;
+- presumido ou ficto: o agente é encontrado logo depois com instrumentos, armas ou objetos que façam presumir ser o autor.
+Distinguem-se ainda três situações:
+- flagrante esperado (válido): a polícia apenas aguarda a consumação de um crime já planejado, sem induzir a prática;
+- flagrante preparado ou provocado (ilegal): um agente provocador induz a prática de um crime que, pela própria armação, jamais se consumaria. É crime impossível (Súmula 145 do STF);
+- flagrante forjado: provas são fabricadas para incriminar inocente. É nulo e configura, ele próprio, crime.
+Efetuada a prisão, a comunicação é imediata ao juiz, ao MP e à família do preso ou pessoa por ele indicada (CF, art. 5º, LXII, e CPP, art. 306). Em até 24 horas, o auto vai ao juiz e o preso é apresentado na audiência de custódia.
+
+CONVERSÃO EM PREVENTIVA (Lei 15.272/2025, em vigor desde 27/11/2025). O art. 310, §5º, do CPP lista circunstâncias que, sem prejuízo de outras, recomendam converter o flagrante em preventiva:
+- I: provas de prática reiterada de infrações penais;
+- II: infração cometida com violência ou grave ameaça contra a pessoa;
+- III: agente já liberado em audiência de custódia anterior por outra infração, salvo se depois absolvido dela;
+- IV: infração praticada na pendência de inquérito ou ação penal;
+- V: fuga ou perigo de fuga;
+- VI: perigo para o inquérito, para a instrução ou para a coleta, conservação e incolumidade da prova.
+A decisão deve ser motivada, e o juiz é obrigado a examinar os §§2º e 5º do art. 310 e os critérios de periculosidade do art. 312, §3º (§6º).
+
+PERICULOSIDADE (art. 312, §§3º e 4º). Na aferição da periculosidade que gera risco à ordem pública, consideram-se:
+- I: o modus operandi, inclusive o uso reiterado de violência ou grave ameaça e a premeditação;
+- II: a participação em organização criminosa;
+- III: a natureza, a quantidade e a variedade de drogas, armas ou munições apreendidas;
+- IV: o fundado receio de reiteração, inclusive à vista de outros inquéritos e ações em curso.
+É incabível a preventiva baseada na gravidade abstrata do delito: periculosidade e risco devem ser demonstrados concretamente (§4º).
+
+PERFIL GENÉTICO (art. 310-A). Em três situações, o MP ou a autoridade policial deverá requerer ao juiz a coleta de material biológico do custodiado para obter e armazenar o perfil genético, na forma da Lei 12.037:
+- flagrante por crime com violência ou grave ameaça, ou contra a dignidade sexual;
+- indícios de que o agente integra organização criminosa armada;
+- imputação de crime hediondo.
+A coleta é feita preferencialmente na própria audiência de custódia ou em até 10 dias. É realizada por agente público treinado, respeitando a cadeia de custódia.
+
+OUTRAS PRISÕES CAUTELARES.
+- Preventiva: cabe em qualquer fase da investigação ou do processo, por decisão fundamentada. Nunca é decretada de ofício: exige representação do delegado ou requerimento do MP, do querelante ou do assistente.
+- Temporária (Lei 7.960/1989): exclusiva da fase de investigação e cabível só para os crimes listados em lei. O prazo é de 5 dias prorrogáveis por mais 5; nos hediondos, de 30 dias prorrogáveis por mais 30.`,
     exemplos: [
-      "Policiais recebem denúncia de tráfico e, após vigilância, prendem o traficante no momento da venda da droga, sem qualquer indução: flagrante esperado, válido.",
-      "Um comerciante pede a um comparsa que induza um funcionário a furtar mercadoria específica, avisando a polícia com antecedência: flagrante preparado, ilegal, pois a armação torna impossível a consumação do crime (Súmula 145 do STF).",
+      "Policiais recebem denúncia de tráfico e, após vigilância, prendem o traficante no momento da venda da droga, sem qualquer indução. É flagrante esperado, válido.",
+      "Preso em flagrante por roubo com arma, o autuado já havia sido solto em audiência de custódia três meses antes, por outro furto. Esse histórico é circunstância que recomenda a conversão em preventiva (art. 310, §5º, II e III, do CPP, pela Lei 15.272/2025). Mesmo assim, o juiz precisa fundamentar a periculosidade concreta, e não a gravidade abstrata do roubo.",
     ],
   },
   {
@@ -49,18 +83,139 @@ export const CONTEUDO_PP: ConteudoTopico[] = [
   {
     materia: "pp",
     topico: "Lei nº 15.358/2026 (Marco Legal do Combate ao Crime Organizado)",
-    texto: `A Lei nº 15.358/2026, referida no edital do certame como Marco Legal do Combate ao Crime Organizado, integra o conteúdo programático de Direito Processual Penal e Legislação Processual Penal Extravagante. Por se tratar de diploma legal editado muito recentemente, ainda pouco explorado pela doutrina e pelos cursos preparatórios no momento da elaboração deste material, a recomendação de estudo é a leitura direta e atenta do texto oficial da lei, dando-se atenção especial à sua literalidade — bancas examinadoras, e a FGV em particular, costumam cobrar de forma textual dispositivos de leis recém-editadas, exatamente pelo ineditismo do tema e pela dificuldade de o candidato memorizar minúcias ainda não sedimentadas em jurisprudência ou doutrina consolidada. Tematicamente, a nova lei se insere no mesmo campo de preocupação da Lei nº 12.850/2013 (que já define organização criminosa e disciplina meios de obtenção de prova como colaboração premiada, ação controlada e infiltração de agentes) e do Pacote Anticrime (Lei nº 13.964/2019), ambos voltados ao aperfeiçoamento dos instrumentos estatais de investigação, persecução e repressão ao crime organizado. Ao estudar o Marco Legal de 2026, portanto, é recomendável revisar em paralelo esses dois diplomas, que provavelmente formam a base conceitual sobre a qual a nova legislação se apoia.`,
+    texto: `A Lei nº 15.358, de 24 de março de 2026 (Marco Legal do Combate ao Crime Organizado, apelidada de "Lei Antifacção"), é citada nominalmente no item 7.2 do edital e entrou em vigor na data da publicação, em 25/03/2026 (art. 44). Portanto, cai na prova (item 25.15). Ela cria dois crimes, o domínio social estruturado (art. 2º) e o favorecimento ao domínio social estruturado (art. 3º). Traz também normas processuais próprias, como prazos do inquérito, medidas assecuratórias, intervenção em empresas, ação civil de perdimento e banco nacional de dados. E altera o CP, o CPP, a LEP, a Lei dos Crimes Hediondos, a Lei de Drogas, o Estatuto do Desarmamento, a Lei de Lavagem e o Código Eleitoral.
+
+CONCEITO (art. 2º, §2º). Organização criminosa ultraviolenta, chamada pela lei de "facção criminosa", é o agrupamento de 3 ou mais pessoas que emprega violência, grave ameaça ou coação para impor controle territorial ou social, intimidar populações ou autoridades ou atacar serviços, infraestrutura ou equipamentos essenciais. Também se enquadra o agrupamento que pratica atos destinados à execução dos crimes da lei. Compare com os vizinhos:
+- organização criminosa da Lei 12.850 (art. 1º, §1º): 4 ou mais pessoas, estruturalmente ordenada, com divisão de tarefas, para infrações com pena máxima superior a 4 anos ou de caráter transnacional;
+- associação criminosa (CP, art. 288): 3 ou mais pessoas para o fim específico de cometer crimes.
+Pelo art. 4º, parágrafo único, as condutas da lei e a milícia privada (CP, art. 288-A) são formas especiais de organização criminosa, e aplicam-se a elas, no que couber, as disposições materiais da Lei 12.850. O art. 8º manda aplicar à investigação o Capítulo II da Lei 12.850 (colaboração premiada, ação controlada, infiltração etc.) e a Lei de Lavagem.
+
+DOMÍNIO SOCIAL ESTRUTURADO (art. 2º). Comete o crime o integrante de facção, grupo paramilitar ou milícia privada que, "independentemente de suas razões ou motivações", pratica qualquer destas condutas:
+- I: usar violência ou grave ameaça para impor controle, domínio ou influência sobre territórios ou comunidades;
+- II: empregar ou ameaçar usar armas de fogo, explosivos, gases tóxicos, venenos ou agentes biológicos, químicos ou nucleares;
+- III: barricadas, bloqueios, incêndios e destruição de vias contra a ação policial;
+- IV: controle social de atividade econômica, comercial ou de serviços, como a "taxa" cobrada de comerciantes;
+- V: explosivos ou armas contra bancos, bases de valores e carros-fortes ("novo cangaço"), ou para interromper o fluxo terrestre, aéreo ou aquaviário;
+- VI: ataques a presídios;
+- VII: tomar, depredar ou incendiar meios de transporte;
+- VIII: apoderar-se de aeronaves ou sabotá-las;
+- IX: sabotar portos, aeroportos, hospitais, escolas, estádios, serviços essenciais, energia, petróleo e gás;
+- X: interromper ou danificar bancos de dados públicos e serviços informáticos ou telemáticos governamentais ou de interesse coletivo.
+A pena é de reclusão de 20 a 40 anos, sem prejuízo das penas da violência, da ameaça e dos demais crimes.
+O §1º aumenta a pena de 2/3 ao dobro em várias hipóteses:
+- comando ou liderança, ainda que o agente não pratique os atos materiais;
+- financiamento;
+- violência contra juiz, membro do MP, agente do art. 144 da CF, criança, adolescente, idoso, pessoa com deficiência ou vulnerável;
+- conexão com outras facções;
+- concurso de funcionário público ou infiltração no setor público;
+- arma de uso restrito ou proibido, ou explosivo;
+- recrutamento de criança ou adolescente;
+- transnacionalidade;
+- extração ilegal de minérios ou exploração ambiental;
+- uso de drones, criptografia avançada e equipamentos de contrainteligência.
+
+FAVORECIMENTO (art. 3º). É crime:
+- promover, fundar, aderir ou apoiar de qualquer forma a facção;
+- divulgar material que incite os atos do art. 2º;
+- adquirir, produzir ou guardar explosivo ou arma para esses atos;
+- ceder local ou bem;
+- fornecer informações em apoio;
+- alegar falsamente pertencer à facção para obter vantagem ou intimidar terceiros.
+A pena é de reclusão de 12 a 20 anos, e multa.
+
+REGIME DOS CRIMES. Os arts. 2º e 3º são hediondos (art. 4º). Os §§4º a 8º do art. 2º valem também para o favorecimento; o §9º não está nessa remissão.
+- §4º: insuscetíveis de anistia, graça, indulto, fiança e livramento condicional.
+- §5º: atos preparatórios praticados com propósito inequívoco de consumar o crime têm a pena do consumado reduzida de 1/3 até a metade. É exceção à regra de que a preparação não é punível.
+- §6º: os dependentes não recebem auxílio-reclusão.
+- §7º: líderes e integrantes do núcleo de comando cumprem obrigatoriamente pena ou custódia em presídio federal de segurança máxima.
+- §8º: homicídios consumados ou tentados cometidos por membros de facção e conexos a esses crimes são julgados pelas Varas Criminais Colegiadas (Lei 12.694, art. 1º-A). O CPP, art. 78, I, passou a excepcionar a prevalência do júri nesses casos.
+- §9º: a prática do crime é causa suficiente para a preventiva. O CPP, art. 313, V, passou a admitir a preventiva para integrante de facção no contexto do art. 2º.
+
+INVESTIGAÇÃO (arts. 5º e 6º).
+- Prazos do inquérito: 90 dias com o indiciado preso e 270 dias com ele solto, prorrogáveis por igual período. Compare: no CPP são 10 e 30 dias; na Lei de Drogas, 30 e 90, que podem ser duplicados.
+- O juiz decide as representações do delegado e os requerimentos do MP em 15 dias.
+- O MP dá parecer sobre a representação do delegado em 5 dias.
+- Na urgência, MP e juiz se manifestam no prazo simultâneo de 24 horas.
+- Descumprir esses prazos não gera relaxamento automático da prisão (§4º).
+- As regras valem, no que couber, para a investigação do MP (§5º).
+- Se o juiz indefere a representação do delegado e o MP não recorre, o delegado pode, em 48 horas, levar a matéria à instância superior do MP, que delibera no mesmo prazo (§6º).
+- As forças-tarefa integradas (art. 6º) são formalizadas por termo de cooperação e podem contar com os Gaecos. Descumprir esse artigo não gera nulidade das provas.
+
+PATRIMÔNIO (arts. 9º a 29).
+- Quem decreta as medidas assecuratórias (art. 9º): o juiz, de ofício, a requerimento do MP ou por representação do delegado, ouvido o MP. Exigem indícios suficientes e cabem na investigação ou na ação penal.
+- Medidas possíveis:
+  - sequestro, arresto e bloqueio de bens, inclusive ativos digitais;
+  - suspensão de atividades econômicas;
+  - bloqueio de acesso a sistemas financeiros e plataformas digitais;
+  - proibição de Pix e de operações em corretoras de criptoativos;
+  - comunicação ao Coaf, ao Banco Central, à CVM, à Susep e à Receita;
+  - suspensão de serviços como energia, telecomunicações e hospedagem digital;
+  - afastamento do cargo sem prejuízo da remuneração;
+  - apreensão do passaporte;
+  - inidoneidade cautelar para contratar com o poder público.
+- Podem ser decretadas sem ouvir a parte antes, com contraditório diferido (§1º).
+- O investigado tem 10 dias, contados da intimação, para provar a origem lícita do bem (§6º).
+- Se a origem ilícita ficar clara, o juiz pode decretar o perdimento extraordinário, independentemente de condenação (§8º), ressalvado o terceiro de boa-fé.
+- Com a absolvição, o valor é devolvido em até 3 dias úteis (§12).
+- Empresa beneficiada pela facção (art. 10): afastamento dos sócios e intervenção judicial por 6 meses, prorrogáveis.
+- Os arts. 12 a 27 criam a ação civil autônoma de perdimento.
+- O art. 29 cria o Banco Nacional de Dados de facções, com regulamento em 180 dias e bancos estaduais obrigatórios e interoperáveis.
+
+ALTERAÇÕES EM OUTRAS LEIS.
+- CP:
+  - art. 147-C (novo): ameaça no contexto da facção, com reclusão de 1 a 3 anos;
+  - art. 121, §2º-D: homicídio de facção, com 20 a 40 anos;
+  - art. 148, §3º: sequestro e cárcere privado, com 12 a 20 anos;
+  - art. 157, §4º: roubo de facção com a pena do caput em triplo.
+- CPP:
+  - audiência de custódia em 24 horas por videoconferência em tempo real (arts. 3º-B, §1º, e 310);
+  - art. 313, V;
+  - art. 78, I.
+- LEP:
+  - art. 41-A: monitoramento audiovisual de parlatório e visitas, a pedido do delegado, do MP ou da administração penitenciária;
+  - art. 41-B: comunicação monitorada entre advogado e cliente, analisada por juízo de controle distinto do juízo da instrução;
+  - art. 112, VI, "b": 75% para o comando de facção, vedado o livramento.
+- Lei de Drogas, art. 40-A: penas dos arts. 33 a 37 em dobro para integrante de facção, com concurso material se houver arma de fogo.
+- Estatuto do Desarmamento, art. 21-A: arts. 12, 14 e 16 com aumento de 2/3 quando ligados ao tráfico.`,
+    exemplos: [
+      "Integrantes de uma facção cobram 'taxa de segurança' de comerciantes de um bairro e espancam quem se recusa a pagar. Cometem domínio social estruturado (art. 2º, IV, da Lei 15.358), com pena de 20 a 40 anos. Para quem exerce o comando, mesmo sem ir às ruas, a pena aumenta de 2/3 ao dobro (§1º, I).",
+      "Um homem sem vínculo algum com facção liga para um comerciante dizendo ser 'do Comando' para exigir dinheiro. Ele comete favorecimento ao domínio social estruturado na modalidade de alegar falsamente pertencer à facção (art. 3º, VI), com pena de 12 a 20 anos e multa.",
+    ],
     curiosidade:
-      "Leis processuais penais recém-publicadas costumam ser as mais cobradas literalmente em provas de banca FGV, justamente por ainda não terem jurisprudência consolidada nem comentários doutrinários amplamente difundidos — o que torna a leitura direta do texto legal a estratégia de estudo mais segura para este tópico.",
+      "A lei pune até quem só finge ser da facção: alegar falsamente pertencer a ela para obter vantagem ou intimidar terceiros é favorecimento ao domínio social estruturado (art. 3º, VI), com pena de 12 a 20 anos — mais alta que a da extorsão simples do CP (4 a 10 anos).",
   },
   {
     materia: "pp",
     topico: "Audiência de custódia — prazo, finalidade e consequências da ausência",
     origem: "aposta",
-    texto: `A audiência de custódia é o ato processual em que toda pessoa presa em flagrante deve ser apresentada, em até 24 horas da prisão, a um juiz, com a presença do Ministério Público e de defensor (Resolução CNJ nº 213/2015, com base convencional nos arts. 7º, item 5, e 9º do Pacto de San José da Costa Rica). Sua finalidade é tripla: permitir ao juiz avaliar a legalidade e a necessidade da prisão, decidindo por sua manutenção, relaxamento (se ilegal) ou conversão em prisão preventiva ou em medida cautelar diversa; verificar se houve tortura ou maus-tratos durante a prisão ou a condução do preso, questionando-o diretamente sobre as circunstâncias da abordagem; e assegurar o contato do preso com o sistema de justiça o quanto antes, reduzindo o tempo de prisão irregular ou desnecessária. É importante frisar que a audiência de custódia não substitui a comunicação imediata da prisão à família e ao juiz (art. 306 do CPP), mas é ato subsequente e complementar a ela. Quanto às consequências da ausência de realização da audiência dentro do prazo, o STF, no julgamento do RE 1.288.808 (Tema 1.169 de repercussão geral), fixou que essa ausência, por si só, não gera automaticamente a soltura do preso nem a nulidade da prisão, mas configura falta funcional a ser apurada e pode ser considerada na avaliação da legalidade da prisão, sobretudo quando o atraso é injustificado e prolongado — não se trata, portanto, de nulidade automática, mas de fator relevante a ser sopesado pelo juiz no caso concreto.`,
+    texto: `A audiência de custódia é o ato em que a pessoa presa é levada à presença de um juiz, com o Ministério Público e a defesa (advogado ou Defensoria). O ato tem base convencional no Pacto de San José da Costa Rica, art. 7.5 ("toda pessoa detida ou retida deve ser conduzida, sem demora, à presença de um juiz"), e foi regulamentado pela Resolução CNJ nº 213/2015. Hoje está no próprio CPP (art. 310 e art. 3º-B, §1º). Vale para o preso em flagrante e também para o preso por mandado (art. 287 e art. 3º-B, §1º). O STF entende que a audiência é devida em toda modalidade de prisão.
+
+PRAZO E FORMA (Lei 15.358/2026). O juiz deve promover a audiência no prazo máximo de 24 horas após a realização da prisão. Pela nova redação do caput do art. 310, ela é feita por videoconferência em tempo real. A forma presencial ficou excepcional: só em situações de força maior, por decisão justificada do juiz, e é vedada se o ato se revelar demasiadamente custoso ou trouxer risco excessivo à segurança (§13). A lei trouxe garantias para o modelo virtual:
+- §7º: antes do ato, a serventia confere os processos do preso e, havendo citação pendente, o juiz faz a citação pessoal;
+- §8º: defesa e MP dispõem de todos os mecanismos de intervenção e podem suscitar questões de ordem;
+- §9º: entrevista prévia, reservada e inviolável com o defensor, presencial, virtual ou por outro meio;
+- §10: o preso fica sozinho na sala durante a oitiva, ressalvada a presença física do defensor;
+- §11: falha no sistema atribuível ao tribunal obriga a repetir a audiência inteira, sem aproveitar ato incompleto;
+- §12: todos os estabelecimentos prisionais terão salas próprias para isso.
+Atenção: a redação antiga do art. 3º-B, §1º, vedava a videoconferência. Essa regra caiu.
+
+FINALIDADE. Na audiência, o juiz, fundamentadamente:
+- I: relaxa a prisão ilegal;
+- II: converte o flagrante em preventiva, se presentes os requisitos do art. 312 e insuficientes as cautelares diversas;
+- III: concede liberdade provisória, com ou sem fiança.
+O juiz também verifica se houve tortura ou maus-tratos e manda apurar. Outras regras ligadas à audiência:
+- se o fato foi praticado sob excludente de ilicitude, cabe liberdade provisória mediante termo de comparecimento (§1º);
+- se o agente é reincidente, integra organização criminosa armada ou milícia, ou porta arma de uso restrito, o juiz deve denegar a liberdade provisória (§2º);
+- a audiência não substitui a comunicação imediata da prisão ao juiz, ao MP e à família (art. 306).
+
+CONSEQUÊNCIAS DA FALTA DA AUDIÊNCIA.
+- §3º: a autoridade que deu causa, sem motivação idônea, à não realização no prazo responde administrativa, civil e penalmente.
+- §4º: passadas 24 horas além do prazo, a falta de audiência sem motivação idônea torna a prisão ilegal, a ser relaxada, sem prejuízo da imediata decretação da preventiva.
+- O STF (ADIs 6.298, 6.299, 6.300 e 6.305) deu interpretação conforme ao §4º: o juiz deve avaliar se cabe a prorrogação excepcional do prazo ou a realização por videoconferência. Por isso, a prova costuma dizer que o atraso não gera soltura nem nulidade automáticas.
+- Também não há "nulidade da ação penal" pela falta da audiência: o vício atinge a prisão, não o processo.`,
     exemplos: [
-      "Um suspeito preso em flagrante à meia-noite de sexta-feira é apresentado ao juiz plantonista antes das 24 horas seguintes, mesmo em dia não útil, pois o prazo da audiência de custódia não se submete ao expediente forense comum — juízes plantonistas existem justamente para viabilizar esse ato.",
-      "Durante a audiência de custódia, o preso relata ao juiz ter sido agredido no momento da abordagem: além de decidir sobre a legalidade da prisão, o magistrado deve determinar a apuração da possível tortura ou maus-tratos, encaminhando o caso aos órgãos competentes.",
+      "Um suspeito é preso em flagrante à meia-noite de sexta-feira. O juiz plantonista realiza a audiência por videoconferência antes de completar 24 horas, mesmo no fim de semana, porque o prazo não depende do expediente forense. O preso conversa reservadamente com o defensor antes do ato e fica sozinho na sala do presídio durante a oitiva.",
+      "No meio da audiência virtual, a conexão do tribunal cai e o ato fica pela metade. Pelo art. 310, §11, do CPP, a audiência deve ser repetida por completo, e nada do que foi feito pela metade é aproveitado.",
     ],
   },
   {

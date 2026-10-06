@@ -112,20 +112,21 @@ export const QUESTOES_PP: Question[] = [
   {
     id: "pp-007",
     materia: "pp",
-    topico: "Legislação processual penal extravagante",
+    topico: "Lei nº 15.358/2026 (Marco Legal do Combate ao Crime Organizado)",
     enunciado:
-      "A Lei nº 15.358/2026, mencionada no Anexo I do edital como \"Marco Legal do Combate ao Crime Organizado\", integra o conteúdo programático de:",
+      "Segundo a Lei nº 15.358/2026, considera-se organização criminosa ultraviolenta, denominada facção criminosa, o agrupamento de:",
     alternativas: [
-      "Direito Constitucional",
-      "Direito Processual Penal e Legislação Processual Penal Extravagante",
-      "Direitos Humanos",
-      "Contabilidade Geral",
-      "Realidade do Paraná",
+      "3 ou mais pessoas que emprega violência, grave ameaça ou coação para impor controle territorial ou social, intimidar populações ou autoridades ou atacar serviços, infraestrutura ou equipamentos essenciais.",
+      "4 ou mais pessoas estruturalmente ordenado e com divisão de tarefas, para a prática de infrações com pena máxima superior a 4 anos.",
+      "3 ou mais pessoas associadas para o fim específico de cometer crimes, ainda que sem emprego de violência.",
+      "2 ou mais pessoas que pratiquem, reiteradamente ou não, crimes com emprego de arma de fogo de uso restrito.",
+      "5 ou mais pessoas com atuação em mais de um Estado da Federação, dispensada a prova de controle territorial.",
     ],
-    correta: 1,
+    correta: 0,
     explicacao:
-      "O item 7 do Anexo I do edital (Direito Processual Penal e Legislação Processual Penal Extravagante) cita nominalmente a Lei nº 15.358/2026. Por ser lei recém-editada em 2026, é apontada pelo material de estudo como tema de alto potencial de cobrança literal na prova, já que ainda não foi amplamente explorada por cursinhos.",
+      "Art. 2º, §2º, da Lei 15.358/2026: 3 ou mais pessoas que empregam violência, grave ameaça ou coação para impor controle territorial ou social, intimidar populações ou autoridades ou atacar serviços e infraestrutura essenciais. A definição de 4 ou mais pessoas, estruturalmente ordenada e com divisão de tarefas, é a da organização criminosa da Lei 12.850 (art. 1º, §1º). A de 3 ou mais pessoas para o fim específico de cometer crimes é a da associação criminosa (CP, art. 288).",
     origem: "banco",
+    fonte: "Lei 15.358/2026 (Planalto)",
   },
   {
     id: "pp-008",
@@ -418,18 +419,19 @@ export const QUESTOES_PP: Question[] = [
     materia: "pp",
     topico: "Audiência de custódia — prazo, finalidade e consequências da ausência",
     enunciado:
-      "A não realização da audiência de custódia dentro do prazo legal tem como consequência jurídica:",
+      "Sobre a não realização da audiência de custódia no prazo legal, sem motivação idônea, é correto afirmar, à luz do CPP e da interpretação dada pelo STF:",
     alternativas: [
-      "A nulidade automática e insanável da prisão em flagrante, independentemente de qualquer outro fator.",
-      "Nenhuma consequência, pois se trata de mera recomendação sem efeito prático.",
-      "Não torna a prisão automaticamente nula, mas é fator considerado para o relaxamento se a demora for injustificada e prejudicar o preso.",
-      "A conversão automática em prisão preventiva, independentemente de decisão judicial fundamentada.",
-      "A soltura imediata e definitiva do preso, sem possibilidade de nova prisão pelos mesmos fatos.",
+      "Gera nulidade absoluta da ação penal superveniente, que deve ser anulada desde o recebimento da denúncia.",
+      "Não tem consequência alguma, pois a audiência é mera recomendação do CNJ, sem previsão legal.",
+      "A autoridade que lhe deu causa responde administrativa, civil e penalmente, e a prisão pode ser reconhecida como ilegal, sem prejuízo da imediata decretação da preventiva, não havendo soltura automática.",
+      "Converte automaticamente a prisão em flagrante em prisão preventiva, como sanção à demora.",
+      "Impõe a soltura imediata e definitiva do preso, vedada nova prisão pelos mesmos fatos.",
     ],
     correta: 2,
     explicacao:
-      "A ausência de realização da audiência de custódia no prazo não torna a prisão automaticamente nula, mas é fator considerado para o relaxamento se a demora for injustificada e prejudicar o preso — não há nulidade automática nem soltura definitiva, e a conversão em preventiva sempre exige decisão judicial fundamentada, não sendo consequência automática da demora.",
+      "O art. 310, §3º, do CPP responsabiliza administrativa, civil e penalmente quem deu causa à omissão. O §4º diz que, passadas 24 horas além do prazo, a falta de audiência sem motivação idônea torna a prisão ilegal, a ser relaxada, sem prejuízo da imediata decretação da preventiva. O STF (ADI 6.298 e outras) deu interpretação conforme ao §4º, para que o juiz avalie a prorrogação excepcional do prazo ou a videoconferência. Daí a ideia de que não há soltura nem nulidade automáticas. O vício atinge a prisão, e não a ação penal.",
     origem: "banco",
+    fonte: "CPP, art. 310, §§3º e 4º; STF, ADI 6.298",
   },
   {
     id: "pp-025",
@@ -538,5 +540,309 @@ export const QUESTOES_PP: Question[] = [
     explicacao:
       "A quebra da cadeia de custódia — perda de rastreabilidade, manuseio sem registro, troca de embalagem inadequada — pode comprometer a validade da prova em juízo, ainda que o vestígio em si seja autêntico, por colocar em dúvida se ele não foi alterado, substituído ou contaminado ao longo do processo, e não por qualquer prazo automático de invalidade ou perda de titularidade da ação penal.",
     origem: "banco",
+  },
+  {
+    id: "pp-031",
+    materia: "pp",
+    topico: "Lei nº 15.358/2026 (Marco Legal do Combate ao Crime Organizado)",
+    enunciado:
+      "Integrante de facção criminosa que, para impor domínio sobre uma comunidade, ordena a colocação de barricadas e incêndios em vias para impedir a entrada da polícia comete, segundo a Lei nº 15.358/2026, crime de domínio social estruturado, punido com:",
+    alternativas: [
+      "reclusão, de 20 a 40 anos, sem prejuízo das sanções correspondentes à violência, à ameaça ou a outros crimes.",
+      "reclusão, de 12 a 20 anos, e multa.",
+      "reclusão, de 3 a 8 anos, e multa, sem prejuízo das penas das demais infrações praticadas.",
+      "reclusão, de 1 a 3 anos.",
+      "reclusão, de 6 a 20 anos, absorvidas as penas dos crimes praticados com violência.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 2º, III, da Lei 15.358/2026: impedir ou dificultar a atuação das forças de segurança por barricadas, bloqueios ou incêndios. A pena é de 20 a 40 anos, sem prejuízo das sanções da violência, da ameaça e de outros crimes. Já 12 a 20 anos e multa é a pena do favorecimento (art. 3º); 3 a 8 anos é a da organização criminosa da Lei 12.850; e 1 a 3 anos é a da ameaça do novo art. 147-C do CP.",
+    origem: "banco",
+    fonte: "Lei 15.358/2026 (Planalto)",
+  },
+  {
+    id: "pp-032",
+    materia: "pp",
+    topico: "Lei nº 15.358/2026 (Marco Legal do Combate ao Crime Organizado)",
+    enunciado:
+      "De acordo com a Lei nº 15.358/2026, os crimes de domínio social estruturado e de favorecimento ao domínio social estruturado:",
+    alternativas: [
+      "são insuscetíveis de anistia, graça, indulto, fiança e livramento condicional, além de serem considerados hediondos.",
+      "são insuscetíveis apenas de anistia, graça e indulto, admitindo fiança e livramento condicional nos termos gerais.",
+      "vedam integralmente a progressão de regime, devendo a pena ser cumprida inteiramente em regime fechado.",
+      "são equiparados a hediondos apenas quando praticados com emprego de arma de fogo de uso restrito.",
+      "admitem fiança arbitrada pelo juiz, mas vedam a liberdade provisória sem fiança.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 2º, §4º, torna esses crimes insuscetíveis de anistia, graça, indulto, fiança e livramento condicional. Pelo parágrafo único do art. 3º, isso também vale para o favorecimento. Pelo art. 4º, ambos são hediondos para todos os fins. Não há vedação total da progressão, que o STF já julgou inconstitucional em lei anterior (HC 82.959; Súmula Vinculante 26): a progressão segue as frações da LEP, como os 75% do art. 112, VI, para o comando de facção.",
+    origem: "banco",
+    fonte: "Lei 15.358/2026 (Planalto)",
+  },
+  {
+    id: "pp-033",
+    materia: "pp",
+    topico: "Lei nº 15.358/2026 (Marco Legal do Combate ao Crime Organizado)",
+    enunciado:
+      "Quanto aos atos preparatórios do crime de domínio social estruturado, a Lei nº 15.358/2026 estabelece que quem os pratica com propósito inequívoco de consumar a conduta:",
+    alternativas: [
+      "não é punível, pois a fase de preparação do iter criminis é sempre impunível no direito brasileiro.",
+      "fica sujeito à pena do crime consumado, reduzida de 1/3 até a metade.",
+      "responde pela tentativa, com a pena diminuída de 1/3 a 2/3.",
+      "fica sujeito à pena do crime consumado, sem qualquer redução.",
+      "fica sujeito à pena do crime consumado, reduzida de 1/4 até a metade, como na Lei Antiterrorismo.",
+    ],
+    correta: 1,
+    explicacao:
+      "Art. 2º, §5º: atos preparatórios com propósito inequívoco de consumar levam à pena do consumado reduzida de 1/3 até a metade. É exceção legal à regra de impunidade da preparação. Não confunda: a tentativa do CP (art. 14, parágrafo único) reduz de 1/3 a 2/3, e a Lei Antiterrorismo (Lei 13.260, art. 5º) pune a preparação com a pena do consumado diminuída de 1/4 até a metade.",
+    origem: "banco",
+    fonte: "Lei 15.358/2026 (Planalto)",
+  },
+  {
+    id: "pp-034",
+    materia: "pp",
+    topico: "Lei nº 15.358/2026 (Marco Legal do Combate ao Crime Organizado)",
+    enunciado:
+      "Nos crimes previstos na Lei nº 15.358/2026, o inquérito policial deve ser concluído no prazo de:",
+    alternativas: [
+      "10 dias, se o indiciado estiver preso, e 30 dias, se estiver solto.",
+      "30 dias, se o indiciado estiver preso, e 90 dias, se estiver solto, podendo ser duplicados.",
+      "90 dias, se o indiciado estiver preso, e 270 dias, se estiver solto, prorrogável por igual período.",
+      "15 dias, prorrogáveis por mais 15, se o indiciado estiver preso, e 30 dias, se estiver solto.",
+      "120 dias, independentemente de o indiciado estar preso ou solto, vedada a prorrogação.",
+    ],
+    correta: 2,
+    explicacao:
+      "Art. 5º da Lei 15.358/2026: 90 dias com o indiciado preso e 270 dias com ele solto, prorrogável por igual período. 10 e 30 dias é a regra do CPP (art. 10); 30 e 90 dias, duplicáveis, é a da Lei de Drogas (art. 51); 15 mais 15 dias com preso é o inquérito federal (Lei 5.010/66). O §4º do art. 5º acrescenta que descumprir esses prazos não gera relaxamento automático.",
+    origem: "banco",
+    fonte: "Lei 15.358/2026 (Planalto)",
+  },
+  {
+    id: "pp-035",
+    materia: "pp",
+    topico: "Lei nº 15.358/2026 (Marco Legal do Combate ao Crime Organizado)",
+    enunciado:
+      "Em inquérito sobre crime da Lei nº 15.358/2026, o delegado de polícia representa por medida cautelar, o juiz a indefere e o Ministério Público não recorre. Nos termos da lei, o delegado:",
+    alternativas: [
+      "poderá interpor recurso em sentido estrito diretamente ao Tribunal de Justiça, por ter legitimidade recursal própria.",
+      "poderá, no prazo de 48 horas, submeter a matéria à revisão da instância superior competente do órgão ministerial, que deliberará no mesmo prazo.",
+      "nada poderá fazer, pois a decisão de indeferimento é irrecorrível e faz coisa julgada material.",
+      "deverá renovar a representação perante o juiz das garantias de outra comarca.",
+      "poderá impetrar habeas corpus em favor da sociedade para obter a medida.",
+    ],
+    correta: 1,
+    explicacao:
+      "Art. 5º, §6º, da Lei 15.358/2026: indeferida a representação e sem recurso do MP, o delegado pode, em 48 horas, submeter a matéria à revisão da instância superior competente do MP, conforme a Lei Orgânica, para deliberação no mesmo prazo. Pelo mesmo artigo, o juiz decide as representações em 15 dias (§1º), o MP dá parecer em 5 dias (§2º) e, na urgência, MP e juiz atuam em 24 horas (§3º).",
+    origem: "banco",
+    fonte: "Lei 15.358/2026 (Planalto)",
+  },
+  {
+    id: "pp-036",
+    materia: "pp",
+    topico: "Lei nº 15.358/2026 (Marco Legal do Combate ao Crime Organizado)",
+    enunciado:
+      "Sobre as medidas assecuratórias previstas na Lei nº 15.358/2026, assinale a alternativa correta.",
+    alternativas: [
+      "Só podem ser decretadas após o recebimento da denúncia, mediante prévio contraditório.",
+      "Dependem sempre de requerimento do Ministério Público, sendo vedadas a decretação de ofício e a representação do delegado.",
+      "O perdimento de bens exige, em qualquer caso, sentença penal condenatória transitada em julgado.",
+      "Podem ser decretadas sem prévia oitiva da parte, com contraditório diferido, e o investigado pode, em 10 dias da intimação, apresentar provas da origem lícita do bem.",
+      "Não alcançam ativos digitais, criptoativos nem transferências via Pix, por falta de previsão legal.",
+    ],
+    correta: 3,
+    explicacao:
+      "Art. 9º: o juiz pode decretá-las de ofício, a requerimento do MP ou por representação do delegado, na investigação ou na ação penal. Alcançam ativos digitais (I) e Pix e corretoras de criptoativos (IV). O §1º permite a decretação sem prévia oitiva, com contraditório diferido, e o §6º dá 10 dias da intimação para provar a origem lícita. Se a origem ilícita ficar clara, cabe perdimento extraordinário independentemente de condenação (§8º).",
+    origem: "banco",
+    fonte: "Lei 15.358/2026 (Planalto)",
+  },
+  {
+    id: "pp-037",
+    materia: "pp",
+    topico: "Lei nº 15.358/2026 (Marco Legal do Combate ao Crime Organizado)",
+    enunciado:
+      "Homicídio doloso cometido por integrante de organização criminosa ultraviolenta, conexo a crime de domínio social estruturado, será julgado, segundo a literalidade da Lei nº 15.358/2026 e do CPP por ela alterado:",
+    alternativas: [
+      "pelo Tribunal do Júri, que sempre prevalece no concurso com outro órgão da jurisdição comum.",
+      "pela Justiça Federal, em razão da natureza de crime organizado.",
+      "pelo juiz singular da vara criminal comum, com posterior referendo do Tribunal do Júri.",
+      "pela Vara Criminal Colegiada a que se refere o art. 1º-A da Lei nº 12.694/2012.",
+      "pelo Tribunal de Justiça, em competência originária.",
+    ],
+    correta: 3,
+    explicacao:
+      "Art. 2º, §8º, da Lei 15.358/2026: homicídios, consumados ou tentados, cometidos por membros de facção, grupo paramilitar ou milícia, conexos a esses crimes, são julgados pelas Varas Criminais Colegiadas (Lei 12.694, art. 1º-A). O CPP, art. 78, I, foi alterado para excepcionar a prevalência do júri nesses casos. A questão pede a literalidade: a compatibilidade com o art. 5º, XXXVIII, da CF ainda deve ser debatida no STF.",
+    origem: "banco",
+    fonte: "Lei 15.358/2026 (Planalto)",
+  },
+  {
+    id: "pp-038",
+    materia: "pp",
+    topico: "Lei nº 15.358/2026 (Marco Legal do Combate ao Crime Organizado)",
+    enunciado:
+      "Integrante de facção criminosa é preso em flagrante pela prática de domínio social estruturado. À luz da Lei nº 15.358/2026 e do CPP, é correto afirmar que:",
+    alternativas: [
+      "o juiz poderá decretar a preventiva de ofício, dispensada a representação do delegado ou o requerimento do MP.",
+      "a prática do crime é causa suficiente para a decretação da preventiva, e o CPP passou a admiti-la para integrante de facção no contexto das condutas do art. 2º da lei.",
+      "a preventiva fica vedada, pois o inquérito tem prazo certo de 90 dias e a prisão deve aguardar o seu término.",
+      "cabe apenas prisão temporária, por se tratar de crime hediondo.",
+      "a liberdade provisória com fiança é direito subjetivo do preso, por ser a primeira infração.",
+    ],
+    correta: 1,
+    explicacao:
+      "O art. 2º, §9º, da Lei 15.358/2026 diz que a prática do crime é causa suficiente para a preventiva. A lei também incluiu o inciso V no art. 313 do CPP. Continua vedada a preventiva de ofício (CPP, arts. 282, §2º, e 311). O crime é inafiançável (§4º, II).",
+    origem: "banco",
+    fonte: "Lei 15.358/2026 (Planalto)",
+  },
+  {
+    id: "pp-039",
+    materia: "pp",
+    topico: "Lei nº 15.358/2026 (Marco Legal do Combate ao Crime Organizado)",
+    enunciado:
+      "A Lei nº 15.358/2026 incluiu no Código Penal o art. 147-C, que pune:",
+    alternativas: [
+      "a perseguição reiterada que ameaça a integridade física ou psicológica da vítima (stalking), com reclusão de 6 meses a 2 anos.",
+      "a violência psicológica contra a mulher, com reclusão de 6 meses a 2 anos.",
+      "a ameaça praticada no contexto da atuação ou para a consecução das condutas de domínio social estruturado, com reclusão de 1 a 3 anos.",
+      "a ameaça simples, com detenção de 1 a 6 meses ou multa, procedendo-se mediante representação.",
+      "a ameaça contra agente de segurança pública no exercício da função, com reclusão de 2 a 4 anos.",
+    ],
+    correta: 2,
+    explicacao:
+      "Art. 147-C do CP (Lei 15.358/2026): ameaçar alguém, por qualquer meio, de mal injusto e grave, no contexto da atuação ou para a consecução das condutas do art. 2º do marco legal. A pena é de reclusão de 1 a 3 anos. O 147-A é a perseguição, o 147-B é a violência psicológica contra a mulher, e o 147 (caput) é a ameaça simples.",
+    origem: "banco",
+    fonte: "Lei 15.358/2026 (Planalto)",
+  },
+  {
+    id: "pp-040",
+    materia: "pp",
+    topico: "Lei nº 15.358/2026 (Marco Legal do Combate ao Crime Organizado)",
+    enunciado:
+      "Com as alterações da Lei nº 15.358/2026 na Lei de Execução Penal, os encontros no parlatório ou por meio virtual entre presos vinculados a organizações criminosas ultraviolentas e seus visitantes:",
+    alternativas: [
+      "são invioláveis, vedada qualquer forma de captação, em respeito à intimidade do preso.",
+      "poderão ser monitorados por captação audiovisual e gravação, a requerimento do delegado de polícia, do Ministério Público ou da administração penitenciária.",
+      "só podem ser monitorados mediante autorização do Conselho Penitenciário estadual.",
+      "poderão ser gravados apenas em áudio, vedada a captação de imagem.",
+      "poderão ser monitorados exclusivamente nos presídios federais, por ato do Ministro da Justiça.",
+    ],
+    correta: 1,
+    explicacao:
+      "Art. 41-A da LEP: os encontros no parlatório ou virtuais podem ser monitorados por captação audiovisual e gravação (caput). O pedido cabe ao delegado, ao MP ou à administração penitenciária (§1º). Nos presídios federais valem as regras da Lei 11.671 (§2º). Pelo art. 41-B, o conteúdo de comunicação monitorada entre advogado e cliente, autorizada por conluio criminoso reconhecido judicialmente, vai ao juízo de controle, distinto do juízo da instrução.",
+    origem: "banco",
+    fonte: "Lei 15.358/2026 (Planalto)",
+  },
+  {
+    id: "pp-041",
+    materia: "pp",
+    topico: "Audiência de custódia — prazo, finalidade e consequências da ausência",
+    enunciado:
+      "Com a redação dada pela Lei nº 15.358/2026 ao art. 310 do CPP, a audiência de custódia:",
+    alternativas: [
+      "deve ser presencial, vedado o emprego de videoconferência.",
+      "deve ser realizada em até 72 horas da prisão, por videoconferência ou presencialmente, a critério do delegado.",
+      "deve ser promovida em até 24 horas após a prisão, por videoconferência em tempo real, admitindo-se a forma presencial apenas em situações excepcionais de força maior, por decisão justificada do juiz.",
+      "dispensa a presença do Ministério Público quando realizada por videoconferência.",
+      "será presencial como regra, e virtual apenas com concordância expressa do preso e da defesa.",
+    ],
+    correta: 2,
+    explicacao:
+      "Art. 310, caput, do CPP: em até 24 horas após a prisão, o juiz promove a audiência por videoconferência em tempo real, com o preso, a defesa e o MP. Pelo §13, o ato presencial cabe em situações excepcionais de força maior, por decisão justificada, e é vedado se for demasiadamente custoso ou arriscado. A redação antiga do art. 3º-B, §1º, vedava a videoconferência, mas a Lei 15.358 a alterou.",
+    origem: "banco",
+    fonte: "CPP, art. 310 (Lei 15.358/2026)",
+  },
+  {
+    id: "pp-042",
+    materia: "pp",
+    topico: "Audiência de custódia — prazo, finalidade e consequências da ausência",
+    enunciado:
+      "Na audiência de custódia por videoconferência, nos termos do art. 310 do CPP alterado pela Lei nº 15.358/2026:",
+    alternativas: [
+      "o preso deve permanecer acompanhado de agente penitenciário durante toda a oitiva, para garantir a segurança do ato.",
+      "a entrevista prévia com o defensor fica dispensada, podendo ocorrer depois da audiência.",
+      "falhas técnicas convalidam-se se a defesa não as impugnar imediatamente.",
+      "havendo falha no sistema de comunicações atribuível ao tribunal, é obrigatória a repetição completa da audiência, sem convalescer qualquer ato incompleto.",
+      "a defesa técnica e o Ministério Público não podem suscitar questões de ordem, por se tratar de ato virtual.",
+    ],
+    correta: 3,
+    explicacao:
+      "Art. 310, §11: falha atribuível ao tribunal obriga a repetir toda a audiência. O §9º garante entrevista prévia, reservada e inviolável com o defensor. O §10 manda que o preso fique sozinho na sala durante a oitiva, ressalvada a presença física do defensor. O §8º assegura à defesa e ao MP todos os mecanismos de intervenção, inclusive questões de ordem.",
+    origem: "banco",
+    fonte: "CPP, art. 310 (Lei 15.358/2026)",
+  },
+  {
+    id: "pp-043",
+    materia: "pp",
+    topico: "Prisão em flagrante e outras prisões",
+    enunciado:
+      "Segundo o art. 310, §5º, do CPP, incluído pela Lei nº 15.272/2025, recomenda a conversão da prisão em flagrante em preventiva, entre outras circunstâncias:",
+    alternativas: [
+      "a gravidade abstrata do delito, ainda que não demonstrada a periculosidade concreta do agente.",
+      "o clamor público e a repercussão do fato na imprensa local.",
+      "ter o agente praticado a infração penal na pendência de inquérito ou ação penal.",
+      "a circunstância de o agente não comprovar emprego formal no momento da prisão.",
+      "ter o agente sido liberado em audiência de custódia anterior, ainda que depois absolvido daquela infração.",
+    ],
+    correta: 2,
+    explicacao:
+      "O art. 310, §5º, lista: reiteração (I); violência ou grave ameaça (II); liberação em custódia anterior, salvo absolvição posterior (III); infração na pendência de inquérito ou ação penal (IV); fuga ou perigo de fuga (V); risco à investigação, à instrução ou à prova (VI). O art. 312, §4º, também incluído pela Lei 15.272, veda a preventiva baseada na gravidade abstrata.",
+    origem: "banco",
+    fonte: "CPP, art. 310, §5º (Lei 15.272/2025)",
+  },
+  {
+    id: "pp-044",
+    materia: "pp",
+    topico: "Prisão em flagrante e outras prisões",
+    enunciado:
+      "De acordo com o CPP, com a redação da Lei nº 15.272/2025, devem ser considerados na aferição da periculosidade do agente, geradora de riscos à ordem pública:",
+    alternativas: [
+      "o modus operandi, a participação em organização criminosa, a natureza, a quantidade e a variedade de drogas, armas ou munições apreendidas e o fundado receio de reiteração delitiva.",
+      "apenas os antecedentes criminais transitados em julgado, vedada a consideração de inquéritos em curso.",
+      "exclusivamente a pena máxima cominada ao crime, que deve ser superior a 4 anos.",
+      "a condição econômica do agente e o seu local de residência.",
+      "a gravidade abstrata do tipo penal, dispensada a demonstração concreta do risco.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 312, §3º, do CPP traz o modus operandi, inclusive a violência reiterada e a premeditação (I), a participação em organização criminosa (II), a natureza, a quantidade e a variedade de drogas, armas ou munições (III) e o fundado receio de reiteração, inclusive à vista de outros inquéritos e ações em curso (IV). O §4º veda a preventiva pela gravidade abstrata.",
+    origem: "banco",
+    fonte: "CPP, art. 312, §§3º e 4º (Lei 15.272/2025)",
+  },
+  {
+    id: "pp-045",
+    materia: "pp",
+    topico: "Prisão em flagrante e outras prisões",
+    enunciado:
+      "Preso em flagrante por crime contra a dignidade sexual, nos termos do art. 310-A do CPP, incluído pela Lei nº 15.272/2025:",
+    alternativas: [
+      "a coleta de material genético é vedada antes do trânsito em julgado da condenação.",
+      "o Ministério Público ou a autoridade policial deverá requerer ao juiz a coleta de material biológico para obtenção e armazenamento do perfil genético, preferencialmente na própria audiência de custódia ou em até 10 dias.",
+      "a autoridade policial deve colher o material genético diretamente, independentemente de decisão judicial, em até 48 horas.",
+      "a coleta do perfil genético só é possível se o preso consentir por escrito, na presença de advogado.",
+      "a coleta deve ser feita pelo próprio juiz na audiência de custódia, dispensada a cadeia de custódia.",
+    ],
+    correta: 1,
+    explicacao:
+      "Art. 310-A do CPP: no flagrante por crime com violência ou grave ameaça, contra a dignidade sexual, de integrante de organização criminosa armada ou hediondo, o MP ou a autoridade policial deverá requerer ao juiz a coleta, na forma da Lei 12.037. A coleta ocorre preferencialmente na audiência de custódia ou em até 10 dias (§1º), por agente público treinado e respeitando a cadeia de custódia (§2º).",
+    origem: "banco",
+    fonte: "CPP, art. 310-A (Lei 15.272/2025)",
+  },
+  {
+    id: "pp-046",
+    materia: "pp",
+    topico: "Lei nº 15.358/2026 (Marco Legal do Combate ao Crime Organizado)",
+    enunciado:
+      "Após a Lei nº 15.358/2026, os crimes previstos nos arts. 33 a 37 da Lei de Drogas, quando praticados por integrante de organização criminosa ultraviolenta no contexto das condutas de domínio social estruturado:",
+    alternativas: [
+      "têm a pena aumentada de 1/6 a 2/3, como nas demais causas do art. 40 da Lei de Drogas.",
+      "têm as penas aplicadas em dobro, aplicando-se o concurso material se praticados com emprego de arma de fogo.",
+      "são absorvidos pelo crime de domínio social estruturado.",
+      "têm a pena aplicada em triplo, desprezadas as demais causas de aumento.",
+      "passam a ser punidos apenas com a pena do art. 35 (associação para o tráfico).",
+    ],
+    correta: 1,
+    explicacao:
+      "O art. 40-A da Lei 11.343, incluído pela Lei 15.358, aplica em dobro as penas dos arts. 33 a 37 quando praticados por integrante de facção nesse contexto. Pelo parágrafo único, com arma de fogo aplica-se o concurso material (CP, art. 69). A pena em triplo, desprezadas as demais causas de aumento, é a do novo §4º do art. 157 do CP (roubo de facção).",
+    origem: "banco",
+    fonte: "Lei 15.358/2026 (Planalto)",
   },
 ];

@@ -94,10 +94,12 @@ export const SUBJECTS: Subject[] = [
       "Constituição do Estado do Paraná",
       "LC Estadual 259/2023 (regime jurídico da PCPR)",
       "Lei Estadual 23.213/2026 (Lei Orgânica da PCPR)",
-      "Lei Estadual 21.894/2024 e Lei Estadual 6.174/1970",
+      "Lei Estadual 21.894/2024 (Código Disciplinar da PCPR)",
       "Lei 12.037/2009 (Identificação Criminal)",
       "Lei 13.869/2019 (Abuso de Autoridade)",
       "LGPD e Lei de Acesso à Informação (12.527/2011)",
+      "Lei 14.735/2023 (Lei Orgânica Nacional das Polícias Civis)",
+      "Lei Estadual 6.174/1970 (Estatuto dos Servidores do PR)",
     ],
   },
   {

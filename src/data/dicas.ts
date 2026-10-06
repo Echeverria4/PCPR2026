@@ -26,7 +26,7 @@ export const DICAS: DicaDia[] = [
   },
   {
     materia: "leg",
-    texto: "A LC 259/2023 reorganizou a carreira da Polícia Civil do Paraná — vale revisar as mudanças de nomenclatura de cargos.",
+    texto: "LC 259/2023, arts. 76 e 77: os cargos de Escrivão e de Investigador, vagos e ocupados, viraram Agente de Polícia Judiciária, que absorveu os direitos, deveres e atribuições dos dois. Carreiras atuais (art. 3º): Delegado, Agente, Papiloscopista e Agente de Operações Policiais (em extinção).",
   },
   {
     materia: "pp",
@@ -131,6 +131,10 @@ export const DICAS: DicaDia[] = [
   {
     materia: "leg",
     texto: "Estatuto do servidor público do Paraná é a Lei Estadual 6.174/1970 — não confunda com a legislação federal (Lei 8.112/90).",
+  },
+  {
+    materia: "leg",
+    texto: "Código Disciplinar da PCPR (21.894) x Estatuto (6.174): demissão prescreve em 5 anos x 4 anos; inassiduidade com mais de 45 faltas alternadas em 1 ano x 60 faltas interpoladas em 12 meses; sem advertência x advertência verbal; suspensão com metade do subsídio x conversão em multa de 50%; recurso com efeito suspensivo x sem efeito suspensivo. Abandono é 30 dias consecutivos nas duas.",
   },
   {
     materia: "pp",

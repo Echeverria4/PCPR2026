@@ -11,23 +11,23 @@ export const MODELOS_MENTAIS_LEG: ModeloMental[] = [
   {
     topico: "LC Estadual 259/2023 (regime jurídico da PCPR)",
     origem: "oficial",
-    gancho: "Regime jurídico é o \"contrato de trabalho\" do policial civil",
+    gancho: "4 carreiras, 11 níveis e um curso que demite",
     modelo:
-      "A Lei Complementar Estadual 259/2023 define direitos, deveres e regras funcionais do servidor da PCPR — é o estatuto que rege a carreira, com papel equivalente ao de um estatuto do servidor público em outros estados.",
+      "A LC 259 é a vida funcional do policial, do ingresso à inatividade. Carreiras: Delegado, Agente (onde foram parar Escrivão e Investigador), Papiloscopista e AOP (em extinção). O caminho é posse em 30 + 30 dias, curso da ESPC (matrícula = exercício; reprovação em uma disciplina = demissão), estágio de 3 anos e estabilidade declarada pelo Conselho Superior. A carreira tem 11 níveis com interstício de 2 anos: estabilidade leva ao II, titulação ao VI e ao X, capacitação aos demais. A promoção abre em maio e em outubro. Paga-se subsídio (R$ 8.131,19 no nível I), sem outra atividade remunerada além do magistério.",
   },
   {
     topico: "Lei Estadual 23.213/2026 (Lei Orgânica da PCPR)",
     origem: "oficial",
-    gancho: "Lei orgânica é a planta baixa institucional da PCPR",
+    gancho: "Direção Superior é um tripé: Delegacia-Geral, Conselho e Corregedoria",
     modelo:
-      "Define estrutura, órgãos, competências e hierarquia da Polícia Civil do Paraná. É a lei mais nova do pacote listado no edital, então merece prioridade de leitura por ser recente e menos \"batida\" em resumos prontos.",
+      "A Lei 23.213 é a planta da instituição, e substituiu a LC 14/1982. Monte a pirâmide em 4 andares. Direção Superior: DG, CSP e CGP. Assessoramento: Gabinete, Assessorias, DIP e DCI. Instrumental: COI, ESPC, DPAF e DTI. Execução: Instituto de Identificação e departamentos. O CSP tem 11 membros, com 1 vaga das carreiras de base que só vota em disciplina de Agente, Papiloscopista e AOP. A Corregedoria apura com exclusividade a transgressão e, de preferência, o crime do policial, e faz o TAC. Duas regras de bolso: é vedada a avocação, salvo despacho fundamentado; e unidade nova exige 30 mil habitantes e 500 BOs por ano, mas toda sede de comarca tem DP.",
   },
   {
-    topico: "Lei Estadual 21.894/2024 e Lei Estadual 6.174/1970",
+    topico: "Lei Estadual 21.894/2024 (Código Disciplinar da PCPR)",
     origem: "oficial",
-    gancho: "Uma é nova, outra é clássica — as duas tratam do servidor estadual",
+    gancho: "Disciplina da PCPR: 5 penas, sem advertência, prazos em dias úteis",
     modelo:
-      "A Lei 6.174/1970 é o estatuto histórico dos servidores civis do Paraná (deveres, proibições, regime disciplinar geral). A Lei 21.894/2024 é atualização mais recente aplicável à categoria — vale ler as duas em conjunto para notar o que uma altera ou revoga da outra.",
+      "A 21.894 é a lei de punição do policial civil. Pense em uma escada de 5 degraus sem o primeiro degrau da advertência: repreensão, suspensão de até 90 dias com metade do subsídio, demissão e as duas cassações. Quem pune: o Conselho Superior aplica repreensão e suspensão, e o Governador aplica demissão e cassação. Ritmo do processo: investigação preliminar de 60 dias, PAD de 120 + 120 e afastamento preventivo de 90 + 60 sem perder subsídio. Recurso em 10 dias úteis com efeito suspensivo. Prescreve em 2 ou 5 anos. A demissão vem do abandono (30 dias seguidos) ou de mais de 45 faltas alternadas em 1 ano. O TAC fica para a falta leve (repreensão ou suspensão de até 30 dias), fora do estágio probatório e no máximo 1 a cada 2 anos.",
   },
   {
     topico: "Lei 12.037/2009 (Identificação Criminal)",
@@ -53,22 +53,29 @@ export const MODELOS_MENTAIS_LEG: ModeloMental[] = [
   {
     topico: "Estrutura organizacional da PCPR (delegacias, carreiras, hierarquia)",
     origem: "aposta",
-    gancho: "Saber o organograma evita confundir delegacia com carreira",
+    gancho: "Carreira não é órgão, e órgão não é unidade",
     modelo:
-      "Conhecer a divisão entre delegacias especializadas, as carreiras (delegado, agente, escrivão, papiloscopista) e a hierarquia entre elas é pré-requisito prático para entender qualquer questão de legislação orgânica sem decorar artigo por artigo.",
+      "Separe três gavetas. Carreiras (LC 259): Delegado, Agente (o antigo Escrivão e o antigo Investigador), Papiloscopista e AOP em extinção. Órgãos de cúpula (Lei 23.213): Delegacia-Geral, Conselho Superior e Corregedoria. Unidades: territoriais (DP e SDP, com DP em toda sede de comarca) e especializadas por matéria (DHPP, DENARC, DRACO, DPV, DOESP, DRCC). Se a alternativa misturar as gavetas ou citar o Escrivão como carreira atual, desconfie.",
   },
   {
-    topico: "Regime disciplinar e deveres/proibições do servidor (Lei Estadual 6.174/1970)",
-    origem: "aposta",
-    gancho: "Deveres dizem o que fazer; proibições dizem o que nunca fazer",
+    topico: "Lei Estadual 6.174/1970 (Estatuto dos Servidores do PR)",
+    origem: "oficial",
+    gancho: "Estatuto de 1970: 9 formas de entrar, 7 penas e muitos números que pegam",
     modelo:
-      "A Lei Estadual 6.174/1970 lista separadamente os deveres funcionais (regras positivas) e as proibições (regras negativas) do servidor. Decorar essa divisão em duas colunas ajuda a eliminar alternativas que invertem a natureza da regra.",
+      "O Estatuto é a lei-base que preenche o que a LC 259 não regula. Grave três listas: 9 provimentos (nomeação, promoção, acesso, transferência, readmissão, reintegração, aproveitamento, reversão, readaptação); a vacância do art. 123; e 7 penas, que começam pela advertência verbal. Quando a prova comparar com o Código Disciplinar (21.894), lembre que o Estatuto tem advertência, multa de 50% na conversão da suspensão, inassiduidade com 60 faltas em 12 meses e prescrição de 4 anos para a demissão. O Código Disciplinar não tem advertência, corta metade do subsídio na suspensão, demite com mais de 45 faltas e prescreve em 5 anos. Na estabilidade, prevalecem os 3 anos da CF, e não os 2 do texto antigo.",
   },
   {
     topico: "Alterações legislativas de 2025/2026 na estrutura da Polícia Civil do PR",
     origem: "aposta",
-    gancho: "A lei mais nova do edital é a que a banca mais gosta de testar",
+    gancho: "Linha do tempo: 2023 regime, 2024 disciplina, 2025 ajustes, 2026 Lei Orgânica",
     modelo:
-      "LC 259/2023 e Lei 23.213/2026 já são recentes o suficiente para terem detalhes menos \"batidos\" em resumos prontos. Vale revisar o texto oficial perto da data da prova, já que mudanças de 2025/2026 na estrutura da PCPR são as mais prováveis de aparecer como novidade.",
+      "Monte a linha do tempo e você não cai em material desatualizado. 2023: LC 259 (Agente único, 11 níveis, subsídio) e Lei 14.735 (molde nacional). 2024: Lei 21.894 (Código Disciplinar). 2025: LC 285 (curso de formação que demite) e LC 289 (ressarcimento, perdas, difícil provimento). 2026: Lei 23.213 (nova Lei Orgânica, que revoga a LC 14/1982). Escrivão, Investigador e LC 14/1982 são passado. O corte do edital é 03/07/2026.",
+  },
+  {
+    topico: "Lei 14.735/2023 (Lei Orgânica Nacional das Polícias Civis)",
+    origem: "oficial",
+    gancho: "Lei nacional dá o molde; o Paraná preenche com a Lei 23.213",
+    modelo:
+      "Norma geral (cada Estado faz a sua lei orgânica, por iniciativa do governador). A polícia civil é permanente, típica de Estado, integra o Susp e é chefiada por delegado da classe mais elevada. Órgãos essenciais: Delegacia-Geral, Conselho Superior, Corregedoria (com duplo grau na demissão) e Escola Superior. Cargos de nível superior: delegado (Direito + 3 anos), oficial investigador (qualquer graduação; no PR, o Agente) e perito. O investigador age sob coordenação do delegado e produz o laudo investigativo. Estabilidade em 3 anos; exoneração antes de 3 anos ressarce a formação. Porte nacional de arma. É vedado divulgar técnicas de investigação, e não se custodia preso em delegacia. Dia nacional: 5 de abril.",
   },
 ];
