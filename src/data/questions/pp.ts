@@ -845,4 +845,61 @@ export const QUESTOES_PP: Question[] = [
     origem: "banco",
     fonte: "Lei 15.358/2026 (Planalto)",
   },
+  {
+    id: "pp-047",
+    materia: "pp",
+    topico: "Ação penal",
+    enunciado:
+      "Em agosto de 2026, uma mulher passa a ser perseguida pelo ex-companheiro (art. 147-A do CP), num contexto de violência doméstica e familiar. Ela descobre no mesmo mês quem é o autor, mas só oferece representação na delegacia dez meses depois. Pelo CPP, com a redação da Lei 15.438/2026, a representação é:",
+    alternativas: [
+      "tempestiva, porque nos crimes praticados no âmbito da violência doméstica e familiar contra a mulher o prazo de decadência é de 12 meses, contado do dia em que a ofendida soube quem é o autor.",
+      "intempestiva, porque o prazo de decadência é de 6 meses para todos os crimes de ação condicionada.",
+      "desnecessária, porque a perseguição contra a mulher passou a ser crime de ação pública incondicionada.",
+      "intempestiva, porque o prazo de decadência conta da data do fato, e não da ciência da autoria.",
+      "tempestiva, mas só porque o prazo de 12 meses vale para a queixa nos crimes de ação privada, e a representação não tem prazo.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 38 do CPP: a regra é a decadência em 6 meses, contados do dia em que o ofendido souber quem é o autor do crime. A Lei 15.438/2026 (18/6/2026, vigência na publicação) incluiu o §2º: nos crimes praticados no âmbito da violência doméstica e familiar contra a mulher, a ofendida decai do direito de queixa ou de representação em 12 meses, com a mesma forma de contagem. A perseguição continua dependendo de representação (art. 147-A, §3º, do CP). Já a ameaça contra a mulher por razões da condição do sexo feminino é de ação incondicionada desde a Lei 14.994/2024 (art. 147, §2º). Como o prazo maior agrava a situação do autor, a regra só alcança fatos posteriores à lei, como o do enunciado.",
+    origem: "banco",
+    fonte: "CPP, art. 38, §2º (Lei 15.438/2026); CP, art. 147-A, §3º",
+  },
+  {
+    id: "pp-048",
+    materia: "pp",
+    topico: "Medidas cautelares",
+    enunciado:
+      "Durante o inquérito de um crime contra a dignidade sexual, a autoridade policial representa por medidas de proteção à vítima. Pelas regras que a Lei 15.280/2025 incluiu no CPP, é correto afirmar que:",
+    alternativas: [
+      "havendo indícios do crime, o juiz pode aplicar de imediato medidas protetivas de urgência ao autor, cumuladas com monitoração eletrônica e com um dispositivo de segurança entregue à vítima que alerta sobre a aproximação dele.",
+      "as medidas protetivas só podem ser aplicadas se a vítima for mulher e o crime ocorrer no âmbito doméstico, nos termos da Lei Maria da Penha.",
+      "o juiz só pode aplicar as medidas após o recebimento da denúncia, e nunca durante o inquérito.",
+      "a proibição de o autor exercer atividade com contato direto com pessoa vulnerável só pode ser pedida pelo Ministério Público.",
+      "a monitoração eletrônica do autor substitui as demais medidas, que não podem ser aplicadas em conjunto.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 350-A do CPP (Lei 15.280/2025): constatados indícios de crime contra a dignidade sexual, o juiz pode aplicar de imediato ao autor, em conjunto ou separadamente, medidas como a suspensão da posse ou restrição do porte de arma, o afastamento do lar, a proibição de aproximação e de contato com a vítima, familiares e testemunhas, a restrição de visitas a dependentes menores e alimentos provisionais. Pelo §5º, a medida é cumulada com monitoração eletrônica do autor, e a vítima recebe dispositivo que alerta sobre a aproximação. Pelo §6º, a regra vale também para vítimas vulneráveis (crianças, adolescentes, pessoas com deficiência ou incapazes), qualquer que seja o crime. Pelo art. 350-B, em qualquer fase da investigação ou do processo, a pedido do delegado, do MP ou da vítima, o juiz pode proibir o autor de exercer atividade com contato direto com pessoa vulnerável. O descumprimento é crime (art. 338-A do CP: reclusão de 2 a 5 anos).",
+    origem: "banco",
+    fonte: "CPP, arts. 350-A e 350-B (Lei 15.280/2025)",
+  },
+  {
+    id: "pp-049",
+    materia: "pp",
+    topico: "Prova no processo penal",
+    enunciado:
+      "Um investigado por estupro é preso preventivamente e levado ao estabelecimento prisional. Pelo art. 300-A do CPP, incluído pela Lei 15.280/2025:",
+    alternativas: [
+      "ele deve ser submetido obrigatoriamente à identificação do perfil genético, por extração de DNA com técnica adequada e indolor, ao ingressar no estabelecimento prisional.",
+      "a coleta de DNA só pode ocorrer após o trânsito em julgado da condenação.",
+      "a coleta depende do consentimento expresso do preso, por força do direito de não produzir prova contra si.",
+      "a identificação genética só alcança condenados por crimes hediondos com resultado morte.",
+      "a coleta é facultativa e depende de requerimento do Ministério Público em cada caso.",
+    ],
+    correta: 0,
+    explicacao:
+      "Art. 300-A do CPP (Lei 15.280/2025): o investigado por crime contra a dignidade sexual, quando preso cautelarmente, e o condenado pelos mesmos crimes devem ser submetidos obrigatoriamente à identificação do perfil genético, mediante extração de DNA, por técnica adequada e indolor, no ingresso no estabelecimento prisional. A regra antecipa a coleta para a prisão cautelar. Para os condenados em geral, o art. 9º-A da LEP (redação da Lei 15.295/2025, em vigor em janeiro de 2026) manda colher o DNA de todo condenado à reclusão em regime inicial fechado, também no ingresso no estabelecimento prisional.",
+    origem: "banco",
+    fonte: "CPP, art. 300-A (Lei 15.280/2025)",
+  },
 ];
