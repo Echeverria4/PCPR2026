@@ -268,4 +268,138 @@ export const QUESTOES_EST: Question[] = [
       "Pela regra 68-95-99,7: aproximadamente 68% dos valores ficam a até 1 desvio-padrão da média, cerca de 95% a até 2 desvios-padrão, e por volta de 99,7% a até 3 desvios-padrão — regra usada para leitura rápida da dispersão de dados que seguem uma distribuição normal.",
     origem: "banco",
   },
+
+  {
+    id: "est-019",
+    materia: "est",
+    topico: "Média e mediana — efeito da inclusão de novos valores",
+    enunciado:
+      "Um conjunto de 36 idades de funcionários de uma empresa tem média 42 anos e mediana 41 anos. Quatro novos funcionários são incorporados ao grupo, com idades de 38, 38, 42 e 50 anos. Em relação aos novos valores de média e mediana desse grupo, agora com 40 funcionários, é correto afirmar que:",
+    alternativas: [
+      "a nova média passa a ser 42,5 anos, e a nova mediana permanece igual a 41 anos.",
+      "a nova média passa a ser 42,5 anos, e a nova mediana passa a ser 41,2 anos.",
+      "a nova média permanece igual a 42 anos, e a nova mediana permanece igual a 41 anos.",
+      "a nova média permanece igual a 42 anos, mas a mediana não pode ser determinada com esses dados.",
+      "nada se pode afirmar, apenas com esses dados, sobre os novos valores da média e da mediana.",
+    ],
+    correta: 3,
+    explicacao:
+      "A nova média é obtida somando o total anterior (42 × 36 = 1.512) aos quatro novos valores (38+38+42+50 = 168) e dividindo pelo novo total de funcionários: (1.512+168)/40 = 1.680/40 = 42 — a média permanece 42. Já a nova mediana não pode ser determinada apenas com a média e a mediana anteriores: como não se conhece a distribuição completa das 36 idades originais (apenas que a mediana era 41), a posição exata dos quatro novos valores na ordenação final do grupo de 40 pode alterar a mediana de formas diferentes, a depender de como as idades originais estavam distribuídas.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2025 — SEFAZ-PR — Auditor Fiscal",
+  },
+  {
+    id: "est-020",
+    materia: "est",
+    topico: "Média e mediana — sistema de equações",
+    enunciado:
+      "A média aritmética de 4 números inteiros positivos é 9, e a mediana dessa lista vale 8. Sabendo que a diferença entre o maior e o menor desses números é igual a 10, o maior deles vale:",
+    alternativas: [
+      "15.",
+      "14.",
+      "12.",
+      "11.",
+      "10.",
+    ],
+    correta: 0,
+    explicacao:
+      "Sejam os quatro números ordenados a ≤ b ≤ c ≤ d. Da média: a+b+c+d = 36. Da mediana, (b+c)/2 = 8, logo b+c = 16, e portanto a+d = 36 − 16 = 20. Da diferença d − a = 10, combinando com a+d = 20, obtém-se a = 5 e d = 15. O maior número da lista é, portanto, 15.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2025 — Polícia Militar de SP — Oficial",
+  },
+  {
+    id: "est-021",
+    materia: "est",
+    topico: "Média e mediana — supressão de elemento",
+    enunciado:
+      "Uma lista é composta por 4 números positivos e distintos, cuja média é 7,0 e a mediana é 7,5. Ao suprimir o menor desses números, a média dos 3 restantes passa a ser 8,0. A diferença entre o maior e o menor valor dessa lista é:",
+    alternativas: [
+      "7,0.",
+      "6,5.",
+      "6,0.",
+      "5,5.",
+      "5,0.",
+    ],
+    correta: 4,
+    explicacao:
+      "Sejam os números ordenados a < b < c < d. Da média: a+b+c+d = 28. Da mediana, (b+c)/2 = 7,5, logo b+c = 15. Suprimindo o menor (a), os 3 restantes somam 28 − a, com média 8,0, logo 28 − a = 24, ou seja, a = 4. Como b+c = 15, o maior valor é d = 24 − 15 = 9. A diferença entre o maior e o menor é d − a = 9 − 4 = 5,0.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2026 — TJ-SC — Analista Contábil-Econômico",
+  },
+  {
+    id: "est-022",
+    materia: "est",
+    topico: "Mediana, desvio interquartil e desvio absoluto médio",
+    enunciado:
+      "Considere o conjunto de notas de 10 alunos em uma avaliação: 7, 8, 6, 9, 10, 5, 7, 8, 6, 9. A mediana, o desvio interquartil (Q3 − Q1) e o desvio absoluto médio desse conjunto são, respectivamente, iguais a:",
+    alternativas: [
+      "7,5; 2,0 e 1,3.",
+      "7,5; 3,0 e 1,3.",
+      "7,5; 3,0 e 1,5.",
+      "8,0; 3,0 e 13/11.",
+      "8,0; 2,0 e 1,5.",
+    ],
+    correta: 1,
+    explicacao:
+      "Ordenando: 5, 6, 6, 7, 7, 8, 8, 9, 9, 10. A mediana é a média dos dois valores centrais: (7+8)/2 = 7,5. Separando a metade inferior {5,6,6,7,7} e a metade superior {8,8,9,9,10}, Q1 (mediana da metade inferior) = 6 e Q3 (mediana da metade superior) = 9, logo o desvio interquartil é 9 − 6 = 3,0. A média do conjunto é 75/10 = 7,5; a soma dos desvios absolutos em relação a ela totaliza 13,0, resultando em desvio absoluto médio de 13,0/10 = 1,3.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2025 — TCE-RR — Auditor de Controle Externo",
+  },
+  {
+    id: "est-023",
+    materia: "est",
+    topico: "Cálculo do desvio-padrão",
+    enunciado:
+      "Em uma prova de concurso, as notas de dez candidatos foram: 7, 7, 7, 7, 7, 7, 7, 8, 9, 10. O desvio-padrão (populacional) dessas notas é aproximadamente:",
+    alternativas: [
+      "0,92.",
+      "0,95.",
+      "0,98.",
+      "1,02.",
+      "1,05.",
+    ],
+    correta: 3,
+    explicacao:
+      "A média é (7×7+8+9+10)/10 = 76/10 = 7,6. Os quadrados dos desvios em relação à média somam: 7×(7−7,6)² + (8−7,6)² + (9−7,6)² + (10−7,6)² = 2,52 + 0,16 + 1,96 + 5,76 = 10,4. Dividindo pelos 10 valores (desvio-padrão populacional) e extraindo a raiz quadrada: √(10,4/10) = √1,04 ≈ 1,02.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2026 — Prefeitura de São José dos Campos-SP — Professor de Matemática",
+  },
+  {
+    id: "est-024",
+    materia: "est",
+    topico: "Efeito de transformações lineares sobre média e desvio-padrão",
+    enunciado:
+      "Um conjunto de dados tem média igual a 6,0 e desvio-padrão igual a 1,50. Somando-se 2 unidades a cada um dos valores desse conjunto, os novos valores de média e desvio-padrão passam a ser, respectivamente:",
+    alternativas: [
+      "6,0 e 1,50.",
+      "8,0 e 1,50.",
+      "8,0 e 2,25.",
+      "8,0 e 3,50.",
+      "12,0 e 3,00.",
+    ],
+    correta: 1,
+    explicacao:
+      "Somar uma constante a todos os valores de um conjunto desloca a média pela mesma constante (6,0+2=8,0), mas não altera a dispersão dos dados em torno da média — por isso o desvio-padrão permanece 1,50. Esse efeito é diferente do de multiplicar os valores por uma constante, que altera tanto a média quanto o desvio-padrão proporcionalmente.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2026 — SEDUC-SP — Professor de Matemática",
+  },
+  {
+    id: "est-025",
+    materia: "est",
+    topico: "Efeito de transformações lineares sobre média e desvio-padrão",
+    enunciado:
+      "Os salários de uma empresa têm, atualmente, média de R$ 4.000,00 e desvio-padrão de R$ 300,00. A diretoria avalia dois cenários de reajuste para todos os funcionários: no Cenário A, um aumento fixo de R$ 200,00 para cada um; no Cenário B, um aumento de 5% sobre o salário atual de cada um. Com base nisso, é correto afirmar que:",
+    alternativas: [
+      "no Cenário A, a média passaria a ser R$ 4.200,00, e no Cenário B, o desvio-padrão passaria a ser R$ 315,00.",
+      "no Cenário A, a média permaneceria em R$ 4.000,00, e no Cenário B, o desvio-padrão passaria a ser R$ 315,00.",
+      "no Cenário A, a média passaria a ser R$ 4.200,00, e no Cenário B, o desvio-padrão permaneceria em R$ 300,00.",
+      "no Cenário A, o desvio-padrão passaria a ser R$ 315,00, e no Cenário B, a média passaria a ser R$ 4.200,00.",
+      "em ambos os cenários, a média e o desvio-padrão permaneceriam inalterados.",
+    ],
+    correta: 0,
+    explicacao:
+      "Um aumento fixo (Cenário A) desloca a média pelo mesmo valor (4.000+200=4.200), sem alterar o desvio-padrão, que permanece 300, pois a dispersão entre os salários não muda. Um aumento percentual (Cenário B) multiplica tanto a média quanto o desvio-padrão pelo mesmo fator (1,05): a média vai a 4.000×1,05=4.200, e o desvio-padrão vai a 300×1,05=315.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2026 — TJ-SC — Analista Contábil",
+  },
 ];
