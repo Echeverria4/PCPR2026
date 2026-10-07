@@ -2,7 +2,9 @@ import { useState, type CSSProperties } from "react";
 import { SUBJECTS } from "../data/subjects";
 import { CONTEUDO_POR_MATERIA } from "../data/conteudos";
 import { RAIO_X } from "../data/raioX";
+import { videosDoTopico } from "../data/videosTopicos";
 import type { RaioX, SubjectId } from "../lib/types";
+import { VideoMini } from "./VideoCard";
 
 function ColunaRaioX({ titulo, classe, itens }: { titulo: string; classe: string; itens: string[] }) {
   if (itens.length === 0) return null;
@@ -39,6 +41,21 @@ function CaixaRaioX({ raioX }: { raioX: RaioX }) {
         </div>
       )}
     </section>
+  );
+}
+
+function VideosDoTopico({ materia, topico }: { materia: SubjectId; topico: string }) {
+  const videos = videosDoTopico(materia, topico);
+  if (videos.length === 0) return null;
+  return (
+    <div className="conteudo-videos">
+      <h4>🎬 Vídeos deste tópico</h4>
+      <div className="video-mini-lista">
+        {videos.map((v) => (
+          <VideoMini key={v.url} video={v} />
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -106,6 +123,8 @@ export default function Conteudo() {
             <strong>Curiosidade:</strong> {t.curiosidade}
           </div>
         )}
+
+        <VideosDoTopico materia={t.materia} topico={t.topico} />
       </article>
     );
   }

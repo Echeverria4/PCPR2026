@@ -55,6 +55,8 @@ export interface VideoRecurso {
   canal: string;
   url: string;
   dica?: string;
+  /** Duração como o YouTube mostra (ex.: "45:34"). */
+  duracao?: string;
 }
 
 export interface ProvaLink {

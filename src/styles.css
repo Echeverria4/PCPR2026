@@ -1040,6 +1040,135 @@ button {
   border-color: #ff7a80;
 }
 
+/* Vídeos por tópico (cartões de conteúdo e aba Vídeos) */
+.conteudo-videos {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: var(--raio);
+  background: var(--bg-elevado);
+  border-left: 3px solid var(--vermelho);
+}
+
+.conteudo-videos h4 {
+  margin: 0 0 10px;
+  font-family: var(--fonte-cond);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--vermelho);
+}
+
+.video-mini-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.video-mini {
+  display: grid;
+  grid-template-columns: 168px 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.video-mini-tocando {
+  grid-template-columns: 1fr;
+}
+
+.video-mini-midia {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--raio-peq);
+  overflow: hidden;
+  background: #000;
+}
+
+.video-mini .video-embed-play {
+  width: 42px;
+  height: 30px;
+  font-size: 0.85rem;
+}
+
+.video-mini-duracao {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-family: var(--fonte-mono);
+  font-size: 0.7rem;
+}
+
+.video-mini-info {
+  min-width: 0;
+}
+
+.video-mini-titulo {
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--texto);
+  margin-bottom: 4px;
+  overflow-wrap: anywhere;
+}
+
+.video-mini .video-canal {
+  margin-bottom: 6px;
+}
+
+.video-mini-dica {
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--texto-fraco);
+  margin: 0 0 6px;
+}
+
+.video-mini-link {
+  font-family: var(--fonte-cond);
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--vermelho);
+  text-decoration: none;
+}
+
+.video-mini-link:hover {
+  text-decoration: underline;
+}
+
+.video-topico-aposta {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 1px 7px;
+  border-radius: 3px;
+  background: rgba(202, 160, 58, 0.18);
+  color: var(--ouro-forte);
+  font-family: var(--fonte-cond);
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+@media (max-width: 640px) {
+  .video-mini {
+    grid-template-columns: 124px 1fr;
+    gap: 10px;
+  }
+
+  .video-mini-tocando {
+    grid-template-columns: 1fr;
+  }
+
+  .video-mini-titulo {
+    font-size: 0.85rem;
+  }
+}
+
 /* ---------- Provas reais ---------- */
 .prova-lista {
   display: flex;
