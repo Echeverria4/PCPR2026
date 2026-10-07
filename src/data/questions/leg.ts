@@ -2345,4 +2345,251 @@ export const QUESTOES_LEG: Question[] = [
     origem: "banco",
     fonte: "Lei Estadual 23.213/2026 (PR), arts. 33 e 39",
   },
+  {
+    id: "leg-125",
+    materia: "leg",
+    topico: "Constituição do Estado do Paraná — Princípios da Administração Pública",
+    enunciado:
+      "Em relação aos princípios que regem a administração pública direta, indireta e fundacional de qualquer dos Poderes do Estado e dos Municípios, a Constituição do Paraná, no art. 27, caput, acrescenta aos princípios do art. 37 da Constituição Federal",
+    alternativas: [
+      "a razoabilidade, a motivação, a economicidade e a probidade.",
+      "a supremacia do interesse público e a subsidiariedade administrativa.",
+      "a gratuidade, a uniformidade e a universalidade dos serviços públicos.",
+      "a continuidade do serviço público e a autotutela administrativa.",
+      "a especialidade e a hierarquia funcional entre os Poderes do Estado.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 27, caput, da Constituição do Paraná repete os princípios do art. 37 da CF (legalidade, impessoalidade, moralidade, publicidade, eficiência) e acrescenta razoabilidade, motivação, economicidade e probidade, que não constam do rol federal.",
+    origem: "banco",
+    fonte: "Constituição do Estado do Paraná, art. 27",
+  },
+  {
+    id: "leg-126",
+    materia: "leg",
+    topico: "Constituição do Estado do Paraná — Validade do concurso público",
+    enunciado:
+      "Segundo o art. 27, III, da Constituição do Estado do Paraná, o prazo de validade do concurso público é de",
+    alternativas: [
+      "até dois anos, prorrogável uma única vez, por igual período.",
+      "até quatro anos, prorrogável uma única vez, por metade do prazo inicial.",
+      "até um ano, prorrogável sucessivamente enquanto houver cargos vagos a prover.",
+      "até dois anos, sem possibilidade de qualquer prorrogação.",
+      "até três anos, prorrogável duas vezes, por igual período cada uma.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 27, III, fixa o prazo de validade do concurso público em até dois anos, prorrogável uma única vez por igual período — se o concurso previu 1 ano, a prorrogação é de mais 1 ano, e não de 2.",
+    origem: "banco",
+    fonte: "Constituição do Estado do Paraná, art. 27, III",
+  },
+  {
+    id: "leg-127",
+    materia: "leg",
+    topico: "Constituição do Estado do Paraná — Provas em concurso público",
+    enunciado:
+      "Nos concursos públicos promovidos pela Administração Pública do Paraná, o art. 27, §11, da Constituição do Estado estabelece que",
+    alternativas: [
+      "não haverá prova oral de caráter eliminatório, ressalvada a prova didática para os cargos do magistério.",
+      "é admitida prova oral eliminatória em qualquer concurso, desde que prevista expressamente no edital.",
+      "não haverá prova de qualquer natureza, nem classificatória nem eliminatória, em nenhum concurso público.",
+      "a prova oral eliminatória é vedada apenas nos concursos para cargos de nível superior.",
+      "a vedação à prova oral eliminatória se aplica aos concursos federais, mas não aos estaduais.",
+    ],
+    correta: 0,
+    explicacao:
+      "O §11 do art. 27 veda a prova oral de caráter eliminatório nos concursos públicos estaduais, ressalvada apenas a prova didática para os cargos do magistério.",
+    origem: "banco",
+    fonte: "Constituição do Estado do Paraná, art. 27, §11",
+  },
+  {
+    id: "leg-128",
+    materia: "leg",
+    topico: "Constituição do Estado do Paraná — Subsídio de agentes políticos",
+    enunciado:
+      "Pelo art. 33, §4º, da Constituição do Estado do Paraná, o membro de Poder, o detentor de mandato eletivo e os Secretários Estaduais e Municipais",
+    alternativas: [
+      "são remunerados exclusivamente por subsídio fixado em parcela única, vedado o acréscimo de qualquer gratificação, adicional, abono ou verba de representação.",
+      "recebem subsídio em parcela única, mas ainda assim podem acumular gratificação de representação durante o exercício do cargo, por força de lei específica.",
+      "podem optar, a qualquer tempo, entre o regime de subsídio e o regime de vencimentos com adicionais, conforme a conveniência do Poder a que pertençam.",
+      "recebem remuneração variável, vinculada ao desempenho do órgão em que atuam, somada a uma parcela fixa mensal de subsídio.",
+      "têm sua remuneração fixada por decreto do Chefe do Poder Executivo, dispensada a edição de lei específica para tanto.",
+    ],
+    correta: 0,
+    explicacao:
+      "O §4º do art. 33 exige subsídio em parcela única para membros de Poder, detentores de mandato eletivo e Secretários, vedado qualquer acréscimo de outra espécie remuneratória.",
+    origem: "banco",
+    fonte: "Constituição do Estado do Paraná, art. 33, §4º",
+  },
+  {
+    id: "leg-129",
+    materia: "leg",
+    topico: "Constituição do Estado do Paraná — Direitos sociais dos servidores",
+    enunciado:
+      "Entre os direitos assegurados aos servidores públicos pelo art. 34 da Constituição do Estado do Paraná, estão",
+    alternativas: [
+      "a jornada normal de trabalho não superior a oito horas diárias e quarenta horas semanais, e férias anuais remuneradas com pelo menos um terço a mais que a remuneração normal.",
+      "a jornada normal de trabalho não superior a seis horas diárias e trinta horas semanais, e férias anuais concedidas sem qualquer acréscimo sobre a remuneração normal do servidor.",
+      "a jornada de quarenta e quatro horas semanais e férias anuais remuneradas com acréscimo de metade da remuneração normal do servidor público estadual.",
+      "a jornada de oito horas diárias, sem qualquer limite semanal fixado em lei, e férias concedidas de dois em dois anos com acréscimo de um terço.",
+      "a jornada de trabalho fixada livremente por cada órgão da administração pública, e férias anuais concedidas sem qualquer remuneração adicional.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 34 assegura jornada de até 8h diárias e 40h semanais e férias anuais com acréscimo de pelo menos 1/3 sobre a remuneração normal, entre outros direitos sociais do servidor.",
+    origem: "banco",
+    fonte: "Constituição do Estado do Paraná, art. 34",
+  },
+  {
+    id: "leg-130",
+    materia: "leg",
+    topico: "Constituição do Estado do Paraná — RPPS e aposentadoria voluntária",
+    enunciado:
+      "Para a aposentadoria voluntária pelo regime próprio de previdência social, o art. 35, §1º, III, da Constituição do Estado do Paraná exige, cumulativamente,",
+    alternativas: [
+      "62 anos de idade para mulher e 65 para homem, e 25 anos de tempo de contribuição, com no mínimo 10 anos de efetivo exercício no serviço público e 5 anos no cargo efetivo.",
+      "60 anos de idade para mulher e 65 para homem, e 30 anos de tempo de contribuição, com no mínimo 15 anos de efetivo exercício no cargo em que será concedida a aposentadoria.",
+      "62 anos de idade para ambos os sexos, e 20 anos de tempo de contribuição, sem qualquer exigência de tempo mínimo de exercício no cargo efetivo ocupado.",
+      "65 anos de idade para mulher e 70 para homem, e 25 anos de tempo de contribuição, com 10 anos de exercício no cargo efetivo em que se dará a aposentadoria.",
+      "62 anos de idade para mulher e 65 para homem, dispensado qualquer tempo mínimo de contribuição previdenciária ao regime próprio de previdência social.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 35, §1º, III, exige cumulativamente 62/65 anos de idade (mulher/homem) e 25 anos de contribuição, com 10 anos de serviço público e 5 anos no cargo efetivo em que se dará a aposentadoria.",
+    origem: "banco",
+    fonte: "Constituição do Estado do Paraná, art. 35, §1º, III",
+  },
+  {
+    id: "leg-131",
+    materia: "leg",
+    topico: "Constituição do Estado do Paraná — Estabilidade do servidor",
+    enunciado:
+      "Segundo o art. 36 da Constituição do Estado do Paraná, o servidor nomeado para cargo efetivo em virtude de concurso público torna-se estável após três anos de efetivo exercício e, uma vez estável, só perderá o cargo",
+    alternativas: [
+      "em virtude de sentença judicial transitada em julgado, mediante processo administrativo com ampla defesa, ou mediante procedimento de avaliação periódica de desempenho, na forma de lei complementar federal.",
+      "apenas em virtude de sentença judicial transitada em julgado, sendo vedada em qualquer hipótese a perda do cargo por processo administrativo disciplinar ou por avaliação periódica de desempenho do servidor estável.",
+      "por decisão discricionária da chefia imediata, independentemente de processo administrativo disciplinar ou de qualquer outra garantia constitucional assegurada ao servidor estável no exercício do cargo.",
+      "em virtude de sentença judicial, ainda que não transitada em julgado, desde que haja indícios suficientes da prática da falta funcional disciplinar atribuída ao servidor efetivo e estável.",
+      "mediante processo administrativo disciplinar regularmente instaurado, dispensada a ampla defesa sempre que a autoridade competente entender necessária a urgência da apuração dos fatos.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 36 prevê estabilidade após três anos de efetivo exercício, e a perda do cargo do servidor estável só pode ocorrer por sentença judicial transitada em julgado, PAD com ampla defesa, ou avaliação periódica de desempenho (lei complementar federal).",
+    origem: "banco",
+    fonte: "Constituição do Estado do Paraná, art. 36",
+  },
+  {
+    id: "leg-132",
+    materia: "leg",
+    topico: "Constituição do Estado do Paraná — Vedações ao servidor público",
+    enunciado:
+      "Pelo art. 29 da Constituição do Estado do Paraná, o servidor público que integrar conselho ou diretoria de empresa fornecedora do Estado, ou que com ele realize qualquer modalidade de contrato,",
+    alternativas: [
+      "está sujeito à pena de demissão do serviço público.",
+      "está sujeito apenas à advertência, por se tratar de conduta de menor gravidade.",
+      "pode ser autorizado a continuar, desde que informe a situação ao órgão de controle interno.",
+      "responde civilmente pelos prejuízos causados, mas não perde o cargo público.",
+      "fica apenas impedido de participar de novas licitações, mantendo o cargo e a função no conselho.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 29 veda ao servidor integrar conselho ou diretoria de empresa que forneça ou contrate com o Estado, sob pena de demissão do serviço público.",
+    origem: "banco",
+    fonte: "Constituição do Estado do Paraná, art. 29",
+  },
+  {
+    id: "leg-133",
+    materia: "leg",
+    topico: "Lei Estadual 23.213/2026 (Lei Orgânica da PCPR) — Disposições gerais",
+    enunciado:
+      "Para os fins da Lei Estadual nº 23.213/2026, a expressão Polícia Civil do Estado do Paraná equivale, para todos os efeitos legais, à expressão",
+    alternativas: [
+      "Polícia Judiciária do Estado do Paraná, identificando a mesma instituição, cuja sigla é PCPR.",
+      "Polícia Judiciária Federal, por desempenharem funções equivalentes em esferas distintas.",
+      "Departamento de Polícia Técnico-Científica, unidade autônoma vinculada à Secretaria de Segurança.",
+      "Secretaria de Estado da Segurança Pública, por integrarem a mesma estrutura hierárquica superior.",
+      "Comando-Geral da Polícia Militar, no que se refere às atividades de policiamento preventivo.",
+    ],
+    correta: 0,
+    explicacao:
+      "O parágrafo único do art. 1º equipara, para os fins da Lei 23.213, as expressões Polícia Civil do Estado do Paraná e Polícia Judiciária do Estado do Paraná, ambas identificando a PCPR.",
+    origem: "banco",
+    fonte: "Lei Estadual nº 23.213/2026 (Lei Orgânica da PCPR), art. 1º, parágrafo único",
+  },
+  {
+    id: "leg-134",
+    materia: "leg",
+    topico: "Lei Estadual 23.213/2026 (Lei Orgânica da PCPR) — Competências",
+    enunciado:
+      "Segundo o parágrafo único do art. 6º da Lei Estadual nº 23.213/2026, as funções e competências da Polícia Civil do Estado do Paraná",
+    alternativas: [
+      "são irrenunciáveis e indelegáveis, somente podendo ser desempenhadas por ocupantes das carreiras que a integram.",
+      "podem ser delegadas a servidores de outros órgãos de segurança pública, mediante convênio.",
+      "são irrenunciáveis, mas podem ser delegadas a terceirizados para atividades de apoio administrativo.",
+      "podem ser renunciadas pelo Delegado-Geral, mediante ato fundamentado e aprovação do CSP.",
+      "são exercidas em caráter concorrente com a Polícia Militar, nos limites da competência desta.",
+    ],
+    correta: 0,
+    explicacao:
+      "O parágrafo único do art. 6º torna as funções e competências da PCPR irrenunciáveis e indelegáveis, restritas aos ocupantes das carreiras que a integram.",
+    origem: "banco",
+    fonte: "Lei Estadual nº 23.213/2026 (Lei Orgânica da PCPR), art. 6º, parágrafo único",
+  },
+  {
+    id: "leg-135",
+    materia: "leg",
+    topico: "Lei Estadual 23.213/2026 (Lei Orgânica da PCPR) — Conselho Superior de Polícia",
+    enunciado:
+      "Nos termos do art. 16 da Lei Estadual nº 23.213/2026, o Conselho Superior de Polícia (CSP) é órgão",
+    alternativas: [
+      "diretivo, consultivo, normativo, deliberativo e sancionador, para fins de controle do ingresso, promoção, hierarquia, disciplina e honrarias da carreira policial.",
+      "meramente consultivo, sem qualquer poder deliberativo ou sancionador sobre o ingresso, a promoção ou a disciplina da carreira policial civil.",
+      "exclusivamente sancionador, não lhe cabendo qualquer função normativa, deliberativa ou consultiva sobre a carreira policial civil.",
+      "vinculado hierarquicamente à Secretaria de Estado da Segurança Pública, sem autonomia deliberativa própria sobre a carreira policial.",
+      "de natureza jurisdicional, com competência para processar e julgar crimes praticados por integrantes da carreira policial civil.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 16 classifica o CSP como órgão diretivo, consultivo, normativo, deliberativo e sancionador, para controle do ingresso, promoção, hierarquia, disciplina e honrarias da carreira policial civil.",
+    origem: "banco",
+    fonte: "Lei Estadual nº 23.213/2026 (Lei Orgânica da PCPR), art. 16",
+  },
+  {
+    id: "leg-136",
+    materia: "leg",
+    topico: "Lei Estadual 23.213/2026 (Lei Orgânica da PCPR) — Conselheiros",
+    enunciado:
+      "Pelo art. 20 da Lei Estadual nº 23.213/2026, somente poderão ser candidatos a Conselheiro da Polícia Civil do Estado do Paraná os policiais que",
+    alternativas: [
+      "não respondam a procedimentos disciplinares por fatos graves, ações de improbidade administrativa ou ação penal, e não tenham sido condenados em processo disciplinar ou criminal nos últimos cinco anos.",
+      "estejam na ativa há pelo menos dez anos na carreira policial civil do Estado, independentemente de antecedentes disciplinares, administrativos ou criminais pregressos de qualquer natureza.",
+      "tenham sido indicados pessoalmente pelo Delegado-Geral da Polícia Civil, ainda que respondam a procedimento disciplinar em curso por fato considerado grave.",
+      "pertençam à classe mais elevada da carreira de Delegado de Polícia, ainda que tenham sido condenados administrativamente nos últimos dez anos de carreira.",
+      "não tenham sido condenados criminalmente em nenhuma hipótese, independentemente de procedimentos disciplinares que ainda estejam em curso na corregedoria.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 20 exige que o candidato a Conselheiro não responda a procedimento disciplinar por fatos graves, improbidade ou ação penal, e não tenha sido condenado administrativa ou criminalmente nos últimos cinco anos.",
+    origem: "banco",
+    fonte: "Lei Estadual nº 23.213/2026 (Lei Orgânica da PCPR), art. 20",
+  },
+  {
+    id: "leg-137",
+    materia: "leg",
+    topico: "Lei Estadual 23.213/2026 (Lei Orgânica da PCPR) — Diretrizes",
+    enunciado:
+      "Entre as diretrizes a serem observadas pela Polícia Civil do Estado do Paraná, nos termos do art. 5º da Lei Estadual nº 23.213/2026, estão",
+    alternativas: [
+      "a atuação cooperativa, sistêmica e harmônica junto aos demais órgãos do Sistema Único de Segurança Pública, e a publicidade dos atos de polícia judiciária, ressalvados os casos em que o sigilo seja imprescindível.",
+      "a atuação isolada e autônoma da Polícia Civil em relação aos demais órgãos de segurança pública, para preservar a especialização técnica da investigação policial civil estadual.",
+      "o sigilo absoluto de todos os atos de polícia judiciária e investigativa, vedada em qualquer hipótese a publicidade desses atos perante o público em geral, os órgãos de controle e o Poder Judiciário.",
+      "a subordinação operacional plena da Polícia Civil aos demais órgãos do Sistema Único de Segurança Pública, inclusive à Polícia Militar e ao Corpo de Bombeiros do Estado.",
+      "a vedação à criação de base de dados própria pela Polícia Civil, em razão da obrigatoriedade legal de uso exclusivo de sistemas federais de informação criminal.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 5º fixa como diretrizes, entre outras, a atuação cooperativa, sistêmica e harmônica com os órgãos do SUSP e a publicidade dos atos de polícia judiciária e investigativa, ressalvado o sigilo imprescindível à segurança.",
+    origem: "banco",
+    fonte: "Lei Estadual nº 23.213/2026 (Lei Orgânica da PCPR), art. 5º",
+  },
 ];
