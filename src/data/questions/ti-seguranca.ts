@@ -734,4 +734,41 @@ export const QUESTOES_TI_SEGURANCA: Question[] = [
       "Transferir é repassar a terceiro as consequências financeiras do risco, como no seguro (I). Evitar é eliminar a atividade que gera o risco, desativando o portal sem correção (II). Mitigar é reduzir a probabilidade ou o impacto com controles, como MFA e atualização (III). Aceitar é assumir de forma consciente e documentada o risco residual (IV). As demais alternativas embaralham essas quatro estratégias clássicas da gestão de riscos (nas normas ISO, transferir aparece também como compartilhar, e aceitar, como reter o risco).",
     origem: "banco",
   },
+
+  {
+    id: "ti-241",
+    materia: "ti",
+    topico: "Segurança em redes, dispositivos móveis e nuvem (responsabilidade compartilhada, zero trust)",
+    enunciado:
+      "Uma secretaria de segurança contrata, de um provedor de nuvem, apenas máquinas virtuais (infraestrutura), nas quais a própria equipe técnica instala o sistema operacional, configura as aplicações de investigação e administra as contas de usuários; o provedor permanece responsável pelos datacenters e pela infraestrutura física subjacente. Esse cenário é descrito corretamente da seguinte forma:",
+    alternativas: [
+      "a contratação de infraestrutura em nuvem transfere integralmente ao provedor a responsabilidade pela segurança de todos os dados armazenados, independentemente do modelo de serviço contratado.",
+      "trata-se do modelo de responsabilidade compartilhada em nuvem, na modalidade IaaS: o provedor protege a infraestrutura física, e o cliente permanece responsável pelo sistema operacional, pelas aplicações e pelos dados.",
+      "no modelo IaaS, o cliente deixa de ter qualquer responsabilidade sobre a configuração do sistema operacional das máquinas virtuais contratadas, tarefa que passa a ser do provedor.",
+      "snapshots e versionamento das máquinas virtuais eliminam a necessidade de uma estratégia própria de backup, por representarem cópias plenamente independentes de qualquer falha da plataforma.",
+      "o modelo de responsabilidade compartilhada é exclusivo de contratos com nuvens públicas, não se aplicando a serviços de nuvem contratados por órgãos governamentais.",
+    ],
+    correta: 1,
+    explicacao:
+      "No modelo de responsabilidade compartilhada, a divisão de obrigações varia conforme o modelo de serviço: em IaaS (infraestrutura), o provedor cuida do datacenter, da rede física e da virtualização, e o cliente continua responsável pelo sistema operacional, patches, aplicações, contas e dados. Em PaaS e SaaS o provedor assume mais camadas, mas a responsabilidade pelos dados e pelo uso adequado do serviço nunca deixa de ser, em algum grau, do cliente — inclusive em nuvens contratadas por órgãos públicos.",
+    origem: "banco",
+  },
+  {
+    id: "ti-242",
+    materia: "ti",
+    topico: "Pilares da segurança da informação e gestão de riscos (vulnerabilidade, ameaça, risco)",
+    enunciado:
+      "Em uma mesma semana, o setor de TI de uma delegacia registra quatro eventos:\n\nI. Um servidor foi sobrecarregado por tráfego malicioso e o sistema de boletins de ocorrência ficou fora do ar por duas horas.\nII. Um relatório de investigação foi alterado por alguém sem autorização para edição.\nIII. Um e-mail interno sigiloso foi acessado por um servidor sem necessidade funcional de conhecê-lo.\nIV. Os registros de acesso ao sistema permitiram identificar, sem dúvida, qual conta havia realizado a alteração mencionada no evento II.\n\nOs eventos I, II, III e IV comprometem ou envolvem, respectivamente, os pilares de",
+    alternativas: [
+      "confidencialidade, disponibilidade, integridade e autenticidade, na ordem inversa dos pilares efetivamente comprometidos nos quatro eventos.",
+      "integridade, confidencialidade, disponibilidade e criptografia, sendo esta última um pilar autônomo da segurança da informação equivalente aos demais.",
+      "disponibilidade, nos quatro eventos, já que todos decorrem, em alguma medida, de falha ou indisponibilidade temporária de algum serviço de TI da delegacia.",
+      "disponibilidade, integridade, confidencialidade e não repúdio.",
+      "não repúdio, confidencialidade, integridade e disponibilidade, invertendo a relação correta entre cada evento e o pilar afetado.",
+    ],
+    correta: 3,
+    explicacao:
+      "Disponibilidade é o sistema continuar acessível a quem precisa dele: a sobrecarga que tirou o boletim do ar (I) a compromete. Integridade é o dado não ser alterado indevidamente: a edição não autorizada do relatório (II) a viola. Confidencialidade é a informação só ser acessada por quem tem necessidade de conhecê-la: o acesso ao e-mail sigiloso sem essa necessidade (III) a quebra. Não repúdio (rastreabilidade de autoria) é poder provar, de forma inequívoca, quem praticou um ato: os registros que identificam a conta responsável pela alteração (IV) dão esse atributo.",
+    origem: "banco",
+  },
 ];

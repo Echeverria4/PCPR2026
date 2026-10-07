@@ -1829,4 +1829,59 @@ export const QUESTOES_TI: Question[] = [
       "O DHCP funciona em quatro mensagens, resumidas na sigla DORA: o cliente envia em broadcast um Discover; os servidores respondem com um Offer; o cliente pede a configuração oferecida (Request); e o servidor confirma (Acknowledge), entregando IP, máscara, gateway, servidores DNS e o prazo da concessão (lease). Como o protocolo não autentica o servidor, o cliente costuma aceitar a primeira oferta que chega. Um servidor clandestino (rogue DHCP) pode, assim, indicar como gateway ou DNS uma máquina do atacante, que passa a intermediar o tráfego (man-in-the-middle) ou a desviar os nomes para páginas falsas. Defesas: o DHCP snooping nos switches, que só aceita ofertas vindas das portas autorizadas, e o controle de acesso à rede (802.1X), que impede que equipamentos não autorizados funcionem nos pontos de rede. A falsificação de DHCP é o equivalente, na configuração automática, do envenenamento de ARP na rede local.",
     origem: "banco",
   },
+
+  {
+    id: "ti-104",
+    materia: "ti",
+    topico: "Fundamentos de hardware e software, BIOS/UEFI, backup",
+    enunciado:
+      "Perícia em um notebook corporativo recém-apreendido revela firmware UEFI com Secure Boot ativado, drivers instalados para os periféricos e uma rotina de backup incremental programada. Sobre esses elementos, é correto afirmar que",
+    alternativas: [
+      "o Secure Boot é um recurso da UEFI que verifica a assinatura digital do sistema operacional antes de permitir sua inicialização, e o backup incremental copia, a cada execução, apenas os dados alterados desde o último backup relevante da cadeia.",
+      "o Secure Boot é um recurso do driver de vídeo, destinado a impedir a edição de arquivos pessoais durante a inicialização do sistema operacional, sem relação com assinaturas digitais.",
+      "firmware e driver são termos equivalentes, pois ambos designam exclusivamente programas carregados pelo sistema operacional somente após a autenticação do usuário no equipamento, nunca antes disso.",
+      "o backup incremental copia, em cada execução, todas as alterações realizadas desde o último backup completo, desconsiderando os backups incrementais já realizados nesse intervalo da mesma cadeia de backups do equipamento.",
+      "a UEFI é responsável por armazenar os arquivos pessoais do usuário antes mesmo de o sistema operacional ser inicializado, função que a substitui como sistema de arquivos do equipamento.",
+    ],
+    correta: 0,
+    explicacao:
+      "UEFI é a interface de firmware que participa do processo de inicialização, podendo oferecer recursos como o Secure Boot (que valida a assinatura do sistema operacional antes de carregá-lo). Firmware é o software embutido que faz um componente funcionar (placa-mãe, SSD, roteador etc.); driver é o programa que permite ao sistema operacional controlar um hardware específico. O backup incremental, a cada execução, copia só o que mudou desde o último backup da cadeia (completo ou incremental) — por isso é mais rápido e ocupa menos espaço que repetir sempre a partir do backup completo.",
+    origem: "banco",
+  },
+  {
+    id: "ti-105",
+    materia: "ti",
+    topico: "Dispositivos móveis (Android e iOS): permissões, atualizações, backup e localização",
+    enunciado:
+      "Durante perícia em dois smartphones apreendidos — um Android e um iPhone —, constatou-se que determinado aplicativo tinha permissão concedida para acessar a câmera do aparelho, mas não conseguia, por esse motivo, consultar arquivos privados mantidos por outros aplicativos instalados no mesmo dispositivo. Esse comportamento ocorre porque",
+    alternativas: [
+      "a concessão de acesso à câmera autoriza automaticamente o aplicativo a consultar também os arquivos produzidos por outros aplicativos que utilizem o mesmo componente físico do aparelho.",
+      "o isolamento entre aplicativos depende da existência de uma partição física exclusiva para cada programa instalado, de modo que dois aplicativos no mesmo smartphone nunca compartilham a mesma unidade de armazenamento.",
+      "Android e iOS isolam aplicativos em sandbox e controlam permissões por recurso, de modo que autorizar o acesso à câmera não implica acesso geral aos dados privados de outros aplicativos no mesmo aparelho.",
+      "a proteção dos dados privados de cada aplicativo decorre apenas da criptografia do tráfego de rede, permanecendo o armazenamento interno do aparelho acessível a qualquer outro aplicativo instalado.",
+      "o isolamento entre aplicativos é mantido apenas enquanto nenhuma permissão tiver sido concedida pelo usuário, sendo neutralizado por completo assim que qualquer permissão, como câmera ou localização, é autorizada.",
+    ],
+    correta: 2,
+    explicacao:
+      "Tanto Android quanto iOS isolam cada aplicativo em um sandbox próprio e controlam, recurso a recurso (câmera, microfone, localização, contatos etc.), o que cada um pode acessar. Conceder uma permissão específica não derruba esse isolamento geral: o aplicativo continua sem acesso livre ao armazenamento de outros aplicativos, salvo quando o próprio sistema operacional oferece uma interface controlada para compartilhamento de dados entre eles.",
+    origem: "banco",
+  },
+  {
+    id: "ti-106",
+    materia: "ti",
+    topico: "Redes de computadores",
+    enunciado:
+      "Numa operação policial, equipes de campo se comunicam por rádio HT, em que apenas uma pessoa fala por vez e as demais aguardam para responder no mesmo canal; a central de monitoramento, por sua vez, mantém com o sistema de despacho uma conexão de dados em que ambos os lados enviam e recebem informações simultaneamente, sem necessidade de alternância. Considerando os modos de comunicação simplex, half-duplex e full-duplex, é correto afirmar que",
+    alternativas: [
+      "a comunicação pelo rádio HT é um exemplo de simplex, porque nenhum dos participantes jamais pode responder pelo mesmo canal utilizado para transmitir.",
+      "a conexão entre a central e o sistema de despacho é um exemplo de half-duplex, já que a transmissão simultânea nos dois sentidos caracteriza justamente esse modo de comunicação.",
+      "simplex, half-duplex e full-duplex descrevem exclusivamente a quantidade de equipamentos conectados ao mesmo meio físico, e não a possibilidade de transmissão simultânea entre as partes, aplicando-se apenas a cabos metálicos e fibras óticas, nunca a enlaces de rádio como o do cenário descrito.",
+      "o rádio HT e a conexão da central são exemplos do mesmo modo de comunicação, diferenciando-se apenas pela velocidade de transmissão de dados entre os equipamentos.",
+      "a comunicação pelo rádio HT descrito é um exemplo de half-duplex, em que os dois lados podem transmitir e receber, mas não ao mesmo tempo, enquanto a conexão entre a central e o sistema de despacho é um exemplo de full-duplex, em que a transmissão e a recepção ocorrem simultaneamente nos dois sentidos.",
+    ],
+    correta: 4,
+    explicacao:
+      "Simplex é via única, em um só sentido (ex.: uma sirene). Half-duplex permite os dois sentidos, mas não ao mesmo tempo — é o caso do rádio HT, em que falar e ouvir no mesmo canal se alternam. Full-duplex permite transmitir e receber simultaneamente nos dois sentidos, como em uma ligação telefônica comum ou numa conexão de dados ponto a ponto dedicada entre a central e o sistema de despacho.",
+    origem: "banco",
+  },
 ];

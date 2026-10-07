@@ -701,4 +701,247 @@ export const QUESTOES_TI_CRIMES: Question[] = [
     origem: "banco",
     fonte: "CP, art. 171-A; Leis 14.478/2022, 9.613/1998 e 7.492/1986 (Planalto)",
   },
+
+  {
+    id: "ti-341",
+    materia: "ti",
+    topico: "Marco Civil da Internet detalhado (princípios, neutralidade, guarda de registros e arts. 19 e 21 após o STF, Temas 533 e 987)",
+    enunciado:
+      "Uma operadora de internet fixa passou a entregar, para todos os seus clientes residenciais, velocidade reduzida de upload exclusivamente para o tráfego dirigido a um serviço concorrente de streaming de vídeo, mantendo a velocidade contratada para os demais serviços. Sobre a neutralidade de rede prevista no art. 9º do Marco Civil da Internet (Lei 12.965/2014), é correto afirmar que a conduta da operadora",
+    alternativas: [
+      "viola o princípio, porque a discriminação de tráfego só é lícita por requisitos técnicos indispensáveis à prestação do serviço ou priorização de emergência, não por concorrência comercial entre aplicações.",
+      "é lícita, porque a lei garante a neutralidade apenas para o tráfego de dados de órgãos públicos, deixando as conexões residenciais fora do alcance do art. 9º.",
+      "é lícita, porque toda discriminação de tráfego decorrente de contrato entre a operadora e seus clientes está automaticamente autorizada pelo princípio da livre iniciativa.",
+      "viola o princípio, mas apenas se a operadora também for provedora de aplicações concorrentes no mesmo mercado, exigência que a lei impõe expressamente para caracterizar a infração.",
+      "é indiferente à neutralidade de rede, já que esse princípio regula unicamente a guarda de registros de conexão, e não a velocidade de tráfego entre serviços.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 9º do Marco Civil exige tratamento isonômico dos pacotes de dados, sem distinção baseada em conteúdo, origem, destino, serviço, terminal ou aplicação. A própria lei admite discriminação ou degradação do tráfego apenas quando decorrente de requisitos técnicos indispensáveis à adequada prestação do serviço ou de priorização de serviços de emergência — não quando a operadora simplesmente desfavorece um concorrente comercial. Oscilação geral de velocidade por congestionamento, por si só, não viola a neutralidade; o problema aparece justamente no tratamento seletivo fora dessas duas hipóteses legais.",
+    origem: "banco",
+    fonte: "Lei 12.965/2014, arts. 9º, 10, 13-15, 22-23; Decreto 8.771/2016, art. 15-A (Decreto 12.975/2026); STF, Tema 987 (RE 1.037.396) — Planalto/STF",
+  },
+  {
+    id: "ti-342",
+    materia: "ti",
+    topico: "Marco Civil da Internet detalhado (princípios, neutralidade, guarda de registros e arts. 19 e 21 após o STF, Temas 533 e 987)",
+    enunciado:
+      "Em uma investigação, descobriu-se que a operadora que fornece apenas o acesso à internet de um suspeito também mantinha, registrado em seus próprios sistemas, o histórico de quais sites e aplicativos haviam sido acessados por aquela conexão. Sobre a disciplina do Marco Civil da Internet para provedores de conexão e de aplicação, é correto afirmar que",
+    alternativas: [
+      "o art. 14 veda ao provedor de conexão a guarda de registros de acesso a aplicações, de modo que a prática relatada contraria a lei, ainda que a operadora também mantenha, licitamente, o registro de conexão por um ano, conforme o art. 13.",
+      "a prática é lícita, porque o provedor de conexão pode guardar qualquer dado do usuário que trafegue por sua rede, bastando que o faça sob sigilo e segurança, sem necessidade de amparo em dispositivo legal específico.",
+      "a prática é lícita, porque, embora o art. 13 restrinja a guarda ao registro de conexão, o art. 15 autoriza qualquer provedor, de conexão ou de aplicação, a guardar também o registro de acesso a aplicações por até um ano.",
+      "a prática é irregular apenas porque o prazo de guarda de registros de acesso a aplicações é de seis meses, e não de um ano, sendo lícita a guarda do conteúdo, caso o prazo fosse respeitado.",
+      "a prática é irregular, mas só quando o provedor de conexão for pessoa jurídica com fins econômicos, já que provedores sem fins lucrativos estão dispensados da vedação do art. 14.",
+    ],
+    correta: 0,
+    explicacao:
+      "O Marco Civil distingue claramente os dois tipos de provedor: o de conexão guarda, por 1 ano, apenas o registro de conexão (art. 13), mas o art. 14 veda expressamente que ele guarde registros de acesso a aplicações — essa guarda cabe ao provedor de aplicações, por 6 meses (art. 15), quando preenchidos os requisitos legais. A vedação do art. 14 não distingue porte ou finalidade econômica do provedor de conexão.",
+    origem: "banco",
+    fonte: "Lei 12.965/2014, arts. 9º, 10, 13-15, 22-23; Decreto 8.771/2016, art. 15-A (Decreto 12.975/2026); STF, Tema 987 (RE 1.037.396) — Planalto/STF",
+  },
+  {
+    id: "ti-343",
+    materia: "ti",
+    topico: "Marco Civil da Internet detalhado (princípios, neutralidade, guarda de registros e arts. 19 e 21 após o STF, Temas 533 e 987)",
+    enunciado:
+      "Uma autoridade administrativa com competência legal expressa requisita diretamente a uma rede social, sem ordem judicial, apenas o nome completo, a filiação e o endereço cadastrados pelo titular de um perfil, motivando o pedido; no mesmo ofício, a mesma autoridade também requer o conteúdo das mensagens privadas trocadas pelo usuário. Sobre o art. 10 do Marco Civil da Internet, é correto afirmar que",
+    alternativas: [
+      "o pedido de dados cadastrais pode ser atendido diretamente, por força do art. 10, § 3º, diante de competência administrativa legal expressa e motivação; o conteúdo das comunicações, porém, exige ordem judicial, nos termos do § 2º.",
+      "nenhum dos dois pedidos pode ser atendido sem ordem judicial, porque o art. 10 submete à reserva jurisdicional tanto os dados cadastrais quanto o conteúdo das comunicações privadas, sem exceção.",
+      "os dois pedidos podem ser atendidos diretamente pela rede social, porque a competência legal expressa da autoridade administrativa dispensa ordem judicial tanto para dados cadastrais quanto para conteúdo de comunicações.",
+      "o pedido de conteúdo das comunicações pode ser atendido diretamente, por se tratar de dado necessário à investigação, enquanto o pedido de dados cadastrais depende de ordem judicial, por envolver informação pessoal sensível.",
+      "os dois pedidos devem ser negados, porque o Marco Civil reserva exclusivamente ao titular do perfil a decisão de fornecer tanto dados cadastrais quanto conteúdo de comunicações a qualquer autoridade.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 10 submete à reserva jurisdicional a disponibilização de registros de conexão, de acesso a aplicações e do conteúdo de comunicações privadas (§§ 1º e 2º). O § 3º, porém, ressalva que a lei não impede o acesso, na forma da lei, a dados cadastrais que informem qualificação pessoal, filiação e endereço, por autoridades administrativas com competência legal expressa para requisitá-los, desde que motivado o pedido — sem necessidade de ordem judicial apenas para essa categoria de dado.",
+    origem: "banco",
+    fonte: "Lei 12.965/2014, arts. 9º, 10, 13-15, 22-23; Decreto 8.771/2016, art. 15-A (Decreto 12.975/2026); STF, Tema 987 (RE 1.037.396) — Planalto/STF",
+  },
+  {
+    id: "ti-344",
+    materia: "ti",
+    topico: "Marco Civil da Internet detalhado (princípios, neutralidade, guarda de registros e arts. 19 e 21 após o STF, Temas 533 e 987)",
+    enunciado:
+      "Uma rede social estrangeira, sem qualquer servidor ou infraestrutura de armazenamento de dados instalada no Brasil, oferece seus serviços ao público brasileiro em português e mantém, no país, uma empresa do mesmo grupo econômico responsável por vendas de publicidade. Sobre a aplicação do Marco Civil da Internet a essa operadora, nos termos do art. 11, é correto afirmar que",
+    alternativas: [
+      "a legislação brasileira não se aplica, porque o art. 11 exige que a própria coleta, o armazenamento e o tratamento dos dados ocorram fisicamente em território nacional, independentemente de onde o serviço seja oferecido ou de haver empresa do grupo no país.",
+      "a legislação brasileira se aplica à coleta, ao armazenamento e ao tratamento dos dados, pois o § 2º estende essa aplicação a serviços oferecidos ao público brasileiro quando pelo menos uma empresa do grupo econômico está estabelecida no país.",
+      "a legislação brasileira só se aplicaria se a rede social tivesse seu próprio servidor de dados instalado no Brasil, sendo irrelevante, para esse fim, a existência de empresa do grupo econômico no país.",
+      "a legislação brasileira se aplica apenas às comunicações privadas entre usuários localizados no Brasil, não alcançando dados pessoais coletados para fins de publicidade.",
+      "a aplicação do Marco Civil, nesses casos, depende de tratado de cooperação internacional entre o Brasil e o país de origem da rede social, à falta do qual prevalece exclusivamente a legislação estrangeira.",
+    ],
+    correta: 1,
+    explicacao:
+      "O art. 11 do Marco Civil determina que a legislação brasileira seja respeitada sempre que, na coleta, armazenamento, guarda ou tratamento de dados, ao menos um desses atos ocorrer em território nacional. O § 2º estende essa aplicação mesmo quando as operações ocorrem no exterior, desde que o serviço seja oferecido ao público brasileiro e pelo menos uma integrante do mesmo grupo econômico esteja estabelecida no Brasil — dispensando-se servidor próprio no país ou tratado internacional específico.",
+    origem: "banco",
+    fonte: "Lei 12.965/2014, arts. 9º, 10, 13-15, 22-23; Decreto 8.771/2016, art. 15-A (Decreto 12.975/2026); STF, Tema 987 (RE 1.037.396) — Planalto/STF",
+  },
+  {
+    id: "ti-345",
+    materia: "ti",
+    topico: "Marco Civil da Internet detalhado (princípios, neutralidade, guarda de registros e arts. 19 e 21 após o STF, Temas 533 e 987)",
+    enunciado:
+      "Em investigação de crime cometido a partir de uma rede com Carrier-Grade NAT, vários usuários compartilhavam, simultaneamente, o mesmo endereço IP público fornecido pela operadora; a identificação do terminal exigiu, além do IP, da data e da hora, um dado técnico adicional. Sobre a guarda desse dado adicional, é correto afirmar que",
+    alternativas: [
+      "desde a inclusão do art. 15-A no Decreto 8.771/2016 pelo Decreto 12.975/2026, o dever de guarda do endereço IP passou a abranger também a porta lógica de origem, quando necessária à identificação inequívoca do terminal.",
+      "a identificação nesse cenário é tecnicamente impossível, porque o Marco Civil e seus decretos regulamentadores não disciplinam qualquer dado além do endereço IP, data e hora da conexão.",
+      "a porta lógica de origem só pode ser exigida mediante prévia requisição judicial individualizada, já que o Decreto 12.975/2026 não impôs esse dever de guarda de forma autônoma aos provedores.",
+      "o dado técnico adicional necessário é o próprio número de série do equipamento de acesso (endereço MAC), que o Decreto 12.975/2026 passou a exigir em substituição à porta lógica de origem.",
+      "o compartilhamento do mesmo IP público por múltiplos usuários impede qualquer identificação individualizada, razão pela qual a legislação brasileira trata esse cenário como hipótese de arquivamento por impossibilidade probatória.",
+    ],
+    correta: 0,
+    explicacao:
+      "O Decreto nº 12.975/2026 acrescentou o art. 15-A ao Decreto nº 8.771/2016 (que regulamenta o Marco Civil) e determinou que o dever de guarda de registros de endereço IP pelos provedores de conexão e de aplicação abranja também a porta lógica de origem, sempre que necessária à identificação inequívoca do terminal ou do próximo enlace de rede. Isso é especialmente relevante em ambientes de Carrier-Grade NAT, em que um mesmo IP público é compartilhado por muitos usuários: a combinação de IP, data, hora e porta lógica passa a ser o que individualiza corretamente a origem do tráfego. O fornecimento desse dado, porém, continua sujeito aos arts. 10 e 22 do Marco Civil (reserva jurisdicional).",
+    origem: "banco",
+    fonte: "Lei 12.965/2014, arts. 9º, 10, 13-15, 22-23; Decreto 8.771/2016, art. 15-A (Decreto 12.975/2026); STF, Tema 987 (RE 1.037.396) — Planalto/STF",
+  },
+  {
+    id: "ti-346",
+    materia: "ti",
+    topico: "Marco Civil da Internet detalhado (princípios, neutralidade, guarda de registros e arts. 19 e 21 após o STF, Temas 533 e 987)",
+    enunciado:
+      "Em ação penal, o Ministério Público requer ao juiz, de forma incidental, que determine a uma rede social o fornecimento dos registros de acesso à aplicação de um perfil suspeito, indicando fundados indícios do ilícito investigado, a utilidade concreta dos registros para a instrução e o período exato ao qual eles devem se referir. Sobre esse pedido, à luz do art. 22 do Marco Civil da Internet, é correto afirmar que",
+    alternativas: [
+      "o pedido atende aos requisitos legais do art. 22, que exige fundados indícios do ilícito, justificativa motivada da utilidade dos registros e delimitação do período a que eles se referem.",
+      "o pedido é inválido, porque o art. 22 somente admite requisição autônoma de registros, vedando-se o requerimento incidental dentro de um processo já em curso.",
+      "o pedido é inválido, porque o art. 22 restringe a requisição judicial de registros ao processo penal, não se aplicando a demandas de natureza civil.",
+      "o pedido é válido independentemente da indicação de fundados indícios do ilícito, bastando a simples alegação de utilidade dos registros para a investigação em curso, sem necessidade de delimitar o período investigado.",
+      "o pedido é válido, mas apenas quanto ao registro de acesso a aplicações, já que o art. 22 não alcança o registro de conexão mantido pelos provedores de conexão.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 22 permite que a parte interessada requeira ao juiz, de modo incidental ou autônomo, em processo judicial civil ou penal, que determine ao responsável pela guarda o fornecimento de registros de conexão ou de acesso a aplicações. O parágrafo único exige três requisitos cumulativos: fundados indícios da ocorrência do ilícito, justificativa motivada da utilidade dos registros para a investigação ou instrução, e indicação do período a que eles se referem — não se trata de autorização para pedidos exploratórios e indeterminados.",
+    origem: "banco",
+    fonte: "Lei 12.965/2014, arts. 9º, 10, 13-15, 22-23; Decreto 8.771/2016, art. 15-A (Decreto 12.975/2026); STF, Tema 987 (RE 1.037.396) — Planalto/STF",
+  },
+  {
+    id: "ti-347",
+    materia: "ti",
+    topico: "Marco Civil da Internet detalhado (princípios, neutralidade, guarda de registros e arts. 19 e 21 após o STF, Temas 533 e 987)",
+    enunciado:
+      "Depois de obter, por ordem judicial, os registros de acesso de um investigado, o delegado verifica que o processo tramita sem segredo de justiça; um jornalista solicita vista integral dos autos, incluindo os registros obtidos. Sobre o regime de sigilo do art. 23 do Marco Civil da Internet, é correto afirmar que",
+    alternativas: [
+      "o art. 23 impõe ao juiz o dever de garantir o sigilo das informações recebidas, preservando intimidade, vida privada, honra e imagem do titular, podendo até decretar segredo de justiça sobre o feito.",
+      "a obtenção dos registros por ordem judicial torna automaticamente públicos todos os dados juntados aos autos, não restando ao juiz qualquer margem para restringir o acesso de terceiros.",
+      "o sigilo previsto no art. 23 protege apenas o conteúdo de comunicações privadas, não alcançando registros de conexão ou de acesso a aplicações obtidos por ordem judicial.",
+      "o dever de sigilo é do provedor que forneceu os registros, cessando integralmente no momento em que os dados são juntados aos autos do processo judicial.",
+      "a decretação de segredo de justiça sobre os registros obtidos depende de requerimento do Ministério Público, não podendo o juiz determiná-la de ofício em nenhuma hipótese.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 23 atribui ao juiz o dever de adotar as providências necessárias para garantir o sigilo das informações recebidas e preservar a intimidade, a vida privada, a honra e a imagem do usuário, podendo decretar segredo de justiça inclusive quanto aos próprios pedidos de guarda de registros. A obtenção judicial de um dado não elimina, portanto, a proteção da intimidade do titular nem equivale à sua publicidade irrestrita nos autos.",
+    origem: "banco",
+    fonte: "Lei 12.965/2014, arts. 9º, 10, 13-15, 22-23; Decreto 8.771/2016, art. 15-A (Decreto 12.975/2026); STF, Tema 987 (RE 1.037.396) — Planalto/STF",
+  },
+  {
+    id: "ti-348",
+    materia: "ti",
+    topico: "Marco Civil da Internet detalhado (princípios, neutralidade, guarda de registros e arts. 19 e 21 após o STF, Temas 533 e 987)",
+    enunciado:
+      "Uma questão de concurso, em 2026, cobra a diferença entre a redação literal do art. 19 do Marco Civil da Internet e o regime atualmente aplicável à responsabilização de provedores de aplicações por conteúdo de terceiros. Considerando o julgamento do Tema 987 de repercussão geral pelo STF, é correto afirmar que",
+    alternativas: [
+      "desde o trânsito em julgado da tese, em 17/06/2026, o regime é mais complexo do que a simples remoção após notificação judicial do art. 19: o STF reconheceu sua inconstitucionalidade parcial e progressiva, exigindo maior dever de cuidado das plataformas.",
+      "o Tema 987 confirmou, sem qualquer ressalva, a plena constitucionalidade da redação literal do art. 19, de modo que a responsabilização dos provedores de aplicações continua a depender exclusivamente de prévia ordem judicial específica de remoção.",
+      "o Tema 987 declarou a inconstitucionalidade total do art. 19, extinguindo qualquer regime de responsabilização de provedores de aplicações por conteúdo gerado por terceiros.",
+      "a distinção é irrelevante para concursos policiais em 2026, já que o STF apenas uniformizou a interpretação do art. 19 sem alterar, na prática, o regime de responsabilização das plataformas.",
+      "o regime fixado pelo STF aplica-se apenas a provedores de conexão, mantendo-se a redação literal do art. 19 inalterada para provedores de aplicações, que são o seu real destinatário.",
+    ],
+    correta: 0,
+    explicacao:
+      "O STF, no Tema 987 (RE 1.037.396), reconheceu a inconstitucionalidade parcial e progressiva do art. 19 do Marco Civil e fixou um regime mais complexo de responsabilização dos provedores de aplicações por conteúdo de terceiros, com dever de cuidado reforçado diante de um rol de ilícitos graves (terrorismo, suicídio/automutilação, discriminação, crimes contra mulheres, crimes sexuais graves contra crianças e adolescentes, tráfico de pessoas e crimes contra o Estado Democrático de Direito). Em prova, é preciso distinguir a redação literal do art. 19 da disciplina constitucional hoje fixada pelo STF, que não é mais equivalente a ela.",
+    origem: "banco",
+    fonte: "Lei 12.965/2014, arts. 9º, 10, 13-15, 22-23; Decreto 8.771/2016, art. 15-A (Decreto 12.975/2026); STF, Tema 987 (RE 1.037.396) — Planalto/STF",
+  },
+  {
+    id: "ti-349",
+    materia: "ti",
+    topico: "Sigilo funcional e uso ético da tecnologia e das informações institucionais (arts. 313-A, 313-B e 325 do CP)",
+    enunciado:
+      "Um escrivão possui login pessoal válido no sistema de registros criminais da corporação. Durante o expediente, sem qualquer vínculo com procedimento sob sua responsabilidade, consulta a ficha de antecedentes de um ex-cunhado por motivos particulares e, à noite, relata o que viu em uma conversa de família. Sobre sigilo funcional e uso ético de sistemas institucionais, é correto afirmar que",
+    alternativas: [
+      "a autenticação legítima não torna regular a consulta, pois o acesso a sistemas institucionais exige finalidade funcional e necessidade de conhecer, podendo configurar violação de sigilo funcional ainda que dentro das permissões técnicas do sistema.",
+      "a conduta é irrelevante do ponto de vista funcional, porque o uso de credenciais próprias, e não de terceiros, afasta qualquer das hipóteses do art. 325 do Código Penal em qualquer circunstância.",
+      "a conduta só seria irregular se o escrivão tivesse alterado algum dado da ficha consultada, já que a simples leitura de informações a que já se tem acesso técnico não é disciplinada pela legislação penal.",
+      "a conduta é regular enquanto a informação for compartilhada apenas com familiares, pois o dever de sigilo funcional se destina exclusivamente a impedir o acesso de pessoas estranhas ao círculo pessoal e afetivo do servidor público.",
+      "a conduta é regular, porque o sigilo funcional previsto no Código Penal protege apenas documentos formalmente classificados, não alcançando consultas em sistemas informatizados de uso rotineiro da corporação.",
+    ],
+    correta: 0,
+    explicacao:
+      "Ter credencial técnica válida para acessar um sistema não autoriza qualquer consulta: o acesso deve estar vinculado a uma finalidade funcional e à necessidade de conhecer aquela informação para o exercício do cargo. Consultar por curiosidade pessoal, sem relação com procedimento sob sua responsabilidade, e depois comentar o resultado com terceiros sem necessidade de conhecê-lo pode configurar, em tese, violação de sigilo funcional (arts. 313-A, 313-B e 325 do CP), independentemente de o servidor pertencer ao mesmo órgão de quem recebeu a informação ou de ter usado credenciais próprias.",
+    origem: "banco",
+  },
+  {
+    id: "ti-350",
+    materia: "ti",
+    topico: "Evidência digital: coleta, preservação, hash, imagem forense e cadeia de custódia (arts. 158-A a 158-F do CPP)",
+    enunciado:
+      "Durante a perícia em um smartphone apreendido, foi calculado o hash da imagem forense no momento da coleta; semanas depois, ao reabrir o laudo, outro perito recalculou o hash sobre a mesma imagem e obteve um valor diferente do registrado originalmente. Junto com a imagem, constavam fotografias com metadados EXIF indicando data e hora de criação em UTC. Sobre esse cenário, é correto afirmar que",
+    alternativas: [
+      "a divergência entre os hashes indica que os dados não são mais idênticos, bit a bit, aos da coleta original, o que compromete a cadeia de custódia da imagem forense.",
+      "a divergência de hash permite concluir, por si só, qual pessoa teve acesso ao arquivo e exatamente qual alteração foi feita na imagem forense.",
+      "os horários em UTC podem ser comparados diretamente com horários locais de outros sistemas, sem qualquer conversão de fuso horário, porque o UTC é o padrão universal de tempo.",
+      "os metadados EXIF de uma fotografia são gerados de forma imutável pelo equipamento, de modo que dispensam qualquer validação cruzada com outras evidências do caso.",
+      "a divergência de hash é esperada e processualmente irrelevante, já que esse mecanismo serve apenas para identificar o formato do arquivo, e não a integridade de seu conteúdo.",
+    ],
+    correta: 0,
+    explicacao:
+      "O hash funciona como uma impressão digital do arquivo: qualquer alteração, mesmo mínima, nos dados de origem gera um valor diferente quando recalculado. A divergência não diz quem alterou nem o que mudou — apenas que o conteúdo não é mais idêntico ao original, o que é crítico para a cadeia de custódia. UTC é um padrão de tempo que precisa ser convertido para o fuso local (ou vice-versa) antes de qualquer comparação cronológica com outros registros do caso. Metadados EXIF podem ser alterados ou estar incorretos (relógio do aparelho errado, por exemplo), por isso devem ser cruzados com outras evidências, e não aceitos de forma isolada.",
+    origem: "banco",
+  },
+  {
+    id: "ti-351",
+    materia: "ti",
+    topico: "Rastreamento e recuperação de informações (IP, porta lógica, registros de conexão e de aplicação, dados cadastrais, arquivos apagados)",
+    enunciado:
+      "Um investigador localiza, em uma rede social, uma publicação que pode ser relevante para o caso. Em vez de apenas fotografar a tela do celular, ele registra a URL da publicação, o identificador da conta, a data e a hora da coleta e preserva uma cópia do conteúdo com cálculo de hash. Sobre essa forma de preservação de evidência digital, é correto afirmar que ela",
+    alternativas: [
+      "é mais robusta do que uma simples captura de tela, pois reúne URL, identificador da conta, data e horário da coleta e a integridade do próprio arquivo preservado por hash.",
+      "é desnecessária, porque a captura de tela, isoladamente, já comprova de forma autônoma que o titular cadastrado do perfil foi quem produziu o conteúdo publicado.",
+      "é dispensável quanto à URL e ao identificador da conta, porque o provedor de aplicações está sempre obrigado a localizar a publicação apenas pelo texto nela contido.",
+      "torna-se irrelevante quando a conta exibe selo de verificação, já que esse selo dispensa qualquer análise sobre eventual comprometimento ou uso da conta por terceiros.",
+      "é desnecessária sempre que o conteúdo já tiver sido republicado por outras contas, porque o número de republicações comprova, por si só, quem foi o autor original.",
+    ],
+    correta: 0,
+    explicacao:
+      "Uma simples captura de tela perde elementos importantes de contexto e de integridade. Registrar a URL, o identificador da conta, a data e a hora da coleta, além de preservar uma cópia com hash, permite tanto localizar e requisitar depois, formalmente, os registros ao provedor de aplicações quanto demonstrar que o conteúdo preservado não foi alterado. Nenhum desses elementos, isoladamente — nem mesmo selo de verificação ou múltiplas republicações —, prova por si só a autoria do conteúdo original; servem como indícios a serem correlacionados com outras evidências.",
+    origem: "banco",
+  },
+  {
+    id: "ti-352",
+    materia: "ti",
+    topico: "Invasão de dispositivo informático (arts. 154-A e 154-B do CP) e Lei 12.737/2012",
+    enunciado:
+      "Dois casos de invasão de dispositivo informático (art. 154-A do CP) chegam à delegacia: no primeiro, o dispositivo invadido pertence a uma pessoa física; no segundo, o ataque foi dirigido a servidor de uma autarquia federal. Sobre a ação penal cabível em cada caso, nos termos do art. 154-B do CP, é correto afirmar que",
+    alternativas: [
+      "nos dois casos a ação penal depende de queixa-crime oferecida pela própria vítima, já que o art. 154-A do CP não admite ação penal pública em nenhuma hipótese.",
+      "nos dois casos a ação penal é pública incondicionada, porque a natureza informática do crime, por si só, afasta a exigência de representação prevista para os demais crimes contra a honra e o patrimônio.",
+      "a distinção entre os dois casos depende exclusivamente de o dispositivo invadido estar ou não conectado à internet no momento do ataque, e não da natureza pública ou privada da vítima.",
+      "a representação só é dispensada quando há efetiva obtenção de dados após a invasão, sendo irrelevante, para esse efeito, a vítima ser órgão da administração pública ou pessoa física.",
+      "em regra, o art. 154-A exige representação da vítima, mas o art. 154-B a dispensa quando a vítima é a administração pública ou concessionária de serviço público, como no caso da autarquia federal.",
+    ],
+    correta: 4,
+    explicacao:
+      "O art. 154-B do CP estabelece que, em regra, procede-se mediante representação nos crimes do art. 154-A, mas excepciona essa regra quando o crime é cometido contra a administração pública direta ou indireta de qualquer dos poderes, da União, estados, Distrito Federal ou municípios, ou contra empresas concessionárias de serviços públicos — hipóteses em que a ação penal é pública incondicionada. Por isso, no caso envolvendo a autarquia federal, a natureza pública da vítima dispensa a representação.",
+    origem: "banco",
+  },
+  {
+    id: "ti-353",
+    materia: "ti",
+    topico: "Furto e estelionato por fraude eletrônica (arts. 155, §§4º-B e 4º-C, e 171, §§2º-A e 2º-B, do CP, com as penas da Lei 15.397/2026)",
+    enunciado:
+      "Durante a correção de um simulado, um candidato afirma que a Lei nº 14.155/2021 teria conteúdo exclusivamente processual, limitando-se a fixar regras de competência para crimes cometidos por meio da internet. Sobre essa afirmação, é correto dizer que ela está",
+    alternativas: [
+      "correta, porque a Lei nº 14.155/2021 apenas alterou o Código de Processo Penal, preservando integralmente a redação penal então vigente sobre invasão de dispositivo, furto e estelionato.",
+      "correta, porque toda lei que altera regra de competência para crimes eletrônicos é, por definição, lei processual, ainda que mencione tipos penais em sua ementa.",
+      "incorreta, mas apenas porque a lei revogou integralmente o crime de invasão de dispositivo informático, unificando-o à nova modalidade de estelionato mediante fraude eletrônica.",
+      "incorreta, mas apenas porque a lei se limitou a agravar as penas já previstas para o furto e o estelionato tradicionais, sem criar qualquer modalidade qualificada por fraude eletrônica.",
+      "incorreta: a Lei nº 14.155/2021 também alterou o Código Penal, criando o furto e o estelionato mediante fraude eletrônica, além de tratar de competência processual.",
+    ],
+    correta: 4,
+    explicacao:
+      "A Lei nº 14.155/2021 tornou mais grave o tratamento penal da invasão de dispositivo informático (alterando penas e criando qualificadora do art. 154-A), criou as figuras de furto mediante fraude eletrônica (art. 155, § 4º-B) e de estelionato mediante fraude eletrônica (art. 171, § 2º-A), e alterou regra de competência processual para determinadas modalidades de estelionato — não se limitou, portanto, a um conteúdo puramente processual, nem revogou ou unificou os tipos penais existentes.",
+    origem: "banco",
+  },
 ];
