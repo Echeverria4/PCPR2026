@@ -328,4 +328,214 @@ export const QUESTOES_PR: Question[] = [
       "A gralha-azul é a ave símbolo do Paraná, associada popularmente à disseminação da semente da araucária (pinheiro-do-paraná), a árvore símbolo do estado, que também aparece no brasão de armas paranaense — as demais aves listadas não têm esse vínculo simbólico oficial com o estado.",
     origem: "banco",
   },
+
+  {
+    id: "pr-021",
+    materia: "pr",
+    topico: "Formação histórica do Paraná — multicausalidade",
+    enunciado:
+      "Sobre a formação histórica do território paranaense, é correto afirmar que ela:",
+    alternativas: [
+      "combinou diferentes processos — ocupação litorânea, tropeirismo, expansão agrícola, imigração e colonização interior —, sem seguir um único movimento linear.",
+      "ocorreu predominantemente como um movimento contínuo do litoral para o interior, tendo a expansão agrícola colonial como único fator de integração territorial.",
+      "teve a presença indígena como relevante apenas antes da colonização europeia, sendo essas populações substituídas pelos ciclos de ocupação posteriores.",
+      "teve a emancipação política de 1853 como seu marco inicial, já que somente a partir dela o território passou a ser efetivamente ocupado.",
+      "foi determinada principalmente pela expansão cafeeira, responsável pela formação da maior parte dos núcleos urbanos do estado, incluindo os mais antigos.",
+    ],
+    correta: 0,
+    explicacao:
+      "A formação territorial do Paraná combinou múltiplos processos históricos — ocupação litorânea desde o período colonial, tropeirismo nos Campos Gerais, expansão agrícola, imigração europeia e colonização de áreas interiores —, sem seguir um único movimento linear nem ter um marco inicial único. A presença indígena antecedeu e conviveu com os ciclos posteriores de ocupação, e a cafeicultura, decisiva no Norte do estado, não explica a formação dos núcleos mais antigos do litoral e dos Campos Gerais.",
+    origem: "banco",
+    fonte: "Adaptada de questão de treino do curso preparatório PC-PR — Agente de Polícia Judiciária (TAQ de Realidade do Paraná)",
+  },
+  {
+    id: "pr-022",
+    materia: "pr",
+    topico: "Emancipação política do Paraná — continuidade de vínculos",
+    enunciado:
+      "Sobre a emancipação política do Paraná, ocorrida em 1853, é correto afirmar que ela:",
+    alternativas: [
+      "ocorreu durante o Segundo Reinado, separando politicamente o Paraná de São Paulo sem romper de imediato os vínculos econômicos e sociais entre as duas regiões.",
+      "ocorreu no contexto de reorganização administrativa posterior à Proclamação da República, quando as antigas províncias foram convertidas em estados.",
+      "foi uma consequência direta da Guerra do Paraguai, que levou o Império a reorganizar suas províncias meridionais.",
+      "representou uma ruptura econômica imediata com São Paulo, redirecionando o Paraná para relações comerciais prioritariamente internacionais.",
+      "conferiu ao Paraná autonomia equivalente à que os estados passariam a ter depois, com a Constituição republicana.",
+    ],
+    correta: 0,
+    explicacao:
+      "A Província do Paraná foi criada em 1853, ainda durante o Segundo Reinado (1840-1889), por desmembramento da Província de São Paulo. A separação foi política e administrativa, mas não eliminou de imediato os laços econômicos e sociais que já uniam as duas regiões. O episódio é anterior à Guerra do Paraguai (1864-1870) e à Proclamação da República (1889), e as províncias imperiais tinham autonomia bem mais limitada que os estados da federação republicana.",
+    origem: "banco",
+    fonte: "Adaptada de questão de treino do curso preparatório PC-PR — Agente de Polícia Judiciária (TAQ de Realidade do Paraná)",
+  },
+  {
+    id: "pr-023",
+    materia: "pr",
+    topico: "Tropeirismo e os Campos Gerais",
+    enunciado:
+      "Sobre o papel do tropeirismo na formação do território paranaense, é correto afirmar que essa atividade:",
+    alternativas: [
+      "integrou os Campos Gerais às redes econômicas do Sul e Sudeste e favoreceu a formação de núcleos urbanos ao longo das rotas de circulação de tropas.",
+      "restringiu-se à circulação de animais entre regiões produtoras, sem qualquer influência relevante sobre o povoamento permanente do território.",
+      "concentrou-se nas áreas litorâneas do estado, articulando os núcleos portuários paranaenses às regiões produtoras do interior.",
+      "foi a principal atividade responsável pela ocupação do Norte do Paraná durante a expansão da cafeicultura.",
+      "perdeu relevância antes que suas rotas produzissem qualquer efeito sobre a formação de núcleos urbanos no território paranaense.",
+    ],
+    correta: 0,
+    explicacao:
+      "O tropeirismo — a circulação de tropas de muares entre o Sul e o Sudeste do país, entre os séculos XVIII e XIX — teve papel central na integração dos Campos Gerais paranaenses às redes econômicas regionais, gerando pousos, pontos de comércio e núcleos urbanos ao longo de suas rotas, como Castro e Ponta Grossa. Essa atividade ocorreu no planalto interior, não no litoral, e é anterior e distinta da expansão cafeeira do Norte do Paraná, que teve dinâmica e período próprios.",
+    origem: "banco",
+    fonte: "Adaptada de questão de treino do curso preparatório PC-PR — Agente de Polícia Judiciária (TAQ de Realidade do Paraná)",
+  },
+  {
+    id: "pr-024",
+    materia: "pr",
+    topico: "Relevo e clima do Paraná",
+    enunciado:
+      "Sobre o relevo e o clima do Estado do Paraná, é correto afirmar que:",
+    alternativas: [
+      "o relevo inclui a planície litorânea, a Serra do Mar e os Primeiro, Segundo e Terceiro Planaltos, e o clima estadual também recebe influência de massas de ar de origem polar.",
+      "a Serra do Mar é uma unidade de relevo localizada exclusivamente no interior do estado, sem relação com a compartimentação do litoral.",
+      "o território apresenta predomínio de planícies, o que faz dos planaltos um fator de pouca relevância para a organização das atividades econômicas estaduais.",
+      "a localização meridional do estado elimina qualquer característica tropical, fazendo do clima subtropical algo uniforme em todo o território paranaense.",
+      "a diversidade climática do estado decorre principalmente da altitude, tendo a latitude e a circulação atmosférica papel apenas secundário.",
+    ],
+    correta: 0,
+    explicacao:
+      "O relevo paranaense é descrito em degraus que sobem do litoral para o interior: a planície litorânea, a Serra do Mar e os Primeiro, Segundo e Terceiro Planaltos. O clima é subtropical na maior parte do território, mas o Norte do estado já apresenta características mais tropicais, e todo o estado recebe influência de massas de ar polares, responsáveis por frentes frias e geadas, além da latitude.",
+    origem: "banco",
+    fonte: "Adaptada de questão de treino do curso preparatório PC-PR — Agente de Polícia Judiciária (TAQ de Realidade do Paraná)",
+  },
+  {
+    id: "pr-025",
+    materia: "pr",
+    topico: "Hidrografia do Paraná",
+    enunciado:
+      "Sobre a hidrografia do Estado do Paraná, é correto afirmar que:",
+    alternativas: [
+      "o rio Paraná integra importante sistema hidrográfico associado a grandes hidrelétricas, como Itaipu, com relevância econômica e territorial regional.",
+      "a rede hidrográfica estadual tem importância econômica limitada, já que os principais rios do estado possuem baixo potencial para geração de energia.",
+      "os principais rios do estado têm nascente e foz exclusivamente dentro do território paranaense, o que facilita sua gestão integral pelo governo estadual.",
+      "a utilização econômica dos rios estaduais concentra-se no abastecimento urbano, cabendo à geração de energia um papel apenas secundário.",
+      "o potencial hidrelétrico do estado está concentrado nos rios da vertente atlântica, em razão do maior desnível entre o planalto e o litoral.",
+    ],
+    correta: 0,
+    explicacao:
+      "O rio Paraná, que dá nome ao estado, é um dos grandes eixos hidrográficos da América do Sul e sustenta, na fronteira com o Paraguai, a Usina de Itaipu, uma das maiores hidrelétricas do mundo. Esse potencial está concentrado na vertente interior, e não na vertente atlântica, cujos rios são mais curtos e menos aproveitados para energia. Além disso, os grandes rios do Paraná não nascem nem desembocam exclusivamente dentro do estado, exigindo gestão compartilhada com outros estados e países.",
+    origem: "banco",
+    fonte: "Adaptada de questão de treino do curso preparatório PC-PR — Agente de Polícia Judiciária (TAQ de Realidade do Paraná)",
+  },
+  {
+    id: "pr-026",
+    materia: "pr",
+    topico: "Densidade demográfica no Paraná",
+    enunciado:
+      "Para analisar a distribuição desigual da população entre os municípios do Estado do Paraná, o indicador de densidade demográfica corresponde:",
+    alternativas: [
+      "à relação entre o número de habitantes e a área territorial, útil para comparar níveis de concentração populacional entre municípios.",
+      "ao número absoluto de habitantes de um município, independentemente de sua extensão territorial.",
+      "a uma medida que cresce automaticamente nos municípios de maior extensão territorial, em razão da maior disponibilidade de espaço.",
+      "a um indicador que, por si só, revela o grau de urbanização do estado como um todo, bastando observar os municípios de menor densidade.",
+      "a uma medida que indica, necessariamente, menor dinamismo econômico nos municípios em que seu valor é mais baixo.",
+    ],
+    correta: 0,
+    explicacao:
+      "Densidade demográfica é a razão entre população e área territorial, geralmente em habitantes por km², usada para comparar a concentração populacional entre municípios ou regiões. Ela não equivale ao número absoluto de habitantes, não aumenta automaticamente com a extensão territorial — ao contrário, área grande e população pequena geram densidade baixa — nem permite concluir, isoladamente, o grau de urbanização ou o dinamismo econômico de uma área: municípios rurais extensos e pouco densos podem ter forte economia agropecuária.",
+    origem: "banco",
+    fonte: "Adaptada de questão de treino do curso preparatório PC-PR — Agente de Polícia Judiciária (TAQ de Realidade do Paraná)",
+  },
+  {
+    id: "pr-027",
+    materia: "pr",
+    topico: "Regionalização e planejamento territorial no Paraná",
+    enunciado:
+      "Um mesmo município paranaense pode integrar, ao mesmo tempo, uma regionalização estatística do IBGE e uma estrutura de planejamento adotada pelo Governo do Estado. Sobre essa coexistência de recortes espaciais, é correto afirmar que:",
+    alternativas: [
+      "diferentes regionalizações podem ter finalidades estatísticas, administrativas ou de planejamento distintas, sem alterar a condição dos municípios como unidades político-administrativas.",
+      "as regionalizações estatísticas do IBGE e as regiões de planejamento estadual têm, necessariamente, a mesma finalidade e a mesma configuração territorial.",
+      "a existência de diferentes regionalizações substitui os municípios por regiões de planejamento como unidades político-administrativas do estado.",
+      "as regiões de desenvolvimento adotadas para fins de planejamento constituem novos entes federativos, intermediários entre o estado e os municípios, com estrutura própria de governo.",
+      "a regionalização para fins de planejamento reduz a autonomia municipal, ao subordinar administrativamente os municípios a essas estruturas regionais.",
+    ],
+    correta: 0,
+    explicacao:
+      "É comum que um município integre, simultaneamente, uma mesorregião ou microrregião do IBGE, para fins estatísticos, e uma região de planejamento definida pelo Governo do Paraná, para fins administrativos ou de desenvolvimento. Essas regionalizações podem ter finalidades e desenhos diferentes entre si, mas nenhuma delas substitui o município como unidade político-administrativa, cria um novo ente federativo intermediário ou reduz a autonomia municipal garantida pela Constituição.",
+    origem: "banco",
+    fonte: "Adaptada de questão de treino do curso preparatório PC-PR — Agente de Polícia Judiciária (TAQ de Realidade do Paraná)",
+  },
+  {
+    id: "pr-028",
+    materia: "pr",
+    topico: "Patrimônio cultural imaterial do Paraná",
+    enunciado:
+      "O patrimônio cultural de um estado não se limita a edifícios, monumentos e documentos, abrangendo também saberes, celebrações e práticas tradicionais. No caso do Paraná, uma manifestação que evidencia essa dimensão imaterial do patrimônio é:",
+    alternativas: [
+      "o Fandango Caiçara, expressão musical e dançante das comunidades do litoral, reconhecida como patrimônio cultural imaterial do Brasil.",
+      "a ideia de que o patrimônio cultural paranaense é predominantemente material, já que manifestações imateriais não contam com mecanismos formais de reconhecimento.",
+      "a noção de que o patrimônio imaterial do estado se restringe a manifestações religiosas tradicionais, sem incluir práticas musicais.",
+      "a tese de que a diversidade cultural paranaense decorre apenas da imigração europeia, considerada sua única matriz histórica relevante.",
+      "a visão de que manifestações culturais tradicionais têm valor somente turístico, não servindo para caracterizar patrimônio cultural.",
+    ],
+    correta: 0,
+    explicacao:
+      "O Fandango Caiçara — dança e música das comunidades do litoral do Paraná e de São Paulo — é um exemplo claro de patrimônio cultural imaterial, reconhecido oficialmente pelo IPHAN. Ele mostra que o patrimônio cultural paranaense vai além de bens materiais, não se limita a manifestações religiosas, não se reduz à herança da imigração europeia (apenas uma das matrizes culturais do estado, ao lado da indígena, caiçara e afro-brasileira) e tem relevância cultural própria, não apenas turística.",
+    origem: "banco",
+    fonte: "Adaptada de questão de treino do curso preparatório PC-PR — Agente de Polícia Judiciária (TAQ de Realidade do Paraná)",
+  },
+  {
+    id: "pr-029",
+    materia: "pr",
+    topico: "Indicadores sociais aplicados ao Paraná (IDH)",
+    enunciado:
+      "Para comparar diferentes dimensões da realidade social entre os municípios do Paraná, utiliza-se, entre outros indicadores, o Índice de Desenvolvimento Humano (IDH), que:",
+    alternativas: [
+      "combina dimensões relacionadas à renda, à educação e à longevidade, constituindo um indicador sintético de desenvolvimento humano.",
+      "mede exclusivamente a renda da população de cada município, funcionando como um indicador puramente econômico.",
+      "permite mensurar diretamente a eficiência dos serviços estaduais de segurança pública, saúde e transporte.",
+      "implica que municípios com valor elevado têm, necessariamente, baixa desigualdade de renda e acesso universal aos serviços públicos.",
+      "substitui, na formulação de políticas públicas, os indicadores específicos de saúde, educação, renda e desigualdade.",
+    ],
+    correta: 0,
+    explicacao:
+      "O IDH é um índice sintético que combina três dimensões — renda, educação e longevidade — para medir o desenvolvimento humano de um município, estado ou país. Ele não mede apenas renda, não avalia diretamente a eficiência de serviços públicos específicos, não garante baixa desigualdade onde é alto, pois não capta diretamente a distribuição de renda, e não substitui indicadores setoriais mais específicos, servindo como complemento a eles.",
+    origem: "banco",
+    fonte: "Adaptada de questão de treino do curso preparatório PC-PR — Agente de Polícia Judiciária (TAQ de Realidade do Paraná)",
+  },
+  {
+    id: "pr-030",
+    materia: "pr",
+    topico: "Agroindústria paranaense — cadeia produtiva",
+    enunciado:
+      "Na economia do Estado do Paraná, a força da agroindústria está associada à articulação entre produção rural, processamento industrial, logística e mercado. Sobre esse processo, é correto afirmar que a agroindústria:",
+    alternativas: [
+      "articula produção agropecuária, processamento industrial, logística e mercados consumidores na economia paranaense.",
+      "mantém a economia do estado baseada essencialmente em matérias-primas, sem qualquer integração significativa com a indústria.",
+      "desenvolveu-se de forma independente da infraestrutura de transporte e da produção agropecuária estadual.",
+      "concentra a agricultura paranaense exclusivamente no cultivo do café, principal responsável pelas exportações do estado.",
+      "faz da produção agrícola paranaense algo relevante apenas para o mercado interno, com reduzida relação com o comércio exterior.",
+    ],
+    correta: 0,
+    explicacao:
+      "A agroindústria é um dos pilares da economia paranaense: a soja é processada em óleo e farelo, o milho alimenta a avicultura e a suinocultura, e essa produção depende de rodovias, ferrovias e portos, como o de Paranaguá, para chegar ao mercado interno e à exportação. Essa cadeia — produção rural, processamento industrial, logística e mercado — contraria a ideia de uma economia baseada apenas em matérias-primas, isolada da indústria e dos transportes, ou concentrada só no café ou no mercado interno.",
+    origem: "banco",
+    fonte: "Adaptada de questão de treino do curso preparatório PC-PR — Agente de Polícia Judiciária (Aulão de Realidade do Paraná)",
+  },
+  {
+    id: "pr-031",
+    materia: "pr",
+    topico: "Expansão cafeeira e urbanização no Norte do Paraná",
+    enunciado:
+      "Sobre a expansão da cafeicultura no Norte do Paraná, especialmente a partir da primeira metade do século XX, é correto afirmar que esse processo:",
+    alternativas: [
+      "ocupou e valorizou áreas do Norte do estado, estimulando vias de circulação e núcleos urbanos durante a própria expansão da fronteira agrícola, não apenas depois dela.",
+      "provocou a concentração da população exclusivamente nas áreas rurais, retardando a formação de centros urbanos devido à baixa circulação comercial.",
+      "ocorreu predominantemente no litoral paranaense, onde o relevo e a proximidade do Oceano Atlântico favoreceram grandes plantações voltadas à exportação.",
+      "só gerou novas cidades no Norte do estado depois que o café foi substituído pela soja como principal cultura agrícola.",
+      "contribuiu para a ocupação do Norte do estado, mas sem qualquer relação com a expansão de estradas e ferrovias na região.",
+    ],
+    correta: 0,
+    explicacao:
+      "A expansão da cafeicultura ocupou o Norte do Paraná, não o litoral, durante a primeira metade do século XX, valorizando terras, atraindo colonização e exigindo a abertura de estradas e ferrovias para escoar a produção — processo que gerou diretamente núcleos urbanos, como Londrina e Maringá, ainda durante essa expansão, e não somente depois que o café foi substituído por outras culturas.",
+    origem: "banco",
+    fonte: "Adaptada de questão de treino do curso preparatório PC-PR — Agente de Polícia Judiciária (Aulão de Realidade do Paraná)",
+  },
 ];
