@@ -49,7 +49,7 @@ export const MARCOS: MarcoTempo[] = ORDEM_CADERNO.reduce<MarcoTempo[]>((lista, m
   return lista;
 }, []);
 
-export type AcaoPlano = "simulado" | "reforco" | "mapa" | "caderno" | "provas" | "conteudo" | "modelos" | "revisao" | "taticas" | "concurso";
+export type AcaoPlano = "simulado" | "reforco" | "mapa" | "externa" | "caderno" | "provas" | "conteudo" | "modelos" | "revisao" | "taticas" | "concurso";
 
 export interface ItemPlano {
   id: string;
@@ -85,6 +85,7 @@ export const PLANO_RETA_FINAL: DiaPlano[] = [
       { id: "08-reforco", texto: "Reforço dirigido dos 5 piores blocos (30 questões, com correção a cada uma).", acao: "reforco" },
       { id: "08-conteudo", texto: "Ler Conteúdo e Modelos mentais só dos blocos em vermelho. Não reler o que já está verde.", acao: "conteudo" },
       { id: "08-pt", texto: "PT de uma prova real da FGV (aba Provas reais), a ~3 min por questão: o banco do app tem só 36 de PT.", acao: "provas" },
+      { id: "08-lancar", texto: "Corrigiu a prova real? Lance acertos e erros por matéria e tópico em \"Provas feitas fora do app\": o mapa passa a contar.", acao: "externa" },
       { id: "08-revisao", texto: "Fila de revisão dos errados até zerar ou cansar.", acao: "revisao" },
     ],
   },
@@ -94,6 +95,7 @@ export const PLANO_RETA_FINAL: DiaPlano[] = [
     foco: "Segundo simulado e ajuste de ritmo",
     itens: [
       { id: "09-simulado", texto: "13h às 18h: simulado 2 no app (parte do PT vai repetir) ou uma prova real da FGV completa, no papel e cronometrada.", acao: "simulado" },
+      { id: "09-lancar", texto: "Se a prova foi no papel, lance os erros por matéria e tópico antes de comparar.", acao: "externa" },
       { id: "09-comparar", texto: "Comparar com o simulado 1: tempo por matéria contra os marcos e pontos nos 65 específicos (1º desempate).", acao: "mapa" },
       { id: "09-caderno", texto: "Imprimir ou salvar em PDF o caderno de erros para o sábado.", acao: "caderno" },
     ],

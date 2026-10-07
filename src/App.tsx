@@ -87,6 +87,7 @@ export default function App() {
   const [simulados, setSimulados] = useState<SimuladoResultado[]>(() => getSimulados());
   const [simuladoVisto, setSimuladoVisto] = useState<SimuladoResultado | null>(null);
   const [ancoraReta, setAncoraReta] = useState<AncoraReta | null>(null);
+  const [nomeExterna, setNomeExterna] = useState<string | null>(null);
 
   // Simulado cujo prazo de 5h acabou com o app fechado: corrige como se tivesse sido entregue no fim do tempo.
   useEffect(() => {
@@ -277,7 +278,11 @@ export default function App() {
           simuladoAtivo={simuladoAtivo}
           simulados={simulados}
           ancora={ancoraReta}
-          onAncoraUsada={() => setAncoraReta(null)}
+          nomeExterna={nomeExterna}
+          onAncoraUsada={() => {
+            setAncoraReta(null);
+            setNomeExterna(null);
+          }}
           onIniciarSimulado={iniciarSimulado}
           onDescartarSimulado={descartarSimulado}
           onVerResultado={(r) => {
@@ -308,7 +313,14 @@ export default function App() {
       )}
       {view === "conteudo" && <Conteudo />}
       {view === "videos" && <Videos />}
-      {view === "provas" && <ProvasReais />}
+      {view === "provas" && (
+        <ProvasReais
+          onLancarErros={(nome) => {
+            setNomeExterna(nome);
+            irParaReta("externa");
+          }}
+        />
+      )}
       {view === "apostas" && <Apostas />}
       {view === "concurso" && <Concurso />}
       {view === "tempos" && <Tempos attempts={attempts} />}

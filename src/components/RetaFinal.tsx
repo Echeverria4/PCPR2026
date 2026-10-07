@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import type { AttemptRecord, SimuladoAtivo, SimuladoResultado, SubjectId } from "../lib/types";
+import type { AttemptRecord, ProvaExterna, SimuladoAtivo, SimuladoResultado, SubjectId } from "../lib/types";
 import { PROVA_MIX, SUBJECT_MAP } from "../data/subjects";
 import {
   INICIO_PROVA,
@@ -13,18 +13,20 @@ import {
   type AcaoPlano,
 } from "../data/retaFinal";
 import { contarIneditas, diagnosticarBlocos, resumirSimulado, restanteMs } from "../lib/retaFinal";
-import { getRetaFinalChecks, salvarRetaFinalChecks } from "../lib/storage";
+import { getProvasExternas, getRetaFinalChecks, removerProvaExterna, salvarProvaExterna, salvarRetaFinalChecks } from "../lib/storage";
 import { formatarMarco, formatarRelogio, horarioProva } from "../lib/format";
 import MapaTopicos from "./MapaTopicos";
 import CadernoErros from "./CadernoErros";
+import ProvasExternas from "./ProvasExternas";
 
-export type AncoraReta = "simulado" | "plano" | "mapa" | "caderno" | "taticas";
+export type AncoraReta = "simulado" | "plano" | "externa" | "mapa" | "caderno" | "taticas";
 type AbaDestino = "conteudo" | "modelos-mentais" | "provas" | "concurso";
 
 const ROTULO_ACAO: Record<AcaoPlano, string> = {
   simulado: "Ir ao simulado",
   reforco: "Treinar os 5 piores",
   mapa: "Ver o mapa",
+  externa: "Lançar prova de fora",
   caderno: "Ver o caderno",
   provas: "Provas reais",
   conteudo: "Conteúdo",
@@ -60,6 +62,8 @@ interface RetaFinalProps {
   simuladoAtivo: SimuladoAtivo | null;
   simulados: SimuladoResultado[];
   ancora: AncoraReta | null;
+  /** Nome da prova quando a âncora "externa" vem da aba Provas reais. */
+  nomeExterna: string | null;
   onAncoraUsada: () => void;
   onIniciarSimulado: () => void;
   onDescartarSimulado: () => void;
@@ -75,6 +79,7 @@ export default function RetaFinal({
   simuladoAtivo,
   simulados,
   ancora,
+  nomeExterna,
   onAncoraUsada,
   onIniciarSimulado,
   onDescartarSimulado,
@@ -86,6 +91,8 @@ export default function RetaFinal({
   const [agora, setAgora] = useState(Date.now());
   const [checks, setChecks] = useState<Record<string, boolean>>(() => getRetaFinalChecks());
   const [cadernoAberto, setCadernoAberto] = useState(ancora === "caderno");
+  const [externas, setExternas] = useState<ProvaExterna[]>(() => getProvasExternas());
+  const [externaAberta, setExternaAberta] = useState(ancora === "externa");
 
   useEffect(() => {
     const id = setInterval(() => setAgora(Date.now()), 30_000);
@@ -94,6 +101,7 @@ export default function RetaFinal({
 
   function rolarPara(alvo: AncoraReta) {
     if (alvo === "caderno") setCadernoAberto(true);
+    if (alvo === "externa") setExternaAberta(true);
     requestAnimationFrame(() => document.getElementById(`rf-${alvo}`)?.scrollIntoView({ behavior: "smooth", block: "start" }));
   }
 
@@ -107,7 +115,8 @@ export default function RetaFinal({
 
   const ineditas = useMemo(() => contarIneditas(attempts), [attempts]);
   const repetidas = ORDEM_CADERNO.filter((m) => ineditas[m] < PROVA_MIX[m]);
-  const piores = useMemo(() => diagnosticarBlocos(attempts).slice(0, 5).map((d) => d.bloco.id), [attempts]);
+  const diagnostico = useMemo(() => diagnosticarBlocos(attempts, externas), [attempts, externas]);
+  const piores = diagnostico.slice(0, 5).map((d) => d.bloco.id);
 
   const inicioProva = new Date(INICIO_PROVA).getTime();
   const falta = inicioProva - agora;
@@ -123,6 +132,7 @@ export default function RetaFinal({
   function executar(acao: AcaoPlano) {
     if (acao === "simulado") rolarPara("simulado");
     else if (acao === "mapa") rolarPara("mapa");
+    else if (acao === "externa") rolarPara("externa");
     else if (acao === "caderno") rolarPara("caderno");
     else if (acao === "taticas") rolarPara("taticas");
     else if (acao === "reforco") onReforco(piores, 30);
@@ -279,12 +289,29 @@ export default function RetaFinal({
         </div>
       </section>
 
+      <section className="rf-secao" id="rf-externa">
+        <ProvasExternas
+          externas={externas}
+          aberto={externaAberta}
+          onAlternar={setExternaAberta}
+          nomeInicial={nomeExterna}
+          onSalvar={(prova) => setExternas(salvarProvaExterna(prova))}
+          onRemover={(id) => setExternas(removerProvaExterna(id))}
+          onVerMapa={() => rolarPara("mapa")}
+        />
+      </section>
+
       <section className="rf-secao" id="rf-mapa">
-        <MapaTopicos attempts={attempts} onReforco={onReforco} />
+        <MapaTopicos
+          diagnostico={diagnostico}
+          temExternas={externas.length > 0}
+          onReforco={onReforco}
+          onLancarExterna={() => rolarPara("externa")}
+        />
       </section>
 
       <section className="rf-secao rf-caderno" id="rf-caderno">
-        <CadernoErros attempts={attempts} aberto={cadernoAberto} onAlternar={setCadernoAberto} />
+        <CadernoErros attempts={attempts} externas={externas} aberto={cadernoAberto} onAlternar={setCadernoAberto} />
       </section>
 
       <section className="rf-secao" id="rf-taticas">

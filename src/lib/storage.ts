@@ -2,7 +2,9 @@ import { supabase, isSupabaseConfigured } from "./supabase";
 import type {
   AttemptRecord,
   Confianca,
+  ProvaExterna,
   ProvaRealResultado,
+  RascunhoProvaExterna,
   SimuladoAtivo,
   SimuladoResultado,
   SubjectId,
@@ -15,6 +17,8 @@ const LS_PROVAS_REAIS = "pcpr:provasReais";
 const LS_SIMULADO_ATIVO = "pcpr:simuladoAtivo";
 const LS_SIMULADOS = "pcpr:simulados";
 const LS_RETA_CHECKS = "pcpr:retaFinalChecks";
+const LS_PROVAS_EXTERNAS = "pcpr:provasExternas";
+const LS_RASCUNHO_EXTERNA = "pcpr:provaExternaRascunho";
 const MAX_ATTEMPTS_LOCAL = 2000;
 const MAX_WRONG_QUEUE = 60;
 const MAX_SIMULADOS = 12;
@@ -220,6 +224,41 @@ export function getRetaFinalChecks(): Record<string, boolean> {
 
 export function salvarRetaFinalChecks(checks: Record<string, boolean>): void {
   writeLocal(LS_RETA_CHECKS, checks);
+}
+
+/** Provas feitas fora do app e lançadas por matéria, da mais recente para a mais antiga. */
+export function getProvasExternas(): ProvaExterna[] {
+  const lista = readLocal<ProvaExterna[]>(LS_PROVAS_EXTERNAS, []);
+  return Array.isArray(lista) ? lista.filter((p) => p && Array.isArray(p.materias)) : [];
+}
+
+export function salvarProvaExterna(prova: ProvaExterna): ProvaExterna[] {
+  const lista = [prova, ...getProvasExternas().filter((p) => p.id !== prova.id)];
+  writeLocal(LS_PROVAS_EXTERNAS, lista);
+  return lista;
+}
+
+export function removerProvaExterna(id: string): ProvaExterna[] {
+  const lista = getProvasExternas().filter((p) => p.id !== id);
+  writeLocal(LS_PROVAS_EXTERNAS, lista);
+  return lista;
+}
+
+/** Lançamento em andamento: sobrevive a trocar de aba ou recarregar a página. */
+export function getRascunhoExterna(): RascunhoProvaExterna | null {
+  const r = readLocal<RascunhoProvaExterna | null>(LS_RASCUNHO_EXTERNA, null);
+  return r && typeof r.linhas === "object" && r.linhas !== null ? r : null;
+}
+
+export function salvarRascunhoExterna(rascunho: RascunhoProvaExterna | null): void {
+  if (rascunho) writeLocal(LS_RASCUNHO_EXTERNA, rascunho);
+  else {
+    try {
+      localStorage.removeItem(LS_RASCUNHO_EXTERNA);
+    } catch {
+      // sem localStorage não há rascunho salvo para apagar
+    }
+  }
 }
 
 export async function resetAttemptsMateria(materia: SubjectId): Promise<AttemptRecord[]> {

@@ -88,6 +88,30 @@ export interface ProvaRealResultado {
   quando: string;
 }
 
+/** Uma matéria de prova feita fora do app (prova real no papel, outro site), lançada à mão depois de corrigir. */
+export interface ProvaExternaMateria {
+  materia: SubjectId;
+  questoes: number;
+  acertos: number;
+  /** Erros que o candidato soube atribuir a um bloco (id do bloco → quantidade); o resto fica sem tópico. */
+  errosPorBloco: Record<string, number>;
+  /** O que errou, em poucas palavras: vai para o caderno de erros. */
+  nota?: string;
+}
+
+export interface ProvaExterna {
+  id: string;
+  nome: string;
+  lancadaEm: string;
+  materias: ProvaExternaMateria[];
+}
+
+/** Formulário de prova de fora ainda não salvo (campos como digitados). */
+export interface RascunhoProvaExterna {
+  nome: string;
+  linhas: Partial<Record<SubjectId, { questoes: string; acertos: string; erros: Record<string, number>; nota: string }>>;
+}
+
 export interface TafFaixas {
   ate29: string;
   de30a39: string;

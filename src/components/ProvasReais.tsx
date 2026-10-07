@@ -14,7 +14,12 @@ interface RegistroForm {
   total: string;
 }
 
-export default function ProvasReais() {
+interface ProvasReaisProps {
+  /** Abre o lançamento por matéria e tópico na Reta final, já com o nome da prova. */
+  onLancarErros: (nomeProva: string) => void;
+}
+
+export default function ProvasReais({ onLancarErros }: ProvasReaisProps) {
   const [resultados, setResultados] = useState<Record<string, ProvaRealResultado>>(() =>
     getProvasReaisResultados(),
   );
@@ -40,7 +45,8 @@ export default function ProvasReais() {
       <h2 className="secao-titulo">Provas reais</h2>
       <p className="conteudo-intro">
         Cadernos oficiais da FGV/UFPR para fazer fora do app, no PDF, cronometrado. As questões são da
-        banca — depois de corrigir pelo gabarito, registre seu resultado aqui para acompanhar a evolução.
+        banca — depois de corrigir pelo gabarito, registre seu resultado aqui para acompanhar a evolução. Para o mapa de pontos fracos
+        saber em que matérias e tópicos você errou, use “Lançar erros por matéria e tópico” no card da prova.
       </p>
 
       <div className="prova-lista">
@@ -105,6 +111,9 @@ export default function ProvasReais() {
                   {resultado ? "Atualizar" : "Salvar resultado"}
                 </button>
               </div>
+              <button className="link-botao prova-lancar" onClick={() => onLancarErros(p.nome)}>
+                📝 Lançar erros por matéria e tópico →
+              </button>
             </article>
           );
         })}

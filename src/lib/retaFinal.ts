@@ -1,6 +1,8 @@
 import type {
   AttemptRecord,
   Confianca,
+  ProvaExterna,
+  ProvaExternaMateria,
   Question,
   SimuladoAtivo,
   SimuladoQuestao,
@@ -258,22 +260,61 @@ export interface DiagnosticoBloco {
   erradasAgora: number;
   ineditas: number;
   banco: number;
+  /** Provas feitas fora do app: questões e erros estimados no bloco e erros marcados nele pelo candidato. */
+  externo: { questoes: number; erros: number; marcados: number };
 }
 
 const PESO_ACERTO_CHUTE = 0.5;
 const SUAVIZACAO = 4;
 
 /**
+ * Parte de cada bloco numa matéria lançada de prova de fora. Os erros marcados vão para o bloco
+ * indicado; os acertos e os erros sem tópico se espalham pelos blocos na proporção do peso estimado,
+ * porque a prova de fora não diz quantas questões havia de cada bloco.
+ */
+export function distribuirExterna(m: ProvaExternaMateria): { bloco: BlocoEstudo; questoes: number; erros: number; marcados: number }[] {
+  const blocos = blocosDaMateria(m.materia);
+  const pesoTotal = blocos.reduce((s, b) => s + b.questoesEstimadas, 0);
+  if (!blocos.length || pesoTotal <= 0) return [];
+  const questoes = Math.max(0, m.questoes || 0);
+  const acertos = Math.min(Math.max(0, m.acertos || 0), questoes);
+  const erros = questoes - acertos;
+  const marcados = blocos.map((b) => Math.max(0, m.errosPorBloco?.[b.id] || 0));
+  const totalMarcados = marcados.reduce((s, x) => s + x, 0);
+  // Mais erros marcados do que erros (lançamento editado à mão): encolhe todos na mesma proporção.
+  const fator = totalMarcados > erros ? erros / totalMarcados : 1;
+  const semTopico = erros - totalMarcados * fator;
+  return blocos.map((b, i) => {
+    const parte = b.questoesEstimadas / pesoTotal;
+    const errosBloco = marcados[i] * fator + semTopico * parte;
+    return { bloco: b, questoes: acertos * parte + errosBloco, erros: errosBloco, marcados: marcados[i] };
+  });
+}
+
+/**
  * Mapa de pontos fracos por bloco. O acerto usa só a primeira resposta de cada questão
  * (repetir a mesma questão mede memória, não matéria) e conta acerto no chute como meio.
+ * Questões de provas feitas fora do app entram como primeiras respostas (sem confiança marcada).
  * Com poucas respostas o percentual cru engana (1 de 1 = 100%), então a estimativa é
  * suavizada em direção à média da matéria antes de virar verde, amarelo ou vermelho.
  */
-export function diagnosticarBlocos(attempts: AttemptRecord[]): DiagnosticoBloco[] {
+export function diagnosticarBlocos(attempts: AttemptRecord[], externas: ProvaExterna[] = []): DiagnosticoBloco[] {
   const hist = historicoPorQuestao(attempts);
   const acc = new Map<string, Omit<DiagnosticoBloco, "p" | "status" | "pontosEmJogo"> & { peso: number }>();
   for (const b of BLOCOS) {
-    acc.set(b.id, { bloco: b, n: 0, acertosBrutos: 0, peso: 0, convictos: 0, chutes: 0, marcadas: 0, erradasAgora: 0, ineditas: 0, banco: 0 });
+    acc.set(b.id, {
+      bloco: b,
+      n: 0,
+      acertosBrutos: 0,
+      peso: 0,
+      convictos: 0,
+      chutes: 0,
+      marcadas: 0,
+      erradasAgora: 0,
+      ineditas: 0,
+      banco: 0,
+      externo: { questoes: 0, erros: 0, marcados: 0 },
+    });
   }
 
   for (const q of BANCO) {
@@ -301,12 +342,31 @@ export function diagnosticarBlocos(attempts: AttemptRecord[]): DiagnosticoBloco[
     }
   }
 
-  const totalGlobal = [...acc.values()].reduce((s, a) => ({ n: s.n + a.n, peso: s.peso + a.peso }), { n: 0, peso: 0 });
+  for (const prova of externas) {
+    for (const m of prova.materias) {
+      for (const parte of distribuirExterna(m)) {
+        const e = acc.get(parte.bloco.id)!.externo;
+        e.questoes += parte.questoes;
+        e.erros += parte.erros;
+        e.marcados += parte.marcados;
+      }
+    }
+  }
+
+  // Respostas e acertos de cada bloco somando o app e as provas de fora.
+  const total = (a: { n: number; peso: number; externo: DiagnosticoBloco["externo"] }) => ({
+    n: a.n + a.externo.questoes,
+    peso: a.peso + a.externo.questoes - a.externo.erros,
+  });
+  const totalGlobal = { n: 0, peso: 0 };
   const porMateria = new Map<SubjectId, { n: number; peso: number }>();
   for (const a of acc.values()) {
+    const t = total(a);
+    totalGlobal.n += t.n;
+    totalGlobal.peso += t.peso;
     const m = porMateria.get(a.bloco.materia) ?? { n: 0, peso: 0 };
-    m.n += a.n;
-    m.peso += a.peso;
+    m.n += t.n;
+    m.peso += t.peso;
     porMateria.set(a.bloco.materia, m);
   }
   const base = (materia: SubjectId) => {
@@ -318,11 +378,74 @@ export function diagnosticarBlocos(attempts: AttemptRecord[]): DiagnosticoBloco[
 
   return [...acc.values()]
     .map(({ peso, ...a }) => {
-      const p = (peso + SUAVIZACAO * base(a.bloco.materia)) / (a.n + SUAVIZACAO);
-      const status: StatusBloco = a.n < 3 ? "sem-dados" : p >= 0.85 ? "verde" : p >= 0.65 ? "amarelo" : "vermelho";
+      const t = total({ ...a, peso });
+      const p = (t.peso + SUAVIZACAO * base(a.bloco.materia)) / (t.n + SUAVIZACAO);
+      const status: StatusBloco = t.n < 3 ? "sem-dados" : p >= 0.85 ? "verde" : p >= 0.65 ? "amarelo" : "vermelho";
       return { ...a, p, status, pontosEmJogo: a.bloco.questoesEstimadas * (1 - p) };
     })
     .sort((x, y) => y.pontosEmJogo - x.pontosEmJogo);
+}
+
+export interface DiagnosticoMateria {
+  materia: SubjectId;
+  /** Questões da matéria na prova (Anexo I). */
+  questoes: number;
+  pontosEmJogo: number;
+  /** Acerto estimado na matéria: os blocos pesados pelas questões que cada um tende a ter. */
+  p: number;
+  status: StatusBloco;
+  /** Primeiras respostas no app e questões lançadas de provas de fora. */
+  n: number;
+  externo: number;
+}
+
+/** Ranking de matérias: a soma dos pontos em jogo dos blocos de cada uma. */
+export function diagnosticarMaterias(blocos: DiagnosticoBloco[]): DiagnosticoMateria[] {
+  const porMateria = new Map<SubjectId, Omit<DiagnosticoMateria, "p" | "status">>();
+  for (const d of blocos) {
+    const materia = d.bloco.materia;
+    const m = porMateria.get(materia) ?? { materia, questoes: 0, pontosEmJogo: 0, n: 0, externo: 0 };
+    m.questoes += d.bloco.questoesEstimadas;
+    m.pontosEmJogo += d.pontosEmJogo;
+    m.n += d.n;
+    m.externo += d.externo.questoes;
+    porMateria.set(materia, m);
+  }
+  return [...porMateria.values()]
+    .map((m) => {
+      const p = m.questoes > 0 ? 1 - m.pontosEmJogo / m.questoes : 0;
+      const status: StatusBloco = m.n + m.externo < 5 ? "sem-dados" : p >= 0.85 ? "verde" : p >= 0.65 ? "amarelo" : "vermelho";
+      return { ...m, p, status };
+    })
+    .sort((x, y) => y.pontosEmJogo - x.pontosEmJogo);
+}
+
+export interface ErroExterno {
+  prova: ProvaExterna;
+  materia: ProvaExternaMateria;
+  erros: number;
+  /** Erros que o candidato marcou em cada bloco, do bloco com mais erros para o com menos. */
+  porBloco: { bloco: BlocoEstudo; erros: number }[];
+  semTopico: number;
+}
+
+/** Erros lançados de provas de fora para o caderno: uma entrada por matéria com erro ou com nota. */
+export function errosExternos(externas: ProvaExterna[]): ErroExterno[] {
+  const itens: ErroExterno[] = [];
+  for (const prova of externas) {
+    for (const m of prova.materias) {
+      if (!SUBJECT_MAP[m.materia]) continue;
+      const erros = Math.max(0, m.questoes - m.acertos);
+      if (!erros && !m.nota?.trim()) continue;
+      const porBloco = blocosDaMateria(m.materia)
+        .map((bloco) => ({ bloco, erros: Math.max(0, m.errosPorBloco?.[bloco.id] || 0) }))
+        .filter((b) => b.erros > 0)
+        .sort((a, b) => b.erros - a.erros);
+      const marcados = porBloco.reduce((s, b) => s + b.erros, 0);
+      itens.push({ prova, materia: m, erros, porBloco, semTopico: Math.max(0, erros - marcados) });
+    }
+  }
+  return itens;
 }
 
 /**
