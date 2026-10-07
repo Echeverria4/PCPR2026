@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import type { AttemptRecord, Question, QuizMode } from "../lib/types";
-import { recordAttempt } from "../lib/storage";
+import type { AttemptRecord, Confianca, Question, QuizMode } from "../lib/types";
+import { atualizarConfianca, recordAttempt } from "../lib/storage";
 import { formatarSegundos } from "../lib/format";
+import { ROTULO_CONFIANCA } from "../data/retaFinal";
 
 const LETRAS = ["A", "B", "C", "D", "E"];
 
@@ -25,6 +26,8 @@ export default function Quiz({ questions, modo, onFinalizar, onSair }: QuizProps
   const inicioQuestaoRef = useRef(Date.now());
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const [tempoRespostaMs, setTempoRespostaMs] = useState<number | null>(null);
+  const [confianca, setConfianca] = useState<Confianca | undefined>(undefined);
+  const registroRef = useRef<AttemptRecord | null>(null);
 
   const questao = questions[indice];
   const ultimaQuestao = indice === questions.length - 1;
@@ -68,9 +71,24 @@ export default function Quiz({ questions, modo, onFinalizar, onSair }: QuizProps
       respondidaEm: new Date().toISOString(),
       tempoMs,
       modo,
+      confianca,
     };
+    registroRef.current = registro;
     setRespostas((prev) => [...prev, registro]);
     void recordAttempt(registro);
+  }
+
+  // A confiança vale mais marcada antes de clicar na resposta, mas pode ser ajustada até a próxima questão.
+  function marcarConfianca(c: Confianca) {
+    const nova = confianca === c ? undefined : c;
+    setConfianca(nova);
+    const r = registroRef.current;
+    if (selecionada === null || !r) return;
+    atualizarConfianca(r.questionId, r.respondidaEm, nova);
+    registroRef.current = { ...r, confianca: nova };
+    setRespostas((prev) =>
+      prev.map((x) => (x.questionId === r.questionId && x.respondidaEm === r.respondidaEm ? { ...x, confianca: nova } : x)),
+    );
   }
 
   function avancar() {
@@ -81,6 +99,8 @@ export default function Quiz({ questions, modo, onFinalizar, onSair }: QuizProps
     setIndice((i) => i + 1);
     setSelecionada(null);
     setTempoRespostaMs(null);
+    setConfianca(undefined);
+    registroRef.current = null;
     setIaAberto(false);
     setIaTexto("");
     setIaErro(null);
@@ -131,6 +151,8 @@ export default function Quiz({ questions, modo, onFinalizar, onSair }: QuizProps
     prova: "Simulado completo",
     revisao: "Revisão dos errados",
     "treino-alvo": "Foco recomendado",
+    simulado: "Simulado modo prova",
+    reforco: "Reforço dirigido",
   };
 
   return (
@@ -177,6 +199,21 @@ export default function Quiz({ questions, modo, onFinalizar, onSair }: QuizProps
               </button>
             );
           })}
+        </div>
+
+        <div className="confianca-linha">
+          <span className="confianca-rotulo">
+            {selecionada === null ? "Confiança (marque antes de responder):" : "Confiança:"}
+          </span>
+          {(Object.keys(ROTULO_CONFIANCA) as Confianca[]).map((c) => (
+            <button
+              key={c}
+              className={`confianca-chip confianca-${c} ${confianca === c ? "confianca-ativa" : ""}`}
+              onClick={() => marcarConfianca(c)}
+            >
+              {ROTULO_CONFIANCA[c]}
+            </button>
+          ))}
         </div>
 
         {selecionada !== null && (

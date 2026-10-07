@@ -102,7 +102,10 @@ export interface TafExercicio {
   faixas: TafFaixas;
 }
 
-export type QuizMode = "materia" | "prova" | "revisao" | "treino-alvo";
+export type QuizMode = "materia" | "prova" | "revisao" | "treino-alvo" | "simulado" | "reforco";
+
+/** Quanto o candidato confiava na resposta, marcado na hora de responder. */
+export type Confianca = "certeza" | "duvida" | "chute";
 
 export interface AttemptRecord {
   questionId: string;
@@ -111,6 +114,52 @@ export interface AttemptRecord {
   respondidaEm: string;
   tempoMs?: number;
   modo?: QuizMode;
+  confianca?: Confianca;
+}
+
+/** Questão sorteada para o simulado modo prova. ordem[i] = índice original da alternativa mostrada na posição i. */
+export interface SimuladoQuestao {
+  id: string;
+  ordem: number[];
+}
+
+export interface SimuladoResposta {
+  /** Posição marcada, na ordem mostrada; null = em branco. */
+  escolha: number | null;
+  confianca?: Confianca;
+  tempoMs: number;
+  /** "Marcar para revisar" antes de entregar. */
+  marcada?: boolean;
+}
+
+/** Simulado em andamento: o relógio corre pelo horário de início, mesmo com o app fechado. */
+export interface SimuladoAtivo {
+  id: string;
+  iniciadoEm: string;
+  duracaoMin: number;
+  questoes: SimuladoQuestao[];
+  respostas: SimuladoResposta[];
+  atual: number;
+}
+
+export interface SimuladoQuestaoResultado {
+  id: string;
+  materia: SubjectId;
+  ordem: number[];
+  escolha: number | null;
+  acertou: boolean;
+  confianca?: Confianca;
+  tempoMs: number;
+}
+
+export interface SimuladoResultado {
+  id: string;
+  iniciadoEm: string;
+  finalizadoEm: string;
+  duracaoMin: number;
+  usadoMs: number;
+  encerradoPorTempo: boolean;
+  questoes: SimuladoQuestaoResultado[];
 }
 
 export interface SubjectStats {

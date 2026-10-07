@@ -11,18 +11,36 @@ import ModelosMentais from "./components/ModelosMentais";
 import Quiz from "./components/Quiz";
 import Result from "./components/Result";
 import Auth from "./components/Auth";
+import RetaFinal, { type AncoraReta } from "./components/RetaFinal";
+import Simulado from "./components/Simulado";
+import SimuladoResultadoView from "./components/SimuladoResultado";
 import { supabase, isSupabaseConfigured } from "./lib/supabase";
 import {
   computeStats,
   focoRecomendado,
   getLocalAttempts,
+  getSimuladoAtivo,
+  getSimulados,
   getWrongQueue,
+  recordAttempts,
   resetAttemptsMateria,
+  salvarSimuladoAtivo,
+  salvarSimuladoResultado,
   syncRemoteAttempts,
 } from "./lib/storage";
 import { buildSessaoMateria, buildSessaoProva, buildSessaoRevisao, buildSessaoTreinoAlvo } from "./lib/quizEngine";
+import { buildSessaoReforco, buildSimulado, carregarSimuladoAtivo, corrigirSimulado, restanteMs } from "./lib/retaFinal";
 import { SUBJECT_WEIGHTS } from "./data/subjects";
-import type { AttemptRecord, Question, QuizMode, QuizSessionResult, SubjectId, SubjectStats } from "./lib/types";
+import type {
+  AttemptRecord,
+  Question,
+  QuizMode,
+  QuizSessionResult,
+  SimuladoAtivo,
+  SimuladoResultado,
+  SubjectId,
+  SubjectStats,
+} from "./lib/types";
 
 type View =
   | "home"
@@ -33,12 +51,16 @@ type View =
   | "concurso"
   | "tempos"
   | "modelos-mentais"
+  | "reta-final"
+  | "simulado"
+  | "simulado-resultado"
   | "quiz"
   | "result"
   | "auth";
 
 const ABAS_PRINCIPAIS: View[] = [
   "home",
+  "reta-final",
   "conteudo",
   "videos",
   "provas",
@@ -61,6 +83,24 @@ export default function App() {
   const [sessao, setSessao] = useState<SessaoAtiva | null>(null);
   const [resultado, setResultado] = useState<QuizSessionResult | null>(null);
   const [userEmail, setUserEmail] = useState<string | null>(null);
+  const [simuladoAtivo, setSimuladoAtivo] = useState<SimuladoAtivo | null>(() => carregarSimuladoAtivo());
+  const [simulados, setSimulados] = useState<SimuladoResultado[]>(() => getSimulados());
+  const [simuladoVisto, setSimuladoVisto] = useState<SimuladoResultado | null>(null);
+  const [ancoraReta, setAncoraReta] = useState<AncoraReta | null>(null);
+
+  // Simulado cujo prazo de 5h acabou com o app fechado: corrige como se tivesse sido entregue no fim do tempo.
+  useEffect(() => {
+    const s = carregarSimuladoAtivo();
+    if (s && restanteMs(s) <= 0) entregarSimulado(s, true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Toda troca de tela começa do topo; a Reta final aberta com âncora rola sozinha até a seção.
+  useEffect(() => {
+    if (view === "reta-final" && ancoraReta) return;
+    window.scrollTo({ top: 0 });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [view]);
 
   useEffect(() => {
     syncRemoteAttempts().then((remoto) => {
@@ -118,6 +158,54 @@ export default function App() {
     setView("result");
   }
 
+  function iniciarSimulado() {
+    const existente = carregarSimuladoAtivo();
+    const s = existente ?? buildSimulado(getLocalAttempts());
+    if (!existente) salvarSimuladoAtivo(s);
+    setSimuladoAtivo(s);
+    setView("simulado");
+  }
+
+  function entregarSimulado(s: SimuladoAtivo, porTempo: boolean) {
+    // Só corrige o simulado que ainda está salvo como ativo: evita gravar a mesma entrega duas vezes.
+    if (getSimuladoAtivo()?.id !== s.id) return;
+    const { resultado: corrigido, tentativas } = corrigirSimulado(s, porTempo);
+    salvarSimuladoAtivo(null);
+    const lista = salvarSimuladoResultado(corrigido);
+    void recordAttempts(tentativas);
+    setSimuladoAtivo(null);
+    setSimulados(lista);
+    setAttempts(getLocalAttempts());
+    setWrongCount(getWrongQueue().length);
+    setSimuladoVisto(corrigido);
+    setView("simulado-resultado");
+  }
+
+  function sairSimulado() {
+    setSimuladoAtivo(carregarSimuladoAtivo());
+    setView("reta-final");
+  }
+
+  function descartarSimulado() {
+    salvarSimuladoAtivo(null);
+    setSimuladoAtivo(null);
+    setView("reta-final");
+  }
+
+  function iniciarReforco(blocoIds: string[], quantidade: number) {
+    const questions = buildSessaoReforco(blocoIds, getLocalAttempts(), quantidade);
+    if (questions.length === 0) return;
+    setSessao({ mode: "reforco", questions, iniciadoEm: new Date().toISOString() });
+    setView("quiz");
+  }
+
+  function irParaReta(ancora: AncoraReta | null = null) {
+    setSessao(null);
+    setResultado(null);
+    setAncoraReta(ancora);
+    setView("reta-final");
+  }
+
   async function resetarMateria(materia: SubjectId) {
     const restantes = await resetAttemptsMateria(materia);
     setAttempts(restantes);
@@ -130,6 +218,20 @@ export default function App() {
     setView("home");
   }
 
+  // Telas abertas pela Reta final voltam para ela; o reforço volta ao mapa, como o "Encerrar" do quiz.
+  const voltaParaReta =
+    view === "simulado" ||
+    view === "simulado-resultado" ||
+    (view === "quiz" && sessao?.mode === "reforco") ||
+    (view === "result" && resultado?.mode === "reforco");
+
+  function voltar() {
+    if (view === "simulado") sairSimulado();
+    else if (view === "simulado-resultado") irParaReta();
+    else if (voltaParaReta) irParaReta("mapa");
+    else voltarHome();
+  }
+
   async function logout() {
     if (supabase) await supabase.auth.signOut();
     setUserEmail(null);
@@ -140,10 +242,12 @@ export default function App() {
     <Layout
       userEmail={userEmail}
       mostrarVoltar={!ABAS_PRINCIPAIS.includes(view)}
-      onVoltar={voltarHome}
+      rotuloVoltar={voltaParaReta ? "← Reta final" : undefined}
+      onVoltar={voltar}
       onIrParaAuth={() => setView("auth")}
       onLogout={logout}
       abaAtiva={
+        view === "reta-final" ||
         view === "conteudo" ||
         view === "videos" ||
         view === "provas" ||
@@ -163,6 +267,43 @@ export default function App() {
           materiaFoco={materiaFoco}
           onIniciar={iniciarQuiz}
           onResetarMateria={resetarMateria}
+          onAbrirRetaFinal={() => irParaReta("simulado")}
+        />
+      )}
+      {view === "reta-final" && (
+        <RetaFinal
+          attempts={attempts}
+          wrongCount={wrongCount}
+          simuladoAtivo={simuladoAtivo}
+          simulados={simulados}
+          ancora={ancoraReta}
+          onAncoraUsada={() => setAncoraReta(null)}
+          onIniciarSimulado={iniciarSimulado}
+          onDescartarSimulado={descartarSimulado}
+          onVerResultado={(r) => {
+            setSimuladoVisto(r);
+            setView("simulado-resultado");
+          }}
+          onReforco={iniciarReforco}
+          onRevisao={() => iniciarQuiz("revisao")}
+          onIrPara={(aba) => setView(aba)}
+        />
+      )}
+      {view === "simulado" && simuladoAtivo && (
+        <Simulado
+          key={simuladoAtivo.id}
+          simulado={simuladoAtivo}
+          onEntregar={entregarSimulado}
+          onSair={sairSimulado}
+          onDescartar={descartarSimulado}
+        />
+      )}
+      {view === "simulado-resultado" && simuladoVisto && (
+        <SimuladoResultadoView
+          resultado={simuladoVisto}
+          onVoltar={() => irParaReta("simulado")}
+          onReforco={iniciarReforco}
+          onAbrirCaderno={() => irParaReta("caderno")}
         />
       )}
       {view === "conteudo" && <Conteudo />}
@@ -173,12 +314,17 @@ export default function App() {
       {view === "tempos" && <Tempos attempts={attempts} />}
       {view === "modelos-mentais" && <ModelosMentais />}
       {view === "quiz" && sessao && (
-        <Quiz questions={sessao.questions} modo={sessao.mode} onFinalizar={finalizarQuiz} onSair={voltarHome} />
+        <Quiz
+          questions={sessao.questions}
+          modo={sessao.mode}
+          onFinalizar={finalizarQuiz}
+          onSair={sessao.mode === "reforco" ? () => irParaReta("mapa") : voltarHome}
+        />
       )}
       {view === "result" && resultado && (
         <Result
           resultado={resultado}
-          onVoltarHome={voltarHome}
+          onVoltarHome={resultado.mode === "reforco" ? () => irParaReta("mapa") : voltarHome}
           onRevisarErros={() => iniciarQuiz("revisao")}
         />
       )}

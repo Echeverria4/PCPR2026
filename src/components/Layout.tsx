@@ -4,6 +4,7 @@ import pcprBrasao from "../assets/pcpr-brasao.png";
 
 type AbaPrincipal =
   | "home"
+  | "reta-final"
   | "conteudo"
   | "videos"
   | "provas"
@@ -16,6 +17,7 @@ interface LayoutProps {
   children: ReactNode;
   userEmail: string | null;
   mostrarVoltar: boolean;
+  rotuloVoltar?: string;
   onVoltar: () => void;
   onIrParaAuth: () => void;
   onLogout: () => void;
@@ -27,6 +29,7 @@ export default function Layout({
   children,
   userEmail,
   mostrarVoltar,
+  rotuloVoltar = "← Início",
   onVoltar,
   onIrParaAuth,
   onLogout,
@@ -47,7 +50,7 @@ export default function Layout({
           <div className="topbar-acoes">
             {mostrarVoltar && (
               <button className="botao" onClick={onVoltar}>
-                ← Início
+                {rotuloVoltar}
               </button>
             )}
             {isSupabaseConfigured ? (
@@ -77,6 +80,12 @@ export default function Layout({
               onClick={() => onTrocarAba("home")}
             >
               Treino
+            </button>
+            <button
+              className={`tab ${abaAtiva === "reta-final" ? "tab-ativa" : ""}`}
+              onClick={() => onTrocarAba("reta-final")}
+            >
+              🏁 Reta final
             </button>
             <button
               className={`tab ${abaAtiva === "conteudo" ? "tab-ativa" : ""}`}

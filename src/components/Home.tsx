@@ -10,9 +10,10 @@ interface HomeProps {
   materiaFoco: SubjectId | null;
   onIniciar: (mode: QuizMode, materia?: SubjectId) => void;
   onResetarMateria: (materia: SubjectId) => void;
+  onAbrirRetaFinal: () => void;
 }
 
-export default function Home({ stats, wrongCount, materiaFoco, onIniciar, onResetarMateria }: HomeProps) {
+export default function Home({ stats, wrongCount, materiaFoco, onIniciar, onResetarMateria, onAbrirRetaFinal }: HomeProps) {
   const statsPorMateria = new Map(stats.map((s) => [s.materia, s]));
   const totalQuestoes = SUBJECTS.reduce(
     (soma, s) => soma + (QUESTOES_POR_MATERIA[s.id]?.length ?? 0),
@@ -52,9 +53,13 @@ export default function Home({ stats, wrongCount, materiaFoco, onIniciar, onRese
 
       <h2 className="secao-titulo">Modos de treino</h2>
       <div className="modos-grid">
+        <button className="modo-card modo-card-destaque" onClick={onAbrirRetaFinal}>
+          <h3>🏁 Simulado modo prova (5h)</h3>
+          <p>100 questões no formato real: relógio de 5h, sem correção até entregar e diagnóstico por bloco no fim. Fica na aba Reta final.</p>
+        </button>
         <button className="modo-card" onClick={() => onIniciar("prova")}>
-          <h3>Simulado completo</h3>
-          <p>Monta uma prova seguindo a proporção oficial de questões por matéria do Anexo I do edital.</p>
+          <h3>Simulado com correção</h3>
+          <p>A mesma proporção oficial por matéria do Anexo I, mas com a correção a cada questão.</p>
         </button>
         <button
           className="modo-card"
