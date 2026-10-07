@@ -263,7 +263,7 @@ export const QUESTOES_TI_SEGURANCA: Question[] = [
     explicacao:
       "O HSM (Hardware Security Module) é o equipamento físico, resistente a violação, que gera, guarda e usa chaves criptográficas sem expô-las, e é a solução típica para assinaturas em larga escala em autoridades certificadoras, bancos e órgãos públicos. Tokens e cartões inteligentes usam, em regra, conexão USB ou leitor de contato; o SED cifra os dados no próprio hardware do disco, justamente para protegê-los quando o disco é removido; câmeras corporais não transformam as imagens em monocromáticas nem dispensam o hash; coletores portáteis não assinam arquivos automaticamente.",
     origem: "banco",
-    fonte: "FGV · PC-PI 2025 · Oficial Investigador (adaptada)",
+    fonte: "FGV · PC-PI 2026 · Oficial Investigador (adaptada)",
   },
   {
     id: "ti-215",
@@ -372,7 +372,7 @@ export const QUESTOES_TI_SEGURANCA: Question[] = [
     explicacao:
       "No tunelamento, o vírus segue o código das funções da API do sistema até o destino real, passando por baixo dos ganchos instalados pelo antivírus; se detecta interceptação, desvia o controle para burlar o monitoramento. As demais trocam as definições: antiemulação é perceber que roda em emulador ou sandbox e não executar a carga; dificultar a análise estática e dinâmica é a blindagem (armoring); atacar e desativar o próprio antivírus é o que faz o retrovírus; e o conjunto de ferramentas para esconder a invasão é o rootkit, não a botnet, que é uma rede de máquinas controladas remotamente.",
     origem: "banco",
-    fonte: "FGV · PC-PI 2025 · Oficial Investigador (adaptada)",
+    fonte: "FGV · PC-PI 2026 · Oficial Investigador (adaptada)",
   },
   {
     id: "ti-221",

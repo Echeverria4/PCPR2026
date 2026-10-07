@@ -84,7 +84,7 @@ export const PLANO_RETA_FINAL: DiaPlano[] = [
     itens: [
       { id: "08-reforco", texto: "Reforço dirigido dos 5 piores blocos (30 questões, com correção a cada uma).", acao: "reforco" },
       { id: "08-conteudo", texto: "Ler Conteúdo e Modelos mentais só dos blocos em vermelho. Não reler o que já está verde.", acao: "conteudo" },
-      { id: "08-pt", texto: "PT de uma prova real da FGV (aba Provas reais), a ~3 min por questão: o banco do app tem só 36 de PT.", acao: "provas" },
+      { id: "08-pt", texto: "PT de uma prova real da FGV (aba Provas reais), a ~3 min por questão: o app tem 73 de PT, mas pouca interpretação de texto longo, o forte da FGV.", acao: "provas" },
       { id: "08-lancar", texto: "Corrigiu a prova real? Lance acertos e erros por matéria e tópico em \"Provas feitas fora do app\": o mapa passa a contar.", acao: "externa" },
       { id: "08-revisao", texto: "Fila de revisão dos errados até zerar ou cansar.", acao: "revisao" },
     ],

@@ -900,7 +900,7 @@ export const QUESTOES_TI: Question[] = [
     explicacao:
       "A marca-d'água (guia Design, grupo Plano de Fundo da Página) insere um texto ou uma imagem esmaecidos atrás do conteúdo de todas as páginas; além de modelos prontos, como CONFIDENCIAL e NÃO COPIAR, a opção de marca-d'água personalizada permite digitar MINUTA, escolher fonte, cor semitransparente e layout diagonal. Como o Word a ancora no cabeçalho, ela se repete em todas as páginas sem retrabalho. Bordas de Página apenas contornam as páginas; Cor da Página muda a cor de fundo e fica na guia Design, não na Revisão; um WordArt é objeto isolado, que não se replica nas demais páginas; e Controlar Alterações registra as modificações do texto, sem marcar visualmente o documento como minuta. No LibreOffice Writer, o recurso equivalente fica em Formatar > Marca-d'água.",
     origem: "banco",
-    fonte: "FGV · PC-PI 2025 · Oficial Investigador (adaptada)",
+    fonte: "FGV · PC-PI 2026 · Oficial Investigador (adaptada)",
   },
   {
     id: "ti-053",
@@ -976,7 +976,7 @@ export const QUESTOES_TI: Question[] = [
     explicacao:
       "Desde 2022 a Proteção Total contra Cookies (Total Cookie Protection) vem ativada por padrão no Firefox: cada site recebe seu próprio “pote de cookies” (cookie jar), de modo que um rastreador embutido em vários sites não consegue ler, em um, o cookie gravado em outro. Cookies são pequenos arquivos de texto com dados (identificador de sessão, preferências), não programas executáveis. Cookies de terceiros vêm de domínios diferentes do site visitado — anúncios, botões de redes sociais, scripts de análise — e são os usados no rastreamento entre sites. A navegação privativa apenas deixa de guardar histórico, cookies e dados de formulário no aparelho ao fim da sessão; o IP continua visível ao provedor e aos sites. E cache (cópias de páginas, imagens e scripts) e cookies são dados distintos, com opções separadas de exclusão.",
     origem: "banco",
-    fonte: "FGV · PC-PI 2025 · Oficial Investigador (adaptada)",
+    fonte: "FGV · PC-PI 2026 · Oficial Investigador (adaptada)",
   },
   {
     id: "ti-057",
@@ -1267,7 +1267,7 @@ export const QUESTOES_TI: Question[] = [
     explicacao:
       "A arquitetura ANSI/SPARC separa três níveis: o externo (as visões de cada grupo de usuários e aplicações), o conceitual (a descrição lógica de todo o banco — tabelas, atributos, relacionamentos e restrições) e o interno (como os dados são fisicamente armazenados — arquivos, índices, discos). Independência física é poder mudar o nível interno sem alterar o conceitual — exatamente o caso de trocar discos, reorganizar arquivos e criar índices sem mexer nas tabelas nem nos sistemas. Independência lógica é poder mudar o esquema conceitual (por exemplo, acrescentar uma tabela ou coluna) sem afetar as visões externas, e não diz respeito ao armazenamento físico. Normalização e integridade referencial são temas de projeto e de restrições do modelo relacional, que não descrevem a mudança narrada; e a fragmentação horizontal, própria de bancos distribuídos, divide registros entre locais justamente sem que os usuários precisem perceber.",
     origem: "banco",
-    fonte: "FGV · PC-PI 2025 · Oficial Investigador (adaptada)",
+    fonte: "FGV · PC-PI 2026 · Oficial Investigador (adaptada)",
   },
   {
     id: "ti-073",

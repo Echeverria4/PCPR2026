@@ -8,7 +8,7 @@ import type { ProvaReal } from "../lib/types";
 export const PROVAS_REAIS: ProvaReal[] = [
   {
     id: "pcpi",
-    nome: "PC-PI 2025 · Oficial Investigador (FGV)",
+    nome: "PC-PI 2026 · Oficial Investigador (FGV)",
     totalQuestoes: 100,
     semana: "Prioridade 1 · simulado completo",
     detalhe: "A prova FGV policial mais recente — padrão atual da banca. Faça inteira e cronometrada no começo da semana e gaste o resto do tempo revisando os erros.",

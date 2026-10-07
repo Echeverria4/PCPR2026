@@ -474,7 +474,7 @@ export const QUESTOES_TI_CRIMES: Question[] = [
     explicacao:
       "O art. 7º, I, da LGPD prevê o fornecimento de consentimento pelo titular como uma das hipóteses que autorizam o tratamento; para cookies não essenciais de publicidade, em regra não há outra base legal, de modo que o consentimento é exigido. O art. 5º, X, apenas define tratamento. O art. 8º, §4º, declara nulas as autorizações genéricas, pois o consentimento deve referir-se a finalidades determinadas. O art. 9º trata do direito de acesso facilitado às informações sobre o tratamento. O art. 19 do Marco Civil cuida da responsabilidade por conteúdo de terceiros.",
     origem: "banco",
-    fonte: "FGV · PC-PI 2025 · Oficial Investigador (adaptada)",
+    fonte: "FGV · PC-PI 2026 · Oficial Investigador (adaptada)",
   },
   {
     id: "ti-329",
@@ -511,7 +511,7 @@ export const QUESTOES_TI_CRIMES: Question[] = [
     explicacao:
       "O art. 325 do CP pune revelar fato de que se tem ciência em razão do cargo e que deva permanecer em segredo, ou facilitar-lhe a revelação, e não prevê modalidade culposa; pelo art. 18, parágrafo único, do CP, só se pune a culpa quando a lei a prevê expressamente. A qualificadora do §2º exige dano à Administração ou a outrem, que não houve. A conduta negligente pode gerar apenas responsabilidade administrativa.",
     origem: "banco",
-    fonte: "FGV · PC-PI 2025 · Oficial Investigador (adaptada)",
+    fonte: "FGV · PC-PI 2026 · Oficial Investigador (adaptada)",
   },
   {
     id: "ti-331",
