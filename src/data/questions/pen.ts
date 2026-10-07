@@ -855,4 +855,403 @@ export const QUESTOES_PEN: Question[] = [
     origem: "banco",
     fonte: "Código Penal, art. 147, §§1º e 2º (Lei 14.994/2024)",
   },
+  {
+    id: "pen-048",
+    materia: "pen",
+    topico: "Crimes de perigo contra a pessoa (periclitação da vida e da saúde)",
+    enunciado:
+      "Pessoa contaminada por moléstia venérea, sabendo da própria condição, mantém relação sexual com parceiro sem revelar o fato, sem a intenção de transmitir a doença. Sobre o crime de perigo de contágio venéreo (art. 130 do CP), é correto afirmar que",
+    alternativas: [
+      "consuma-se com a prática da relação sexual ou do ato libidinoso, independentemente de o parceiro ter sido efetivamente contaminado, pois se trata de crime formal de perigo abstrato.",
+      "só se configura se o parceiro for efetivamente contaminado pela moléstia, pois se trata de crime material que exige resultado de dano.",
+      "exige representação do ofendido apenas na forma qualificada do §1º, sendo a forma simples de ação penal pública incondicionada.",
+      "é afastado se o parceiro consentir em manter a relação mesmo sabendo do risco, já que a incolumidade física é bem jurídico disponível nesse contexto.",
+      "não se configura caso o agente apenas suspeite, sem ter certeza, de estar contaminado, pois a lei exige conhecimento inequívoco e não a mera possibilidade de saber.",
+    ],
+    correta: 0,
+    explicacao:
+      "O crime é de perigo abstrato (basta o ato libidinoso, independentemente de contágio efetivo) e formal. A ação penal depende de representação em qualquer modalidade (§2º, sem distinção entre caput e forma qualificada). O bem jurídico é indisponível, sendo irrelevante o consentimento. O dolo pode ser direto (sabe) ou eventual (deve saber), de modo que a mera suspeita não verificada já basta.",
+    origem: "banco",
+    fonte: "Código Penal, art. 130",
+  },
+  {
+    id: "pen-049",
+    materia: "pen",
+    topico: "Crimes de perigo contra a pessoa (periclitação da vida e da saúde)",
+    enunciado:
+      "Sobre o crime de perigo de contágio de moléstia grave (art. 131 do CP), assinale a alternativa correta:",
+    alternativas: [
+      "O crime exige fim especial de agir (transmitir moléstia grave) e não admite dolo eventual, de modo que o agente que, sem essa finalidade específica, apenas assume o risco de contaminar outrem responde por lesão corporal ou homicídio, conforme o resultado.",
+      "Admite a modalidade culposa, bastando que o agente negligentemente deixe de tomar precauções contra o contágio, ainda que não tenha qualquer finalidade de transmitir a doença, equiparando-se nesse ponto ao tratamento dado à generalidade dos crimes contra a vida e a saúde.",
+      "É crime de perigo abstrato, dispensando a demonstração de que o ato praticado pelo agente era efetivamente capaz de gerar o contágio da moléstia grave.",
+      "A ação penal depende de representação do ofendido, haja vista a gravidade do bem jurídico tutelado e a necessidade de preservar a intimidade da vítima contaminada.",
+      "Pressupõe crime próprio, pois só pode ser praticado por profissional da saúde que tenha conhecimento técnico sobre a transmissibilidade da moléstia de que é portador.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 131 exige o fim específico de transmitir moléstia grave, não admitindo dolo eventual nem modalidade culposa. É crime de perigo concreto (exige demonstração da capacidade de contágio do ato) e de forma livre (crime comum, não próprio), com ação penal pública incondicionada.",
+    origem: "banco",
+    fonte: "Código Penal, art. 131",
+  },
+  {
+    id: "pen-050",
+    materia: "pen",
+    topico: "Crimes de perigo contra a pessoa (periclitação da vida e da saúde)",
+    enunciado:
+      "Em crime de abandono de incapaz (art. 133 do CP) praticado contra vítima maior de 60 anos, a majorante específica do §3º, III, do art. 133",
+    alternativas: [
+      "incide no lugar da agravante genérica de crime contra idoso prevista no art. 61, II, 'h', do CP, que fica afastada para evitar a dupla valoração do mesmo fator pelo mesmo motivo (bis in idem).",
+      "incide cumulativamente com a agravante genérica do art. 61, II, 'h', do CP, já que se trata de circunstâncias de natureza distinta e compatíveis entre si.",
+      "somente se aplica se o agente for também parente da vítima, pois a lei exige a presença conjunta das duas condições previstas no §3º do art. 133.",
+      "substitui a qualificadora do §2º (resultado morte), não podendo as duas majorantes serem aplicadas ao mesmo fato concreto.",
+      "pode ser aplicada mesmo que o abandono não gere qualquer perigo concreto à vida ou à saúde da vítima, bastando a mera condição etária da pessoa idosa para configurar a majorante, independentemente das circunstâncias do caso concreto.",
+    ],
+    correta: 0,
+    explicacao:
+      "A majorante do art. 133, §3º, III (vítima maior de 60 anos) afasta a agravante genérica do art. 61, II, 'h', do CP, para não punir duas vezes o mesmo fator. As hipóteses do §3º (lugar ermo, parentesco, idade) são autônomas entre si, e o crime permanece de perigo concreto, exigindo risco real à vida ou à saúde do incapaz.",
+    origem: "banco",
+    fonte: "Código Penal, art. 133, §3º",
+  },
+  {
+    id: "pen-051",
+    materia: "pen",
+    topico: "Crimes de perigo contra a pessoa (periclitação da vida e da saúde)",
+    enunciado:
+      "Sobre o crime de omissão de socorro (art. 135 do CP), é correto afirmar que",
+    alternativas: [
+      "o dever de pedir o socorro da autoridade pública é subsidiário ao de prestar assistência direta, de modo que só se pode exigir o acionamento de terceiros quando a assistência direta implicar risco pessoal ao agente.",
+      "admite a modalidade culposa, caso o agente deixe de perceber, por simples descuido, que a vítima se encontrava em situação de abandono ou de grave e iminente perigo.",
+      "exige que o agente tenha dado causa à situação de perigo em que a vítima se encontra, não se aplicando a quem apenas presencia, sem qualquer participação, o desamparo de terceiro em via pública.",
+      "deixa de se consumar caso a própria vítima, de forma válida, recuse a assistência oferecida pelo agente, ainda que o risco físico ao ofendido permaneça iminente.",
+      "admite a tentativa, por se tratar de crime omissivo que se desenvolve ao longo de um período, permitindo o fracionamento dos atos de execução entre o início e o fim da omissão.",
+    ],
+    correta: 0,
+    explicacao:
+      "É crime omissivo puro (não admite tentativa) e de perigo abstrato, sem modalidade culposa. É irrelevante quem causou a situação de perigo. A recusa do ofendido só afasta o crime se gerar impossibilidade absoluta de socorro; caso contrário, a omissão persiste.",
+    origem: "banco",
+    fonte: "Código Penal, art. 135",
+  },
+  {
+    id: "pen-052",
+    materia: "pen",
+    topico: "Crimes de perigo contra a pessoa (periclitação da vida e da saúde)",
+    enunciado:
+      "Comparando os crimes de maus-tratos (art. 136 do CP) e tortura-castigo (art. 1º, II, da Lei 9.455/1997), é correto afirmar que",
+    alternativas: [
+      "maus-tratos é crime de perigo, cometido com finalidade de educação, ensino, tratamento ou custódia, enquanto a tortura-castigo é crime de dano, que causa intenso sofrimento físico ou mental com intenção de torturar.",
+      "ambos exigem, necessariamente, a existência de vínculo de parentesco entre autor e vítima, distinguindo-se apenas pela intensidade da violência empregada em cada caso.",
+      "maus-tratos é crime de dano e a tortura-castigo é crime de perigo, já que a tortura pressupõe apenas a ameaça de sofrimento, sem a efetiva produção de lesão à vítima.",
+      "a modalidade qualificada do art. 136 pela lesão corporal leve subsiste de forma autônoma, somando-se à pena do crime de maus-tratos simples, sem qualquer absorção.",
+      "a privação de alimentação ou de cuidados indispensáveis configura o crime de maus-tratos independentemente de reiteração, bastando um único episódio isolado e de curta duração de privação parcial.",
+    ],
+    correta: 0,
+    explicacao:
+      "Maus-tratos (crime de perigo) exige finalidade de educação, ensino, tratamento ou custódia; tortura-castigo (crime de dano) exige intensa produção de sofrimento com intenção de torturar. A lesão corporal leve fica absorvida pelo crime de maus-tratos, e a privação de alimentos ou cuidados exige habitualidade, não bastando episódio isolado.",
+    origem: "banco",
+    fonte: "Código Penal, art. 136; Lei 9.455/1997, art. 1º, II",
+  },
+  {
+    id: "pen-053",
+    materia: "pen",
+    topico: "Rixa (art. 137 do CP)",
+    enunciado:
+      "Durante um combate tumultuário entre quatro pessoas, em que não é possível individualizar as agressões, um dos participantes sofre lesão corporal de natureza grave, mas não se consegue identificar quem a causou. Sobre a responsabilidade penal nesse cenário de rixa (art. 137 do CP), é correto afirmar que",
+    alternativas: [
+      "todos os participantes respondem pela rixa qualificada do parágrafo único do art. 137, pois o resultado mais grave é imputado a título de culpa a quem participou do combate, caracterizando crime preterdoloso.",
+      "nenhum dos participantes pode ser responsabilizado, pois a impossibilidade de identificar o autor da lesão grave gera a atipicidade de toda a conduta, inclusive da rixa simples já praticada.",
+      "todos respondem por lesão corporal grave em concurso formal com a rixa simples, já que o resultado mais gravoso se comunica automaticamente a todo o grupo a título de dolo.",
+      "apenas o participante que iniciou o confronto responde pela forma qualificada, sendo os demais responsabilizados somente pela rixa simples do caput.",
+      "a situação exige a instauração de inquérito específico contra cada participante individualmente, sob pena de nulidade da ação penal por ausência de individualização da conduta.",
+    ],
+    correta: 0,
+    explicacao:
+      "Quando o autor da lesão grave ou morte não é identificado, todos os partícipes da rixa respondem pela forma qualificada do parágrafo único do art. 137, a título de culpa (preterdolo). Se o autor for identificado, ele responde por homicídio/lesão grave em concurso com a rixa simples, evitando bis in idem.",
+    origem: "banco",
+    fonte: "Código Penal, art. 137, parágrafo único",
+  },
+  {
+    id: "pen-054",
+    materia: "pen",
+    topico: "Rixa (art. 137 do CP)",
+    enunciado:
+      "Sobre o crime de rixa (art. 137 do CP), é correto afirmar que",
+    alternativas: [
+      "é admissível tanto a rixa ex improviso (surgida de repente) quanto a rixa ex proposito (previamente combinada), e a competência para julgamento é, em regra, do Juizado Especial Criminal, dada a pena máxima não superior a dois anos.",
+      "só se configura quando o confronto é súbito e não planejado, de modo que confrontos previamente combinados entre grupos rivais caracterizam outro delito, e não a rixa propriamente dita, ainda que travados corpo a corpo entre três ou mais pessoas.",
+      "admite a modalidade culposa, bastando que o agente se envolva, por imprudência, em uma confusão generalizada sem a intenção de agredir os demais participantes.",
+      "é crime de perigo abstrato, dispensando a demonstração de risco real à vida ou à saúde dos contendores ou de terceiros presentes no local do confronto.",
+      "a simples ocorrência de vias de fato entre os rixosos é absorvida pela rixa em qualquer hipótese, ainda que se verifiquem lesões corporais leves durante o confronto.",
+    ],
+    correta: 0,
+    explicacao:
+      "A doutrina dominante admite tanto a rixa ex improviso quanto a ex proposito (combinada, como entre gangues rivais). É crime de perigo concreto (exige risco real), doloso (sem modalidade culposa), e a rixa absorve vias de fato, mas, havendo lesões leves, há concurso de crimes.",
+    origem: "banco",
+    fonte: "Código Penal, art. 137",
+  },
+  {
+    id: "pen-055",
+    materia: "pen",
+    topico: "Crimes contra a honra (calúnia, difamação e injúria)",
+    enunciado:
+      "Sobre a exceção da verdade no crime de calúnia (art. 138, §3º, do CP), é correto afirmar que",
+    alternativas: [
+      "não é admitida se o fato imputado constituir crime de ação privada e o ofendido não tiver sido condenado por sentença irrecorrível, nem se o ofendido tiver sido absolvido do crime imputado por sentença irrecorrível.",
+      "é sempre admitida, independentemente da natureza do crime imputado ou do resultado do processo em que a vítima da calúnia eventualmente responda.",
+      "somente pode ser arguida pelo querelado após o trânsito em julgado da ação penal de calúnia, nunca durante a instrução do próprio processo por calúnia.",
+      "é vedada apenas quando o fato imputado for crime de ação pública incondicionada, sendo livremente admitida nos demais casos, inclusive quanto a crimes de ação privada.",
+      "aplica-se apenas à calúnia contra os mortos, prevista no §2º do art. 138, não se estendendo às demais hipóteses de imputação falsa de crime a pessoa viva, ainda que o ofendido também não tenha sido condenado por sentença irrecorrível.",
+    ],
+    correta: 0,
+    explicacao:
+      "O §3º do art. 138 veda a exceção da verdade em três hipóteses: crime de ação privada sem condenação irrecorrível do ofendido, imputação ao Presidente da República ou chefe de governo estrangeiro, e ofendido absolvido por sentença irrecorrível do crime imputado.",
+    origem: "banco",
+    fonte: "Código Penal, art. 138, §3º",
+  },
+  {
+    id: "pen-056",
+    materia: "pen",
+    topico: "Crimes contra a honra (calúnia, difamação e injúria)",
+    enunciado:
+      "Quanto à exceção da verdade na difamação (art. 139, parágrafo único, do CP), ao contrário da calúnia, é correto afirmar que",
+    alternativas: [
+      "como regra não é admitida, já que mesmo fatos verdadeiros podem ofender a reputação, sendo a única exceção a hipótese de o ofendido ser funcionário público e a ofensa se referir ao exercício de suas funções.",
+      "é admitida em qualquer hipótese, bastando que o autor da difamação comprove a veracidade do fato ofensivo imputado à reputação da vítima.",
+      "é vedada em qualquer hipótese, inclusive quando o ofendido for funcionário público e a ofensa versar sobre o exercício de suas funções.",
+      "depende de autorização judicial prévia, concedida em procedimento cautelar específico, sempre que o querelado pretender comprovar a veracidade da ofensa imputada ao querelante no processo por difamação.",
+      "só é admitida quando o querelante for pessoa jurídica, haja vista a inexistência, nesse caso, de honra subjetiva a ser tutelada pela norma penal.",
+    ],
+    correta: 0,
+    explicacao:
+      "Na difamação, a veracidade do fato não afasta a tipicidade, pois o que se protege é a reputação social. A única exceção da verdade admitida é quando o ofendido for funcionário público e a ofensa se referir ao exercício de suas funções, visando fiscalizar a administração pública.",
+    origem: "banco",
+    fonte: "Código Penal, art. 139, parágrafo único",
+  },
+  {
+    id: "pen-057",
+    materia: "pen",
+    topico: "Crimes contra a honra (calúnia, difamação e injúria)",
+    enunciado:
+      "Sobre as modalidades do crime de injúria (art. 140 do CP), é correto afirmar que",
+    alternativas: [
+      "a injúria real, quando da violência resultar lesão corporal, tem a ação penal alterada para pública incondicionada, enquanto a injúria preconceituosa do §3º é processada mediante representação do ofendido.",
+      "tanto a injúria real quanto a injúria preconceituosa são sempre processadas mediante queixa-crime privada, independentemente de resultar ou não lesão corporal da violência empregada.",
+      "a injúria preconceituosa do §3º abrange elementos de raça, cor e etnia, que permanecem tipificados nesse dispositivo mesmo após a criação do art. 140-A do CP.",
+      "o perdão judicial previsto no §1º é cabível apenas na modalidade preconceituosa, não se aplicando à injúria simples do caput em nenhuma hipótese.",
+      "a pessoa jurídica pode figurar como sujeito passivo da injúria, já que, tal como a pessoa física, é titular de honra subjetiva tutelada pelo tipo penal.",
+    ],
+    correta: 0,
+    explicacao:
+      "Se da violência da injúria real resultar lesão corporal, a ação passa a ser pública incondicionada; a injúria preconceituosa (religião, idoso, pessoa com deficiência) é pública condicionada à representação. Raça, cor e etnia migraram para o art. 140-A. O perdão judicial do §1º é cabível na injúria simples do caput, e a pessoa jurídica não possui honra subjetiva.",
+    origem: "banco",
+    fonte: "Código Penal, art. 140",
+  },
+  {
+    id: "pen-058",
+    materia: "pen",
+    topico: "Crimes contra a honra (calúnia, difamação e injúria)",
+    enunciado:
+      "Sobre a retratação nos crimes contra a honra (art. 143 do CP), é correto afirmar que",
+    alternativas: [
+      "é cabível apenas na calúnia e na difamação, pois nesses crimes se busca restaurar a honra objetiva da vítima perante a sociedade, o que não se aplica à injúria, que tutela a honra subjetiva.",
+      "é cabível nos três crimes contra a honra, inclusive na injúria, desde que realizada de forma cabal e antes da publicação da sentença condenatória.",
+      "pode ser realizada em qualquer momento do processo, inclusive após o trânsito em julgado da sentença condenatória, sem qualquer efeito sobre a dosimetria da pena.",
+      "exige, obrigatoriamente, a concordância expressa do ofendido para produzir qualquer efeito jurídico sobre a punibilidade do querelado retratante.",
+      "quando a ofensa foi praticada por meio de comunicação social, deve necessariamente ocorrer pelos mesmos meios em que a ofensa foi veiculada, independentemente da vontade do ofendido.",
+    ],
+    correta: 0,
+    explicacao:
+      "A retratação cabal, até a publicação da sentença, isenta de pena apenas na calúnia e na difamação (honra objetiva); não se aplica à injúria (honra subjetiva), em que uma retratação poderia até agravar a humilhação. Se por meio de comunicação, a retratação pelo mesmo veículo ocorre se assim o ofendido desejar.",
+    origem: "banco",
+    fonte: "Código Penal, art. 143",
+  },
+  {
+    id: "pen-059",
+    materia: "pen",
+    topico: "Crimes contra a honra (calúnia, difamação e injúria)",
+    enunciado:
+      "Sobre as causas de exclusão de injúria e difamação previstas no art. 142 do CP, é correto afirmar que",
+    alternativas: [
+      "a imunidade judiciária da ofensa irrogada em juízo não se estende à calúnia, e, nos casos dos incisos I e III, quem der publicidade à ofensa originalmente protegida responde por crime próprio e autônomo.",
+      "abrangem também o crime de calúnia, desde que a ofensa tenha sido proferida pela parte ou por seu procurador no curso da discussão da causa em juízo.",
+      "a imunidade do inciso I protege igualmente o magistrado por ofensas que ele próprio profira no exercício da função, em razão do dever de conduzir o processo.",
+      "a opinião desfavorável da crítica literária, artística ou científica só é excluída de punibilidade se o crítico obtiver anuência prévia do autor da obra criticada.",
+      "o parágrafo único do art. 142 afasta a responsabilidade de quem dá publicidade à ofensa acobertada pela imunidade, desde que o faça sem conhecimento do teor exato das palavras originalmente proferidas.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 142 exclui a punibilidade apenas de injúria e difamação, nunca de calúnia. O juiz não goza da imunidade judiciária, devendo manter a urbanidade. A crítica literária/artística/científica dispensa anuência do criticado, bastando ausência de animus injuriandi. Pelo parágrafo único, quem dá publicidade à ofensa protegida responde por crime próprio.",
+    origem: "banco",
+    fonte: "Código Penal, art. 142",
+  },
+  {
+    id: "pen-060",
+    materia: "pen",
+    topico: "Crimes contra a administração da justiça",
+    enunciado:
+      "Um atleta, após chegar atrasado a uma competição internacional, comunica à polícia civil ter sofrido um assalto durante a madrugada. Posteriormente, apura-se que o roubo não ocorreu e que a comunicação teve como único objetivo justificar o atraso, sem que o atleta tenha atribuído o crime a qualquer pessoa determinada. Essa conduta configura o crime de",
+    alternativas: [
+      "comunicação falsa de crime (art. 340 do Código Penal), pois o agente provoca a ação da autoridade comunicando a ocorrência de crime que sabe não se ter verificado, sem imputá-lo a ninguém.",
+      "denunciação caluniosa (art. 339 do Código Penal), já que a comunicação à autoridade policial de um crime inexistente atribui a responsabilidade por esse fato a uma pessoa certa e determinada.",
+      "calúnia (art. 138 do Código Penal), uma vez que a falsa imputação de um crime, ainda que feita à própria autoridade policial e não a um terceiro particular, já caracteriza esse delito contra a honra.",
+      "autoacusação falsa (art. 341 do Código Penal), pois o agente se atribuiu, perante a autoridade, a prática de um crime que, na realidade, nunca chegou a ocorrer.",
+      "falso testemunho (art. 342 do Código Penal), já que a declaração falsa foi prestada perante autoridade pública no âmbito de um procedimento formalmente instaurado.",
+    ],
+    correta: 0,
+    explicacao:
+      "A comunicação falsa de crime (art. 340) exige apenas que o agente comunique a ocorrência de crime que sabe não se ter verificado, sem imputá-lo a alguém. Se houvesse imputação a pessoa certa, seria denunciação caluniosa (art. 339); se o próprio agente se acusasse, seria autoacusação falsa (art. 341).",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2024 — PC-SC — Psicólogo Policial Civil",
+  },
+  {
+    id: "pen-061",
+    materia: "pen",
+    topico: "Crimes contra a administração da justiça",
+    enunciado:
+      "Comparando o favorecimento pessoal (art. 348 do CP) e o favorecimento real (art. 349 do CP), é correto afirmar que",
+    alternativas: [
+      "no favorecimento pessoal, o agente auxilia o próprio autor do crime a subtrair-se à ação da autoridade pública, ao passo que no favorecimento real o auxílio se destina a tornar seguro o proveito do crime, e não a pessoa do criminoso.",
+      "ambos exigem que o auxílio seja prestado por ascendente, descendente, cônjuge ou irmão do criminoso, sendo essa relação de parentesco elementar típica em ambos os crimes.",
+      "o favorecimento real pressupõe que o auxiliador tenha participado como coautor do crime antecedente, distinguindo-se do favorecimento pessoal justamente por essa coautoria.",
+      "o favorecimento pessoal somente se configura se o crime antecedente for punido com pena de detenção, não se aplicando quando a pena cominada for de reclusão.",
+      "a isenção de pena ao auxiliador ascendente, descendente, cônjuge ou irmão do criminoso aplica-se tanto ao favorecimento pessoal quanto ao favorecimento real, por disposição expressa e idêntica do art. 349 do CP.",
+    ],
+    correta: 0,
+    explicacao:
+      "O favorecimento pessoal (art. 348) pune auxiliar o criminoso a escapar da autoridade; o favorecimento real (art. 349) pune auxiliar a tornar seguro o proveito do crime, exigindo expressamente que o auxiliador esteja fora dos casos de coautoria. A isenção de pena para parentes próximos só existe no art. 348, e este exige crime antecedente punido com reclusão.",
+    origem: "banco",
+    fonte: "Código Penal, arts. 348 e 349",
+  },
+  {
+    id: "pen-062",
+    materia: "pen",
+    topico: "Crimes contra a administração da justiça",
+    enunciado:
+      "Sobre o crime de exploração de prestígio (art. 357 do CP), é correto afirmar que",
+    alternativas: [
+      "configura-se quando o agente solicita ou recebe vantagem a pretexto de influir em autoridade ou auxiliar da justiça, sem efetivamente possuir a influência alegada; se a influência for real e o pedido for feito em nome da autoridade, ambos respondem por corrupção passiva.",
+      "exige que o agente efetivamente possua a influência alegada sobre a autoridade, distinguindo-se, por esse motivo, do crime de tráfico de influência, que pressupõe influência inexistente.",
+      "só se consuma quando a autoridade sobre a qual se alega influência pratica o ato pretendido pelo solicitante, não bastando a mera solicitação ou recebimento da vantagem.",
+      "admite como sujeito passivo exclusivamente o juiz, não abrangendo jurado, membro do Ministério Público, funcionário de justiça, perito, tradutor, intérprete ou testemunha.",
+      "pressupõe que o pagamento seja feito diretamente à autoridade supostamente influenciável, sendo atípica a conduta quando o valor é entregue apenas ao intermediário que alega ter a influência sobre o juiz, o jurado ou o membro do Ministério Público mencionado.",
+    ],
+    correta: 0,
+    explicacao:
+      "No art. 357, o agente é um charlatão que alega influência que não possui — se a influência fosse real e o pedido feito em nome da autoridade, ambos responderiam por corrupção passiva. O crime se consuma com a mera solicitação ou recebimento, sem exigir ato da autoridade, e abrange como sujeito passivo juiz, jurado, MP, funcionário de justiça, perito, tradutor, intérprete ou testemunha.",
+    origem: "banco",
+    fonte: "Código Penal, art. 357",
+  },
+  {
+    id: "pen-063",
+    materia: "pen",
+    topico: "Crimes contra a administração da justiça",
+    enunciado:
+      "Sobre o crime de fraude processual (art. 347 do CP), é correto afirmar que",
+    alternativas: [
+      "consiste em inovar artificiosamente o estado de lugar, de coisa ou de pessoa, na pendência de processo civil ou administrativo, com o fim de induzir a erro o juiz ou o perito, exigindo, portanto, que a inovação ocorra antes da decisão a ser influenciada.",
+      "somente se configura quando a inovação artificiosa do estado de lugar, de coisa ou de pessoa ocorre na pendência de processo penal, e não de processo civil ou administrativo.",
+      "dispensa qualquer finalidade específica do agente, bastando a mera alteração do local, da coisa ou da pessoa, ainda que não haja processo em curso no momento da conduta.",
+      "exige que o juiz ou o perito tenham sido efetivamente induzidos a erro pela inovação artificiosa, sendo atípica a conduta se a fraude for descoberta antes de produzir qualquer efeito sobre a decisão a ser proferida no processo em curso.",
+      "pode ser praticada em qualquer momento, inclusive após o trânsito em julgado da sentença, desde que a inovação vise à reforma da decisão em eventual ação rescisória.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 347 exige expressamente a pendência de processo civil ou administrativo (não penal), o fim específico de induzir a erro o juiz ou o perito, e que a inovação ocorra antes da decisão a ser influenciada. É crime formal, que não exige o efetivo induzimento a erro.",
+    origem: "banco",
+    fonte: "Código Penal, art. 347",
+  },
+  {
+    id: "pen-064",
+    materia: "pen",
+    topico: "Crimes contra as finanças públicas",
+    enunciado:
+      "Sobre o crime de contratação de operação de crédito (art. 359-A do CP), é correto afirmar que",
+    alternativas: [
+      "a conduta abrange tanto a operação de crédito interna quanto a externa realizada sem prévia autorização legislativa, incidindo na mesma pena quem ordena, autoriza ou realiza a operação com inobservância de limite, condição ou montante fixado em lei ou em resolução do Senado Federal.",
+      "restringe-se às operações de crédito externas, não se aplicando a operações de crédito internas realizadas sem autorização legislativa prévia pelo gestor público.",
+      "foi revogado pela Lei 14.133/2021 e deixou de ser crime, passando a figurar apenas como infração administrativa sujeita a sanções do Tribunal de Contas competente.",
+      "pune apenas o agente público que ordena a operação de crédito, não se estendendo a quem meramente a autoriza ou efetivamente a realiza no caso concreto.",
+      "exige que o montante da dívida consolidada ultrapasse o limite legal máximo, não bastando a ausência de prévia autorização legislativa para a configuração do crime, já que o caput do art. 359-A pressupõe sempre a presença cumulativa dos dois requisitos previstos no parágrafo único do dispositivo.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 359-A abrange operação de crédito interna ou externa sem prévia autorização legislativa (caput), e o parágrafo único pune, com a mesma pena, quem desrespeita limite ou montante fixado em lei/resolução do Senado — hipóteses autônomas, não cumulativas.",
+    origem: "banco",
+    fonte: "Questão de treino do curso, adaptada (Código Penal, art. 359-A)",
+  },
+  {
+    id: "pen-065",
+    materia: "pen",
+    topico: "Crimes em licitações e contratos administrativos (Lei 14.133/2021)",
+    enunciado:
+      "Sobre o crime de contratação direta ilegal (art. 337-E do CP), a jurisprudência do STJ exige, para sua configuração,",
+    alternativas: [
+      "a demonstração do dolo específico de causar dano ao erário e a efetiva ocorrência de prejuízo aos cofres públicos, não bastando a mera ausência de formalidades na contratação direta.",
+      "apenas a demonstração objetiva de que a contratação ocorreu fora das hipóteses legais de dispensa ou inexigibilidade, independentemente de qualquer finalidade específica do agente.",
+      "a comprovação de que o agente público obteve vantagem pessoal direta com a contratação irregular, ainda que não haja qualquer prejuízo aos cofres públicos envolvidos.",
+      "unicamente a instauração de procedimento administrativo pelo Tribunal de Contas competente, sendo prescindível qualquer apuração do elemento subjetivo do agente contratante.",
+      "a produção de laudo pericial contábil prévio, sem o qual a ação penal é considerada inepta por ausência de justa causa para o oferecimento da denúncia.",
+    ],
+    correta: 0,
+    explicacao:
+      "O STJ (AgRg no REsp 2085991) exige, para o art. 337-E, dolo específico de causar dano ao erário e prejuízo efetivo aos cofres públicos — é crime material, e a mera ausência de formalidades, sem esses elementos, não basta para a condenação.",
+    origem: "banco",
+    fonte: "Código Penal, art. 337-E (Lei 14.133/2021); STJ, AgRg no REsp 2085991/2023",
+  },
+  {
+    id: "pen-066",
+    materia: "pen",
+    topico: "Crimes em licitações e contratos administrativos (Lei 14.133/2021)",
+    enunciado:
+      "Sobre o crime de frustração do caráter competitivo de licitação (art. 337-F do CP), conhecido como 'cartel em licitações', é correto afirmar que, segundo a Súmula 645 do STJ,",
+    alternativas: [
+      "trata-se de crime formal, cuja consumação prescinde da comprovação do prejuízo ao erário ou da efetiva obtenção de vantagem pelos agentes envolvidos no conluio.",
+      "trata-se de crime material, que somente se consuma com a comprovação de prejuízo efetivo aos cofres públicos decorrente da fraude ao caráter competitivo do certame.",
+      "exige a adjudicação efetiva do objeto licitado a uma das empresas participantes do conluio, sendo atípica a conduta se a licitação for anulada antes da assinatura do contrato.",
+      "dispensa qualquer intuito de obter vantagem decorrente da adjudicação do objeto licitado, bastando a mera combinação de preços entre os licitantes concorrentes.",
+      "somente se configura mediante prova documental do ajuste entre os licitantes, não sendo admissível a demonstração do conluio por meio de prova indiciária ou circunstancial.",
+    ],
+    correta: 0,
+    explicacao:
+      "A Súmula 645/STJ fixa que o crime de fraude à licitação é formal, e sua consumação prescinde da comprovação do prejuízo ou da obtenção de vantagem — dano ao erário é mero exaurimento, relevante só para a dosimetria.",
+    origem: "banco",
+    fonte: "Código Penal, art. 337-F (Lei 14.133/2021); Súmula 645 do STJ",
+  },
+  {
+    id: "pen-067",
+    materia: "pen",
+    topico: "Crimes em licitações e contratos administrativos (Lei 14.133/2021)",
+    enunciado:
+      "Sobre o crime de afastamento de licitante (art. 337-K do CP), o STJ, no REsp 1839150, firmou entendimento de que",
+    alternativas: [
+      "a configuração do crime não exige que o agente tenha êxito em seu intento, sendo suficiente a mera tentativa de afastar o concorrente por fraude ou oferecimento de vantagem para a consumação do delito.",
+      "o crime somente se consuma quando o licitante efetivamente desiste de participar do certame em razão da fraude, violência, grave ameaça ou vantagem oferecida pelo agente responsável.",
+      "pune apenas quem oferece a vantagem ou emprega a violência, não havendo previsão legal para responsabilizar o licitante que aceita a vantagem e desiste de licitar.",
+      "exige, para a configuração do delito, que o licitante afastado tenha efetivamente comprovado prejuízo financeiro concreto decorrente de sua retirada do certame.",
+      "não admite a modalidade por grave ameaça, estando essa forma de coação já absorvida, nesse tipo penal, pelo crime autônomo de constrangimento ilegal.",
+    ],
+    correta: 0,
+    explicacao:
+      "O STJ (REsp 1839150) entende que a mera tentativa de afastar licitante por fraude ou oferecimento de vantagem já consuma o crime, não exigindo êxito. O parágrafo único do art. 337-K ainda pune, na mesma pena, o próprio licitante que se abstém ou desiste em razão da vantagem.",
+    origem: "banco",
+    fonte: "Código Penal, art. 337-K (Lei 14.133/2021); STJ, REsp 1839150",
+  },
+  {
+    id: "pen-068",
+    materia: "pen",
+    topico: "Crimes em licitações e contratos administrativos (Lei 14.133/2021)",
+    enunciado:
+      "Sobre o crime de contratação inidônea (art. 337-M do CP), é correto afirmar que",
+    alternativas: [
+      "admitir à licitação empresa ou profissional declarado inidôneo configura o crime do caput, com pena de reclusão de um a três anos, enquanto celebrar contrato com o inidôneo configura o crime do §1º, mais grave, com pena de reclusão de três a seis anos.",
+      "prevê a mesma pena para admitir empresa inidônea à licitação e para efetivamente celebrar contrato com ela, já que ambas as condutas causam idêntico risco à Administração Pública.",
+      "só responde pelo crime o gestor público que admite a empresa inidônea à licitação, não havendo previsão legal para punir a própria empresa ou profissional que participa do certame apesar da sanção.",
+      "exige que a declaração de inidoneidade tenha sido proferida por órgão do Poder Judiciário, não se aplicando quando a sanção decorrer de decisão do Tribunal de Contas ou de procedimento administrativo conduzido pelo próprio órgão contratante.",
+      "deixa de se configurar se a empresa declarada inidônea obtiver, posteriormente, decisão judicial suspendendo os efeitos da sanção, ainda que a contratação tenha ocorrido antes dessa suspensão.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 337-M pune, no caput, admitir à licitação empresa inidônea (reclusão de 1 a 3 anos) e, no §1º, celebrar contrato com ela (reclusão de 3 a 6 anos, mais grave). O §2º estende a mesma lógica à própria empresa/profissional que participa ou contrata apesar da sanção, que pode ser declarada por TCU ou procedimento administrativo (CEIS), não exigindo decisão judicial.",
+    origem: "banco",
+    fonte: "Código Penal, art. 337-M (Lei 14.133/2021)",
+  },
 ];
