@@ -550,4 +550,311 @@ export const QUESTOES_FOR: Question[] = [
     origem: "banco",
     fonte: "Lei 7.210/1984 (LEP), art. 9º-A, com redação da Lei 15.295/2025",
   },
+
+  {
+    id: "for-033",
+    materia: "for",
+    topico: "Identificação humana",
+    enunciado:
+      "Na identificação humana pericial, quando o cadáver apresenta as impressões digitais preservadas (ainda que recuperáveis por reidratação), a ordem de prioridade entre os métodos de identificação, considerando custo, rapidez e complexidade, é:",
+    alternativas: [
+      "a papiloscopia deve anteceder a odontologia legal e o exame de DNA, que funcionam como métodos complementares e subsidiários, mais custosos e complexos.",
+      "o exame de DNA deve sempre ser realizado em primeiro lugar, por ser o método de maior confiabilidade absoluta, independentemente do estado de preservação do corpo.",
+      "a odontologia legal deve sempre preceder a papiloscopia, por exigir menor tempo de análise laboratorial do que a comparação de impressões digitais.",
+      "a antropologia forense deve ser o primeiro método tentado, reservando-se a papiloscopia apenas para os casos de esqueletização total do cadáver.",
+      "DNA, odontologia e papiloscopia devem ser aplicados simultaneamente, sem qualquer prioridade entre eles, por serem igualmente rápidos, baratos e de fácil execução.",
+    ],
+    correta: 0,
+    explicacao:
+      "Quando o cadáver preserva as digitais (mesmo exigindo a técnica da luva cadavérica ou reidratação), a papiloscopia é o método primário, por ser rápida, barata e de fácil comparação com bancos de dados. A odontologia legal é outro método primário, útil quando a papiloscopia é inviável (corpos carbonizados ou em putrefação avançada). O exame de DNA, embora altamente confiável, é subsidiário/complementar nesses casos, por seu custo mais alto, maior complexidade técnica e necessidade de amostras de referência.",
+    origem: "banco",
+  },
+  {
+    id: "for-034",
+    materia: "for",
+    topico: "Genética forense",
+    enunciado:
+      "Em relação ao DNA mitocondrial (mtDNA), utilizado na investigação de vínculos familiares e na identificação de restos humanos degradados, é correto afirmar que:",
+    alternativas: [
+      "por possuir baixo número de cópias por célula, é de difícil amplificação pela técnica de PCR, o que limita sua aplicação em restos humanos degradados.",
+      "por ser transmitido por herança materna, não identifica um único indivíduo com exclusividade, pois parentes da linha materna compartilham o mesmo perfil.",
+      "apresenta grau de polimorfismo muito baixo na região controle (D-loop), o que limita sua utilidade para estudos de linhagem e ancestralidade.",
+      "não é possível diferenciar o mtDNA humano do mtDNA de outras espécies por meio das técnicas atuais de análise genética forense.",
+      "não fornece haplogrupos informativos para estudos de linhagem materna e ancestralidade populacional.",
+    ],
+    correta: 1,
+    explicacao:
+      "O mtDNA é vantajoso por sua maior resistência à degradação e alto número de cópias por célula (o que facilita, e não dificulta, a amplificação por PCR), além de alto polimorfismo na região D-loop e grande utilidade para determinar haplogrupos. Sua principal limitação é não identificar uma pessoa de forma exclusiva: por ser herdado da mãe sem recombinação, todos os parentes da linha materna compartilham o mesmo perfil mitocondrial — ao contrário do DNA nuclear (STRs), exclusivo de cada indivíduo.",
+    origem: "banco",
+  },
+  {
+    id: "for-035",
+    materia: "for",
+    topico: "Medicina legal",
+    enunciado:
+      "Em exames periciais de crimes sexuais, sobre a pesquisa de vestígios biológicos, assinale a alternativa correta:",
+    alternativas: [
+      "a coleta de material genético só é possível quando há ejaculação diretamente no canal vaginal da vítima, sendo inviável a partir de outros vestígios biológicos.",
+      "a pesquisa de espermatozoides pode resultar negativa mesmo havendo ejaculação, quando o agressor apresenta azoospermia, isto é, ausência de espermatozoides no sêmen.",
+      "o PSA e a fosfatase ácida prostática não são marcadores úteis para a identificação de vestígios de sêmen em casos de crimes sexuais.",
+      "os espermatozoides só podem ser detectados em até 24 horas após a conjunção carnal, perdendo totalmente sua utilidade probatória após esse prazo.",
+      "o material genético da vítima só pode ser extraído em até 48 horas após o fato, sendo descartada qualquer coleta realizada em momento posterior.",
+    ],
+    correta: 1,
+    explicacao:
+      "A pesquisa de espermatozoides pode ser negativa mesmo com ejaculação quando o agressor é azoospérmico (ausência de espermatozoides no sêmen) — por isso sua ausência não afasta, por si só, a ocorrência do crime. O PSA e a fosfatase ácida prostática são marcadores bioquímicos válidos para detectar sêmen, mesmo sem espermatozoides. Espermatozoides podem ser detectados por até 72 horas ou mais após o ato, a depender das condições de conservação, e o DNA pode ser recuperado de diversos vestígios (células epiteliais, saliva, pelos, roupas), não exigindo ejaculação vaginal nem se limitando a 48 horas.",
+    origem: "banco",
+  },
+  {
+    id: "for-036",
+    materia: "for",
+    topico: "Tanatologia forense",
+    enunciado:
+      "Na cronotanatognose, os fenômenos cadavéricos transformativos conservadores — que retardam ou impedem a putrefação — incluem a mumificação e a saponificação (adipocera). Assinale a alternativa que descreve corretamente essa distinção:",
+    alternativas: [
+      "a mumificação é mais comum em magros e crianças, em solo arenoso e ventilado; a saponificação é mais comum em obesos, em solo argiloso e úmido.",
+      "a mumificação é mais comum em indivíduos obesos, enquanto a saponificação ocorre preferencialmente em solos arenosos, secos e bem ventilados.",
+      "ambos os fenômenos são classificados como transformativos destrutivos, assim como a putrefação, a maceração e a autólise do corpo.",
+      "a saponificação confere ao cadáver aspecto pétreo e rochoso, enquanto a mumificação confere aspecto de cera ou sabão à superfície do corpo.",
+      "os dois fenômenos independem das condições ambientais do local onde o corpo se encontra depositado após a morte.",
+    ],
+    correta: 0,
+    explicacao:
+      "Mumificação e saponificação (adipocera) são fenômenos transformativos conservadores (ao lado da calcificação e da corificação), que se distinguem dos transformativos destrutivos (autólise, maceração e putrefação) por retardarem a destruição do corpo. A mumificação depende de ambiente seco, arenoso e ventilado, sendo mais frequente em indivíduos magros e crianças (ou por embalsamamento); a saponificação depende de ambiente úmido, solo argiloso e pouco oxigenado, iniciando-se a partir da sexta semana após a morte, sendo mais frequente em indivíduos obesos, com aspecto de cera ou sabão. A calcificação (aspecto pétreo) ocorre em fetos retidos no útero; a corificação é rara, ligada a sepultamento em urnas metálicas herméticas.",
+    origem: "banco",
+  },
+  {
+    id: "for-037",
+    materia: "for",
+    topico: "Tanatologia forense",
+    enunciado:
+      "Sobre a rigidez cadavérica (rigor mortis) e sua progressão no corpo, segundo a Lei de Nysten-Sommer, é correto afirmar que:",
+    alternativas: [
+      "a rigidez progride no sentido crânio-caudal na musculatura esquelética, mas o miocárdio e o diafragma tornam-se rígidos antes dos membros superiores.",
+      "a rigidez se instala simultaneamente em todos os músculos do corpo, sem qualquer ordem de progressão entre as diferentes regiões corporais.",
+      "a rigidez progride exclusivamente no sentido caudo-cranial, iniciando-se nos membros inferiores e terminando na nuca e na mandíbula.",
+      "a intensidade e a velocidade de instalação da rigidez não sofrem qualquer influência da temperatura ambiente ou da causa da morte do indivíduo.",
+      "uma vez instalada, a rigidez cadavérica é irreversível e permanece inalterada até a esqueletização completa do cadáver.",
+    ],
+    correta: 0,
+    explicacao:
+      "A Lei de Nysten-Sommer descreve a progressão crânio-caudal da rigidez cadavérica na musculatura esquelética: nuca e mandíbula primeiro, seguidas por membros superiores, tronco e, por último, membros inferiores. Contudo, na cronologia interna, o miocárdio e o diafragma enrijecem antes mesmo dos membros superiores. A intensidade e a velocidade da instalação variam conforme temperatura ambiente, condição física do cadáver e causa da morte, e a rigidez é temporária: após 12 a 24 horas (podendo estender-se por 2 a 3 dias), cessa com um segundo relaxamento, dando lugar à putrefação.",
+    origem: "banco",
+  },
+  {
+    id: "for-038",
+    materia: "for",
+    topico: "Balística forense",
+    enunciado:
+      "Na avaliação pericial das lesões por projétil de arma de fogo (PAF) a curta distância, quanto às zonas produzidas pelos efeitos secundários do tiro, é correto afirmar que:",
+    alternativas: [
+      "a zona de tatuagem, formada por grãos de pólvora que queimam e se aderem à pele, pode ser totalmente removida por simples lavagem do cadáver.",
+      "a zona de esfumaçamento, formada por fuligem e gases, pode ser removida pela lavagem; já a zona de tatuagem resulta de queimadura e não é removível.",
+      "a zona de chamuscamento é indistinguível da zona de tatuagem, sendo ambas inteiramente removíveis pela lavagem do cadáver.",
+      "as zonas de tatuagem, esfumaçamento e chamuscamento estão presentes inclusive nos disparos efetuados a longa distância, sem qualquer atenuação.",
+      "a zona de esfumaçamento somente se forma nos disparos encostados, nunca nos disparos a curta distância sem contato direto.",
+    ],
+    correta: 1,
+    explicacao:
+      "A zona de tatuagem resulta da impregnação de grãos de pólvora incombustos que queimam a pele e nela se fixam, não sendo removível por lavagem; a zona de esfumaçamento é formada por fuligem e gases depositados superficialmente na pele, podendo ser limpa pela lavagem (por isso também chamada de falsa queimadura); a zona de chamuscamento, por queimar a pele pela chama do disparo, também não é removível. Essas zonas secundárias ocorrem nos disparos a curta distância, desaparecendo a longa distância, e são distintas da boca de mina, exclusiva dos disparos encostados.",
+    origem: "banco",
+  },
+  {
+    id: "for-039",
+    materia: "for",
+    topico: "Traumatologia forense",
+    enunciado:
+      "Sobre a eletropatologia forense, que estuda as lesões e mortes causadas por energia elétrica, é correto afirmar que:",
+    alternativas: [
+      "o sinal de Lichtenberg, de aspecto arborescente, é exclusivo da eletricidade natural (raios), desaparecendo em até 48 horas se a vítima sobreviver.",
+      "a marca elétrica de Jellinek é característica da eletricidade natural, formando-se exclusivamente após a queda de raios sobre a vítima.",
+      "a fulminação designa o acidente elétrico de origem industrial em que a vítima sobrevive apenas com queimaduras superficiais no corpo.",
+      "a eletroplessão é, por definição, sempre letal, sendo tratada pela doutrina como sinônimo exato de eletrocussão.",
+      "em qualquer faixa de voltagem, a eletrocussão de origem industrial mata exclusivamente por fibrilação ventricular do coração.",
+    ],
+    correta: 0,
+    explicacao:
+      "O sinal de Lichtenberg é exclusivo da eletricidade natural (raios): reação vasomotora temporária, de padrão dendrítico avermelhado/arroxeado, que desaparece em até 48 horas se a vítima sobreviver (persistindo até a putrefação, em caso de morte). A marca de Jellinek, por sua vez, é típica da eletricidade industrial (eletroplessão), no ponto de entrada da corrente. Fulguração é a sobrevivência a um raio, e fulminação é a morte imediata por raio — ambos termos da eletricidade natural. A eletroplessão é o gênero (qualquer acidente elétrico industrial), só letal quando configura eletrocussão; o mecanismo de morte varia com a voltagem: fibrilação ventricular (baixa), asfixia mecânica por tetania (média) ou paralisia bulbar/carbonização (alta).",
+    origem: "banco",
+  },
+  {
+    id: "for-040",
+    materia: "for",
+    topico: "Medicina legal",
+    enunciado:
+      "Segundo o art. 182 do Código de Processo Penal, em relação ao laudo pericial produzido nos autos, é correto afirmar que:",
+    alternativas: [
+      "o juiz não fica adstrito ao laudo, podendo aceitá-lo ou rejeitá-lo, no todo ou em parte, desde que fundamente sua decisão.",
+      "o juiz deve sempre acatar integralmente as conclusões técnicas do perito, sem qualquer margem de discordância fundamentada.",
+      "o laudo pericial só pode ser contestado por meio de recurso específico perante o tribunal de justiça competente.",
+      "a rejeição do laudo pelo juiz depende de prévia autorização do Ministério Público no curso do processo penal.",
+      "o laudo pericial vincula o juiz apenas nos crimes de menor potencial ofensivo, sendo facultativo nos demais casos.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 182 do CPP consagra o princípio do livre convencimento motivado (sistema liberatório ou do livre convencimento): o juiz não fica adstrito ao laudo pericial, podendo aceitá-lo ou rejeitá-lo, no todo ou em parte, desde que fundamente devidamente sua decisão ao afastar as conclusões técnicas. O perito é auxiliar da Justiça, mas o magistrado é o destinatário final da prova, não havendo vinculação automática, exigência de autorização do Ministério Público ou restrição a recurso específico para contestação.",
+    origem: "banco",
+  },
+  {
+    id: "for-041",
+    materia: "for",
+    topico: "Medicina legal",
+    enunciado:
+      "Segundo o art. 184 do Código de Processo Penal, a perícia requerida pelas partes pode ser negada pelo juiz ou pela autoridade policial quando não for necessária ao esclarecimento da verdade, excetuada apenas:",
+    alternativas: [
+      "a perícia grafotécnica, em qualquer crime de falsificação documental.",
+      "a perícia contábil, em qualquer crime contra a administração pública.",
+      "o exame de corpo de delito, nas infrações que deixam vestígios.",
+      "a perícia psiquiátrica do acusado, em qualquer hipótese processual.",
+      "a perícia balística, em qualquer crime praticado com arma de fogo.",
+    ],
+    correta: 2,
+    explicacao:
+      "O art. 184 do CPP estabelece a regra geral de que a perícia requerida pelas partes pode ser negada pelo juiz ou pela autoridade policial quando dispensável, protelatória ou impertinente ao esclarecimento da verdade. A única exceção absoluta é o exame de corpo de delito (direto ou indireto), cuja realização é obrigatória sempre que a infração deixar vestígios materiais (art. 158 do CPP), não podendo ser negado nem suprido pela simples confissão do acusado.",
+    origem: "banco",
+  },
+  {
+    id: "for-042",
+    materia: "for",
+    topico: "Asfixiologia forense",
+    enunciado:
+      "Entre os achados necroscópicos internos associados às asfixias mecânicas, as manchas de Paltauf se diferenciam das manchas de Tardieu porque:",
+    alternativas: [
+      "as de Paltauf são equimoses subpleurais maiores, de tonalidade vermelho-clara, típicas do afogamento por hemodiluição; as de Tardieu são petéquias menores, presentes nas demais asfixias.",
+      "as manchas de Paltauf são petéquias puntiformes pequenas e escuras, inespecíficas, encontradas em qualquer asfixia mecânica, inclusive na esganadura e no estrangulamento.",
+      "ambas as manchas são achados laboratoriais exclusivos da intoxicação por monóxido de carbono, não ocorrendo em nenhuma outra forma de asfixia mecânica.",
+      "as manchas de Tardieu ocorrem apenas na superfície da pele, jamais em superfícies serosas de órgãos internos, como pulmão e coração.",
+      "Paltauf e Tardieu são dois nomes diferentes dados ao mesmo achado necroscópico, a depender apenas da nomenclatura adotada por cada perito.",
+    ],
+    correta: 0,
+    explicacao:
+      "As manchas de Paltauf são equimoses subpleurais de dimensões variadas, contornos irregulares e tonalidade vermelho-clara, achado patognomônico do afogamento: a penetração do líquido sob pressão nas vias respiratórias rompe septos interalveolares e capilares, e a hemodiluição confere a cor mais clara. Já as manchas de Tardieu são petéquias puntiformes menores e mais escuras, decorrentes de simples hipertensão venosa/capilar, encontradas em superfícies serosas (pulmão, coração) e também sob a pele, em praticamente todas as demais asfixias mecânicas (enforcamento, estrangulamento, esganadura, sufocação direta) — não são o mesmo achado, nem se relacionam à intoxicação por monóxido de carbono.",
+    origem: "banco",
+  },
+  {
+    id: "for-043",
+    materia: "for",
+    topico: "Asfixiologia forense",
+    enunciado:
+      "Em uma morte por asfixia relacionada à intoxicação por monóxido de carbono (CO), o exame necroscópico tipicamente revela:",
+    alternativas: [
+      "livores de tonalidade vermelho-viva (vermelho-cereja), pela formação de carboxihemoglobina, com sangue fluido e claro, sem a cianose das demais asfixias.",
+      "cianose intensa e coloração arroxeada generalizada da pele e das mucosas, idêntica à observada no enforcamento e na esganadura da vítima.",
+      "ausência completa de qualquer alteração de coloração na pele e nas vísceras do cadáver examinado.",
+      "coloração amarelada da pele e das mucosas, semelhante à icterícia observada em doenças hepáticas crônicas.",
+      "palidez cadavérica acentuada e generalizada, sem qualquer alteração perceptível na tonalidade do sangue.",
+    ],
+    correta: 0,
+    explicacao:
+      "Ao contrário do que se imagina intuitivamente, o cadáver intoxicado por monóxido de carbono não fica roxo/cianótico. A reação do CO com a hemoglobina forma a carboxihemoglobina (COHb), que confere aos livores cadavéricos, à pele e ao sangue uma tonalidade vermelho-viva (vermelho-cereja ou carminada), com o sangue permanecendo fluido e claro — diferentemente das demais asfixias mecânicas (enforcamento, estrangulamento, esganadura), que cursam com cianose e livores arroxeados.",
+    origem: "banco",
+  },
+  {
+    id: "for-044",
+    materia: "for",
+    topico: "Asfixiologia forense",
+    enunciado:
+      "Entre as modalidades de asfixia por obstáculo nas vias aéreas, a distinção entre sufocação direta e sufocação posicional está em que:",
+    alternativas: [
+      "na direta, um objeto tapa a boca e o nariz da vítima; na posicional, não há obstáculo no rosto, pois a posição do corpo comprime o diafragma.",
+      "ambas exigem necessariamente a presença de um laço ou instrumento mecânico ao redor do pescoço da própria vítima.",
+      "a sufocação posicional é sempre consequência de ação de terceiro, nunca podendo ocorrer de forma acidental ou sem intenção.",
+      "a sufocação direta decorre exclusivamente da compressão do tórax e do abdômen por peso externo, sem qualquer relação com boca ou nariz.",
+      "não há distinção relevante entre essas duas modalidades, sendo tratadas pela doutrina médico-legal como sinônimos.",
+    ],
+    correta: 0,
+    explicacao:
+      "Na sufocação direta, um obstáculo físico externo (mão, travesseiro, fita adesiva, saco plástico) tapa mecanicamente a boca e o nariz da vítima. Na sufocação posicional, não há nenhum obstáculo tampando o rosto: a vítima morre porque a posição do corpo faz com que seu próprio peso comprima o diafragma ou dobre as vias aéreas, gerando fadiga extrema da musculatura respiratória. Em nenhum dos dois casos há laço cervical envolvido (isso caracterizaria enforcamento ou estrangulamento), e a sufocação indireta (compressão torácica/abdominal por peso externo) é uma terceira modalidade, distinta das duas.",
+    origem: "banco",
+  },
+  {
+    id: "for-045",
+    materia: "for",
+    topico: "Criminologia",
+    enunciado:
+      "A Escola Clássica de Criminologia, com Cesare Beccaria como principal expoente, caracterizou-se por:",
+    alternativas: [
+      "basear-se no livre-arbítrio e no contratualismo, defendendo a proporcionalidade entre delito e pena e a humanização das penas.",
+      "aplicar o método científico-experimental para identificar causas biológicas do crime, a partir do estudo direto do delinquente.",
+      "negar qualquer função retributiva à pena, defendendo exclusivamente sua função ressocializadora perante o condenado.",
+      "defender que o comportamento criminoso decorre predominantemente de fatores hereditários e antropológicos do indivíduo.",
+      "fundamentar-se em levantamentos estatísticos sobre a distribuição geográfica da criminalidade em determinada região.",
+    ],
+    correta: 0,
+    explicacao:
+      "A Escola Clássica (Beccaria, Kant, Feuerbach) via o homem como um ser racional que escolhe livremente entre o crime e a norma (livre-arbítrio), concebendo o delito sob enfoque jurídico-abstrato. Fundada no contratualismo, defendeu a proporcionalidade entre delito e pena e a humanização das penas, em reação aos excessos e à arbitrariedade do sistema penal do Antigo Regime — tese central da obra \"Dos Delitos e das Penas\", de Beccaria. O método científico-experimental e o estudo biológico/antropológico do delinquente são, ao contrário, marcas da Escola Positiva (Lombroso, Ferri, Garofalo).",
+    origem: "banco",
+  },
+  {
+    id: "for-046",
+    materia: "for",
+    topico: "Criminologia",
+    enunciado:
+      "A Teoria da Associação Diferencial, formulada por Edwin Sutherland para explicar inclusive os chamados crimes de colarinho branco, sustenta que:",
+    alternativas: [
+      "o comportamento criminoso é aprendido pela interação com outras pessoas, associando-se a padrões e valores favoráveis à prática delitiva.",
+      "o comportamento criminoso é determinado geneticamente, sendo transmitido hereditariamente entre gerações de uma mesma família.",
+      "o crime decorre exclusivamente da desorganização social de bairros pobres e periféricos, não ocorrendo em classes sociais mais favorecidas.",
+      "a criminalidade é resultado direto de transtornos mentais não diagnosticados no agente criminoso.",
+      "o comportamento criminoso é determinado unicamente pela ausência de policiamento ostensivo na região afetada.",
+    ],
+    correta: 0,
+    explicacao:
+      "Sutherland propôs que o comportamento criminoso, assim como qualquer outro comportamento, é aprendido por meio da interação social — processo de associação diferencial em que o indivíduo absorve, de grupos próximos, técnicas, motivos, racionalizações e atitudes favoráveis à violação da lei. Essa teoria foi formulada justamente para explicar crimes de colarinho branco (praticados por pessoas de posição social elevada, no exercício de suas atividades profissionais), demonstrando que a criminalidade não se limita a fatores genéticos, a classes sociais pobres ou à ausência de policiamento.",
+    origem: "banco",
+  },
+  {
+    id: "for-047",
+    materia: "for",
+    topico: "Criminologia",
+    enunciado:
+      "O Labelling Approach (Teoria da Rotulação ou da Reação Social), associado a autores como Howard Becker, propõe que:",
+    alternativas: [
+      "o desvio não é uma qualidade intrínseca do ato, mas o resultado da rotulação de certos indivíduos pelas instâncias de controle social.",
+      "o desvio é uma qualidade intrínseca do ato praticado, independentemente de qualquer reação social sobre o seu autor.",
+      "a conduta criminosa é sempre resultado de características biológicas inatas do indivíduo rotulado como desviante.",
+      "a reincidência criminal está relacionada exclusivamente a fatores econômicos, sem qualquer relação com a reação do meio social.",
+      "a pena privativa de liberdade elimina, por definição, qualquer risco de rotulação posterior do indivíduo condenado.",
+    ],
+    correta: 0,
+    explicacao:
+      "O Labelling Approach desloca o foco da análise do ato e do autor para a reação social e as instâncias de controle (polícia, justiça, mídia): o desvio não é uma qualidade ontológica do comportamento, mas o produto da rotulação de certos indivíduos como \"criminosos\", o que pode gerar o chamado desvio secundário — o próprio rotulado passa a incorporar e reproduzir o papel social que lhe foi atribuído, dificultando sua reinserção social, inclusive após o cumprimento de pena privativa de liberdade.",
+    origem: "banco",
+  },
+  {
+    id: "for-048",
+    materia: "for",
+    topico: "Criminologia",
+    enunciado:
+      "Na criminologia, as chamadas \"cifras criminais\" (ou cifras ocultas da criminalidade) referem-se a:",
+    alternativas: [
+      "a diferença entre a criminalidade real e a registrada nas estatísticas oficiais, já que nem todo crime é notificado ou solucionado.",
+      "o percentual de crimes solucionados pela polícia em determinado período, divulgado oficialmente pelas corporações de segurança pública.",
+      "o valor financeiro estimado dos prejuízos causados por crimes patrimoniais em determinada região do país.",
+      "o número de condenações confirmadas em segunda instância, excluídos os casos ainda em grau de recurso.",
+      "a proporção de inquéritos policiais arquivados por falta de provas em determinado exercício anual.",
+    ],
+    correta: 0,
+    explicacao:
+      "As cifras criminais (ou cifra negra, cifra dourada e cifra cinzenta, conforme a gradação de subnotificação) representam a defasagem entre a criminalidade real e a criminalidade efetivamente conhecida pelas estatísticas oficiais — muitos crimes não chegam ao conhecimento das autoridades (por não serem denunciados, registrados ou elucidados), o que compromete a fidedignidade dos números oficiais como retrato completo da criminalidade de uma sociedade.",
+    origem: "banco",
+  },
+  {
+    id: "for-049",
+    materia: "for",
+    topico: "Criminologia",
+    enunciado:
+      "No âmbito da prevenção situacional do crime, a teoria do \"espaço defensável\", de Oscar Newman, sustenta que:",
+    alternativas: [
+      "o crime pode ser reduzido pelo desenho urbano que favoreça a vigilância natural dos moradores e o senso de territorialidade sobre o espaço comum.",
+      "a prevenção criminal depende exclusivamente do aumento do efetivo policial nas ruas, sendo irrelevante o desenho arquitetônico dos espaços urbanos.",
+      "ambientes urbanos densamente arborizados e com baixa iluminação são sempre mais seguros, por dificultarem a visualização do agressor.",
+      "a criminalidade é determinada unicamente por fatores socioeconômicos, sendo indiferente a configuração física do espaço urbano.",
+      "o desenho arquitetônico dos edifícios não produz qualquer efeito sobre as taxas de criminalidade de uma região.",
+    ],
+    correta: 0,
+    explicacao:
+      "Oscar Newman propôs o conceito de \"espaço defensável\" (defensible space): o desenho arquitetônico e urbanístico pode reduzir a criminalidade ao favorecer a vigilância natural (visibilidade entre vizinhos), o senso de territorialidade (apropriação do espaço comum pelos moradores) e a redução de áreas de acesso irrestrito e anônimo — integrando as teorias de prevenção situacional do crime, ao lado da teoria das atividades rotineiras (Cohen e Felson) e da escolha racional. A simples ampliação do efetivo policial, a vegetação densa/baixa iluminação (que na verdade favorecem o esconderijo do agressor) e fatores puramente socioeconômicos não esgotam essa abordagem.",
+    origem: "banco",
+  },
 ];
