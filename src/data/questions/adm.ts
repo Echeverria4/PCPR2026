@@ -330,4 +330,175 @@ export const QUESTOES_ADM: Question[] = [
       "A exoneração ocorre a pedido do próprio servidor ou de ofício pela Administração, sem caráter punitivo (por exemplo, ao final do estágio probatório mal avaliado, ou por conveniência da Administração em cargo em comissão), enquanto a demissão é penalidade disciplinar aplicada em razão de infração funcional apurada em processo administrativo disciplinar, com contraditório e ampla defesa — distinguir as duas é um dos pontos mais cobrados sobre o tema.",
     origem: "banco",
   },
+  {
+    id: "adm-021",
+    materia: "adm",
+    topico: "Atos administrativos",
+    enunciado:
+      "Considerando o entendimento doutrinário dominante sobre o ato administrativo — manifestação unilateral de vontade da Administração Pública (ou de seus delegatários, no exercício de função delegada) que, sob regime de direito público, pretende produzir efeitos jurídicos em prol do interesse público —, é correto afirmar que, como regra geral, esse ato goza dos atributos da",
+    alternativas: [
+      "presunção relativa de legitimidade e de veracidade, da imperatividade e da autoexecutoriedade.",
+      "autoexecutoriedade, mas não da presunção de legitimidade e de veracidade, tampouco da imperatividade, que seriam atributos exclusivos dos atos jurisdicionais praticados pelo Poder Judiciário.",
+      "presunção absoluta de legitimidade e de veracidade, que não admite prova em contrário, além da imperatividade, mas não goza da autoexecutoriedade em nenhuma hipótese prevista em lei.",
+      "imperatividade e da autoexecutoriedade, mas não goza de presunção de legitimidade e de veracidade, nem relativa nem absoluta, em nenhuma hipótese admitida pela doutrina.",
+      "presunção absoluta de legitimidade e de veracidade, da imperatividade e da autoexecutoriedade, atributos que não admitem qualquer espécie de prova ou impugnação em contrário.",
+    ],
+    correta: 0,
+    explicacao:
+      "Os atos administrativos gozam, como regra, de presunção relativa (não absoluta) de legitimidade e veracidade — admite prova em contrário —, além de imperatividade (impõem-se a terceiros independentemente de sua concordância) e autoexecutoriedade (podem ser executados pela própria Administração, sem prévia manifestação do Judiciário, nas hipóteses previstas).",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2026 — PGE-AC — Procurador do Estado",
+  },
+  {
+    id: "adm-022",
+    materia: "adm",
+    topico: "Atos administrativos",
+    enunciado:
+      "O Estado de Rondônia extinguiu dois atos administrativos por motivos distintos: no primeiro caso, a situação antes permitida deixou de ser tolerada em razão de nova legislação, sem qualquer irregularidade imputável ao administrado; no segundo caso, a extinção decorreu do descumprimento, pelo administrado, das condições fixadas pela Administração para a prática do ato. Nessas hipóteses, ocorreram, respectivamente, os institutos da",
+    alternativas: [
+      "caducidade, no primeiro cenário, e da cassação, no segundo cenário.",
+      "cassação, no primeiro cenário, e da caducidade, no segundo cenário, institutos que se distinguem exatamente pela ordem inversa à descrita na situação administrativa apresentada.",
+      "caducidade, em ambos os cenários, uma vez que esse instituto abrange tanto a superveniência legislativa quanto o descumprimento de condições pelo próprio administrado.",
+      "cassação, em ambos os cenários, já que esse instituto é o único cabível para a extinção de atos administrativos válidos em razão de fatos supervenientes ao administrado.",
+      "revogação, no primeiro cenário, e da anulação, no segundo cenário, por se tratar, em ambos os casos, de vícios de legalidade originários do próprio ato administrativo praticado.",
+    ],
+    correta: 0,
+    explicacao:
+      "Caducidade extingue o ato por norma jurídica superveniente que torna inadmissível situação antes permitida, sem culpa do administrado; cassação extingue o ato em razão do descumprimento, pelo beneficiário, das condições fixadas pela Administração — institutos distintos da revogação (mérito) e da anulação (ilegalidade originária).",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2026 — AL-RO — Analista Legislativo (Área Administrativa)",
+  },
+  {
+    id: "adm-023",
+    materia: "adm",
+    topico: "Atos administrativos",
+    enunciado:
+      "A doutrina tradicionalmente enumera cinco elementos necessários à formação do ato administrativo: competência, finalidade, forma, motivo e objeto. Quanto ao elemento forma, é correto afirmar que",
+    alternativas: [
+      "o ato administrativo deve ser exteriorizado de acordo com a forma prescrita em lei, em regra a escrita, e não segundo aquela que o agente considere mais razoável no momento de sua prática.",
+      "o ato administrativo pode ser exteriorizado livremente, de acordo com a forma que o agente público considere mais conveniente e oportuna no momento concreto de sua prática administrativa.",
+      "a forma é elemento acessório do ato administrativo, cuja inobservância nunca acarreta nulidade, por não integrar o núcleo essencial exigido para a validade do ato administrativo.",
+      "a forma do ato administrativo somente pode ser a escrita, sendo vedada, em qualquer hipótese, a prática de atos administrativos verbais ou por meio de gestos e sinais convencionais.",
+      "a forma do ato administrativo é elemento de existência, mas não de validade, de modo que sua inobservância jamais pode ser objeto de controle judicial ou administrativo posterior.",
+    ],
+    correta: 0,
+    explicacao:
+      "A forma é elemento vinculado do ato administrativo: deve observar o que a lei prescreve (em regra, a forma escrita), e não a que o agente repute mais razoável. Não é sempre e exclusivamente escrita (há atos verbais e por sinais), nem mero elemento acessório ou de existência — sua inobservância pode gerar nulidade e está sujeita a controle.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2012 — Senado Federal — Técnico Legislativo — Processo Legislativo",
+  },
+  {
+    id: "adm-024",
+    materia: "adm",
+    topico: "Poderes administrativos (hierárquico, disciplinar, de polícia, regulamentar)",
+    enunciado:
+      "José, servidor público competente, determinou a abertura de investigação administrativa contra João, agente público, sob o fundamento de suposto ilícito administrativo. Na realidade, José agiu para satisfazer interesse pessoal, por ser João seu desafeto de longa data, e João não praticara qualquer ato antijurídico. A prerrogativa de investigar e punir agentes públicos por infração funcional é manifestação do poder",
+    alternativas: [
+      "disciplinar, tendo José agido, no caso, com desvio de poder (desvio de finalidade), por se valer de competência regular para atender interesse estranho ao público.",
+      "disciplinar, tendo José agido, no caso, com excesso de poder, por ultrapassar os limites de sua competência legal ao instaurar a investigação contra João sem qualquer suporte normativo.",
+      "hierárquico, tendo José agido, no caso, com desvio de poder, por se tratar de prerrogativa relacionada à organização interna dos órgãos administrativos, e não à apuração de infrações funcionais.",
+      "de polícia, tendo José agido, no caso, com excesso de poder, por extrapolar os limites da fiscalização de atividades privadas ao instaurar procedimento investigativo contra outro agente público.",
+      "regulamentar, tendo José agido, no caso, dentro dos limites de sua competência, já que a edição de atos gerais para apuração de condutas funcionais é prerrogativa típica desse poder específico.",
+    ],
+    correta: 0,
+    explicacao:
+      "Apurar e punir infrações funcionais de agentes públicos é exercício do poder disciplinar. Como José era competente para agir, mas o fez por finalidade estranha ao interesse público (vingança pessoal), houve desvio de poder — e não excesso de poder, que ocorre quando o agente extrapola os limites de sua competência.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2025 — TJ-RJ — Analista Judiciário — Assistencial — Psicólogo",
+  },
+  {
+    id: "adm-025",
+    materia: "adm",
+    topico: "Poderes administrativos (hierárquico, disciplinar, de polícia, regulamentar)",
+    enunciado:
+      "Conforme o entendimento consolidado do Supremo Tribunal Federal (RE 633.782, Tema 532), a aplicação de multa de trânsito por excesso de velocidade, captada por radar devidamente sinalizado e em funcionamento, é manifestação do poder",
+    alternativas: [
+      "de polícia, sendo certo que o seu exercício, inclusive a aplicação de sanções, pode ser delegado a pessoas jurídicas de direito privado integrantes da Administração Indireta, de capital social majoritariamente público, prestadoras de serviço público em regime não concorrencial.",
+      "de polícia, sendo certo que o seu exercício não pode, em nenhuma hipótese, ser delegado a pessoas jurídicas de direito privado integrantes da Administração Indireta, mesmo que prestadoras de serviço público em regime não concorrencial, por se tratar de prerrogativa estatal insuscetível de delegação a particulares.",
+      "disciplinar, sendo certo que o seu exercício pode ser delegado a pessoas jurídicas de direito privado integrantes da Administração Indireta, mesmo que não prestem serviço público em regime não concorrencial, sendo irrelevante a natureza da atividade desempenhada pela entidade delegatária.",
+      "hierárquico, sendo certo que o seu exercício pode ser delegado a pessoas jurídicas de direito privado integrantes da Administração Indireta, inclusive quando se tratar de entidades de capital social majoritariamente privado, prestadoras de serviço público em regime concorrencial.",
+      "disciplinar, sendo certo que o seu exercício não pode ser delegado a pessoas jurídicas de direito privado integrantes da Administração Indireta, ainda que se trate de entidade prestadora de serviço público em regime não concorrencial e de capital social majoritariamente público.",
+    ],
+    correta: 0,
+    explicacao:
+      "A multa de trânsito é manifestação do poder de polícia. O STF (RE 633.782, Tema 532) reconheceu a constitucionalidade da delegação do poder de polícia, inclusive da aplicação de sanções, a pessoas jurídicas de direito privado da Administração Indireta, de capital social majoritariamente público, em regime não concorrencial — não se trata de poder disciplinar nem hierárquico.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2025 — TCE-PE — Auditor de Controle Externo — Contas Públicas",
+  },
+  {
+    id: "adm-026",
+    materia: "adm",
+    topico: "Poderes administrativos (hierárquico, disciplinar, de polícia, regulamentar)",
+    enunciado:
+      "O poder de polícia é a atividade estatal que limita o exercício de direitos individuais em prol do interesse coletivo. O atributo do poder de polícia que determina a atuação da Administração estritamente conforme os limites estabelecidos em lei, sem qualquer possibilidade de escolha, denomina-se",
+    alternativas: [
+      "vinculação, que se opõe à discricionariedade presente em parte dos atos de polícia, nos quais a lei confere à Administração certa margem de valoração quanto à oportunidade ou ao modo de atuar.",
+      "discricionariedade, atributo que determina a atuação da Administração estritamente conforme os limites estabelecidos em lei, sem qualquer margem de escolha quanto à oportunidade ou ao modo de agir.",
+      "autoexecutoriedade, atributo que, segundo a doutrina majoritária, elimina por completo qualquer discricionariedade dos atos de polícia, tornando-os sempre integralmente vinculados em todas as hipóteses.",
+      "coercibilidade, atributo que se confunde inteiramente com a vinculação, não havendo distinção relevante entre ambos para fins de classificação doutrinária dos atos de polícia.",
+      "indelegabilidade, atributo que impede qualquer repartição de competências fiscalizatórias entre os diferentes órgãos e entidades da Administração Pública direta e indireta.",
+    ],
+    correta: 0,
+    explicacao:
+      "A vinculação impõe que a Administração atue estritamente nos limites da lei, sem margem de escolha — em oposição à discricionariedade, presente em parte dos atos de polícia. Autoexecutoriedade, coercibilidade e indelegabilidade são outros atributos do poder de polícia, mas não se confundem com a vinculação nem a eliminam.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2025 — Prefeitura de Canaã dos Carajás-PA — Agente de Serviços Técnicos em Obras Públicas",
+  },
+  {
+    id: "adm-027",
+    materia: "adm",
+    topico: "Improbidade administrativa",
+    enunciado:
+      "José, servidor público municipal, agindo com dolo, nomeou Caroline, sua esposa, para cargo em comissão sem natureza política e vinculado diretamente a ele, sendo que Caroline não possuía qualquer conhecimento teórico ou prático para a função. Considerando a Lei nº 8.429/1992, é correto afirmar que essa conduta",
+    alternativas: [
+      "caracteriza ato doloso de improbidade administrativa que atenta contra os princípios da administração pública, e não ato que causa prejuízo ao erário, sujeitando José, em caso de condenação, a sanções como suspensão dos direitos políticos e multa civil, executáveis somente após o trânsito em julgado da sentença condenatória.",
+      "caracteriza ato doloso de improbidade administrativa que causa prejuízo ao erário, sujeitando José, em caso de condenação, a sanções executáveis desde logo, independentemente do trânsito em julgado da sentença condenatória, e não ato que atenta exclusivamente contra os princípios da administração pública.",
+      "não caracteriza ato de improbidade administrativa, por se tratar de nomeação para cargo em comissão, de livre nomeação e exoneração pela autoridade competente, sendo irrelevante, para esse fim, a ausência de qualificação técnica da nomeada e o vínculo de parentesco direto entre nomeante e nomeada.",
+      "caracteriza ato de improbidade administrativa apenas na modalidade culposa, já que a nomeação de cônjuge para cargo em comissão não admite, segundo a Lei nº 8.429/1992, a configuração de dolo específico do agente, ainda que a nomeação tenha sido direcionada deliberadamente à esposa do próprio nomeante.",
+      "caracteriza crime de responsabilidade, e não ato de improbidade administrativa, estando José sujeito exclusivamente a processo de impeachment perante o Poder Legislativo municipal competente, não se submetendo a qualquer sanção prevista na Lei nº 8.429/1992.",
+    ],
+    correta: 0,
+    explicacao:
+      "A nomeação de cônjuge para cargo em comissão sem natureza política e sem qualificação para a função configura ato doloso de improbidade que atenta contra os princípios da administração (art. 11, XI, da Lei 8.429/1992), e não dano ao erário. As sanções só podem ser executadas após o trânsito em julgado da sentença condenatória.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2026 — PC-PI — Delegado de Polícia",
+  },
+  {
+    id: "adm-028",
+    materia: "adm",
+    topico: "Improbidade administrativa",
+    enunciado:
+      "Sobre o processo da ação de improbidade administrativa, nos termos da Lei nº 8.429/1992, com a redação dada pela Lei nº 14.230/2021, é correto afirmar que",
+    alternativas: [
+      "ao réu é assegurado o direito de ser interrogado sobre os fatos, sem que sua recusa ou seu silêncio importem confissão; verificada, em qualquer momento, a inexistência do ato de improbidade, o juiz julgará improcedente o pedido, por se tratar de decisão de mérito; e é nula a decisão que condenar o requerido por tipo de improbidade diverso daquele definido na petição inicial.",
+      "ao réu é assegurado o direito de ser interrogado sobre os fatos, mas sua recusa ou seu silêncio podem ser livremente valorados pelo juiz como confissão implícita; verificada a inexistência do ato de improbidade, o juiz julgará improcedente o pedido, por se tratar de decisão de mérito; e é nula a decisão que condenar o requerido por tipo diverso daquele definido na petição inicial.",
+      "ao réu é assegurado o direito de ser interrogado sobre os fatos, sem que sua recusa ou seu silêncio importem confissão; verificada, em qualquer momento, a inexistência do ato de improbidade, o juiz deve extinguir o processo sem resolução de mérito, e não julgar improcedente o pedido; e é nula a decisão que condenar o requerido por tipo diverso daquele definido na petição inicial.",
+      "ao réu é assegurado o direito de ser interrogado sobre os fatos, sem que sua recusa ou seu silêncio importem confissão; verificada, em qualquer momento, a inexistência do ato de improbidade, o juiz julgará improcedente o pedido, por se tratar de decisão de mérito; sendo lícito, todavia, ao juiz condenar o requerido por tipo diverso daquele definido na petição inicial, desde que os fatos permaneçam os mesmos.",
+      "ao réu não é assegurado o direito de ser interrogado sobre os fatos da ação de improbidade, por se tratar de garantia exclusiva do processo penal; verificada, em qualquer momento, a inexistência do ato de improbidade, o juiz julgará improcedente o pedido, por se tratar de decisão de mérito; e é nula a decisão que condenar o requerido por tipo diverso daquele definido na petição inicial.",
+    ],
+    correta: 0,
+    explicacao:
+      "A Lei 8.429/1992, após a reforma de 2021, assegura ao réu o direito ao silêncio sem presunção de confissão; a inexistência do ato de improbidade leva a julgamento de improcedência (decisão de mérito, não extinção sem resolução de mérito); e é nula a condenação por tipo diverso do definido na petição inicial.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2026 — PC-PI — Oficial Investigador",
+  },
+  {
+    id: "adm-029",
+    materia: "adm",
+    topico: "Improbidade administrativa",
+    enunciado:
+      "Sobre a apuração de ilícitos de improbidade administrativa e a relação entre as diferentes esferas de responsabilização, nos termos da Lei nº 8.429/1992, é correto afirmar que",
+    alternativas: [
+      "ao investigado é garantida a oportunidade de manifestação por escrito e de juntada de documentos; as provas e decisões produzidas por órgãos de controle devem ser consideradas na formação da convicção do juiz, sem prejuízo da análise do dolo do agente; e as sanções aplicadas em outras esferas devem ser consideradas na fixação da pena de improbidade, de modo a evitar a dupla punição do agente pelo mesmo fato.",
+      "ao investigado não é garantida qualquer oportunidade de manifestação prévia na fase de apuração administrativa, podendo essa garantia ser exercida somente após o ajuizamento da ação em juízo; as provas e decisões de órgãos de controle devem ser consideradas na convicção do juiz, sem prejuízo da análise do dolo; e as sanções de outras esferas devem ser consideradas na fixação da pena, para evitar a dupla punição do agente.",
+      "ao investigado é garantida a oportunidade de manifestação por escrito e de juntada de documentos; as provas e decisões produzidas por órgãos de controle vinculam automaticamente o juiz, dispensando qualquer análise própria acerca do dolo do agente investigado; e as sanções de outras esferas devem ser consideradas na fixação da pena, para evitar a dupla punição do agente.",
+      "ao investigado é garantida a oportunidade de manifestação por escrito e de juntada de documentos; as provas e decisões de órgãos de controle devem ser consideradas na convicção do juiz, sem prejuízo da análise do dolo; mas as sanções aplicadas em outras esferas são irrelevantes para a fixação da pena, podendo o agente ser punido integralmente em cada esfera, sem qualquer comunicação entre elas.",
+      "a apuração de ilícitos de improbidade administrativa é de competência exclusiva do Ministério Público, não podendo os órgãos de controle interno produzir qualquer prova aproveitável; as provas admitidas devem ser consideradas na convicção do juiz, sem prejuízo da análise do dolo; e as sanções de outras esferas devem ser consideradas na fixação da pena, para evitar a dupla punição do agente.",
+    ],
+    correta: 0,
+    explicacao:
+      "A Lei 8.429/1992 garante ao investigado manifestação por escrito e juntada de documentos na apuração; as provas e decisões de órgãos de controle são consideradas na convicção do juiz, sem prejuízo da análise do dolo; e as sanções de outras esferas são levadas em conta na fixação da pena, para evitar dupla punição pelo mesmo fato.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2024 — PC-MG — Investigador de Polícia I",
+  },
 ];
