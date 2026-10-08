@@ -1254,4 +1254,593 @@ export const QUESTOES_PEN: Question[] = [
     origem: "banco",
     fonte: "Código Penal, art. 337-M (Lei 14.133/2021)",
   },
+  {
+    id: "pen-069",
+    materia: "pen",
+    topico: "Teoria geral do crime (dolo, culpa e elemento subjetivo)",
+    enunciado:
+      "Catarina, consciente dos riscos, aproxima a mão da grade do recinto de um tigre em um zoológico para tirar uma fotografia, mas acredita sinceramente que o animal não a atacará, já que mantém essa prática sem incidentes há meses. O tigre, inesperadamente, golpeia sua mão, causando lesões graves. Nesse cenário, Catarina agiu com",
+    alternativas: [
+      "culpa consciente, pois previu o resultado como possível, mas confiou sinceramente que ele não ocorreria, sem assumir o risco de sua produção.",
+      "dolo eventual, pois a mera previsão da possibilidade do resultado, independentemente da crença de que ele não ocorreria, já basta para configurar essa modalidade de dolo.",
+      "culpa inconsciente, pois não previu e nem poderia prever, ainda que com a diligência normalmente exigida, a possibilidade de ser atacada pelo animal.",
+      "dolo direto, pois a conduta de aproximar a mão da grade do recinto já demonstra a vontade consciente de produzir o resultado lesivo verificado.",
+      "caso fortuito, pois o ataque do tigre decorre exclusivamente do comportamento imprevisível do animal, excluindo qualquer forma de culpabilidade da conduta humana.",
+    ],
+    correta: 0,
+    explicacao:
+      "Há culpa consciente quando o agente prevê o resultado como possível, mas confia sinceramente que não ocorrerá, sem assumir o risco; no dolo eventual, o agente prevê o resultado e, mesmo assim, aceita o risco de produzi-lo, numa postura de indiferença.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2025 — MPE-RJ — Promotor de Justiça Substituto",
+  },
+  {
+    id: "pen-070",
+    materia: "pen",
+    topico: "Erro na execução (aberratio ictus) e nexo causal",
+    enunciado:
+      "Durante uma discussão, Mário dispara sua arma de fogo com a intenção de matar Rodrigo. No momento do disparo, porém, tropeça, e o projétil apenas roça o ombro de Rodrigo, ferindo-o superficialmente, mas atinge gravemente um desconhecido que passava pelo local. O desconhecido é socorrido, mas vem a falecer horas depois, em razão de um acidente sofrido pela ambulância que o transportava ao hospital — acidente totalmente estranho à conduta de Mário e, por si só, suficiente para causar a morte. Nesse cenário, Mário responde por",
+    alternativas: [
+      "duas tentativas de homicídio, em concurso formal, uma contra Rodrigo e outra contra o desconhecido, por força do erro na execução, já que o acidente da ambulância é causa superveniente relativamente independente que, por si só, produziu a morte, rompendo o nexo causal quanto a esse evento.",
+      "homicídio doloso consumado contra o desconhecido, em concurso formal com tentativa de homicídio contra Rodrigo, por força do erro na execução, pois o acidente da ambulância, ainda que posterior ao disparo, não rompe o nexo causal entre a conduta de Mário e a morte do desconhecido havida durante o transporte ao hospital.",
+      "duas tentativas de homicídio, em concurso formal, uma contra Rodrigo e outra contra o desconhecido, por força do erro na execução, mas sem qualquer relevância do acidente da ambulância, que a doutrina majoritária classifica como simples desdobramento natural e previsível do ferimento inicialmente causado pelo disparo.",
+      "tentativa de homicídio apenas contra Rodrigo, sendo o ferimento e a morte do desconhecido imputados somente a título de culpa, pois o erro na execução, nessa hipótese, não permite que Mário responda por dolo quanto à pessoa diversa daquela originalmente pretendida por ele.",
+      "homicídio doloso consumado contra o desconhecido e tentativa de homicídio contra Rodrigo, em concurso formal, pois o acidente da ambulância, por decorrer de fato de terceiro, é absorvido pelo risco criado pelo próprio disparo, não sendo apto a romper o nexo causal estabelecido entre eles.",
+    ],
+    correta: 0,
+    explicacao:
+      "O erro na execução que atinge também a pessoa pretendida aplica a regra do concurso formal (art. 73 do CP). Quanto ao desconhecido, a causa superveniente relativamente independente que por si só produziu o resultado (o acidente da ambulância) exclui a imputação da morte, respondendo o agente só pelos atos até então praticados: tentativa de homicídio.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2024 — TJ-PE — Juiz Substituto",
+  },
+  {
+    id: "pen-071",
+    materia: "pen",
+    topico: "Crimes contra a pessoa",
+    enunciado:
+      "Caio, preso em estabelecimento penal, desfere golpes de arma branca contra João, agente penitenciário que, no momento do ataque, encontrava-se em exercício de suas funções no plantão da unidade, causando-lhe a morte. Nessa hipótese, Caio responde por homicídio",
+    alternativas: [
+      "qualificado, pois foi praticado contra integrante do sistema prisional no exercício da função, qualificadora expressamente prevista no art. 121, §2º, VII, do Código Penal.",
+      "simples, já que a condição de agente penitenciário da vítima não consta expressamente do rol de qualificadoras do art. 121, §2º, do Código Penal, servindo apenas como agravante genérica.",
+      "privilegiado, pois o fato de a vítima integrar o sistema prisional e manter contato direto com presos faz presumir, em favor de Caio, a relevante motivação social ou moral exigida pelo §1º do art. 121.",
+      "qualificado pelo motivo torpe, já que qualquer ataque de preso contra agente penitenciário em exercício de função é automaticamente classificado como motivado por torpeza, segundo entendimento consolidado dos tribunais superiores.",
+      "simples, com a incidência de causa de aumento de pena de um terço até a metade, aplicável sempre que a vítima for agente de segurança pública, ainda que fora do rol taxativo das qualificadoras do tipo.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 121, §2º, VII, do Código Penal qualifica o homicídio praticado contra autoridade ou agente dos arts. 142 e 144 da Constituição, integrantes do sistema prisional ou da Força Nacional de Segurança Pública, no exercício da função ou em decorrência dela.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2024 — SEAP-BA — Agente Penitenciário",
+  },
+  {
+    id: "pen-072",
+    materia: "pen",
+    topico: "Infanticídio (art. 123 do CP)",
+    enunciado:
+      "Joana, ainda sob influência do estado puerperal, mata a própria filha recém-nascida durante o parto. Nessa hipótese, Joana responde pelo crime de",
+    alternativas: [
+      "infanticídio, que exige a influência do estado puerperal e que a conduta seja praticada pela própria mãe contra o próprio filho, durante o parto ou logo após.",
+      "homicídio privilegiado, pois a influência do estado puerperal é tratada pelo Código Penal como simples causa de diminuição de pena do homicídio, e não como tipo penal autônomo.",
+      "homicídio qualificado, já que a vulnerabilidade do recém-nascido, por si só, qualifica o homicídio praticado pela própria mãe durante o parto ou logo após, independentemente do estado puerperal.",
+      "homicídio culposo, uma vez que a influência do estado puerperal afasta o dolo da mãe, retirando da conduta a consciência e a vontade de matar o próprio filho recém-nascido.",
+      "infanticídio, mas apenas se o crime for praticado durante o parto, pois a prática do ato logo após o nascimento já desnatura essa qualificação e enquadra a conduta no homicídio simples.",
+    ],
+    correta: 0,
+    explicacao:
+      "O infanticídio (art. 123 do CP) é tipo autônomo, não mera causa de diminuição, e abrange tanto a conduta praticada durante o parto quanto logo após, desde que sob influência do estado puerperal e contra o próprio filho.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2024 — Prefeitura de Vitória/ES — Guarda Municipal",
+  },
+  {
+    id: "pen-073",
+    materia: "pen",
+    topico: "Teoria geral do crime (dolo, culpa e elemento subjetivo)",
+    enunciado:
+      "Richard, engenheiro responsável pela obra, é alertado por um subordinado de que o material empregado na estrutura é inadequado e pode causar o desabamento do prédio. Richard responde que \"é melhor correr esse risco do que atrasar a entrega da obra\" e mantém o uso do material. Dias depois, o prédio desaba, matando trabalhadores. Nessa hipótese, Richard responde por homicídio",
+    alternativas: [
+      "doloso, pois, ao assumir conscientemente o risco de produzir o resultado morte mesmo após ser alertado sobre o perigo concreto, agiu com dolo eventual.",
+      "culposo, na modalidade de culpa consciente, pois, embora tenha previsto o risco de desabamento, confiou sinceramente que o resultado morte não ocorreria durante a execução da obra.",
+      "culposo, na modalidade de culpa inconsciente, já que um engenheiro diligente, com os conhecimentos técnicos exigidos pela profissão, não teria meios de prever o risco de desabamento da estrutura.",
+      "doloso, mas apenas na modalidade de dolo direto, pois a resposta dada ao subordinado demonstra que Richard efetivamente desejava a ocorrência do desabamento e a morte dos trabalhadores da obra.",
+      "não configurado, pois a responsabilidade pelo desabamento é exclusivamente da construtora, pessoa jurídica contratante da obra, não podendo o engenheiro responsável ser penalmente responsabilizado.",
+    ],
+    correta: 0,
+    explicacao:
+      "Ao dizer \"é melhor correr esse risco\", Richard demonstra indiferença ao resultado previsto como possível, aceitando-o — é a fórmula clássica do dolo eventual, e não da culpa consciente, em que o agente confia sinceramente na não ocorrência do resultado.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2023 — TJ-SE — Analista Judiciário",
+  },
+  {
+    id: "pen-074",
+    materia: "pen",
+    topico: "Crimes contra o patrimônio",
+    enunciado:
+      "Fábio, primário e de bons antecedentes, furta um aparelho celular avaliado em R$ 400,00. Sobre o furto privilegiado (art. 155, §2º, do Código Penal), aplicável ao caso, é correto afirmar que",
+    alternativas: [
+      "o juiz pode substituir a pena de reclusão pela de detenção, diminuí-la de um a dois terços, ou aplicar somente a pena de multa, sendo as três alternativas de benefício igualmente admitidas em lei.",
+      "o juiz pode substituir a pena de reclusão pela de detenção ou diminuí-la de um a dois terços, sendo vedada, nessa hipótese, a aplicação isolada da pena de multa como benefício autônomo.",
+      "o benefício exige, além da primariedade e do pequeno valor da coisa, a reparação integral do dano antes do recebimento da denúncia, sem a qual nenhum dos benefícios legais pode ser concedido.",
+      "o reconhecimento do privilégio é automático e vinculado, não podendo o juiz optar entre as alternativas legais, devendo sempre aplicar a mais branda delas ao caso concreto analisado.",
+      "o privilégio não se aplica ao caso, pois o valor do bem subtraído, ainda que pequeno, exige também a comprovação da ausência de qualquer prejuízo à vítima pelo princípio da insignificância.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 155, §2º, do CP prevê três benefícios alternativos ao furto privilegiado (primário e pequeno valor): substituir a reclusão por detenção, diminuir a pena de um a dois terços, ou aplicar somente multa — a escolha é discricionária do juiz, não automática.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2025 — TJ-SC — Juiz Leigo",
+  },
+  {
+    id: "pen-075",
+    materia: "pen",
+    topico: "Crimes contra o patrimônio",
+    enunciado:
+      "Lucas, reincidente em crime de furto, subtrai mercadorias avaliadas em R$ 900,00 de um supermercado, sendo abordado e contido pelo segurança do estabelecimento ainda no local, com a integral recuperação dos bens. Nessa hipótese, Lucas responde por furto",
+    alternativas: [
+      "simples consumado, pois a posse da coisa subtraída, ainda que breve e seguida de recuperação imediata, já configura a consumação do furto, não podendo o juiz, dada a reincidência, substituir a pena, diminuí-la ou aplicar somente multa.",
+      "tentado, pois a contenção de Lucas ainda dentro do estabelecimento comercial, antes de se afastar da vigilância da vítima, impede a consumação do crime, configurando apenas a tentativa.",
+      "privilegiado consumado, já que o valor da coisa subtraída, embora superior ao de pequeno valor usualmente admitido pela jurisprudência, ainda permite o reconhecimento do privilégio em razão da recuperação integral dos bens pelo estabelecimento comercial.",
+      "simples tentado, pois a recuperação integral dos bens pela vítima, ainda que após a posse de fato pelo agente, descaracteriza a consumação exigida pelo tipo penal do art. 155 do Código Penal.",
+      "qualificado consumado, pois a reincidência específica em crime de furto funciona, por si só, como circunstância qualificadora do tipo penal, elevando a pena mínima cominada ao crime.",
+    ],
+    correta: 0,
+    explicacao:
+      "Pela Súmula 582 do STJ, o furto se consuma com a posse de fato da coisa, ainda que breve e seguida de perseguição e recuperação, sendo dispensável a posse mansa e pacífica. A reincidência, por sua vez, afasta o privilégio do art. 155, §2º, que exige primariedade.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2025 — TJ-CE — Juiz Substituto",
+  },
+  {
+    id: "pen-076",
+    materia: "pen",
+    topico: "Roubo e extorsão: majorantes e distinções",
+    enunciado:
+      "Caio aponta contra Maria um simulacro de arma de fogo, um brinquedo com aparência de arma real, e exige a entrega de seus bens. Maria, acreditando se tratar de arma verdadeira, entrega a bolsa por medo. Nessa hipótese, Caio responde por roubo",
+    alternativas: [
+      "simples, pois o emprego de simulacro de arma de fogo não configura causa de aumento de pena, já que a majorante exige arma de fogo real, com potencial lesivo efetivo, conforme entendimento consolidado dos tribunais superiores.",
+      "majorado pelo emprego de arma, pois o simulacro, por gerar na vítima a mesma sensação de temor causada por uma arma verdadeira, é equiparado à arma de fogo real para fins de aplicação da causa de aumento.",
+      "qualificado, já que o emprego de qualquer objeto com aparência de arma, verdadeira ou não, desde que idôneo a causar fundado temor na vítima, qualifica o crime de roubo praticado mediante grave ameaça.",
+      "majorado pelo concurso de agentes, pois a utilização de um objeto para simular uma arma de fogo pressupõe, por si só, a atuação de pelo menos duas pessoas na empreitada criminosa contra a vítima.",
+      "tentado, pois a grave ameaça exercida por meio de simulacro de arma de fogo, por não ser real, não é juridicamente idônea a constranger a vítima à entrega efetiva dos bens exigidos pelo agente.",
+    ],
+    correta: 0,
+    explicacao:
+      "Desde o cancelamento da Súmula 174 do STJ, o simulacro de arma de fogo não configura causa de aumento de pena no roubo, pois a majorante exige arma real, com potencial lesivo efetivo. A grave ameaça, porém, persiste como meio idôneo para configurar o roubo simples.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2024 — TJ-RR — Analista Judiciário",
+  },
+  {
+    id: "pen-077",
+    materia: "pen",
+    topico: "Roubo e extorsão: majorantes e distinções",
+    enunciado:
+      "Matheus e Mário, em concurso de pessoas, mediante grave ameaça exercida com simulacro de arma de fogo, subtraem R$ 10.000,00 de João, que, como os agentes sabiam, estava em serviço de transporte de valores para uma empresa de segurança. Nessa hipótese, Matheus e Mário respondem por roubo",
+    alternativas: [
+      "simples, com a incidência de duas causas de aumento de pena, em razão do concurso de pessoas e do conhecimento de que a vítima estava em serviço de transporte de valores.",
+      "simples, com a incidência de apenas uma causa de aumento de pena, relativa ao conhecimento de que a vítima estava em serviço de transporte de valores, não se aplicando a majorante do concurso de pessoas ao caso.",
+      "qualificado, em razão do conhecimento de que a vítima estava em serviço de transporte de valores, com a incidência de uma causa de aumento de pena adicional pelo concurso de duas ou mais pessoas no crime.",
+      "majorado apenas pelo concurso de pessoas, pois o emprego de simulacro de arma de fogo afasta a aplicação da majorante relativa ao transporte de valores, que pressupõe o uso de arma de fogo real.",
+      "simples, sem qualquer causa de aumento de pena, pois o emprego de simulacro de arma de fogo, ao não ser considerado arma para fins penais, afasta toda e qualquer majorante aplicável ao roubo praticado.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 157, §2º, do CP prevê, como causas de aumento autônomas e cumuláveis, o concurso de duas ou mais pessoas (inciso II) e o conhecimento de que a vítima está em serviço de transporte de valores (inciso III) — o simulacro apenas afasta a majorante da arma de fogo.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2025 — TRT da 24ª Região — Analista Judiciário",
+  },
+  {
+    id: "pen-078",
+    materia: "pen",
+    topico: "Crimes contra o patrimônio",
+    enunciado:
+      "Matheus, por vingança, atira pedras contra a sede de uma concessionária de serviço público, quebrando diversas vidraças do prédio. Sobre o crime de dano (art. 163 do Código Penal) praticado por Matheus, é correto afirmar que se trata de dano",
+    alternativas: [
+      "qualificado, pela prática contra o patrimônio de concessionária de serviços públicos, sem incidência de causa de aumento de pena, sendo a ação penal pública incondicionada.",
+      "simples, pois a qualificadora do crime de dano exige que o patrimônio atingido pertença diretamente à União, ao Estado, ao Distrito Federal ou ao Município, não bastando pertencer a mera concessionária.",
+      "qualificado, pela prática contra o patrimônio de concessionária de serviços públicos, mas dependente de ação penal privada, mediante queixa exclusiva do representante legal da concessionária lesada.",
+      "qualificado, com a incidência de causa de aumento de pena pelo emprego de violência contra a coisa, cumulada com a qualificadora relativa ao patrimônio de concessionária de serviço público atingido.",
+      "simples, dependente de ação penal privada, pois o crime de dano, em qualquer de suas modalidades, exige sempre a iniciativa exclusiva da vítima lesada para a persecução penal do responsável.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 163, parágrafo único, III, do CP qualifica o dano contra patrimônio de concessionária de serviços públicos. Diferente do dano simples e das hipóteses do inciso IV, essa forma qualificada não está no rol de exceção do art. 167 e segue por ação penal pública incondicionada.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2025 — TJ-RS — Analista Judiciário",
+  },
+  {
+    id: "pen-079",
+    materia: "pen",
+    topico: "Crimes contra o patrimônio",
+    enunciado:
+      "Amadeus, durante tentativa de roubo de um veículo, efetua disparo de arma de fogo contra a vítima, que tenta fugir, causando-lhe a morte horas depois. Amadeus, no entanto, foge do local sem conseguir subtrair o veículo. Nessa hipótese, segundo a Súmula 610 do STF, Amadeus responde por latrocínio",
+    alternativas: [
+      "consumado, pois a consumação do homicídio basta para consumar o latrocínio, sendo irrelevante que o agente não tenha logrado êxito na subtração do bem pretendido.",
+      "tentado, pois a subtração do bem é elementar do tipo do art. 157, §3º, do Código Penal, de modo que sua ausência impede a consumação do crime, ainda que a vítima tenha efetivamente morrido.",
+      "tentado, na modalidade qualificada pelo resultado morte, já que a doutrina majoritária exige a efetiva posse do bem subtraído para a consumação do latrocínio, independentemente da súmula citada.",
+      "consumado, mas apenas se ficar demonstrado que Amadeus desistiu voluntariamente de subtrair o veículo após o disparo, caracterizando arrependimento eficaz quanto ao crime patrimonial pretendido.",
+      "tentado, pois o latrocínio exige a consumação simultânea do resultado morte e da subtração patrimonial, sendo a ausência de qualquer um dos dois resultados suficiente para afastar a consumação do crime.",
+    ],
+    correta: 0,
+    explicacao:
+      "A Súmula 610 do STF estabelece que há latrocínio consumado quando o homicídio se consuma, ainda que o agente não realize a subtração dos bens da vítima — a consumação do crime acompanha a do resultado morte, não a do resultado patrimonial.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2025 — ENAM",
+  },
+  {
+    id: "pen-080",
+    materia: "pen",
+    topico: "Extorsão mediante sequestro (art. 159 do CP)",
+    enunciado:
+      "Rubens sequestra Luiza para exigir resgate de sua família. Durante o cativeiro, em razão das condições em que a vítima é mantida, Luiza sofre lesão corporal de natureza grave, não desejada por Rubens. Nessa hipótese, Rubens responde por extorsão mediante sequestro",
+    alternativas: [
+      "na modalidade qualificada pelo resultado lesão corporal grave, não havendo concurso de crimes entre a extorsão mediante sequestro e a lesão corporal sofrida pela vítima durante o cativeiro.",
+      "simples, em concurso formal com lesão corporal grave, pois o resultado lesivo não desejado pelo agente deve ser imputado por crime autônomo, somando-se à pena cominada à extorsão mediante sequestro.",
+      "simples, em concurso material com lesão corporal grave, já que as condutas de restringir a liberdade da vítima e de lhe causar lesão corporal grave são autônomas e não se comunicam entre si.",
+      "na modalidade simples, pois a qualificadora do resultado lesão corporal grave exige, para sua configuração, que o agente tenha agido com dolo direto de lesionar gravemente a vítima sequestrada.",
+      "na modalidade qualificada pelo resultado morte, já que qualquer lesão sofrida pela vítima durante o período de cativeiro, independentemente de sua gravidade, é equiparada ao resultado morte mais gravoso.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 159, §2º, do CP qualifica a extorsão mediante sequestro pelo resultado lesão corporal grave, absorvendo esse resultado na própria figura qualificada, sem configurar concurso formal ou material de crimes.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2025 — TJ-ES — Atividade Notarial e de Registro",
+  },
+  {
+    id: "pen-081",
+    materia: "pen",
+    topico: "Extorsão mediante sequestro (art. 159 do CP)",
+    enunciado:
+      "Fábio sequestra José, de 62 anos, exigindo resgate de sua família, que paga o valor exigido em 12 horas, sendo a vítima libertada sem qualquer lesão. Nessa hipótese, Fábio responde por extorsão mediante sequestro",
+    alternativas: [
+      "na modalidade qualificada, pois a vítima é maior de 60 anos, circunstância que, por si só, qualifica o crime, independentemente da curta duração do cativeiro ou da ausência de lesão corporal.",
+      "na modalidade simples, pois, não tendo o cativeiro superado 24 horas e não havendo lesão corporal à vítima, nenhuma das qualificadoras do art. 159 do Código Penal pode ser reconhecida ao caso.",
+      "na modalidade simples, já que a qualificadora relativa à idade da vítima exige que o sequestrado seja menor de 18 anos ou maior de 70 anos, não se aplicando à vítima de 62 anos de idade.",
+      "na modalidade qualificada, mas apenas em razão da duração do cativeiro, pois o prazo de 12 horas, somado ao pagamento do resgate, já caracteriza a qualificadora, independentemente da idade da vítima.",
+      "na modalidade simples, pois o pagamento do resgate dentro do prazo de 24 horas, sem qualquer resistência da família, afasta a incidência de qualquer qualificadora prevista para esse crime.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 159, §1º, do CP qualifica a extorsão mediante sequestro quando a vítima é menor de 18 ou maior de 60 anos — bastando essa condição etária, isoladamente, independentemente da duração do cativeiro ou de resultado lesivo.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2025 — TJ-GO — Residente Jurídico",
+  },
+  {
+    id: "pen-082",
+    materia: "pen",
+    topico: "Apropriação indébita, furto e estelionato: distinções",
+    enunciado:
+      "Caio, na qualidade de tutor do adolescente Mário, recebe legitimamente um cordão de ouro para guardá-lo em favor do tutelado. Posteriormente, Caio passa a agir como se fosse o proprietário do bem, recusando-se a devolvê-lo. Nessa hipótese, Caio responde por apropriação indébita",
+    alternativas: [
+      "na modalidade simples, com a incidência de uma causa de aumento de pena, em razão de ter recebido a coisa na qualidade de tutor do ofendido.",
+      "na modalidade qualificada, pois a condição de tutor do ofendido constitui qualificadora específica do crime de apropriação indébita, elevando substancialmente o mínimo e o máximo da pena cominada.",
+      "na modalidade simples, sem qualquer causa de aumento de pena, pois a relação de tutela entre Caio e o adolescente Mário é irrelevante para a dosimetria da pena do crime de apropriação indébita.",
+      "na modalidade de furto, e não de apropriação indébita, pois Caio jamais teve a posse legítima do bem, tendo-se apropriado dele mediante ato de subtração clandestina da coisa alheia móvel.",
+      "na modalidade de estelionato, pois Caio obteve a posse do cordão de ouro mediante induzimento do tutelado a erro, essencial à caracterização do crime contra o patrimônio por fraude.",
+    ],
+    correta: 0,
+    explicacao:
+      "Caio tinha posse legítima do bem (recebida como tutor) e depois se apropriou dele — apropriação indébita, e não furto (sem subtração) nem estelionato (sem fraude inicial). O art. 168, §1º, II, do CP eleva a pena em um terço quando a coisa foi recebida na qualidade de tutor, entre outras funções.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2025 — MPE-RJ — Analista do Ministério Público",
+  },
+  {
+    id: "pen-083",
+    materia: "pen",
+    topico: "Crimes contra a administração pública",
+    enunciado:
+      "Maria, funcionária pública, e João, particular, combinam furtar um bem do órgão público em que Maria trabalha, aproveitando-se de um momento de ausência de vigilância. João tinha pleno conhecimento da condição funcional de Maria ao aderir ao plano. Nessa hipótese, João responde por",
+    alternativas: [
+      "peculato-furto, e não por furto comum, pois a condição de funcionário público de Maria é elementar do crime e, por isso, se comunica ao partícipe que dela tinha conhecimento.",
+      "furto simples, pois a condição de funcionário público de Maria é circunstância de caráter estritamente pessoal, não se comunicando a João, ainda que ele tivesse conhecimento dessa condição.",
+      "peculato-furto, mas apenas se ficar demonstrado que João também exerce função pública em órgão diverso, pois a comunicabilidade de elementares exige que ambos os agentes sejam funcionários públicos.",
+      "receptação, pois sua participação se limitou a auxiliar na posterior disposição do bem subtraído, sem qualquer ingerência direta no ato de subtração praticado unicamente por Maria no órgão público.",
+      "furto qualificado pelo concurso de pessoas, já que a condição funcional de Maria, por ser elemento acidental do crime, jamais se comunica ao partícipe, ainda que dela tivesse pleno conhecimento prévio.",
+    ],
+    correta: 0,
+    explicacao:
+      "Pelo art. 30 do CP, circunstâncias de caráter pessoal não se comunicam, salvo quando elementares do crime. A condição de funcionário público é elementar do peculato-furto (art. 312, §1º), comunicando-se ao partícipe extraneus que dela tinha conhecimento.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2024 — TJ-PE — Juiz Substituto",
+  },
+  {
+    id: "pen-084",
+    materia: "pen",
+    topico: "Crimes contra a administração pública",
+    enunciado:
+      "Um funcionário público, sem receber ou solicitar qualquer vantagem indevida, deixa de praticar ato de ofício para atender a um pedido de um amigo. Nessa hipótese, esse funcionário responde por",
+    alternativas: [
+      "prevaricação, e não por corrupção passiva, pois deixou de praticar o ato de ofício para satisfazer interesse ou sentimento pessoal, sem qualquer vantagem indevida envolvida na conduta.",
+      "corrupção passiva, pois basta que o funcionário deixe de praticar ato de ofício a pedido de terceiro para configurar o crime, sendo irrelevante a existência ou não de vantagem indevida envolvida.",
+      "concussão, já que a conduta de atender a pedido de amigo em detrimento do ato de ofício pressupõe, em qualquer hipótese, a exigência de vantagem indevida em razão da função pública exercida.",
+      "advocacia administrativa, pois o funcionário, ao atender ao pedido do amigo, patrocinou interesse privado de terceiro perante a própria administração pública à qual está funcionalmente vinculado.",
+      "condescendência criminosa, pois deixar de praticar ato de ofício por indulgência em favor de terceiro configura, por si só, esse crime, independentemente de relação de subordinação funcional.",
+    ],
+    correta: 0,
+    explicacao:
+      "A prevaricação (art. 319 do CP) se distingue da corrupção passiva justamente pela ausência de vantagem indevida: o funcionário age para satisfazer interesse ou sentimento pessoal (aqui, atender a um amigo), não para obter proveito.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2020 — TJ-RS — Oficial de Justiça",
+  },
+  {
+    id: "pen-085",
+    materia: "pen",
+    topico: "Crimes contra a administração pública",
+    enunciado:
+      "Alberto, servidor do setor de recursos humanos de uma Câmara Municipal, insere dados falsos no sistema informatizado da folha de pagamento, atribuindo remuneração mensal a uma pessoa fictícia, valor que o próprio Alberto se apropria. Nessa hipótese, Alberto cometeu o crime de inserção de dados falsos em sistema de informações e, caso restitua voluntariamente",
+    alternativas: [
+      "ao erário todos os valores recebidos indevidamente, antes do recebimento da denúncia, deverá ter a pena reduzida, por força da causa geral de diminuição do arrependimento posterior.",
+      "ao erário todos os valores recebidos indevidamente, mesmo após o trânsito em julgado da condenação, terá extinta a punibilidade, à semelhança da regra especial prevista para o peculato culposo.",
+      "ao erário todos os valores recebidos indevidamente, antes do recebimento da denúncia, terá extinta a punibilidade, por força de causa específica de extinção prevista para esse crime.",
+      "ao erário apenas parte dos valores recebidos indevidamente, antes do oferecimento da denúncia, ainda assim terá extinta integralmente a punibilidade quanto ao crime praticado contra a administração.",
+      "ao erário todos os valores recebidos indevidamente, mas somente após a instauração de processo administrativo disciplinar, deverá ter a pena reduzida à metade, independentemente do momento da restituição.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 313-A do CP não tem regra especial de extinção da punibilidade pela reparação do dano (diferente do peculato culposo, art. 312, §3º). Por não envolver violência ou grave ameaça, aplica-se a regra geral do arrependimento posterior (art. 16 do CP): reparação até o recebimento da denúncia reduz a pena.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2024 — TJ-SC — Juiz Substituto",
+  },
+  {
+    id: "pen-086",
+    materia: "pen",
+    topico: "Crimes contra a administração pública",
+    enunciado:
+      "Caio, servidor público, exige de um contribuinte o pagamento de tributo que sabe ser indevido, empregando, ainda, meio vexatório na cobrança. Nessa hipótese, Caio responde por",
+    alternativas: [
+      "excesso de exação, crime que se configura tanto pela exigência de tributo que o agente sabe ou deveria saber indevido quanto pelo emprego de meio vexatório na cobrança de tributo efetivamente devido.",
+      "concussão, pois a exigência de qualquer valor por servidor público em razão da função, ainda que a título de tributo devido ao Estado, configura sempre esse crime contra a administração pública.",
+      "corrupção passiva, já que a exigência de pagamento de tributo indevido, acompanhada de meio vexatório, pressupõe a aceitação de vantagem indevida pelo próprio servidor público exator.",
+      "excesso de exação, mas apenas em relação à exigência do tributo indevido, pois o emprego de meio vexatório na cobrança de tributo devido configura crime diverso, de concussão qualificada.",
+      "peculato, pois o servidor público, ao exigir tributo indevido do contribuinte, desvia em proveito próprio valor de que tinha a posse em razão do cargo que efetivamente ocupa na repartição.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 316, §1º, do CP pune o excesso de exação em duas hipóteses alternativas: exigir tributo que sabe ou deveria saber indevido, ou empregar meio vexatório na cobrança de tributo devido — qualquer uma delas já configura o crime, isoladamente.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2024 — Prefeitura de Cuiabá/MT — Auditor Fiscal Tributário",
+  },
+  {
+    id: "pen-087",
+    materia: "pen",
+    topico: "Crimes contra a administração pública",
+    enunciado:
+      "Caio, ocupante de cargo em comissão em uma empresa pública, solicita vantagem indevida a Lucas para deixar de praticar ato de ofício em seu benefício. Lucas recusa a proposta e denuncia Caio às autoridades, sem que qualquer valor chegue a ser efetivamente pago. Nessa hipótese, Caio responde por",
+    alternativas: [
+      "corrupção passiva, com a incidência de uma causa de aumento de pena, por se tratar de ocupante de cargo em comissão em empresa pública, sendo irrelevante a recusa de Lucas para a consumação do crime.",
+      "corrupção passiva tentada, pois a recusa de Lucas em pagar a vantagem solicitada impede a consumação do crime, que exige o efetivo recebimento do valor pelo funcionário público solicitante.",
+      "corrupção passiva, sem qualquer causa de aumento de pena, pois a majorante relativa ao cargo em comissão exige que o órgão envolvido integre a administração direta, e não empresa pública.",
+      "concussão, com a incidência de uma causa de aumento de pena, por se tratar de ocupante de cargo em comissão em empresa pública, já que a simples solicitação de vantagem já caracteriza exigência.",
+      "corrupção passiva privilegiada, pois a recusa da vantagem solicitada por Lucas, aliada à denúncia imediata às autoridades, atenua substancialmente a pena cominada ao crime praticado por Caio.",
+    ],
+    correta: 0,
+    explicacao:
+      "A corrupção passiva (art. 317 do CP) se consuma com a mera solicitação da vantagem, independentemente de aceitação ou pagamento. O art. 327, §2º, do CP aumenta a pena em um terço quando o agente ocupa cargo em comissão em empresa pública, entre outros órgãos.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2025 — MPU — Técnico do MPU",
+  },
+  {
+    id: "pen-088",
+    materia: "pen",
+    topico: "Crimes contra a administração pública",
+    enunciado:
+      "Marcos, guarda municipal, recebe R$ 2.000,00 de Fernando para não aplicar multa de trânsito nem remover seu veículo. Ainda assim, Marcos pratica normalmente o ato de ofício, aplicando a multa e removendo o veículo. Nessa hipótese, Marcos",
+    alternativas: [
+      "terá cometido o crime de corrupção passiva, pois recebeu vantagem indevida em razão da função pública, sendo irrelevante que tenha, mesmo assim, praticado normalmente o ato de ofício esperado.",
+      "não terá cometido crime algum, pois a prática normal do ato de ofício, apesar do recebimento da vantagem indevida oferecida por Fernando, afasta a tipicidade da conduta por ausência de lesão ao dever funcional.",
+      "terá cometido o crime de concussão, pois o recebimento de vantagem por servidor público em razão da função, independentemente de ter sido solicitada ou espontaneamente oferecida, configura sempre esse crime.",
+      "terá cometido o crime de corrupção passiva privilegiada, pois a prática do ato de ofício, apesar do recebimento da vantagem, atenua substancialmente a pena cominada ao crime praticado pelo guarda municipal.",
+      "terá cometido o crime de advocacia administrativa, pois patrocinou, mediante recebimento de vantagem indevida, o interesse privado de Fernando perante a administração pública municipal.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 317 do CP pune o funcionário que recebe vantagem indevida em razão da função, ainda que fora dela ou antes de assumi-la, independentemente de omitir ou não o ato de ofício prometido — a consumação não exige descumprimento do dever funcional.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2023 — Prefeitura de São José dos Campos/SP — Guarda Civil Municipal",
+  },
+  {
+    id: "pen-089",
+    materia: "pen",
+    topico: "Crimes contra a administração pública",
+    enunciado:
+      "Matheus, servidor municipal, patrocina indiretamente, perante a própria administração pública a que está vinculado, interesse privado de natureza ilegítima, sem que a questão envolva matéria tributária. Nessa hipótese, Matheus responde por advocacia administrativa",
+    alternativas: [
+      "na modalidade qualificada, pois o parágrafo único do art. 321 do Código Penal eleva a pena quando o interesse patrocinado pelo funcionário público é de natureza ilegítima.",
+      "na modalidade simples, pois a qualificadora do parágrafo único do art. 321 do Código Penal exige que o interesse patrocinado pelo funcionário público tenha natureza tributária perante a administração.",
+      "na modalidade simples, já que o patrocínio indireto de interesse privado, ao contrário do patrocínio direto, não admite a forma qualificada prevista no parágrafo único do art. 321 do Código Penal.",
+      "na modalidade qualificada, mas apenas se o funcionário público obtiver vantagem financeira direta em razão do patrocínio do interesse privado ilegítimo perante a própria administração pública.",
+      "não configurada, pois a advocacia administrativa exige que o patrocínio do interesse privado seja direto, não bastando o patrocínio indireto do interesse perante a administração pública municipal.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 321, caput, do CP pune o patrocínio direto ou indireto de interesse privado perante a administração; o parágrafo único qualifica a conduta quando esse interesse é ilegítimo, independentemente de a matéria ser tributária ou de haver vantagem financeira direta.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2024 — TJ-MT — Analista Judiciário",
+  },
+  {
+    id: "pen-090",
+    materia: "pen",
+    topico: "Crimes contra a administração pública",
+    enunciado:
+      "Paulo, chefe de repartição pública, descobre que Julia, sua subordinada, cometeu infração no exercício do cargo. Por indulgência, e em razão de Julia ser mãe de três filhos pequenos, Paulo deixa de tomar qualquer providência disciplinar contra ela. Nessa hipótese, Paulo responde por",
+    alternativas: [
+      "condescendência criminosa, pois deixou, por indulgência, de responsabilizar subordinada que cometeu infração no exercício do cargo, elemento essencial e distintivo desse crime específico.",
+      "prevaricação, pois a satisfação de sentimento pessoal de compaixão por parte do funcionário público, ao deixar de agir, configura sempre esse crime, e nunca a condescendência criminosa.",
+      "corrupção passiva privilegiada, já que a omissão de Paulo, embora não envolva vantagem indevida, decorre de uma relação de proximidade pessoal que a lei equipara à vantagem para fins penais.",
+      "prevaricação qualificada, pois a condição de superior hierárquico de Paulo em relação a Julia qualifica a conduta de deixar de praticar o ato de ofício esperado pela própria repartição pública.",
+      "nenhum crime, pois a ausência de relação de parentesco entre Paulo e Julia afasta qualquer responsabilização penal do superior hierárquico pela omissão na apuração da infração funcional.",
+    ],
+    correta: 0,
+    explicacao:
+      "A condescendência criminosa (art. 320 do CP) é crime específico e próprio: exige que o agente seja superior hierárquico de subordinado que cometeu infração funcional, e que a omissão decorra de indulgência — afastando a aplicação da prevaricação genérica ao caso.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2016 — MPE-RJ — Analista do Ministério Público",
+  },
+  {
+    id: "pen-091",
+    materia: "pen",
+    topico: "Crimes contra a dignidade sexual",
+    enunciado:
+      "Durante um bloco de carnaval, Dario pratica atos libidinosos com uma foliã completamente embriagada, que, em razão desse estado, não consegue oferecer qualquer resistência à abordagem. Nessa hipótese, Dario responde por",
+    alternativas: [
+      "estupro de vulnerável, pois a vítima, por causa transitória, não podia oferecer resistência no momento do ato, sendo esse crime de ação penal pública incondicionada.",
+      "importunação sexual, pois a ausência de penetração ou de contato físico direto com a vítima embriagada afasta a configuração do crime de estupro de vulnerável, mais gravoso ao agente.",
+      "estupro de vulnerável, mas apenas mediante ação penal pública condicionada à representação da vítima, dada a necessidade de preservar sua intimidade quanto ao episódio de embriaguez ocorrido no carnaval.",
+      "estupro simples, e não de vulnerável, pois a vulnerabilidade do art. 217-A do Código Penal exige menoridade ou deficiência mental permanente, não abrangendo estados transitórios como a embriaguez.",
+      "nenhum crime, pois a participação da vítima em bloco de carnaval, ambiente notoriamente associado a excessos, afasta a tipicidade de qualquer conduta sexual praticada nessas circunstâncias.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 217-A, §1º, do CP equipara ao vulnerável quem, por qualquer causa, ainda que transitória, não pode oferecer resistência — abrangendo a embriaguez completa. Crimes contra a dignidade sexual são, desde a Lei 13.718/2018, de ação penal pública incondicionada.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2024 — TJ-PE — Juiz Substituto",
+  },
+  {
+    id: "pen-092",
+    materia: "pen",
+    topico: "Crimes contra a dignidade sexual",
+    enunciado:
+      "Luís, dentro de um coletivo de transporte público, masturba-se olhando fixamente para Maria, sem tocá-la. Maria pede que ele pare, mas Luís continua com a conduta até ser contido por outros passageiros. Nessa hipótese, Luís responde por",
+    alternativas: [
+      "importunação sexual, sem a incidência de causa de aumento de pena, pois praticou ato libidinoso contra a vítima, sem sua anuência, com o fim de satisfazer a própria lascívia.",
+      "importunação sexual, com a incidência de causa de aumento de pena, em razão de o crime ter sido praticado no interior de transporte coletivo, circunstância expressamente prevista como majorante do tipo.",
+      "assédio sexual, pois a persistência da conduta mesmo após o pedido expresso da vítima para que parasse demonstra a existência da superioridade hierárquica exigida para a configuração desse crime.",
+      "ato obsceno, e não importunação sexual, pois a ausência de qualquer contato físico entre Luís e a vítima afasta a configuração do crime contra a dignidade sexual, restando apenas a afronta ao pudor público.",
+      "violação sexual mediante fraude, pois Luís se valeu do ambiente de aglomeração do transporte coletivo como artifício para enganar a vítima quanto à real natureza de sua conduta.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 215-A do CP não exige contato físico, bastando ato libidinoso praticado contra alguém, sem sua anuência, para satisfazer a própria lascívia ou de terceiro. Não há, no tipo, causa de aumento por transporte coletivo, nem exige-se superioridade hierárquica (assédio sexual) ou fraude (violação sexual mediante fraude).",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2024 — PC-MG — Investigador de Polícia",
+  },
+  {
+    id: "pen-093",
+    materia: "pen",
+    topico: "Lei Maria da Penha (Lei 11.340/2006)",
+    enunciado:
+      "Átila, autor de violência doméstica contra sua companheira, descumpre reiteradamente medida protetiva de urgência que lhe impõe afastamento do lar. Diante do descumprimento reiterado, é correto afirmar que",
+    alternativas: [
+      "o juiz pode decretar a prisão preventiva de Átila para garantir a execução da medida protetiva de urgência descumprida, nos termos do Código de Processo Penal.",
+      "o Ministério Público deve necessariamente oferecer acordo de não persecução penal a Átila, já que a celebração desse instituto é obrigatória sempre que o autor confessar formal e circunstancialmente a conduta.",
+      "o juiz somente pode decretar a prisão preventiva de Átila se o descumprimento da medida protetiva, por si só, configurar crime autônomo de maior gravidade do que a violência doméstica originalmente praticada.",
+      "a legislação não prevê qualquer instrumento processual específico para o descumprimento de medida protetiva de urgência, cabendo à vítima apenas registrar nova ocorrência policial sobre o fato.",
+      "o Ministério Público deve oferecer acordo de não persecução penal a Átila, pois a vedação a esse instituto nos crimes de violência doméstica foi afastada pela legislação mais recente sobre o tema.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 313, III, do CPP autoriza a prisão preventiva para garantir a execução de medida protetiva de urgência em crimes que envolvam violência doméstica. O acordo de não persecução penal é expressamente vedado nesses crimes pelo art. 28-A, §2º, IV, do CPP.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2026",
+  },
+  {
+    id: "pen-094",
+    materia: "pen",
+    topico: "Lei Maria da Penha (Lei 11.340/2006)",
+    enunciado:
+      "Camila e Larissa mantêm um relacionamento amoroso, mas residem em casas separadas. Por ciúmes, Camila destrói objetos de trabalho pertencentes a Larissa. Nessa hipótese, é correto afirmar que",
+    alternativas: [
+      "Camila cometeu ações de violência patrimonial contra a namorada Larissa, aplicando-se a Lei Maria da Penha ainda que não haja coabitação entre as duas e a relação seja homoafetiva.",
+      "a Lei Maria da Penha não se aplica ao caso, pois a ausência de coabitação entre Camila e Larissa descaracteriza a relação doméstica ou familiar exigida para a incidência dessa legislação específica.",
+      "a Lei Maria da Penha não se aplica ao caso, pois essa legislação protege exclusivamente mulheres vítimas de violência praticada por homens, não abrangendo relações entre duas pessoas do mesmo sexo.",
+      "Camila cometeu ações de violência psicológica, e não patrimonial, contra Larissa, pois a destruição de bens de uso profissional da vítima atinge apenas sua estabilidade emocional, e não seu patrimônio.",
+      "a conduta de Camila configura crime de dano simples, afastando-se a aplicação da Lei Maria da Penha, que exige convivência sob o mesmo teto entre autora e vítima da violência doméstica.",
+    ],
+    correta: 0,
+    explicacao:
+      "A Lei Maria da Penha abrange relações íntimas de afeto independentemente de coabitação e do sexo ou orientação sexual das partes, podendo a agressora também ser mulher. A destruição proposital de bens da vítima configura violência patrimonial (art. 7º, IV).",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2026",
+  },
+  {
+    id: "pen-095",
+    materia: "pen",
+    topico: "Lei Maria da Penha (Lei 11.340/2006)",
+    enunciado:
+      "Verificado risco atual ou iminente à vida ou à integridade física de mulher em situação de violência doméstica, o afastamento imediato do agressor do lar pode ser determinado, nessa ordem de competência, por",
+    alternativas: [
+      "autoridade judicial; pelo delegado de polícia, quando o município não for sede de comarca; ou pelo policial, quando o município não for sede de comarca e não houver delegado disponível no momento da denúncia.",
+      "autoridade judicial; pelo membro do Ministério Público, quando o município não for sede de comarca; ou pelo policial, quando não houver membro do Ministério Público disponível no momento da denúncia.",
+      "exclusivamente autoridade judicial, mediante decisão fundamentada, não podendo essa medida protetiva de urgência ser determinada por delegado de polícia ou por policial em nenhuma hipótese prevista em lei.",
+      "autoridade judicial; pelo delegado de polícia, em qualquer município, independentemente de ser sede de comarca; ou pelo policial, apenas na ausência de qualquer outra autoridade pública no local.",
+      "autoridade judicial ou pelo delegado de polícia, em qualquer hipótese, não havendo previsão legal para que o simples policial determine o afastamento do agressor do lar da vítima.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 12-C da Lei 11.340/2006 estabelece essa ordem escalonada de competência: autoridade judicial; delegado, quando o município não for sede de comarca; e policial, quando o município não for sede de comarca e não houver delegado disponível no momento.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2026",
+  },
+  {
+    id: "pen-096",
+    materia: "pen",
+    topico: "Lei Maria da Penha (Lei 11.340/2006)",
+    enunciado:
+      "Caroline, vítima de violência doméstica, representou contra seu agressor em ação penal pública condicionada à representação. Após o oferecimento da denúncia pelo Ministério Público, mas antes de seu recebimento pelo juízo, Caroline manifesta o desejo de desistir do processo. Nessa hipótese, Caroline",
+    alternativas: [
+      "poderá renunciar à representação antes do recebimento da denúncia, perante o juiz, em audiência especialmente designada com tal finalidade, ouvido o Ministério Público.",
+      "não poderá mais renunciar à representação, pois o oferecimento da denúncia pelo Ministério Público já é o marco legal que torna irretratável a representação ofertada pela vítima de violência doméstica.",
+      "poderá renunciar livremente à representação em qualquer momento processual, até o trânsito em julgado da sentença, bastando manifestação escrita dirigida ao juízo, sem necessidade de audiência especial.",
+      "poderá renunciar à representação antes do recebimento da denúncia, mas apenas mediante petição escrita protocolada nos autos, sendo dispensada a designação de audiência específica para essa finalidade.",
+      "não poderá renunciar à representação em nenhuma hipótese, pois, nos crimes de violência doméstica, a ação penal condicionada se torna incondicionada a partir do oferecimento da denúncia pelo órgão acusador.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 16 da Lei 11.340/2006 só admite a renúncia à representação até o recebimento da denúncia (não o oferecimento), em audiência especialmente designada, perante o juiz e ouvido o Ministério Público — não basta petição escrita.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2026",
+  },
+  {
+    id: "pen-097",
+    materia: "pen",
+    topico: "Estatuto do Desarmamento (Lei 10.826/2003)",
+    enunciado:
+      "Sobre o registro de armas de fogo de uso restrito, é correto afirmar que, segundo o Estatuto do Desarmamento, essas armas são registradas no(a)",
+    alternativas: [
+      "Comando do Exército, que também expede a autorização para a aquisição desse tipo de arma de fogo.",
+      "Polícia Federal, por meio do Sistema Nacional de Armas, órgão também responsável pelo registro das armas de fogo de uso permitido adquiridas por cidadãos comuns no território nacional.",
+      "Secretaria Nacional de Segurança Pública, órgão do Ministério da Justiça responsável pela centralização de todos os registros de armas de fogo, de uso permitido ou restrito, em território nacional.",
+      "Polícia Civil do estado em que o adquirente da arma de fogo de uso restrito possui domicílio, cabendo à Polícia Federal apenas a fiscalização do porte dessas armas fora do território estadual.",
+      "Ministério da Defesa, diretamente, sem delegação a qualquer comando militar específico, cabendo a esse órgão central a expedição de toda autorização de aquisição de armas de uso restrito.",
+    ],
+    correta: 0,
+    explicacao:
+      "Enquanto as armas de uso permitido são registradas pela Polícia Federal (Sinarm), as armas de uso restrito são registradas e autorizadas pelo Comando do Exército (Sigma), nos termos do Estatuto do Desarmamento.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2024",
+  },
+  {
+    id: "pen-098",
+    materia: "pen",
+    topico: "Crimes hediondos (Lei 8.072/1990)",
+    enunciado:
+      "Um investigador de polícia atua, simultaneamente, em três investigações envolvendo, respectivamente: lesão corporal de natureza grave praticada em instituição de ensino; roubo circunstanciado pelo emprego de arma branca; e extorsão qualificada pela restrição da liberdade da vítima. Sobre a natureza hedionda desses crimes, é correto afirmar que",
+    alternativas: [
+      "apenas uma das investigações está vinculada a crime hediondo, relativa à extorsão qualificada pela restrição da liberdade da vítima, prevista expressamente no rol taxativo da Lei 8.072/1990.",
+      "as três investigações estão vinculadas a crimes hediondos, pois tanto a lesão corporal grave quanto o roubo circunstanciado e a extorsão qualificada constam do rol taxativo da Lei 8.072/1990.",
+      "nenhuma das investigações está vinculada a crime hediondo, pois a lesão corporal grave, o roubo circunstanciado por arma branca e a extorsão qualificada pela restrição de liberdade não constam desse rol.",
+      "apenas uma das investigações está vinculada a crime hediondo, relativa à lesão corporal de natureza grave, por ter sido praticada em instituição de ensino, ambiente expressamente protegido pela Lei 8.072/1990.",
+      "duas das investigações estão vinculadas a crimes hediondos, relativas ao roubo circunstanciado pelo emprego de arma branca e à extorsão qualificada pela restrição da liberdade da vítima.",
+    ],
+    correta: 0,
+    explicacao:
+      "O rol do art. 1º da Lei 8.072/1990 é taxativo. A extorsão qualificada pela restrição da liberdade da vítima (art. 158, §3º) está expressamente prevista. Lesão corporal grave (fora do contexto de agente de segurança pública) e roubo circunstanciado por arma branca não constam do rol — apenas o latrocínio e o roubo qualificado pelo resultado estão nele.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2026",
+  },
+  {
+    id: "pen-099",
+    materia: "pen",
+    topico: "Estatuto do Desarmamento (Lei 10.826/2003)",
+    enunciado:
+      "Ildebrando, frentista de um posto de combustíveis, leva para o trabalho, sem a devida autorização de porte, um revólver de uso permitido regularmente registrado em seu nome. Durante o expediente, percebendo um assaltante armado com simulacro de arma de fogo roubando um pedestre em via pública, Ildebrando efetua um disparo para o alto, afugentando o assaltante e evitando o roubo. Nessa hipótese, Ildebrando",
+    alternativas: [
+      "cometeu o crime de porte ilegal de arma de fogo de uso permitido, já que não é titular nem responsável legal do estabelecimento em que trabalha, não se beneficiando da equiparação da posse ao local de trabalho.",
+      "não cometeu crime algum, pois o registro regular da arma de fogo em seu nome, somado ao uso para impedir um roubo em andamento, afasta qualquer ilicitude tanto quanto à posse quanto ao porte do revólver.",
+      "cometeu os crimes de porte ilegal de arma de fogo de uso permitido e de disparo de arma de fogo, pois o disparo para afugentar o assaltante, ainda que em defesa de terceiro, constitui crime autônomo.",
+      "cometeu apenas o crime de posse irregular de arma de fogo de uso permitido, pois a condição de empregado do estabelecimento já basta, segundo o Estatuto do Desarmamento, para equiparar o local de trabalho à residência.",
+      "cometeu o crime de porte ilegal de arma de fogo de uso restrito, pois o simples fato de ter efetuado disparo contra terceiro em via pública eleva a classificação de sua arma de fogo para a categoria de uso restrito.",
+    ],
+    correta: 0,
+    explicacao:
+      "A posse (art. 12 do Estatuto) só se equipara ao local de trabalho quando o agente é titular ou responsável legal do estabelecimento — não sendo o caso de um mero empregado, a conduta de levar a arma ao trabalho é porte ilegal. O disparo para afugentar o assaltante, em legítima defesa de terceiro, não configura crime autônomo adicional.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2024",
+  },
 ];
