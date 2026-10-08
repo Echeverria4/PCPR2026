@@ -360,4 +360,220 @@ export const QUESTOES_DH: Question[] = [
       "A progressão de regime é condicionada ao cumprimento cumulativo de requisitos objetivos (fração mínima de tempo de pena cumprido, variável conforme o crime) e subjetivos (bom comportamento carcerário, atestado pelo diretor do estabelecimento) — a ausência de qualquer um deles impede a progressão, que depende de decisão judicial fundamentada, não bastando manifestação do Ministério Público ou pagamento de fiança.",
     origem: "banco",
   },
+  {
+    id: "dh-021",
+    materia: "dh",
+    topico: "Direitos humanos e a Constituição Federal de 1988",
+    enunciado:
+      "A distinção doutrinária entre \"direitos humanos\" e \"direitos fundamentais\" leva em conta, principalmente:",
+    alternativas: [
+      "O plano em que os direitos estão positivados: direitos humanos referem-se a direitos reconhecidos em tratados e documentos de caráter internacional, enquanto direitos fundamentais são os mesmos direitos positivados no âmbito interno de um Estado, notadamente na Constituição",
+      "O conteúdo material dos direitos, já que direitos humanos protegem apenas a vida e a liberdade, e direitos fundamentais abrangem também direitos sociais, econômicos e culturais, distinção que explicaria por que apenas estes últimos poderiam ser invocados diretamente perante tribunais internos",
+      "A existência de sanção, pois somente os direitos fundamentais, por estarem na Constituição, admitem controle de constitucionalidade, de modo que os direitos humanos, por não estarem positivados internamente, não poderiam fundamentar nenhuma pretensão perante o Poder Judiciário brasileiro",
+      "A hierarquia normativa, sendo os direitos humanos sempre hierarquicamente superiores aos direitos fundamentais, de modo que normas internas incompatíveis com tratados de direitos humanos seriam automaticamente revogadas, independentemente do rito de aprovação do tratado",
+      "A nacionalidade do titular, já que os direitos humanos protegem apenas estrangeiros, e os direitos fundamentais protegem apenas nacionais, de modo que um estrangeiro residente no Brasil não poderia invocar nenhum direito fundamental previsto na Constituição",
+    ],
+    correta: 0,
+    explicacao:
+      "A distinção é, sobretudo, de plano de positivação: direitos humanos designam os direitos reconhecidos em documentos internacionais, enquanto direitos fundamentais são esses mesmos direitos (em regra, com o mesmo conteúdo) positivados no direito interno de um Estado, notadamente em sua Constituição — não se trata de distinção de conteúdo material, de hierarquia ou de titularidade por nacionalidade.",
+    origem: "banco",
+  },
+  {
+    id: "dh-022",
+    materia: "dh",
+    topico: "Direitos humanos e a Constituição Federal de 1988",
+    enunciado:
+      "O art. 5º, §2º, da Constituição Federal estabelece que os direitos e garantias expressos na Constituição:",
+    alternativas: [
+      "Não excluem outros decorrentes do regime e dos princípios por ela adotados, ou dos tratados internacionais em que a República Federativa do Brasil seja parte, configurando a chamada cláusula de abertura material do catálogo de direitos fundamentais",
+      "Esgotam taxativamente o rol de direitos fundamentais reconhecidos pelo ordenamento brasileiro, vedada qualquer ampliação por via de tratado internacional, de princípio constitucional implícito ou de norma de regime adotada pela própria Constituição",
+      "Somente podem ser complementados por emenda constitucional aprovada pelo rito do art. 5º, §3º, e nunca por tratado comum, por princípio constitucional implícito ou por norma de regime adotada pela Constituição",
+      "Admitem a inclusão de novos direitos apenas quando expressamente autorizada por lei complementar federal, nunca por tratado internacional, por princípio implícito ou por norma de regime constitucional",
+      "Dependem de prévia aprovação do Supremo Tribunal Federal em controle concentrado de constitucionalidade para que um direito implícito, decorrente de princípio ou de tratado internacional, seja reconhecido como fundamental",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 5º, §2º, da CF consagra a cláusula de abertura material (ou cláusula de não tipicidade): o catálogo constitucional de direitos fundamentais não é taxativo, admitindo direitos decorrentes do regime e dos princípios constitucionais ou de tratados internacionais ratificados pelo Brasil, independentemente de emenda, lei complementar ou prévio pronunciamento do STF.",
+    origem: "banco",
+  },
+  {
+    id: "dh-023",
+    materia: "dh",
+    topico: "Direitos humanos e a Constituição Federal de 1988",
+    enunciado:
+      "Para que um tratado internacional sobre direitos humanos seja incorporado ao ordenamento jurídico brasileiro com equivalência de emenda constitucional, nos termos do art. 5º, §3º, da CF, é necessária sua aprovação, em cada Casa do Congresso Nacional:",
+    alternativas: [
+      "Em dois turnos de votação, por três quintos dos votos dos respectivos membros",
+      "Em turno único de votação, por maioria absoluta dos membros de cada Casa, dispensado o quórum qualificado de três quintos",
+      "Em dois turnos de votação, por maioria simples dos presentes à sessão, independentemente do número de votos favoráveis",
+      "Em três turnos de votação, por dois terços dos votos dos respectivos membros, com posterior referendo popular",
+      "Por decreto legislativo aprovado por maioria simples, sem necessidade de quórum qualificado ou de dois turnos de votação",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 5º, §3º, da CF exige, para que o tratado de direitos humanos equivalha a emenda constitucional, o mesmo rito das emendas: aprovação em cada Casa do Congresso Nacional, em dois turnos de votação, por três quintos dos votos dos respectivos membros — não bastando turno único, maioria simples ou maioria absoluta.",
+    origem: "banco",
+  },
+  {
+    id: "dh-024",
+    materia: "dh",
+    topico: "Direitos humanos e a Constituição Federal de 1988",
+    enunciado:
+      "O art. 5º, §4º, da Constituição Federal, incluído pela Emenda Constitucional nº 45/2004, estabelece que o Brasil:",
+    alternativas: [
+      "Se submete à jurisdição do Tribunal Penal Internacional (TPI), a cuja criação tenha manifestado adesão, nos termos previstos pelo Estatuto de Roma",
+      "Se submete à jurisdição da Corte Interamericana de Direitos Humanos para o julgamento de crimes de competência da justiça criminal comum",
+      "Reconhece a jurisdição obrigatória da Corte Internacional de Justiça para dirimir controvérsias internas de natureza penal",
+      "Adere automaticamente à jurisdição de qualquer tribunal internacional criado por tratado multilateral, independentemente de manifestação expressa de adesão",
+      "Submete-se à jurisdição do Tribunal Penal Internacional apenas para crimes cometidos por agentes públicos brasileiros fora do território nacional",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 5º, §4º, da CF prevê a submissão do Brasil à jurisdição do Tribunal Penal Internacional, criado pelo Estatuto de Roma (1998, incorporado pelo Decreto 4.388/2002) — dispositivo distinto da jurisdição da Corte Interamericana de Direitos Humanos ou da Corte Internacional de Justiça, e sem a restrição de alcance mencionada nas demais alternativas.",
+    origem: "banco",
+  },
+  {
+    id: "dh-025",
+    materia: "dh",
+    topico: "Eficácia dos direitos fundamentais",
+    enunciado:
+      "No que se refere à eficácia dos direitos fundamentais nas relações jurídicas, a doutrina identifica, entre outras, a eficácia:",
+    alternativas: [
+      "Vertical, nas relações entre o particular e o Estado; horizontal, nas relações entre particulares situados em posição de igualdade; e diagonal, nas relações entre particulares marcadas por assimetria de poder, como as relações de trabalho e de consumo",
+      "Vertical, nas relações entre particulares situados em posição de igualdade; horizontal, nas relações entre o particular e o Estado; e diagonal, exclusivamente nas relações internacionais entre Estados soberanos",
+      "Vertical, aplicável apenas às relações de trabalho; horizontal, aplicável apenas às relações de consumo; e diagonal, aplicável apenas às relações de família",
+      "Vertical, nas relações entre o particular e o Estado; horizontal, nas relações entre particulares em posição de igualdade; e diagonal, inexistente no ordenamento jurídico brasileiro, por ausência de previsão constitucional expressa",
+      "Vertical, nas relações entre particulares situados em posição de igualdade; horizontal, nas relações entre entes federativos; e diagonal, nas relações entre o particular e organismos internacionais",
+    ],
+    correta: 0,
+    explicacao:
+      "A eficácia vertical se dá nas relações entre particular e Estado (originalmente, a função clássica dos direitos fundamentais); a horizontal, nas relações entre particulares em posição de igualdade; e a diagonal, nas relações entre particulares marcadas por assimetria de poder, como as relações de trabalho e de consumo — categoria reconhecida pela doutrina e pela jurisprudência brasileiras, e não vedada ou inexistente no ordenamento interno.",
+    origem: "banco",
+  },
+  {
+    id: "dh-026",
+    materia: "dh",
+    topico: "Federalização de crimes contra os direitos humanos",
+    enunciado:
+      "Nos termos do art. 109, §5º, da Constituição Federal, incluído pela Emenda Constitucional nº 45/2004, nas hipóteses de grave violação de direitos humanos, o incidente de deslocamento de competência (IDC) da Justiça estadual para a Justiça Federal:",
+    alternativas: [
+      "Pode ser suscitado pelo Procurador-Geral da República perante o Superior Tribunal de Justiça, com o objetivo de assegurar o cumprimento de obrigações decorrentes de tratados internacionais de direitos humanos de que o Brasil seja parte",
+      "Pode ser suscitado por qualquer cidadão perante o Supremo Tribunal Federal, mediante reclamação constitucional, independentemente de manifestação do Procurador-Geral da República ou do Ministério Público estadual",
+      "Pode ser suscitado pelo Procurador-Geral da República perante o Supremo Tribunal Federal, em sede de ação direta de inconstitucionalidade, para deslocar a competência legislativa estadual sobre a matéria",
+      "Deve ser suscitado automaticamente, de ofício, pelo juízo estadual que verificar indícios de grave violação de direitos humanos, sem necessidade de provocação do Procurador-Geral da República",
+      "Pode ser suscitado pelo Procurador-Geral da República perante o Superior Tribunal de Justiça, mas apenas após o trânsito em julgado da sentença penal condenatória proferida pela Justiça estadual competente",
+    ],
+    correta: 0,
+    explicacao:
+      "O IDC (art. 109, §5º, CF) é suscitado pelo Procurador-Geral da República perante o Superior Tribunal de Justiça (e não o STF), em qualquer fase do inquérito ou processo (e não apenas após o trânsito em julgado), com a finalidade de assegurar o cumprimento de obrigações decorrentes de tratados internacionais de direitos humanos — não cabendo a qualquer cidadão, nem sendo suscitável de ofício pelo juízo estadual.",
+    origem: "banco",
+  },
+  {
+    id: "dh-027",
+    materia: "dh",
+    topico: "Direitos humanos e a Constituição Federal de 1988",
+    enunciado:
+      "Entre os princípios que, segundo o art. 4º da Constituição Federal, regem as relações internacionais da República Federativa do Brasil, inclui-se expressamente:",
+    alternativas: [
+      "A prevalência dos direitos humanos, ao lado de princípios como independência nacional, autodeterminação dos povos, não intervenção, defesa da paz e cooperação entre os povos",
+      "A dignidade da pessoa humana, prevista no art. 4º como fundamento da República, ao lado da soberania e da cidadania",
+      "A erradicação da pobreza e da marginalização, prevista no art. 4º como objetivo fundamental da República, ao lado da construção de uma sociedade livre, justa e solidária",
+      "A soberania e os valores sociais do trabalho e da livre iniciativa, consagrados no art. 4º como fundamentos da República Federativa do Brasil",
+      "A garantia do desenvolvimento nacional, prevista no art. 4º como objetivo fundamental da República, ao lado da promoção do bem de todos",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 4º da CF, que trata dos princípios reguladores das relações internacionais do Brasil, inclui expressamente a prevalência dos direitos humanos. Já a dignidade da pessoa humana e a soberania são fundamentos da República (art. 1º), e a erradicação da pobreza e a garantia do desenvolvimento nacional são objetivos fundamentais (art. 3º) — dispositivos distintos, frequentemente confundidos entre si.",
+    origem: "banco",
+  },
+  {
+    id: "dh-028",
+    materia: "dh",
+    topico: "Direitos humanos e a Constituição Federal de 1988",
+    enunciado:
+      "Os direitos e garantias individuais, incluindo os direitos fundamentais previstos no art. 5º da Constituição Federal, constituem, nos termos do art. 60, §4º, IV, da CF:",
+    alternativas: [
+      "Cláusula pétrea, não podendo ser objeto de proposta de emenda constitucional tendente a aboli-los",
+      "Cláusula pétrea apenas quando previstos expressamente no caput do art. 5º, excluídos os direitos decorrentes de tratados internacionais incorporados por força do art. 5º, §2º",
+      "Cláusula pétrea apenas enquanto vigorar o tratado internacional que lhes deu origem, podendo ser suprimidos por emenda constitucional após sua denúncia",
+      "Mera cláusula de interpretação, sem efeito vinculante sobre o poder constituinte derivado, que pode suprimi-los mediante emenda aprovada por três quintos",
+      "Limitação apenas formal ao poder de reforma, exigindo quórum qualificado de três quintos para sua supressão, mas sem qualquer limitação material",
+    ],
+    correta: 0,
+    explicacao:
+      "Os direitos e garantias individuais — incluindo os decorrentes do regime, dos princípios constitucionais e de tratados internacionais por força do art. 5º, §2º, e não apenas os expressos no caput do art. 5º — são cláusula pétrea (art. 60, §4º, IV, CF): limitação material (e não meramente formal ou interpretativa) ao poder constituinte derivado, vedada proposta de emenda tendente a aboli-los, ainda que aprovada por quórum qualificado.",
+    origem: "banco",
+  },
+  {
+    id: "dh-029",
+    materia: "dh",
+    topico: "Programa Nacional de Direitos Humanos (PNDH)",
+    enunciado:
+      "Em relação aos três Programas Nacionais de Direitos Humanos (PNDH) já editados no Brasil, é correto afirmar que:",
+    alternativas: [
+      "O PNDH-I (1996) enfatizou os direitos civis e políticos; o PNDH-II (2002) ampliou o enfoque para os direitos sociais e para a afirmação do multiculturalismo; e o PNDH-III (2009), o mais amplo, estruturou-se a partir da transversalidade entre os diferentes eixos de atuação do Estado",
+      "O PNDH-I (1996) enfatizou os direitos sociais e a afirmação do multiculturalismo; o PNDH-II (2002) ampliou o enfoque para os direitos civis e políticos; e o PNDH-III (2009), o mais amplo, estruturou-se a partir da transversalidade entre os diferentes eixos de atuação do Estado",
+      "O PNDH-I (1996) enfatizou os direitos civis e políticos; o PNDH-II (2002) ampliou o enfoque para os direitos sociais e para a afirmação do multiculturalismo; e o PNDH-III (2009) restringiu seu objeto exclusivamente aos direitos civis e políticos, abandonando a transversalidade adotada pelo PNDH-II",
+      "O PNDH-II (2002) foi o primeiro programa editado no Brasil, enfatizando os direitos civis e políticos; o PNDH-I (1996) ampliou o enfoque para os direitos sociais e o multiculturalismo; e o PNDH-III (2009), o mais amplo, estruturou-se a partir da transversalidade entre os diferentes eixos de atuação do Estado",
+      "O PNDH-I (1996) e o PNDH-II (2002) foram aprovados por lei ordinária do Congresso Nacional, enfatizando, respectivamente, os direitos civis e políticos e os direitos sociais; e o PNDH-III (2009), o mais amplo, estruturou-se a partir da transversalidade entre os diferentes eixos de atuação do Estado",
+    ],
+    correta: 0,
+    explicacao:
+      "O PNDH-I (Decreto 1.904/1996) enfatizou os direitos civis e políticos; o PNDH-II (Decreto 4.229/2002) ampliou o foco para os direitos sociais e o multiculturalismo; e o PNDH-III (Decreto 7.037/2009), o mais abrangente, adotou a transversalidade como eixo estruturante, integrando diversos órgãos e poderes — todos editados por decreto do Poder Executivo, na ordem cronológica I, II e III.",
+    origem: "banco",
+  },
+  {
+    id: "dh-030",
+    materia: "dh",
+    topico: "Programa Nacional de Direitos Humanos (PNDH)",
+    enunciado:
+      "O Programa Nacional de Direitos Humanos (PNDH-3), instituído pelo Decreto nº 7.037/2009 com fundamento no art. 84, IV, da Constituição Federal, tem, quanto à sua força vinculante:",
+    alternativas: [
+      "Caráter de orientação para as ações do Poder Executivo Federal, podendo ser exigido de seus agentes o motivo pelo qual sua conduta é incompatível com o decreto, mas constituindo mero referencial em relação aos Poderes Legislativo e Judiciário e ao Ministério Público",
+      "Força vinculante plena e direta sobre os três Poderes da República e o Ministério Público, por se tratar de decreto com força de lei complementar, dispensando qualquer exigência de justificativa de seus próprios agentes do Poder Executivo Federal",
+      "Natureza de emenda constitucional, por disciplinar matéria de direitos fundamentais, vinculando igualmente os Poderes Legislativo e Judiciário e o Ministério Público, e não apenas o Poder Executivo Federal que o editou",
+      "Eficácia exclusivamente programática, sem qualquer possibilidade de cobrança de seus termos perante agentes do Poder Executivo Federal, e com igual ausência de vinculação em relação aos demais Poderes e ao Ministério Público",
+      "Força vinculante restrita aos Estados e Municípios signatários de convênio específico com a União para sua implementação, não alcançando os órgãos e agentes do próprio Poder Executivo Federal que o editou",
+    ],
+    correta: 0,
+    explicacao:
+      "Por ser decreto presidencial editado à luz do art. 84, IV, da CF, o PNDH-3 não tem força vinculante sobre os demais Poderes ou o Ministério Público (meros referenciais), mas pode ser exigida do agente do próprio Poder Executivo Federal a justificativa para conduta incompatível com o decreto — não se trata de norma com força de lei complementar, de emenda constitucional, nem de eficácia puramente programática sem qualquer cobrança possível.",
+    origem: "banco",
+  },
+  {
+    id: "dh-031",
+    materia: "dh",
+    topico: "Comissão e Conselho Nacional de Direitos Humanos",
+    enunciado:
+      "A Comissão Nacional da Verdade, instituída pela Lei nº 12.528/2011 para investigar graves violações de direitos humanos ocorridas entre 1946 e 1988, principalmente durante a ditadura militar:",
+    alternativas: [
+      "Teve caráter exclusivamente esclarecedor, sem poder jurisdicional, não lhe cabendo julgar ou condenar criminalmente os responsáveis pelas violações investigadas",
+      "Teve poder jurisdicional para processar e julgar criminalmente os agentes do Estado responsáveis pelas violações de direitos humanos apuradas",
+      "Teve competência para conceder indulto ou comutação de pena a condenados por crimes cometidos durante o período investigado",
+      "Limitou-se a investigar violações cometidas exclusivamente por agentes privados, excluindo de seu objeto a conduta de agentes do Estado",
+      "Foi instituída por emenda constitucional, com a finalidade de promover a responsabilização penal retroativa dos agentes da ditadura militar",
+    ],
+    correta: 0,
+    explicacao:
+      "A Comissão Nacional da Verdade (Lei 12.528/2011), instalada em 2012 e que entregou seu relatório final em 10/12/2014, teve papel exclusivamente esclarecedor — apurar e tornar públicas as violações ocorridas entre 1946 e 1988, principalmente as cometidas por agentes do Estado durante a ditadura militar —, sem poder jurisdicional para julgar, condenar, indultar ou comutar penas.",
+    origem: "banco",
+  },
+  {
+    id: "dh-032",
+    materia: "dh",
+    topico: "Comissão e Conselho Nacional de Direitos Humanos",
+    enunciado:
+      "O atual Conselho Nacional dos Direitos Humanos (CNDH), órgão colegiado de composição paritária orientado pelos Princípios de Paris (ONU, 1992):",
+    alternativas: [
+      "Resultou da transformação do antigo Conselho de Defesa dos Direitos da Pessoa Humana (CDDPH), criado pela Lei nº 4.319/1964, em CNDH, por força da Lei nº 12.986/2014",
+      "Foi criado originalmente pela Lei nº 12.986/2014, sem qualquer órgão antecessor na estrutura administrativa federal",
+      "Resultou da transformação do extinto Conselho Nacional de Justiça em órgão especializado na promoção de direitos humanos, por força de emenda constitucional",
+      "É composto exclusivamente por representantes do Poder Executivo Federal, sem participação da sociedade civil, em razão do princípio da paridade",
+      "Foi instituído pelo Decreto nº 7.037/2009, como órgão de execução do PNDH-3, subordinado diretamente à Presidência da República",
+    ],
+    correta: 0,
+    explicacao:
+      "O CNDH tem origem no Conselho de Defesa dos Direitos da Pessoa Humana (CDDPH), criado pela Lei 4.319/1964, transformado em Conselho Nacional dos Direitos Humanos pela Lei 12.986/2014 — não foi criado do zero em 2014, não deriva do CNJ, não se limita a representantes do Executivo (sua paridade inclui sociedade civil) e não é órgão de execução do PNDH-3 instituído pelo Decreto 7.037/2009.",
+    origem: "banco",
+  },
 ];
