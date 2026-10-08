@@ -340,4 +340,156 @@ export const QUESTOES_CON: Question[] = [
       "Em face da Constituição Federal, o controle concentrado é exercido pelo STF, por meio de ações diretas específicas (ADI, ADC, ADPF), ajuizadas por legitimados taxativos previstos na Constituição, produzindo efeito erga omnes e vinculante em relação aos demais órgãos do Judiciário e à Administração Pública — diferentemente do controle difuso, que pode ser exercido por qualquer juiz e produz, em regra, efeitos inter partes. Os Tribunais de Justiça também exercem controle concentrado, mas tendo a Constituição Estadual como parâmetro (representação de inconstitucionalidade, art. 125, §2º, da CF).",
     origem: "banco",
   },
+  {
+    id: "con-021",
+    materia: "con",
+    topico: "Competência legislativa concorrente",
+    enunciado:
+      "No exercício da competência legislativa concorrente prevista no art. 24 da Constituição Federal, caso o Estado-membro edite lei sobre matéria ainda não disciplinada por norma geral federal e, posteriormente, a União venha a editar lei federal sobre a mesma matéria em sentido contrário, é correto afirmar que a lei estadual",
+    alternativas: [
+      "tem sua eficácia suspensa, no que for contrário à norma geral federal superveniente, não sendo revogada por essa lei, nos termos do art. 24, §4º, da Constituição Federal.",
+      "é automaticamente revogada pela lei federal superveniente, perdendo validade em definitivo mesmo que a norma geral federal seja posteriormente revogada ou declarada inconstitucional pelo Supremo Tribunal Federal.",
+      "permanece plenamente válida e eficaz, já que a competência estadual suplementar, uma vez exercida, não pode ser afetada por legislação federal posterior sobre a mesma matéria específica.",
+      "torna-se inconstitucional desde a sua edição, por invasão de competência da União, ainda que editada antes de qualquer norma geral federal sobre a matéria em questão.",
+      "deve ser declarada inconstitucional pelo Supremo Tribunal Federal, em ação direta proposta exclusivamente pela União, como única forma de resolver o conflito legislativo entre os entes federativos.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 24, §4º, da CF estabelece que a superveniência de lei federal sobre normas gerais suspende a eficácia da lei estadual, no que lhe for contrário — não a revoga, nem a torna inconstitucional desde a origem, e não exige ação direta da União para esse efeito.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2026 — PC-PI — Oficial Investigador de Polícia",
+  },
+  {
+    id: "con-022",
+    materia: "con",
+    topico: "Controle dos atos do Poder Executivo pelo Congresso Nacional",
+    enunciado:
+      "O Presidente da República editou decreto regulamentando determinada lei, mas o ato normativo exorbitou dos limites de poder regulamentar nela estabelecidos. Nessa hipótese, compete ao Congresso Nacional, com fundamento no art. 49, V, da Constituição Federal,",
+    alternativas: [
+      "sustar os atos normativos do Poder Executivo que exorbitem do poder regulamentar ou dos limites de delegação legislativa, mediante decreto legislativo, sem necessidade de prévia manifestação do Poder Judiciário.",
+      "requisitar ao Poder Executivo a revogação espontânea do decreto, não dispondo de nenhum instrumento próprio e vinculante para sustar diretamente o ato normativo exorbitante do poder regulamentar.",
+      "submeter obrigatoriamente a controvérsia ao Supremo Tribunal Federal, único órgão constitucionalmente competente para apreciar a extensão do poder regulamentar do Presidente da República.",
+      "delegar à Mesa Diretora do Congresso Nacional a competência para revogar diretamente o decreto, dispensando a manifestação do Plenário das duas Casas Legislativas sobre a matéria.",
+      "aguardar a iniciativa do Poder Judiciário, por meio de controle de constitucionalidade, não dispondo o Poder Legislativo de mecanismo próprio de controle político sobre o decreto exorbitante.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 49, V, da CF atribui ao Congresso Nacional competência exclusiva para sustar, por decreto legislativo, os atos normativos do Executivo que exorbitem do poder regulamentar — mecanismo de controle político, independente de provocação do Judiciário ou de delegação à Mesa Diretora.",
+    origem: "banco",
+    fonte: "Adaptada de FGV — 2026 — PC-PI — Oficial Investigador de Polícia",
+  },
+  {
+    id: "con-023",
+    materia: "con",
+    topico: "Direitos e garantias fundamentais",
+    enunciado:
+      "Com base na liberdade religiosa (art. 5º, VI, da Constituição Federal) e na autonomia da vontade, o Supremo Tribunal Federal reconhece que o paciente adulto e capaz pode recusar, por convicção religiosa, a realização de transfusão de sangue. Essa recusa, contudo,",
+    alternativas: [
+      "não se estende automaticamente ao filho menor do paciente, cujo direito à vida prevalece sobre a convicção religiosa manifestada pelos pais, ainda que estes também sejam adeptos da mesma crença.",
+      "estende-se igualmente ao filho menor do paciente, de modo que a convicção religiosa dos pais prevalece sobre o direito à vida da criança ou do adolescente em qualquer circunstância clínica.",
+      "é inválida mesmo em relação ao próprio paciente adulto, porque o direito à vida sempre prepondera sobre a liberdade religiosa, autorizando a transfusão independentemente da vontade manifestada.",
+      "somente produz efeitos se for homologada previamente pelo Ministério Público, não bastando a manifestação de vontade do próprio paciente adulto e capaz perante a equipe médica responsável.",
+      "depende de autorização judicial prévia em todos os casos, não podendo a equipe médica respeitar a recusa do paciente adulto sem decisão expressa do Poder Judiciário sobre o caso concreto.",
+    ],
+    correta: 0,
+    explicacao:
+      "A liberdade religiosa e a autonomia da vontade autorizam o adulto capaz a recusar transfusão de sangue, sem necessidade de homologação do Ministério Público ou autorização judicial prévia; mas essa recusa, fundada em crença dos pais, não pode ser estendida ao filho menor, cujo direito à vida prevalece.",
+    origem: "banco",
+    fonte: "Adaptada de questão FGV — 2025 (TAQ de Direito Constitucional, curso preparatório PC-PR — Agente de Polícia Judiciária)",
+  },
+  {
+    id: "con-024",
+    materia: "con",
+    topico: "Legitimados para a ação direta de inconstitucionalidade",
+    enunciado:
+      "Nos termos do art. 103 da Constituição Federal, entre os legitimados para propor ação direta de inconstitucionalidade perante o Supremo Tribunal Federal incluem-se o Governador de Estado e a Mesa da Assembleia Legislativa estadual. Diversamente, não possui legitimidade para propor ADI",
+    alternativas: [
+      "o Presidente do Tribunal de Justiça do Estado, por não constar do rol taxativo de legitimados previsto no art. 103 da Constituição Federal.",
+      "o Procurador-Geral da República, que também não consta do rol de legitimados do art. 103 da Constituição Federal para a propositura de ação direta de inconstitucionalidade perante o Supremo Tribunal Federal.",
+      "o Conselho Federal da Ordem dos Advogados do Brasil, igualmente excluído do rol taxativo de legitimados estabelecido pelo art. 103 da Constituição Federal para esse fim específico.",
+      "partido político com representação no Congresso Nacional, que não figura entre os legitimados previstos no art. 103 da Constituição Federal para a propositura de ação direta de inconstitucionalidade.",
+      "confederação sindical ou entidade de classe de âmbito nacional, hipótese também não contemplada pelo rol de legitimados do art. 103 da Constituição Federal para esse propósito.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 103 da CF não inclui o Presidente do Tribunal de Justiça estadual entre os legitimados para ADI. Já o Procurador-Geral da República, o Conselho Federal da OAB, partido político com representação no Congresso e confederação sindical ou entidade de classe de âmbito nacional constam expressamente do rol.",
+    origem: "banco",
+    fonte: "Adaptada de questão FGV — 2025 (TAQ de Direito Constitucional, curso preparatório PC-PR — Agente de Polícia Judiciária)",
+  },
+  {
+    id: "con-025",
+    materia: "con",
+    topico: "Efeitos da declaração de inconstitucionalidade",
+    enunciado:
+      "Em regra, no controle concentrado de constitucionalidade exercido pelo Supremo Tribunal Federal, caso seja reconhecida a inconstitucionalidade de uma lei estadual em julgamento definitivo de mérito, sem modulação temporal de efeitos, a norma declarada inconstitucional deixa de produzir efeitos a partir",
+    alternativas: [
+      "da data de sua edição, em razão da teoria da nulidade adotada como regra pelo ordenamento jurídico brasileiro, que confere à decisão eficácia retroativa (ex tunc).",
+      "do trânsito em julgado da decisão que reconheceu a inconstitucionalidade, por se tratar de efeito prospectivo (ex nunc), que constitui a regra geral adotada pelo direito brasileiro.",
+      "da data da sessão de julgamento em que a inconstitucionalidade foi reconhecida pelo Plenário do Supremo Tribunal Federal, independentemente da data de publicação do acórdão respectivo.",
+      "da data de publicação do acórdão no Diário de Justiça eletrônico, momento em que a decisão passa a produzir efeitos vinculantes e erga omnes em relação aos demais órgãos do Poder Judiciário.",
+      "de data a ser livremente fixada pelo relator do processo, a seu exclusivo critério, independentemente de deliberação do Plenário ou de requerimento das partes interessadas no feito.",
+    ],
+    correta: 0,
+    explicacao:
+      "A regra no Brasil é a teoria da nulidade: a norma inconstitucional é nula desde a origem, produzindo a decisão efeitos ex tunc (retroativos à edição da lei), e não a partir do trânsito em julgado, da sessão de julgamento ou da publicação do acórdão, salvo modulação temporal por quórum qualificado.",
+    origem: "banco",
+    fonte: "Adaptada de questão FGV — 2025 (TAQ de Direito Constitucional, curso preparatório PC-PR — Agente de Polícia Judiciária)",
+  },
+  {
+    id: "con-026",
+    materia: "con",
+    topico: "Legitimidade do partido político no controle concentrado",
+    enunciado:
+      "Partido político com representação no Congresso Nacional é legitimado universal para a propositura de ação direta de inconstitucionalidade, dispensada a pertinência temática. Essa legitimidade, contudo,",
+    alternativas: [
+      "deve ser exercida pelos órgãos de direção nacional do partido, e não por diretório estadual ou regional, que não detém representação para atuar em nome do partido nessa ação.",
+      "pode ser exercida indistintamente por qualquer diretório estadual ou regional do partido, bastando que o partido político tenha representação em uma das Casas do Congresso Nacional.",
+      "exige a comprovação de pertinência temática entre o objeto da ação e a finalidade estatutária do partido político, tal como ocorre com as confederações sindicais e entidades de classe.",
+      "fica condicionada à aprovação unânime da bancada do partido no Congresso Nacional, sob pena de ilegitimidade ativa para a propositura da ação direta de inconstitucionalidade respectiva.",
+      "é transferida automaticamente para a Mesa da Casa Legislativa em que o partido tiver maior número de representantes eleitos, dispensando a atuação dos órgãos de direção partidária.",
+    ],
+    correta: 0,
+    explicacao:
+      "A legitimidade do partido político para ADI é universal (sem pertinência temática), mas deve ser exercida por seus órgãos de direção nacional — um diretório estadual ou regional não tem representação para propor a ação em nome do partido, nem a aprovação da bancada ou a Mesa da Casa Legislativa substituem essa representação.",
+    origem: "banco",
+    fonte: "Adaptada de questão FGV — 2025 (TAQ de Direito Constitucional, curso preparatório PC-PR — Agente de Polícia Judiciária)",
+  },
+  {
+    id: "con-027",
+    materia: "con",
+    topico: "Direitos e garantias fundamentais",
+    enunciado:
+      "Conforme o art. 5º, XIX, da Constituição Federal, uma associação que vinha sendo sistematicamente utilizada para fins ilícitos",
+    alternativas: [
+      "pode ser compulsoriamente dissolvida, exigindo-se, para tanto, decisão judicial transitada em julgado, sendo a suspensão de suas atividades admitida por decisão judicial sem esse trânsito em julgado.",
+      "não pode ter suas atividades suspensas nem ser dissolvida em nenhuma hipótese, por se tratar a liberdade de associação de direito fundamental absoluto e insuscetível de qualquer restrição.",
+      "pode ser dissolvida por decisão administrativa do órgão municipal que concedeu a autorização de funcionamento, dispensada qualquer manifestação do Poder Judiciário sobre a medida de dissolução.",
+      "somente pode ter suas atividades suspensas, nunca dissolvida compulsoriamente, ainda que a decisão judicial de dissolução já tenha transitado em julgado de forma definitiva e irrecorrível.",
+      "pode ser dissolvida diretamente pelo Ministério Público, em procedimento administrativo próprio, sem necessidade de qualquer decisão proferida pelo Poder Judiciário sobre a matéria em questão.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 5º, XIX, da CF exige decisão judicial para suspender ou dissolver associação, e trânsito em julgado especificamente para a dissolução compulsória — a liberdade de associação não é absoluta, nem a medida pode ser tomada por ato administrativo municipal ou pelo Ministério Público sem decisão judicial.",
+    origem: "banco",
+    fonte: "Adaptada de questão FGV — 2026 (TAQ de Direito Constitucional, curso preparatório PC-PR — Agente de Polícia Judiciária)",
+  },
+  {
+    id: "con-028",
+    materia: "con",
+    topico: "Direitos sociais",
+    enunciado:
+      "Lucas tem treze anos de idade e está regularmente matriculado na rede municipal de ensino. Considerando o art. 7º, XXXIII, da Constituição Federal, sobre a possibilidade de Lucas exercer atividade laborativa, é correto afirmar que",
+    alternativas: [
+      "mesmo estando devidamente matriculado na rede municipal de ensino, Lucas não poderá exercer nenhuma atividade laborativa, nem mesmo na condição de aprendiz, por não ter atingido a idade mínima de quatorze anos exigida para essa modalidade.",
+      "com a concordância expressa de seus pais, Lucas poderá trabalhar na condição de aprendiz, sendo vedadas apenas as atividades laborativas de natureza noturna, perigosa ou insalubre, conforme a regra geral aplicável aos maiores de quatorze anos.",
+      "por estar devidamente matriculado na rede municipal de ensino, Lucas poderá exercer qualquer atividade laborativa, inclusive em período noturno, desde que compatível com o horário escolar e com a concordância dos pais.",
+      "Lucas poderá exercer atividade laborativa em qualquer condição, inclusive fora da de aprendiz, bastando a concordância expressa de seus pais e a compatibilidade com a frequência escolar obrigatória.",
+      "Lucas poderá exercer atividade laborativa exclusivamente na condição de aprendiz a partir de doze anos de idade, desde que autorizado pelo conselho tutelar do município em que reside.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 7º, XXXIII, da CF proíbe qualquer trabalho a menores de dezesseis anos, salvo na condição de aprendiz, a partir de quatorze anos. Com treze anos, Lucas não atinge nem essa idade mínima reduzida, de modo que não pode trabalhar em nenhuma condição, inclusive como aprendiz.",
+    origem: "banco",
+    fonte: "Adaptada de questão FGV — 2025 (TAQ de Direito Constitucional, curso preparatório PC-PR — Agente de Polícia Judiciária)",
+  },
 ];
