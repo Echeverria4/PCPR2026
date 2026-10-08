@@ -902,4 +902,375 @@ export const QUESTOES_PP: Question[] = [
     origem: "banco",
     fonte: "CPP, art. 300-A (Lei 15.280/2025)",
   },
+  {
+    id: "pp-050",
+    materia: "pp",
+    topico: "Princípios processuais penais",
+    enunciado:
+      "Em razão do princípio da igualdade processual, também chamado de favor rei, o processo penal brasileiro prevê institutos exclusivos da defesa. Nesse sentido, é correto afirmar que",
+    alternativas: [
+      "os embargos infringentes e de nulidade (art. 609, parágrafo único, do CPP) e a revisão criminal (art. 621 e seguintes do CPP) são recursos e ações exclusivos da defesa, não podendo ser utilizados pela acusação em benefício do réu.",
+      "tanto a defesa quanto a acusação podem utilizar livremente os embargos infringentes e de nulidade e a revisão criminal, desde que o façam em benefício do acusado no processo.",
+      "o princípio da igualdade processual veda qualquer tratamento distinto entre acusação e defesa, de modo que não existem institutos processuais privativos de nenhuma das partes no processo penal brasileiro.",
+      "a revisão criminal pode ser utilizada tanto pela defesa quanto pelo Ministério Público, ainda que este último a maneje contra o próprio réu já definitivamente condenado.",
+      "os embargos infringentes e de nulidade podem ser interpostos pela acusação sempre que o acórdão recorrido for desfavorável aos interesses do Ministério Público no caso concreto.",
+    ],
+    correta: 0,
+    explicacao:
+      "O princípio da igualdade processual (favor rei) garante privilégios exclusivos à defesa para compensar a maior força do aparato estatal acusatório. Os embargos infringentes e de nulidade e a revisão criminal só podem ser manejados pela defesa, nunca pela acusação, ainda que em tese beneficiassem o réu.",
+    origem: "banco",
+  },
+  {
+    id: "pp-051",
+    materia: "pp",
+    topico: "Princípios processuais penais",
+    enunciado:
+      "O princípio da garantia contra a autoincriminação (nemo tenetur se detegere), extraído do art. 5º, LXIII, da Constituição Federal, assegura ao acusado o direito de",
+    alternativas: [
+      "permanecer em silêncio e de não produzir prova contra si mesmo, de modo que o silêncio do investigado ou réu não pode ser interpretado em seu desfavor nem valorado como confissão implícita.",
+      "produzir qualquer prova a seu favor, ainda que falsa, sem que isso configure ilícito penal autônomo, em razão da amplitude do direito de defesa assegurado constitucionalmente ao acusado.",
+      "recusar-se a participar de reconhecimento de pessoas ou de reconstituição do crime, hipóteses em que, diversamente do silêncio, a recusa injustificada pode ser livremente valorada como confissão tácita pelo julgador.",
+      "ser dispensado de comparecer a atos processuais para os quais tenha sido regularmente intimado, sem qualquer consequência processual, inclusive a decretação de prisão preventiva.",
+      "mentir livremente em juízo sobre fatos de terceiros, sem incorrer em qualquer das hipóteses de crime contra a administração da justiça previstas no Código Penal.",
+    ],
+    correta: 0,
+    explicacao:
+      "O nemo tenetur se detegere garante o direito ao silêncio e à não autoincriminação, vedando que o silêncio seja interpretado contra o acusado. Ele não autoriza produzir prova falsa, mentir sobre terceiros nem ignorar intimações; a recusa a participar de reconhecimento ou reconstituição também não pode ser usada como confissão tácita, pois a garantia abrange toda forma de colaboração probatória contra si.",
+    origem: "banco",
+  },
+  {
+    id: "pp-052",
+    materia: "pp",
+    topico: "Princípios processuais penais",
+    enunciado:
+      "O princípio do juiz natural, previsto no art. 5º, XXXVII e LIII, da Constituição Federal, veda a instituição de tribunal de exceção e assegura que",
+    alternativas: [
+      "ninguém será processado nem julgado senão por autoridade competente, definida por critérios legais objetivos e abstratos fixados anteriormente à ocorrência do fato, sem possibilidade de criação de órgão julgador especial a posteriori para o caso concreto.",
+      "o acusado tem o direito de escolher livremente o juízo ou tribunal que irá processá-lo e julgá-lo, desde que a escolha recaia sobre órgão jurisdicional já existente no momento do fato e seja homologada pelo Ministério Público antes do oferecimento da denúncia.",
+      "a competência penal pode ser redefinida por lei posterior ao fato, para qualquer finalidade, sempre que o novo critério se mostrar mais consentâneo com a gravidade do delito praticado.",
+      "é vedada apenas a criação de tribunais de exceção após o fato, mas permitida a designação casuística, por ato administrativo, de juiz específico para julgar determinado processo já em curso.",
+      "aplica-se exclusivamente ao processo penal militar, não se estendendo às demais esferas da jurisdição criminal comum, estadual ou federal.",
+    ],
+    correta: 0,
+    explicacao:
+      "O juiz natural exige critérios de competência previamente fixados em lei, de forma objetiva e abstrata, vedando tribunais de exceção e designações casuísticas de julgador para caso específico, inclusive após o fato. O acusado não escolhe seu julgador, e a garantia vale para toda a jurisdição penal, não só a militar.",
+    origem: "banco",
+  },
+  {
+    id: "pp-053",
+    materia: "pp",
+    topico: "Princípios processuais penais",
+    enunciado:
+      "Sobre o princípio da persuasão racional (convencimento motivado) no processo penal brasileiro, é correto afirmar que",
+    alternativas: [
+      "constitui a regra geral, segundo a qual o juiz deve fundamentar suas decisões com base nas provas dos autos, admitindo-se como exceção o sistema da íntima convicção no Tribunal do Júri, em que os jurados decidem sem motivar o voto.",
+      "é adotado também pelo Tribunal do Júri, de modo que os jurados, assim como o juiz togado, devem fundamentar detalhadamente cada voto proferido em plenário, sob pena de nulidade da decisão e de dissolução do Conselho de Sentença pelo juiz-presidente.",
+      "substituiu integralmente, em todo o processo penal brasileiro, o sistema da íntima convicção, que não subsiste em nenhuma hipótese após a Constituição de 1988.",
+      "autoriza o juiz a decidir com base em seu conhecimento pessoal dos fatos, obtido fora dos autos do processo, desde que exponha esse conhecimento na motivação da sentença.",
+      "impede qualquer valoração de prova indiciária pelo julgador, exigindo sempre prova direta e inequívoca da autoria e da materialidade para a prolação de sentença condenatória.",
+    ],
+    correta: 0,
+    explicacao:
+      "A persuasão racional exige fundamentação baseada nas provas dos autos, sendo a regra no processo penal; a exceção é a íntima convicção do Tribunal do Júri, em que os jurados não motivam o voto. O juiz não pode decidir com base em conhecimento extraprocessual, e a prova indiciária é admitida, desde que valorada racionalmente.",
+    origem: "banco",
+  },
+  {
+    id: "pp-054",
+    materia: "pp",
+    topico: "Princípios processuais penais",
+    enunciado:
+      "O princípio do promotor natural, reconhecido pelo Supremo Tribunal Federal, tem por finalidade",
+    alternativas: [
+      "vedar a designação casuística de membro do Ministério Público para atuar em caso específico, por ato discricionário da chefia institucional, assegurando a atuação do órgão com atribuição legalmente predefinida.",
+      "assegurar ao acusado o direito de escolher, entre os membros do Ministério Público em exercício na comarca, qual deles oferecerá a denúncia em seu desfavor.",
+      "impedir qualquer redistribuição de atribuições entre os membros do Ministério Público, ainda que realizada por critérios objetivos e genéricos previstos em lei ou em ato normativo interno.",
+      "vincular definitivamente o membro do Ministério Público que primeiro tomar conhecimento do fato, impedindo sua substituição por qualquer outro membro em qualquer hipótese, inclusive de afastamento legal.",
+      "autorizar o Procurador-Geral de Justiça a escolher livremente, em qualquer processo, o membro do Ministério Público que atuará, desde que o faça por decisão fundamentada e caso a caso.",
+    ],
+    correta: 0,
+    explicacao:
+      "O promotor natural veda a designação casuística de membro do MP por decisão discricionária da chefia, caso a caso, mas não impede redistribuições por critérios objetivos e gerais (como regras de substituição e organização), nem garante ao acusado escolher seu acusador.",
+    origem: "banco",
+  },
+  {
+    id: "pp-055",
+    materia: "pp",
+    topico: "Princípios processuais penais",
+    enunciado:
+      "O princípio da razoável duração do processo, acrescido ao art. 5º da Constituição Federal pelo inciso LXXVIII (Emenda Constitucional nº 45/2004), assegura a todos, no âmbito judicial e administrativo,",
+    alternativas: [
+      "a razoável duração do processo e os meios que garantam a celeridade de sua tramitação, sem que a garantia estabeleça, por si só, um prazo máximo fixo e objetivo de duração válido para qualquer processo penal.",
+      "um prazo máximo e objetivo de 180 dias para a conclusão de qualquer processo penal, contado da data do recebimento da denúncia pelo juízo competente, prorrogável uma única vez por decisão fundamentada do tribunal de origem.",
+      "a extinção automática da punibilidade sempre que o processo penal ultrapassar o prazo médio de duração verificado nas estatísticas do tribunal competente.",
+      "a garantia de duração razoável apenas aos processos cujo réu esteja preso preventivamente, não se estendendo às demais hipóteses de persecução penal em curso.",
+      "a possibilidade de o próprio acusado requerer, independentemente de qualquer outro requisito, a extinção do processo penal sempre que considerar sua duração excessiva.",
+    ],
+    correta: 0,
+    explicacao:
+      "A razoável duração do processo (art. 5º, LXXVIII, CF) não fixa um prazo numérico objetivo e geral, exigindo análise da complexidade do caso, do comportamento das partes e da atuação do Judiciário; não gera extinção automática da punibilidade nem se restringe a réus presos.",
+    origem: "banco",
+  },
+  {
+    id: "pp-056",
+    materia: "pp",
+    topico: "Juízo e juiz de garantias (Lei 13.964/2019 e ADI 6.298/STF)",
+    enunciado:
+      "O juízo das garantias, instituído pela Lei nº 13.964/2019 (Pacote Anticrime) e disciplinado pelo art. 3º-A do CPP, adota estrutura acusatória, segundo a qual",
+    alternativas: [
+      "é vedada ao juiz a iniciativa de promover, de ofício, a investigação criminal, bem como substituir a atuação probatória do órgão de acusação, preservando-se a separação entre as funções de investigar/acusar e julgar.",
+      "o juiz das garantias pode determinar, de ofício e independentemente de provocação do Ministério Público ou da autoridade policial, a produção de qualquer prova que considere necessária à elucidação do fato investigado.",
+      "cabe ao juiz das garantias substituir o órgão de acusação na condução do inquérito sempre que verificar inércia ou lentidão na investigação conduzida pela autoridade policial competente.",
+      "a estrutura acusatória se aplica apenas à fase de instrução processual, não alcançando os atos praticados pelo juiz das garantias durante a investigação preliminar.",
+      "permite ao juiz, mediante decisão fundamentada, requisitar diretamente diligências investigativas específicas, desde que o faça em substituição apenas parcial, e não total, da atuação do Ministério Público.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 3º-A consagra a estrutura acusatória: o juiz das garantias não pode investigar de ofício nem substituir o MP na produção de provas, ainda que parcialmente. Essa vedação atua justamente na fase investigatória, que é o âmbito de competência do juiz das garantias.",
+    origem: "banco",
+    fonte: "CPP, art. 3º-A (Lei 13.964/2019)",
+  },
+  {
+    id: "pp-057",
+    materia: "pp",
+    topico: "Juízo e juiz de garantias (Lei 13.964/2019 e ADI 6.298/STF)",
+    enunciado:
+      "Entre as competências do juiz das garantias previstas no art. 3º-B do CPP, inclui-se",
+    alternativas: [
+      "homologar acordo de não persecução penal ou colaboração premiada celebrados durante a investigação criminal, ainda antes do oferecimento da denúncia pelo Ministério Público.",
+      "proferir sentença de mérito na ação penal decorrente dos fatos apurados durante a investigação, aproveitando-se do amplo conhecimento do caso adquirido na fase investigatória.",
+      "determinar, de ofício, o arquivamento do inquérito policial sempre que considerar insuficientes os indícios de autoria colhidos pela autoridade policial até aquele momento.",
+      "substituir o delegado de polícia na presidência do inquérito, sempre que a investigação envolver crime de maior complexidade ou repercussão social relevante.",
+      "fixar, originariamente e sem possibilidade de revisão, o valor da fiança em qualquer hipótese de prisão em flagrante, ainda que a infração não comporte esse benefício.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 3º-B, XVII, atribui ao juiz das garantias a homologação de ANPP e de colaboração premiada na fase investigatória. Ele não julga o mérito da ação penal (vedação do art. 3º-D), não arquiva inquérito de ofício, não substitui o delegado e a fiança comporta revisão.",
+    origem: "banco",
+    fonte: "CPP, art. 3º-B (Lei 13.964/2019)",
+  },
+  {
+    id: "pp-058",
+    materia: "pp",
+    topico: "Juízo e juiz de garantias (Lei 13.964/2019 e ADI 6.298/STF)",
+    enunciado:
+      "Quanto à audiência de custódia no âmbito do juízo das garantias, o Supremo Tribunal Federal, ao julgar as ADI 6.298, 6.299, 6.300 e 6.305 (Rel. Min. Luiz Fux), decidiu que",
+    alternativas: [
+      "cabe, excepcionalmente, o emprego de videoconferência na audiência de custódia, mediante decisão fundamentada da autoridade judiciária competente, desde que apto a verificar a integridade física e psicológica do preso.",
+      "a videoconferência é absolutamente vedada em qualquer hipótese de audiência de custódia, devendo o preso ser sempre conduzido pessoalmente à presença física do juiz das garantias, sem exceção.",
+      "a audiência de custódia deixou de ser obrigatória após a instituição do juízo das garantias, sendo substituída por simples comunicação escrita da prisão ao juízo competente em até 24 horas.",
+      "a realização da audiência de custódia passou a depender de requerimento expresso da defesa, não podendo mais ser determinada de ofício pela autoridade judiciária, ainda que o preso permaneça em cárcere.",
+      "o prazo para a realização da audiência de custódia foi ampliado de 24 para 72 horas, contado da comunicação da prisão em flagrante ao juízo das garantias competente.",
+    ],
+    correta: 0,
+    explicacao:
+      "O STF (ADI 6.298 e correlatas) autorizou, excepcionalmente, a videoconferência na audiência de custódia, mediante decisão fundamentada e desde que possível verificar a integridade do preso — superando a vedação literal do texto original do art. 3º-B, §1º. A audiência permanece obrigatória, pode ser determinada de ofício e o prazo de 24 horas não foi alterado.",
+    origem: "banco",
+    fonte: "STF, ADI 6.298, 6.299, 6.300 e 6.305/DF, Rel. Min. Luiz Fux, j. 24/08/2023 (Info 1106)",
+  },
+  {
+    id: "pp-059",
+    materia: "pp",
+    topico: "Juízo e juiz de garantias (Lei 13.964/2019 e ADI 6.298/STF)",
+    enunciado:
+      "Sobre a prorrogação do prazo do inquérito policial no regime do juízo das garantias, após o julgamento das ADI 6.298 e correlatas pelo STF, é correto afirmar que",
+    alternativas: [
+      "o juiz pode autorizar, de forma fundamentada, novas prorrogações do prazo de investigação em razão da complexidade do caso, e a simples inobservância do prazo não implica a revogação automática de eventual prisão preventiva decretada.",
+      "o prazo de investigação é improrrogável, de modo que seu decurso sem a conclusão do inquérito acarreta, automaticamente e sem necessidade de decisão judicial, o relaxamento da prisão preventiva eventualmente decretada.",
+      "a prorrogação do inquérito somente pode ser concedida uma única vez, por quinze dias, não sendo cabível, em nenhuma hipótese, nova prorrogação além desse prazo, ainda que a investigação seja excepcionalmente complexa.",
+      "compete exclusivamente ao Ministério Público, sem qualquer participação do juiz das garantias, autorizar ou negar a prorrogação do prazo de investigação em curso perante a autoridade policial.",
+      "a prorrogação do inquérito está condicionada à prévia anuência expressa da defesa técnica do investigado, sob pena de nulidade de todos os atos investigativos praticados após o prazo original.",
+    ],
+    correta: 0,
+    explicacao:
+      "O STF entendeu que o juiz pode autorizar novas prorrogações fundamentadas conforme a complexidade do caso, superando o limite literal de uma única prorrogação de 15 dias, e que o descumprimento do prazo não gera revogação automática da prisão preventiva, devendo o juízo ser instado a reavaliar a cautelar.",
+    origem: "banco",
+    fonte: "STF, ADI 6.298, 6.299, 6.300 e 6.305/DF, Rel. Min. Luiz Fux, j. 24/08/2023 (Info 1106)",
+  },
+  {
+    id: "pp-060",
+    materia: "pp",
+    topico: "Juízo e juiz de garantias (Lei 13.964/2019 e ADI 6.298/STF)",
+    enunciado:
+      "Segundo a redação literal originária do art. 3º-C, caput, do CPP, a competência do juiz das garantias cessaria com o recebimento da denúncia ou da queixa. Após o julgamento das ADI 6.298 e correlatas pelo STF, esse marco foi",
+    alternativas: [
+      "alterado para o oferecimento da denúncia ou da queixa, que passa a ser o termo a partir do qual os autos são encaminhados ao juiz da instrução e do julgamento, e não mais o ato de recebimento pelo juízo.",
+      "mantido exatamente como previsto na redação literal do dispositivo, tendo o STF apenas reafirmado a constitucionalidade do recebimento da denúncia como marco de cessação da competência do juiz das garantias.",
+      "substituído pela publicação da sentença de primeiro grau, de modo que o juiz das garantias permanece competente durante toda a instrução processual, até a prolação da decisão final.",
+      "substituído pelo trânsito em julgado da decisão de recebimento da denúncia, o que pressupõe o esgotamento de eventual recurso interposto contra essa decisão interlocutória.",
+      "abolido, de modo que, a partir do julgamento das referidas ações diretas de inconstitucionalidade, não existe mais qualquer marco temporal de cessação da competência do juiz das garantias.",
+    ],
+    correta: 0,
+    explicacao:
+      "O STF substituiu, em vários dispositivos do art. 3º-C (caput e parágrafos), o termo 'recebimento' por 'oferecimento' da denúncia ou queixa como marco de cessação da competência do juiz das garantias, declarando inconstitucional, por arrastamento, o inciso que usava o termo original.",
+    origem: "banco",
+    fonte: "STF, ADI 6.298, 6.299, 6.300 e 6.305/DF, Rel. Min. Luiz Fux, j. 24/08/2023 (Info 1106)",
+  },
+  {
+    id: "pp-061",
+    materia: "pp",
+    topico: "Juízo e juiz de garantias (Lei 13.964/2019 e ADI 6.298/STF)",
+    enunciado:
+      "Nos termos do art. 3º-D do CPP, o juiz que atuou como juiz das garantias em determinada investigação",
+    alternativas: [
+      "fica impedido de atuar como juiz da instrução e do julgamento da ação penal decorrente dessa investigação, devendo as comarcas com apenas um juiz adotar sistema de rodízio para viabilizar essa separação.",
+      "pode livremente atuar também como juiz da instrução e do julgamento da mesma ação penal, desde que fundamente expressamente as razões de conveniência e oportunidade dessa dupla atuação.",
+      "somente fica impedido de julgar a ação penal se a comarca contar com mais de um juiz, ficando dispensada a regra de impedimento nas comarcas de vara única, por impossibilidade material.",
+      "pode atuar na instrução e no julgamento da ação penal, desde que a investigação tenha durado menos de noventa dias, prazo a partir do qual se presume o impedimento absoluto.",
+      "fica impedido de atuar apenas se tiver decretado prisão preventiva durante a investigação, permanecendo habilitado a julgar a ação penal nos demais casos em que não tenha imposto medida cautelar.",
+    ],
+    correta: 0,
+    explicacao:
+      "O art. 3º-D impede o juiz das garantias de atuar como juiz da instrução e julgamento da mesma ação penal, justamente para preservar sua imparcialidade; nas comarcas com apenas um juiz, a lei determina a adoção de rodízio para viabilizar a separação de funções, sem exceção pela ausência de outro juiz ou pela duração da investigação.",
+    origem: "banco",
+    fonte: "CPP, art. 3º-D (Lei 13.964/2019)",
+  },
+  {
+    id: "pp-062",
+    materia: "pp",
+    topico: "Juízo e juiz de garantias (Lei 13.964/2019 e ADI 6.298/STF)",
+    enunciado:
+      "Conforme fixado pelo STF no julgamento das ADI 6.298 e correlatas, o regime do juízo das garantias NÃO se aplica",
+    alternativas: [
+      "aos processos de competência originária dos tribunais, aos processos de competência do Tribunal do Júri, aos casos de violência doméstica e familiar e às infrações penais de menor potencial ofensivo.",
+      "a nenhuma categoria de processo penal, uma vez que o STF determinou a aplicação universal e sem exceções do juízo das garantias a toda e qualquer investigação criminal no território nacional.",
+      "apenas aos processos de competência originária dos tribunais superiores, aplicando-se normalmente, sem qualquer ressalva, ao Tribunal do Júri e aos casos de violência doméstica e familiar.",
+      "aos crimes de menor potencial ofensivo, aplicando-se integralmente, sem exceção, aos processos de competência originária dos tribunais e às hipóteses de violência doméstica e familiar.",
+      "às infrações de menor potencial ofensivo e à violência doméstica, mas aplica-se normalmente aos processos de competência do Tribunal do Júri e dos tribunais em sua competência originária.",
+    ],
+    correta: 0,
+    explicacao:
+      "O STF excluiu da aplicação do juízo das garantias: processos de competência originária dos tribunais (regidos pela Lei 8.038/1990), Tribunal do Júri, violência doméstica e familiar, e infrações de menor potencial ofensivo — hipóteses em que as particularidades procedimentais tornam o regime incompatível.",
+    origem: "banco",
+    fonte: "STF, ADI 6.298, 6.299, 6.300 e 6.305/DF, Rel. Min. Luiz Fux, j. 24/08/2023 (Info 1106)",
+  },
+  {
+    id: "pp-063",
+    materia: "pp",
+    topico: "Juízo e juiz de garantias (Lei 13.964/2019 e ADI 6.298/STF)",
+    enunciado:
+      "O art. 20 da Lei nº 13.964/2019 previa o prazo de 30 dias para a implementação do juízo das garantias pelos tribunais. Ao julgar as ADI 6.298 e correlatas, o STF",
+    alternativas: [
+      "declarou esse prazo inconstitucional por arrastamento, fixando prazo de 12 meses, prorrogável por mais 12 meses, para que os tribunais implementem a estrutura do juízo das garantias.",
+      "manteve integralmente o prazo original de 30 dias, declarando improcedentes as ações diretas de inconstitucionalidade no ponto relativo ao prazo de implementação da nova estrutura judicial.",
+      "reduziu o prazo de implementação para 15 dias, por entender que a exiguidade do prazo original de 30 dias ainda era incompatível com a urgência da reforma processual penal introduzida pelo Pacote Anticrime.",
+      "determinou a implementação imediata e automática do juízo das garantias em todo o território nacional, dispensando qualquer prazo ou ato normativo específico dos tribunais para a estruturação da nova sistemática.",
+      "delegou aos próprios tribunais a fixação do prazo de implementação, sem estabelecer qualquer parâmetro temporal mínimo ou máximo a ser observado pelos órgãos do Poder Judiciário.",
+    ],
+    correta: 0,
+    explicacao:
+      "O STF declarou inconstitucional, por arrastamento, o prazo de 30 dias do art. 20 da Lei 13.964/2019, fixando prazo de 12 meses, prorrogável por mais 12, para a implementação do juízo das garantias pelos tribunais — reconhecendo a complexidade estrutural da reforma.",
+    origem: "banco",
+    fonte: "STF, ADI 6.298, 6.299, 6.300 e 6.305/DF, Rel. Min. Luiz Fux, j. 24/08/2023 (Info 1106)",
+  },
+  {
+    id: "pp-064",
+    materia: "pp",
+    topico: "Funções de polícia (art. 144 da CF)",
+    enunciado:
+      "Sobre o sistema de ciclo completo de polícia no Brasil, é correto afirmar que",
+    alternativas: [
+      "a Polícia Federal é a única força policial brasileira que atua em ciclo completo, unindo funções de polícia administrativa e de investigação, de modo que, ao identificar um crime durante atividade administrativa, pode investigá-lo diretamente.",
+      "todas as polícias estaduais, tanto a Polícia Militar quanto a Polícia Civil, adotam o ciclo completo, unindo em uma única instituição as funções de prevenção ostensiva e de investigação criminal, nos mesmos moldes já adotados pela Polícia Federal.",
+      "o ciclo completo consiste na possibilidade de a Polícia Militar, após efetuar prisão em flagrante, conduzir diretamente a investigação do crime, sem a necessidade de apresentação do preso à Polícia Civil.",
+      "nenhuma polícia brasileira adota atualmente o ciclo completo, estando a proposta de unificação das funções policiais ainda em fase de debate exclusivamente legislativo, sem qualquer aplicação prática vigente.",
+      "o ciclo completo é adotado pela Polícia Civil, que concentra tanto o policiamento ostensivo preventivo quanto a investigação criminal, diferentemente da Polícia Militar, que atua apenas na fase investigativa.",
+    ],
+    correta: 0,
+    explicacao:
+      "No modelo brasileiro de ciclo incompleto, Polícia Militar (ostensiva/preventiva) e Polícia Civil (investigativa) têm atribuições distintas e dependem uma da outra. A Polícia Federal é a exceção, por reunir funções administrativas e investigativas em ciclo completo.",
+    origem: "banco",
+  },
+  {
+    id: "pp-065",
+    materia: "pp",
+    topico: "Funções de polícia (art. 144 da CF)",
+    enunciado:
+      "Sobre a distinção doutrinária entre polícia judiciária e polícia investigativa, à luz do art. 2º da Lei nº 12.850/2013, é correto afirmar que",
+    alternativas: [
+      "para a corrente que diferencia as duas funções, a polícia judiciária se limita ao auxílio ao Poder Judiciário no cumprimento de ordens e diligências, enquanto a apuração de infrações penais, função do delegado de polícia, tem natureza jurídica, essencial e exclusiva de Estado, nos termos daquele dispositivo.",
+      "a Lei 12.850/2013 unificou definitivamente as duas funções em um único conceito, afastando qualquer distinção doutrinária entre polícia judiciária e polícia investigativa no ordenamento jurídico brasileiro, inclusive para fins de competência constitucional da Polícia Federal e das polícias civis estaduais.",
+      "a função de apuração de infrações penais exercida pelo delegado de polícia foi qualificada, pelo art. 2º da Lei 12.850/2013, como atividade de natureza meramente administrativa, não essencial nem exclusiva de Estado.",
+      "a distinção entre as duas correntes é unânime na doutrina e na jurisprudência, não havendo posicionamento que considere polícia judiciária e polícia investigativa como sinônimos no direito brasileiro.",
+      "a corrente que diferencia as funções fundamenta-se exclusivamente no art. 4º do CPP, dispositivo que, segundo essa própria corrente, teria sido plenamente recepcionado pela Constituição Federal de 1988.",
+    ],
+    correta: 0,
+    explicacao:
+      "Há duas visões: uma equipara polícia judiciária e investigativa; outra as distingue, com base na separação constitucional dos incisos I e IV do art. 144, §1º, reforçada pelo art. 2º da Lei 12.850/2013, que qualifica a função de apuração do delegado como jurídica, essencial e exclusiva de Estado — e não na recepção do art. 4º do CPP, que fundamenta a corrente contrária.",
+    origem: "banco",
+    fonte: "Lei 12.850/2013, art. 2º; CF, art. 144, §1º, I e IV",
+  },
+  {
+    id: "pp-066",
+    materia: "pp",
+    topico: "Funções de polícia (art. 144 da CF)",
+    enunciado:
+      "Quanto à exclusividade do exercício da função de polícia judiciária, prevista no art. 144, §1º, IV, da Constituição Federal, é correto afirmar que",
+    alternativas: [
+      "a exclusividade ali estabelecida refere-se à polícia judiciária da União, atribuída à Polícia Federal, não impedindo que a Polícia Civil também exerça, de forma típica, a função de polícia judiciária no âmbito estadual.",
+      "a Polícia Federal detém exclusividade sobre toda e qualquer função de polícia judiciária exercida no território nacional, inclusive aquela desempenhada pelas polícias civis estaduais em suas respectivas unidades federativas.",
+      "a Polícia Civil, e não a Polícia Federal, é que detém exclusividade constitucional sobre a função de polícia judiciária, cabendo à Polícia Federal apenas funções de natureza administrativa e de fronteira.",
+      "a exclusividade constitucional também abrange a função de polícia judiciária militar, de modo que as polícias militares estaduais ficam impedidas de auxiliar o Poder Judiciário no âmbito da Justiça Militar.",
+      "nenhuma polícia brasileira exerce função de polícia judiciária com exclusividade, uma vez que a Constituição Federal distribuiu essa atribuição igualitariamente entre todos os órgãos listados no art. 144.",
+    ],
+    correta: 0,
+    explicacao:
+      "A exclusividade do art. 144, §1º, IV, da CF é da Polícia Federal apenas quanto à polícia judiciária da União — a Polícia Civil exerce, tipicamente, a polícia judiciária estadual, sem que isso viole a exclusividade federal. As polícias militares, por sua vez, exercem polícia judiciária militar, auxiliando o Judiciário no âmbito militar.",
+    origem: "banco",
+    fonte: "CF, art. 144, §1º, IV",
+  },
+  {
+    id: "pp-067",
+    materia: "pp",
+    topico: "Funções de polícia (art. 144 da CF)",
+    enunciado:
+      "Sobre a estrutura constitucional da segurança pública após a Emenda Constitucional nº 104/2019, que incluiu as polícias penais no rol do art. 144 da Constituição Federal, é correto afirmar que",
+    alternativas: [
+      "às polícias penais federal, estaduais e distrital compete a segurança dos estabelecimentos penais, e as polícias penais estaduais e distrital subordinam-se, juntamente com as polícias civis, militares e corpos de bombeiros militares, aos Governadores dos respectivos entes federativos.",
+      "as polícias penais substituíram as polícias civis na apuração de infrações penais praticadas no interior dos estabelecimentos prisionais, absorvendo essa competência investigativa de forma exclusiva.",
+      "a competência das polícias penais abrange tanto a segurança dos estabelecimentos penais quanto o policiamento ostensivo das vias públicas adjacentes a esses estabelecimentos, em cooperação com a Polícia Militar e sob coordenação direta da Secretaria de Segurança Pública do respectivo ente federativo.",
+      "as polícias penais estaduais e distrital subordinam-se diretamente à União, por se tratar de carreira de segurança pública de interesse nacional, independentemente do ente federativo ao qual pertençam administrativamente.",
+      "a inclusão das polícias penais no art. 144 da Constituição Federal extinguiu a necessidade de vinculação dessas corporações a qualquer órgão administrador do sistema penal da unidade federativa correspondente.",
+    ],
+    correta: 0,
+    explicacao:
+      "A EC 104/2019 incluiu as polícias penais (inciso VI do art. 144) com a competência de segurança dos estabelecimentos penais (§5º-A), vinculadas ao órgão administrador do sistema penal de cada ente e subordinadas aos Governadores (§6º), junto com polícias civis, militares e corpos de bombeiros militares — sem qualquer competência investigativa ou de policiamento ostensivo externo.",
+    origem: "banco",
+    fonte: "CF, art. 144, VI e §§ 5º-A e 6º (EC 104/2019)",
+  },
+  {
+    id: "pp-068",
+    materia: "pp",
+    topico: "Funções de polícia (art. 144 da CF)",
+    enunciado:
+      "Sobre a polícia administrativa, exercida principalmente pela Polícia Militar, é correto afirmar que",
+    alternativas: [
+      "incide sobre bens, direitos e atividades, e não diretamente sobre pessoas, atuando de forma predominantemente preventiva para garantir a ordem pública, a saúde, a segurança e o bem-estar social por meio de fiscalização e poder de polícia.",
+      "incide diretamente sobre pessoas determinadas, suspeitas da prática de infração penal, com o objetivo específico de colher provas de autoria e materialidade para subsidiar eventual ação penal, tal como ocorre na atividade típica da polícia investigativa.",
+      "possui natureza predominantemente repressiva, atuando apenas após a consumação do ilícito administrativo, sem qualquer função preventiva voltada a evitar danos à coletividade antes de sua ocorrência.",
+      "é exercida com exclusividade absoluta pela Polícia Militar, não podendo ser exercida por nenhum outro órgão da administração pública em qualquer esfera de governo.",
+      "limita-se à fiscalização de estabelecimentos comerciais quanto a normas sanitárias, não abrangendo o controle de tráfego de veículos nem a aplicação de outras sanções administrativas.",
+    ],
+    correta: 0,
+    explicacao:
+      "A polícia administrativa é predominantemente preventiva, incidindo sobre bens, direitos e atividades (não diretamente sobre pessoas), por meio de poder de polícia e fiscalização — abrangendo trânsito, vigilância sanitária e outras atividades, e exercida por diversos órgãos da administração, não só pela Polícia Militar com exclusividade.",
+    origem: "banco",
+  },
+  {
+    id: "pp-069",
+    materia: "pp",
+    topico: "Funções de polícia (art. 144 da CF)",
+    enunciado:
+      "Sobre a polícia ostensiva, exercida principalmente pela Polícia Militar e, em certos casos, por Guardas Municipais, é correto afirmar que",
+    alternativas: [
+      "tem natureza administrativa e preventiva, caracterizando-se pela visibilidade da farda, do equipamento e da viatura, com o objetivo de prevenir a criminalidade pela simples presença ostensiva, não se confundindo com a função investigativa.",
+      "tem natureza investigativa, voltada à apuração de infrações penais já consumadas, distinguindo-se do policiamento velado apenas pela visibilidade dos agentes envolvidos na diligência, tal como ocorre tipicamente na atuação da Polícia Civil.",
+      "pressupõe, necessariamente, o uso de viaturas motorizadas, não se configurando como policiamento ostensivo o patrulhamento a pé, de bicicleta ou montado realizado em bairros e áreas turísticas.",
+      "é exercida com exclusividade pela Polícia Militar, não podendo as Guardas Municipais, em nenhuma hipótese, realizar qualquer modalidade de patrulhamento ostensivo em vias públicas.",
+      "é incompatível com a prevenção de infrações de menor gravidade, como contravenções penais, destinando-se exclusivamente à repressão imediata de crimes já em curso ou consumados.",
+    ],
+    correta: 0,
+    explicacao:
+      "A polícia ostensiva tem natureza administrativa e preventiva, marcada pela visibilidade (fardas, viaturas) como fator de dissuasão da criminalidade — não se limita a viaturas motorizadas (admite patrulhamento a pé, de bicicleta etc.), não é exclusiva da PM (Guardas Municipais também a exercem) e serve à prevenção de infrações e contravenções, não só repressão de crimes em curso.",
+    origem: "banco",
+  },
 ];
