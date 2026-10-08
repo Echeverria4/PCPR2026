@@ -88,6 +88,8 @@ export default function App() {
   const [simuladoVisto, setSimuladoVisto] = useState<SimuladoResultado | null>(null);
   const [ancoraReta, setAncoraReta] = useState<AncoraReta | null>(null);
   const [nomeExterna, setNomeExterna] = useState<string | null>(null);
+  // Resultado recém-entregue abre com a tela animada de fim do simulado; aberto pelo histórico, não.
+  const [animarFinal, setAnimarFinal] = useState(false);
 
   // Simulado cujo prazo de 5h acabou com o app fechado: corrige como se tivesse sido entregue no fim do tempo.
   useEffect(() => {
@@ -179,6 +181,7 @@ export default function App() {
     setAttempts(getLocalAttempts());
     setWrongCount(getWrongQueue().length);
     setSimuladoVisto(corrigido);
+    setAnimarFinal(true);
     setView("simulado-resultado");
   }
 
@@ -287,6 +290,7 @@ export default function App() {
           onDescartarSimulado={descartarSimulado}
           onVerResultado={(r) => {
             setSimuladoVisto(r);
+            setAnimarFinal(false);
             setView("simulado-resultado");
           }}
           onReforco={iniciarReforco}
@@ -305,7 +309,11 @@ export default function App() {
       )}
       {view === "simulado-resultado" && simuladoVisto && (
         <SimuladoResultadoView
+          key={simuladoVisto.id}
           resultado={simuladoVisto}
+          animar={animarFinal}
+          simuladoEmAndamento={simuladoAtivo !== null}
+          onReiniciar={iniciarSimulado}
           onVoltar={() => irParaReta("simulado")}
           onReforco={iniciarReforco}
           onAbrirCaderno={() => irParaReta("caderno")}

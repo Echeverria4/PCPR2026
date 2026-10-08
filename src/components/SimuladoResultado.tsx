@@ -1,35 +1,64 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { Confianca, SimuladoResultado as Resultado, SubjectId } from "../lib/types";
 import { SUBJECT_MAP } from "../data/subjects";
 import { ORCAMENTO_MIN, ROTULO_CONFIANCA } from "../data/retaFinal";
 import { QUESTAO_POR_ID, blocoDaQuestao, resumirSimulado } from "../lib/retaFinal";
 import { formatarRelogio, formatarSegundos } from "../lib/format";
+import FimDoSimulado from "./FimDoSimulado";
 
 const LETRAS = ["A", "B", "C", "D", "E"];
 const PISO = 50;
 
-type Filtro = "erradas" | "branco" | "convictas" | "chutes" | "todas";
+type Filtro = "erradas" | "branco" | "convictas" | "chutes" | "certas" | "todas";
 
 const ROTULO_FILTRO: Record<Filtro, string> = {
   erradas: "Erradas",
   branco: "Em branco",
   convictas: "Erros convictos",
   chutes: "Chutes",
+  certas: "Certas",
   todas: "Todas",
 };
 
 interface SimuladoResultadoProps {
   resultado: Resultado;
+  /** Abre direto a tela animada de fim do simulado (logo após a entrega). */
+  animar?: boolean;
+  simuladoEmAndamento: boolean;
+  onReiniciar: () => void;
   onVoltar: () => void;
   onReforco: (blocoIds: string[], quantidade: number) => void;
   onAbrirCaderno: () => void;
 }
 
-export default function SimuladoResultado({ resultado, onVoltar, onReforco, onAbrirCaderno }: SimuladoResultadoProps) {
-  const resumo = resumirSimulado(resultado);
+export default function SimuladoResultado({
+  resultado,
+  animar,
+  simuladoEmAndamento,
+  onReiniciar,
+  onVoltar,
+  onReforco,
+  onAbrirCaderno,
+}: SimuladoResultadoProps) {
+  const resumo = useMemo(() => resumirSimulado(resultado), [resultado]);
   const [filtro, setFiltro] = useState<Filtro>(() =>
     resultado.questoes.some((q) => q.escolha !== null && !q.acertou) ? "erradas" : "todas",
   );
+  const [mostrarFim, setMostrarFim] = useState(() => !!animar);
+  const [rolarParaCorrecao, setRolarParaCorrecao] = useState(false);
+
+  // "Revisar erradas" / "Ver acertos": fecha a tela final e desce até a correção já filtrada.
+  useEffect(() => {
+    if (mostrarFim || !rolarParaCorrecao) return;
+    setRolarParaCorrecao(false);
+    document.getElementById("sim-correcao")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [mostrarFim, rolarParaCorrecao]);
+
+  const abrirCorrecao = (f: Filtro) => {
+    setFiltro(f);
+    setMostrarFim(false);
+    setRolarParaCorrecao(true);
+  };
 
   const parcial = (m: SubjectId) => resumo.porMateria.find((p) => p.materia === m);
   const linhaDesempate = (rotulo: string, acertos: number, total: number) => (
@@ -55,6 +84,7 @@ export default function SimuladoResultado({ resultado, onVoltar, onReforco, onAb
         if (f === "branco") return q.escolha === null;
         if (f === "convictas") return q.escolha !== null && !q.acertou && q.confianca === "certeza";
         if (f === "chutes") return q.confianca === "chute";
+        if (f === "certas") return q.acertou;
         return true;
       });
   const lista = filtrar(filtro);
@@ -75,6 +105,9 @@ export default function SimuladoResultado({ resultado, onVoltar, onReforco, onAb
           Tempo usado: {formatarRelogio(resultado.usadoMs)} de {formatarRelogio(resultado.duracaoMin * 60_000)}
           {resultado.encerradoPorTempo ? " (encerrado pelo tempo)" : ""} · {resumo.branco} em branco
         </div>
+        <button className="botao resultado-rever" onClick={() => setMostrarFim(true)}>
+          ▶ Rever a tela final
+        </button>
       </div>
 
       {resumo.branco > 0 && (
@@ -215,7 +248,9 @@ export default function SimuladoResultado({ resultado, onVoltar, onReforco, onAb
         </>
       )}
 
-      <h2 className="secao-titulo">Correção</h2>
+      <h2 className="secao-titulo sim-ancora-correcao" id="sim-correcao">
+        Correção
+      </h2>
       <div className="sim-filtros">
         {(Object.keys(ROTULO_FILTRO) as Filtro[]).map((f) => (
           <button key={f} className={`confianca-chip ${filtro === f ? "confianca-ativa" : ""}`} onClick={() => setFiltro(f)}>
@@ -270,6 +305,19 @@ export default function SimuladoResultado({ resultado, onVoltar, onReforco, onAb
           Abrir caderno de erros
         </button>
       </div>
+
+      {mostrarFim && (
+        <FimDoSimulado
+          resultado={resultado}
+          resumo={resumo}
+          piso={PISO}
+          simuladoEmAndamento={simuladoEmAndamento}
+          onReiniciar={onReiniciar}
+          onRevisarErradas={() => abrirCorrecao("erradas")}
+          onVerCertas={() => abrirCorrecao("certas")}
+          onFechar={() => setMostrarFim(false)}
+        />
+      )}
     </div>
   );
 }
