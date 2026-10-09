@@ -155,8 +155,8 @@ export async function syncRemoteAttempts(): Promise<AttemptRecord[]> {
   return remote;
 }
 
-export function computeStats(attempts: AttemptRecord[]): SubjectStats[] {
-  const bySubject = new Map<SubjectId, { respondidas: number; acertos: number }>();
+export function computeStats<M extends string = SubjectId>(attempts: AttemptRecord<M>[]): SubjectStats<M>[] {
+  const bySubject = new Map<M, { respondidas: number; acertos: number }>();
 
   // Tentativas feitas na "Revisão dos errados" partem de questões que já erramos antes —
   // contá-las no % de acerto infla artificialmente o desempenho da matéria, já que o
@@ -279,11 +279,11 @@ export async function resetAttemptsMateria(materia: SubjectId): Promise<AttemptR
   return restantes;
 }
 
-export function focoRecomendado(
-  stats: SubjectStats[],
-  pesos: Record<SubjectId, number>,
+export function focoRecomendado<M extends string = SubjectId>(
+  stats: SubjectStats<M>[],
+  pesos: Record<M, number>,
   minRespondidas = 4,
-): SubjectStats[] {
+): SubjectStats<M>[] {
   return stats
     .filter((s) => s.respondidas >= minRespondidas)
     .map((s) => ({

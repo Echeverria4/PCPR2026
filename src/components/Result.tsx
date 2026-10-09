@@ -1,17 +1,19 @@
 import { SUBJECT_MAP } from "../data/subjects";
 import type { QuizSessionResult, SubjectId } from "../lib/types";
 
-interface ResultProps {
-  resultado: QuizSessionResult;
+interface ResultProps<M extends string> {
+  resultado: QuizSessionResult<M>;
   onVoltarHome: () => void;
   onRevisarErros: () => void;
+  /** Nome de cada matéria do curso (sem isso, as da PCPR). */
+  nomes?: Record<M, string>;
 }
 
-export default function Result({ resultado, onVoltarHome, onRevisarErros }: ResultProps) {
+export default function Result<M extends string = SubjectId>({ resultado, onVoltarHome, onRevisarErros, nomes }: ResultProps<M>) {
   const percentual = resultado.total > 0 ? Math.round((resultado.acertos / resultado.total) * 100) : 0;
   const erros = resultado.respostas.filter((r) => !r.acertou).length;
 
-  const porMateria = new Map<SubjectId, { total: number; acertos: number }>();
+  const porMateria = new Map<M, { total: number; acertos: number }>();
   for (const r of resultado.respostas) {
     const cur = porMateria.get(r.materia) ?? { total: 0, acertos: 0 };
     cur.total += 1;
@@ -42,7 +44,7 @@ export default function Result({ resultado, onVoltarHome, onRevisarErros }: Resu
         <tbody>
           {Array.from(porMateria.entries()).map(([materia, v]) => (
             <tr key={materia}>
-              <td>{SUBJECT_MAP[materia]?.nome ?? materia}</td>
+              <td>{(nomes ? nomes[materia] : SUBJECT_MAP[materia as SubjectId]?.nome) ?? materia}</td>
               <td>
                 {v.acertos} / {v.total}
               </td>

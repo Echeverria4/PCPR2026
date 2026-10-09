@@ -21,9 +21,10 @@ export interface Subject {
   topicos: string[];
 }
 
-export interface Question {
+/** M = ids de matéria do curso (padrão: PCPR). */
+export interface Question<M extends string = SubjectId> {
   id: string;
-  materia: SubjectId;
+  materia: M;
   topico: string;
   enunciado: string;
   alternativas: [string, string, string, string, string];
@@ -34,8 +35,8 @@ export interface Question {
   fonte?: string;
 }
 
-export interface ConteudoTopico {
-  materia: SubjectId;
+export interface ConteudoTopico<M extends string = SubjectId> {
+  materia: M;
   topico: string;
   texto: string;
   exemplos?: [string, string];
@@ -131,9 +132,9 @@ export type QuizMode = "materia" | "prova" | "revisao" | "treino-alvo" | "simula
 /** Quanto o candidato confiava na resposta, marcado na hora de responder. */
 export type Confianca = "certeza" | "duvida" | "chute";
 
-export interface AttemptRecord {
+export interface AttemptRecord<M extends string = SubjectId> {
   questionId: string;
-  materia: SubjectId;
+  materia: M;
   acertou: boolean;
   respondidaEm: string;
   tempoMs?: number;
@@ -186,18 +187,18 @@ export interface SimuladoResultado {
   questoes: SimuladoQuestaoResultado[];
 }
 
-export interface SubjectStats {
-  materia: SubjectId;
+export interface SubjectStats<M extends string = SubjectId> {
+  materia: M;
   respondidas: number;
   acertos: number;
   acuracia: number;
 }
 
-export interface QuizSessionResult {
+export interface QuizSessionResult<M extends string = SubjectId> {
   mode: QuizMode;
   total: number;
   acertos: number;
-  respostas: AttemptRecord[];
+  respostas: AttemptRecord<M>[];
   iniciadoEm: string;
   finalizadoEm: string;
 }

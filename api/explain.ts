@@ -1,7 +1,13 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { getAnthropicClient } from "./_anthropic";
 import { SUBJECT_MAP } from "../src/data/subjects";
+import { PRF_MATERIAS } from "../src/data/prf";
 import type { SubjectId } from "../src/lib/types";
+
+/** Para quem a IA explica, por curso. Sem curso no pedido, vale a PCPR. */
+const CONTEXTO_PCPR = "o concurso de Agente de Polícia Judiciária da PCPR 2026 (banca FGV)";
+const CONTEXTO_PRF =
+  "o concurso de Agente Administrativo da Polícia Rodoviária Federal (PRF), de nível médio, ainda sem edital nem banca definida (o último edital, de 2014, foi da FUNCAB). Use a legislação em vigor";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {
@@ -9,7 +15,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return;
   }
 
-  const { materia, topico, enunciado, alternativas, correta, pergunta } = (req.body ?? {}) as {
+  const { curso, materia, topico, enunciado, alternativas, correta, pergunta } = (req.body ?? {}) as {
+    curso?: string;
     materia?: string;
     topico?: string;
     enunciado?: string;
@@ -18,9 +25,18 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     pergunta?: string;
   };
 
+  const prf = curso === "prf-adm";
+  const nomeMateria =
+    typeof materia !== "string"
+      ? undefined
+      : prf
+        ? PRF_MATERIAS.find((m) => m.id === materia)?.nome
+        : materia in SUBJECT_MAP
+          ? SUBJECT_MAP[materia as SubjectId].nome
+          : undefined;
+
   if (
-    typeof materia !== "string" ||
-    !(materia in SUBJECT_MAP) ||
+    !nomeMateria ||
     typeof enunciado !== "string" ||
     !Array.isArray(alternativas) ||
     alternativas.length !== 5 ||
@@ -31,8 +47,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     res.status(400).json({ erro: "Corpo da requisição inválido." });
     return;
   }
-
-  const subject = SUBJECT_MAP[materia as SubjectId];
 
   let client;
   try {
@@ -45,7 +59,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const letras = ["A", "B", "C", "D", "E"];
   const listaAlternativas = alternativas.map((alt, i) => `${letras[i]}) ${alt}`).join("\n");
 
-  const prompt = `Você é um professor especialista em "${subject.nome}", preparando um candidato para o concurso de Agente de Polícia Judiciária da PCPR 2026 (banca FGV).
+  const prompt = `Você é um professor especialista em "${nomeMateria}", preparando um candidato para ${prf ? CONTEXTO_PRF : CONTEXTO_PCPR}.
 
 Questão${topico ? ` (tópico: ${topico})` : ""}:
 ${enunciado}

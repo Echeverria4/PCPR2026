@@ -1,22 +1,43 @@
 import { useEffect, useRef, useState } from "react";
-import type { AttemptRecord, Confianca, Question, QuizMode } from "../lib/types";
+import type { AttemptRecord, Confianca, Question, QuizMode, SubjectId } from "../lib/types";
+import type { CursoId } from "../data/cursos";
 import { atualizarConfianca, recordAttempt } from "../lib/storage";
 import { formatarSegundos } from "../lib/format";
 import { ROTULO_CONFIANCA } from "../data/retaFinal";
 
 const LETRAS = ["A", "B", "C", "D", "E"];
 
-interface QuizProps {
-  questions: Question[];
-  modo: QuizMode;
-  onFinalizar: (respostas: AttemptRecord[]) => void;
-  onSair: () => void;
+/** Onde o quiz grava as respostas: cada curso tem o seu armazenamento. */
+export interface GravacaoQuiz<M extends string> {
+  registrar: (registro: AttemptRecord<M>) => void | Promise<void>;
+  atualizarConfianca: (questionId: string, respondidaEm: string, confianca: Confianca | undefined) => void;
 }
 
-export default function Quiz({ questions, modo, onFinalizar, onSair }: QuizProps) {
+const GRAVACAO_PCPR: GravacaoQuiz<SubjectId> = { registrar: recordAttempt, atualizarConfianca };
+
+interface QuizProps<M extends string> {
+  questions: Question<M>[];
+  modo: QuizMode;
+  onFinalizar: (respostas: AttemptRecord<M>[]) => void;
+  onSair: () => void;
+  /** Sem isso, grava no armazenamento da PCPR. */
+  gravacao?: GravacaoQuiz<M>;
+  /** Curso das questões, para a IA explicar no contexto certo (sem isso, PCPR). */
+  curso?: CursoId;
+}
+
+export default function Quiz<M extends string = SubjectId>({
+  questions,
+  modo,
+  onFinalizar,
+  onSair,
+  gravacao,
+  curso,
+}: QuizProps<M>) {
+  const grava = gravacao ?? (GRAVACAO_PCPR as unknown as GravacaoQuiz<M>);
   const [indice, setIndice] = useState(0);
   const [selecionada, setSelecionada] = useState<number | null>(null);
-  const [respostas, setRespostas] = useState<AttemptRecord[]>([]);
+  const [respostas, setRespostas] = useState<AttemptRecord<M>[]>([]);
   const [iaAberto, setIaAberto] = useState(false);
   const [iaCarregando, setIaCarregando] = useState(false);
   const [iaTexto, setIaTexto] = useState("");
@@ -27,7 +48,7 @@ export default function Quiz({ questions, modo, onFinalizar, onSair }: QuizProps
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const [tempoRespostaMs, setTempoRespostaMs] = useState<number | null>(null);
   const [confianca, setConfianca] = useState<Confianca | undefined>(undefined);
-  const registroRef = useRef<AttemptRecord | null>(null);
+  const registroRef = useRef<AttemptRecord<M> | null>(null);
 
   const questao = questions[indice];
   const ultimaQuestao = indice === questions.length - 1;
@@ -64,7 +85,7 @@ export default function Quiz({ questions, modo, onFinalizar, onSair }: QuizProps
     setTempoRespostaMs(tempoMs);
     setSelecionada(idx);
     const acertou = idx === questao.correta;
-    const registro: AttemptRecord = {
+    const registro: AttemptRecord<M> = {
       questionId: questao.id,
       materia: questao.materia,
       acertou,
@@ -75,7 +96,7 @@ export default function Quiz({ questions, modo, onFinalizar, onSair }: QuizProps
     };
     registroRef.current = registro;
     setRespostas((prev) => [...prev, registro]);
-    void recordAttempt(registro);
+    void grava.registrar(registro);
   }
 
   // A confiança vale mais marcada antes de clicar na resposta, mas pode ser ajustada até a próxima questão.
@@ -84,7 +105,7 @@ export default function Quiz({ questions, modo, onFinalizar, onSair }: QuizProps
     setConfianca(nova);
     const r = registroRef.current;
     if (selecionada === null || !r) return;
-    atualizarConfianca(r.questionId, r.respondidaEm, nova);
+    grava.atualizarConfianca(r.questionId, r.respondidaEm, nova);
     registroRef.current = { ...r, confianca: nova };
     setRespostas((prev) =>
       prev.map((x) => (x.questionId === r.questionId && x.respondidaEm === r.respondidaEm ? { ...x, confianca: nova } : x)),
@@ -117,6 +138,7 @@ export default function Quiz({ questions, modo, onFinalizar, onSair }: QuizProps
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          curso,
           materia: questao.materia,
           topico: questao.topico,
           enunciado: questao.enunciado,

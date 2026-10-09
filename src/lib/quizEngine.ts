@@ -18,7 +18,7 @@ export function shuffle<T>(arr: T[]): T[] {
  * fica concentrado nas mesmas letras (ex.: maioria em B), criando um padrão
  * explorável em vez de exigir conhecimento real do conteúdo.
  */
-export function embaralharAlternativas(q: Question): Question {
+export function embaralharAlternativas<M extends string>(q: Question<M>): Question<M> {
   const indices = shuffle([0, 1, 2, 3, 4]);
   const alternativas = indices.map((i) => q.alternativas[i]) as Question["alternativas"];
   const correta = indices.indexOf(q.correta) as Question["correta"];
