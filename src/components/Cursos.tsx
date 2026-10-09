@@ -4,6 +4,7 @@ import { CURSOS, type Curso, type CursoId } from "../data/cursos";
 import { BANCO, QUESTOES_POR_MATERIA } from "../data/questions";
 import { SUBJECTS, EDITAL_INFO } from "../data/subjects";
 import { INICIO_PROVA, DURACAO_SIMULADO_MIN } from "../data/retaFinal";
+import { PRF_MATERIAS, PRF_SITUACAO, PRF_ULTIMO_EDITAL } from "../data/prf";
 import { getLocalAttempts } from "../lib/storage";
 
 interface CursosProps {
@@ -222,8 +223,46 @@ export default function Cursos({ onAbrir }: CursosProps) {
         </CartaoCurso>
       );
     }
+    const ed = PRF_ULTIMO_EDITAL;
     return (
-      <CartaoCurso curso={curso} selos={[{ texto: "Em preparação", tom: "neutro" }]}>
+      <CartaoCurso
+        curso={curso}
+        selos={[
+          { texto: "Pré-edital", tom: "neutro" },
+          { texto: "Em preparação", tom: "neutro" },
+        ]}
+        detalhes={
+          <>
+            <dl className="curso-ficha">
+              <dt>Novo concurso</dt>
+              <dd>
+                {PRF_SITUACAO.texto} (situação em {PRF_SITUACAO.em})
+              </dd>
+              <dt>Último edital</dt>
+              <dd>
+                {ed.ano} · {ed.banca} · {ed.vagas} vagas
+              </dd>
+              <dt>Prova de {ed.ano}</dt>
+              <dd>
+                {ed.totalQuestoes} questões objetivas · {ed.alternativas} alternativas · {ed.pontos} pontos · eliminava
+                abaixo de {ed.minimoPct}% dos pontos
+              </dd>
+            </dl>
+            <p className="curso-legenda">Matérias da prova de {ed.ano}: questões × peso</p>
+            <ul className="curso-materias">
+              {PRF_MATERIAS.map((m) => (
+                <li key={m.id}>
+                  <span className="curso-materia-cor" style={{ background: m.cor }} aria-hidden="true" />
+                  <span className="curso-materia-nome">{m.nome}</span>
+                  <span className="curso-materia-qtd">
+                    {m.questoes} × {m.peso.toLocaleString("pt-BR")}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </>
+        }
+      >
         <p className="curso-aviso">
           O conteúdo começa depois da prova da PCPR. Ele terá questões, progresso e simulados próprios.
         </p>

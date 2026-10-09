@@ -21,8 +21,8 @@ export const CURSOS: Curso[] = [
   {
     id: "prf-adm",
     sigla: "PRF",
-    nome: "PRF — Administrativo",
-    orgao: "Polícia Rodoviária Federal · área administrativa",
+    nome: "PRF — Agente Administrativo",
+    orgao: "Polícia Rodoviária Federal · nível médio · banca a definir",
     disponivel: false,
   },
 ];
