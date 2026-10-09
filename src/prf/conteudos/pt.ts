@@ -159,7 +159,7 @@ No período composto por coordenação, as orações são independentes entre si
     texto: `A regra básica da vírgula é negativa: não se separa o sujeito do verbo, nem o verbo de seus complementos, mesmo quando o sujeito é longo. Uma vírgula sozinha entre esses termos é erro. Duas vírgulas que isolam uma intercalação são permitidas: "Os servidores, segundo a portaria, devem registrar o ponto".
 
 A vírgula é usada para isolar:
-• o aposto explicativo ("Curitiba, capital do Paraná, sediou o evento");
+• o aposto explicativo ("Brasília, capital federal, sediou o evento");
 • o vocativo ("Senhor Diretor, informo que...");
 • expressões explicativas (isto é, ou seja, por exemplo);
 • conjunções deslocadas para o meio da oração ("o prazo, porém, foi mantido");

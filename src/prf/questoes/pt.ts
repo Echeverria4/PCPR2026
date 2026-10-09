@@ -371,13 +371,13 @@ export const QUESTOES_PRF_PT: QuestaoPrf[] = [
     alternativas: [
       "O diretor viajou à Brasília para participar da reunião do conselho.",
       "A comitiva chegou à Portugal na manhã de terça-feira.",
-      "Na próxima semana, os agentes irão à Bahia e, depois, a Curitiba.",
+      "Na próxima semana, os agentes irão à Bahia e, depois, a Manaus.",
       "Depois do curso, o servidor retornou a Bahia, onde mora a família.",
       "Os fiscais voltaram à São Paulo depois da operação no litoral.",
     ],
     correta: 2,
     explicacao:
-      "Use o teste do “volto de” ou “volto da”: quem volta da Bahia vai à Bahia, com crase; quem volta de Curitiba, de Brasília, de Portugal ou de São Paulo vai a esses lugares, sem crase. Por isso só está correta a construção “irão à Bahia e, depois, a Curitiba”.",
+      "Use o teste do “volto de” ou “volto da”: quem volta da Bahia vai à Bahia, com crase; quem volta de Manaus, de Brasília, de Portugal ou de São Paulo vai a esses lugares, sem crase. Por isso só está correta a construção “irão à Bahia e, depois, a Manaus”.",
     origem: "banco",
   },
   {

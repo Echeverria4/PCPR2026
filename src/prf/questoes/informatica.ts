@@ -378,7 +378,7 @@ export const QUESTOES_PRF_INFO: QuestaoPrf[] = [
     materia: "info",
     topico: "Busca e pesquisa na web",
     enunciado:
-      "Uma pesquisa sobre acidentes na BR-277 traz muitos resultados sobre motocicletas, que não interessam ao relatório. Como tirar dos resultados as páginas que mencionam essa palavra?",
+      "Uma pesquisa sobre acidentes na BR-116 traz muitos resultados sobre motocicletas, que não interessam ao relatório. Como tirar dos resultados as páginas que mencionam essa palavra?",
     alternativas: [
       "Com o operador OR antes do termo, como em OR motocicleta",
       "Com o sinal de menos colado ao termo, como em -motocicleta",
