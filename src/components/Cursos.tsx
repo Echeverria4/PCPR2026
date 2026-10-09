@@ -7,6 +7,8 @@ import { SUBJECTS, EDITAL_INFO } from "../data/subjects";
 import { INICIO_PROVA, DURACAO_SIMULADO_MIN } from "../data/retaFinal";
 import { PRF_MATERIAS, PRF_SITUACAO, PRF_ULTIMO_EDITAL } from "../data/prf";
 import { getLocalAttempts } from "../lib/storage";
+// Só leitura do localStorage (prf:…): o banco da PRF continua fora do pacote principal.
+import { getTentativasPrf } from "../prf/armazenamento";
 
 interface CursosProps {
   onAbrir: (id: CursoId) => void;
@@ -64,6 +66,22 @@ function resumoPcpr() {
   return {
     total: BANCO.length,
     vistas,
+    acerto: tentativas.length > 0 ? Math.round((acertos / tentativas.length) * 100) : null,
+    ultimo,
+  };
+}
+
+/** Sem o total do banco: contá-lo exigiria baixar as questões da PRF já na central. */
+function resumoPrf() {
+  const tentativas = getTentativasPrf();
+  const acertos = tentativas.filter((t) => t.acertou).length;
+  let ultimo: number | null = null;
+  for (const t of tentativas) {
+    const ms = Date.parse(t.respondidaEm);
+    if (!Number.isNaN(ms) && (ultimo === null || ms > ultimo)) ultimo = ms;
+  }
+  return {
+    vistas: new Set(tentativas.map((t) => t.questionId)).size,
     acerto: tentativas.length > 0 ? Math.round((acertos / tentativas.length) * 100) : null,
     ultimo,
   };
@@ -154,6 +172,7 @@ export default function Cursos({ onAbrir }: CursosProps) {
   const [agora] = useState(() => Date.now());
   const pcpr = useMemo(() => resumoPcpr(), []);
   const pct = pcpr.total > 0 ? Math.round((pcpr.vistas / pcpr.total) * 100) : 0;
+  const prf = useMemo(() => resumoPrf(), []);
 
   function cartao(curso: Curso) {
     if (curso.id === "pcpr2026") {
@@ -231,11 +250,14 @@ export default function Cursos({ onAbrir }: CursosProps) {
         imagem={prfBrasao}
         selos={[
           { texto: "Pré-edital", tom: "neutro" },
-          { texto: "Em preparação", tom: "neutro" },
+          { texto: `Base: edital de ${ed.ano}`, tom: "neutro" },
         ]}
+        onAbrir={() => onAbrir(curso.id)}
         detalhes={
           <>
             <dl className="curso-ficha">
+              <dt>No app</dt>
+              <dd>Questões próprias e resumos de cada item do conteúdo programático de {ed.ano}</dd>
               <dt>Novo concurso</dt>
               <dd>
                 {PRF_SITUACAO.texto} (situação em {PRF_SITUACAO.em})
@@ -265,9 +287,29 @@ export default function Cursos({ onAbrir }: CursosProps) {
           </>
         }
       >
-        <p className="curso-aviso">
-          O conteúdo começa depois da prova da PCPR. Ele terá questões, progresso e simulados próprios.
-        </p>
+        <div className="curso-progresso">
+          <div className="curso-numeros">
+            <span>
+              {prf.vistas > 0 ? (
+                <>
+                  <strong>{prf.vistas}</strong> {prf.vistas === 1 ? "questão vista" : "questões vistas"}
+                </>
+              ) : (
+                "nenhuma questão respondida ainda"
+              )}
+            </span>
+            {prf.acerto !== null && (
+              <span>
+                acerto geral <strong>{prf.acerto}%</strong>
+              </span>
+            )}
+            {prf.ultimo !== null && (
+              <span>
+                último estudo <strong>{quando(prf.ultimo, agora)}</strong>
+              </span>
+            )}
+          </div>
+        </div>
       </CartaoCurso>
     );
   }

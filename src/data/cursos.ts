@@ -23,7 +23,7 @@ export const CURSOS: Curso[] = [
     sigla: "PRF",
     nome: "PRF — Agente Administrativo",
     orgao: "Polícia Rodoviária Federal · nível médio · banca a definir",
-    disponivel: false,
+    disponivel: true,
   },
 ];
 

@@ -4857,12 +4857,6 @@ button {
   color: var(--texto);
 }
 
-.curso-aviso {
-  margin: 10px 0 0;
-  font-size: 0.86rem;
-  color: var(--texto-fraco);
-}
-
 .curso-detalhes-botao {
   margin-top: 10px;
   padding: 4px 0;
