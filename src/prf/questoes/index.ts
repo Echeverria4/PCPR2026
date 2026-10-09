@@ -1,6 +1,7 @@
 import type { MateriaPrfId, QuestaoPrf } from "../../data/prf";
 import { QUESTOES_PRF_PT } from "./pt";
 import { QUESTOES_PRF_CON } from "./constitucional";
+import { QUESTOES_PRF_ADM } from "./administrativo";
 
 /** Banco da PRF: questões próprias, escritas a partir do conteúdo programático e da lei em vigor. */
 export const QUESTOES_PRF_POR_MATERIA: Record<MateriaPrfId, QuestaoPrf[]> = {
@@ -8,7 +9,7 @@ export const QUESTOES_PRF_POR_MATERIA: Record<MateriaPrfId, QuestaoPrf[]> = {
   etica: [],
   rlm: [],
   con: QUESTOES_PRF_CON,
-  adm: [],
+  adm: QUESTOES_PRF_ADM,
   administracao: [],
   arq: [],
   info: [],
