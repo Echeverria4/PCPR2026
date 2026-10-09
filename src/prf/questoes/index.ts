@@ -2,6 +2,7 @@ import type { MateriaPrfId, QuestaoPrf } from "../../data/prf";
 import { QUESTOES_PRF_PT } from "./pt";
 import { QUESTOES_PRF_CON } from "./constitucional";
 import { QUESTOES_PRF_ADM } from "./administrativo";
+import { QUESTOES_PRF_INFO } from "./informatica";
 
 /** Banco da PRF: questões próprias, escritas a partir do conteúdo programático e da lei em vigor. */
 export const QUESTOES_PRF_POR_MATERIA: Record<MateriaPrfId, QuestaoPrf[]> = {
@@ -12,7 +13,7 @@ export const QUESTOES_PRF_POR_MATERIA: Record<MateriaPrfId, QuestaoPrf[]> = {
   adm: QUESTOES_PRF_ADM,
   administracao: [],
   arq: [],
-  info: [],
+  info: QUESTOES_PRF_INFO,
   leg: [],
 };
 
