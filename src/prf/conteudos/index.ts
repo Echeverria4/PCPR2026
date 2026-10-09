@@ -1,12 +1,13 @@
 import type { ConteudoPrf, MateriaPrfId } from "../../data/prf";
 import { CONTEUDO_PRF_PT } from "./pt";
+import { CONTEUDO_PRF_CON } from "./constitucional";
 
 /** Resumos próprios da PRF, um por item do conteúdo programático. */
 export const CONTEUDO_PRF_POR_MATERIA: Record<MateriaPrfId, ConteudoPrf[]> = {
   pt: CONTEUDO_PRF_PT,
   etica: [],
   rlm: [],
-  con: [],
+  con: CONTEUDO_PRF_CON,
   adm: [],
   administracao: [],
   arq: [],
