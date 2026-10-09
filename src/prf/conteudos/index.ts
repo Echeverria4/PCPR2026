@@ -3,6 +3,7 @@ import { CONTEUDO_PRF_PT } from "./pt";
 import { CONTEUDO_PRF_CON } from "./constitucional";
 import { CONTEUDO_PRF_ADM } from "./administrativo";
 import { CONTEUDO_PRF_INFO } from "./informatica";
+import { CONTEUDO_PRF_ADMINISTRACAO } from "./administracao";
 
 /** Resumos próprios da PRF, um por item do conteúdo programático. */
 export const CONTEUDO_PRF_POR_MATERIA: Record<MateriaPrfId, ConteudoPrf[]> = {
@@ -11,7 +12,7 @@ export const CONTEUDO_PRF_POR_MATERIA: Record<MateriaPrfId, ConteudoPrf[]> = {
   rlm: [],
   con: CONTEUDO_PRF_CON,
   adm: CONTEUDO_PRF_ADM,
-  administracao: [],
+  administracao: CONTEUDO_PRF_ADMINISTRACAO,
   arq: [],
   info: CONTEUDO_PRF_INFO,
   leg: [],
