@@ -1,5 +1,6 @@
 import { useMemo, useState, type ReactNode } from "react";
 import pcprBrasao from "../assets/pcpr-brasao.png";
+import prfBrasao from "../assets/prf-brasao.png";
 import { CURSOS, type Curso, type CursoId } from "../data/cursos";
 import { BANCO, QUESTOES_POR_MATERIA } from "../data/questions";
 import { SUBJECTS, EDITAL_INFO } from "../data/subjects";
@@ -227,6 +228,7 @@ export default function Cursos({ onAbrir }: CursosProps) {
     return (
       <CartaoCurso
         curso={curso}
+        imagem={prfBrasao}
         selos={[
           { texto: "Pré-edital", tom: "neutro" },
           { texto: "Em preparação", tom: "neutro" },

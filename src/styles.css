@@ -4730,6 +4730,10 @@ button {
   object-fit: contain;
 }
 
+.curso-card-off .curso-thumb-img {
+  cursor: default;
+}
+
 .curso-thumb-sigla {
   border: 2px dashed var(--borda-forte);
   background: var(--bg);
