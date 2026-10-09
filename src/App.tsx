@@ -76,7 +76,12 @@ interface SessaoAtiva {
   iniciadoEm: string;
 }
 
-export default function App() {
+interface AppProps {
+  /** Volta para a central de cursos. */
+  onTrocarCurso?: () => void;
+}
+
+export default function App({ onTrocarCurso }: AppProps) {
   const [view, setView] = useState<View>("home");
   const [attempts, setAttempts] = useState<AttemptRecord[]>(() => getLocalAttempts());
   const [wrongCount, setWrongCount] = useState(() => getWrongQueue().length);
@@ -250,6 +255,7 @@ export default function App() {
       onVoltar={voltar}
       onIrParaAuth={() => setView("auth")}
       onLogout={logout}
+      onTrocarCurso={onTrocarCurso}
       abaAtiva={
         view === "reta-final" ||
         view === "conteudo" ||

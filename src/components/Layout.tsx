@@ -21,6 +21,7 @@ interface LayoutProps {
   onVoltar: () => void;
   onIrParaAuth: () => void;
   onLogout: () => void;
+  onTrocarCurso?: () => void;
   abaAtiva?: AbaPrincipal;
   onTrocarAba?: (aba: AbaPrincipal) => void;
 }
@@ -33,6 +34,7 @@ export default function Layout({
   onVoltar,
   onIrParaAuth,
   onLogout,
+  onTrocarCurso,
   abaAtiva,
   onTrocarAba,
 }: LayoutProps) {
@@ -51,6 +53,11 @@ export default function Layout({
             {mostrarVoltar && (
               <button className="botao" onClick={onVoltar}>
                 {rotuloVoltar}
+              </button>
+            )}
+            {!mostrarVoltar && onTrocarCurso && (
+              <button className="botao" onClick={onTrocarCurso} title="Voltar para a central de cursos">
+                ⇄ Cursos
               </button>
             )}
             {isSupabaseConfigured ? (
