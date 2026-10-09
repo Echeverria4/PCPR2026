@@ -7,12 +7,13 @@ import { CONTEUDO_PRF_ADMINISTRACAO } from "./administracao";
 import { CONTEUDO_PRF_ARQ } from "./arquivologia";
 import { CONTEUDO_PRF_LEG } from "./legislacao";
 import { CONTEUDO_PRF_ETICA } from "./etica";
+import { CONTEUDO_PRF_RLM } from "./raciocinio";
 
 /** Resumos próprios da PRF, um por item do conteúdo programático. */
 export const CONTEUDO_PRF_POR_MATERIA: Record<MateriaPrfId, ConteudoPrf[]> = {
   pt: CONTEUDO_PRF_PT,
   etica: CONTEUDO_PRF_ETICA,
-  rlm: [],
+  rlm: CONTEUDO_PRF_RLM,
   con: CONTEUDO_PRF_CON,
   adm: CONTEUDO_PRF_ADM,
   administracao: CONTEUDO_PRF_ADMINISTRACAO,

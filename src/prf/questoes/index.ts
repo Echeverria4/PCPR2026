@@ -7,12 +7,13 @@ import { QUESTOES_PRF_ADMINISTRACAO } from "./administracao";
 import { QUESTOES_PRF_ARQ } from "./arquivologia";
 import { QUESTOES_PRF_LEG } from "./legislacao";
 import { QUESTOES_PRF_ETICA } from "./etica";
+import { QUESTOES_PRF_RLM } from "./raciocinio";
 
 /** Banco da PRF: questões próprias, escritas a partir do conteúdo programático e da lei em vigor. */
 export const QUESTOES_PRF_POR_MATERIA: Record<MateriaPrfId, QuestaoPrf[]> = {
   pt: QUESTOES_PRF_PT,
   etica: QUESTOES_PRF_ETICA,
-  rlm: [],
+  rlm: QUESTOES_PRF_RLM,
   con: QUESTOES_PRF_CON,
   adm: QUESTOES_PRF_ADM,
   administracao: QUESTOES_PRF_ADMINISTRACAO,
