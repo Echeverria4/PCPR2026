@@ -4,6 +4,7 @@ import { QUESTOES_PRF_CON } from "./constitucional";
 import { QUESTOES_PRF_ADM } from "./administrativo";
 import { QUESTOES_PRF_INFO } from "./informatica";
 import { QUESTOES_PRF_ADMINISTRACAO } from "./administracao";
+import { QUESTOES_PRF_ARQ } from "./arquivologia";
 
 /** Banco da PRF: questões próprias, escritas a partir do conteúdo programático e da lei em vigor. */
 export const QUESTOES_PRF_POR_MATERIA: Record<MateriaPrfId, QuestaoPrf[]> = {
@@ -13,7 +14,7 @@ export const QUESTOES_PRF_POR_MATERIA: Record<MateriaPrfId, QuestaoPrf[]> = {
   con: QUESTOES_PRF_CON,
   adm: QUESTOES_PRF_ADM,
   administracao: QUESTOES_PRF_ADMINISTRACAO,
-  arq: [],
+  arq: QUESTOES_PRF_ARQ,
   info: QUESTOES_PRF_INFO,
   leg: [],
 };
