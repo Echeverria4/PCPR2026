@@ -3,6 +3,7 @@ import { SUBJECTS } from "../data/subjects";
 import { CONTEUDO_POR_MATERIA } from "../data/conteudos";
 import { RAIO_X } from "../data/raioX";
 import { videosDoTopico } from "../data/videosTopicos";
+import { LEIS_CURSO, LEIS_DE_PASSAGEM, type LeiCurso } from "../data/leisCurso";
 import type { RaioX, SubjectId } from "../lib/types";
 import { VideoMini } from "./VideoCard";
 
@@ -41,6 +42,53 @@ function CaixaRaioX({ raioX }: { raioX: RaioX }) {
         </div>
       )}
     </section>
+  );
+}
+
+const GRUPOS_LEIS: { fonte: LeiCurso["fonte"]; titulo: string }[] = [
+  { fonte: "caderno", titulo: "Lei seca com caderno no curso" },
+  { fonte: "aula", titulo: "Estudadas nas aulas" },
+  { fonte: "novidade", titulo: "Novidades 2024–2026" },
+];
+
+function LeisDoCurso({ materia }: { materia: SubjectId }) {
+  const leis = LEIS_CURSO[materia] ?? [];
+  const passagem = LEIS_DE_PASSAGEM[materia];
+  if (leis.length === 0) return null;
+  return (
+    <details className="leis-curso">
+      <summary>📜 Leis do curso ({leis.length}) — toque para abrir</summary>
+      <p className="leis-curso-intro">
+        Todas as leis que o curso estuda nesta matéria, com o essencial de cada uma. Só cai lei em
+        vigor até 03/07/2026 (item 25.15 do edital).
+      </p>
+      {GRUPOS_LEIS.map(({ fonte, titulo }) => {
+        const grupo = leis.filter((l) => l.fonte === fonte);
+        if (grupo.length === 0) return null;
+        return (
+          <div key={fonte} className="leis-grupo">
+            <h4>
+              {titulo} ({grupo.length})
+            </h4>
+            {grupo.map((l) => (
+              <div key={l.norma} className="lei-item">
+                <div className="lei-cabecalho">
+                  <strong>{l.norma}</strong> <span>{l.nome}</span>
+                </div>
+                <p>{l.resumo}</p>
+                {l.alerta && <div className="lei-alerta">⚠️ {l.alerta}</div>}
+              </div>
+            ))}
+          </div>
+        );
+      })}
+      {passagem && (
+        <div className="leis-grupo">
+          <h4>Citadas de passagem</h4>
+          <p className="leis-passagem">{passagem}</p>
+        </div>
+      )}
+    </details>
   );
 }
 
@@ -142,6 +190,8 @@ export default function Conteudo() {
       </h2>
 
       {raioX && <CaixaRaioX raioX={raioX} />}
+
+      <LeisDoCurso materia={materiaSelecionada} />
 
       {topicos.length === 0 ? (
         <div className="vazio">Conteúdo desta matéria ainda em preparação.</div>

@@ -1752,9 +1752,85 @@ button {
   color: var(--azul);
 }
 
+.leis-curso {
+  margin: 0 0 22px;
+  border: 1px solid var(--borda-forte);
+  background: var(--bg-card);
+  border-radius: var(--raio);
+  padding: 14px 22px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.leis-curso summary {
+  cursor: pointer;
+  font-family: var(--fonte-cond);
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ouro-forte);
+}
+
+.leis-curso[open] summary {
+  margin-bottom: 10px;
+}
+
+.leis-curso-intro {
+  font-size: 0.88rem;
+  color: var(--texto-fraco);
+  margin: 0 0 14px;
+}
+
+.leis-grupo {
+  margin-top: 16px;
+}
+
+.leis-grupo h4 {
+  margin: 0 0 8px;
+  font-family: var(--fonte-cond);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+}
+
+.lei-item {
+  background: var(--bg-elevado);
+  border-left: 3px solid var(--ouro);
+  border-radius: var(--raio);
+  padding: 10px 14px;
+  margin-bottom: 8px;
+}
+
+.lei-cabecalho strong {
+  color: var(--ouro-forte);
+}
+
+.lei-cabecalho span {
+  color: var(--texto-fraco);
+  font-size: 0.88rem;
+}
+
+.lei-item p,
+.leis-passagem {
+  margin: 6px 0 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.lei-alerta {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: var(--vermelho);
+}
+
 @media (max-width: 640px) {
   .raiox {
     padding: 14px;
+  }
+
+  .leis-curso {
+    padding: 12px 14px;
   }
 
   .raiox-grade {
