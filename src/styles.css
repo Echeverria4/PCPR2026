@@ -473,6 +473,25 @@ button {
   opacity: 0.5;
 }
 
+.materia-todas {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 6px 10px;
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  background: none;
+  color: var(--texto-fraco);
+  font-size: 0.85rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.materia-todas:hover {
+  border-color: var(--cor-materia, var(--ouro));
+  color: var(--texto);
+}
+
 .materia-reset {
   position: absolute;
   top: 8px;

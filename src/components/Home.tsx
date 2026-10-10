@@ -8,7 +8,7 @@ interface HomeProps {
   stats: SubjectStats[];
   wrongCount: number;
   materiaFoco: SubjectId | null;
-  onIniciar: (mode: QuizMode, materia?: SubjectId) => void;
+  onIniciar: (mode: QuizMode, materia?: SubjectId, quantidade?: number) => void;
   onResetarMateria: (materia: SubjectId) => void;
   onAbrirRetaFinal: () => void;
 }
@@ -115,6 +115,14 @@ export default function Home({ stats, wrongCount, materiaFoco, onIniciar, onRese
                   </div>
                 )}
               </button>
+              {disponiveis > 10 && (
+                <button
+                  className="materia-todas"
+                  onClick={() => onIniciar("materia", s.id, disponiveis)}
+                >
+                  📚 Fazer todas as {disponiveis} questões
+                </button>
+              )}
               {st && st.respondidas > 0 && (
                 <button
                   className="materia-reset"

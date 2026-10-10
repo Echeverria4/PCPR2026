@@ -136,9 +136,9 @@ export default function App({ onTrocarCurso }: AppProps) {
     return recomendadas.length > 0 ? recomendadas[0].materia : null;
   }, [stats]);
 
-  function iniciarQuiz(mode: QuizMode, materia?: SubjectId) {
+  function iniciarQuiz(mode: QuizMode, materia?: SubjectId, quantidade?: number) {
     let questions: Question[] = [];
-    if (mode === "materia" && materia) questions = buildSessaoMateria(materia);
+    if (mode === "materia" && materia) questions = buildSessaoMateria(materia, quantidade);
     else if (mode === "prova") questions = buildSessaoProva();
     else if (mode === "revisao") questions = buildSessaoRevisao();
     else if (mode === "treino-alvo" && materia) questions = buildSessaoTreinoAlvo(materia);
