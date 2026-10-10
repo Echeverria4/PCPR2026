@@ -235,4 +235,179 @@ export const COMPLEMENTOS_CURSO: Partial<Record<SubjectId, ComplementoCurso[]>> 
         "Prevenção (García-Pablos):\n• Primária — ataca a raiz do problema, para toda a população, a longo prazo: educação, moradia, emprego, saúde.\n• Secundária — atua onde e quando o crime aparece (grupos e áreas de risco), a curto e médio prazo: policiamento ostensivo, iluminação, urbanismo.\n• Terciária — dirigida ao condenado, para evitar a reincidência: execução penal, ressocialização.\n\nModelos de reação ao delito: dissuasório (a punição certa e rápida intimida), ressocializador (intervenção na pessoa do infrator para reinseri-lo) e integrador/restaurativo (reparação do dano e reconciliação entre autor, vítima e comunidade).\n\nFins da pena: prevenção geral negativa (intimidar a sociedade) e positiva (reafirmar a confiança na norma); prevenção especial negativa (neutralizar o condenado) e positiva (ressocializá-lo); teoria mista (retribuição + prevenção), adotada pelo CP no art. 59.\n\nCifras da criminalidade:\n• Negra (oculta) — crimes que nunca chegam ao conhecimento do Estado; é a diferença entre a criminalidade real e a registrada.\n• Dourada — crimes da elite, de colarinho branco (sonegação, corrupção, crimes financeiros) que não aparecem. É a mais cobrada.\n• Cinza — chegam à polícia, mas não viram processo (resolvidos na delegacia, sem representação).\n• Amarela — violência policial não denunciada por medo.\n• Verde — crimes ambientais não revelados.\n• Rosa — crimes de homofobia e transfobia não notificados.",
     },
   ],
+  rlm: [
+    {
+      titulo: "Condicional disfarçada, suficiente × necessária e tautologia",
+      aula: "Aulas 04 e 07 — Conectivos e Classificação de proposição composta",
+      texto:
+        "Formas de dizer \"se p, então q\" sem usar \"se… então\":\n• \"p é condição suficiente para q\" → se p, então q.\n• \"q é condição necessária para p\" → se p, então q.\n• \"Quando p, q\", \"Toda vez que p, q\", \"Caso p, q\", \"p implica q\" → se p, então q.\n• \"p somente se q\" / \"Só p se q\" → se p, então q (o \"somente se\" marca o consequente).\n\nBicondicional (p ↔ q): \"p se e somente se q\" ou \"p é condição necessária e suficiente para q\". É verdadeira quando p e q têm o mesmo valor.\n\"Ou p ou q\" (disjunção exclusiva): verdadeira só quando exatamente uma das duas é verdadeira — é a negação da bicondicional.\n\nClassificação da proposição composta pela última coluna da tabela-verdade:\n• Tautologia — sempre V (ex.: p ∨ ¬p).\n• Contradição — sempre F (ex.: p ∧ ¬p).\n• Contingência — ora V, ora F (a maioria das proposições).",
+      exemplos: [
+        "\"Ser aprovado é suficiente para ser nomeado\" = Se é aprovado, então é nomeado.",
+        "\"Ter CNH é necessário para dirigir\" = Se dirige, então tem CNH (e não o contrário).",
+        "\"Só entra quem tem crachá\" = Se entra, então tem crachá.",
+        "(p → q) ↔ (¬q → ¬p) é tautologia: a condicional equivale à sua contrapositiva.",
+      ],
+    },
+    {
+      titulo: "Lógica de argumentação: validade e falácias",
+      aula: "Aula 09 — Lógica de Argumentação",
+      texto:
+        "Argumento = premissas + conclusão. É válido quando, sendo as premissas verdadeiras, a conclusão é obrigatoriamente verdadeira. A validade depende da FORMA, não de o conteúdo ser verdadeiro no mundo real: há argumento válido com premissa falsa e argumento inválido com tudo verdadeiro.\n\nMétodo prático: considere todas as premissas verdadeiras, comece pela mais simples (proposição simples ou conjunção) e descubra o valor de cada letra; a conclusão tem de sair verdadeira. Para provar que é inválido, basta achar um cenário com premissas V e conclusão F.\n\nFormas válidas:\n• Modus ponens: p → q; p; logo q.\n• Modus tollens: p → q; ¬q; logo ¬p.\n• Silogismo disjuntivo: p ∨ q; ¬p; logo q.\n• Silogismo hipotético: p → q; q → r; logo p → r.\n\nFalácias (formas inválidas):\n• Afirmar o consequente: p → q; q; logo p.\n• Negar o antecedente: p → q; ¬p; logo ¬q.",
+      exemplos: [
+        "\"Se chove, a rua molha. A rua está molhada. Logo, choveu.\" → inválido (afirma o consequente: alguém pode ter lavado a rua).",
+        "\"Se chove, a rua molha. A rua não está molhada. Logo, não choveu.\" → válido (modus tollens).",
+        "\"Todo cachorro voa. Rex é cachorro. Logo, Rex voa.\" → válido, mesmo com a premissa falsa.",
+      ],
+    },
+    {
+      titulo: "Verdades e mentiras",
+      aula: "Aula 13 — Verdades e Mentiras",
+      texto:
+        "Roteiro:\n1) Anote quem diz o quê.\n2) Procure duas falas contraditórias (uma nega exatamente a outra): exatamente uma delas é verdadeira — isso já consome um \"verdadeiro\" do enunciado.\n3) Sem contradição direta, teste hipóteses: suponha um culpado (ou um mentiroso) e conte quantas falas ficam verdadeiras; a hipótese que bate com o enunciado é a resposta.\n\nCuidado: falas equivalentes (que dizem a mesma coisa) são ambas verdadeiras ou ambas falsas. Quem mente diz o contrário da verdade em tudo, inclusive sobre si mesmo.",
+      exemplos: [
+        "Um dos três quebrou o vidro e só um diz a verdade. A: \"Foi o B.\" B: \"Não fui eu.\" C: \"Não fui eu.\" A e B se contradizem, então a única verdade está entre eles e C mente: foi o C. Conferindo: A mente (não foi o B) e B diz a verdade — 1 verdade só.",
+        "Se supor \"foi o A\" deixa duas falas verdadeiras quando o enunciado diz uma, a hipótese cai.",
+      ],
+    },
+    {
+      titulo: "Juros simples (e o contraste com o composto)",
+      aula: "Aula 07 — Juros Simples",
+      texto:
+        "No regime simples, os juros incidem sempre sobre o capital inicial e crescem em progressão aritmética.\n• J = C · i · t\n• M = C + J = C · (1 + i · t)\nRegra de ouro: taxa e tempo na MESMA unidade (taxa mensal com tempo em meses). Taxas proporcionais: 2% a.m. = 24% a.a. no simples (basta multiplicar). Ano comercial = 360 dias; mês comercial = 30 dias.\n\nComposto (juros sobre juros): M = C · (1 + i)^t, em progressão geométrica. Com a mesma taxa: para menos de 1 período, o simples rende MAIS; em exatamente 1 período, rendem igual; acima de 1 período, o composto rende mais.",
+      exemplos: [
+        "R$ 1.000 a 2% a.m. por 6 meses: J = 1.000 · 0,02 · 6 = R$ 120; M = R$ 1.120.",
+        "R$ 500 viraram R$ 600 em 10 meses: J = 100 = 500 · i · 10 → i = 2% a.m.",
+        "Em quanto tempo um capital dobra a 5% a.m. (simples)? J = C → C · 0,05 · t = C → t = 20 meses.",
+        "36% a.a. por 3 meses: taxa mensal de 3% → J = C · 0,03 · 3 = 9% do capital.",
+      ],
+    },
+    {
+      titulo: "Divisibilidade, primos, MMC/MDC, potências e radicais",
+      aula: "Aula 02 — Operações Básicas",
+      texto:
+        "Divisibilidade: por 2 (termina em algarismo par); por 3 (soma dos algarismos divisível por 3); por 4 (os dois últimos algarismos formam múltiplo de 4); por 5 (termina em 0 ou 5); por 6 (divisível por 2 e por 3); por 9 (soma dos algarismos divisível por 9); por 10 (termina em 0).\nPrimo: tem exatamente dois divisores, 1 e ele mesmo. O 2 é o único primo par; o 1 não é primo.\n\nMMC → quando os eventos voltam a coincidir (\"juntos de novo\", \"ao mesmo tempo\"). MDC → quando se divide em partes iguais, do maior tamanho possível, sem sobra. Propriedade: MMC(a, b) · MDC(a, b) = a · b.\n\nPotências: a^m · a^n = a^(m+n); a^m ÷ a^n = a^(m−n); (a^m)^n = a^(m·n); a^0 = 1 (a ≠ 0); a^(−n) = 1/a^n. Base negativa com expoente par dá positivo; com ímpar, negativo. Atenção: −2² = −4, mas (−2)² = 4 (no Excel, =-2^2 dá 4, porque o sinal é aplicado antes).\nRadicais: √(a·b) = √a · √b; a^(m/n) = raiz n-ésima de a^m; racionalização: 1/√2 = √2/2.",
+      exemplos: [
+        "Dois ônibus saem juntos, um a cada 6 dias e o outro a cada 8: voltam a sair juntos em MMC(6, 8) = 24 dias.",
+        "Cortar fitas de 12 m e 18 m em pedaços iguais, os maiores possíveis: MDC(12, 18) = 6 m (2 + 3 = 5 pedaços).",
+        "MMC(12, 18) = 36 e MDC = 6 → 36 · 6 = 216 = 12 · 18.",
+        "2³ · 2⁴ = 2⁷ = 128; 8^(2/3) = (∛8)² = 4.",
+      ],
+    },
+    {
+      titulo: "Conjuntos numéricos, frações e dízimas periódicas",
+      aula: "Aulas 01 e 03 — Conjuntos Numéricos e Frações",
+      texto:
+        "N ⊂ Z ⊂ Q ⊂ R. Racional (Q) é todo número que pode ser escrito como fração de inteiros com denominador diferente de zero: inteiros, decimais exatos e dízimas periódicas. Irracional: decimal infinito e não periódico (√2, π). Reais = racionais + irracionais. N* exclui o zero.\n\nFrações: somar ou subtrair exige o mesmo denominador (use o MMC); multiplicar = numerador × numerador e denominador × denominador; dividir = multiplicar pelo inverso da segunda. \"Fração de fração\" é multiplicação (2/3 de 3/4 = 1/2).\n\nFração geratriz:\n• Dízima simples: o período sobre tantos 9 quantos forem os algarismos do período.\n• Dízima composta: (parte não periódica seguida do período − parte não periódica) sobre tantos 9 quantos forem os algarismos do período, seguidos de tantos 0 quantos forem os da parte não periódica.\n\nIntervalos: colchete voltado para o número [ ] inclui o extremo; voltado para fora ] [ exclui; no infinito, o intervalo é sempre aberto.",
+      exemplos: [
+        "0,333… = 3/9 = 1/3.",
+        "0,1212… = 12/99 = 4/33.",
+        "1,2333… = 1 + (23 − 2)/90 = 1 + 21/90 = 111/90 = 37/30.",
+        "0,999… = 9/9 = 1 (é exatamente 1, não \"quase 1\").",
+        "[2, 5[ = {x ∈ R | 2 ≤ x < 5}.",
+      ],
+    },
+    {
+      titulo: "Geometria plana e trigonometria no triângulo retângulo",
+      aula: "Aulas 09 e 10 — Geometria Plana e Trigonometria",
+      texto:
+        "Soma dos ângulos internos de um polígono de n lados: S = (n − 2) · 180°; no polígono regular, cada ângulo = S ÷ n. Triângulo: soma 180°; o ângulo externo é igual à soma dos dois internos não adjacentes.\nTeorema de Tales: retas paralelas cortadas por transversais determinam segmentos proporcionais.\nPitágoras (triângulo retângulo): a² = b² + c² — o quadrado da hipotenusa é a soma dos quadrados dos catetos. Ternos que caem: 3-4-5, 5-12-13, 8-15-17 e seus múltiplos.\n\nÁreas: retângulo b·h; quadrado l²; triângulo b·h/2; paralelogramo b·h; trapézio (B + b)·h/2; losango D·d/2; círculo πr². Comprimento da circunferência: 2πr. Mudança de escala: multiplicar as medidas por k multiplica a área por k².\n\nTrigonometria: seno = cateto oposto ÷ hipotenusa; cosseno = cateto adjacente ÷ hipotenusa; tangente = oposto ÷ adjacente.\n• 30°: sen 1/2, cos √3/2, tg √3/3\n• 45°: sen √2/2, cos √2/2, tg 1\n• 60°: sen √3/2, cos 1/2, tg √3\nsen² x + cos² x = 1; sen x = cos (90° − x).",
+      exemplos: [
+        "Hexágono: S = 4 · 180° = 720°; se regular, cada ângulo mede 120°.",
+        "Escada de 5 m com o pé a 3 m da parede alcança √(25 − 9) = 4 m de altura.",
+        "Dobrar o raio de um círculo quadruplica a área (k = 2 → k² = 4).",
+        "Rampa de 10 m inclinada a 30° sobe 10 · sen 30° = 5 m.",
+      ],
+    },
+    {
+      titulo: "Probabilidade: regra do OU, regra do E e dois dados",
+      aula: "Aula 12 — Probabilidade",
+      texto:
+        "P(A) = casos favoráveis ÷ casos possíveis (todos igualmente prováveis). Sempre 0 ≤ P ≤ 1, e P(não A) = 1 − P(A).\n• OU (união): P(A ∪ B) = P(A) + P(B) − P(A ∩ B). Se os eventos são mutuamente exclusivos (não acontecem juntos), basta somar.\n• E (eventos em sequência): multiplica — P(A e B) = P(A) · P(B) quando são independentes. Sem reposição, o segundo fator muda.\n• \"Pelo menos um\" = 1 − P(nenhum).\n\nDois dados: 6 · 6 = 36 resultados. A soma 7 é a mais provável (6 casos → 1/6); as somas 2 e 12 são as menos prováveis (1/36 cada).",
+      exemplos: [
+        "Carta de um baralho de 52 que seja de copas OU figura (J, Q, K): 13/52 + 12/52 − 3/52 = 22/52 = 11/26.",
+        "Duas moedas: P(duas caras) = 1/2 · 1/2 = 1/4; P(pelo menos uma cara) = 1 − 1/4 = 3/4.",
+        "Urna com 3 bolas azuis e 2 vermelhas, duas retiradas sem reposição: P(ambas azuis) = 3/5 · 2/4 = 3/10.",
+      ],
+    },
+  ],
+  cont: [
+    {
+      titulo: "Objeto, aziendas e usuários da informação contábil",
+      aula: "Aula 01 — Contabilidade Básica",
+      texto:
+        "A Contabilidade é uma ciência social aplicada. Seu objeto é o patrimônio das entidades e seu objetivo, fornecer informação útil para a tomada de decisão. Funções: administrativa (controlar o patrimônio) e econômica (apurar o resultado — lucro ou prejuízo).\n\nAzienda: o patrimônio somado à gestão que o administra. Pode ter fins lucrativos (empresas) ou não (associações, fundações, entes públicos). A teoria aziendalista (escola italiana) via a Contabilidade como ciência da administração econômica da azienda.\n\nUsuários: internos (administradores, gestores, sócios que administram) e externos (investidores, credores, fisco, clientes, fornecedores, empregados, sociedade). Pela Estrutura Conceitual (CPC 00), os relatórios contábeis de propósito geral se dirigem aos usuários PRIMÁRIOS: investidores, credores por empréstimo e outros credores, existentes e potenciais, que não podem exigir informações sob medida. A administração e os reguladores também usam esses relatórios, mas não são o público-alvo.",
+    },
+    {
+      titulo: "Ativo, passivo e PL: definições, situações líquidas e goodwill",
+      aula: "Aula 02 — Patrimônio e Contas de Resultado",
+      texto:
+        "Estrutura Conceitual (CPC 00):\n• Ativo — recurso econômico presente CONTROLADO pela entidade, resultante de eventos passados; recurso econômico é um direito com potencial de gerar benefícios econômicos. Importa o controle, não a propriedade jurídica.\n• Passivo — obrigação presente de transferir um recurso econômico, resultante de eventos passados. Três critérios: há uma obrigação; ela é de transferir recurso econômico; e é presente, fruto de evento passado.\n• Patrimônio Líquido — interesse residual nos ativos depois de deduzidos os passivos (PL = A − P). Também chamado de situação líquida ou \"passivo não exigível\".\n\nSituações líquidas: A > P → PL positivo (a mais comum); A = P → PL nulo; A < P → PL negativo (passivo a descoberto). O ativo nunca é negativo.\n\nTeoria da entidade: a empresa é distinta dos sócios (base do princípio da entidade). Teoria do proprietário: o patrimônio é visto como dos sócios.\n\nGoodwill (ágio por expectativa de rentabilidade futura): o que se paga a mais numa aquisição, acima do valor justo dos ativos líquidos identificáveis; não é amortizado, só testado para redução ao valor recuperável (impairment). Pagar menos que o valor justo é compra vantajosa (badwill), reconhecida como ganho.\n\nMensuração: custo histórico (valor da transação, a base mais comum) × valor atual (valor justo, valor em uso, custo corrente).\n\nEncerramento do exercício: as contas de resultado (receitas e despesas) são zeradas contra a Apuração do Resultado do Exercício (ARE); o lucro ou prejuízo vai para o PL. Contas patrimoniais não se encerram — passam para o exercício seguinte.",
+      exemplos: [
+        "Bens R$ 80 mil + direitos R$ 20 mil; obrigações R$ 120 mil → PL = −R$ 20 mil: passivo a descoberto.",
+        "Paga-se R$ 10 milhões por uma empresa cujos ativos líquidos valem R$ 7 milhões a valor justo → goodwill de R$ 3 milhões.",
+      ],
+    },
+    {
+      titulo: "Escrituração: partidas dobradas, fatos contábeis e livros",
+      aula: "Aula 03 — Escrituração Contábil",
+      texto:
+        "Fato contábil altera o patrimônio (compra, venda, pagamento) e é escriturado. Ato administrativo não altera (assinar contrato, admitir empregado, prestar aval ou fiança) e não é escriturado — no máximo, em contas de compensação.\n\nMétodo das partidas dobradas (sistematizado por Luca Pacioli em 1494): não há débito sem crédito de igual valor; a soma dos débitos é sempre igual à dos créditos.\nNatureza das contas: devedora (aumenta a débito) — ativo e despesas; credora (aumenta a crédito) — passivo, PL e receitas. Contas retificadoras têm natureza oposta à do grupo (depreciação acumulada, perdas estimadas com créditos de liquidação duvidosa, ações em tesouraria).\n\nFatos contábeis:\n• Permutativos (qualitativos) — trocas entre contas patrimoniais, sem alterar o PL (compra à vista, pagamento de dívida).\n• Modificativos — alteram o PL: aumentativos (receita) ou diminutivos (despesa).\n• Mistos (compostos) — permutação e modificação ao mesmo tempo (recebimento de duplicata com juros ou com desconto).\n\nFórmulas de lançamento: 1ª (1 débito / 1 crédito), 2ª (1 débito / vários créditos), 3ª (vários débitos / 1 crédito), 4ª (vários / vários).\n\nLivros: Diário — registro cronológico de todas as operações (obrigatório); Razão — registro por conta, mostra o saldo de cada uma. Erro se corrige por estorno (lançamento inverso), nunca com rasuras, emendas ou entrelinhas (Código Civil, art. 1.183). O pequeno empresário, como o MEI, é dispensado da escrituração (CC, art. 1.179, §2º).",
+      exemplos: [
+        "Compra de mercadoria à vista: D – Mercadorias / C – Caixa (permutativo, 1ª fórmula).",
+        "Pagamento de aluguel: D – Despesa de aluguel / C – Caixa (modificativo diminutivo).",
+        "Recebimento de duplicata de R$ 1.000 com 5% de desconto concedido: D – Caixa 950 e D – Descontos concedidos 50 / C – Duplicatas a receber 1.000 (misto, 3ª fórmula).",
+      ],
+    },
+    {
+      titulo: "Perícia contábil, DFC e DVA",
+      aula: "Aula 09 — Perícia Contábil",
+      texto:
+        "Perícia contábil (NBC TP 01): procedimentos técnico-científicos que levam à instância decisória elementos de prova para solucionar o litígio. Espécies: judicial (no processo), extrajudicial (por vontade das partes, fora do Judiciário) e arbitral (no juízo arbitral). Só a exerce o contador registrado no CRC.\n• Laudo pericial contábil — feito pelo perito do juízo, nomeado pelo juiz.\n• Parecer técnico-contábil — feito pelo assistente técnico, contratado pela parte.\n\nDFC — Demonstração dos Fluxos de Caixa (CPC 03 / NBC TG 03): entradas e saídas de caixa e equivalentes de caixa (aplicações de curto prazo, alta liquidez e risco insignificante — em regra, vencimento em até 3 meses). Três atividades: operacionais (o negócio: receber de clientes, pagar fornecedores e salários), de investimento (comprar e vender imobilizado e participações) e de financiamento (tomar e pagar empréstimos, aporte de capital, dividendos pagos). Métodos: direto (mostra recebimentos e pagamentos brutos) e indireto (parte do lucro líquido e ajusta o que não mexe no caixa, como a depreciação). Obrigatória pela Lei 6.404/76, art. 176, IV; a companhia fechada com PL inferior a R$ 2 milhões na data do balanço está dispensada (art. 176, §6º).\n\nDVA — Demonstração do Valor Adicionado (CPC 09 / NBC TG 09): a riqueza gerada pela empresa e como foi distribuída — pessoal; impostos, taxas e contribuições; remuneração de capitais de terceiros (juros, aluguéis); e remuneração de capitais próprios (dividendos, lucros retidos). Inclui o valor adicionado recebido em transferência (equivalência patrimonial, receitas financeiras). Obrigatória para as companhias abertas (art. 176, V).\n\nAtenção: DFC é a norma 03; DVA é a 09 — não troque.",
+    },
+  ],
+  est: [
+    {
+      titulo: "Média ponderada, dados agrupados e propriedades das medidas",
+      aula: "Aulas 03, 07 e 08 — Média, Variância e Desvio Padrão",
+      texto:
+        "Média ponderada: cada valor multiplicado pelo seu peso, somado e dividido pela soma dos pesos. Em tabela de frequências, o peso de cada valor é a sua frequência. Em dados agrupados por classes, cada classe é representada pelo seu ponto médio ((limite inferior + limite superior) ÷ 2).\n\nPropriedades (caem muito):\n• Somar ou subtrair uma constante k de todos os valores: média, moda e mediana mudam em k; variância e desvio padrão NÃO mudam (a dispersão é a mesma).\n• Multiplicar ou dividir todos os valores por k: média, moda e mediana ficam multiplicadas por k; o desvio padrão, por |k|; a variância, por k².\n• A soma dos desvios em relação à média é sempre zero.\n\nCoeficiente de variação: CV = desvio padrão ÷ média (em geral, em %). É dispersão RELATIVA, sem unidade — serve para comparar conjuntos com médias ou unidades diferentes; o menor CV indica o conjunto mais homogêneo.\n\nTabelas e gráficos: densidade de frequência = frequência da classe ÷ amplitude da classe (usada no histograma quando as classes têm larguras diferentes). Polígono de frequência: linha que une os pontos médios do topo das colunas do histograma.",
+      exemplos: [
+        "Notas 6 (peso 2) e 9 (peso 3): média = (12 + 27) ÷ 5 = 7,8.",
+        "Salários com média R$ 2.000 e desvio R$ 300 recebem +R$ 500 cada: a média vai a R$ 2.500 e o desvio continua R$ 300.",
+        "Multiplicar todos os dados por 2: variância 9 vira 36; desvio 3 vira 6.",
+        "Turma A: média 50, desvio 5 (CV 10%); turma B: média 20, desvio 4 (CV 20%) → A é mais homogênea.",
+      ],
+    },
+  ],
+  pr: [
+    {
+      titulo: "Relevo e geologia do Paraná",
+      aula: "Aula 02 — Geografia física e humana (bloco 01)",
+      texto:
+        "De leste para oeste, cinco grandes unidades:\n• Planície litorânea — estreita faixa costeira com baías (Paranaguá, Guaratuba), manguezais, restingas e estuários.\n• Serra do Mar — escarpa de rochas cristalinas que separa o litoral do planalto; ali está o Pico Paraná, ponto mais alto da Região Sul (cerca de 1.877 m).\n• Primeiro Planalto (de Curitiba) — sobre o escudo cristalino, de rochas antigas; é a área mais urbanizada (Região Metropolitana de Curitiba).\n• Segundo Planalto (de Ponta Grossa, Campos Gerais) — começa na Escarpa Devoniana e é formado por rochas sedimentares; a erosão diferencial esculpiu os arenitos de Vila Velha.\n• Terceiro Planalto (de Guarapuava) — começa na escarpa da Serra Geral (Serra da Esperança) e ocupa cerca de 2/3 do estado. Formado por derrames de lava basáltica que, decompostos, originaram a terra roxa, muito fértil: base do ciclo do café no Norte e, depois das geadas, da agricultura mecanizada de grãos (soja, milho, trigo).\nOs planaltos se inclinam suavemente para oeste — por isso a maioria dos rios corre para o interior, rumo ao Rio Paraná.",
+      exemplos: [
+        "Escarpa Devoniana → limite entre o Primeiro e o Segundo Planalto.",
+        "Serra Geral / Serra da Esperança → limite entre o Segundo e o Terceiro Planalto.",
+        "Terra roxa → basalto decomposto do Terceiro Planalto.",
+      ],
+    },
+    {
+      titulo: "Clima e hidrografia",
+      aula: "Aula 02 — Geografia física e humana (bloco 02)",
+      texto:
+        "Clima: predomina o subtropical úmido, com chuvas bem distribuídas e sem estação seca definida — Cfa (verões quentes) nas áreas mais baixas e Cfb (verões amenos) nas mais altas, como Curitiba e o Centro-Sul, onde as geadas são mais frequentes. No inverno, a Massa Polar Atlântica traz frentes frias e geadas; a grande geada de 1975 arrasou os cafezais do Norte. O Norte, mais quente, faz a transição para o clima tropical.\n\nHidrografia: a maior parte dos rios nasce perto do litoral e corre para o interior (oeste/noroeste) até o Rio Paraná. Só a vertente leste da Serra do Mar drena direto para o Atlântico (bacia litorânea). Rios de planalto, com muitas quedas, dão ao estado grande potencial hidrelétrico: a Usina de Itaipu, binacional com o Paraguai, no Rio Paraná, é uma das maiores do mundo em geração.\nPrincipais rios: Iguaçu (o principal do estado e de maior bacia; nasce na região de Curitiba, corre para oeste, faz trechos de divisa com Santa Catarina e com a Argentina e forma as Cataratas do Iguaçu, sobre derrames de basalto); Paranapanema (divisa com São Paulo); Tibagi, Ivaí e Piquiri (afluentes); Paraná (divisa com o Paraguai e o Mato Grosso do Sul).",
+    },
+    {
+      titulo: "Vegetação",
+      aula: "Aula 02 — Geografia física e humana (bloco 03)",
+      texto:
+        "O Paraná está no domínio da Mata Atlântica, hoje reduzida a uma pequena fração da cobertura original pelo desmatamento para café, madeira e grãos. Formações:\n• Floresta Ombrófila Densa — na Serra do Mar e na planície litorânea, muito úmida.\n• Floresta Ombrófila Mista (Mata de Araucárias) — nos planaltos frios do Centro-Sul; a araucária (pinheiro-do-paraná) é símbolo do estado e hoje está ameaçada.\n• Floresta Estacional Semidecidual — no Norte e no Oeste, mais quentes; parte das árvores perde as folhas na estação fria e seca. Foi a mais devastada pela expansão agrícola.\n• Campos naturais — Campos Gerais (Segundo Planalto) e campos de Guarapuava e Palmas.\n• Formações pioneiras — manguezais e restingas no litoral; várzeas nos rios.\nÁreas protegidas de destaque: Parque Nacional do Iguaçu (patrimônio natural da UNESCO) e Parque Estadual de Vila Velha.",
+    },
+    {
+      titulo: "População e cultura paranaense",
+      aula: "Aulas 02 (bloco 05) e 03 — População e Cultura paranaense",
+      texto:
+        "População: o Censo 2022 do IBGE contou cerca de 11,4 milhões de habitantes, com densidade de cerca de 57 hab/km². A mecanização do campo a partir dos anos 1970 (soja e trigo no lugar do café) provocou forte êxodo rural e acelerou a urbanização: hoje a grande maioria vive em cidades, concentrada na Região Metropolitana de Curitiba e nos polos do interior (Londrina, Maringá, Ponta Grossa, Cascavel). Como no resto do país, caem a natalidade e a fecundidade, sobe a expectativa de vida e a população envelhece.\nFormação: povos indígenas (kaingang, guarani, xetá), portugueses, africanos escravizados e imigrantes europeus (poloneses, ucranianos, italianos, alemães) e japoneses; no século XX, paulistas, mineiros e nordestinos ocuparam o Norte, e gaúchos e catarinenses, o Sudoeste e o Oeste.\n\nCultura:\n• Litoral — fandango caiçara (dança de tamancos ao som da viola e do adufo, ligada aos mutirões) e o barreado, prato típico cozido por horas em panela de barro vedada.\n• Campos Gerais — cavalhadas e Festa do Divino, herança do tropeirismo.\n• Artes plásticas — Alfredo Andersen, \"pai da pintura paranaense\"; Guido Viaro e Miguel Bakun (modernismo); Poty Lazzarotto, com painéis em azulejo e concreto espalhados por Curitiba.\n• Literatura — Emiliano Perneta e o Simbolismo (Curitiba, \"capital simbolista\"); Dalton Trevisan, \"o Vampiro de Curitiba\", contista; Helena Kolody (haicais) e Paulo Leminski (poesia que mistura concretismo, cultura pop e haicai).",
+    },
+  ],
 };
