@@ -88,7 +88,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 1,
     explicacao:
-      "Na ação penal pública incondicionada, o Ministério Público promove a ação independentemente de representação da vítima ou de requisição, bastando a notícia do crime. Já a pública condicionada exige representação do ofendido ou requisição do Ministro da Justiça; a privada é promovida pelo próprio ofendido, por meio de queixa-crime.",
+      "Na ação penal pública incondicionada, o Ministério Público promove a ação independentemente de representação da vítima ou de requisição, bastando a notícia do crime.",
+    explicacaoErradas:
+      "Já a pública condicionada exige representação do ofendido ou requisição do Ministro da Justiça; a privada é promovida pelo próprio ofendido, por meio de queixa-crime.",
     origem: "banco",
   },
   {
@@ -124,7 +126,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 2º, §2º, da Lei 15.358/2026: 3 ou mais pessoas que empregam violência, grave ameaça ou coação para impor controle territorial ou social, intimidar populações ou autoridades ou atacar serviços e infraestrutura essenciais. A definição de 4 ou mais pessoas, estruturalmente ordenada e com divisão de tarefas, é a da organização criminosa da Lei 12.850 (art. 1º, §1º). A de 3 ou mais pessoas para o fim específico de cometer crimes é a da associação criminosa (CP, art. 288).",
+      "Art. 2º, §2º, da Lei 15.358/2026: 3 ou mais pessoas que empregam violência, grave ameaça ou coação para impor controle territorial ou social, intimidar populações ou autoridades ou atacar serviços e infraestrutura essenciais.",
+    explicacaoErradas:
+      "A definição de 4 ou mais pessoas, estruturalmente ordenada e com divisão de tarefas, é a da organização criminosa da Lei 12.850 (art. 1º, §1º). A de 3 ou mais pessoas para o fim específico de cometer crimes é a da associação criminosa (CP, art. 288).",
     origem: "banco",
     fonte: "Lei 15.358/2026 (Planalto)",
   },
@@ -161,7 +165,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 1,
     explicacao:
-      "No flagrante esperado, a polícia apenas aguarda a ocorrência do crime já planejado pelo agente, sem induzi-lo à prática — é válido. Diferente do flagrante preparado (provocado), em que o agente é induzido por terceiro a cometer crime que, pela própria armação, não se consumaria — hipótese de crime impossível, segundo a Súmula 145 do STF: \"Não há crime, quando a preparação do flagrante pelo policial torna impossível a sua consumação.\"",
+      "No flagrante esperado, a polícia apenas aguarda a ocorrência do crime já planejado pelo agente, sem induzi-lo à prática — é válido.",
+    explicacaoErradas:
+      "Diferente do flagrante preparado (provocado), em que o agente é induzido por terceiro a cometer crime que, pela própria armação, não se consumaria — hipótese de crime impossível, segundo a Súmula 145 do STF: \"Não há crime, quando a preparação do flagrante pelo policial torna impossível a sua consumação.\".",
     origem: "banco",
   },
   {
@@ -429,7 +435,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 2,
     explicacao:
-      "O art. 310, §3º, do CPP responsabiliza administrativa, civil e penalmente quem deu causa à omissão. O §4º diz que, passadas 24 horas além do prazo, a falta de audiência sem motivação idônea torna a prisão ilegal, a ser relaxada, sem prejuízo da imediata decretação da preventiva. O STF (ADI 6.298 e outras) deu interpretação conforme ao §4º, para que o juiz avalie a prorrogação excepcional do prazo ou a videoconferência. Daí a ideia de que não há soltura nem nulidade automáticas. O vício atinge a prisão, e não a ação penal.",
+      "O art. 310, §3º, do CPP responsabiliza administrativa, civil e penalmente quem deu causa à omissão. O §4º diz que, passadas 24 horas além do prazo, a falta de audiência sem motivação idônea torna a prisão ilegal, a ser relaxada, sem prejuízo da imediata decretação da preventiva. O STF (ADI 6.298 e outras) deu interpretação conforme ao §4º, para que o juiz avalie a prorrogação excepcional do prazo ou a videoconferência. Daí a ideia de que não há soltura nem nulidade automáticas.",
+    explicacaoErradas:
+      "O vício atinge a prisão, e não a ação penal.",
     origem: "banco",
     fonte: "CPP, art. 310, §§3º e 4º; STF, ADI 6.298",
   },
@@ -466,7 +474,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 1,
     explicacao:
-      "As exceções reconhecidas pela jurisprudência são a fonte independente (quando a prova derivada teria sido obtida de qualquer forma, por outro caminho lícito) e a descoberta inevitável (quando, mesmo sem a ilicitude, a prova seria inevitavelmente descoberta pelos meios investigativos em curso) — mera urgência, gravidade do crime ou autorização informal não afastam a contaminação.",
+      "As exceções reconhecidas pela jurisprudência são a fonte independente (quando a prova derivada teria sido obtida de qualquer forma, por outro caminho lícito) e a descoberta inevitável (quando, mesmo sem a ilicitude, a prova seria inevitavelmente descoberta pelos meios investigativos em curso).",
+    explicacaoErradas:
+      "Mera urgência, gravidade do crime ou autorização informal não afastam a contaminação.",
     origem: "banco",
   },
   {
@@ -484,7 +494,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "A Lei 12.850/2013 exige voluntariedade da colaboração e efetividade do resultado como requisitos centrais — meras alegações sem comprovação não bastam. O acordo deve ser formalizado com participação do Ministério Público e homologado judicialmente, não podendo decorrer de coação, nem depender de concordância dos delatados.",
+      "A Lei 12.850/2013 exige voluntariedade da colaboração e efetividade do resultado como requisitos centrais — meras alegações sem comprovação não bastam.",
+    explicacaoErradas:
+      "O acordo deve ser formalizado com participação do Ministério Público e homologado judicialmente, não podendo decorrer de coação, nem depender de concordância dos delatados.",
     origem: "banco",
   },
   {
@@ -502,7 +514,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 1,
     explicacao:
-      "Os benefícios possíveis vão do perdão judicial à redução de pena em até dois terços, ou substituição da pena privativa de liberdade por restritiva de direitos, sempre formalizados por acordo homologado judicialmente, com participação do Ministério Público — não há anistia automática extensível a terceiros, nem imunidade vitalícia para crimes futuros.",
+      "Os benefícios possíveis vão do perdão judicial à redução de pena em até dois terços, ou substituição da pena privativa de liberdade por restritiva de direitos, sempre formalizados por acordo homologado judicialmente, com participação do Ministério Público.",
+    explicacaoErradas:
+      "Não há anistia automática extensível a terceiros, nem imunidade vitalícia para crimes futuros.",
     origem: "banco",
   },
   {
@@ -520,7 +534,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 1,
     explicacao:
-      "A cadeia de custódia é o conjunto de procedimentos que documenta e preserva a história de um vestígio, desde sua descoberta no local de crime até seu descarte, garantindo a idoneidade e a rastreabilidade da prova, com registro de cada pessoa que teve contato com ele — não substitui a perícia oficial nem acelera o processo por si só.",
+      "A cadeia de custódia é o conjunto de procedimentos que documenta e preserva a história de um vestígio, desde sua descoberta no local de crime até seu descarte, garantindo a idoneidade e a rastreabilidade da prova, com registro de cada pessoa que teve contato com ele.",
+    explicacaoErradas:
+      "A cadeia de custódia não substitui a perícia oficial nem acelera o processo por si só.",
     origem: "banco",
   },
   {
@@ -556,7 +572,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 2º, III, da Lei 15.358/2026: impedir ou dificultar a atuação das forças de segurança por barricadas, bloqueios ou incêndios. A pena é de 20 a 40 anos, sem prejuízo das sanções da violência, da ameaça e de outros crimes. Já 12 a 20 anos e multa é a pena do favorecimento (art. 3º); 3 a 8 anos é a da organização criminosa da Lei 12.850; e 1 a 3 anos é a da ameaça do novo art. 147-C do CP.",
+      "Art. 2º, III, da Lei 15.358/2026: impedir ou dificultar a atuação das forças de segurança por barricadas, bloqueios ou incêndios. A pena é de 20 a 40 anos, sem prejuízo das sanções da violência, da ameaça e de outros crimes.",
+    explicacaoErradas:
+      "Já 12 a 20 anos e multa é a pena do favorecimento (art. 3º); 3 a 8 anos é a da organização criminosa da Lei 12.850; e 1 a 3 anos é a da ameaça do novo art. 147-C do CP.",
     origem: "banco",
     fonte: "Lei 15.358/2026 (Planalto)",
   },
@@ -575,7 +593,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "O art. 2º, §4º, torna esses crimes insuscetíveis de anistia, graça, indulto, fiança e livramento condicional. Pelo parágrafo único do art. 3º, isso também vale para o favorecimento. Pelo art. 4º, ambos são hediondos para todos os fins. Não há vedação total da progressão, que o STF já julgou inconstitucional em lei anterior (HC 82.959; Súmula Vinculante 26): a progressão segue as frações da LEP, como os 75% do art. 112, VI, para o comando de facção.",
+      "O art. 2º, §4º, torna esses crimes insuscetíveis de anistia, graça, indulto, fiança e livramento condicional. Pelo parágrafo único do art. 3º, isso também vale para o favorecimento. Pelo art. 4º, ambos são hediondos para todos os fins.",
+    explicacaoErradas:
+      "Não há vedação total da progressão, que o STF já julgou inconstitucional em lei anterior (HC 82.959; Súmula Vinculante 26): a progressão segue as frações da LEP, como os 75% do art. 112, VI, para o comando de facção.",
     origem: "banco",
     fonte: "Lei 15.358/2026 (Planalto)",
   },
@@ -594,7 +614,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 1,
     explicacao:
-      "Art. 2º, §5º: atos preparatórios com propósito inequívoco de consumar levam à pena do consumado reduzida de 1/3 até a metade. É exceção legal à regra de impunidade da preparação. Não confunda: a tentativa do CP (art. 14, parágrafo único) reduz de 1/3 a 2/3, e a Lei Antiterrorismo (Lei 13.260, art. 5º) pune a preparação com a pena do consumado diminuída de 1/4 até a metade.",
+      "Art. 2º, §5º: atos preparatórios com propósito inequívoco de consumar levam à pena do consumado reduzida de 1/3 até a metade.",
+    explicacaoErradas:
+      "O art. 2º, §5º, é exceção legal à regra de impunidade da preparação. Não confunda: a tentativa do CP (art. 14, parágrafo único) reduz de 1/3 a 2/3, e a Lei Antiterrorismo (Lei 13.260, art. 5º) pune a preparação com a pena do consumado diminuída de 1/4 até a metade.",
     origem: "banco",
     fonte: "Lei 15.358/2026 (Planalto)",
   },
@@ -613,7 +635,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 2,
     explicacao:
-      "Art. 5º da Lei 15.358/2026: 90 dias com o indiciado preso e 270 dias com ele solto, prorrogável por igual período. 10 e 30 dias é a regra do CPP (art. 10); 30 e 90 dias, duplicáveis, é a da Lei de Drogas (art. 51); 15 mais 15 dias com preso é o inquérito federal (Lei 5.010/66). O §4º do art. 5º acrescenta que descumprir esses prazos não gera relaxamento automático.",
+      "Art. 5º da Lei 15.358/2026: 90 dias com o indiciado preso e 270 dias com ele solto, prorrogável por igual período. O §4º do art. 5º acrescenta que descumprir esses prazos não gera relaxamento automático.",
+    explicacaoErradas:
+      "10 e 30 dias é a regra do CPP (art. 10); 30 e 90 dias, duplicáveis, é a da Lei de Drogas (art. 51); 15 mais 15 dias com preso é o inquérito federal (Lei 5.010/66).",
     origem: "banco",
     fonte: "Lei 15.358/2026 (Planalto)",
   },
@@ -651,7 +675,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 3,
     explicacao:
-      "Art. 9º: o juiz pode decretá-las de ofício, a requerimento do MP ou por representação do delegado, na investigação ou na ação penal. Alcançam ativos digitais (I) e Pix e corretoras de criptoativos (IV). O §1º permite a decretação sem prévia oitiva, com contraditório diferido, e o §6º dá 10 dias da intimação para provar a origem lícita. Se a origem ilícita ficar clara, cabe perdimento extraordinário independentemente de condenação (§8º).",
+      "O §1º do art. 9º permite a decretação sem prévia oitiva, com contraditório diferido, e o §6º dá 10 dias da intimação para provar a origem lícita.",
+    explicacaoErradas:
+      "Art. 9º: o juiz pode decretá-las de ofício, a requerimento do MP ou por representação do delegado, na investigação ou na ação penal. Alcançam ativos digitais (I) e Pix e corretoras de criptoativos (IV). Se a origem ilícita ficar clara, cabe perdimento extraordinário independentemente de condenação (§8º).",
     origem: "banco",
     fonte: "Lei 15.358/2026 (Planalto)",
   },
@@ -670,7 +696,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 3,
     explicacao:
-      "Art. 2º, §8º, da Lei 15.358/2026: homicídios, consumados ou tentados, cometidos por membros de facção, grupo paramilitar ou milícia, conexos a esses crimes, são julgados pelas Varas Criminais Colegiadas (Lei 12.694, art. 1º-A). O CPP, art. 78, I, foi alterado para excepcionar a prevalência do júri nesses casos. A questão pede a literalidade: a compatibilidade com o art. 5º, XXXVIII, da CF ainda deve ser debatida no STF.",
+      "Art. 2º, §8º, da Lei 15.358/2026: homicídios, consumados ou tentados, cometidos por membros de facção, grupo paramilitar ou milícia, conexos a esses crimes, são julgados pelas Varas Criminais Colegiadas (Lei 12.694, art. 1º-A). A questão pede a literalidade: a compatibilidade com o art. 5º, XXXVIII, da CF ainda deve ser debatida no STF.",
+    explicacaoErradas:
+      "O CPP, art. 78, I, foi alterado para excepcionar a prevalência do júri nesses casos.",
     origem: "banco",
     fonte: "Lei 15.358/2026 (Planalto)",
   },
@@ -689,7 +717,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 1,
     explicacao:
-      "O art. 2º, §9º, da Lei 15.358/2026 diz que a prática do crime é causa suficiente para a preventiva. A lei também incluiu o inciso V no art. 313 do CPP. Continua vedada a preventiva de ofício (CPP, arts. 282, §2º, e 311). O crime é inafiançável (§4º, II).",
+      "O art. 2º, §9º, da Lei 15.358/2026 diz que a prática do crime é causa suficiente para a preventiva. A lei também incluiu o inciso V no art. 313 do CPP.",
+    explicacaoErradas:
+      "Continua vedada a preventiva de ofício (CPP, arts. 282, §2º, e 311). O crime é inafiançável (§4º, II).",
     origem: "banco",
     fonte: "Lei 15.358/2026 (Planalto)",
   },
@@ -708,7 +738,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 2,
     explicacao:
-      "Art. 147-C do CP (Lei 15.358/2026): ameaçar alguém, por qualquer meio, de mal injusto e grave, no contexto da atuação ou para a consecução das condutas do art. 2º do marco legal. A pena é de reclusão de 1 a 3 anos. O 147-A é a perseguição, o 147-B é a violência psicológica contra a mulher, e o 147 (caput) é a ameaça simples.",
+      "Art. 147-C do CP (Lei 15.358/2026): ameaçar alguém, por qualquer meio, de mal injusto e grave, no contexto da atuação ou para a consecução das condutas do art. 2º do marco legal. A pena é de reclusão de 1 a 3 anos.",
+    explicacaoErradas:
+      "O 147-A é a perseguição, o 147-B é a violência psicológica contra a mulher, e o 147 (caput) é a ameaça simples.",
     origem: "banco",
     fonte: "Lei 15.358/2026 (Planalto)",
   },
@@ -746,7 +778,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 2,
     explicacao:
-      "Art. 310, caput, do CPP: em até 24 horas após a prisão, o juiz promove a audiência por videoconferência em tempo real, com o preso, a defesa e o MP. Pelo §13, o ato presencial cabe em situações excepcionais de força maior, por decisão justificada, e é vedado se for demasiadamente custoso ou arriscado. A redação antiga do art. 3º-B, §1º, vedava a videoconferência, mas a Lei 15.358 a alterou.",
+      "Art. 310, caput, do CPP: em até 24 horas após a prisão, o juiz promove a audiência por videoconferência em tempo real, com o preso, a defesa e o MP. Pelo §13, o ato presencial cabe em situações excepcionais de força maior, por decisão justificada, e é vedado se for demasiadamente custoso ou arriscado.",
+    explicacaoErradas:
+      "A redação antiga do art. 3º-B, §1º, vedava a videoconferência, mas a Lei 15.358 a alterou.",
     origem: "banco",
     fonte: "CPP, art. 310 (Lei 15.358/2026)",
   },
@@ -765,7 +799,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 3,
     explicacao:
-      "Art. 310, §11: falha atribuível ao tribunal obriga a repetir toda a audiência. O §9º garante entrevista prévia, reservada e inviolável com o defensor. O §10 manda que o preso fique sozinho na sala durante a oitiva, ressalvada a presença física do defensor. O §8º assegura à defesa e ao MP todos os mecanismos de intervenção, inclusive questões de ordem.",
+      "Art. 310, §11: falha atribuível ao tribunal obriga a repetir toda a audiência.",
+    explicacaoErradas:
+      "O §9º garante entrevista prévia, reservada e inviolável com o defensor. O §10 manda que o preso fique sozinho na sala durante a oitiva, ressalvada a presença física do defensor. O §8º assegura à defesa e ao MP todos os mecanismos de intervenção, inclusive questões de ordem.",
     origem: "banco",
     fonte: "CPP, art. 310 (Lei 15.358/2026)",
   },
@@ -784,7 +820,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 2,
     explicacao:
-      "O art. 310, §5º, lista: reiteração (I); violência ou grave ameaça (II); liberação em custódia anterior, salvo absolvição posterior (III); infração na pendência de inquérito ou ação penal (IV); fuga ou perigo de fuga (V); risco à investigação, à instrução ou à prova (VI). O art. 312, §4º, também incluído pela Lei 15.272, veda a preventiva baseada na gravidade abstrata.",
+      "O art. 310, §5º, lista: reiteração (I); violência ou grave ameaça (II); liberação em custódia anterior, salvo absolvição posterior (III); infração na pendência de inquérito ou ação penal (IV); fuga ou perigo de fuga (V); risco à investigação, à instrução ou à prova (VI).",
+    explicacaoErradas:
+      "O art. 312, §4º, também incluído pela Lei 15.272, veda a preventiva baseada na gravidade abstrata.",
     origem: "banco",
     fonte: "CPP, art. 310, §5º (Lei 15.272/2025)",
   },
@@ -803,7 +841,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "O art. 312, §3º, do CPP traz o modus operandi, inclusive a violência reiterada e a premeditação (I), a participação em organização criminosa (II), a natureza, a quantidade e a variedade de drogas, armas ou munições (III) e o fundado receio de reiteração, inclusive à vista de outros inquéritos e ações em curso (IV). O §4º veda a preventiva pela gravidade abstrata.",
+      "O art. 312, §3º, do CPP traz o modus operandi, inclusive a violência reiterada e a premeditação (I), a participação em organização criminosa (II), a natureza, a quantidade e a variedade de drogas, armas ou munições (III) e o fundado receio de reiteração, inclusive à vista de outros inquéritos e ações em curso (IV).",
+    explicacaoErradas:
+      "O §4º veda a preventiva pela gravidade abstrata.",
     origem: "banco",
     fonte: "CPP, art. 312, §§3º e 4º (Lei 15.272/2025)",
   },
@@ -841,7 +881,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 1,
     explicacao:
-      "O art. 40-A da Lei 11.343, incluído pela Lei 15.358, aplica em dobro as penas dos arts. 33 a 37 quando praticados por integrante de facção nesse contexto. Pelo parágrafo único, com arma de fogo aplica-se o concurso material (CP, art. 69). A pena em triplo, desprezadas as demais causas de aumento, é a do novo §4º do art. 157 do CP (roubo de facção).",
+      "O art. 40-A da Lei 11.343, incluído pela Lei 15.358, aplica em dobro as penas dos arts. 33 a 37 quando praticados por integrante de facção nesse contexto. Pelo parágrafo único, com arma de fogo aplica-se o concurso material (CP, art. 69).",
+    explicacaoErradas:
+      "A pena em triplo, desprezadas as demais causas de aumento, é a do novo §4º do art. 157 do CP (roubo de facção).",
     origem: "banco",
     fonte: "Lei 15.358/2026 (Planalto)",
   },
@@ -860,7 +902,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 38 do CPP: a regra é a decadência em 6 meses, contados do dia em que o ofendido souber quem é o autor do crime. A Lei 15.438/2026 (18/6/2026, vigência na publicação) incluiu o §2º: nos crimes praticados no âmbito da violência doméstica e familiar contra a mulher, a ofendida decai do direito de queixa ou de representação em 12 meses, com a mesma forma de contagem. A perseguição continua dependendo de representação (art. 147-A, §3º, do CP). Já a ameaça contra a mulher por razões da condição do sexo feminino é de ação incondicionada desde a Lei 14.994/2024 (art. 147, §2º). Como o prazo maior agrava a situação do autor, a regra só alcança fatos posteriores à lei, como o do enunciado.",
+      "Art. 38 do CPP: a regra é a decadência em 6 meses, contados do dia em que o ofendido souber quem é o autor do crime. A Lei 15.438/2026 (18/6/2026, vigência na publicação) incluiu o §2º: nos crimes praticados no âmbito da violência doméstica e familiar contra a mulher, a ofendida decai do direito de queixa ou de representação em 12 meses, com a mesma forma de contagem. Como o prazo maior agrava a situação do autor, a regra só alcança fatos posteriores à lei, como o do enunciado.",
+    explicacaoErradas:
+      "A perseguição continua dependendo de representação (art. 147-A, §3º, do CP). Já a ameaça contra a mulher por razões da condição do sexo feminino é de ação incondicionada desde a Lei 14.994/2024 (art. 147, §2º).",
     origem: "banco",
     fonte: "CPP, art. 38, §2º (Lei 15.438/2026); CP, art. 147-A, §3º",
   },
@@ -879,7 +923,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 350-A do CPP (Lei 15.280/2025): constatados indícios de crime contra a dignidade sexual, o juiz pode aplicar de imediato ao autor, em conjunto ou separadamente, medidas como a suspensão da posse ou restrição do porte de arma, o afastamento do lar, a proibição de aproximação e de contato com a vítima, familiares e testemunhas, a restrição de visitas a dependentes menores e alimentos provisionais. Pelo §5º, a medida é cumulada com monitoração eletrônica do autor, e a vítima recebe dispositivo que alerta sobre a aproximação. Pelo §6º, a regra vale também para vítimas vulneráveis (crianças, adolescentes, pessoas com deficiência ou incapazes), qualquer que seja o crime. Pelo art. 350-B, em qualquer fase da investigação ou do processo, a pedido do delegado, do MP ou da vítima, o juiz pode proibir o autor de exercer atividade com contato direto com pessoa vulnerável. O descumprimento é crime (art. 338-A do CP: reclusão de 2 a 5 anos).",
+      "Art. 350-A do CPP (Lei 15.280/2025): constatados indícios de crime contra a dignidade sexual, o juiz pode aplicar de imediato ao autor, em conjunto ou separadamente, medidas como a suspensão da posse ou restrição do porte de arma, o afastamento do lar, a proibição de aproximação e de contato com a vítima, familiares e testemunhas, a restrição de visitas a dependentes menores e alimentos provisionais. Pelo §5º, a medida é cumulada com monitoração eletrônica do autor, e a vítima recebe dispositivo que alerta sobre a aproximação. O descumprimento é crime (art. 338-A do CP: reclusão de 2 a 5 anos).",
+    explicacaoErradas:
+      "Pelo §6º, a regra vale também para vítimas vulneráveis (crianças, adolescentes, pessoas com deficiência ou incapazes), qualquer que seja o crime. Pelo art. 350-B, em qualquer fase da investigação ou do processo, a pedido do delegado, do MP ou da vítima, o juiz pode proibir o autor de exercer atividade com contato direto com pessoa vulnerável.",
     origem: "banco",
     fonte: "CPP, arts. 350-A e 350-B (Lei 15.280/2025)",
   },
@@ -935,7 +981,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "O nemo tenetur se detegere garante o direito ao silêncio e à não autoincriminação, vedando que o silêncio seja interpretado contra o acusado. Ele não autoriza produzir prova falsa, mentir sobre terceiros nem ignorar intimações; a recusa a participar de reconhecimento ou reconstituição também não pode ser usada como confissão tácita, pois a garantia abrange toda forma de colaboração probatória contra si.",
+      "O nemo tenetur se detegere garante o direito ao silêncio e à não autoincriminação, vedando que o silêncio seja interpretado contra o acusado.",
+    explicacaoErradas:
+      "O nemo tenetur se detegere não autoriza produzir prova falsa, mentir sobre terceiros nem ignorar intimações; a recusa a participar de reconhecimento ou reconstituição também não pode ser usada como confissão tácita, pois a garantia abrange toda forma de colaboração probatória contra si.",
     origem: "banco",
   },
   {
@@ -953,7 +1001,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "O juiz natural exige critérios de competência previamente fixados em lei, de forma objetiva e abstrata, vedando tribunais de exceção e designações casuísticas de julgador para caso específico, inclusive após o fato. O acusado não escolhe seu julgador, e a garantia vale para toda a jurisdição penal, não só a militar.",
+      "O juiz natural exige critérios de competência previamente fixados em lei, de forma objetiva e abstrata, vedando tribunais de exceção e designações casuísticas de julgador para caso específico, inclusive após o fato.",
+    explicacaoErradas:
+      "O acusado não escolhe seu julgador, e a garantia vale para toda a jurisdição penal, não só a militar.",
     origem: "banco",
   },
   {
@@ -971,7 +1021,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "A persuasão racional exige fundamentação baseada nas provas dos autos, sendo a regra no processo penal; a exceção é a íntima convicção do Tribunal do Júri, em que os jurados não motivam o voto. O juiz não pode decidir com base em conhecimento extraprocessual, e a prova indiciária é admitida, desde que valorada racionalmente.",
+      "A persuasão racional exige fundamentação baseada nas provas dos autos, sendo a regra no processo penal; a exceção é a íntima convicção do Tribunal do Júri, em que os jurados não motivam o voto.",
+    explicacaoErradas:
+      "O juiz não pode decidir com base em conhecimento extraprocessual, e a prova indiciária é admitida, desde que valorada racionalmente.",
     origem: "banco",
   },
   {
@@ -989,7 +1041,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "O promotor natural veda a designação casuística de membro do MP por decisão discricionária da chefia, caso a caso, mas não impede redistribuições por critérios objetivos e gerais (como regras de substituição e organização), nem garante ao acusado escolher seu acusador.",
+      "O promotor natural veda a designação casuística de membro do MP por decisão discricionária da chefia, caso a caso.",
+    explicacaoErradas:
+      "O promotor natural não impede redistribuições por critérios objetivos e gerais (como regras de substituição e organização), nem garante ao acusado escolher seu acusador.",
     origem: "banco",
   },
   {
@@ -1007,7 +1061,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "A razoável duração do processo (art. 5º, LXXVIII, CF) não fixa um prazo numérico objetivo e geral, exigindo análise da complexidade do caso, do comportamento das partes e da atuação do Judiciário; não gera extinção automática da punibilidade nem se restringe a réus presos.",
+      "A razoável duração do processo (art. 5º, LXXVIII, CF) não fixa um prazo numérico objetivo e geral, exigindo análise da complexidade do caso, do comportamento das partes e da atuação do Judiciário.",
+    explicacaoErradas:
+      "A razoável duração do processo não gera extinção automática da punibilidade nem se restringe a réus presos.",
     origem: "banco",
   },
   {
@@ -1025,7 +1081,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "O art. 3º-A consagra a estrutura acusatória: o juiz das garantias não pode investigar de ofício nem substituir o MP na produção de provas, ainda que parcialmente. Essa vedação atua justamente na fase investigatória, que é o âmbito de competência do juiz das garantias.",
+      "O art. 3º-A consagra a estrutura acusatória: o juiz das garantias não pode investigar de ofício nem substituir o MP na produção de provas, ainda que parcialmente.",
+    explicacaoErradas:
+      "Essa vedação atua justamente na fase investigatória, que é o âmbito de competência do juiz das garantias.",
     origem: "banco",
     fonte: "CPP, art. 3º-A (Lei 13.964/2019)",
   },
@@ -1044,7 +1102,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "O art. 3º-B, XVII, atribui ao juiz das garantias a homologação de ANPP e de colaboração premiada na fase investigatória. Ele não julga o mérito da ação penal (vedação do art. 3º-D), não arquiva inquérito de ofício, não substitui o delegado e a fiança comporta revisão.",
+      "O art. 3º-B, XVII, atribui ao juiz das garantias a homologação de ANPP e de colaboração premiada na fase investigatória.",
+    explicacaoErradas:
+      "O juiz das garantias não julga o mérito da ação penal (vedação do art. 3º-D), não arquiva inquérito de ofício, não substitui o delegado e a fiança comporta revisão.",
     origem: "banco",
     fonte: "CPP, art. 3º-B (Lei 13.964/2019)",
   },
@@ -1063,7 +1123,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "O STF (ADI 6.298 e correlatas) autorizou, excepcionalmente, a videoconferência na audiência de custódia, mediante decisão fundamentada e desde que possível verificar a integridade do preso — superando a vedação literal do texto original do art. 3º-B, §1º. A audiência permanece obrigatória, pode ser determinada de ofício e o prazo de 24 horas não foi alterado.",
+      "O STF (ADI 6.298 e correlatas) autorizou, excepcionalmente, a videoconferência na audiência de custódia, mediante decisão fundamentada e desde que possível verificar a integridade do preso — superando a vedação literal do texto original do art. 3º-B, §1º.",
+    explicacaoErradas:
+      "A audiência permanece obrigatória, pode ser determinada de ofício e o prazo de 24 horas não foi alterado.",
     origem: "banco",
     fonte: "STF, ADI 6.298, 6.299, 6.300 e 6.305/DF, Rel. Min. Luiz Fux, j. 24/08/2023 (Info 1106)",
   },
@@ -1177,7 +1239,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "No modelo brasileiro de ciclo incompleto, Polícia Militar (ostensiva/preventiva) e Polícia Civil (investigativa) têm atribuições distintas e dependem uma da outra. A Polícia Federal é a exceção, por reunir funções administrativas e investigativas em ciclo completo.",
+      "A Polícia Federal é a exceção, por reunir funções administrativas e investigativas em ciclo completo.",
+    explicacaoErradas:
+      "No modelo brasileiro de ciclo incompleto, Polícia Militar (ostensiva/preventiva) e Polícia Civil (investigativa) têm atribuições distintas e dependem uma da outra.",
     origem: "banco",
   },
   {
@@ -1214,7 +1278,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "A exclusividade do art. 144, §1º, IV, da CF é da Polícia Federal apenas quanto à polícia judiciária da União — a Polícia Civil exerce, tipicamente, a polícia judiciária estadual, sem que isso viole a exclusividade federal. As polícias militares, por sua vez, exercem polícia judiciária militar, auxiliando o Judiciário no âmbito militar.",
+      "A exclusividade do art. 144, §1º, IV, da CF é da Polícia Federal apenas quanto à polícia judiciária da União — a Polícia Civil exerce, tipicamente, a polícia judiciária estadual, sem que isso viole a exclusividade federal.",
+    explicacaoErradas:
+      "As polícias militares, por sua vez, exercem polícia judiciária militar, auxiliando o Judiciário no âmbito militar.",
     origem: "banco",
     fonte: "CF, art. 144, §1º, IV",
   },
@@ -1233,7 +1299,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "A EC 104/2019 incluiu as polícias penais (inciso VI do art. 144) com a competência de segurança dos estabelecimentos penais (§5º-A), vinculadas ao órgão administrador do sistema penal de cada ente e subordinadas aos Governadores (§6º), junto com polícias civis, militares e corpos de bombeiros militares — sem qualquer competência investigativa ou de policiamento ostensivo externo.",
+      "A EC 104/2019 incluiu as polícias penais (inciso VI do art. 144) com a competência de segurança dos estabelecimentos penais (§5º-A), vinculadas ao órgão administrador do sistema penal de cada ente e subordinadas aos Governadores (§6º), junto com polícias civis, militares e corpos de bombeiros militares.",
+    explicacaoErradas:
+      "Sem qualquer competência investigativa ou de policiamento ostensivo externo.",
     origem: "banco",
     fonte: "CF, art. 144, VI e §§ 5º-A e 6º (EC 104/2019)",
   },
@@ -1252,7 +1320,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "A polícia administrativa é predominantemente preventiva, incidindo sobre bens, direitos e atividades (não diretamente sobre pessoas), por meio de poder de polícia e fiscalização — abrangendo trânsito, vigilância sanitária e outras atividades, e exercida por diversos órgãos da administração, não só pela Polícia Militar com exclusividade.",
+      "A polícia administrativa é predominantemente preventiva, incidindo sobre bens, direitos e atividades (não diretamente sobre pessoas), por meio de poder de polícia e fiscalização.",
+    explicacaoErradas:
+      "A polícia administrativa abrange trânsito, vigilância sanitária e outras atividades, e é exercida por diversos órgãos da administração, não só pela Polícia Militar com exclusividade.",
     origem: "banco",
   },
   {
@@ -1270,7 +1340,9 @@ export const QUESTOES_PP: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "A polícia ostensiva tem natureza administrativa e preventiva, marcada pela visibilidade (fardas, viaturas) como fator de dissuasão da criminalidade — não se limita a viaturas motorizadas (admite patrulhamento a pé, de bicicleta etc.), não é exclusiva da PM (Guardas Municipais também a exercem) e serve à prevenção de infrações e contravenções, não só repressão de crimes em curso.",
+      "A polícia ostensiva tem natureza administrativa e preventiva, marcada pela visibilidade (fardas, viaturas) como fator de dissuasão da criminalidade.",
+    explicacaoErradas:
+      "A polícia ostensiva não se limita a viaturas motorizadas (admite patrulhamento a pé, de bicicleta etc.), não é exclusiva da PM (Guardas Municipais também a exercem) e serve à prevenção de infrações e contravenções, não só repressão de crimes em curso.",
     origem: "banco",
   },
 ];
