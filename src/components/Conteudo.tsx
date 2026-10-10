@@ -4,6 +4,7 @@ import { CONTEUDO_POR_MATERIA } from "../data/conteudos";
 import { RAIO_X } from "../data/raioX";
 import { videosDoTopico } from "../data/videosTopicos";
 import { LEIS_CURSO, LEIS_DE_PASSAGEM, type LeiCurso } from "../data/leisCurso";
+import { COMPLEMENTOS_CURSO } from "../data/complementosCurso";
 import type { RaioX, SubjectId } from "../lib/types";
 import { VideoMini } from "./VideoCard";
 
@@ -148,6 +149,7 @@ export default function Conteudo() {
   const oficiais = topicos.filter((t) => t.origem !== "aposta");
   const apostas = topicos.filter((t) => t.origem === "aposta");
   const raioX = RAIO_X[materiaSelecionada];
+  const complementos = COMPLEMENTOS_CURSO[materiaSelecionada] ?? [];
 
   function renderCard(t: (typeof topicos)[number], i: number) {
     return (
@@ -199,10 +201,38 @@ export default function Conteudo() {
         <>
           {oficiais.length > 0 && (
             <>
-              {apostas.length > 0 && (
+              {(apostas.length > 0 || complementos.length > 0) && (
                 <h3 className="aposta-subtitulo">📖 Tópicos oficiais ({oficiais.length})</h3>
               )}
               <div className="conteudo-lista">{oficiais.map((t, i) => renderCard(t, i))}</div>
+            </>
+          )}
+
+          {complementos.length > 0 && (
+            <>
+              <h3 className="aposta-subtitulo">📘 Complementos do curso ({complementos.length})</h3>
+              <p className="complementos-intro">
+                Pontos que as aulas do curso cobram e que os tópicos acima não detalham.
+              </p>
+              <div className="conteudo-lista">
+                {complementos.map((c) => (
+                  <article key={c.titulo} className="conteudo-card">
+                    <div className="conteudo-aula">{c.aula}</div>
+                    <h3 className="conteudo-topico-titulo">{c.titulo}</h3>
+                    <p className="conteudo-texto">{c.texto}</p>
+                    {c.exemplos && (
+                      <div className="conteudo-exemplos">
+                        <h4>Exemplos</h4>
+                        <ol>
+                          {c.exemplos.map((ex, j) => (
+                            <li key={j}>{ex}</li>
+                          ))}
+                        </ol>
+                      </div>
+                    )}
+                  </article>
+                ))}
+              </div>
             </>
           )}
 
