@@ -4,6 +4,7 @@ import type { CursoId } from "../data/cursos";
 import { atualizarConfianca, recordAttempt } from "../lib/storage";
 import { formatarSegundos } from "../lib/format";
 import { ROTULO_CONFIANCA } from "../data/retaFinal";
+import { ROTULO_MODO } from "../lib/quizEngine";
 import Alternativa from "./Alternativa";
 
 const LETRAS = ["A", "B", "C", "D", "E"];
@@ -25,6 +26,10 @@ interface QuizProps<M extends string> {
   gravacao?: GravacaoQuiz<M>;
   /** Curso das questões, para a IA explicar no contexto certo (sem isso, PCPR). */
   curso?: CursoId;
+  /** Treino retomado: respostas já dadas, na ordem de questions; o quiz segue da próxima. */
+  respostasIniciais?: AttemptRecord<M>[];
+  /** Chamado a cada resposta (e troca de confiança), para salvar o andamento. */
+  onProgresso?: (respostas: AttemptRecord<M>[]) => void;
 }
 
 export default function Quiz<M extends string = SubjectId>({
@@ -34,11 +39,13 @@ export default function Quiz<M extends string = SubjectId>({
   onSair,
   gravacao,
   curso,
+  respostasIniciais,
+  onProgresso,
 }: QuizProps<M>) {
   const grava = gravacao ?? (GRAVACAO_PCPR as unknown as GravacaoQuiz<M>);
-  const [indice, setIndice] = useState(0);
+  const [indice, setIndice] = useState(() => respostasIniciais?.length ?? 0);
   const [selecionada, setSelecionada] = useState<number | null>(null);
-  const [respostas, setRespostas] = useState<AttemptRecord<M>[]>([]);
+  const [respostas, setRespostas] = useState<AttemptRecord<M>[]>(() => respostasIniciais ?? []);
   const [iaAberto, setIaAberto] = useState(false);
   const [iaCarregando, setIaCarregando] = useState(false);
   const [iaTexto, setIaTexto] = useState("");
@@ -52,6 +59,15 @@ export default function Quiz<M extends string = SubjectId>({
   /** Alternativas riscadas pelo usuário na questão atual (só visual, some ao responder). */
   const [eliminadas, setEliminadas] = useState<number[]>([]);
   const registroRef = useRef<AttemptRecord<M> | null>(null);
+  const onProgressoRef = useRef(onProgresso);
+
+  useEffect(() => {
+    onProgressoRef.current = onProgresso;
+  });
+
+  useEffect(() => {
+    onProgressoRef.current?.(respostas);
+  }, [respostas]);
 
   const questao = questions[indice];
   const ultimaQuestao = indice === questions.length - 1;
@@ -176,19 +192,10 @@ export default function Quiz<M extends string = SubjectId>({
     }
   }
 
-  const rotuloModo: Record<QuizMode, string> = {
-    materia: "Treino por matéria",
-    prova: "Simulado completo",
-    revisao: "Revisão dos errados",
-    "treino-alvo": "Foco recomendado",
-    simulado: "Simulado modo prova",
-    reforco: "Reforço dirigido",
-  };
-
   return (
     <div>
       <div className="quiz-header">
-        <span>{rotuloModo[modo]}</span>
+        <span>{ROTULO_MODO[modo]}</span>
         <span className={`quiz-cronometro ${selecionada !== null ? "quiz-cronometro-parado" : ""}`}>
           ⏱ {formatarSegundos(segundosQuestao)}
         </span>
@@ -295,7 +302,12 @@ export default function Quiz<M extends string = SubjectId>({
         )}
 
         <div className="quiz-acoes">
-          <button className="botao" onClick={onSair} style={{ marginRight: "auto" }}>
+          <button
+            className="botao"
+            onClick={onSair}
+            style={{ marginRight: "auto" }}
+            title={onProgresso ? "Sair; o andamento fica salvo para continuar depois na tela inicial" : undefined}
+          >
             Encerrar
           </button>
           {selecionada !== null && (

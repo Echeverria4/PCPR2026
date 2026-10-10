@@ -2,19 +2,43 @@ import type { CSSProperties } from "react";
 import { SUBJECTS, EDITAL_INFO } from "../data/subjects";
 import { QUESTOES_POR_MATERIA } from "../data/questions";
 import { dicaDoDia } from "../data/dicas";
-import type { QuizMode, SubjectId, SubjectStats } from "../lib/types";
+import { chaveTreino, ROTULO_MODO } from "../lib/quizEngine";
+import type { QuizMode, SubjectId, SubjectStats, TreinoEmAndamento } from "../lib/types";
 
 interface HomeProps {
   stats: SubjectStats[];
   wrongCount: number;
   materiaFoco: SubjectId | null;
   onIniciar: (mode: QuizMode, materia?: SubjectId, quantidade?: number) => void;
+  /** Treinos salvos pela metade, para continuar de onde parou. */
+  treinos: TreinoEmAndamento[];
+  /** Questões de cada matéria já respondidas hoje no treino. */
+  feitasHoje: Partial<Record<SubjectId, number>>;
+  onContinuar: (chave: string) => void;
+  onContinuarHoje: (materia: SubjectId) => void;
+  onDescartar: (chave: string) => void;
   onResetarMateria: (materia: SubjectId) => void;
   onAbrirRetaFinal: () => void;
 }
 
-export default function Home({ stats, wrongCount, materiaFoco, onIniciar, onResetarMateria, onAbrirRetaFinal }: HomeProps) {
+export default function Home({
+  stats,
+  wrongCount,
+  materiaFoco,
+  onIniciar,
+  treinos,
+  feitasHoje,
+  onContinuar,
+  onContinuarHoje,
+  onDescartar,
+  onResetarMateria,
+  onAbrirRetaFinal,
+}: HomeProps) {
   const statsPorMateria = new Map(stats.map((s) => [s.materia, s]));
+  const treinoPorChave = new Map(treinos.map((t) => [t.chave, t]));
+  const pendentes = treinos
+    .filter((t) => t.respostas.length > 0)
+    .sort((a, b) => b.atualizadoEm.localeCompare(a.atualizadoEm));
   const totalQuestoes = SUBJECTS.reduce(
     (soma, s) => soma + (QUESTOES_POR_MATERIA[s.id]?.length ?? 0),
     0,
@@ -27,6 +51,48 @@ export default function Home({ stats, wrongCount, materiaFoco, onIniciar, onRese
 
   return (
     <>
+      {pendentes.length > 0 && (
+        <section className="continuar-faixa">
+          <h2 className="secao-titulo">⏯ Continuar de onde parei</h2>
+          {pendentes.map((t) => {
+            const materia = t.materia ? SUBJECTS.find((s) => s.id === t.materia) : undefined;
+            const nome = materia?.nome ?? ROTULO_MODO[t.mode];
+            return (
+              <div
+                key={t.chave}
+                className="continuar-item"
+                style={{ "--cor-materia": materia?.cor } as CSSProperties}
+              >
+                <div className="continuar-info">
+                  <strong>{nome}</strong>
+                  <span>
+                    {materia ? `${ROTULO_MODO[t.mode]} · ` : ""}
+                    {t.respostas.length} de {t.ids.length} respondidas
+                  </span>
+                </div>
+                <button className="botao botao-ouro" onClick={() => onContinuar(t.chave)}>
+                  {t.respostas.length >= t.ids.length ? "Ver resultado" : "Continuar"}
+                </button>
+                <button
+                  className="botao"
+                  onClick={() => {
+                    if (
+                      window.confirm(
+                        `Descartar o andamento de ${nome} (${t.respostas.length} de ${t.ids.length})? As respostas já dadas continuam no histórico.`,
+                      )
+                    ) {
+                      onDescartar(t.chave);
+                    }
+                  }}
+                >
+                  Descartar
+                </button>
+              </div>
+            );
+          })}
+        </section>
+      )}
+
       <div className="dica-dia" style={{ "--cor-materia": materiaDica?.cor } as CSSProperties}>
         <span className="dica-dia-tag">💡 Dica do dia · {materiaDica?.nome}</span>
         <p className="dica-dia-texto">{dica.texto}</p>
@@ -93,6 +159,8 @@ export default function Home({ stats, wrongCount, materiaFoco, onIniciar, onRese
           const st = statsPorMateria.get(s.id);
           const acuracia = st ? Math.round(st.acuracia * 100) : null;
           const disponiveis = QUESTOES_POR_MATERIA[s.id]?.length ?? 0;
+          const salvo = treinoPorChave.get(chaveTreino("materia", s.id));
+          const feitas = feitasHoje[s.id] ?? 0;
           return (
             <div
               key={s.id}
@@ -123,6 +191,19 @@ export default function Home({ stats, wrongCount, materiaFoco, onIniciar, onRese
                   📚 Fazer todas as {disponiveis} questões
                 </button>
               )}
+              {salvo && salvo.respostas.length > 0 ? (
+                <button className="materia-continuar" onClick={() => onContinuar(salvo.chave)}>
+                  ⏯ Continuar de onde parei · {salvo.respostas.length} de {salvo.ids.length}
+                </button>
+              ) : feitas > 0 && feitas < disponiveis ? (
+                <button
+                  className="materia-continuar"
+                  onClick={() => onContinuarHoje(s.id)}
+                  title="Segue com as questões desta matéria que você ainda não respondeu hoje"
+                >
+                  ⏯ Continuar as que faltam hoje · {feitas} de {disponiveis} feitas
+                </button>
+              ) : null}
               {st && st.respondidas > 0 && (
                 <button
                   className="materia-reset"

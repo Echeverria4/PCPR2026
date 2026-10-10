@@ -196,6 +196,20 @@ export interface SubjectStats<M extends string = SubjectId> {
   acuracia: number;
 }
 
+/** Treino com correção que ficou pela metade (Encerrar ou página recarregada): continua de onde parou. */
+export interface TreinoEmAndamento {
+  /** Uma vaga por modo e matéria (ver chaveTreino): começar outro treino igual substitui este. */
+  chave: string;
+  mode: QuizMode;
+  materia?: SubjectId;
+  iniciadoEm: string;
+  atualizadoEm: string;
+  /** Questões da sessão, na ordem sorteada. */
+  ids: string[];
+  /** Respostas já dadas nesta sessão, na ordem (também ficam no histórico de tentativas). */
+  respostas: AttemptRecord[];
+}
+
 export interface QuizSessionResult<M extends string = SubjectId> {
   mode: QuizMode;
   total: number;

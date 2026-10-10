@@ -9,6 +9,7 @@ import type {
   SimuladoResultado,
   SubjectId,
   SubjectStats,
+  TreinoEmAndamento,
 } from "./types";
 
 const LS_ATTEMPTS = "pcpr:attempts";
@@ -19,6 +20,7 @@ const LS_SIMULADOS = "pcpr:simulados";
 const LS_RETA_CHECKS = "pcpr:retaFinalChecks";
 const LS_PROVAS_EXTERNAS = "pcpr:provasExternas";
 const LS_RASCUNHO_EXTERNA = "pcpr:provaExternaRascunho";
+const LS_TREINOS = "pcpr:treinosEmAndamento";
 const MAX_ATTEMPTS_LOCAL = 2000;
 const MAX_WRONG_QUEUE = 60;
 const MAX_SIMULADOS = 12;
@@ -131,10 +133,12 @@ export async function syncRemoteAttempts(): Promise<AttemptRecord[]> {
     .from("attempts")
     .select("question_id, materia, acertou, respondida_em, tempo_ms, modo")
     .eq("user_id", userId)
-    .order("respondida_em", { ascending: true })
+    .order("respondida_em", { ascending: false })
     .limit(MAX_ATTEMPTS_LOCAL);
 
   if (error || !data) return getLocalAttempts();
+  // Veio do mais recente para o mais antigo (para o limite cortar as antigas); o app usa em ordem cronológica.
+  data.reverse();
 
   const confiancaLocal = new Map(
     getLocalAttempts()
@@ -259,6 +263,28 @@ export function salvarRascunhoExterna(rascunho: RascunhoProvaExterna | null): vo
       // sem localStorage não há rascunho salvo para apagar
     }
   }
+}
+
+/** Treinos pela metade, por chave (modo:matéria). */
+export function getTreinosEmAndamento(): Record<string, TreinoEmAndamento> {
+  const salvos = readLocal<Record<string, TreinoEmAndamento>>(LS_TREINOS, {});
+  const validos: Record<string, TreinoEmAndamento> = {};
+  if (!salvos || typeof salvos !== "object" || Array.isArray(salvos)) return validos;
+  for (const [chave, t] of Object.entries(salvos)) {
+    if (t && Array.isArray(t.ids) && Array.isArray(t.respostas)) validos[chave] = t;
+  }
+  return validos;
+}
+
+export function salvarTreinoEmAndamento(treino: TreinoEmAndamento): void {
+  writeLocal(LS_TREINOS, { ...getTreinosEmAndamento(), [treino.chave]: treino });
+}
+
+export function removerTreinoEmAndamento(chave: string): void {
+  const todos = getTreinosEmAndamento();
+  if (!(chave in todos)) return;
+  delete todos[chave];
+  writeLocal(LS_TREINOS, todos);
 }
 
 export async function resetAttemptsMateria(materia: SubjectId): Promise<AttemptRecord[]> {

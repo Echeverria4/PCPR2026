@@ -1,4 +1,4 @@
-import type { Question, SubjectId } from "./types";
+import type { AttemptRecord, Question, QuizMode, SubjectId, TreinoEmAndamento } from "./types";
 import { BANCO, QUESTOES_POR_MATERIA } from "../data/questions";
 import { PROVA_MIX } from "../data/subjects";
 import { getWrongQueue } from "./storage";
@@ -58,4 +58,73 @@ export function buildSessaoRevisao(): Question[] {
 
 export function buildSessaoTreinoAlvo(materiaAlvo: SubjectId, quantidade = 12): Question[] {
   return buildSessaoMateria(materiaAlvo, quantidade);
+}
+
+export const ROTULO_MODO: Record<QuizMode, string> = {
+  materia: "Treino por matéria",
+  prova: "Simulado completo",
+  revisao: "Revisão dos errados",
+  "treino-alvo": "Foco recomendado",
+  simulado: "Simulado modo prova",
+  reforco: "Reforço dirigido",
+};
+
+const QUESTAO_POR_ID = new Map(BANCO.map((q) => [q.id, q]));
+
+/** Vaga do treino em andamento: uma por modo e matéria. */
+export function chaveTreino(mode: QuizMode, materia?: SubjectId): string {
+  return `${mode}:${materia ?? "geral"}`;
+}
+
+/**
+ * Remonta um treino salvo. As já respondidas vêm antes (só contam no "Questão N de M"; não
+ * aparecem de novo) e as que faltam seguem na ordem sorteada. Questão que saiu do banco é ignorada.
+ */
+export function retomarTreino(treino: TreinoEmAndamento): { questions: Question[]; respostas: AttemptRecord[] } {
+  const respostas = treino.respostas.filter((r) => QUESTAO_POR_ID.has(r.questionId));
+  const feitas = new Set(respostas.map((r) => r.questionId));
+  const restantes = treino.ids.filter((id) => !feitas.has(id) && QUESTAO_POR_ID.has(id));
+  return {
+    questions: [
+      ...respostas.map((r) => QUESTAO_POR_ID.get(r.questionId)!),
+      ...restantes.map((id) => embaralharAlternativas(QUESTAO_POR_ID.get(id)!)),
+    ],
+    respostas,
+  };
+}
+
+/** Modos de treino da matéria que contam para "as que faltam hoje". */
+const MODOS_DA_MATERIA: QuizMode[] = ["materia", "treino-alvo"];
+
+/** Respostas de hoje (dia do aparelho) no treino da matéria: a última de cada questão, em ordem. */
+export function respostasDeHoje(attempts: AttemptRecord[], materia: SubjectId, agora = new Date()): AttemptRecord[] {
+  const hoje = agora.toDateString();
+  const ultima = new Map<string, AttemptRecord>();
+  for (const a of attempts) {
+    if (a.materia !== materia || !a.modo || !MODOS_DA_MATERIA.includes(a.modo)) continue;
+    if (!QUESTAO_POR_ID.has(a.questionId) || new Date(a.respondidaEm).toDateString() !== hoje) continue;
+    ultima.delete(a.questionId);
+    ultima.set(a.questionId, a);
+  }
+  return [...ultima.values()];
+}
+
+/**
+ * Continua o banco inteiro da matéria a partir do que já foi respondido hoje no treino:
+ * recupera um treino que se perdeu antes de existir o salvamento automático.
+ */
+export function treinoRestantesHoje(attempts: AttemptRecord[], materia: SubjectId): TreinoEmAndamento {
+  const respostas = respostasDeHoje(attempts, materia);
+  const feitas = new Set(respostas.map((r) => r.questionId));
+  const restantes = shuffle((QUESTOES_POR_MATERIA[materia] ?? []).filter((q) => !feitas.has(q.id)));
+  const agora = new Date().toISOString();
+  return {
+    chave: chaveTreino("materia", materia),
+    mode: "materia",
+    materia,
+    iniciadoEm: respostas[0]?.respondidaEm ?? agora,
+    atualizadoEm: agora,
+    ids: [...feitas, ...restantes.map((q) => q.id)],
+    respostas,
+  };
 }

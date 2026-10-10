@@ -21,14 +21,26 @@ import {
   getLocalAttempts,
   getSimuladoAtivo,
   getSimulados,
+  getTreinosEmAndamento,
   getWrongQueue,
   recordAttempts,
+  removerTreinoEmAndamento,
   resetAttemptsMateria,
   salvarSimuladoAtivo,
   salvarSimuladoResultado,
+  salvarTreinoEmAndamento,
   syncRemoteAttempts,
 } from "./lib/storage";
-import { buildSessaoMateria, buildSessaoProva, buildSessaoRevisao, buildSessaoTreinoAlvo } from "./lib/quizEngine";
+import {
+  buildSessaoMateria,
+  buildSessaoProva,
+  buildSessaoRevisao,
+  buildSessaoTreinoAlvo,
+  chaveTreino,
+  respostasDeHoje,
+  retomarTreino,
+  treinoRestantesHoje,
+} from "./lib/quizEngine";
 import { buildSessaoReforco, buildSimulado, carregarSimuladoAtivo, corrigirSimulado, restanteMs } from "./lib/retaFinal";
 import { SUBJECT_WEIGHTS } from "./data/subjects";
 import type {
@@ -40,6 +52,7 @@ import type {
   SimuladoResultado,
   SubjectId,
   SubjectStats,
+  TreinoEmAndamento,
 } from "./lib/types";
 
 type View =
@@ -74,6 +87,10 @@ interface SessaoAtiva {
   mode: QuizMode;
   questions: Question[];
   iniciadoEm: string;
+  /** Registro salvo a cada resposta, para continuar depois de Encerrar ou recarregar. */
+  treino: TreinoEmAndamento;
+  /** Respostas de antes da retomada (o quiz começa da questão seguinte). */
+  respostasIniciais: AttemptRecord[];
 }
 
 interface AppProps {
@@ -95,6 +112,7 @@ export default function App({ onTrocarCurso }: AppProps) {
   const [nomeExterna, setNomeExterna] = useState<string | null>(null);
   // Resultado recém-entregue abre com a tela animada de fim do simulado; aberto pelo histórico, não.
   const [animarFinal, setAnimarFinal] = useState(false);
+  const [treinos, setTreinos] = useState<Record<string, TreinoEmAndamento>>(() => getTreinosEmAndamento());
 
   // Simulado cujo prazo de 5h acabou com o app fechado: corrige como se tivesse sido entregue no fim do tempo.
   useEffect(() => {
@@ -131,12 +149,93 @@ export default function App({ onTrocarCurso }: AppProps) {
 
   const stats: SubjectStats[] = useMemo(() => computeStats(attempts), [attempts]);
 
+  // Questões de cada matéria já respondidas hoje no treino: base do "continuar as que faltam hoje".
+  const feitasHoje = useMemo(() => {
+    const contagem: Partial<Record<SubjectId, number>> = {};
+    for (const m of Object.keys(SUBJECT_WEIGHTS) as SubjectId[]) {
+      const n = respostasDeHoje(attempts, m).length;
+      if (n > 0) contagem[m] = n;
+    }
+    return contagem;
+  }, [attempts]);
+
   const materiaFoco: SubjectId | null = useMemo(() => {
     const recomendadas = focoRecomendado(stats, SUBJECT_WEIGHTS);
     return recomendadas.length > 0 ? recomendadas[0].materia : null;
   }, [stats]);
 
+  /** Recarrega do armazenamento o que o quiz gravou direto nele (respostas, fila de erros, treinos salvos). */
+  function atualizarDoArmazenamento() {
+    setAttempts(getLocalAttempts());
+    setWrongCount(getWrongQueue().length);
+    setTreinos(getTreinosEmAndamento());
+  }
+
+  /** Começar outro treino na mesma vaga descarta o andamento salvo: confirma antes se havia algo pela metade. */
+  function podeSubstituir(chave: string): boolean {
+    const t = getTreinosEmAndamento()[chave];
+    if (!t || t.respostas.length === 0 || t.respostas.length >= t.ids.length) return true;
+    return window.confirm(
+      `Você tem um treino pela metade aqui: ${t.respostas.length} de ${t.ids.length} respondidas. ` +
+        "Começar outro descarta esse andamento (as respostas já dadas continuam no histórico). Começar outro mesmo assim?",
+    );
+  }
+
+  function abrirSessao(mode: QuizMode, questions: Question[], materia?: SubjectId) {
+    const agora = new Date().toISOString();
+    const treino: TreinoEmAndamento = {
+      chave: chaveTreino(mode, materia),
+      mode,
+      materia,
+      iniciadoEm: agora,
+      atualizadoEm: agora,
+      ids: questions.map((q) => q.id),
+      respostas: [],
+    };
+    salvarTreinoEmAndamento(treino);
+    setSessao({ mode, questions, iniciadoEm: agora, treino, respostasIniciais: [] });
+    setView("quiz");
+  }
+
+  function retomar(treino: TreinoEmAndamento) {
+    const { questions, respostas } = retomarTreino(treino);
+    if (questions.length === 0) {
+      removerTreinoEmAndamento(treino.chave);
+      setTreinos(getTreinosEmAndamento());
+      return;
+    }
+    // Todas já respondidas (recarregou antes de "Ver resultado"): vai direto ao resultado.
+    if (respostas.length >= questions.length) {
+      mostrarResultado(treino.mode, treino.iniciadoEm, respostas, treino.chave);
+      return;
+    }
+    const salvo = { ...treino, respostas };
+    salvarTreinoEmAndamento(salvo);
+    setSessao({ mode: treino.mode, questions, iniciadoEm: treino.iniciadoEm, treino: salvo, respostasIniciais: respostas });
+    setView("quiz");
+  }
+
+  function continuarTreino(chave: string) {
+    const t = getTreinosEmAndamento()[chave];
+    if (t) retomar(t);
+  }
+
+  function continuarHoje(materia: SubjectId) {
+    retomar(treinoRestantesHoje(getLocalAttempts(), materia));
+  }
+
+  function descartarTreino(chave: string) {
+    removerTreinoEmAndamento(chave);
+    setTreinos(getTreinosEmAndamento());
+  }
+
+  function registrarProgresso(respostas: AttemptRecord[]) {
+    if (!sessao) return;
+    salvarTreinoEmAndamento({ ...sessao.treino, respostas, atualizadoEm: new Date().toISOString() });
+  }
+
   function iniciarQuiz(mode: QuizMode, materia?: SubjectId, quantidade?: number) {
+    if (!podeSubstituir(chaveTreino(mode, materia))) return;
     let questions: Question[] = [];
     if (mode === "materia" && materia) questions = buildSessaoMateria(materia, quantidade);
     else if (mode === "prova") questions = buildSessaoProva();
@@ -145,25 +244,28 @@ export default function App({ onTrocarCurso }: AppProps) {
 
     if (questions.length === 0) return;
 
-    setSessao({ mode, questions, iniciadoEm: new Date().toISOString() });
-    setView("quiz");
+    abrirSessao(mode, questions, materia);
+  }
+
+  function mostrarResultado(mode: QuizMode, iniciadoEm: string, respostas: AttemptRecord[], chave: string) {
+    removerTreinoEmAndamento(chave);
+    const sessaoResultado: QuizSessionResult = {
+      mode,
+      total: respostas.length,
+      acertos: respostas.filter((r) => r.acertou).length,
+      respostas,
+      iniciadoEm,
+      finalizadoEm: new Date().toISOString(),
+    };
+    setResultado(sessaoResultado);
+    atualizarDoArmazenamento();
+    setSessao(null);
+    setView("result");
   }
 
   function finalizarQuiz(respostas: AttemptRecord[]) {
     if (!sessao) return;
-    const sessaoResultado: QuizSessionResult = {
-      mode: sessao.mode,
-      total: respostas.length,
-      acertos: respostas.filter((r) => r.acertou).length,
-      respostas,
-      iniciadoEm: sessao.iniciadoEm,
-      finalizadoEm: new Date().toISOString(),
-    };
-    setResultado(sessaoResultado);
-    setAttempts(getLocalAttempts());
-    setWrongCount(getWrongQueue().length);
-    setSessao(null);
-    setView("result");
+    mostrarResultado(sessao.mode, sessao.iniciadoEm, respostas, sessao.treino.chave);
   }
 
   function iniciarSimulado() {
@@ -202,13 +304,14 @@ export default function App({ onTrocarCurso }: AppProps) {
   }
 
   function iniciarReforco(blocoIds: string[], quantidade: number) {
+    if (!podeSubstituir(chaveTreino("reforco"))) return;
     const questions = buildSessaoReforco(blocoIds, getLocalAttempts(), quantidade);
     if (questions.length === 0) return;
-    setSessao({ mode: "reforco", questions, iniciadoEm: new Date().toISOString() });
-    setView("quiz");
+    abrirSessao("reforco", questions);
   }
 
   function irParaReta(ancora: AncoraReta | null = null) {
+    atualizarDoArmazenamento();
     setSessao(null);
     setResultado(null);
     setAncoraReta(ancora);
@@ -217,11 +320,15 @@ export default function App({ onTrocarCurso }: AppProps) {
 
   async function resetarMateria(materia: SubjectId) {
     const restantes = await resetAttemptsMateria(materia);
+    removerTreinoEmAndamento(chaveTreino("materia", materia));
+    removerTreinoEmAndamento(chaveTreino("treino-alvo", materia));
     setAttempts(restantes);
     setWrongCount(getWrongQueue().length);
+    setTreinos(getTreinosEmAndamento());
   }
 
   function voltarHome() {
+    atualizarDoArmazenamento();
     setSessao(null);
     setResultado(null);
     setView("home");
@@ -276,6 +383,11 @@ export default function App({ onTrocarCurso }: AppProps) {
           wrongCount={wrongCount}
           materiaFoco={materiaFoco}
           onIniciar={iniciarQuiz}
+          treinos={Object.values(treinos)}
+          feitasHoje={feitasHoje}
+          onContinuar={continuarTreino}
+          onContinuarHoje={continuarHoje}
+          onDescartar={descartarTreino}
           onResetarMateria={resetarMateria}
           onAbrirRetaFinal={() => irParaReta("simulado")}
         />
@@ -341,8 +453,11 @@ export default function App({ onTrocarCurso }: AppProps) {
       {view === "modelos-mentais" && <ModelosMentais />}
       {view === "quiz" && sessao && (
         <Quiz
+          key={`${sessao.treino.chave}|${sessao.iniciadoEm}|${sessao.respostasIniciais.length}`}
           questions={sessao.questions}
           modo={sessao.mode}
+          respostasIniciais={sessao.respostasIniciais}
+          onProgresso={registrarProgresso}
           onFinalizar={finalizarQuiz}
           onSair={sessao.mode === "reforco" ? () => irParaReta("mapa") : voltarHome}
         />

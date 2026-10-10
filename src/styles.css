@@ -492,6 +492,58 @@ button {
   color: var(--texto);
 }
 
+.materia-continuar {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  padding: 6px 10px;
+  border: 1px solid var(--ouro);
+  border-radius: var(--raio);
+  background: rgba(202, 160, 58, 0.12);
+  color: var(--ouro-forte);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+}
+
+.materia-continuar:hover {
+  background: rgba(202, 160, 58, 0.22);
+}
+
+.continuar-faixa {
+  margin-bottom: 16px;
+}
+
+.continuar-faixa .secao-titulo {
+  margin-top: 0;
+}
+
+.continuar-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  border: 1px solid var(--ouro);
+  border-left: 4px solid var(--cor-materia, var(--ouro));
+  border-radius: var(--raio);
+  background: var(--bg-card);
+}
+
+.continuar-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 180px;
+  min-width: 0;
+}
+
+.continuar-info span {
+  color: var(--texto-fraco);
+  font-size: 0.85rem;
+}
+
 .materia-reset {
   position: absolute;
   top: 8px;
