@@ -16,7 +16,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 30 da Lei 21.894: o PAD é instaurado por determinação do Conselho Superior de Polícia ou do Governador, conhecidas a autoria e a materialidade. O prazo é de 120 dias, prorrogáveis por igual período, ou por prazo fixado pelo Corregedor-Geral nos casos de maior complexidade (§1º). Art. 31: o PAD começa por portaria do Corregedor-Geral, que designa a presidência entre delegados estáveis lotados na Corregedoria-Geral. Os 60 dias são da Investigação Preliminar (art. 28), usada quando a infração ou a autoria ainda não estão claras.",
+      "Art. 30 da Lei 21.894: o PAD é instaurado por determinação do Conselho Superior de Polícia ou do Governador, conhecidas a autoria e a materialidade. Art. 31: o PAD começa por portaria do Corregedor-Geral, que designa a presidência entre delegados estáveis lotados na Corregedoria-Geral.",
+    explicacaoErradas:
+      "O prazo é de 120 dias, prorrogáveis por igual período, ou por prazo fixado pelo Corregedor-Geral nos casos de maior complexidade (§1º). Os 60 dias são da Investigação Preliminar (art. 28), usada quando a infração ou a autoria ainda não estão claras.",
     origem: "banco",
     fonte: "Lei Estadual 21.894/2024 (PR)",
   },
@@ -47,7 +49,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 144, §4º, da CF: às polícias civis, dirigidas por delegados de polícia de carreira, incumbem, ressalvada a competência da União, as funções de polícia judiciária e a apuração de infrações penais, exceto as militares. O art. 47 da Constituição do Estado do Paraná repete a regra: a Polícia Civil é instituição permanente e essencial à função da segurança pública, com incumbência de exercer as funções de polícia judiciária e as apurações das infrações penais, exceto as militares. O policiamento ostensivo é da Polícia Militar (art. 48 da CE-PR), e a ação penal pública é do Ministério Público.",
+      "Art. 144, §4º, da CF: às polícias civis, dirigidas por delegados de polícia de carreira, incumbem, ressalvada a competência da União, as funções de polícia judiciária e a apuração de infrações penais, exceto as militares. O art. 47 da Constituição do Estado do Paraná repete a regra: a Polícia Civil é instituição permanente e essencial à função da segurança pública, com incumbência de exercer as funções de polícia judiciária e as apurações das infrações penais, exceto as militares.",
+    explicacaoErradas:
+      "O policiamento ostensivo é da Polícia Militar (art. 48 da CE-PR), e a ação penal pública é do Ministério Público.",
     origem: "banco",
     fonte: "CF, art. 144, §4º; CE-PR, art. 47",
   },
@@ -66,7 +70,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Legalidade, na vertente da tipicidade: na Lei 21.894, o art. 8º enumera as transgressões e já indica a pena de cada uma (por exemplo, o inciso LXIII pune o abandono de cargo com demissão), e o art. 15 lista as 5 penas possíveis. A proporcionalidade também aparece na lei, na dosimetria, com atenuantes (art. 17) e agravantes (art. 18), mas não é o princípio que exige a previsão prévia da conduta.",
+      "Legalidade, na vertente da tipicidade: na Lei 21.894, o art. 8º enumera as transgressões e já indica a pena de cada uma (por exemplo, o inciso LXIII pune o abandono de cargo com demissão), e o art. 15 lista as 5 penas possíveis.",
+    explicacaoErradas:
+      "A proporcionalidade também aparece na lei, na dosimetria, com atenuantes (art. 17) e agravantes (art. 18), mas não é o princípio que exige a previsão prévia da conduta.",
     origem: "banco",
     fonte: "Lei Estadual 21.894/2024 (PR)",
   },
@@ -85,7 +91,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "O art. 123 da Lei 6.174 lista as causas de vacância: exoneração, demissão, promoção e acesso, transferência, readaptação, aposentadoria e nomeação para outro cargo (com as ressalvas das alíneas, como a acumulação legal). Remoção e licença não deixam o cargo vago: o servidor continua titular dele.",
+      "O art. 123 da Lei 6.174 lista as causas de vacância: exoneração, demissão, promoção e acesso, transferência, readaptação, aposentadoria e nomeação para outro cargo (com as ressalvas das alíneas, como a acumulação legal).",
+    explicacaoErradas:
+      "Remoção e licença não deixam o cargo vago: o servidor continua titular dele.",
     origem: "banco",
     fonte: "Lei Estadual 6.174/1970 (PR)",
   },
@@ -177,7 +185,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 3º, §2º, da LC 259: “É vedado aos Policiais Civis o exercício legal de outras atividades remuneradas, ressalvado o magistério.” A ressalva conversa com o art. 37, XVI, da CF, que também excepciona o magistério na acumulação de cargos. Exercer fora do expediente não afasta a vedação.",
+      "Art. 3º, §2º, da LC 259: “É vedado aos Policiais Civis o exercício legal de outras atividades remuneradas, ressalvado o magistério.” A ressalva conversa com o art. 37, XVI, da CF, que também excepciona o magistério na acumulação de cargos.",
+    explicacaoErradas:
+      "Exercer fora do expediente não afasta a vedação.",
     origem: "banco",
     fonte: "LC Estadual 259/2023 (PR)",
   },
@@ -196,7 +206,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 20 da LC 259: no concurso regionalizado, o servidor deve permanecer pelo período mínimo de 3 anos em unidades da macrorregião para a qual concorreu, “sob pena de contagem em dobro do prazo para a promoção para o nível III”. A consequência é só na carreira (a promoção demora mais), sem punição disciplinar nem perda do cargo.",
+      "Art. 20 da LC 259: no concurso regionalizado, o servidor deve permanecer pelo período mínimo de 3 anos em unidades da macrorregião para a qual concorreu, “sob pena de contagem em dobro do prazo para a promoção para o nível III”.",
+    explicacaoErradas:
+      "A consequência é só na carreira (a promoção demora mais), sem punição disciplinar nem perda do cargo.",
     origem: "banco",
     fonte: "LC Estadual 259/2023 (PR)",
   },
@@ -215,7 +227,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 10 da Lei 23.213. Direção Superior: Delegacia-Geral, Conselho Superior de Polícia (CSP) e Corregedoria-Geral de Polícia (CGP). Assessoramento: Chefia de Gabinete, Assessorias Técnicas, DIP e DCI. Instrumental: COI, ESPC, DPAF e DTI. Execução: Instituto de Identificação e os departamentos e unidades de polícia judiciária. A SESP e a PM não integram a estrutura da PCPR.",
+      "Art. 10 da Lei 23.213. Direção Superior: Delegacia-Geral, Conselho Superior de Polícia (CSP) e Corregedoria-Geral de Polícia (CGP).",
+    explicacaoErradas:
+      "Assessoramento: Chefia de Gabinete, Assessorias Técnicas, DIP e DCI. Instrumental: COI, ESPC, DPAF e DTI. Execução: Instituto de Identificação e os departamentos e unidades de polícia judiciária. A SESP e a PM não integram a estrutura da PCPR.",
     origem: "banco",
     fonte: "Lei Estadual 23.213/2026 (PR)",
   },
@@ -234,7 +248,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 5º, §1º, da Lei 12.037 (redação da Lei 15.295/2025): nas hipóteses dos incisos IV e VII do art. 3º, a identificação criminal incluirá a coleta de material biológico para o perfil genético. O inciso IV é a identificação essencial às investigações, por despacho do juiz. O inciso VII é o recebimento da denúncia por crime com grave violência contra a pessoa, crime contra a liberdade sexual ou sexual contra vulnerável, crimes dos arts. 240 a 241-C do ECA ou organização criminosa armada. O §2º estende a coleta à prisão em flagrante por esses crimes. Nas demais hipóteses do art. 3º, como rasura ou documento insuficiente, a identificação é só datiloscópica e fotográfica.",
+      "Art. 5º, §1º, da Lei 12.037 (redação da Lei 15.295/2025): nas hipóteses dos incisos IV e VII do art. 3º, a identificação criminal incluirá a coleta de material biológico para o perfil genético. O inciso IV é a identificação essencial às investigações, por despacho do juiz. O inciso VII é o recebimento da denúncia por crime com grave violência contra a pessoa, crime contra a liberdade sexual ou sexual contra vulnerável, crimes dos arts. 240 a 241-C do ECA ou organização criminosa armada. O §2º estende a coleta à prisão em flagrante por esses crimes.",
+    explicacaoErradas:
+      "Nas demais hipóteses do art. 3º, como rasura ou documento insuficiente, a identificação é só datiloscópica e fotográfica.",
     origem: "banco",
     fonte: "Lei 12.037/2009, art. 5º, com redação da Lei 15.295/2025",
   },
@@ -289,7 +305,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 3º da LC 259: as carreiras são Delegado de Polícia, Agente de Polícia Judiciária, Papiloscopista Policial e Agente de Operações Policiais (em extinção). Pelo art. 76, os cargos de Escrivão e Investigador, vagos e ocupados, foram transformados no cargo de Agente de Polícia Judiciária. Pelo art. 77, o Agente absorveu os direitos, deveres, prerrogativas e atribuições das duas carreiras antigas.",
+      "Art. 3º da LC 259: as carreiras são Delegado de Polícia, Agente de Polícia Judiciária, Papiloscopista Policial e Agente de Operações Policiais (em extinção).",
+    explicacaoErradas:
+      "Pelo art. 76, os cargos de Escrivão e Investigador, vagos e ocupados, foram transformados no cargo de Agente de Polícia Judiciária. Pelo art. 77, o Agente absorveu os direitos, deveres, prerrogativas e atribuições das duas carreiras antigas.",
     origem: "banco",
     fonte: "LC Estadual 259/2023 (PR)",
   },
@@ -308,7 +326,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Arts. 2º e 11 da Lei 23.213: a PCPR é dirigida por Delegado de Polícia em atividade e da classe mais elevada, nomeado pelo Governador, e tem como chefe o Delegado-Geral. Ele também preside o Conselho Superior de Polícia (art. 17, I), e a Delegacia-Geral integra a Direção Superior (art. 10, I). O Secretário da SESP é autoridade do Executivo e não chefia a carreira policial civil.",
+      "Arts. 2º e 11 da Lei 23.213: a PCPR é dirigida por Delegado de Polícia em atividade e da classe mais elevada, nomeado pelo Governador, e tem como chefe o Delegado-Geral. Ele também preside o Conselho Superior de Polícia (art. 17, I), e a Delegacia-Geral integra a Direção Superior (art. 10, I).",
+    explicacaoErradas:
+      "O Secretário da SESP é autoridade do Executivo e não chefia a carreira policial civil.",
     origem: "banco",
     fonte: "Lei Estadual 23.213/2026 (PR)",
   },
@@ -327,7 +347,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "O art. 291 da Lei 6.174 tem 7 penas: advertência, repreensão, suspensão, multa, destituição de função, demissão e cassação de aposentadoria ou disponibilidade. A alternativa sem advertência descreve o Código Disciplinar da PCPR (Lei 21.894, art. 15), que tem 5 penas: repreensão, suspensão, demissão e as duas cassações. A prisão administrativa do Estatuto (art. 302) não é pena disciplinar: cabe ao responsável por dinheiro público em caso de alcance.",
+      "O art. 291 da Lei 6.174 tem 7 penas: advertência, repreensão, suspensão, multa, destituição de função, demissão e cassação de aposentadoria ou disponibilidade.",
+    explicacaoErradas:
+      "A alternativa sem advertência descreve o Código Disciplinar da PCPR (Lei 21.894, art. 15), que tem 5 penas: repreensão, suspensão, demissão e as duas cassações. A prisão administrativa do Estatuto (art. 302) não é pena disciplinar: cabe ao responsável por dinheiro público em caso de alcance.",
     origem: "banco",
     fonte: "Lei Estadual 6.174/1970 (PR)",
   },
@@ -346,7 +368,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 285, IV, da Lei 6.174. Outras proibições muito cobradas: receber propinas, comissões, presentes e vantagens em razão do cargo (X); revelar fato sigiloso, salvo em depoimento em processo judicial, policial ou administrativo (XI); deixar de comparecer ao trabalho sem causa justificada (XV); usar bens do Estado em serviço particular (XVII); incitar greves ou aderir a elas (XIX). As demais alternativas são deveres do art. 279 (incisos XVI, VIII, IX e VII).",
+      "Art. 285, IV, da Lei 6.174. Outras proibições muito cobradas: receber propinas, comissões, presentes e vantagens em razão do cargo (X); revelar fato sigiloso, salvo em depoimento em processo judicial, policial ou administrativo (XI); deixar de comparecer ao trabalho sem causa justificada (XV); usar bens do Estado em serviço particular (XVII); incitar greves ou aderir a elas (XIX).",
+    explicacaoErradas:
+      "As demais alternativas são deveres do art. 279 (incisos XVI, VIII, IX e VII).",
     origem: "banco",
     fonte: "Lei Estadual 6.174/1970 (PR)",
   },
@@ -384,7 +408,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Com a LC 285/2025, o curso de formação deixou de ser etapa do concurso e passou a ocorrer depois da posse. Pelo art. 19, os empossados são convocados e matriculados de imediato no curso, na Escola Superior de Polícia Civil, e pelo art. 26 a matrícula corresponde à data de entrada em exercício. O art. 22, §1º, diz que, enquanto não concluir o curso, o policial não pode exercer qualquer ato relacionado à atividade-fim, salvo em estágio supervisionado. A primeira lotação é escolhida ao final do curso, pela classificação final nele obtida (art. 19, §§1º e 2º).",
+      "Com a LC 285/2025, o curso de formação deixou de ser etapa do concurso e passou a ocorrer depois da posse. Pelo art. 19, os empossados são convocados e matriculados de imediato no curso, na Escola Superior de Polícia Civil, e pelo art. 26 a matrícula corresponde à data de entrada em exercício. O art. 22, §1º, diz que, enquanto não concluir o curso, o policial não pode exercer qualquer ato relacionado à atividade-fim, salvo em estágio supervisionado.",
+    explicacaoErradas:
+      "A primeira lotação é escolhida ao final do curso, pela classificação final nele obtida (art. 19, §§1º e 2º).",
     origem: "banco",
     fonte: "LC Estadual 259/2023, arts. 19 e 22, com redação da LC 285/2025",
   },
@@ -403,7 +429,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 27 da Lei 14.735: o oficial investigador atua \"sob determinação ou coordenação do delegado de polícia\", com atuação técnica e científica nos limites de suas atribuições. O parágrafo único manda produzir o laudo investigativo e as demais peças e encaminhá-los ao delegado para apreciação. A presidência do inquérito é do delegado (art. 26, parágrafo único), e o perito é que atua sob requisição do delegado (art. 28).",
+      "Art. 27 da Lei 14.735: o oficial investigador atua \"sob determinação ou coordenação do delegado de polícia\", com atuação técnica e científica nos limites de suas atribuições. O parágrafo único manda produzir o laudo investigativo e as demais peças e encaminhá-los ao delegado para apreciação.",
+    explicacaoErradas:
+      "A presidência do inquérito é do delegado (art. 26, parágrafo único), e o perito é que atua sob requisição do delegado (art. 28).",
     origem: "banco",
     fonte: "Lei 14.735/2023 (Planalto)",
   },
@@ -441,7 +469,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 10 da Lei 14.735: a Corregedoria-Geral é \"dotada de autonomia em suas atividades\". O Corregedor-Geral é designado pelo Delegado-Geral entre os delegados da classe mais elevada (§1º). Quem foi lotado na Corregedoria tem facultada lotação subsequente em unidade administrativa por no mínimo 1 ano (§2º). Na pena de demissão, há duplo grau de revisão, com recurso ao Conselho Superior e, em última instância, ao Chefe do Executivo (§3º).",
+      "Na pena de demissão, há duplo grau de revisão, com recurso ao Conselho Superior e, em última instância, ao Chefe do Executivo (§3º). Quem foi lotado na Corregedoria tem facultada lotação subsequente em unidade administrativa por no mínimo 1 ano (§2º).",
+    explicacaoErradas:
+      "Art. 10 da Lei 14.735: a Corregedoria-Geral é \"dotada de autonomia em suas atividades\". O Corregedor-Geral é designado pelo Delegado-Geral entre os delegados da classe mais elevada (§1º).",
     origem: "banco",
     fonte: "Lei 14.735/2023 (Planalto)",
   },
@@ -498,7 +528,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 20 da Lei 14.735: os cargos são de nível superior, e os requisitos gerais são ser brasileiro, ter no mínimo 18 anos, estar quite com as obrigações eleitorais e militares e ter capacidade física e mental. Para o oficial investigador, basta graduação em qualquer área (§1º). O bacharelado em Direito com 3 anos de atividade jurídica ou policial é exigido do delegado (§3º), e é no concurso de delegado que a OAB participa de todas as fases.",
+      "Art. 20 da Lei 14.735: os cargos são de nível superior, e os requisitos gerais são ser brasileiro, ter no mínimo 18 anos, estar quite com as obrigações eleitorais e militares e ter capacidade física e mental. Para o oficial investigador, basta graduação em qualquer área (§1º).",
+    explicacaoErradas:
+      "O bacharelado em Direito com 3 anos de atividade jurídica ou policial é exigido do delegado (§3º), e é no concurso de delegado que a OAB participa de todas as fases.",
     origem: "banco",
     fonte: "Lei 14.735/2023 (Planalto)",
   },
@@ -517,7 +549,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 30, IV, da Lei 14.735 garante o recolhimento em unidade prisional da própria instituição. O mesmo artigo assegura ainda identidade funcional e porte de arma com validade nacional (I e II), livre trânsito em razão da função (III), pronta comunicação da prisão ao chefe imediato (V), precedência em audiências como testemunha de fato do serviço (IX) e jornada não superior a 40 horas semanais (XIX). A lei não cria imunidade à prisão nem foro especial.",
+      "Art. 30, IV, da Lei 14.735 garante o recolhimento em unidade prisional da própria instituição.",
+    explicacaoErradas:
+      "O mesmo artigo assegura ainda identidade funcional e porte de arma com validade nacional (I e II), livre trânsito em razão da função (III), pronta comunicação da prisão ao chefe imediato (V), precedência em audiências como testemunha de fato do serviço (IX) e jornada não superior a 40 horas semanais (XIX). A lei não cria imunidade à prisão nem foro especial.",
     origem: "banco",
     fonte: "Lei 14.735/2023 (Planalto)",
   },
@@ -536,7 +570,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 8º da Lei 14.735: o chefe é o Delegado-Geral, nomeado pelo governador entre os delegados em atividade da classe mais elevada. O parágrafo único exige planejamento estratégico em até 30 dias da nomeação. O Conselho Superior é presidido pelo Delegado-Geral e tem representantes de todos os cargos (art. 9º). A lei orgânica estadual é de iniciativa do governador (art. 3º). As polícias civis são integrantes operacionais do Susp (art. 2º).",
+      "Art. 8º da Lei 14.735: o chefe é o Delegado-Geral, nomeado pelo governador entre os delegados em atividade da classe mais elevada. O parágrafo único exige planejamento estratégico em até 30 dias da nomeação.",
+    explicacaoErradas:
+      "O Conselho Superior é presidido pelo Delegado-Geral e tem representantes de todos os cargos (art. 9º). A lei orgânica estadual é de iniciativa do governador (art. 3º). As polícias civis são integrantes operacionais do Susp (art. 2º).",
     origem: "banco",
     fonte: "Lei 14.735/2023 (Planalto)",
   },
@@ -555,7 +591,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 15 da Lei 21.894: são 5 penas, e não existe advertência. A repreensão é sempre aplicada por escrito, publicada e anotada no assentamento (art. 19). Advertência, multa e destituição de função são penas do Estatuto (Lei 6.174, art. 291), e é aí que a FGV costuma montar a pegadinha.",
+      "Art. 15 da Lei 21.894: são 5 penas, e não existe advertência. A repreensão é sempre aplicada por escrito, publicada e anotada no assentamento (art. 19).",
+    explicacaoErradas:
+      "Advertência, multa e destituição de função são penas do Estatuto (Lei 6.174, art. 291), e é aí que a FGV costuma montar a pegadinha.",
     origem: "banco",
     fonte: "Lei Estadual 21.894/2024 (PR)",
   },
@@ -574,7 +612,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 20 da Lei 21.894: a suspensão acarreta a perda de metade do subsídio, por dia, e não pode exceder 90 dias. O parágrafo único manda recolher a arma, o conjunto documental e os bens acautelados enquanto durar a pena. A conversão em multa de 50% é regra do Estatuto (Lei 6.174, art. 293, §5º), e o Código Disciplinar da PCPR não prevê multa.",
+      "Art. 20 da Lei 21.894: a suspensão acarreta a perda de metade do subsídio, por dia, e não pode exceder 90 dias. O parágrafo único manda recolher a arma, o conjunto documental e os bens acautelados enquanto durar a pena.",
+    explicacaoErradas:
+      "A conversão em multa de 50% é regra do Estatuto (Lei 6.174, art. 293, §5º), e o Código Disciplinar da PCPR não prevê multa.",
     origem: "banco",
     fonte: "Lei Estadual 21.894/2024 (PR)",
   },
@@ -593,7 +633,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 62 da Lei 21.894: 2 anos para a transgressão punível com repreensão ou suspensão e 5 anos para a punível com demissão ou cassação. Se a pena prevista vai de suspensão a demissão, o prazo é de 5 anos (§1º), mas cai para 2 anos se a suspensão for a pena aplicada (§2º). Pelo art. 63, o prazo conta do dia da consumação, e, nas transgressões permanentes ou continuadas, do dia em que cessaram. Os 4 anos são do Estatuto (Lei 6.174, art. 301).",
+      "Art. 62 da Lei 21.894: 2 anos para a transgressão punível com repreensão ou suspensão e 5 anos para a punível com demissão ou cassação. Se a pena prevista vai de suspensão a demissão, o prazo é de 5 anos (§1º), mas cai para 2 anos se a suspensão for a pena aplicada (§2º). Pelo art. 63, o prazo conta do dia da consumação, e, nas transgressões permanentes ou continuadas, do dia em que cessaram.",
+    explicacaoErradas:
+      "Os 4 anos são do Estatuto (Lei 6.174, art. 301).",
     origem: "banco",
     fonte: "Lei Estadual 21.894/2024 (PR)",
   },
@@ -612,7 +654,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 25 da Lei 21.894: o Governador aplica, originariamente, a demissão e a cassação de aposentadoria ou disponibilidade (I). O Conselho Superior de Polícia aplica, originariamente, repreensão e suspensão (III). O Secretário da Segurança Pública atua em grau recursal sobre repreensão e suspensão (II). O Corregedor-Geral instaura e conduz a apuração, mas não aplica pena.",
+      "Art. 25 da Lei 21.894: o Governador aplica, originariamente, a demissão e a cassação de aposentadoria ou disponibilidade (I).",
+    explicacaoErradas:
+      "O Conselho Superior de Polícia aplica, originariamente, repreensão e suspensão (III). O Secretário da Segurança Pública atua em grau recursal sobre repreensão e suspensão (II). O Corregedor-Geral instaura e conduz a apuração, mas não aplica pena.",
     origem: "banco",
     fonte: "Lei Estadual 21.894/2024 (PR)",
   },
@@ -650,7 +694,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 72, §4º, da Lei 21.894: o descumprimento impede novo TAC, sobre qualquer objeto, por 5 anos, contados da decisão do Corregedor-Geral que declarar o descumprimento. Além disso, a chefia comunica o fato ao Corregedor-Geral para instaurar ou retomar o procedimento disciplinar (art. 72, §2º), e a inobservância do TAC sujeita o servidor a procedimento disciplinar autônomo (art. 70, §2º). Não confunda: o prazo de 2 anos é o requisito para quem já firmou TAC (art. 66, II). O TAC dura no máximo 2 anos (art. 70, §1º), e o cumprimento leva ao arquivamento (art. 72, §5º).",
+      "Art. 72, §4º, da Lei 21.894: o descumprimento impede novo TAC, sobre qualquer objeto, por 5 anos, contados da decisão do Corregedor-Geral que declarar o descumprimento. Além disso, a chefia comunica o fato ao Corregedor-Geral para instaurar ou retomar o procedimento disciplinar (art. 72, §2º), e a inobservância do TAC sujeita o servidor a procedimento disciplinar autônomo (art. 70, §2º).",
+    explicacaoErradas:
+      "Não confunda: o prazo de 2 anos é o requisito para quem já firmou TAC (art. 66, II). O TAC dura no máximo 2 anos (art. 70, §1º), e o cumprimento leva ao arquivamento (art. 72, §5º).",
     origem: "banco",
     fonte: "Lei Estadual 21.894/2024 (PR)",
   },
@@ -669,7 +715,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 8º da Lei 21.894. Inciso LXIV: ausência comprovada, sem causa justificada, por mais de 45 dias não consecutivos no período de um ano, punida com demissão. Inciso LXIII: abandono de cargo, que é a ausência sem justa causa por 30 dias consecutivos, também punida com demissão. Compare com o Estatuto (Lei 6.174, art. 293, §§1º e 2º): abandono com 30 dias consecutivos e inassiduidade com 60 faltas interpoladas em 12 meses.",
+      "Art. 8º da Lei 21.894. Inciso LXIV: ausência comprovada, sem causa justificada, por mais de 45 dias não consecutivos no período de um ano, punida com demissão.",
+    explicacaoErradas:
+      "Inciso LXIII: abandono de cargo, que é a ausência sem justa causa por 30 dias consecutivos, também punida com demissão. Compare com o Estatuto (Lei 6.174, art. 293, §§1º e 2º): abandono com 30 dias consecutivos e inassiduidade com 60 faltas interpoladas em 12 meses.",
     origem: "banco",
     fonte: "Lei Estadual 21.894/2024 (PR)",
   },
@@ -707,7 +755,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 55 da Lei 21.894: cabe recurso por uma única vez, com efeito suspensivo, em 10 dias úteis da intimação, ao Secretário da Segurança Pública, contra as penas aplicadas originariamente pelo Conselho Superior de Polícia. O recurso é protocolado no próprio Conselho, que pode se retratar em matéria de ordem pública (§1º), e o Secretário decide em 30 dias (§4º). No Estatuto (Lei 6.174, art. 264), o recurso não tem efeito suspensivo.",
+      "Art. 55 da Lei 21.894: cabe recurso por uma única vez, com efeito suspensivo, em 10 dias úteis da intimação, ao Secretário da Segurança Pública, contra as penas aplicadas originariamente pelo Conselho Superior de Polícia. O recurso é protocolado no próprio Conselho, que pode se retratar em matéria de ordem pública (§1º), e o Secretário decide em 30 dias (§4º).",
+    explicacaoErradas:
+      "No Estatuto (Lei 6.174, art. 264), o recurso não tem efeito suspensivo.",
     origem: "banco",
     fonte: "Lei Estadual 21.894/2024 (PR)",
   },
@@ -726,7 +776,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 58 da Lei 21.894: a revisão cabe a qualquer tempo, diante de novas provas de inocência ou de circunstância que permita atenuar a pena. Não servem como fundamento a simples alegação de injustiça, a mera reapreciação da prova e a absolvição criminal por insuficiência de provas (§1º). A pena não pode ser agravada (§4º). O pedido vai ao Presidente do Conselho Superior de Polícia (art. 59), e a revisão procedente pode absolver, mudar a pena ou anular o processo (art. 61).",
+      "Art. 58 da Lei 21.894: a revisão cabe a qualquer tempo, diante de novas provas de inocência ou de circunstância que permita atenuar a pena. A pena não pode ser agravada (§4º). O pedido vai ao Presidente do Conselho Superior de Polícia (art. 59), e a revisão procedente pode absolver, mudar a pena ou anular o processo (art. 61).",
+    explicacaoErradas:
+      "Não servem como fundamento a simples alegação de injustiça, a mera reapreciação da prova e a absolvição criminal por insuficiência de provas (§1º).",
     origem: "banco",
     fonte: "Lei Estadual 21.894/2024 (PR)",
   },
@@ -745,7 +797,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 106 da Lei 6.174: reintegração é o reingresso decorrente de decisão administrativa ou judiciária, com ressarcimento dos vencimentos e vantagens. Readmissão (art. 103) é o reingresso do exonerado ou do demitido sem ressarcimento. Reversão (art. 114) é a volta do aposentado quando os motivos da aposentadoria deixam de existir. Aproveitamento (art. 110) é a volta do servidor em disponibilidade. Readaptação (art. 119) é a passagem para cargo mais compatível com a capacidade física ou intelectual e a vocação.",
+      "Art. 106 da Lei 6.174: reintegração é o reingresso decorrente de decisão administrativa ou judiciária, com ressarcimento dos vencimentos e vantagens.",
+    explicacaoErradas:
+      "Readmissão (art. 103) é o reingresso do exonerado ou do demitido sem ressarcimento. Reversão (art. 114) é a volta do aposentado quando os motivos da aposentadoria deixam de existir. Aproveitamento (art. 110) é a volta do servidor em disponibilidade. Readaptação (art. 119) é a passagem para cargo mais compatível com a capacidade física ou intelectual e a vocação.",
     origem: "banco",
     fonte: "Lei Estadual 6.174/1970 (PR)",
   },
@@ -764,7 +818,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 293 da Lei 6.174: advertência verbal na mera negligência (I). Repreensão por escrito na desobediência, na falta de cumprimento dos deveres e na reincidência em falta punida com advertência (II). Suspensão de até 90 dias na falta grave, na infração às proibições e na reincidência em falta punida com repreensão (III). O Código Disciplinar da PCPR (Lei 21.894) não tem advertência.",
+      "Art. 293 da Lei 6.174: advertência verbal na mera negligência (I). O Código Disciplinar da PCPR (Lei 21.894) não tem advertência.",
+    explicacaoErradas:
+      "Repreensão por escrito na desobediência, na falta de cumprimento dos deveres e na reincidência em falta punida com advertência (II). Suspensão de até 90 dias na falta grave, na infração às proibições e na reincidência em falta punida com repreensão (III).",
     origem: "banco",
     fonte: "Lei Estadual 6.174/1970 (PR)",
   },
@@ -783,7 +839,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 293, §2º, da Lei 6.174: 60 dias interpolados em 12 meses, sem causa justificada, levam à demissão. O abandono de cargo é a ausência sem justa causa por 30 dias consecutivos (§1º). No Código Disciplinar da PCPR, a regra é mais rígida: mais de 45 dias não consecutivos em um ano já levam à demissão (Lei 21.894, art. 8º, LXIV).",
+      "Art. 293, §2º, da Lei 6.174: 60 dias interpolados em 12 meses, sem causa justificada, levam à demissão.",
+    explicacaoErradas:
+      "O abandono de cargo é a ausência sem justa causa por 30 dias consecutivos (§1º). No Código Disciplinar da PCPR, a regra é mais rígida: mais de 45 dias não consecutivos em um ano já levam à demissão (Lei 21.894, art. 8º, LXIV).",
     origem: "banco",
     fonte: "Lei Estadual 6.174/1970 (PR)",
   },
@@ -802,7 +860,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 301 da Lei 6.174: prescreve em 2 anos a falta sujeita a repreensão ou suspensão e em 4 anos a sujeita a demissão, destituição de função ou cassação. A falta que também é crime prescreve junto com o crime (parágrafo único). No Código Disciplinar da PCPR, a demissão prescreve em 5 anos (Lei 21.894, art. 62, II).",
+      "Art. 301 da Lei 6.174: prescreve em 2 anos a falta sujeita a repreensão ou suspensão e em 4 anos a sujeita a demissão, destituição de função ou cassação. A falta que também é crime prescreve junto com o crime (parágrafo único).",
+    explicacaoErradas:
+      "No Código Disciplinar da PCPR, a demissão prescreve em 5 anos (Lei 21.894, art. 62, II).",
     origem: "banco",
     fonte: "Lei Estadual 6.174/1970 (PR)",
   },
@@ -840,7 +900,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 240 da Lei 6.174: só o funcionário estável pode obtê-la, sem vencimento. Ele aguarda em exercício a concessão (§1º), e a licença dura no máximo 2 anos contínuos, com intervalo de 2 anos para nova licença (§2º). Ela não é concedida quando for inconveniente para o serviço, nem ao nomeado, removido ou transferido antes de assumir o exercício (art. 241). O funcionário pode desistir a qualquer tempo (art. 242), e a licença pode ser cassada por interesse público, com retorno em 30 dias (art. 243).",
+      "Art. 240 da Lei 6.174: só o funcionário estável pode obtê-la, sem vencimento. Ele aguarda em exercício a concessão (§1º), e a licença dura no máximo 2 anos contínuos, com intervalo de 2 anos para nova licença (§2º).",
+    explicacaoErradas:
+      "A licença não é concedida quando for inconveniente para o serviço, nem ao nomeado, removido ou transferido antes de assumir o exercício (art. 241). O funcionário pode desistir a qualquer tempo (art. 242), e a licença pode ser cassada por interesse público, com retorno em 30 dias (art. 243).",
     origem: "banco",
     fonte: "Lei Estadual 6.174/1970 (PR)",
   },
@@ -859,7 +921,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 265 da Lei 6.174: 5 anos para atos de que decorram demissão, aposentadoria ou sua cassação e disponibilidade, e 120 dias nos demais casos. O prazo conta da publicação oficial do ato ou, se o ato for reservado, da ciência do interessado (art. 266). O pedido de reconsideração e o recurso interrompem a prescrição até duas vezes (art. 267), e os prazos são improrrogáveis (art. 268).",
+      "Art. 265 da Lei 6.174: 5 anos para atos de que decorram demissão, aposentadoria ou sua cassação e disponibilidade, e 120 dias nos demais casos. O prazo conta da publicação oficial do ato ou, se o ato for reservado, da ciência do interessado (art. 266).",
+    explicacaoErradas:
+      "O pedido de reconsideração e o recurso interrompem a prescrição até duas vezes (art. 267), e os prazos são improrrogáveis (art. 268).",
     origem: "banco",
     fonte: "Lei Estadual 6.174/1970 (PR)",
   },
@@ -897,7 +961,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 264 da Lei 6.174: o pedido de reconsideração e o recurso não têm efeito suspensivo, e o que for provido retroage à data do ato impugnado. Eles interrompem a prescrição até duas vezes (art. 267). No Código Disciplinar da PCPR é o contrário: o recurso contra as penas do Conselho Superior tem efeito suspensivo (Lei 21.894, art. 55).",
+      "Art. 264 da Lei 6.174: o pedido de reconsideração e o recurso não têm efeito suspensivo, e o que for provido retroage à data do ato impugnado.",
+    explicacaoErradas:
+      "O pedido de reconsideração e o recurso interrompem a prescrição até duas vezes (art. 267). No Código Disciplinar da PCPR é o contrário: o recurso contra as penas do Conselho Superior tem efeito suspensivo (Lei 21.894, art. 55).",
     origem: "banco",
     fonte: "Lei Estadual 6.174/1970 (PR)",
   },
@@ -916,7 +982,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 296 da Lei 6.174: o Governador aplica qualquer pena e, de forma privativa, a demissão e a cassação de aposentadoria e disponibilidade (I). Os Secretários de Estado aplicam todas, salvo as privativas do Governador (II). Os chefes de unidades aplicam advertência, repreensão, suspensão até 30 dias e multa correspondente (III). A destituição de função cabe a quem fez a designação (§2º).",
+      "Os chefes de unidades aplicam advertência, repreensão, suspensão até 30 dias e multa correspondente (III).",
+    explicacaoErradas:
+      "Art. 296 da Lei 6.174: o Governador aplica qualquer pena e, de forma privativa, a demissão e a cassação de aposentadoria e disponibilidade (I). Os Secretários de Estado aplicam todas, salvo as privativas do Governador (II). A destituição de função cabe a quem fez a designação (§2º).",
     origem: "banco",
     fonte: "Lei Estadual 6.174/1970 (PR)",
   },
@@ -935,7 +1003,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "A Lei 21.894/2024 é o Código Disciplinar da PCPR: prevê Investigação Preliminar e PAD (art. 27), com o PAD presidido por delegados da Corregedoria (art. 31). A Lei 23.213/2026 dá à Corregedoria-Geral, com exclusividade, a apuração das transgressões dos policiais civis (art. 21, I). O Estatuto (Lei 6.174) continua valendo no que a legislação da PCPR não regula, mas seus artigos sobre processo administrativo (arts. 306 a 310) foram revogados pela Lei 20.656/2021. A LC 14/1982 foi revogada pela Lei 23.213. A Lei 8.112 é federal.",
+      "A Lei 21.894/2024 é o Código Disciplinar da PCPR: prevê Investigação Preliminar e PAD (art. 27), com o PAD presidido por delegados da Corregedoria (art. 31). A Lei 23.213/2026 dá à Corregedoria-Geral, com exclusividade, a apuração das transgressões dos policiais civis (art. 21, I).",
+    explicacaoErradas:
+      "O Estatuto (Lei 6.174) continua valendo no que a legislação da PCPR não regula, mas seus artigos sobre processo administrativo (arts. 306 a 310) foram revogados pela Lei 20.656/2021. A LC 14/1982 foi revogada pela Lei 23.213. A Lei 8.112 é federal.",
     origem: "banco",
     fonte: "Lei Estadual 21.894/2024 (PR)",
   },
@@ -992,7 +1062,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 49 da LC 259. A estabilidade é requisito só para o nível II (I). A capacitação, após 2 anos de efetivo exercício em cada nível, leva aos níveis III, IV, V, VII, VIII, IX e XI (II). O nível VI do Agente e do AOP exige o Curso de Técnicas de Investigação Policial e Procedimentos de Polícia Judiciária, com nota mínima 7,0 (IV, a). O nível X exige o Curso de Aperfeiçoamento Policial em Planejamento e Gestão de Segurança Pública (IV, b).",
+      "Art. 49 da LC 259: o nível VI do Agente e do AOP exige o Curso de Técnicas de Investigação Policial e Procedimentos de Polícia Judiciária, com nota mínima 7,0 (IV, a).",
+    explicacaoErradas:
+      "A estabilidade é requisito só para o nível II (I). A capacitação, após 2 anos de efetivo exercício em cada nível, leva aos níveis III, IV, V, VII, VIII, IX e XI (II). O nível X exige o Curso de Aperfeiçoamento Policial em Planejamento e Gestão de Segurança Pública (IV, b).",
     origem: "banco",
     fonte: "LC Estadual 259/2023 (PR)",
   },
@@ -1011,7 +1083,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 72, §3º, da LC 259. O Agente pode requisitar auxílio de autoridades e elaborar expedientes requisitando informações e diligências, sempre em cumprimento de determinação do Delegado (I e II). Exerce atribuições apuratórias, cartorárias e investigativas sob determinação ou coordenação do Delegado (III). E produz o laudo investigativo e as demais peças, que vão ao Delegado para apreciação (IV, incluído pela LC 289/2025). A presidência do inquérito é exclusiva do Delegado (art. 5º).",
+      "Art. 72, §3º, da LC 259: o Agente produz o laudo investigativo e as demais peças, que vão ao Delegado para apreciação (IV, incluído pela LC 289/2025). Exerce atribuições apuratórias, cartorárias e investigativas sob determinação ou coordenação do Delegado (III).",
+    explicacaoErradas:
+      "O Agente pode requisitar auxílio de autoridades e elaborar expedientes requisitando informações e diligências, sempre em cumprimento de determinação do Delegado (I e II). A presidência do inquérito é exclusiva do Delegado (art. 5º).",
     origem: "banco",
     fonte: "LC Estadual 259/2023 (PR)",
   },
@@ -1030,7 +1104,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 60 da LC 259: não será promovido quem, na data de abertura do processo, registre repreensão nos 90 dias anteriores (V, redação da LC 289/2025) ou suspensão nos 2 anos anteriores (VI). Também impedem a promoção: 6 ou mais faltas não abonadas em 12 meses (I); responder a procedimento por fato de excepcional gravidade punível com suspensão de 60 dias ou mais ou com demissão (II); e condenação criminal transitada em julgado e não reabilitada (VII).",
+      "Art. 60 da LC 259: não será promovido quem, na data de abertura do processo, registre repreensão nos 90 dias anteriores (V, redação da LC 289/2025) ou suspensão nos 2 anos anteriores (VI).",
+    explicacaoErradas:
+      "Também impedem a promoção: 6 ou mais faltas não abonadas em 12 meses (I); responder a procedimento por fato de excepcional gravidade punível com suspensão de 60 dias ou mais ou com demissão (II); e condenação criminal transitada em julgado e não reabilitada (VII).",
     origem: "banco",
     fonte: "LC Estadual 259/2023 (PR)",
   },
@@ -1049,7 +1125,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 70 da LC 259: o afastamento remunerado é para o policial estável, no interesse e a critério da Administração. Quem concede é o Conselho Superior; se o curso for no exterior, o pedido segue ao Governador (§1º). O limite é de 6 meses, e mestrado, doutorado e pós-doutorado podem chegar a 2 anos (§2º). O afastamento é deferido uma única vez para cada nível de curso (§4º).",
+      "Art. 70 da LC 259: o afastamento remunerado é para o policial estável, no interesse e a critério da Administração. Quem concede é o Conselho Superior. O limite é de 6 meses, e mestrado, doutorado e pós-doutorado podem chegar a 2 anos (§2º).",
+    explicacaoErradas:
+      "Se o curso for no exterior, o pedido segue ao Governador (§1º). O afastamento é deferido uma única vez para cada nível de curso (§4º).",
     origem: "banco",
     fonte: "LC Estadual 259/2023 (PR)",
   },
@@ -1087,7 +1165,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 26 da LC 259: o policial removido tem até 3 dias úteis para entrar em exercício em unidade da mesma sede e até 8 dias úteis quando for outro município. Ao fim de licença para interesses particulares e na reintegração e na reversão, o prazo é de até 15 dias, contados do término.",
+      "Art. 26 da LC 259: o policial removido tem até 3 dias úteis para entrar em exercício em unidade da mesma sede e até 8 dias úteis quando for outro município.",
+    explicacaoErradas:
+      "Ao fim de licença para interesses particulares e na reintegração e na reversão, o prazo é de até 15 dias, contados do término.",
     origem: "banco",
     fonte: "LC Estadual 259/2023 (PR)",
   },
@@ -1106,7 +1186,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 25 da LC 259: a posse ocorre em 30 dias da publicação oficial do ato de provimento, prorrogáveis uma vez por igual período, a requerimento do interessado e a juízo da autoridade. Sem posse no prazo, a nomeação é tornada sem efeito (parágrafo único). Não há demissão nem exoneração, porque ainda não há vínculo: a posse é o ato que completa a investidura (art. 22).",
+      "Art. 25 da LC 259: a posse ocorre em 30 dias da publicação oficial do ato de provimento, prorrogáveis uma vez por igual período, a requerimento do interessado e a juízo da autoridade. Sem posse no prazo, a nomeação é tornada sem efeito (parágrafo único).",
+    explicacaoErradas:
+      "Não há demissão nem exoneração, porque ainda não há vínculo: a posse é o ato que completa a investidura (art. 22).",
     origem: "banco",
     fonte: "LC Estadual 259/2023 (PR)",
   },
@@ -1125,7 +1207,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 66 da LC 259: a ajuda de custo não é paga ao recém-admitido nomeado para local diferente de onde reside. Pelo art. 65, ela vale uma remuneração mensal (§1º). O servidor deve comprovar a mudança em até 90 dias da portaria (§2º). É paga uma vez a cada 2 anos, salvo remoção por interesse da Administração justificada pelo Delegado-Geral (§3º). E não é paga se o servidor obtiver autorização do Conselho Superior para continuar residindo na origem (§4º).",
+      "Art. 66 da LC 259: a ajuda de custo não é paga ao recém-admitido nomeado para local diferente de onde reside.",
+    explicacaoErradas:
+      "Pelo art. 65, a ajuda de custo vale uma remuneração mensal (§1º). O servidor deve comprovar a mudança em até 90 dias da portaria (§2º). É paga uma vez a cada 2 anos, salvo remoção por interesse da Administração justificada pelo Delegado-Geral (§3º). E não é paga se o servidor obtiver autorização do Conselho Superior para continuar residindo na origem (§4º).",
     origem: "banco",
     fonte: "LC Estadual 259/2023 (PR)",
   },
@@ -1144,7 +1228,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 10, II, da Lei 23.213: o Assessoramento reúne Chefia de Gabinete, Assessorias Técnicas, DIP e DCI, e presta assessoria direta ao Delegado-Geral (§2º). O DIP e o DCI são subordinados diretamente ao Delegado-Geral (arts. 24 e 25). A ESPC, a COI, o DPAF e o DTI ficam no nível Instrumental. O Instituto de Identificação e as unidades de polícia judiciária, como o DOESP, ficam na Execução.",
+      "Art. 10, II, da Lei 23.213: o Assessoramento reúne Chefia de Gabinete, Assessorias Técnicas, DIP e DCI, e presta assessoria direta ao Delegado-Geral (§2º). O DIP e o DCI são subordinados diretamente ao Delegado-Geral (arts. 24 e 25).",
+    explicacaoErradas:
+      "A ESPC, a COI, o DPAF e o DTI ficam no nível Instrumental. O Instituto de Identificação e as unidades de polícia judiciária, como o DOESP, ficam na Execução.",
     origem: "banco",
     fonte: "Lei Estadual 23.213/2026 (PR)",
   },
@@ -1182,7 +1268,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 21 da Lei 23.213. Cabe à CGP apurar com exclusividade as transgressões disciplinares (I) e, preferencialmente, as infrações penais atribuídas a policiais civis, podendo designar autoridades de fora da Corregedoria (II). Ela também designa os presidentes dos procedimentos entre os Delegados nela lotados (III) e celebra TAC só nas infrações de menor potencial ofensivo (XVI). A demissão é aplicada pelo Governador (Lei 21.894, art. 25, I).",
+      "Art. 21 da Lei 23.213. Cabe à CGP apurar com exclusividade as transgressões disciplinares (I) e, preferencialmente, as infrações penais atribuídas a policiais civis, podendo designar autoridades de fora da Corregedoria (II).",
+    explicacaoErradas:
+      "A CGP também designa os presidentes dos procedimentos entre os Delegados nela lotados (III) e celebra TAC só nas infrações de menor potencial ofensivo (XVI). A demissão é aplicada pelo Governador (Lei 21.894, art. 25, I).",
     origem: "banco",
     fonte: "Lei Estadual 23.213/2026 (PR)",
   },
@@ -1201,7 +1289,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 51 da Lei 23.213: é vedada a avocação de inquérito, e a unidade especializada pode atuar em regime de cooperação, se o interesse público o exigir. A exceção do parágrafo único: se houver inobservância dos procedimentos que prejudique a eficácia e a agilidade da investigação, o superior hierárquico pode avocar ou redistribuir o inquérito, por despacho fundamentado. No caso, a investigação corre regularmente, então vale a regra.",
+      "Art. 51 da Lei 23.213: é vedada a avocação de inquérito, e a unidade especializada pode atuar em regime de cooperação, se o interesse público o exigir. No caso, a investigação corre regularmente, então vale a regra.",
+    explicacaoErradas:
+      "A exceção do parágrafo único: se houver inobservância dos procedimentos que prejudique a eficácia e a agilidade da investigação, o superior hierárquico pode avocar ou redistribuir o inquérito, por despacho fundamentado.",
     origem: "banco",
     fonte: "Lei Estadual 23.213/2026 (PR)",
   },
@@ -1220,7 +1310,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 54 da Lei 23.213. Para criar uma unidade, exigem-se distrito-sede do município, população de pelo menos 30 mil habitantes e no mínimo 500 boletins de ocorrência criminais no ano (I). Para instalá-la, prédio e efetivo (II). O CSP analisa as condições (§1º) e pode dispensá-las por distância ou dificuldade de acesso (§3º), e todo município sede de comarca terá DP (§2º). A extinção é proposta pelo CSP ao Delegado-Geral (§4º). Em município com menos de 30 mil habitantes que não seja sede de comarca, cabe Posto Policial de Atendimento ao Cidadão (PPAC), com autorização prévia do CSP (art. 55).",
+      "Art. 54 da Lei 23.213. O CSP analisa as condições (§1º) e pode dispensá-las por distância ou dificuldade de acesso (§3º), e todo município sede de comarca terá DP (§2º).",
+    explicacaoErradas:
+      "Para criar uma unidade, exigem-se distrito-sede do município, população de pelo menos 30 mil habitantes e no mínimo 500 boletins de ocorrência criminais no ano (I). Para instalá-la, prédio e efetivo (II). A extinção é proposta pelo CSP ao Delegado-Geral (§4º). Em município com menos de 30 mil habitantes que não seja sede de comarca, cabe Posto Policial de Atendimento ao Cidadão (PPAC), com autorização prévia do CSP (art. 55).",
     origem: "banco",
     fonte: "Lei Estadual 23.213/2026 (PR)",
   },
@@ -1258,7 +1350,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 40 da Lei 23.213: o DOESP é dirigido por Delegado com curso de Operações Táticas Especiais, designado pelo Delegado-Geral, e cuida de situações críticas e resgate de reféns (I), apoio tático-operacional (II) e investigação de sequestros e extorsões mediante sequestro (III). Os crimes cibernéticos ficam com o DRCC (art. 41), a disciplina com a Corregedoria (art. 21) e a identificação com o Instituto de Identificação. A perícia criminal é da Polícia Científica, fora da PCPR.",
+      "Art. 40 da Lei 23.213: o DOESP é dirigido por Delegado com curso de Operações Táticas Especiais, designado pelo Delegado-Geral, e cuida de situações críticas e resgate de reféns (I), apoio tático-operacional (II) e investigação de sequestros e extorsões mediante sequestro (III).",
+    explicacaoErradas:
+      "Os crimes cibernéticos ficam com o DRCC (art. 41), a disciplina com a Corregedoria (art. 21) e a identificação com o Instituto de Identificação. A perícia criminal é da Polícia Científica, fora da PCPR.",
     origem: "banco",
     fonte: "Lei Estadual 23.213/2026 (PR)",
   },
@@ -1277,7 +1371,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 7º da Lei 23.213: a investigação tem caráter técnico, científico e jurídico, vai da notícia da infração penal ao relatório final apresentado ao Judiciário e inclui a formalização das provas, a pesquisa de autoria e materialidade, o gerenciamento de crises e o encaminhamento à rede de proteção. Quando não for possível investigar várias infrações ao mesmo tempo, o Delegado deve dar prioridade às de maior potencial ofensivo (parágrafo único).",
+      "Art. 7º da Lei 23.213: a investigação tem caráter técnico, científico e jurídico, vai da notícia da infração penal ao relatório final apresentado ao Judiciário e inclui a formalização das provas, a pesquisa de autoria e materialidade, o gerenciamento de crises e o encaminhamento à rede de proteção.",
+    explicacaoErradas:
+      "Quando não for possível investigar várias infrações ao mesmo tempo, o Delegado deve dar prioridade às de maior potencial ofensivo (parágrafo único).",
     origem: "banco",
     fonte: "Lei Estadual 23.213/2026 (PR)",
   },
@@ -1296,7 +1392,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 6º, V, da Lei 23.213: a PCPR cadastra os custodiados recolhidos durante o tempo indispensável à lavratura do flagrante, com encaminhamento obrigatório ao sistema prisional logo após o ato. A regra acompanha a Lei 14.735, que veda a custódia de preso e de adolescente infrator nas dependências da polícia civil, salvo interesse fundamentado da investigação (art. 40).",
+      "Art. 6º, V, da Lei 23.213: a PCPR cadastra os custodiados recolhidos durante o tempo indispensável à lavratura do flagrante, com encaminhamento obrigatório ao sistema prisional logo após o ato.",
+    explicacaoErradas:
+      "A regra acompanha a Lei 14.735, que veda a custódia de preso e de adolescente infrator nas dependências da polícia civil, salvo interesse fundamentado da investigação (art. 40).",
     origem: "banco",
     fonte: "Lei Estadual 23.213/2026 (PR)",
   },
@@ -1315,7 +1413,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 9º-A da LEP, na redação da Lei 15.295/2025, em vigor desde janeiro de 2026: o critério passou a ser a pena e o regime, e não mais o tipo de crime. Todo condenado à reclusão em regime inicial fechado tem o DNA colhido ao ingressar no estabelecimento prisional, por técnica adequada e indolor. A redação de 2012 falava em crimes hediondos e dolosos com violência grave, e a de 2019 em crimes violentos, contra a vida e sexuais. Quem não foi identificado no ingresso deve sê-lo durante o cumprimento da pena (§4º), e a recusa do condenado constitui falta grave (§8º).",
+      "Art. 9º-A da LEP, na redação da Lei 15.295/2025, em vigor desde janeiro de 2026: o critério passou a ser a pena e o regime, e não mais o tipo de crime. Todo condenado à reclusão em regime inicial fechado tem o DNA colhido ao ingressar no estabelecimento prisional, por técnica adequada e indolor.",
+    explicacaoErradas:
+      "A redação de 2012 falava em crimes hediondos e dolosos com violência grave, e a de 2019 em crimes violentos, contra a vida e sexuais. Quem não foi identificado no ingresso deve sê-lo durante o cumprimento da pena (§4º), e a recusa do condenado constitui falta grave (§8º).",
     origem: "banco",
     fonte: "Lei 7.210/1984 (LEP), art. 9º-A, com redação da Lei 15.295/2025",
   },
@@ -1353,7 +1453,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 7º-A da Lei 12.037, na redação da Lei 13.964/2019: o perfil é excluído (I) na absolvição do acusado; ou (II) na condenação, mediante requerimento, depois de 20 anos do cumprimento da pena. A redação original, de 2012, ligava a exclusão ao prazo de prescrição do delito, e é justamente essa a pegadinha mais comum.",
+      "Art. 7º-A da Lei 12.037, na redação da Lei 13.964/2019: o perfil é excluído (I) na absolvição do acusado; ou (II) na condenação, mediante requerimento, depois de 20 anos do cumprimento da pena.",
+    explicacaoErradas:
+      "A redação original, de 2012, ligava a exclusão ao prazo de prescrição do delito, e é justamente essa a pegadinha mais comum.",
     origem: "banco",
     fonte: "Lei 12.037/2009",
   },
@@ -1372,7 +1474,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 7º da Lei 12.037: no caso de não oferecimento da denúncia, de sua rejeição ou de absolvição, é facultado ao indiciado ou ao réu, após o arquivamento definitivo do inquérito ou o trânsito em julgado da sentença, requerer a retirada da identificação fotográfica do inquérito ou processo, desde que apresente provas de sua identificação civil. É uma faculdade, que depende de requerimento.",
+      "Art. 7º da Lei 12.037: no caso de não oferecimento da denúncia, de sua rejeição ou de absolvição, é facultado ao indiciado ou ao réu, após o arquivamento definitivo do inquérito ou o trânsito em julgado da sentença, requerer a retirada da identificação fotográfica do inquérito ou processo, desde que apresente provas de sua identificação civil.",
+    explicacaoErradas:
+      "É uma faculdade, que depende de requerimento.",
     origem: "banco",
     fonte: "Lei 12.037/2009",
   },
@@ -1429,7 +1533,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 1º, §1º, da Lei 13.869: as condutas só são crime quando praticadas com a finalidade específica de prejudicar outrem ou beneficiar a si mesmo ou a terceiro, ou por mero capricho ou satisfação pessoal. É o chamado dolo específico. Não há modalidade culposa. O §2º completa a ideia: a divergência na interpretação de lei ou na avaliação de fatos e provas não configura abuso.",
+      "Art. 1º, §1º, da Lei 13.869: as condutas só são crime quando praticadas com a finalidade específica de prejudicar outrem ou beneficiar a si mesmo ou a terceiro, ou por mero capricho ou satisfação pessoal. É o chamado dolo específico. O §2º completa a ideia: a divergência na interpretação de lei ou na avaliação de fatos e provas não configura abuso.",
+    explicacaoErradas:
+      "Não há modalidade culposa.",
     origem: "banco",
     fonte: "Lei 13.869/2019",
   },
@@ -1562,7 +1668,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 15-A da Lei 13.869 (incluído pela Lei 14.321/2022): pena de detenção de 3 meses a 1 ano e multa. Pelo §1º, se o agente público permitir que terceiro intimide a vítima de crimes violentos, gerando revitimização, a pena é aumentada de 2/3. Pelo §2º, se o próprio agente intimidar a vítima, a pena é aplicada em dobro. Qualquer agente público pode praticá-lo, inclusive na fase policial.",
+      "Art. 15-A da Lei 13.869 (incluído pela Lei 14.321/2022): pelo §1º, se o agente público permitir que terceiro intimide a vítima de crimes violentos, gerando revitimização, a pena é aumentada de 2/3. Pelo §2º, se o próprio agente intimidar a vítima, a pena é aplicada em dobro.",
+    explicacaoErradas:
+      "A pena é de detenção de 3 meses a 1 ano e multa. Qualquer agente público pode praticá-lo, inclusive na fase policial.",
     origem: "banco",
     fonte: "Lei 13.869/2019",
   },
@@ -1600,7 +1708,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 38 da Lei 13.869: é crime o responsável pelas investigações antecipar, por meio de comunicação, inclusive rede social, atribuição de culpa, antes de concluídas as apurações e formalizada a acusação. A pena é de detenção de 6 meses a 2 anos e multa. Expor o preso à curiosidade pública mediante violência ou grave ameaça é outro crime (art. 13, I).",
+      "Art. 38 da Lei 13.869: é crime o responsável pelas investigações antecipar, por meio de comunicação, inclusive rede social, atribuição de culpa, antes de concluídas as apurações e formalizada a acusação. A pena é de detenção de 6 meses a 2 anos e multa.",
+    explicacaoErradas:
+      "Expor o preso à curiosidade pública mediante violência ou grave ameaça é outro crime (art. 13, I).",
     origem: "banco",
     fonte: "Lei 13.869/2019",
   },
@@ -1657,7 +1767,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 8º da Lei 13.869: faz coisa julgada no âmbito cível e no administrativo-disciplinar a sentença penal que reconhecer que o ato foi praticado em estado de necessidade, legítima defesa, estrito cumprimento de dever legal ou exercício regular de direito. A regra geral é a independência das esferas (arts. 6º e 7º), mas não se pode mais discutir a existência ou a autoria do fato quando já decididas no juízo criminal.",
+      "Art. 8º da Lei 13.869: faz coisa julgada no âmbito cível e no administrativo-disciplinar a sentença penal que reconhecer que o ato foi praticado em estado de necessidade, legítima defesa, estrito cumprimento de dever legal ou exercício regular de direito.",
+    explicacaoErradas:
+      "A regra geral é a independência das esferas (arts. 6º e 7º), mas não se pode mais discutir a existência ou a autoria do fato quando já decididas no juízo criminal.",
     origem: "banco",
     fonte: "Lei 13.869/2019",
   },
@@ -1676,7 +1788,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 2º da Lei 13.869: é sujeito ativo qualquer agente público, servidor ou não, da administração direta, indireta ou fundacional de qualquer dos Poderes da União, dos Estados, do Distrito Federal, dos Municípios e de Território, incluindo servidores e militares, membros do Legislativo, do Executivo, do Judiciário, do Ministério Público e dos tribunais ou conselhos de contas. Pelo parágrafo único, agente público é todo aquele que exerce, ainda que transitoriamente ou sem remuneração, mandato, cargo, emprego ou função.",
+      "Art. 2º, parágrafo único, da Lei 13.869: agente público é todo aquele que exerce, ainda que transitoriamente ou sem remuneração, mandato, cargo, emprego ou função.",
+    explicacaoErradas:
+      "É sujeito ativo qualquer agente público, servidor ou não, da administração direta, indireta ou fundacional de qualquer dos Poderes da União, dos Estados, do Distrito Federal, dos Municípios e de Território, incluindo servidores e militares, membros do Legislativo, do Executivo, do Judiciário, do Ministério Público e dos tribunais ou conselhos de contas.",
     origem: "banco",
     fonte: "Lei 13.869/2019",
   },
@@ -1695,7 +1809,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 46 da CE-PR: a segurança pública, dever do Estado, direito e responsabilidade de todos, é exercida pela Polícia Civil (I), pela Polícia Militar (II), pela Polícia Penal (IV, incluída pela EC 50/2021) e pelo Corpo de Bombeiros Militar (V, incluído pela EC 53/2022). O inciso III, Polícia Científica, veio da EC 10/2001, declarada inconstitucional pelo STF na ADI 2.616, e na ADI 2.575 o STF afastou o caráter de órgão de segurança pública da Polícia Científica. Guarda Municipal e polícia rodoviária estadual não constam do rol.",
+      "Art. 46 da CE-PR: a segurança pública, dever do Estado, direito e responsabilidade de todos, é exercida pela Polícia Civil (I), pela Polícia Militar (II), pela Polícia Penal (IV, incluída pela EC 50/2021) e pelo Corpo de Bombeiros Militar (V, incluído pela EC 53/2022).",
+    explicacaoErradas:
+      "O inciso III, Polícia Científica, veio da EC 10/2001, declarada inconstitucional pelo STF na ADI 2.616, e na ADI 2.575 o STF afastou o caráter de órgão de segurança pública da Polícia Científica. Guarda Municipal e polícia rodoviária estadual não constam do rol.",
     origem: "banco",
     fonte: "CE-PR, art. 46, com as EC 50/2021 e 53/2022",
   },
@@ -1714,7 +1830,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 47, caput, da CE-PR: a Polícia Civil, dirigida por delegado de polícia, preferencialmente da classe mais elevada da carreira, é instituição permanente e essencial à função da segurança pública, com incumbência de exercer as funções de polícia judiciária e as apurações das infrações penais, exceto as militares. Atenção à palavra “preferencialmente”: a Constituição não exige a classe mais elevada nem prevê lista tríplice.",
+      "Art. 47, caput, da CE-PR: a Polícia Civil, dirigida por delegado de polícia, preferencialmente da classe mais elevada da carreira, é instituição permanente e essencial à função da segurança pública, com incumbência de exercer as funções de polícia judiciária e as apurações das infrações penais, exceto as militares.",
+    explicacaoErradas:
+      "Atenção à palavra “preferencialmente”: a Constituição não exige a classe mais elevada nem prevê lista tríplice.",
     origem: "banco",
     fonte: "CE-PR, art. 47, caput",
   },
@@ -1733,7 +1851,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 47, §2º, da CE-PR: o Conselho da Polícia Civil é órgão consultivo, normativo e deliberativo, para fins de controle do ingresso, ascensão funcional, hierarquia e regime disciplinar das carreiras policiais civis. Os três adjetivos e as quatro finalidades costumam ser trocados nas alternativas. O controle externo da atividade policial é do Ministério Público (art. 129, VII, da CF), e julgar crimes é função do Judiciário.",
+      "Art. 47, §2º, da CE-PR: o Conselho da Polícia Civil é órgão consultivo, normativo e deliberativo, para fins de controle do ingresso, ascensão funcional, hierarquia e regime disciplinar das carreiras policiais civis.",
+    explicacaoErradas:
+      "Os três adjetivos e as quatro finalidades costumam ser trocados nas alternativas. O controle externo da atividade policial é do Ministério Público (art. 129, VII, da CF), e julgar crimes é função do Judiciário.",
     origem: "banco",
     fonte: "CE-PR, art. 47, §2º",
   },
@@ -1752,7 +1872,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 47 da CE-PR: a função policial civil fundamenta-se na hierarquia e disciplina (§1º); os cargos policiais civis são providos por concurso público de provas e títulos (§3º); e o cargo de Delegado de Polícia integra, para todos os fins, as carreiras jurídicas do Estado (§4º, incluído pela EC 27/2010). A hierarquia e a disciplina “militares” são próprias da Polícia Militar (art. 48). Integrar as carreiras jurídicas não dá ao Delegado as garantias da magistratura nem o coloca no Ministério Público.",
+      "Art. 47 da CE-PR: a função policial civil fundamenta-se na hierarquia e disciplina (§1º); os cargos policiais civis são providos por concurso público de provas e títulos (§3º); e o cargo de Delegado de Polícia integra, para todos os fins, as carreiras jurídicas do Estado (§4º, incluído pela EC 27/2010).",
+    explicacaoErradas:
+      "A hierarquia e a disciplina “militares” são próprias da Polícia Militar (art. 48). Integrar as carreiras jurídicas não dá ao Delegado as garantias da magistratura nem o coloca no Ministério Público.",
     origem: "banco",
     fonte: "CE-PR, art. 47, §§1º, 3º e 4º",
   },
@@ -1771,7 +1893,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 47, §5º, da CE-PR (redação da EC 30/2012): a remuneração dos delegados e policiais civis é fixada na forma de subsídio, em parcela única, conforme o art. 39, §4º, da CF, em face do art. 144, §9º, da CF. Parcela única significa que é vedado acrescentar gratificação, adicional, abono, prêmio ou verba de representação. A Polícia Penal também recebe por subsídio (art. 50-A, §5º).",
+      "Art. 47, §5º, da CE-PR (redação da EC 30/2012): a remuneração dos delegados e policiais civis é fixada na forma de subsídio, em parcela única, conforme o art. 39, §4º, da CF, em face do art. 144, §9º, da CF. A Polícia Penal também recebe por subsídio (art. 50-A, §5º).",
+    explicacaoErradas:
+      "Parcela única significa que é vedado acrescentar gratificação, adicional, abono, prêmio ou verba de representação.",
     origem: "banco",
     fonte: "CE-PR, art. 47, §5º",
   },
@@ -1790,7 +1914,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 49 da CE-PR (redação da EC 53/2022): a Polícia Militar e o Corpo de Bombeiros Militar, comandados por oficial da ativa do último posto do quadro de oficiais combatentes da respectiva corporação, forças auxiliares e reserva do Exército, a Polícia Civil e a Polícia Penal subordinam-se ao Governador do Estado e são regidas por legislação especial. O Corpo de Bombeiros deixou de integrar a Polícia Militar e virou órgão próprio (art. 46, V). A regra segue o art. 144, §6º, da CF.",
+      "Art. 49 da CE-PR (redação da EC 53/2022): a Polícia Militar e o Corpo de Bombeiros Militar, comandados por oficial da ativa do último posto do quadro de oficiais combatentes da respectiva corporação, forças auxiliares e reserva do Exército, a Polícia Civil e a Polícia Penal subordinam-se ao Governador do Estado e são regidas por legislação especial. A regra segue o art. 144, §6º, da CF.",
+    explicacaoErradas:
+      "O Corpo de Bombeiros deixou de integrar a Polícia Militar e virou órgão próprio (art. 46, V).",
     origem: "banco",
     fonte: "CE-PR, art. 49, com a EC 53/2022",
   },
@@ -1809,7 +1935,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 48 da CE-PR (redação da EC 53/2022): à Polícia Militar, força estadual, instituição permanente e regular, organizada com base na hierarquia e disciplina militares, cabem a polícia ostensiva, a preservação da ordem pública, o policiamento de trânsito urbano e rodoviário, de florestas e de mananciais, além de outras formas e funções definidas em lei. A EC 53/2022 tirou do art. 48 a defesa civil, a prevenção e o combate a incêndio, as buscas, os salvamentos e os socorros públicos, porque o Corpo de Bombeiros Militar virou órgão próprio. Polícia judiciária é da Polícia Civil, a segurança dos presídios é da Polícia Penal e a perícia é da Polícia Científica.",
+      "Art. 48 da CE-PR (redação da EC 53/2022): à Polícia Militar, força estadual, instituição permanente e regular, organizada com base na hierarquia e disciplina militares, cabem a polícia ostensiva, a preservação da ordem pública, o policiamento de trânsito urbano e rodoviário, de florestas e de mananciais, além de outras formas e funções definidas em lei.",
+    explicacaoErradas:
+      "A EC 53/2022 tirou do art. 48 a defesa civil, a prevenção e o combate a incêndio, as buscas, os salvamentos e os socorros públicos, porque o Corpo de Bombeiros Militar virou órgão próprio. Polícia judiciária é da Polícia Civil, a segurança dos presídios é da Polícia Penal e a perícia é da Polícia Científica.",
     origem: "banco",
     fonte: "CE-PR, art. 48, com a EC 53/2022",
   },
@@ -1828,7 +1956,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 50-A da CE-PR (EC 50/2021): a Polícia Penal é instituição permanente e essencial à segurança pública, incumbida da segurança dos estabelecimentos penais e de outros setores vinculados à execução penal. Ela se fundamenta na hierarquia e na disciplina (§1º), o ingresso é exclusivamente por concurso público (§2º), os cargos de Agente Penitenciário foram transformados em Policial Penal (§3º), há um Conselho da Polícia Penal (§4º), a remuneração é por subsídio (§5º) e a estrutura própria é o DEPPEN (§6º). Ela se subordina ao Governador (art. 49), não à Polícia Civil. A apuração de crimes cometidos nos presídios continua com a Polícia Civil.",
+      "Art. 50-A da CE-PR (EC 50/2021): a Polícia Penal é instituição permanente e essencial à segurança pública, incumbida da segurança dos estabelecimentos penais e de outros setores vinculados à execução penal. Ela se fundamenta na hierarquia e na disciplina (§1º), o ingresso é exclusivamente por concurso público (§2º), os cargos de Agente Penitenciário foram transformados em Policial Penal (§3º), há um Conselho da Polícia Penal (§4º), a remuneração é por subsídio (§5º) e a estrutura própria é o DEPPEN (§6º).",
+    explicacaoErradas:
+      "A Polícia Penal se subordina ao Governador (art. 49), não à Polícia Civil. A apuração de crimes cometidos nos presídios continua com a Polícia Civil.",
     origem: "banco",
     fonte: "CE-PR, art. 50-A, incluído pela EC 50/2021",
   },
@@ -1866,7 +1996,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 15 da LAI: no caso de indeferimento de acesso a informações ou às razões da negativa, o interessado pode recorrer no prazo de 10 dias a contar da sua ciência. O recurso vai à autoridade hierarquicamente superior à que exarou a decisão impugnada, que deve se manifestar em 5 dias (parágrafo único). O art. 14 garante ao requerente o direito de obter o inteiro teor da decisão de negativa. Não confundir com o prazo de resposta ao pedido, que é de até 20 dias, prorrogáveis por mais 10 (art. 11).",
+      "Art. 15 da LAI: no caso de indeferimento de acesso a informações ou às razões da negativa, o interessado pode recorrer no prazo de 10 dias a contar da sua ciência. O recurso vai à autoridade hierarquicamente superior à que exarou a decisão impugnada, que deve se manifestar em 5 dias (parágrafo único). O art. 14 garante ao requerente o direito de obter o inteiro teor da decisão de negativa.",
+    explicacaoErradas:
+      "Não confundir com o prazo de resposta ao pedido, que é de até 20 dias, prorrogáveis por mais 10 (art. 11).",
     origem: "banco",
     fonte: "Lei 12.527/2011, art. 15",
   },
@@ -1885,7 +2017,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 23 da LAI: são passíveis de classificação as informações cuja divulgação possa, entre outras hipóteses, pôr em risco a defesa e a soberania nacionais, a vida, a segurança ou a saúde da população, a segurança de instituições ou de altas autoridades e (inciso VIII) comprometer atividades de inteligência, bem como de investigação ou fiscalização em andamento, relacionadas com a prevenção ou repressão de infrações. Constrangimento político ou críticas não justificam sigilo, e as condutas que violam direitos humanos praticadas por agentes públicos não podem ter acesso restrito (art. 21, parágrafo único). Além disso, a LAI não afasta os demais sigilos legais nem o segredo de justiça (art. 22).",
+      "Art. 23 da LAI: são passíveis de classificação as informações cuja divulgação possa, entre outras hipóteses, pôr em risco a defesa e a soberania nacionais, a vida, a segurança ou a saúde da população, a segurança de instituições ou de altas autoridades e (inciso VIII) comprometer atividades de inteligência, bem como de investigação ou fiscalização em andamento, relacionadas com a prevenção ou repressão de infrações. Além disso, a LAI não afasta os demais sigilos legais nem o segredo de justiça (art. 22).",
+    explicacaoErradas:
+      "Constrangimento político ou críticas não justificam sigilo, e as condutas que violam direitos humanos praticadas por agentes públicos não podem ter acesso restrito (art. 21, parágrafo único).",
     origem: "banco",
     fonte: "Lei 12.527/2011, art. 23, VIII",
   },
@@ -1923,7 +2057,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 31, §1º, I, da LAI: as informações pessoais relativas à intimidade, vida privada, honra e imagem têm acesso restrito, independentemente de classificação de sigilo e pelo prazo máximo de 100 anos a contar da sua produção, a agentes públicos legalmente autorizados e à pessoa a que se referirem. A divulgação ou o acesso por terceiros depende de previsão legal ou de consentimento expresso da pessoa (inciso II). O consentimento é dispensado, por exemplo, para cumprimento de ordem judicial, para a defesa de direitos humanos e para a proteção do interesse público e geral preponderante (§3º). Os prazos de 25, 15 e 5 anos são das informações classificadas como sigilosas (art. 24), e não das pessoais.",
+      "Art. 31, §1º, I, da LAI: as informações pessoais relativas à intimidade, vida privada, honra e imagem têm acesso restrito, independentemente de classificação de sigilo e pelo prazo máximo de 100 anos a contar da sua produção, a agentes públicos legalmente autorizados e à pessoa a que se referirem.",
+    explicacaoErradas:
+      "A divulgação ou o acesso por terceiros depende de previsão legal ou de consentimento expresso da pessoa (inciso II). O consentimento é dispensado, por exemplo, para cumprimento de ordem judicial, para a defesa de direitos humanos e para a proteção do interesse público e geral preponderante (§3º). Os prazos de 25, 15 e 5 anos são das informações classificadas como sigilosas (art. 24), e não das pessoais.",
     origem: "banco",
     fonte: "Lei 12.527/2011, art. 31",
   },
@@ -1961,7 +2097,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 24 da LAI: os prazos máximos são de 25 anos (ultrassecreta), 15 anos (secreta) e 5 anos (reservada), contados da data de produção da informação. O termo final pode ser um evento que ocorra antes do fim do prazo máximo (§3º). Transcorrido o prazo ou consumado o evento, a informação torna-se automaticamente de acesso público (§4º). Na classificação, observa-se o interesse público e usa-se o critério menos restritivo possível, considerando a gravidade do risco e o prazo máximo (§5º). As informações que possam pôr em risco a segurança do Presidente, do Vice e de seus cônjuges e filhos são reservadas até o término do mandato em exercício ou do último mandato, em caso de reeleição (§2º).",
+      "Art. 24 da LAI: transcorrido o prazo ou consumado o evento, a informação torna-se automaticamente de acesso público (§4º). Na classificação, observa-se o interesse público e usa-se o critério menos restritivo possível, considerando a gravidade do risco e o prazo máximo (§5º). As informações que possam pôr em risco a segurança do Presidente, do Vice e de seus cônjuges e filhos são reservadas até o término do mandato em exercício ou do último mandato, em caso de reeleição (§2º).",
+    explicacaoErradas:
+      "Os prazos máximos são de 25 anos (ultrassecreta), 15 anos (secreta) e 5 anos (reservada), contados da data de produção da informação. O termo final pode ser um evento que ocorra antes do fim do prazo máximo (§3º).",
     origem: "banco",
     fonte: "Lei 12.527/2011, art. 24",
   },
@@ -1999,7 +2137,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 32 da LAI: entre as condutas ilícitas estão recusar, retardar ou fornecer intencionalmente de forma incorreta a informação (I); utilizar indevidamente, subtrair, destruir ou ocultar informação (II); agir com dolo ou má-fé na análise dos pedidos (III); divulgar ou permitir acesso indevido a informação sigilosa ou pessoal (IV); impor sigilo para obter proveito pessoal ou ocultar ato ilegal (V); ocultar informação sigilosa da revisão de autoridade superior (VI); e destruir documentos sobre violações de direitos humanos (VII). Para os servidores regidos pela Lei 8.112, a punição mínima é a suspensão (§1º, II), e o agente pode responder também por improbidade administrativa (§2º). Divulgar informação de interesse coletivo sem requerimento não é ilícito: é dever do órgão (art. 8º).",
+      "Art. 32 da LAI: entre as condutas ilícitas estão recusar, retardar ou fornecer intencionalmente de forma incorreta a informação (I); utilizar indevidamente, subtrair, destruir ou ocultar informação (II); agir com dolo ou má-fé na análise dos pedidos (III); divulgar ou permitir acesso indevido a informação sigilosa ou pessoal (IV); impor sigilo para obter proveito pessoal ou ocultar ato ilegal (V); ocultar informação sigilosa da revisão de autoridade superior (VI); e destruir documentos sobre violações de direitos humanos (VII). Para os servidores regidos pela Lei 8.112, a punição mínima é a suspensão (§1º, II), e o agente pode responder também por improbidade administrativa (§2º).",
+    explicacaoErradas:
+      "Divulgar informação de interesse coletivo sem requerimento não é ilícito: é dever do órgão (art. 8º).",
     origem: "banco",
     fonte: "Lei 12.527/2011, art. 32",
   },
@@ -2018,7 +2158,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 8º da LAI (transparência ativa): é dever dos órgãos e entidades públicas promover, independentemente de requerimentos, a divulgação em local de fácil acesso das informações de interesse coletivo ou geral que produzam ou custodiem. O §2º torna obrigatória a divulgação em sítios oficiais da internet, e o §4º dispensa dela os Municípios de até 10.000 habitantes, que continuam obrigados a divulgar em tempo real a execução orçamentária e financeira. A LAI vale para a União, os Estados, o Distrito Federal e os Municípios (art. 1º).",
+      "Art. 8º da LAI (transparência ativa): é dever dos órgãos e entidades públicas promover, independentemente de requerimentos, a divulgação em local de fácil acesso das informações de interesse coletivo ou geral que produzam ou custodiem. O §2º torna obrigatória a divulgação em sítios oficiais da internet, e o §4º dispensa dela os Municípios de até 10.000 habitantes, que continuam obrigados a divulgar em tempo real a execução orçamentária e financeira.",
+    explicacaoErradas:
+      "A LAI vale para a União, os Estados, o Distrito Federal e os Municípios (art. 1º).",
     origem: "banco",
     fonte: "Lei 12.527/2011, art. 8º",
   },
@@ -2037,7 +2179,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 19, §1º, da LC 259 (redação da LC 285/2025): ao final do curso de formação, os policiais civis são convocados para escolher a primeira unidade de lotação, dentre as definidas pelo Conselho Superior da Polícia Civil como prioritárias e de provimento imediato. O §2º diz que a ordem de escolha leva em conta, exclusivamente, a classificação final obtida no curso de formação técnico-profissional específico. Ou seja, a nota da prova não decide a lotação: o desempenho no curso, sim.",
+      "Art. 19, §1º, da LC 259 (redação da LC 285/2025): ao final do curso de formação, os policiais civis são convocados para escolher a primeira unidade de lotação, dentre as definidas pelo Conselho Superior da Polícia Civil como prioritárias e de provimento imediato. O §2º diz que a ordem de escolha leva em conta, exclusivamente, a classificação final obtida no curso de formação técnico-profissional específico.",
+    explicacaoErradas:
+      "A nota da prova não decide a lotação: o desempenho no curso, sim.",
     origem: "banco",
     fonte: "LC Estadual 259/2023, art. 19, §§1º e 2º, com redação da LC 285/2025",
   },
@@ -2056,7 +2200,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 15 da LC 259: os aprovados em todas as fases são convocados para a perícia médica (exame pré-admissional). A convocação não gera direito adquirido à nomeação, e a Administração pode convocar além do número de vagas para repor o efetivo com rapidez (§1º). O edital pode permitir pedido de reclassificação para o final da lista de classificados (§2º), e o deferimento é irrevogável, faz perder o direito à nomeação naquela posição e não pode ser revisto (§3º). A LC 289/2025 incluiu o §4º: o candidato apresenta exame toxicológico no pré-admissional e arca integralmente com os custos.",
+      "Art. 15 da LC 259: os aprovados em todas as fases são convocados para a perícia médica (exame pré-admissional). O edital pode permitir pedido de reclassificação para o final da lista de classificados (§2º), e o deferimento é irrevogável, faz perder o direito à nomeação naquela posição e não pode ser revisto (§3º). A LC 289/2025 incluiu o §4º: o candidato apresenta exame toxicológico no pré-admissional e arca integralmente com os custos.",
+    explicacaoErradas:
+      "A convocação não gera direito adquirido à nomeação, e a Administração pode convocar além do número de vagas para repor o efetivo com rapidez (§1º).",
     origem: "banco",
     fonte: "LC Estadual 259/2023, art. 15, com redação das LC 285/2025 e 289/2025",
   },
@@ -2075,7 +2221,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 44-A da LC 259 (LC 289/2025): o policial perde metade do subsídio durante o afastamento por condenação definitiva que não resulte em demissão (I) e o subsídio do dia quando faltar ou sair antes do fim do expediente, salvo motivo legal (II). Nas faltas sucessivas contam-se sábados, domingos e feriados intercalados (§1º). No plantão, a falta abrange também o período de descanso (§3º). Podem ser relevadas até três faltas por mês, se motivadas por doença comprovada por atestado (§4º). O subsídio não sofre descontos nem penhora, salvo pensão alimentícia judicial e reposição ou indenização à Fazenda, em parcelas de até um quinto do subsídio (§5º).",
+      "Art. 44-A da LC 259 (LC 289/2025): o policial perde metade do subsídio durante o afastamento por condenação definitiva que não resulte em demissão (I) e o subsídio do dia quando faltar ou sair antes do fim do expediente, salvo motivo legal (II). Nas faltas sucessivas contam-se sábados, domingos e feriados intercalados (§1º).",
+    explicacaoErradas:
+      "No plantão, a falta abrange também o período de descanso (§3º). Podem ser relevadas até três faltas por mês, se motivadas por doença comprovada por atestado (§4º). O subsídio não sofre descontos nem penhora, salvo pensão alimentícia judicial e reposição ou indenização à Fazenda, em parcelas de até um quinto do subsídio (§5º).",
     origem: "banco",
     fonte: "LC Estadual 259/2023, art. 44-A, com redação da LC 289/2025",
   },
@@ -2113,7 +2261,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 64-A da LC 259 (LC 289/2025): é vedado ao servidor policial civil trabalhar sob as ordens do cônjuge, companheiro ou parente até o segundo grau, consanguíneo ou afim, salvo quando não houver no município outra unidade policial. A vedação é de subordinação (trabalhar sob as ordens), não de simples lotação conjunta, e o limite é o segundo grau.",
+      "Art. 64-A da LC 259 (LC 289/2025): é vedado ao servidor policial civil trabalhar sob as ordens do cônjuge, companheiro ou parente até o segundo grau, consanguíneo ou afim, salvo quando não houver no município outra unidade policial.",
+    explicacaoErradas:
+      "A vedação é de subordinação (trabalhar sob as ordens), não de simples lotação conjunta, e o limite é o segundo grau.",
     origem: "banco",
     fonte: "LC Estadual 259/2023, art. 64-A, com redação da LC 289/2025",
   },
@@ -2132,7 +2282,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 72, §1º, da LC 259 (LC 289/2025): entre outros direitos, o policial civil tem identidade funcional com fé pública e validade nacional (I), porte de arma com validade nacional, salvo impedimento por saúde mental (II), recolhimento em unidade prisional exclusiva para policiais (IV), pronta comunicação da prisão ao chefe imediato e ao representante da categoria (V), precedência nas audiências em que for testemunha de fato do serviço (IX), atuação sem revelar a condição de policial, no interesse do serviço (XII), presença de representante da Polícia Civil na lavratura do flagrante (XIV) e porte de armas mesmo na inatividade (XXIX). Aos aposentados valem os incisos I, II, IV e V (§7º). Não há imunidade à prisão em flagrante.",
+      "Art. 72, §1º, da LC 259 (LC 289/2025): entre outros direitos, o policial civil tem identidade funcional com fé pública e validade nacional (I), porte de arma com validade nacional, salvo impedimento por saúde mental (II), recolhimento em unidade prisional exclusiva para policiais (IV), pronta comunicação da prisão ao chefe imediato e ao representante da categoria (V), precedência nas audiências em que for testemunha de fato do serviço (IX), atuação sem revelar a condição de policial, no interesse do serviço (XII), presença de representante da Polícia Civil na lavratura do flagrante (XIV) e porte de armas mesmo na inatividade (XXIX). Aos aposentados valem os incisos I, II, IV e V (§7º).",
+    explicacaoErradas:
+      "Não há imunidade à prisão em flagrante.",
     origem: "banco",
     fonte: "LC Estadual 259/2023, art. 72, §1º, com redação da LC 289/2025",
   },
@@ -2189,7 +2341,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 8º da Lei 23.213: a hierarquia se alicerça na ordenação da autoridade nos diferentes níveis da estrutura. Art. 9º: dentro do mesmo cargo prevalece a hierarquia da função (caput). Os Delegados de classe mais elevada têm precedência sobre os de classe inferior quando na mesma unidade ou em trabalho em equipe, ressalvada a hierarquia da função (§1º). Sempre se observa a precedência da carreira de Delegado sobre as demais (§2º). Agente de Polícia Judiciária, Papiloscopista e Agente de Operações guardam correlação hierárquica pela função que desempenham na unidade, estabelecida por regulamento ou por designação da autoridade policial (§3º).",
+      "Art. 8º da Lei 23.213: a hierarquia se alicerça na ordenação da autoridade nos diferentes níveis da estrutura. Art. 9º: dentro do mesmo cargo prevalece a hierarquia da função (caput). Os Delegados de classe mais elevada têm precedência sobre os de classe inferior quando na mesma unidade ou em trabalho em equipe, ressalvada a hierarquia da função (§1º). Agente de Polícia Judiciária, Papiloscopista e Agente de Operações guardam correlação hierárquica pela função que desempenham na unidade, estabelecida por regulamento ou por designação da autoridade policial (§3º).",
+    explicacaoErradas:
+      "Sempre se observa a precedência da carreira de Delegado sobre as demais (§2º).",
     origem: "banco",
     fonte: "Lei Estadual 23.213/2026 (PR), art. 9º",
   },
@@ -2208,7 +2362,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 10 da Lei 23.213. O Nível Instrumental reúne a Coordenadoria de Operações Integradas (COI), a ESPC, o Departamento de Planejamento, Administração e Finanças (DPAF) e o DTI, e cuida das atividades-meio e técnico-especializadas (§3º). O Nível de Execução reúne o Instituto de Identificação e os Departamentos e Unidades de Polícia Judiciária e Investigação Criminal, e exerce a polícia administrativa e judiciária, a investigação criminal e a identificação humana (§4º). O Assessoramento (Chefia de Gabinete, Assessorias Técnicas, DIP e DCI) assessora diretamente o Delegado-Geral (§2º). A Direção Superior (Delegacia-Geral, CSP e CGP) dirige, coordena, controla, normatiza e supervisiona (§1º). Pegadinha: o Instituto de Identificação não é órgão-meio, é de Execução.",
+      "Art. 10 da Lei 23.213. O Nível Instrumental reúne a Coordenadoria de Operações Integradas (COI), a ESPC, o Departamento de Planejamento, Administração e Finanças (DPAF) e o DTI, e cuida das atividades-meio e técnico-especializadas (§3º). O Nível de Execução reúne o Instituto de Identificação e os Departamentos e Unidades de Polícia Judiciária e Investigação Criminal, e exerce a polícia administrativa e judiciária, a investigação criminal e a identificação humana (§4º).",
+    explicacaoErradas:
+      "O Assessoramento (Chefia de Gabinete, Assessorias Técnicas, DIP e DCI) assessora diretamente o Delegado-Geral (§2º). A Direção Superior (Delegacia-Geral, CSP e CGP) dirige, coordena, controla, normatiza e supervisiona (§1º). Pegadinha: o Instituto de Identificação não é órgão-meio, é de Execução.",
     origem: "banco",
     fonte: "Lei Estadual 23.213/2026 (PR), art. 10, III e IV",
   },
@@ -2227,7 +2383,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 11 da Lei 23.213: o Delegado-Geral, chefe da PCPR, é nomeado pelo Governador e escolhido entre os Delegados em atividade e da classe mais elevada. Entre suas atribuições (art. 12) estão presidir o CSP (II), propor ao CSP mensagem ao Governador para criar e extinguir cargos e unidades (IV) e designar autoridades policiais, em caráter especial, para investigações de grande repercussão ou que exijam conhecimento técnico-especializado (IX). O art. 13 prevê um Delegado-Geral Adjunto Administrativo e um Adjunto Operacional, designados pelo Delegado-Geral entre Delegados em atividade da classe mais elevada. O Administrativo cuida da gestão, do orçamento e da avaliação de desempenho (art. 14), e o Operacional, das operações, da investigação e da integração com outros órgãos (art. 15).",
+      "Entre as atribuições do Delegado-Geral (art. 12 da Lei 23.213) estão presidir o CSP (II), propor ao CSP mensagem ao Governador para criar e extinguir cargos e unidades (IV) e designar autoridades policiais, em caráter especial, para investigações de grande repercussão ou que exijam conhecimento técnico-especializado (IX). O art. 13 prevê um Delegado-Geral Adjunto Administrativo e um Adjunto Operacional, designados pelo Delegado-Geral entre Delegados em atividade da classe mais elevada. O Administrativo cuida da gestão, do orçamento e da avaliação de desempenho (art. 14), e o Operacional, das operações, da investigação e da integração com outros órgãos (art. 15).",
+    explicacaoErradas:
+      "Art. 11 da Lei 23.213: o Delegado-Geral, chefe da PCPR, é nomeado pelo Governador e escolhido entre os Delegados em atividade e da classe mais elevada.",
     origem: "banco",
     fonte: "Lei Estadual 23.213/2026 (PR), arts. 11 a 15",
   },
@@ -2246,7 +2404,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 38 da Lei 23.213: ao DPE cabem as investigações dos delitos de trânsito, contra o meio ambiente, contra o consumidor e dos crimes informáticos (I) e a atuação em grandes eventos, a fiscalização de produtos controlados e o registro online de boletins de ocorrência (II). Art. 41: ao DRCC cabe coordenar investigações de crimes cibernéticos de média e alta complexidade, praticados pela internet ou por dispositivos digitais, com atuação em todo o Estado (I), além de desarticular grupos que usem meios cibernéticos, como fraudes eletrônicas, estelionatos virtuais, invasões de dispositivos, crimes contra a honra na internet, exploração sexual infantojuvenil e crimes de ódio (II). Os dois estão entre os departamentos dos incisos I a IX do art. 32, que atuam em todo o Estado (art. 50).",
+      "Art. 38 da Lei 23.213: ao DPE cabem as investigações dos delitos de trânsito, contra o meio ambiente, contra o consumidor e dos crimes informáticos (I) e a atuação em grandes eventos, a fiscalização de produtos controlados e o registro online de boletins de ocorrência (II). Art. 41: ao DRCC cabe coordenar investigações de crimes cibernéticos de média e alta complexidade, praticados pela internet ou por dispositivos digitais, com atuação em todo o Estado (I), além de desarticular grupos que usem meios cibernéticos, como fraudes eletrônicas, estelionatos virtuais, invasões de dispositivos, crimes contra a honra na internet, exploração sexual infantojuvenil e crimes de ódio (II).",
+    explicacaoErradas:
+      "Os dois estão entre os departamentos dos incisos I a IX do art. 32, que atuam em todo o Estado (art. 50).",
     origem: "banco",
     fonte: "Lei Estadual 23.213/2026 (PR), arts. 38 e 41",
   },
@@ -2265,7 +2425,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 41, III, da Lei 23.213: compete ao DRCC apoiar técnica e operacionalmente as unidades policiais de todo o Estado nas investigações que envolvam elementos ou vestígios digitais, quando solicitado ou por determinação superior. Pelo art. 51, é vedada a avocação de inquérito: a unidade especializada pode atuar em cooperação com o Delegado responsável, se o interesse público exigir, e a avocação ou redistribuição só ocorre de forma excepcional, por despacho fundamentado do superior hierárquico (parágrafo único). O acesso aos dados do aparelho segue as regras próprias de prova, mas a lei não condiciona o apoio técnico do DRCC a uma ordem judicial.",
+      "Art. 41, III, da Lei 23.213: compete ao DRCC apoiar técnica e operacionalmente as unidades policiais de todo o Estado nas investigações que envolvam elementos ou vestígios digitais, quando solicitado ou por determinação superior. Pelo art. 51, é vedada a avocação de inquérito: a unidade especializada pode atuar em cooperação com o Delegado responsável, se o interesse público exigir, e a avocação ou redistribuição só ocorre de forma excepcional, por despacho fundamentado do superior hierárquico (parágrafo único).",
+    explicacaoErradas:
+      "O acesso aos dados do aparelho segue as regras próprias de prova, mas a lei não condiciona o apoio técnico do DRCC a uma ordem judicial.",
     origem: "banco",
     fonte: "Lei Estadual 23.213/2026 (PR), arts. 41, III, e 51",
   },
@@ -2284,7 +2446,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Lei 23.213: o DPCAP coordena as atividades na capital (art. 42), o DPMETRO nos municípios da Região Metropolitana de Curitiba (art. 43) e o DPI no interior (art. 44). As SDP são unidades regionais subordinadas ao DPI (art. 45), e as Delegacias de Polícia executam as investigações e a polícia judiciária em sua circunscrição (art. 46). As CRF são regulamentadas por ato do Conselho Superior de Polícia, têm atribuição em todo o Estado, podem ser estruturadas em macrorregiões e exercem as funções cartorárias dos procedimentos flagranciais (art. 47). Aos PPAC cabem só a orientação ao cidadão e o registro de boletins de ocorrência (art. 48).",
+      "As SDP são unidades regionais subordinadas ao DPI (art. 45), e as Delegacias de Polícia executam as investigações e a polícia judiciária em sua circunscrição (art. 46). As CRF são regulamentadas por ato do Conselho Superior de Polícia, têm atribuição em todo o Estado, podem ser estruturadas em macrorregiões e exercem as funções cartorárias dos procedimentos flagranciais (art. 47).",
+    explicacaoErradas:
+      "Lei 23.213: o DPCAP coordena as atividades na capital (art. 42), o DPMETRO nos municípios da Região Metropolitana de Curitiba (art. 43) e o DPI no interior (art. 44). Aos PPAC cabem só a orientação ao cidadão e o registro de boletins de ocorrência (art. 48).",
     origem: "banco",
     fonte: "Lei Estadual 23.213/2026 (PR), arts. 42 a 48",
   },
@@ -2303,7 +2467,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 49 da Lei 23.213: os Departamentos dos incisos I a XII do art. 32 são dirigidos por Delegados de Polícia em atividade, preferencialmente da classe mais elevada, escolhidos e designados pelo Delegado-Geral. A regra tem um acréscimo para o DOESP (art. 40): seu diretor é Delegado com curso específico de Operações Táticas Especiais, escolhido e designado pelo Delegado-Geral. Note o “preferencialmente”, o mesmo termo que a CE-PR usa para o comando da PC (art. 47). Já o Delegado-Geral deve ser da classe mais elevada, sem a palavra “preferencialmente” (art. 11).",
+      "Art. 49 da Lei 23.213: os Departamentos dos incisos I a XII do art. 32 são dirigidos por Delegados de Polícia em atividade, preferencialmente da classe mais elevada, escolhidos e designados pelo Delegado-Geral. A regra tem um acréscimo para o DOESP (art. 40): seu diretor é Delegado com curso específico de Operações Táticas Especiais, escolhido e designado pelo Delegado-Geral. Note o “preferencialmente”, o mesmo termo que a CE-PR usa para o comando da PC (art. 47).",
+    explicacaoErradas:
+      "Já o Delegado-Geral deve ser da classe mais elevada, sem a palavra “preferencialmente” (art. 11).",
     origem: "banco",
     fonte: "Lei Estadual 23.213/2026 (PR), arts. 40 e 49",
   },
@@ -2322,7 +2488,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Lei 23.213: as unidades são classificadas pela localização geográfica, densidade demográfica, demanda e complexidade e necessidade de habilidades específicas, e a classificação e a distribuição do efetivo são feitas por resolução do CSP (art. 53). A estrutura interna e o detalhamento das atribuições dos órgãos são regulamentados por decreto do Governador (art. 56). As atividades administrativas (auxiliares, instrumentais ou acessórias) admitem execução indireta, por contratação de terceiros (art. 57). O serviço voluntário é admitido, vedada em qualquer caso a atuação na atividade-fim de polícia judiciária (art. 58).",
+      "Lei 23.213: as unidades são classificadas pela localização geográfica, densidade demográfica, demanda e complexidade e necessidade de habilidades específicas, e a classificação e a distribuição do efetivo são feitas por resolução do CSP (art. 53). O serviço voluntário é admitido, vedada em qualquer caso a atuação na atividade-fim de polícia judiciária (art. 58).",
+    explicacaoErradas:
+      "A estrutura interna e o detalhamento das atribuições dos órgãos são regulamentados por decreto do Governador (art. 56). As atividades administrativas (auxiliares, instrumentais ou acessórias) admitem execução indireta, por contratação de terceiros (art. 57).",
     origem: "banco",
     fonte: "Lei Estadual 23.213/2026 (PR), arts. 53, 56, 57 e 58",
   },
@@ -2341,7 +2509,9 @@ export const QUESTOES_LEG: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 33 da Lei 23.213: o DHPP coordena as investigações dos crimes dolosos contra a vida, de pessoas desaparecidas, dos crimes contra a saúde pública e dos acidentes de trabalho. Art. 39: o DPV coordena as investigações dos crimes em que são vítimas crianças, adolescentes e mulheres em contexto de violência doméstica, e a apuração dos atos infracionais de adolescentes. Pegadinha: acidente de trabalho fica com o DHPP, não com o DPE, que cuida de trânsito, meio ambiente, consumidor e crimes informáticos (art. 38).",
+      "Art. 33 da Lei 23.213: o DHPP coordena as investigações dos crimes dolosos contra a vida, de pessoas desaparecidas, dos crimes contra a saúde pública e dos acidentes de trabalho. Art. 39: o DPV coordena as investigações dos crimes em que são vítimas crianças, adolescentes e mulheres em contexto de violência doméstica, e a apuração dos atos infracionais de adolescentes.",
+    explicacaoErradas:
+      "Pegadinha: acidente de trabalho fica com o DHPP, não com o DPE, que cuida de trânsito, meio ambiente, consumidor e crimes informáticos (art. 38).",
     origem: "banco",
     fonte: "Lei Estadual 23.213/2026 (PR), arts. 33 e 39",
   },
