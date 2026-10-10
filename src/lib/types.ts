@@ -30,6 +30,8 @@ export interface Question<M extends string = SubjectId> {
   alternativas: [string, string, string, string, string];
   correta: 0 | 1 | 2 | 3 | 4;
   explicacao: string;
+  /** Por que as outras alternativas estão erradas; exibida abaixo da explicação da certa, separada por uma linha. */
+  explicacaoErradas?: string;
   origem?: "banco" | "ia";
   /** Prova real em que a questão se baseou (ex.: "FGV · PC-AM 2022 · Investigador (adaptada)"). Só preencher quando a questão veio de fato de uma prova consultada. */
   fonte?: string;

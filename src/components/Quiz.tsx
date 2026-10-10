@@ -258,6 +258,11 @@ export default function Quiz<M extends string = SubjectId>({
           <div className="explicacao">
             <strong>{selecionada === questao.correta ? "Correto. " : "Incorreto. "}</strong>
             {questao.explicacao}
+            {questao.explicacaoErradas && (
+              <p className="explicacao-erradas">
+                <strong>Por que as outras estão erradas:</strong> {questao.explicacaoErradas}
+              </p>
+            )}
             {tempoRespostaMs !== null && (
               <div className="questao-tempo-resposta">
                 ⏱ Respondida em {formatarSegundos(tempoRespostaMs / 1000)}

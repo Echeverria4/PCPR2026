@@ -169,6 +169,11 @@ export default function CadernoErros({ attempts, externas, aberto, onAlternar }:
                                 <strong>Resposta certa:</strong> {questao.alternativas[questao.correta]}
                               </p>
                               <p className="caderno-explicacao">{questao.explicacao}</p>
+                              {questao.explicacaoErradas && (
+                                <p className="caderno-explicacao explicacao-erradas">
+                                  <strong>Por que as outras estão erradas:</strong> {questao.explicacaoErradas}
+                                </p>
+                              )}
                             </div>
                           ))}
                         </div>

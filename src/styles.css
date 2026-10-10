@@ -1534,6 +1534,17 @@ button {
   color: var(--ouro-forte);
 }
 
+/* Explicação das alternativas erradas: uma linha em branco abaixo da explicação da certa. */
+.explicacao-erradas,
+.caderno-explicacao.explicacao-erradas {
+  margin: 1em 0 0;
+}
+
+.explicacao .explicacao-erradas strong,
+.caderno-explicacao.explicacao-erradas strong {
+  color: var(--vermelho);
+}
+
 .questao-tempo-resposta {
   margin-top: 10px;
   font-family: var(--fonte-mono);

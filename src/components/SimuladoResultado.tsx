@@ -291,6 +291,11 @@ export default function SimuladoResultado({
             <div className="explicacao">
               <strong>{questao.topico}. </strong>
               {questao.explicacao}
+              {questao.explicacaoErradas && (
+                <p className="explicacao-erradas">
+                  <strong>Por que as outras estão erradas:</strong> {questao.explicacaoErradas}
+                </p>
+              )}
               <div className="questao-tempo-resposta">⏱ {formatarSegundos(q.tempoMs / 1000)} com a questão aberta</div>
             </div>
           </div>

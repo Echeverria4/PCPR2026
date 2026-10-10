@@ -28,7 +28,9 @@ export const QUESTOES_FOR: Question[] = [
     alternativas: ["Livor mortis", "Rigor mortis", "Algor mortis", "Mumificação", "Saponificação"],
     correta: 1,
     explicacao:
-      "Rigor mortis é a rigidez cadavérica decorrente de alterações bioquímicas musculares pós-morte. Livor mortis refere-se às manchas de hipóstase (livores); algor mortis é o resfriamento do corpo; mumificação e saponificação são fenômenos transformativos tardios.",
+      "Rigor mortis é a rigidez cadavérica decorrente de alterações bioquímicas musculares pós-morte.",
+    explicacaoErradas:
+      "Livor mortis refere-se às manchas de hipóstase (livores); algor mortis é o resfriamento do corpo; mumificação e saponificação são fenômenos transformativos tardios.",
     origem: "banco",
   },
   {
@@ -40,7 +42,9 @@ export const QUESTOES_FOR: Question[] = [
     alternativas: ["Presilha", "Verticilo", "Arco", "Composto", "Espiral"],
     correta: 2,
     explicacao:
-      "O arco (adelto) é o tipo fundamental sem deltas, em que as linhas atravessam o dedo de um lado a outro. A presilha possui um delta; o verticilo (ou composto/espiral) possui dois ou mais deltas.",
+      "O arco (adelto) é o tipo fundamental sem deltas, em que as linhas atravessam o dedo de um lado a outro.",
+    explicacaoErradas:
+      "A presilha possui um delta; o verticilo (ou composto/espiral) possui dois ou mais deltas.",
     origem: "banco",
   },
   {
@@ -58,7 +62,9 @@ export const QUESTOES_FOR: Question[] = [
     ],
     correta: 1,
     explicacao:
-      "O confronto balístico compara as marcas de raiamento (estrias) deixadas pelo cano da arma no projétil disparado, permitindo identificar se determinado projétil foi disparado por determinada arma. O exame de resíduo de disparo (GSR) detecta resíduos de pólvora nas mãos/roupas de um atirador.",
+      "O confronto balístico compara as marcas de raiamento (estrias) deixadas pelo cano da arma no projétil disparado, permitindo identificar se determinado projétil foi disparado por determinada arma.",
+    explicacaoErradas:
+      "O exame de resíduo de disparo (GSR) detecta resíduos de pólvora nas mãos/roupas de um atirador.",
     origem: "banco",
   },
   {
@@ -124,7 +130,9 @@ export const QUESTOES_FOR: Question[] = [
     alternativas: ["Fonética forense", "Documentoscopia", "Odontologia legal", "Antropologia forense", "Entomologia forense"],
     correta: 1,
     explicacao:
-      "A documentoscopia examina documentos (manuscritos, assinaturas, impressos) para detectar falsificações, adulterações e verificar autenticidade, sendo distinta da odontologia legal (identificação por arcada dentária), antropologia forense (identificação óssea) e entomologia forense (uso de insetos para estimar IPM).",
+      "A documentoscopia examina documentos (manuscritos, assinaturas, impressos) para detectar falsificações, adulterações e verificar autenticidade.",
+    explicacaoErradas:
+      "Ela é distinta da odontologia legal (identificação por arcada dentária), da antropologia forense (identificação óssea) e da entomologia forense (uso de insetos para estimar IPM).",
     origem: "banco",
   },
   {
@@ -136,7 +144,9 @@ export const QUESTOES_FOR: Question[] = [
     alternativas: ["Contuso", "Perfurocontuso", "Corto-contuso", "Cortante (incisocortante)", "Perfurante"],
     correta: 3,
     explicacao:
-      "O ferimento incisocortante (cortante) é produzido por instrumento de gume afiado deslizando sobre a pele, gerando bordas regulares e nítidas. O ferimento contuso resulta de impacto por objeto rombo, com bordas irregulares; o corto-contuso combina corte com esmagamento; o perfurante é produzido por instrumento pontiagudo que penetra os tecidos.",
+      "O ferimento incisocortante (cortante) é produzido por instrumento de gume afiado deslizando sobre a pele, gerando bordas regulares e nítidas.",
+    explicacaoErradas:
+      "O ferimento contuso resulta de impacto por objeto rombo, com bordas irregulares; o corto-contuso combina corte com esmagamento; o perfurante é produzido por instrumento pontiagudo que penetra os tecidos.",
     origem: "banco",
   },
   {
@@ -166,7 +176,9 @@ export const QUESTOES_FOR: Question[] = [
     ],
     correta: 2,
     explicacao:
-      "Na esganadura, a constrição do pescoço é feita pelas mãos do agressor, deixando estigmas ungueais (marcas de unhas) — por exigir a ação de terceiro, é sempre homicídio. No enforcamento, o peso do próprio corpo produz um sulco oblíquo e descontínuo, geralmente compatível com suicídio ou acidente. No estrangulamento, uma força externa (laço, cordão) produz sulco horizontal e contínuo, sendo compatível com homicídio.",
+      "Na esganadura, a constrição do pescoço é feita pelas mãos do agressor, deixando estigmas ungueais (marcas de unhas) — por exigir a ação de terceiro, é sempre homicídio.",
+    explicacaoErradas:
+      "No enforcamento, o peso do próprio corpo produz um sulco oblíquo e descontínuo, geralmente compatível com suicídio ou acidente. No estrangulamento, uma força externa (laço, cordão) produz sulco horizontal e contínuo, sendo compatível com homicídio.",
     origem: "banco",
   },
   {
@@ -220,7 +232,9 @@ export const QUESTOES_FOR: Question[] = [
     ],
     correta: 3,
     explicacao:
-      "Mendelsohn propôs uma escala de culpabilidade da vítima, indo da vítima completamente inocente até a vítima mais culpada que o agressor (\"vítima provocadora\"), quando ela dá causa direta e preponderante ao evento criminoso — como na situação descrita. Há ainda a vítima simuladora, que forja falsamente ter sido vitimada, e a vítima imaginária, que apenas acredita ter sido vítima sem que o fato tenha ocorrido.",
+      "Mendelsohn propôs uma escala de culpabilidade da vítima, indo da vítima completamente inocente até a vítima mais culpada que o agressor (\"vítima provocadora\"), quando ela dá causa direta e preponderante ao evento criminoso — como na situação descrita.",
+    explicacaoErradas:
+      "Há ainda a vítima simuladora, que forja falsamente ter sido vitimada, e a vítima imaginária, que apenas acredita ter sido vítima sem que o fato tenha ocorrido.",
     origem: "banco",
   },
   {
@@ -274,7 +288,9 @@ export const QUESTOES_FOR: Question[] = [
     ],
     correta: 1,
     explicacao:
-      "No disparo encostado (à queima-roupa), os gases da pólvora são injetados sob pressão diretamente sob a pele, produzindo um orifício de bordas irregulares em forma estelar (\"boca de mina\"), com queimadura, esfumaçamento e, eventualmente, a marca do próprio cano da arma impressa na pele. Em disparos a média/longa distância, esses sinais de proximidade diminuem ou desaparecem, restando apenas o orifício de entrada e o halo de enxugo.",
+      "No disparo encostado (à queima-roupa), os gases da pólvora são injetados sob pressão diretamente sob a pele, produzindo um orifício de bordas irregulares em forma estelar (\"boca de mina\"), com queimadura, esfumaçamento e, eventualmente, a marca do próprio cano da arma impressa na pele.",
+    explicacaoErradas:
+      "Em disparos a média/longa distância, esses sinais de proximidade diminuem ou desaparecem, restando apenas o orifício de entrada e o halo de enxugo.",
     origem: "banco",
   },
   {
@@ -308,7 +324,9 @@ export const QUESTOES_FOR: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "O corpo de delito é o conjunto de vestígios materiais deixados pela infração; o exame pode ser direto (o perito examina diretamente o vestígio/corpo) ou, quando os vestígios desaparecerem sem deixar traços, indireto/supletivo (art. 167, CPP), suprido pela prova testemunhal. Quando a infração deixa vestígios, o exame de corpo de delito é indispensável, não podendo ser suprido apenas pela confissão do acusado (art. 158, CPP).",
+      "O corpo de delito é o conjunto de vestígios materiais deixados pela infração; o exame pode ser direto (o perito examina diretamente o vestígio/corpo) ou, quando os vestígios desaparecerem sem deixar traços, indireto/supletivo (art. 167, CPP), suprido pela prova testemunhal.",
+    explicacaoErradas:
+      "Quando a infração deixa vestígios, o exame de corpo de delito é indispensável, não podendo ser suprido apenas pela confissão do acusado (art. 158, CPP).",
     origem: "banco",
   },
   {
@@ -326,7 +344,9 @@ export const QUESTOES_FOR: Question[] = [
     ],
     correta: 1,
     explicacao:
-      "Cocaína e anfetaminas são estimulantes (psicoanalépticas) do SNC, aumentando a atividade neural e produzindo euforia, aceleração cardíaca e insônia. Depressoras (álcool, benzodiazepínicos, opioides) reduzem a atividade do SNC; perturbadoras/alucinógenas (LSD, psilocibina) distorcem a percepção sensorial sem deprimir ou estimular de forma linear o SNC.",
+      "Cocaína e anfetaminas são estimulantes (psicoanalépticas) do SNC, aumentando a atividade neural e produzindo euforia, aceleração cardíaca e insônia.",
+    explicacaoErradas:
+      "Depressoras (álcool, benzodiazepínicos, opioides) reduzem a atividade do SNC; perturbadoras/alucinógenas (LSD, psilocibina) distorcem a percepção sensorial sem deprimir ou estimular de forma linear o SNC.",
     origem: "banco",
   },
   {
@@ -362,7 +382,9 @@ export const QUESTOES_FOR: Question[] = [
     ],
     correta: 1,
     explicacao:
-      "O dever da primeira autoridade a chegar ao local — geralmente o policial que atende a ocorrência — é isolar e preservar a cena, impedindo alteração, contaminação ou desaparecimento de vestígios, sem manusear objetos, até a chegada da perícia especializada. Recolher vestígios, permitir entrada de terceiros ou liberar o local prematuramente compromete a integridade da prova pericial.",
+      "O dever da primeira autoridade a chegar ao local — geralmente o policial que atende a ocorrência — é isolar e preservar a cena, impedindo alteração, contaminação ou desaparecimento de vestígios, sem manusear objetos, até a chegada da perícia especializada.",
+    explicacaoErradas:
+      "Recolher vestígios, permitir entrada de terceiros ou liberar o local prematuramente compromete a integridade da prova pericial.",
     origem: "banco",
   },
   {
@@ -380,7 +402,9 @@ export const QUESTOES_FOR: Question[] = [
     ],
     correta: 1,
     explicacao:
-      "A sequência lógica do exame pericial em local de crime é: preservação do local, reconhecimento geral da cena, registro fotográfico e planimétrico, busca e coleta de vestígios (com uso de luvas, embalagens adequadas e etiquetagem) e, por fim, elaboração do laudo pericial — alterar essa ordem compromete a integridade da investigação, já que a coleta ou o laudo não podem anteceder a preservação e o reconhecimento inicial da cena.",
+      "A sequência lógica do exame pericial em local de crime é: preservação do local, reconhecimento geral da cena, registro fotográfico e planimétrico, busca e coleta de vestígios (com uso de luvas, embalagens adequadas e etiquetagem) e, por fim, elaboração do laudo pericial.",
+    explicacaoErradas:
+      "Alterar essa ordem compromete a integridade da investigação, já que a coleta ou o laudo não podem anteceder a preservação e o reconhecimento inicial da cena.",
     origem: "banco",
   },
   {
@@ -416,7 +440,9 @@ export const QUESTOES_FOR: Question[] = [
     ],
     correta: 1,
     explicacao:
-      "O exame de corpo de delito, previsto no art. 158 do CPP, é a perícia cabível sempre que a infração deixar vestígios materiais, podendo recair sobre pessoa viva — como no caso de lesão corporal — para atestar a existência e a extensão da lesão, comprovando a materialidade do crime. A necropsia é exclusiva de cadáver, e as demais opções (antropometria, exame necroscópico, grafotécnica) não se aplicam à comprovação de lesão corporal em vítima sobrevivente.",
+      "O exame de corpo de delito, previsto no art. 158 do CPP, é a perícia cabível sempre que a infração deixar vestígios materiais, podendo recair sobre pessoa viva — como no caso de lesão corporal — para atestar a existência e a extensão da lesão, comprovando a materialidade do crime.",
+    explicacaoErradas:
+      "A necropsia é exclusiva de cadáver, e as demais opções (antropometria, exame necroscópico, grafotécnica) não se aplicam à comprovação de lesão corporal em vítima sobrevivente.",
     origem: "banco",
   },
   {
@@ -434,7 +460,9 @@ export const QUESTOES_FOR: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 9º-A da LEP, na redação da Lei 15.295/2025. O §7º diz que a coleta será realizada por agente público treinado e respeitará os procedimentos de cadeia de custódia definidos em lei e complementados pelo órgão de perícia oficial. O §9º reserva a elaboração do laudo ao perito oficial. Antes, a redação de 2019 exigia perito oficial tanto para a coleta quanto para o laudo. A recusa do condenado em se submeter ao procedimento constitui falta grave (§8º).",
+      "Art. 9º-A da LEP, na redação da Lei 15.295/2025. O §7º diz que a coleta será realizada por agente público treinado e respeitará os procedimentos de cadeia de custódia definidos em lei e complementados pelo órgão de perícia oficial. O §9º reserva a elaboração do laudo ao perito oficial.",
+    explicacaoErradas:
+      "Antes, a redação de 2019 exigia perito oficial tanto para a coleta quanto para o laudo. A recusa do condenado em se submeter ao procedimento constitui falta grave (§8º).",
     origem: "banco",
     fonte: "Lei 7.210/1984 (LEP), art. 9º-A, com redação da Lei 15.295/2025",
   },
@@ -453,7 +481,9 @@ export const QUESTOES_FOR: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "O Decreto 7.950/2013 instituiu, no âmbito do Ministério da Justiça e Segurança Pública, o Banco Nacional de Perfis Genéticos (BNPG) e a Rede Integrada de Bancos de Perfis Genéticos (RIBPG). O BNPG armazena perfis genéticos para subsidiar a apuração de crimes e é administrado por perito criminal federal. A RIBPG permite o compartilhamento e a comparação de perfis entre os bancos da União, dos Estados e do Distrito Federal, que aderem por acordo de cooperação técnica. O AFIS trata de impressões digitais, não de DNA.",
+      "O Decreto 7.950/2013 instituiu, no âmbito do Ministério da Justiça e Segurança Pública, o Banco Nacional de Perfis Genéticos (BNPG) e a Rede Integrada de Bancos de Perfis Genéticos (RIBPG). O BNPG armazena perfis genéticos para subsidiar a apuração de crimes e é administrado por perito criminal federal. A RIBPG permite o compartilhamento e a comparação de perfis entre os bancos da União, dos Estados e do Distrito Federal, que aderem por acordo de cooperação técnica.",
+    explicacaoErradas:
+      "O AFIS trata de impressões digitais, não de DNA.",
     origem: "banco",
     fonte: "Decreto 7.950/2013",
   },
@@ -472,7 +502,9 @@ export const QUESTOES_FOR: Question[] = [
     ],
     correta: 3,
     explicacao:
-      "No tiro à queima-roupa (ou encostado), o cano da arma toca ou quase toca a pele, deixando marca de \"boca de mina\" (impressão do cano) e, por vezes, queimadura pelos gases do disparo — é a distância mais próxima possível entre arma e alvo. Nos tiros a curta e média distância há resíduos de pólvora ao redor do orifício, mas sem a impressão do cano; a longa distância não deixa qualquer resíduo de pólvora.",
+      "No tiro à queima-roupa (ou encostado), o cano da arma toca ou quase toca a pele, deixando marca de \"boca de mina\" (impressão do cano) e, por vezes, queimadura pelos gases do disparo — é a distância mais próxima possível entre arma e alvo.",
+    explicacaoErradas:
+      "Nos tiros a curta e média distância há resíduos de pólvora ao redor do orifício, mas sem a impressão do cano; a longa distância não deixa qualquer resíduo de pólvora.",
     origem: "banco",
   },
   {
@@ -490,7 +522,9 @@ export const QUESTOES_FOR: Question[] = [
     ],
     correta: 1,
     explicacao:
-      "O percussor é a peça que golpeia a espoleta do cartucho, iniciando a ignição da pólvora que impulsiona o projétil — é o mecanismo central da percussão. A culatra é a parte posterior da arma que veda a câmara no momento do disparo; o extrator remove o estojo deflagrado; o estriamento e a alma do cano dizem respeito à trajetória e à identificação balística do projétil, não ao mecanismo de ignição.",
+      "O percussor é a peça que golpeia a espoleta do cartucho, iniciando a ignição da pólvora que impulsiona o projétil — é o mecanismo central da percussão.",
+    explicacaoErradas:
+      "A culatra é a parte posterior da arma que veda a câmara no momento do disparo; o extrator remove o estojo deflagrado; o estriamento e a alma do cano dizem respeito à trajetória e à identificação balística do projétil, não ao mecanismo de ignição.",
     origem: "banco",
   },
   {
@@ -508,7 +542,9 @@ export const QUESTOES_FOR: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Art. 9º-A, §5º, da LEP (redação da Lei 15.295/2025): a amostra só pode ser utilizada para o único e exclusivo fim de permitir a identificação pelo perfil genético, não estando autorizada a fenotipagem genética. A redação de 2019 também proibia a busca familiar, e a Lei 15.295 retirou essa proibição. Pelo §6º, identificado o perfil, a amostra é descartada, guardando-se material suficiente para eventual nova perícia, vedado qualquer outro uso.",
+      "Art. 9º-A, §5º, da LEP (redação da Lei 15.295/2025): a amostra só pode ser utilizada para o único e exclusivo fim de permitir a identificação pelo perfil genético, não estando autorizada a fenotipagem genética. A redação de 2019 também proibia a busca familiar, e a Lei 15.295 retirou essa proibição.",
+    explicacaoErradas:
+      "Pelo §6º, identificado o perfil, a amostra é descartada, guardando-se material suficiente para eventual nova perícia, vedado qualquer outro uso.",
     origem: "banco",
     fonte: "Lei 7.210/1984 (LEP), art. 9º-A, com redação da Lei 15.295/2025",
   },
@@ -584,7 +620,9 @@ export const QUESTOES_FOR: Question[] = [
     ],
     correta: 1,
     explicacao:
-      "O mtDNA é vantajoso por sua maior resistência à degradação e alto número de cópias por célula (o que facilita, e não dificulta, a amplificação por PCR), além de alto polimorfismo na região D-loop e grande utilidade para determinar haplogrupos. Sua principal limitação é não identificar uma pessoa de forma exclusiva: por ser herdado da mãe sem recombinação, todos os parentes da linha materna compartilham o mesmo perfil mitocondrial — ao contrário do DNA nuclear (STRs), exclusivo de cada indivíduo.",
+      "A principal limitação do mtDNA é não identificar uma pessoa de forma exclusiva: por ser herdado da mãe sem recombinação, todos os parentes da linha materna compartilham o mesmo perfil mitocondrial — ao contrário do DNA nuclear (STRs), exclusivo de cada indivíduo.",
+    explicacaoErradas:
+      "O mtDNA é vantajoso por sua maior resistência à degradação e alto número de cópias por célula (o que facilita, e não dificulta, a amplificação por PCR), além de alto polimorfismo na região D-loop e grande utilidade para determinar haplogrupos.",
     origem: "banco",
   },
   {
@@ -602,7 +640,9 @@ export const QUESTOES_FOR: Question[] = [
     ],
     correta: 1,
     explicacao:
-      "A pesquisa de espermatozoides pode ser negativa mesmo com ejaculação quando o agressor é azoospérmico (ausência de espermatozoides no sêmen) — por isso sua ausência não afasta, por si só, a ocorrência do crime. O PSA e a fosfatase ácida prostática são marcadores bioquímicos válidos para detectar sêmen, mesmo sem espermatozoides. Espermatozoides podem ser detectados por até 72 horas ou mais após o ato, a depender das condições de conservação, e o DNA pode ser recuperado de diversos vestígios (células epiteliais, saliva, pelos, roupas), não exigindo ejaculação vaginal nem se limitando a 48 horas.",
+      "A pesquisa de espermatozoides pode ser negativa mesmo com ejaculação quando o agressor é azoospérmico (ausência de espermatozoides no sêmen) — por isso sua ausência não afasta, por si só, a ocorrência do crime.",
+    explicacaoErradas:
+      "O PSA e a fosfatase ácida prostática são marcadores bioquímicos válidos para detectar sêmen, mesmo sem espermatozoides. Espermatozoides podem ser detectados por até 72 horas ou mais após o ato, a depender das condições de conservação, e o DNA pode ser recuperado de diversos vestígios (células epiteliais, saliva, pelos, roupas), não exigindo ejaculação vaginal nem se limitando a 48 horas.",
     origem: "banco",
   },
   {
@@ -620,7 +660,9 @@ export const QUESTOES_FOR: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Mumificação e saponificação (adipocera) são fenômenos transformativos conservadores (ao lado da calcificação e da corificação), que se distinguem dos transformativos destrutivos (autólise, maceração e putrefação) por retardarem a destruição do corpo. A mumificação depende de ambiente seco, arenoso e ventilado, sendo mais frequente em indivíduos magros e crianças (ou por embalsamamento); a saponificação depende de ambiente úmido, solo argiloso e pouco oxigenado, iniciando-se a partir da sexta semana após a morte, sendo mais frequente em indivíduos obesos, com aspecto de cera ou sabão. A calcificação (aspecto pétreo) ocorre em fetos retidos no útero; a corificação é rara, ligada a sepultamento em urnas metálicas herméticas.",
+      "A mumificação depende de ambiente seco, arenoso e ventilado, sendo mais frequente em indivíduos magros e crianças (ou por embalsamamento); a saponificação depende de ambiente úmido, solo argiloso e pouco oxigenado, iniciando-se a partir da sexta semana após a morte, sendo mais frequente em indivíduos obesos, com aspecto de cera ou sabão.",
+    explicacaoErradas:
+      "Mumificação e saponificação (adipocera) são fenômenos transformativos conservadores (ao lado da calcificação e da corificação), que se distinguem dos transformativos destrutivos (autólise, maceração e putrefação) por retardarem a destruição do corpo. A calcificação (aspecto pétreo) ocorre em fetos retidos no útero; a corificação é rara, ligada a sepultamento em urnas metálicas herméticas.",
     origem: "banco",
   },
   {
@@ -638,7 +680,9 @@ export const QUESTOES_FOR: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "A Lei de Nysten-Sommer descreve a progressão crânio-caudal da rigidez cadavérica na musculatura esquelética: nuca e mandíbula primeiro, seguidas por membros superiores, tronco e, por último, membros inferiores. Contudo, na cronologia interna, o miocárdio e o diafragma enrijecem antes mesmo dos membros superiores. A intensidade e a velocidade da instalação variam conforme temperatura ambiente, condição física do cadáver e causa da morte, e a rigidez é temporária: após 12 a 24 horas (podendo estender-se por 2 a 3 dias), cessa com um segundo relaxamento, dando lugar à putrefação.",
+      "A Lei de Nysten-Sommer descreve a progressão crânio-caudal da rigidez cadavérica na musculatura esquelética: nuca e mandíbula primeiro, seguidas por membros superiores, tronco e, por último, membros inferiores. Contudo, na cronologia interna, o miocárdio e o diafragma enrijecem antes mesmo dos membros superiores.",
+    explicacaoErradas:
+      "A intensidade e a velocidade da instalação variam conforme temperatura ambiente, condição física do cadáver e causa da morte, e a rigidez é temporária: após 12 a 24 horas (podendo estender-se por 2 a 3 dias), cessa com um segundo relaxamento, dando lugar à putrefação.",
     origem: "banco",
   },
   {
@@ -656,7 +700,9 @@ export const QUESTOES_FOR: Question[] = [
     ],
     correta: 1,
     explicacao:
-      "A zona de tatuagem resulta da impregnação de grãos de pólvora incombustos que queimam a pele e nela se fixam, não sendo removível por lavagem; a zona de esfumaçamento é formada por fuligem e gases depositados superficialmente na pele, podendo ser limpa pela lavagem (por isso também chamada de falsa queimadura); a zona de chamuscamento, por queimar a pele pela chama do disparo, também não é removível. Essas zonas secundárias ocorrem nos disparos a curta distância, desaparecendo a longa distância, e são distintas da boca de mina, exclusiva dos disparos encostados.",
+      "A zona de esfumaçamento é formada por fuligem e gases depositados superficialmente na pele, podendo ser limpa pela lavagem (por isso também chamada de falsa queimadura). A zona de tatuagem resulta da impregnação de grãos de pólvora incombustos que queimam a pele e nela se fixam, não sendo removível por lavagem.",
+    explicacaoErradas:
+      "A zona de chamuscamento, por queimar a pele pela chama do disparo, também não é removível. Essas zonas secundárias ocorrem nos disparos a curta distância, desaparecendo a longa distância, e são distintas da boca de mina, exclusiva dos disparos encostados.",
     origem: "banco",
   },
   {
@@ -674,7 +720,9 @@ export const QUESTOES_FOR: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "O sinal de Lichtenberg é exclusivo da eletricidade natural (raios): reação vasomotora temporária, de padrão dendrítico avermelhado/arroxeado, que desaparece em até 48 horas se a vítima sobreviver (persistindo até a putrefação, em caso de morte). A marca de Jellinek, por sua vez, é típica da eletricidade industrial (eletroplessão), no ponto de entrada da corrente. Fulguração é a sobrevivência a um raio, e fulminação é a morte imediata por raio — ambos termos da eletricidade natural. A eletroplessão é o gênero (qualquer acidente elétrico industrial), só letal quando configura eletrocussão; o mecanismo de morte varia com a voltagem: fibrilação ventricular (baixa), asfixia mecânica por tetania (média) ou paralisia bulbar/carbonização (alta).",
+      "O sinal de Lichtenberg é exclusivo da eletricidade natural (raios): reação vasomotora temporária, de padrão dendrítico avermelhado/arroxeado, que desaparece em até 48 horas se a vítima sobreviver (persistindo até a putrefação, em caso de morte).",
+    explicacaoErradas:
+      "A marca de Jellinek, por sua vez, é típica da eletricidade industrial (eletroplessão), no ponto de entrada da corrente. Fulguração é a sobrevivência a um raio, e fulminação é a morte imediata por raio — ambos termos da eletricidade natural. A eletroplessão é o gênero (qualquer acidente elétrico industrial), só letal quando configura eletrocussão; o mecanismo de morte varia com a voltagem: fibrilação ventricular (baixa), asfixia mecânica por tetania (média) ou paralisia bulbar/carbonização (alta).",
     origem: "banco",
   },
   {
@@ -692,7 +740,9 @@ export const QUESTOES_FOR: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "O art. 182 do CPP consagra o princípio do livre convencimento motivado (sistema liberatório ou do livre convencimento): o juiz não fica adstrito ao laudo pericial, podendo aceitá-lo ou rejeitá-lo, no todo ou em parte, desde que fundamente devidamente sua decisão ao afastar as conclusões técnicas. O perito é auxiliar da Justiça, mas o magistrado é o destinatário final da prova, não havendo vinculação automática, exigência de autorização do Ministério Público ou restrição a recurso específico para contestação.",
+      "O art. 182 do CPP consagra o princípio do livre convencimento motivado (sistema liberatório ou do livre convencimento): o juiz não fica adstrito ao laudo pericial, podendo aceitá-lo ou rejeitá-lo, no todo ou em parte, desde que fundamente devidamente sua decisão ao afastar as conclusões técnicas.",
+    explicacaoErradas:
+      "O perito é auxiliar da Justiça, mas o magistrado é o destinatário final da prova, não havendo vinculação automática, exigência de autorização do Ministério Público ou restrição a recurso específico para contestação.",
     origem: "banco",
   },
   {
@@ -728,7 +778,9 @@ export const QUESTOES_FOR: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "As manchas de Paltauf são equimoses subpleurais de dimensões variadas, contornos irregulares e tonalidade vermelho-clara, achado patognomônico do afogamento: a penetração do líquido sob pressão nas vias respiratórias rompe septos interalveolares e capilares, e a hemodiluição confere a cor mais clara. Já as manchas de Tardieu são petéquias puntiformes menores e mais escuras, decorrentes de simples hipertensão venosa/capilar, encontradas em superfícies serosas (pulmão, coração) e também sob a pele, em praticamente todas as demais asfixias mecânicas (enforcamento, estrangulamento, esganadura, sufocação direta) — não são o mesmo achado, nem se relacionam à intoxicação por monóxido de carbono.",
+      "As manchas de Paltauf são equimoses subpleurais de dimensões variadas, contornos irregulares e tonalidade vermelho-clara, achado patognomônico do afogamento: a penetração do líquido sob pressão nas vias respiratórias rompe septos interalveolares e capilares, e a hemodiluição confere a cor mais clara. Já as manchas de Tardieu são petéquias puntiformes menores e mais escuras, decorrentes de simples hipertensão venosa/capilar, presentes em praticamente todas as demais asfixias mecânicas (enforcamento, estrangulamento, esganadura, sufocação direta).",
+    explicacaoErradas:
+      "As manchas de Tardieu aparecem em superfícies serosas (pulmão, coração) e também sob a pele. Paltauf e Tardieu não são o mesmo achado, e nenhuma das duas se relaciona à intoxicação por monóxido de carbono.",
     origem: "banco",
   },
   {
@@ -746,7 +798,9 @@ export const QUESTOES_FOR: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Ao contrário do que se imagina intuitivamente, o cadáver intoxicado por monóxido de carbono não fica roxo/cianótico. A reação do CO com a hemoglobina forma a carboxihemoglobina (COHb), que confere aos livores cadavéricos, à pele e ao sangue uma tonalidade vermelho-viva (vermelho-cereja ou carminada), com o sangue permanecendo fluido e claro — diferentemente das demais asfixias mecânicas (enforcamento, estrangulamento, esganadura), que cursam com cianose e livores arroxeados.",
+      "A reação do CO com a hemoglobina forma a carboxihemoglobina (COHb), que confere aos livores cadavéricos, à pele e ao sangue uma tonalidade vermelho-viva (vermelho-cereja ou carminada), com o sangue permanecendo fluido e claro — diferentemente das demais asfixias mecânicas (enforcamento, estrangulamento, esganadura), que cursam com cianose e livores arroxeados.",
+    explicacaoErradas:
+      "Ao contrário do que se imagina intuitivamente, o cadáver intoxicado por monóxido de carbono não fica roxo/cianótico.",
     origem: "banco",
   },
   {
@@ -764,7 +818,9 @@ export const QUESTOES_FOR: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Na sufocação direta, um obstáculo físico externo (mão, travesseiro, fita adesiva, saco plástico) tapa mecanicamente a boca e o nariz da vítima. Na sufocação posicional, não há nenhum obstáculo tampando o rosto: a vítima morre porque a posição do corpo faz com que seu próprio peso comprima o diafragma ou dobre as vias aéreas, gerando fadiga extrema da musculatura respiratória. Em nenhum dos dois casos há laço cervical envolvido (isso caracterizaria enforcamento ou estrangulamento), e a sufocação indireta (compressão torácica/abdominal por peso externo) é uma terceira modalidade, distinta das duas.",
+      "Na sufocação direta, um obstáculo físico externo (mão, travesseiro, fita adesiva, saco plástico) tapa mecanicamente a boca e o nariz da vítima. Na sufocação posicional, não há nenhum obstáculo tampando o rosto: a vítima morre porque a posição do corpo faz com que seu próprio peso comprima o diafragma ou dobre as vias aéreas, gerando fadiga extrema da musculatura respiratória.",
+    explicacaoErradas:
+      "Em nenhum dos dois casos há laço cervical envolvido (isso caracterizaria enforcamento ou estrangulamento), e a sufocação indireta (compressão torácica/abdominal por peso externo) é uma terceira modalidade, distinta das duas.",
     origem: "banco",
   },
   {
@@ -782,7 +838,9 @@ export const QUESTOES_FOR: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "A Escola Clássica (Beccaria, Kant, Feuerbach) via o homem como um ser racional que escolhe livremente entre o crime e a norma (livre-arbítrio), concebendo o delito sob enfoque jurídico-abstrato. Fundada no contratualismo, defendeu a proporcionalidade entre delito e pena e a humanização das penas, em reação aos excessos e à arbitrariedade do sistema penal do Antigo Regime — tese central da obra \"Dos Delitos e das Penas\", de Beccaria. O método científico-experimental e o estudo biológico/antropológico do delinquente são, ao contrário, marcas da Escola Positiva (Lombroso, Ferri, Garofalo).",
+      "A Escola Clássica (Beccaria, Kant, Feuerbach) via o homem como um ser racional que escolhe livremente entre o crime e a norma (livre-arbítrio), concebendo o delito sob enfoque jurídico-abstrato. Fundada no contratualismo, defendeu a proporcionalidade entre delito e pena e a humanização das penas, em reação aos excessos e à arbitrariedade do sistema penal do Antigo Regime — tese central da obra \"Dos Delitos e das Penas\", de Beccaria.",
+    explicacaoErradas:
+      "O método científico-experimental e o estudo biológico/antropológico do delinquente são, ao contrário, marcas da Escola Positiva (Lombroso, Ferri, Garofalo).",
     origem: "banco",
   },
   {
@@ -800,7 +858,9 @@ export const QUESTOES_FOR: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Sutherland propôs que o comportamento criminoso, assim como qualquer outro comportamento, é aprendido por meio da interação social — processo de associação diferencial em que o indivíduo absorve, de grupos próximos, técnicas, motivos, racionalizações e atitudes favoráveis à violação da lei. Essa teoria foi formulada justamente para explicar crimes de colarinho branco (praticados por pessoas de posição social elevada, no exercício de suas atividades profissionais), demonstrando que a criminalidade não se limita a fatores genéticos, a classes sociais pobres ou à ausência de policiamento.",
+      "Sutherland propôs que o comportamento criminoso, assim como qualquer outro comportamento, é aprendido por meio da interação social — processo de associação diferencial em que o indivíduo absorve, de grupos próximos, técnicas, motivos, racionalizações e atitudes favoráveis à violação da lei.",
+    explicacaoErradas:
+      "Essa teoria foi formulada justamente para explicar crimes de colarinho branco (praticados por pessoas de posição social elevada, no exercício de suas atividades profissionais), demonstrando que a criminalidade não se limita a fatores genéticos, a classes sociais pobres ou à ausência de policiamento.",
     origem: "banco",
   },
   {
@@ -854,7 +914,9 @@ export const QUESTOES_FOR: Question[] = [
     ],
     correta: 0,
     explicacao:
-      "Oscar Newman propôs o conceito de \"espaço defensável\" (defensible space): o desenho arquitetônico e urbanístico pode reduzir a criminalidade ao favorecer a vigilância natural (visibilidade entre vizinhos), o senso de territorialidade (apropriação do espaço comum pelos moradores) e a redução de áreas de acesso irrestrito e anônimo — integrando as teorias de prevenção situacional do crime, ao lado da teoria das atividades rotineiras (Cohen e Felson) e da escolha racional. A simples ampliação do efetivo policial, a vegetação densa/baixa iluminação (que na verdade favorecem o esconderijo do agressor) e fatores puramente socioeconômicos não esgotam essa abordagem.",
+      "Oscar Newman propôs o conceito de \"espaço defensável\" (defensible space): o desenho arquitetônico e urbanístico pode reduzir a criminalidade ao favorecer a vigilância natural (visibilidade entre vizinhos), o senso de territorialidade (apropriação do espaço comum pelos moradores) e a redução de áreas de acesso irrestrito e anônimo — integrando as teorias de prevenção situacional do crime, ao lado da teoria das atividades rotineiras (Cohen e Felson) e da escolha racional.",
+    explicacaoErradas:
+      "A simples ampliação do efetivo policial, a vegetação densa/baixa iluminação (que na verdade favorecem o esconderijo do agressor) e fatores puramente socioeconômicos não esgotam essa abordagem.",
     origem: "banco",
   },
 ];
