@@ -155,6 +155,8 @@ export interface SimuladoResposta {
   tempoMs: number;
   /** "Marcar para revisar" antes de entregar. */
   marcada?: boolean;
+  /** Posições riscadas pelo usuário (só visual; não entram na correção). */
+  eliminadas?: number[];
 }
 
 /** Simulado em andamento: o relógio corre pelo horário de início, mesmo com o app fechado. */

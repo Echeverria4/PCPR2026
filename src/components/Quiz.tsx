@@ -4,6 +4,7 @@ import type { CursoId } from "../data/cursos";
 import { atualizarConfianca, recordAttempt } from "../lib/storage";
 import { formatarSegundos } from "../lib/format";
 import { ROTULO_CONFIANCA } from "../data/retaFinal";
+import Alternativa from "./Alternativa";
 
 const LETRAS = ["A", "B", "C", "D", "E"];
 
@@ -48,6 +49,8 @@ export default function Quiz<M extends string = SubjectId>({
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const [tempoRespostaMs, setTempoRespostaMs] = useState<number | null>(null);
   const [confianca, setConfianca] = useState<Confianca | undefined>(undefined);
+  /** Alternativas riscadas pelo usuário na questão atual (só visual, some ao responder). */
+  const [eliminadas, setEliminadas] = useState<number[]>([]);
   const registroRef = useRef<AttemptRecord<M> | null>(null);
 
   const questao = questions[indice];
@@ -112,6 +115,10 @@ export default function Quiz<M extends string = SubjectId>({
     );
   }
 
+  function alternarRiscada(idx: number) {
+    setEliminadas((prev) => (prev.includes(idx) ? prev.filter((i) => i !== idx) : [...prev, idx]));
+  }
+
   function avancar() {
     if (ultimaQuestao) {
       onFinalizar(respostas);
@@ -121,6 +128,7 @@ export default function Quiz<M extends string = SubjectId>({
     setSelecionada(null);
     setTempoRespostaMs(null);
     setConfianca(undefined);
+    setEliminadas([]);
     registroRef.current = null;
     setIaAberto(false);
     setIaTexto("");
@@ -204,21 +212,22 @@ export default function Quiz<M extends string = SubjectId>({
 
         <div className="alternativas">
           {questao.alternativas.map((alt, idx) => {
-            let classe = "alternativa";
+            let classe = "";
             if (selecionada !== null) {
-              if (idx === questao.correta) classe += " correta";
-              else if (idx === selecionada) classe += " errada";
+              if (idx === questao.correta) classe = "correta";
+              else if (idx === selecionada) classe = "errada";
             }
             return (
-              <button
+              <Alternativa
                 key={idx}
-                className={classe}
-                onClick={() => escolher(idx)}
+                letra={LETRAS[idx]}
+                texto={alt}
+                classe={classe}
                 disabled={selecionada !== null}
-              >
-                <span className="letra">{LETRAS[idx]}</span>
-                <span>{alt}</span>
-              </button>
+                eliminada={eliminadas.includes(idx)}
+                onEscolher={() => escolher(idx)}
+                onRiscar={selecionada === null ? () => alternarRiscada(idx) : undefined}
+              />
             );
           })}
         </div>

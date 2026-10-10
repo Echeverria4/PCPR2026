@@ -1426,6 +1426,47 @@ button {
   cursor: default;
 }
 
+/* Riscar alternativa: só visual, não depende do gabarito. */
+.alternativa-linha {
+  display: flex;
+  align-items: stretch;
+  gap: 6px;
+}
+
+.alternativa-linha > .alternativa {
+  flex: 1;
+  min-width: 0;
+}
+
+.alternativa.eliminada {
+  opacity: 0.32;
+}
+
+.alternativa.eliminada .alternativa-texto {
+  text-decoration: line-through;
+}
+
+.riscar {
+  flex-shrink: 0;
+  width: 38px;
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  background: none;
+  color: var(--texto-fraco);
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.riscar:hover {
+  border-color: var(--azul);
+  color: var(--texto);
+}
+
+.riscar.riscar-ativo {
+  border-color: var(--ouro);
+  color: var(--ouro-forte);
+}
+
 .explicacao {
   margin-top: 18px;
   padding: 16px;

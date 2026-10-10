@@ -5,6 +5,7 @@ import { MARCOS, MINUTOS_CARTAO, ROTULO_CONFIANCA } from "../data/retaFinal";
 import { QUESTAO_POR_ID, restanteMs } from "../lib/retaFinal";
 import { salvarSimuladoAtivo } from "../lib/storage";
 import { formatarMarco, formatarRelogio, formatarSegundos, horarioProva } from "../lib/format";
+import Alternativa from "./Alternativa";
 
 const LETRAS = ["A", "B", "C", "D", "E"];
 
@@ -119,6 +120,16 @@ export default function Simulado({ simulado, onEntregar, onSair, onDescartar }: 
       const respostas = s.respostas.slice();
       const r = respostas[s.atual];
       respostas[s.atual] = { ...r, confianca: r.confianca === c ? undefined : c };
+      return { ...s, respostas };
+    });
+
+  const alternarRiscada = (pos: number) =>
+    mudar((s) => {
+      const respostas = s.respostas.slice();
+      const r = respostas[s.atual];
+      const atuais = r.eliminadas ?? [];
+      const eliminadas = atuais.includes(pos) ? atuais.filter((p) => p !== pos) : [...atuais, pos];
+      respostas[s.atual] = { ...r, eliminadas };
       return { ...s, respostas };
     });
 
@@ -250,14 +261,15 @@ export default function Simulado({ simulado, onEntregar, onSair, onDescartar }: 
 
           <div className="alternativas">
             {sq.ordem.map((original, pos) => (
-              <button
+              <Alternativa
                 key={pos}
-                className={`alternativa ${resposta.escolha === pos ? "selecionada" : ""}`}
-                onClick={() => escolher(pos)}
-              >
-                <span className="letra">{LETRAS[pos]}</span>
-                <span>{questao.alternativas[original]}</span>
-              </button>
+                letra={LETRAS[pos]}
+                texto={questao.alternativas[original]}
+                classe={resposta.escolha === pos ? "selecionada" : ""}
+                eliminada={resposta.eliminadas?.includes(pos) ?? false}
+                onEscolher={() => escolher(pos)}
+                onRiscar={() => alternarRiscada(pos)}
+              />
             ))}
           </div>
 
