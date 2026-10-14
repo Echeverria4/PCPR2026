@@ -27,6 +27,13 @@ Outros pontos cobrados:
 • § 10 (EC 82/2014): a segurança viária compreende educação, engenharia e fiscalização de trânsito e, nos Estados, no DF e nos Municípios, cabe aos órgãos executivos de trânsito e a seus agentes, estruturados em carreira
 • Art. 22, XXII: legislar sobre a competência da polícia federal e das polícias rodoviária e ferroviária federais é privativo da União
 
+Complemento (pontos que a banca costuma cruzar com o art. 144):
+• Rol taxativo: para o STF, o caput lista os órgãos de segurança pública de forma taxativa, e os Estados não podem criar outros; o Tribunal já recusou, por exemplo, incluir o Departamento de Trânsito nesse rol
+• § 5º-A (EC 104/2019): “às polícias penais, vinculadas ao órgão administrador do sistema penal da unidade federativa a que pertencem, cabe a segurança dos estabelecimentos penais”. A polícia penal federal está no caput, mas não no § 6º, que só subordina aos Governadores as polícias penais estaduais e distrital
+• § 8º: os Municípios podem constituir guardas municipais destinadas à proteção de seus bens, serviços e instalações (Lei 13.022/2014). Elas não estão no caput, mas o STF as reconhece como integrantes do Sistema de Segurança Pública (ADPF 995)
+• Art. 21, XIV: a União organiza e mantém a polícia civil, a polícia penal, a polícia militar e o corpo de bombeiros militar do Distrito Federal, que mesmo assim se subordinam ao Governador do DF (§ 6º). Ser mantido pela União não define a quem o órgão se subordina
+• Art. 22, XI: legislar sobre trânsito e transporte é privativo da União, e por isso o CTB é lei federal; já estabelecer e implantar política de educação para a segurança do trânsito é competência comum de todos os entes (art. 23, XII)
+
 Atenção: em outubro de 2026, a PEC 18/2025 (PEC da Segurança Pública), que entre outros pontos estende a atuação da PRF às ferrovias e hidrovias federais, ainda tramitava no Congresso. Até a promulgação, vale o texto atual do § 2º.`,
     exemplos: [
       "Ao prender em flagrante, numa rodovia federal, o motorista de um carro com registro de roubo, a PRF apresenta o preso à polícia judiciária competente: o patrulhamento é dela, mas a investigação fica com a polícia judiciária.",
