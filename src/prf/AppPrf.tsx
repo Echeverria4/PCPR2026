@@ -8,7 +8,14 @@ import LayoutPrf, { type AbaPrf } from "./LayoutPrf";
 import InicioPrf from "./InicioPrf";
 import ConteudoPrfTela from "./ConteudoPrfTela";
 import { GRAVACAO_PRF, getErradasPrf, getTentativasPrf, zerarMateriaPrf, type TentativaPrf } from "./armazenamento";
-import { sessaoFocoPrf, sessaoMateriaPrf, sessaoProvaPrf, sessaoRevisaoPrf } from "./sessoes";
+import {
+  sessaoFocoPrf,
+  sessaoMateriaPrf,
+  sessaoPersonalizadaPrf,
+  sessaoProvaPrf,
+  sessaoRevisaoPrf,
+  type FiltrosPrf,
+} from "./sessoes";
 
 type View = AbaPrf | "quiz" | "result";
 
@@ -49,6 +56,14 @@ export default function AppPrf({ onTrocarCurso }: AppPrfProps) {
     else if (mode === "prova") questions = sessaoProvaPrf();
     else if (mode === "revisao") questions = sessaoRevisaoPrf();
     else if (mode === "treino-alvo" && materia) questions = sessaoFocoPrf(materia);
+    abrirSessao(mode, questions);
+  }
+
+  function iniciarPersonalizado(filtros: FiltrosPrf) {
+    abrirSessao("personalizado", sessaoPersonalizadaPrf(filtros, tentativas));
+  }
+
+  function abrirSessao(mode: QuizMode, questions: QuestaoPrf[]) {
     if (questions.length === 0) return;
     setSessao({ mode, questions, iniciadoEm: new Date().toISOString() });
     setView("quiz");
@@ -95,9 +110,11 @@ export default function AppPrf({ onTrocarCurso }: AppPrfProps) {
       {view === "home" && (
         <InicioPrf
           stats={stats}
+          tentativas={tentativas}
           wrongCount={erradas}
           materiaFoco={materiaFoco}
           onIniciar={iniciarQuiz}
+          onPersonalizado={iniciarPersonalizado}
           onResetarMateria={resetarMateria}
         />
       )}

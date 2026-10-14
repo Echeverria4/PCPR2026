@@ -21,20 +21,57 @@ export interface Subject {
   topicos: string[];
 }
 
+/** Nível da questão: 1 muito fácil, 2 fácil, 3 média, 4 difícil, 5 muito difícil. */
+export type Dificuldade = 1 | 2 | 3 | 4 | 5;
+
+/** Questão tirada de uma prova real, com o gabarito da banca. */
+export interface OrigemProva {
+  prova: string;
+  banca: string;
+  aplicadaEm: string;
+  caderno: string;
+  numero: number;
+  /** A mesma questão nos outros tipos de caderno (ex.: "Tipo 2, Q19"). */
+  equivalentes: string[];
+  gabaritoOficial: string;
+  gabaritoStatus: "preliminar" | "definitivo";
+  /** A: cobra conteúdo do programa; B: cobra, com a ressalva de motivoCompat. */
+  compatibilidade: "A" | "B";
+  motivoCompat: string;
+  adaptada: boolean;
+  adaptacao?: string;
+  /** O que ainda falta confirmar (ex.: gabarito definitivo). */
+  pendencia?: string;
+  observacao?: string;
+}
+
 /** M = ids de matéria do curso (padrão: PCPR). */
 export interface Question<M extends string = SubjectId> {
   id: string;
   materia: M;
   topico: string;
+  /** Recorte dentro do tópico; só aparece depois da resposta, para não dar pista. */
+  subassunto?: string;
+  dificuldade?: Dificuldade;
+  /** Tipo de raciocínio que a questão exige. */
+  raciocinio?: string;
   enunciado: string;
   alternativas: [string, string, string, string, string];
   correta: 0 | 1 | 2 | 3 | 4;
   explicacao: string;
   /** Por que as outras alternativas estão erradas; exibida abaixo da explicação da certa, separada por uma linha. */
   explicacaoErradas?: string;
-  origem?: "banco" | "ia";
+  /** A armadilha da questão (mostrada depois da resposta). */
+  pegadinha?: string;
+  /** O que precisava estar consolidado para acertar (mostrado depois da resposta). */
+  conhecimento?: string;
+  /** banco: própria do app; prova: original de prova real; inedita: autoral, inspirada no padrão da banca (não é da banca). */
+  origem?: "banco" | "ia" | "prova" | "inedita";
   /** Prova real em que a questão se baseou (ex.: "FGV · PC-AM 2022 · Investigador (adaptada)"). Só preencher quando a questão veio de fato de uma prova consultada. */
   fonte?: string;
+  /** Alternativas na ordem do caderno, sem embaralhar: a explicação cita as letras originais. */
+  ordemFixa?: boolean;
+  prova?: OrigemProva;
 }
 
 export interface ConteudoTopico<M extends string = SubjectId> {
@@ -129,7 +166,7 @@ export interface TafExercicio {
   faixas: TafFaixas;
 }
 
-export type QuizMode = "materia" | "prova" | "revisao" | "treino-alvo" | "simulado" | "reforco";
+export type QuizMode = "materia" | "prova" | "revisao" | "treino-alvo" | "simulado" | "reforco" | "personalizado";
 
 /** Quanto o candidato confiava na resposta, marcado na hora de responder. */
 export type Confianca = "certeza" | "duvida" | "chute";

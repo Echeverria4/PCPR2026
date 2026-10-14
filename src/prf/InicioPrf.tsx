@@ -2,18 +2,31 @@ import type { CSSProperties } from "react";
 import { PRF_MATERIAS, PRF_MATERIA_MAP, PRF_SITUACAO, PRF_ULTIMO_EDITAL, type MateriaPrfId } from "../data/prf";
 import type { QuizMode, SubjectStats } from "../lib/types";
 import { BANCO_PRF, QUESTOES_PRF_POR_MATERIA } from "./questoes";
+import type { TentativaPrf } from "./armazenamento";
+import type { FiltrosPrf } from "./sessoes";
+import TreinoPersonalizadoPrf from "./TreinoPersonalizadoPrf";
 
 interface InicioPrfProps {
   stats: SubjectStats<MateriaPrfId>[];
+  tentativas: TentativaPrf[];
   wrongCount: number;
   materiaFoco: MateriaPrfId | null;
   onIniciar: (mode: QuizMode, materia?: MateriaPrfId) => void;
   onResetarMateria: (materia: MateriaPrfId) => void;
+  onPersonalizado: (filtros: FiltrosPrf) => void;
 }
 
 const pontos = (n: number) => n.toLocaleString("pt-BR");
 
-export default function InicioPrf({ stats, wrongCount, materiaFoco, onIniciar, onResetarMateria }: InicioPrfProps) {
+export default function InicioPrf({
+  stats,
+  tentativas,
+  wrongCount,
+  materiaFoco,
+  onIniciar,
+  onResetarMateria,
+  onPersonalizado,
+}: InicioPrfProps) {
   const statsPorMateria = new Map(stats.map((s) => [s.materia, s]));
   const ed = PRF_ULTIMO_EDITAL;
   const minimo = (ed.pontos * ed.minimoPct) / 100;
@@ -76,6 +89,8 @@ export default function InicioPrf({ stats, wrongCount, materiaFoco, onIniciar, o
           </p>
         </button>
       </div>
+
+      <TreinoPersonalizadoPrf tentativas={tentativas} onIniciar={onPersonalizado} />
 
       <h2 className="secao-titulo">Treinar por matéria</h2>
       <div className="materias-grid">

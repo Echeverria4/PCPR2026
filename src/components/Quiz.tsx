@@ -4,7 +4,7 @@ import type { CursoId } from "../data/cursos";
 import { atualizarConfianca, recordAttempt } from "../lib/storage";
 import { formatarSegundos } from "../lib/format";
 import { ROTULO_CONFIANCA } from "../data/retaFinal";
-import { ROTULO_MODO } from "../lib/quizEngine";
+import { ROTULO_MODO, ROTULO_NIVEL } from "../lib/quizEngine";
 import Alternativa from "./Alternativa";
 
 const LETRAS = ["A", "B", "C", "D", "E"];
@@ -214,6 +214,19 @@ export default function Quiz<M extends string = SubjectId>({
         <div className="questao-tags">
           <span className="questao-tag">{questao.topico}</span>
           {questao.fonte && <span className="questao-tag questao-tag-fonte">{questao.fonte}</span>}
+          {questao.origem === "inedita" && (
+            <span
+              className="questao-tag questao-tag-fonte"
+              title="Escrita para o app, no padrão de cobrança da prova PCPR 2026. Não é questão da FGV nem de outra banca."
+            >
+              Questão autoral (inédita)
+            </span>
+          )}
+          {questao.dificuldade && (
+            <span className="questao-tag questao-tag-nivel">
+              Nível {questao.dificuldade} · {ROTULO_NIVEL[questao.dificuldade]}
+            </span>
+          )}
         </div>
         <p className="questao-enunciado">{questao.enunciado}</p>
 
@@ -257,10 +270,54 @@ export default function Quiz<M extends string = SubjectId>({
         {selecionada !== null && (
           <div className="explicacao">
             <strong>{selecionada === questao.correta ? "Correto. " : "Incorreto. "}</strong>
+            {(questao.prova || questao.dificuldade) && (
+              <strong>
+                Gabarito: {LETRAS[questao.correta]}
+                {questao.prova &&
+                  ` (oficial ${questao.prova.gabaritoStatus} da ${questao.prova.banca}: ${questao.prova.gabaritoOficial}). `}
+                {!questao.prova && ". "}
+              </strong>
+            )}
             {questao.explicacao}
             {questao.explicacaoErradas && (
               <p className="explicacao-erradas">
                 <strong>Por que as outras estão erradas:</strong> {questao.explicacaoErradas}
+              </p>
+            )}
+            {(questao.pegadinha || questao.conhecimento || questao.subassunto) && (
+              <div className="explicacao-extra">
+                {questao.subassunto && (
+                  <p>
+                    <strong>Assunto:</strong> {questao.topico} › {questao.subassunto}
+                  </p>
+                )}
+                {questao.raciocinio && (
+                  <p>
+                    <strong>Raciocínio exigido:</strong> {questao.raciocinio}
+                  </p>
+                )}
+                {questao.pegadinha && (
+                  <p>
+                    <strong>Armadilha:</strong> {questao.pegadinha}
+                  </p>
+                )}
+                {questao.conhecimento && (
+                  <p>
+                    <strong>O que precisava estar consolidado:</strong> {questao.conhecimento}
+                  </p>
+                )}
+              </div>
+            )}
+            {questao.prova && (
+              <p className="explicacao-prova">
+                {questao.fonte}. Nos outros cadernos: {questao.prova.equivalentes.join("; ")}.
+                {questao.prova.pendencia && ` ${questao.prova.pendencia}`}
+              </p>
+            )}
+            {selecionada !== questao.correta && curso === "prf-adm" && (
+              <p className="explicacao-revisao">
+                Registrado para revisão: {questao.topico}
+                {questao.subassunto && ` › ${questao.subassunto}`}. A questão entrou na fila de revisão dos errados.
               </p>
             )}
             {tempoRespostaMs !== null && (

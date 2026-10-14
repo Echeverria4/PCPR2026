@@ -1,4 +1,4 @@
-import type { AttemptRecord, Question, QuizMode, SubjectId, TreinoEmAndamento } from "./types";
+import type { AttemptRecord, Dificuldade, Question, QuizMode, SubjectId, TreinoEmAndamento } from "./types";
 import { BANCO, QUESTOES_POR_MATERIA } from "../data/questions";
 import { PROVA_MIX } from "../data/subjects";
 import { getWrongQueue } from "./storage";
@@ -19,6 +19,8 @@ export function shuffle<T>(arr: T[]): T[] {
  * explorável em vez de exigir conhecimento real do conteúdo.
  */
 export function embaralharAlternativas<M extends string>(q: Question<M>): Question<M> {
+  // Questão de prova real: fica como no caderno, porque a explicação cita as letras originais.
+  if (q.ordemFixa) return q;
   const indices = shuffle([0, 1, 2, 3, 4]);
   const alternativas = indices.map((i) => q.alternativas[i]) as Question["alternativas"];
   const correta = indices.indexOf(q.correta) as Question["correta"];
@@ -67,6 +69,15 @@ export const ROTULO_MODO: Record<QuizMode, string> = {
   "treino-alvo": "Foco recomendado",
   simulado: "Simulado modo prova",
   reforco: "Reforço dirigido",
+  personalizado: "Treino personalizado",
+};
+
+export const ROTULO_NIVEL: Record<Dificuldade, string> = {
+  1: "Muito fácil",
+  2: "Fácil",
+  3: "Média",
+  4: "Difícil",
+  5: "Muito difícil",
 };
 
 const QUESTAO_POR_ID = new Map(BANCO.map((q) => [q.id, q]));

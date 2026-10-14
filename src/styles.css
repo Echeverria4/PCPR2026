@@ -1403,6 +1403,14 @@ button {
   letter-spacing: 0.02em;
 }
 
+/* Mais específica que .questao-tag (que vem depois e pinta de dourado). */
+.questao-tag.questao-tag-nivel {
+  color: var(--texto);
+  background: var(--bg-elevado);
+  border: 1px solid var(--borda-forte);
+  box-shadow: none;
+}
+
 .questao-tag {
   display: inline-block;
   font-family: var(--fonte-cond);
@@ -1543,6 +1551,32 @@ button {
 .explicacao .explicacao-erradas strong,
 .caderno-explicacao.explicacao-erradas strong {
   color: var(--vermelho);
+}
+
+/* Depois da resposta: assunto, armadilha e o que precisava estar consolidado. */
+.explicacao-extra {
+  margin-top: 1em;
+  padding-top: 0.8em;
+  border-top: 1px solid var(--borda-forte);
+}
+
+.explicacao-extra p {
+  margin: 0 0 0.6em;
+}
+
+.explicacao-extra p:last-child {
+  margin-bottom: 0;
+}
+
+.explicacao-prova,
+.explicacao-revisao {
+  margin: 1em 0 0;
+  font-size: 0.8rem;
+  color: var(--texto-fraco);
+}
+
+.explicacao-revisao {
+  color: var(--ouro-forte);
 }
 
 .questao-tempo-resposta {
@@ -5224,4 +5258,110 @@ button {
   .curso-ficha dd {
     margin-bottom: 8px;
   }
+}
+
+/* Treino personalizado da PRF */
+.personalizado-painel {
+  background: var(--bg-card);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 16px;
+  margin-bottom: 28px;
+}
+
+.filtros-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 12px;
+}
+
+.filtro {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.filtro label {
+  font-size: 0.75rem;
+  color: var(--texto-fraco);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.filtro select {
+  width: 100%;
+  min-width: 0;
+  background: var(--bg-elevado);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-peq);
+  padding: 8px 10px;
+  color: var(--texto);
+  font-size: 0.88rem;
+}
+
+.filtro select:focus {
+  outline: none;
+  border-color: var(--ouro);
+}
+
+.filtro select:disabled {
+  opacity: 0.5;
+}
+
+.personalizado-rodape {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.personalizado-contagem {
+  font-size: 0.85rem;
+  color: var(--texto-fraco);
+}
+
+.recorrentes-lista {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.recorrente-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--borda);
+  border-left: 3px solid var(--vermelho);
+  border-radius: var(--raio);
+  padding: 10px 12px;
+}
+
+.recorrente-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+  font-size: 0.88rem;
+}
+
+.recorrente-materia {
+  font-size: 0.72rem;
+  color: var(--texto-fraco);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.recorrente-erros {
+  font-family: var(--fonte-mono);
+  font-size: 0.8rem;
+  color: var(--vermelho);
+  white-space: nowrap;
 }
