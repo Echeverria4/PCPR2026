@@ -73,7 +73,7 @@ Trajetória dos programas federais:
 Modelo de Excelência em Gestão Pública (MEGP), na versão em oito dimensões:
 • Lema: ser excelente sem deixar de ser público; adapta os modelos de excelência empresariais à natureza pública, sem abrir mão da legalidade, da impessoalidade e do interesse coletivo
 • Oito dimensões: governança; estratégia e planos; público-alvo; interesse público e cidadania; informação e conhecimento; pessoas; processos; resultados
-• As dimensões se organizam em quatro blocos que seguem a lógica do ciclo PDCA: planejamento, execução, resultados e informação e conhecimento
+• As dimensões se organizam em quatro blocos que seguem a lógica do ciclo PDCA: planejamento (governança, estratégia e planos, público-alvo e interesse público e cidadania), execução (pessoas e processos), resultados (a dimensão resultados) e informação e conhecimento, que funciona como a inteligência da organização
 • Entre os fundamentos estão o foco no cidadão e na sociedade, o controle social e a gestão participativa
 
 Autoavaliação:
