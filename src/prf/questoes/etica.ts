@@ -601,4 +601,109 @@ export const QUESTOES_PRF_ETICA: QuestaoPrf[] = [
       "Lei 8.429/1992: requisitos e rejeição da representação (art. 14) e crime de representação contra agente sabidamente inocente, com dever de indenizar (art. 19).",
     origem: "banco",
   },
+  // Complemento (14/10/2026): questões adaptadas do banco do outro curso do app, nos tópicos do programa da PRF.
+  {
+    id: "prf-etica-025",
+    materia: "etica",
+    topico: "Improbidade administrativa (Lei 8.429/1992)",
+    subassunto: "Garantias do réu na ação de improbidade: interrogatório, improcedência e congruência (art. 17)",
+    dificuldade: 5,
+    raciocinio: "Comparação de assertivas compostas: cada alternativa reúne três regras do art. 17, e nas erradas só uma delas está invertida.",
+    enunciado:
+      "Um servidor administrativo da PRF responde a ação de improbidade em que o Ministério Público Federal lhe imputa ato que causa prejuízo ao erário. Sobre o processo dessa ação, nos termos da Lei 8.429/1992, com a redação dada pela Lei 14.230/2021, é correto afirmar que",
+    alternativas: [
+      "o silêncio do réu no interrogatório não implica confissão; verificada a inexistência do ato, o processo é extinto sem resolução de mérito; e a revelia não faz presumir verdadeiros os fatos narrados pelo autor.",
+      "a revelia não faz presumir verdadeiros os fatos narrados pelo autor; verificada a inexistência do ato, a demanda é julgada improcedente; e a sentença de improcedência fica sujeita a reexame obrigatório.",
+      "o silêncio do réu no interrogatório não implica confissão; a sentença de improcedência não fica sujeita a reexame obrigatório; e o juiz pode condenar por tipo diverso do indicado na inicial, se os fatos forem os mesmos.",
+      "o silêncio do réu no interrogatório não implica confissão; verificada a inexistência do ato, a demanda é julgada improcedente; e é nula a condenação por tipo diverso do indicado na inicial.",
+      "a recusa do réu em ser interrogado pode ser valorada como confissão; verificada a inexistência do ato, a demanda é julgada improcedente; e é nula a condenação por tipo diverso do indicado na inicial.",
+    ],
+    correta: 3,
+    explicacao:
+      "Ao réu é assegurado o direito de ser interrogado sobre os fatos, e sua recusa ou seu silêncio não implicam confissão (art. 17, § 18). Verificada, em qualquer momento do processo, a inexistência do ato de improbidade, o juiz julga a demanda improcedente (§ 11), em decisão de mérito. E é nula a decisão de mérito que condenar o requerido por tipo diverso daquele definido na petição inicial (§ 10-F, I). As três regras aparecem juntas só na resposta correta.",
+    explicacaoErradas:
+      "A que manda extinguir o processo sem resolução de mérito contraria o § 11, que impõe a improcedência. A que sujeita a sentença de improcedência a reexame obrigatório contraria o § 19, IV. A que admite condenar por tipo diverso, se os fatos forem os mesmos, contraria o § 10-F, I. A que permite valorar a recusa como confissão contraria o § 18. Em todas elas as outras duas partes estão certas: a revelia, por exemplo, de fato não gera presunção de veracidade (§ 19, I).",
+    pegadinha:
+      "Cada errada repete duas regras verdadeiras e inverte uma só; o § 19, que afasta a presunção da revelia e o reexame obrigatório, aparece misturado ao § 18 para esconder a troca.",
+    conhecimento:
+      "Lei 8.429/1992, art. 17: nulidade da condenação por tipo diverso da inicial (§ 10-F, I), improcedência quando inexistente o ato (§ 11), interrogatório sem confissão ficta (§ 18) e institutos do processo civil afastados (§ 19).",
+    fonte: "Adaptada de FGV — 2026 — PC-PI — Oficial Investigador",
+    origem: "banco",
+  },
+  {
+    id: "prf-etica-026",
+    materia: "etica",
+    topico: "Improbidade administrativa (Lei 8.429/1992)",
+    subassunto: "Apuração e comunicação entre esferas: órgãos de controle e compensação de sanções (arts. 21 e 22)",
+    dificuldade: 5,
+    raciocinio: "Análise de afirmativas: separar o que a lei manda considerar do que ela torna vinculante, e a compensação de sanções da independência das esferas.",
+    enunciado:
+      "Um servidor da PRF, gestor de um contrato de manutenção de viaturas, é investigado pelo Ministério Público Federal por suposto ato de improbidade. O Tribunal de Contas da União já havia examinado o contrato, e o servidor também respondeu a processo disciplinar pelos mesmos fatos. Analise as afirmativas à luz da Lei 8.429/1992.\n\nI. Na apuração conduzida pelo Ministério Público, é garantida ao servidor a oportunidade de se manifestar por escrito e de juntar documentos que comprovem suas alegações.\nII. As provas produzidas perante o Tribunal de Contas e a decisão correspondente devem ser consideradas pelo juiz na formação de sua convicção, o que o dispensa de examinar o dolo do servidor.\nIII. Se o servidor agiu com base em orientação formal do órgão de controle interno, esse ato será considerado pelo juiz, por ter servido de fundamento para a conduta.\nIV. A sanção eventualmente aplicada ao servidor no processo disciplinar deverá ser compensada com as sanções impostas na ação de improbidade.\n\nEstá correto o que se afirma em",
+    alternativas: ["I e III, apenas.", "II e IV, apenas.", "I, II e III, apenas.", "III e IV, apenas.", "I, III e IV, apenas."],
+    correta: 4,
+    explicacao:
+      "A afirmativa I reproduz o art. 22, parágrafo único: na apuração, o investigado tem a oportunidade de se manifestar por escrito e de juntar documentos. A III segue o art. 21, § 1º: os atos do órgão de controle interno ou externo são considerados pelo juiz quando serviram de fundamento para a conduta do agente. A IV segue o § 5º do mesmo artigo: as sanções aplicadas em outras esferas deverão ser compensadas com as da Lei de Improbidade.",
+    explicacaoErradas:
+      "A afirmativa II está errada: as provas e decisões dos órgãos de controle devem ser consideradas na convicção do juiz, mas sem prejuízo da análise acerca do dolo na conduta do agente (art. 21, § 2º); elas não dispensam esse exame. Toda combinação com a II está errada, e as que deixam de fora a I ou a IV ignoram regras expressas da lei.",
+    pegadinha:
+      "“Considerar” não é “vincular”: o juiz leva em conta o que o Tribunal de Contas apurou, mas continua obrigado a verificar o dolo; e a independência das esferas não impede a compensação das sanções.",
+    conhecimento:
+      "Lei 8.429/1992: manifestação escrita do investigado na apuração (art. 22, parágrafo único); atos e provas dos órgãos de controle e compensação de sanções de outras esferas (art. 21, §§ 1º, 2º e 5º).",
+    fonte: "Adaptada de FGV — 2024 — PC-MG — Investigador de Polícia I",
+    origem: "banco",
+  },
+  {
+    id: "prf-etica-027",
+    materia: "etica",
+    topico: "Improbidade administrativa (Lei 8.429/1992)",
+    subassunto: "Acordo de não persecução civil: requisitos cumulativos, momento e descumprimento (art. 17-B)",
+    dificuldade: 5,
+    raciocinio: "Aplicação de requisitos: verificar quais exigências do art. 17-B, § 1º, dependem do momento em que o acordo é celebrado.",
+    enunciado:
+      "Investigado por ato de improbidade que causou prejuízo à União, um servidor federal procura o Ministério Público Federal, antes do ajuizamento da ação, para negociar um acordo de não persecução civil. Sobre esse acordo, nos termos da Lei 8.429/1992, é correto afirmar que",
+    alternativas: [
+      "como o acordo precede a ação, depende também da aprovação do órgão do Ministério Público que aprecia arquivamentos de inquéritos civis.",
+      "como o acordo precede a ação, dispensa a homologação judicial, bastando a aprovação do órgão do Ministério Público que aprecia arquivamentos.",
+      "o acordo só pode ser celebrado até a sentença; depois da condenação, resta ao servidor cumprir as sanções que lhe tiverem sido impostas.",
+      "se o servidor descumprir o acordo, ficará impedido de celebrar outro por 5 anos, contados da data em que o acordo foi homologado pelo juiz.",
+      "o acordo pode prever o ressarcimento apenas parcial do dano, desde que o servidor confesse os fatos e colabore com a investigação em curso.",
+    ],
+    correta: 0,
+    explicacao:
+      "O acordo depende, cumulativamente, da oitiva do ente federativo lesado, da aprovação, em até 60 dias, pelo órgão do Ministério Público competente para apreciar as promoções de arquivamento de inquéritos civis, se anterior ao ajuizamento da ação, e da homologação judicial, antes ou depois do ajuizamento (art. 17-B, § 1º). Como o acordo do caso precede a ação, a aprovação interna do Ministério Público é exigida.",
+    explicacaoErradas:
+      "A homologação judicial é exigida independentemente de o acordo ocorrer antes ou depois do ajuizamento (§ 1º, III). O acordo pode ser celebrado na investigação, no curso da ação ou na execução da sentença condenatória (§ 4º). O impedimento de 5 anos conta do conhecimento, pelo Ministério Público, do efetivo descumprimento, e não da homologação (§ 7º). E o integral ressarcimento do dano é resultado mínimo do acordo (caput, I), que não exige confissão.",
+    pegadinha:
+      "A aprovação pelo órgão do Ministério Público só é exigida antes do ajuizamento; a homologação judicial, sempre. Quem inverte essas duas condições acaba na resposta que dispensa o juiz.",
+    conhecimento:
+      "Lei 8.429/1992, art. 17-B: resultados mínimos do acordo (caput), requisitos cumulativos (§ 1º), momentos de celebração (§ 4º) e impedimento por descumprimento (§ 7º).",
+    origem: "banco",
+  },
+  {
+    id: "prf-etica-028",
+    materia: "etica",
+    topico: "Improbidade administrativa (Lei 8.429/1992)",
+    subassunto: "Direito intertemporal da reforma de 2021: Tema 1.199 do STF",
+    dificuldade: 5,
+    raciocinio: "Aplicação de precedente: separar coisa julgada, processo em curso e regime de prescrição na tese do Tema 1.199.",
+    enunciado:
+      "Dois servidores federais respondem por atos culposos que causaram prejuízo ao erário, praticados antes da Lei 14.230/2021, quando a modalidade culposa ainda era punível. O primeiro já foi condenado por decisão transitada em julgado, hoje em execução; o segundo ainda não tem condenação definitiva. Segundo a tese firmada pelo STF no Tema 1.199 da repercussão geral, a extinção da modalidade culposa",
+    alternativas: [
+      "alcança os dois servidores, por ser norma mais benéfica, o que encerra a execução do primeiro e o processo do segundo.",
+      "não alcança nenhum dos dois, porque os atos culposos continuam regidos pela lei vigente na data em que foram praticados.",
+      "não alcança a condenação do primeiro, e o segundo continua respondendo pela culpa, porque o fato é anterior à nova lei.",
+      "não alcança a condenação do primeiro, mas vale no processo do segundo, ao qual também se aplicam, retroativamente, os novos prazos de prescrição.",
+      "não alcança a condenação do primeiro, mas vale no processo do segundo, no qual o juiz deve examinar se houve dolo do agente.",
+    ],
+    correta: 4,
+    explicacao:
+      "No Tema 1.199 (ARE 843.989, 2022), o STF fixou que a revogação da modalidade culposa é irretroativa quanto à coisa julgada e à execução das penas e seus incidentes, mas se aplica aos atos culposos praticados na vigência do texto anterior ainda sem condenação transitada em julgado, cabendo ao juiz analisar eventual dolo do agente. O primeiro servidor continua condenado; no processo do segundo, o juiz verifica se houve dolo.",
+    explicacaoErradas:
+      "A que estende a extinção à condenação definitiva contraria a tese, que preserva a coisa julgada e a execução. A que não alcança nenhum dos dois ignora que a nova lei vale para os processos sem condenação definitiva. A que mantém o segundo respondendo pela culpa contraria a revogação expressa da modalidade culposa. A que aplica retroativamente os novos prazos de prescrição contraria a tese de que o novo regime prescricional é irretroativo e vale a partir da publicação da lei.",
+    pegadinha:
+      "A errada mais perigosa acerta o destino dos dois servidores e erra só a prescrição: os novos prazos e marcos de prescrição não retroagem.",
+    conhecimento:
+      "STF, Tema 1.199 da repercussão geral (ARE 843.989): exigência de dolo, irretroatividade quanto à coisa julgada, aplicação aos processos em curso e irretroatividade do novo regime prescricional.",
+    origem: "banco",
+  },
 ];
