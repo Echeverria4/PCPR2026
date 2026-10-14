@@ -5,432 +5,600 @@ export const QUESTOES_PRF_ETICA: QuestaoPrf[] = [
     id: "prf-etica-001",
     materia: "etica",
     topico: "Ética e moral",
+    subassunto: "Etimologia de ethos, ética × moral e senso moral",
+    dificuldade: 4,
+    raciocinio: "Análise de afirmativas: confrontar cada uma com a distinção entre ética e moral e combinar os resultados.",
     enunciado:
-      "Num curso de formação, o instrutor explica a origem das palavras “ética” e “moral” e a distinção que costuma ser cobrada em concursos. É correto afirmar que",
-    alternativas: [
-      "“ética” vem do latim mores, ligado a costume e a tradição, e designa o conjunto de regras práticas de um grupo, variável conforme a época.",
-      "“moral” vem do grego ethos, ligado a morada e a hábito, e designa a reflexão teórica sobre a ética, que vem do latim mores, costumes.",
-      "“ética” vem do grego ethos, ligado a morada e a hábito, e designa a reflexão teórica sobre a moral, que vem do latim mores, costumes.",
-      "“ética” e “moral” vêm do mesmo radical grego e, por isso, são sinônimos perfeitos, sem diferença de sentido nas provas de concurso.",
-      "“moral” designa a reflexão filosófica universal, enquanto a ética reúne os costumes de cada sociedade, que mudam com o lugar e o tempo.",
-    ],
-    correta: 2,
+      "Em uma aula sobre ética no serviço público, foram apresentadas as afirmativas a seguir.\n\nI. O grego ethos tem dois sentidos aparentados, morada e caráter ou hábito, e o segundo liga a ética ao modo de ser formado pela repetição dos atos.\nII. Como a moral é cultural e relativa, a ética, que a toma por objeto de reflexão, também renuncia a qualquer pretensão de validade universal.\nIII. A vergonha ou o remorso depois de um ato impensado revelam o senso moral, pelo qual avaliamos as próprias condutas segundo o certo e o errado.\nIV. Descrever como os servidores de uma unidade costumam agir já é fazer reflexão ética, pois a ética se confunde com os costumes de cada grupo.\n\nEstá correto o que se afirma em",
+    alternativas: ["I e III, apenas.", "I, II e III, apenas.", "II e IV, apenas.", "I, III e IV, apenas.", "III, apenas."],
+    correta: 0,
     explicacao:
-      "Ética vem do grego ethos, que significa morada e também hábito ou modo de ser; moral vem do latim mores, costumes. Na distinção usual de prova, a ética é a reflexão teórica e crítica sobre a moral (a filosofia da moral), com pretensão universal, e a moral é o conjunto prático de normas e costumes de um grupo, que varia no tempo e no espaço.",
+      "A afirmativa I está correta: ethos significa morada e também caráter ou hábito, o modo de ser que se forma pela repetição dos atos. A III também: vergonha, remorso e indignação mostram o senso moral, que avalia as condutas, as nossas e as dos outros, segundo o certo e o errado. Estão corretas, portanto, apenas I e III.",
+    explicacaoErradas:
+      "A afirmativa II está errada: a moral é cultural, relativa e temporal, mas a ética, como reflexão teórica e crítica sobre a moral, busca fundamentos racionais e tem pretensão universal. A IV também: descrever os costumes de um grupo é falar da sua moral; reflexão ética é perguntar se a prática se justificaria para qualquer servidor, em qualquer lugar. Toda combinação que inclua II ou IV está errada, e a que traz só a III deixa de fora a I, que é verdadeira.",
+    pegadinha:
+      "A afirmativa II parece lógica — se a ética estuda a moral, herdaria o caráter relativo dela —, mas inverte a distinção: a moral varia com o grupo, e a ética busca justamente o que vale além dele.",
+    conhecimento:
+      "Etimologia de ética (ethos: morada e caráter ou hábito) e de moral (mores: costumes); ética como reflexão teórica e universal, moral como prática cultural e relativa; senso moral.",
     origem: "banco",
   },
   {
     id: "prf-etica-002",
     materia: "etica",
     topico: "Ética e moral",
+    subassunto: "Relativismo moral e a resposta de Sócrates no Críton",
+    dificuldade: 4,
+    raciocinio: "Aplicação de conceito: avaliar uma conclusão relativista à luz da resposta filosófica estudada.",
     enunciado:
-      "Um agente administrativo da PRF lotado na fronteira observa que, numa cidade vizinha de outro país, é comum o comerciante oferecer café a quem entra na loja, e recusá-lo é considerado ofensivo, hábito que não existe em sua cidade natal. Essa diferença ilustra a característica da moral de ser",
+      "Depois de trabalhar em unidades de regiões muito diferentes do país, um servidor conclui: “se cada grupo tem os seus costumes, nenhuma conduta pode ser criticada fora do grupo em que surgiu”. À luz da distinção entre ética e moral e da resposta filosófica ao relativismo, essa conclusão",
     alternativas: [
-      "universal e atemporal, pois os costumes de qualquer povo derivam dos mesmos princípios racionais, válidos em qualquer lugar.",
-      "teórica e reflexiva, pois se ocupa de investigar os fundamentos racionais das normas, e não de orientar o comportamento cotidiano.",
-      "imutável e uniforme, pois as normas de conduta, uma vez aceitas por uma sociedade, deixam de sofrer influência da história.",
-      "individual e arbitrária, pois cada pessoa cria as próprias normas de conduta sem qualquer influência do grupo a que pertence.",
-      "cultural e relativa, pois as normas de conduta nascem dos costumes de cada grupo e variam conforme o lugar e a época.",
+      "está correta, porque a ética, assim como a moral, é cultural e relativa, e cada grupo fixa por si o que é certo e errado na conduta.",
+      "está correta se a crítica se apoiar na opinião da maioria, critério que Sócrates seguiu no Críton ao decidir sobre a proposta de fuga.",
+      "ignora que normas examinadas pela razão, capacidade comum a todos os seres humanos, podem valer além dos costumes de cada grupo.",
+      "ignora o imperativo categórico de Aristóteles, segundo o qual a virtude é agir pela regra que se possa querer como lei universal.",
+      "ignora que o senso moral é idêntico em todos os povos, o que elimina as divergências entre os costumes das diferentes sociedades.",
     ],
-    correta: 4,
+    correta: 2,
     explicacao:
-      "Na distinção usual de prova, a moral (do latim mores, costumes) é cultural, relativa e temporal: reúne normas e hábitos de um grupo, que mudam de uma sociedade para outra e ao longo do tempo, e tem caráter prático. Universalidade e caráter teórico e reflexivo são atribuídos à ética, a filosofia da moral.",
+      "A conclusão do servidor é a do relativismo: se as normas mudam de grupo para grupo, “tudo vale”. A resposta estudada vem do Críton, de Platão: Sócrates, condenado à morte, recusa a fuga porque decide pelo argumento que, examinado pela razão, parece o melhor. Como a razão é comum a todos os seres humanos, normas fundadas nela podem valer além dos costumes de cada grupo — e é isso que permite criticar uma conduta fora do grupo em que surgiu.",
+    explicacaoErradas:
+      "A que trata a ética como cultural e relativa confunde ética com moral: relativa é a moral; a ética tem pretensão universal. A que invoca a opinião da maioria inverte o Críton: Sócrates rejeitou justamente esse critério e seguiu a razão. A que fala do imperativo categórico erra o autor: ele é de Kant, e não de Aristóteles, cuja ética é das virtudes. A do senso moral idêntico em todos os povos contraria a própria premissa do caso, pois os costumes variam; o senso moral mostra que avaliamos condutas, não que todos as avaliam do mesmo modo.",
+    pegadinha:
+      "O imperativo categórico está descrito corretamente, mas atribuído a Aristóteles; quem lê só a segunda metade da frase marca a afirmação com o autor trocado.",
+    conhecimento:
+      "Relativismo moral, resposta de Sócrates no Críton (razão × opinião da maioria), distinção entre ética (universal) e moral (relativa) e diferença entre Kant e Aristóteles.",
     origem: "banco",
   },
   {
     id: "prf-etica-003",
     materia: "etica",
     topico: "Ética e moral",
+    subassunto: "Ética das virtudes de Aristóteles: hábito e prudência",
+    dificuldade: 4,
+    raciocinio: "Identificação de autor e conceito: reconhecer, numa citação, a corrente ética que ela expressa.",
     enunciado:
-      "Durante um temporal, um policial rodoviário federal avalia se entra numa área alagada para socorrer motoristas ilhados: não quer se omitir por medo nem se arriscar sem preparo, e decide agir com cautela, usando o equipamento adequado. Na ética de Aristóteles, essa conduta exemplifica",
+      "Num curso de formação, o instrutor afirmou: “ninguém nasce justo ou corajoso; a pessoa se torna justa praticando atos justos, e só o discernimento diante de cada situação mostra qual é o ato justo naquele caso”. Essa afirmação está de acordo com",
     alternativas: [
-      "o imperativo categórico, pois o policial age apenas segundo a regra que poderia querer transformar em lei universal para todos.",
-      "o justo meio, pois a virtude da coragem fica entre dois extremos viciosos, a covardia, por falta, e a temeridade, por excesso.",
-      "o relativismo ético, pois a conduta correta depende apenas dos costumes do grupo a que o policial pertence naquele momento.",
-      "a busca do prazer como bem supremo, pois o policial escolhe a conduta que lhe causa menos sofrimento e mais satisfação pessoal.",
-      "a obediência cega ao dever, pois a virtude consiste em cumprir a regra sem levar em conta as circunstâncias do caso concreto.",
+      "a ética do dever de Kant, para quem a virtude moral se forma pelo hábito, e o imperativo categórico dispensa o exame de cada caso concreto.",
+      "a ética de Aristóteles, para quem a virtude moral é inata, e a prudência só confirma a inclinação natural que cada pessoa traz consigo.",
+      "a ética das virtudes de Aristóteles, para quem a virtude moral se adquire pelo hábito, e a prudência indica o modo certo de agir em cada caso.",
+      "o relativismo moral, para o qual a virtude é o hábito aprovado pelo grupo, e o discernimento consiste em seguir os costumes de cada lugar.",
+      "a ética de Aristóteles, para quem o prazer é o bem supremo, e a repetição dos atos agradáveis forma o caráter de quem age.",
     ],
-    correta: 1,
+    correta: 2,
     explicacao:
-      "Para Aristóteles, a virtude é a disposição de escolher a justa medida, evitando os extremos: a coragem é o meio-termo entre a covardia (falta) e a temeridade (excesso). A sabedoria prática (prudência) é que permite agir do modo certo na situação adequada; o bem supremo é a felicidade como realização humana, e não o prazer. O imperativo categórico é de Kant.",
+      "Para Aristóteles, a virtude moral é uma disposição adquirida pelo hábito: ninguém nasce justo, torna-se justo praticando atos justos. A sabedoria prática, a prudência, é que indica o modo certo de agir em cada situação. A citação do instrutor reúne exatamente essas duas ideias.",
+    explicacaoErradas:
+      "A que atribui a Kant a formação da virtude pelo hábito troca o autor: Kant funda a moral no dever e no imperativo categórico, e não no hábito. A que trata a virtude como inata contraria a frase “ninguém nasce justo ou corajoso” e a própria ideia de Aristóteles. A do relativismo transforma o discernimento em obediência aos costumes, o que a citação não diz. A do prazer como bem supremo erra o conceito: para Aristóteles, o bem supremo é a felicidade como realização das potencialidades humanas, e não o prazer.",
+    pegadinha:
+      "Três afirmações citam Aristóteles; só uma junta as duas peças da citação — virtude adquirida pelo hábito e prudência no caso concreto — sem trocar o bem supremo nem tornar a virtude inata.",
+    conhecimento:
+      "Ética das virtudes de Aristóteles (virtude adquirida pelo hábito, prudência, felicidade como bem supremo, justo meio) e ética do dever de Kant (imperativo categórico).",
     origem: "banco",
   },
   {
     id: "prf-etica-004",
     materia: "etica",
     topico: "Ética, princípios e valores",
+    subassunto: "Valores × princípios e a lista aberta de valores",
+    dificuldade: 4,
+    raciocinio: "Classificação: distinguir, em enunciados concretos, o que é valor amplo e o que é princípio derivado dele.",
     enunciado:
-      "Ao preparar uma oficina sobre ética para servidores de uma superintendência da PRF, a equipe precisa distinguir valores de princípios. É correto afirmar que",
+      "O código de conduta de uma unidade administrativa federal traz três enunciados:\n\n1. “Prezamos a honestidade.”\n2. “Nenhum relatório de produtividade omitirá dados desfavoráveis à equipe.”\n3. “Informações pessoais dos usuários não serão comentadas fora do atendimento.”\n\nConsiderando a distinção entre valores e princípios, é correto afirmar que",
     alternativas: [
-      "princípios são crenças amplas e duradouras sobre o que é importante, e os valores são as diretrizes mais concretas, derivadas deles, que orientam a ação.",
-      "valores e princípios são sinônimos, pois ambos designam regras específicas de conduta, impostas pela lei e acompanhadas de sanção.",
-      "valores são regras escritas e obrigatórias de cada órgão público, e princípios são preferências pessoais de cada servidor, sem caráter ético.",
-      "valores são crenças amplas e duradouras sobre o que é importante, e princípios são diretrizes mais concretas, derivadas deles, que orientam a ação.",
-      "princípios são variáveis e passageiros, ao contrário dos valores, que só existem quando previstos expressamente em um código de ética.",
+      "os enunciados 2 e 3 expressam valores, e o enunciado 1 é um princípio, regra concreta que traduz a honestidade em comportamento.",
+      "os três enunciados expressam valores, pois todos dizem o que a unidade considera importante, desejável e certo na conduta.",
+      "o enunciado 1 expressa um valor, e os enunciados 2 e 3 são princípios, regras mais concretas que traduzem valores em comportamento.",
+      "os enunciados 2 e 3 perdem o caráter ético, pois regras escritas e concretas pertencem ao direito, e não à ética.",
+      "o enunciado 3 deriva da autonomia, e o enunciado 2, da beneficência, pois a lista de valores éticos é fechada.",
     ],
-    correta: 3,
+    correta: 2,
     explicacao:
-      "Valores são crenças fundamentais e duradouras sobre o que é importante e desejável (honestidade, respeito, justiça), mais abstratos e amplos. Princípios são regras ou diretrizes mais concretas que derivam dos valores e os traduzem em comportamento: do valor honestidade deriva, por exemplo, o princípio de não mentir nem enganar intencionalmente.",
+      "Valores são crenças amplas e abstratas sobre o que é importante e certo, como a honestidade (enunciado 1). Princípios são regras mais concretas, derivadas dos valores, que orientam a ação: não omitir dados desfavoráveis (enunciado 2, derivado da honestidade) e não comentar informações pessoais dos usuários (enunciado 3, derivado da confidencialidade). Os valores dão a base; os princípios traduzem essa base em comportamento.",
+    explicacaoErradas:
+      "A que chama o enunciado 1 de princípio inverte a classificação: “prezamos a honestidade” é amplo e abstrato, típico de valor. A que trata os três como valores ignora que 2 e 3 descem ao comportamento concreto, o que é próprio dos princípios. A que tira o caráter ético das regras escritas não tem apoio: princípios são justamente a tradução dos valores em regras de ação. A da autonomia e da beneficência erra a origem — o 3 protege a confidencialidade e o 2 deriva da honestidade — e a lista de valores não é fechada.",
+    pegadinha:
+      "Os enunciados 2 e 3 também “dizem o que é certo”, o que leva a classificá-los como valores; o que os separa do enunciado 1 é o grau de concretude, e não o tema.",
+    conhecimento:
+      "Valores (amplos e abstratos) × princípios (regras concretas derivadas dos valores); valores comuns na ética, como honestidade e confidencialidade; lista aberta, que varia com a cultura.",
     origem: "banco",
   },
   {
     id: "prf-etica-005",
     materia: "etica",
     topico: "Ética, princípios e valores",
+    subassunto: "Autonomia, não maleficência, confidencialidade e responsabilidade em casos",
+    dificuldade: 4,
+    raciocinio: "Correlação: associar cada situação ao valor que ela concretiza, distinguindo valores próximos.",
     enunciado:
-      "Uma servidora da PRF recebe, por engano, um e-mail com dados de saúde de um colega afastado. Ela não comenta o conteúdo com ninguém, apaga a mensagem e avisa o remetente do erro. O valor ético que mais se destaca em sua conduta é a",
-    alternativas: [
-      "confidencialidade, que consiste em proteger a privacidade de informações pessoais que chegam ao conhecimento de alguém.",
-      "autonomia, que consiste em respeitar a capacidade de cada pessoa de tomar as próprias decisões e fazer as próprias escolhas.",
-      "beneficência, que consiste em agir de maneira a beneficiar os outros e a contribuir para o bem-estar geral da coletividade.",
-      "justiça, que consiste em agir de forma imparcial e equitativa, garantindo a todos tratamento igual perante a lei.",
-      "sustentabilidade, que consiste em considerar o impacto das ações sobre o meio ambiente e sobre as gerações futuras.",
-    ],
-    correta: 0,
+      "Relacione cada valor à situação que melhor o exemplifica.\n\n1. Autonomia\n2. Não maleficência\n3. Confidencialidade\n4. Responsabilidade\n\n( ) O servidor recusa-se a informar a um desconhecido o endereço de um motorista que consta do cadastro do órgão.\n( ) O servidor explica ao usuário as opções de atendimento disponíveis e deixa que ele escolha a que prefere.\n( ) O servidor comunica à chefia um erro que ele próprio cometeu e refaz o trabalho por conta própria.\n( ) O servidor não atrasa de propósito o pedido de um usuário que o havia ofendido no dia anterior.\n\nA sequência correta, de cima para baixo, é",
+    alternativas: ["3 – 2 – 4 – 1.", "3 – 1 – 4 – 2.", "1 – 3 – 4 – 2.", "3 – 1 – 2 – 4.", "4 – 1 – 3 – 2."],
+    correta: 1,
     explicacao:
-      "Ao guardar sigilo sobre dados de saúde que recebeu por engano, a servidora pratica a confidencialidade: respeita a privacidade de informações que não lhe eram destinadas. Autonomia, beneficência, justiça e sustentabilidade também são valores éticos, mas não são os que a conduta descrita põe em destaque.",
+      "Recusar o endereço do motorista protege a privacidade de informação confiada ao órgão: confidencialidade (3). Explicar as opções e deixar o usuário escolher respeita sua capacidade de decidir por si: autonomia (1). Assumir e corrigir o próprio erro é responder pelos atos e suas consequências: responsabilidade (4). Não atrasar de propósito o pedido de quem o ofendeu é não causar dano intencional: não maleficência (2). Sequência: 3 – 1 – 4 – 2.",
+    explicacaoErradas:
+      "A sequência que começa por 3 – 2 troca autonomia e não maleficência: deixar o usuário escolher não é evitar dano, é respeitar sua decisão. A que começa pelo 1 confunde autonomia com confidencialidade no caso do endereço. A que termina em 2 – 4 inverte responsabilidade e não maleficência. A que começa pelo 4 atribui à responsabilidade a recusa de informar o endereço, que é caso de confidencialidade.",
+    pegadinha:
+      "A última situação lembra justiça ou responsabilidade, mas o núcleo dela é não causar dano de propósito a quem ofendeu o servidor, o que define a não maleficência.",
+    conhecimento:
+      "Princípios e valores comuns na ética: respeito, justiça, honestidade, responsabilidade, beneficência, não maleficência, autonomia, integridade e confidencialidade.",
     origem: "banco",
   },
   {
     id: "prf-etica-006",
     materia: "etica",
     topico: "Ética, princípios e valores",
+    subassunto: "Conflito entre transparência e confidencialidade",
+    dificuldade: 4,
+    raciocinio: "Análise de caso: identificar o critério ético usado para resolver um conflito de valores.",
     enunciado:
-      "Em situações reais, valores éticos podem apontar em sentidos diferentes, como a transparência e a proteção da intimidade. Sobre esses conflitos, é correto afirmar que",
+      "Um jornalista pede a um órgão federal os nomes e os diagnósticos dos servidores afastados por licença médica no último ano. A chefia divulga o número mensal de afastamentos, mas não os nomes nem os diagnósticos. Do ponto de vista ético, a chefia",
     alternativas: [
-      "um valor ético sempre anula o outro de forma automática, porque os valores obedecem a uma hierarquia fixa, igual em todas as situações.",
-      "não há conflito possível entre valores éticos, pois todos apontam sempre na mesma direção quando a conduta do servidor é correta.",
-      "a ética oferece critérios para ponderar os valores em jogo e justificar a decisão, sem prometer uma resposta pronta para cada caso concreto.",
-      "a escolha é indiferente do ponto de vista ético, pois, havendo dois valores em conflito, qualquer decisão do servidor será igualmente válida.",
-      "a ética oferece uma resposta definitiva e idêntica para todos os casos semelhantes, dispensando a análise das circunstâncias concretas.",
+      "errou ao divulgar os números, pois a confidencialidade prevalece sempre sobre a transparência quando os dados envolvem a saúde dos servidores.",
+      "errou ao omitir os nomes, pois a publicidade dos atos administrativos não admite nenhuma exceção quando o pedido parte da imprensa.",
+      "agiu de modo eticamente indiferente, pois o conflito entre transparência e confidencialidade é resolvido só pela lei, e não pela ética.",
+      "ponderou os valores em jogo, divulgando o dado de interesse coletivo e protegendo a privacidade, sem hierarquia fixa entre eles.",
+      "aplicou a resposta pronta que a ética oferece para cada conflito de valores, o que dispensa qualquer justificativa para a decisão.",
     ],
-    correta: 2,
+    correta: 3,
     explicacao:
-      "Valores éticos podem entrar em conflito em situações reais, como transparência e confidencialidade. A ética não fornece respostas definitivas para todos os casos, mas oferece critérios para refletir, ponderar os valores envolvidos e decidir de forma justificada, considerando as circunstâncias; nem por isso qualquer escolha se torna indiferente.",
+      "Transparência e confidencialidade apontam caminhos diferentes nesse pedido. A ética não oferece respostas prontas: oferece critérios para ponderar os valores envolvidos e decidir de forma justificada. A chefia atendeu ao interesse coletivo com o dado agregado e protegeu a privacidade dos servidores, sem tratar nenhum dos dois valores como absoluto.",
+    explicacaoErradas:
+      "A que diz que a confidencialidade prevalece sempre cria uma hierarquia fixa que a ética não estabelece, e o dado agregado não expõe ninguém. A que afirma que a publicidade não admite exceção ignora o conflito com a confidencialidade, que também é valor a ponderar. A da indiferença ética erra ao tirar o conflito do campo da ética. A da resposta pronta inverte a lição: justamente por não haver respostas prontas, a decisão precisa ser ponderada e justificada.",
+    pegadinha:
+      "A afirmação de que a confidencialidade “prevalece sempre” soa protetora e ética, mas transforma a ponderação em hierarquia fixa, que é o que o conteúdo rejeita.",
+    conhecimento:
+      "Conflito de valores (transparência × confidencialidade), ponderação justificada e ausência de respostas prontas na ética.",
     origem: "banco",
   },
   {
     id: "prf-etica-007",
     materia: "etica",
     topico: "Ética e democracia: exercício da cidadania",
+    subassunto: "Accountability vertical e horizontal",
+    dificuldade: 4,
+    raciocinio: "Classificação: separar mecanismos de controle exercidos pelos cidadãos dos exercidos por órgãos do próprio Estado.",
     enunciado:
-      "Sobre a accountability, ideia central na relação entre ética e democracia, é correto afirmar que",
-    alternativas: [
-      "a horizontal é exercida pelos cidadãos sobre os governantes, por meio do voto e de outras formas de cobrança, e a vertical, pelos órgãos do próprio Estado que se controlam mutuamente.",
-      "a vertical é exercida apenas pelos tribunais de contas sobre os gestores, e a horizontal, apenas pelo Judiciário, sem nenhuma participação dos cidadãos.",
-      "a vertical e a horizontal dependem exclusivamente das eleições periódicas, de modo que, entre um pleito e outro, os governantes não precisam responder por seus atos.",
-      "a vertical é exercida por órgãos de controle interno sobre os cidadãos, e a horizontal, pelos cidadãos sobre os partidos políticos e seus dirigentes.",
-      "a vertical é exercida pelos cidadãos sobre os governantes, por meio do voto e de outras formas de cobrança, e a horizontal, por órgãos do próprio Estado que se controlam mutuamente.",
-    ],
-    correta: 4,
+      "Considere os mecanismos de controle a seguir.\n\nI. O Tribunal de Contas da União julga as contas de um gestor federal.\nII. Moradores entregam ao prefeito um abaixo-assinado cobrando explicações sobre uma obra.\nIII. O Ministério Público propõe ação contra um agente público por desvio de verbas.\nIV. Eleitores deixam de reeleger um governante cuja gestão reprovaram.\nV. A controladoria de um órgão audita os contratos firmados pelo próprio órgão.\n\nConfiguram accountability horizontal somente os mecanismos",
+    alternativas: ["I e III.", "II e IV.", "I, III e V.", "I, II e V.", "III, IV e V."],
+    correta: 2,
     explicacao:
-      "Na accountability vertical, os cidadãos cobram e responsabilizam os governantes: voto, protestos, petições, controle social e imprensa. Na horizontal, órgãos do próprio Estado fiscalizam uns aos outros, como os tribunais de contas, o Ministério Público, as controladorias e o Judiciário. Em ambas, quem exerce poder presta contas e responde por seus atos.",
+      "Na accountability horizontal, órgãos do próprio Estado fiscalizam uns aos outros: tribunal de contas (I), Ministério Público (III) e controladoria (V). O abaixo-assinado (II) e o voto (IV) são formas de accountability vertical, em que os cidadãos cobram os governantes.",
+    explicacaoErradas:
+      "A combinação “I e III” deixa de fora a controladoria, que também é órgão do Estado fiscalizando o Estado. “II e IV” reúne justamente os dois casos de accountability vertical. As combinações que incluem o abaixo-assinado ou o voto misturam controle social com controle entre órgãos estatais.",
+    pegadinha:
+      "A controladoria audita o próprio órgão, o que parece controle interno e não horizontal; mas ela é órgão do Estado fiscalizando o Estado, e o conteúdo a inclui expressamente na accountability horizontal.",
+    conhecimento:
+      "Accountability vertical (cidadãos: voto, protestos, petições, controle social) e horizontal (tribunais de contas, Ministério Público, controladorias, Judiciário).",
     origem: "banco",
   },
   {
     id: "prf-etica-008",
     materia: "etica",
     topico: "Ética e democracia: exercício da cidadania",
+    subassunto: "Pluralismo e tolerância como fundamento da República",
+    dificuldade: 4,
+    raciocinio: "Aplicação de conceito com base constitucional: identificar o eixo ético e o dispositivo que o sustenta.",
     enunciado:
-      "Numa audiência pública sobre segurança viária num trecho de rodovia federal, o mediador garante tempo de fala igual a moradores, caminhoneiros e comerciantes, inclusive aos que criticam as propostas apresentadas. Essa conduta concretiza, na relação entre ética e democracia, a ideia de",
+      "Numa audiência pública sobre a duplicação de uma rodovia federal, a maioria dos presentes, favorável à obra, pede que se encerrem as falas dos moradores contrários. O mediador mantém o tempo de fala de todos, inclusive dos que discordam. A conduta do mediador",
     alternativas: [
-      "accountability horizontal, pois os órgãos do próprio Estado se fiscalizam mutuamente durante a audiência, sem participação popular.",
-      "relativismo ético, pois, se cada grupo tem sua opinião, nenhuma proposta pode ser considerada melhor ou pior do que as outras.",
-      "neutralidade moral, pois o Estado democrático deve deixar de lado valores como igualdade e respeito ao organizar a participação.",
-      "pluralismo e tolerância, pois a democracia exige respeito a opiniões divergentes, para que todas as vozes possam ser ouvidas.",
-      "governo da maioria, pois só as opiniões do grupo mais numeroso devem ser ouvidas, cabendo às minorias apenas acatar a decisão.",
+      "concretiza o pluralismo e a tolerância, e o pluralismo político é objetivo fundamental da República, previsto no art. 3º da Constituição.",
+      "exemplifica accountability horizontal, pois um órgão do próprio Estado fiscaliza a atuação dos cidadãos presentes na audiência.",
+      "contraria a democracia, pois, conhecida a posição da maioria, a manifestação dos contrários se torna dispensável no debate público.",
+      "concretiza o pluralismo e a tolerância, e o pluralismo político é fundamento da República, previsto no art. 1º da Constituição.",
+      "exprime o relativismo, pois, se cada grupo tem os seus costumes, nenhuma opinião pode ser considerada melhor que a outra.",
     ],
     correta: 3,
     explicacao:
-      "Pluralismo e tolerância significam respeitar opiniões e perspectivas diferentes, promovendo um ambiente em que todas as vozes possam ser ouvidas, mesmo quando não se concorda com elas. O pluralismo político é fundamento da República (art. 1º, V, da Constituição), e a democracia não se reduz à vontade da maioria.",
+      "Manter a palavra dos que discordam é praticar pluralismo e tolerância: respeitar opiniões divergentes para que todas as vozes sejam ouvidas. O pluralismo político é fundamento da República Federativa do Brasil (art. 1º, V, da Constituição), ao lado da soberania, da cidadania, da dignidade da pessoa humana e dos valores sociais do trabalho e da livre iniciativa.",
+    explicacaoErradas:
+      "A que situa o pluralismo político no art. 3º troca fundamento por objetivo fundamental: o pluralismo está no art. 1º. A da accountability horizontal erra o conceito, que trata de órgãos do Estado fiscalizando o próprio Estado. A que considera dispensável a fala dos contrários confunde democracia com vontade da maioria. A do relativismo não descreve a conduta: o mediador não afirmou que todas as opiniões valem o mesmo, só garantiu que todas fossem ouvidas.",
+    pegadinha:
+      "As duas afirmações sobre pluralismo são idênticas até o dispositivo; a diferença está em “fundamento” (art. 1º) e “objetivo fundamental” (art. 3º).",
+    conhecimento:
+      "Eixos de ética e democracia (pluralismo, tolerância, participação, accountability) e fundamentos da República no art. 1º da Constituição.",
     origem: "banco",
   },
   {
     id: "prf-etica-009",
     materia: "etica",
     topico: "Ética e democracia: exercício da cidadania",
+    subassunto: "Direito de petição, ação popular e acesso à informação (LAI, art. 10, § 3º)",
+    dificuldade: 5,
+    raciocinio: "Análise de requisitos: conferir, em cada instrumento de cidadania, quem pode usá-lo, o que se exige e quem paga as custas.",
     enunciado:
-      "Um cidadão pede à PRF, com base na Lei de Acesso à Informação (Lei 12.527/2011), dados estatísticos sobre sinistros num trecho de rodovia federal, sem explicar para que quer as informações. Sobre o pedido, é correto afirmar que",
+      "Um grupo de cidadãos considera lesiva à moralidade administrativa a contratação, por um órgão público, de um evento de luxo pago com dinheiro público. Antes de qualquer medida, querem obter os documentos da contratação e, depois, avaliar a propositura de ação popular. Sobre esses instrumentos de cidadania, é correto afirmar que",
     alternativas: [
-      "o órgão pode exigir que o cidadão justifique o pedido, pois só é dever divulgar informações a quem demonstra interesse pessoal e direto no assunto.",
-      "é vedada qualquer exigência relativa aos motivos do pedido, pois o acesso a informações de interesse público é direito de qualquer interessado.",
-      "o pedido só pode ser feito por meio de advogado ou de entidade de classe, pois a lei não admite que o cidadão comum o apresente pessoalmente.",
-      "o órgão deve negar o pedido, pois dados sobre sinistros de trânsito são informações sigilosas por natureza, ligadas à segurança nacional.",
-      "o cidadão deve pagar uma taxa pela busca da informação, sem a qual o órgão fica dispensado de responder ao pedido dentro do prazo legal.",
+      "no pedido de acesso à informação, o órgão pode exigir a identificação de quem pede, mas não os motivos; na ação popular, o autor de boa-fé fica isento de custas e da sucumbência.",
+      "no pedido de acesso à informação, o órgão pode exigir a identificação de quem pede e os motivos do pedido; na ação popular, o autor de boa-fé fica isento de custas e da sucumbência.",
+      "no pedido de acesso à informação, o órgão não pode exigir a identificação de quem pede; na ação popular, o autor fica isento de custas e da sucumbência mesmo se agir de má-fé.",
+      "o direito de petição depende do pagamento de taxa quando dirigido contra abuso de poder, e a ação popular pode ser proposta por qualquer pessoa jurídica de direito privado.",
+      "a ação popular só alcança atos lesivos ao patrimônio público, e não à moralidade administrativa, e o pedido de informação deve indicar os motivos da solicitação.",
     ],
-    correta: 1,
+    correta: 0,
     explicacao:
-      "Pela LAI, qualquer interessado pode pedir informações aos órgãos públicos, por qualquer meio legítimo, com sua identificação e a especificação do que deseja (art. 10), e são vedadas quaisquer exigências relativas aos motivos do pedido de informações de interesse público (§ 3º). O serviço de busca e fornecimento é gratuito, podendo-se cobrar apenas o custo de reprodução de documentos (art. 12).",
+      "A Lei de Acesso à Informação exige que o pedido traga a identificação do requerente e a especificação da informação, mas veda exigências relativas aos motivos do pedido de informações de interesse público (Lei 12.527/2011, art. 10, § 3º). Já a ação popular pode ser proposta por qualquer cidadão contra ato lesivo à moralidade administrativa, e o autor, salvo comprovada má-fé, fica isento de custas judiciais e do ônus da sucumbência (art. 5º, LXXIII, da Constituição).",
+    explicacaoErradas:
+      "A que admite exigir os motivos do pedido contraria o art. 10, § 3º, da LAI. A que dispensa a identificação e estende a isenção a quem age de má-fé erra duas vezes: a identificação é exigida e a má-fé comprovada afasta a isenção. A que condiciona o direito de petição a taxa contraria o art. 5º, XXXIV, a, que o assegura independentemente do pagamento de taxas; e a ação popular cabe a qualquer cidadão, e não a pessoas jurídicas. A que exclui a moralidade administrativa do alcance da ação popular contraria o texto constitucional, que a menciona expressamente.",
+    pegadinha:
+      "A afirmação que permite exigir “a identificação de quem pede e os motivos do pedido” mantém a parte certa sobre a ação popular; o erro está só no acréscimo dos motivos, vedado pela LAI.",
+    conhecimento:
+      "Instrumentos de cidadania: direito de petição (art. 5º, XXXIV, a), ação popular (art. 5º, LXXIII) e pedido de acesso à informação (Lei 12.527/2011, art. 10, § 3º).",
     origem: "banco",
   },
   {
     id: "prf-etica-010",
     materia: "etica",
     topico: "Ética e função pública",
+    subassunto: "Moralidade administrativa × legalidade formal; desvio de finalidade",
+    dificuldade: 4,
+    raciocinio: "Análise de caso: separar a legalidade formal do ato da sua conformidade com a moralidade administrativa.",
     enunciado:
-      "Um chefe de seção da PRF, sem violar nenhuma regra expressa, passa a distribuir as tarefas mais desgastantes apenas aos servidores que o criticaram em reunião. Sob a ótica da ética na função pública, é correto afirmar que a conduta",
+      "Um superintendente remove de ofício, com todas as formalidades legais e sob a justificativa de “necessidade do serviço”, um servidor que havia representado contra ele. Ficou provado depois que não havia necessidade alguma e que a remoção visava apenas afastar o servidor da unidade. Sobre esse ato, é correto afirmar que",
     alternativas: [
-      "é aceitável, pois, no serviço público, basta que o ato observe as formalidades legais para que seja também considerado ético.",
-      "só poderia ser questionada se houvesse prejuízo financeiro ao erário, pois a ética pública se resume à boa gestão dos recursos.",
-      "fere a moralidade administrativa, pois o servidor deve usar suas atribuições em favor do interesse público, e não por motivos pessoais.",
-      "é indiferente para a Administração, pois a ética diz respeito apenas à vida particular do servidor, e não ao exercício do cargo.",
-      "é legítima, pois o princípio da hierarquia autoriza o chefe a usar livremente a distribuição de tarefas como forma de punir quem o contraria.",
+      "é válido, porque a moralidade administrativa se confunde com a moral pessoal do agente, e só a ele cabe avaliar a conveniência da remoção.",
+      "fere a moralidade administrativa, porque a competência serviu a fim estranho ao interesse público, ainda que com a forma legal.",
+      "é válido, porque um ato que observa todas as formalidades legais só pode ser considerado imoral se violar expressamente algum dispositivo de lei.",
+      "fere apenas a moral pessoal do superintendente, já que a moralidade não está entre os princípios expressos da administração pública.",
+      "só fere a moralidade administrativa se causar prejuízo financeiro ao erário, o que não ocorre na remoção de servidor feita de ofício.",
     ],
-    correta: 2,
+    correta: 1,
     explicacao:
-      "Cumprir formalidades não basta: o Código de Ética manda o servidor abster-se de exercer sua função, poder ou autoridade com finalidade estranha ao interesse público, mesmo que observe as formalidades legais e não cometa violação expressa à lei (Decreto 1.171/1994, XIV, u), e veda que perseguições, antipatias ou interesses pessoais interfiram no trato com os colegas (XV, f). A retaliação também fere a impessoalidade e a moralidade do art. 37.",
+      "Cumprir as formalidades não basta: um ato pode ser formalmente legal e, ainda assim, imoral, quando o agente usa a competência com finalidade estranha ao interesse público. A moralidade administrativa, princípio expresso no art. 37 da Constituição, é aferida pelos padrões éticos exigidos da Administração. O Código de Ética (Decreto 1.171/1994, XIV, u) manda o servidor abster-se de exercer função, poder ou autoridade com finalidade estranha ao interesse público, mesmo observando as formalidades legais e sem violação expressa à lei.",
+    explicacaoErradas:
+      "A que confunde moralidade administrativa com moral pessoal do agente erra o conceito: a moralidade é avaliada por padrões da Administração, e não pela consciência de quem decide. A que exige violação expressa de lei ignora que o ato pode ser legal na forma e imoral no fim. A que nega a moralidade como princípio expresso contraria o art. 37 da Constituição. A que exige prejuízo financeiro acrescenta requisito que não existe: o vício está no desvio de finalidade.",
+    pegadinha:
+      "A exigência de “violar expressamente dispositivo de lei” parece técnica, mas é exatamente o que o Código de Ética afasta ao vedar a finalidade estranha ao interesse público mesmo sem violação expressa à lei.",
+    conhecimento:
+      "Moralidade administrativa (probidade, decoro, boa-fé), distinta da moral pessoal; ato formalmente legal e imoral; dever do Código de Ética, XIV, u; princípios do art. 37.",
     origem: "banco",
   },
   {
     id: "prf-etica-011",
     materia: "etica",
     topico: "Ética e função pública",
+    subassunto: "Regras deontológicas e finalidades dos códigos de ética",
+    dificuldade: 4,
+    raciocinio: "Conferência conceitual: testar cada afirmação contra o conceito de deontologia e as finalidades dos códigos.",
     enunciado:
-      "Ao apresentar o código de ética do órgão aos novos servidores, a chefia de uma superintendência da PRF explica para que servem esses instrumentos. Entre as finalidades dos códigos de ética no serviço público, NÃO se inclui",
+      "Ao apresentar o código de ética de um órgão federal aos recém-empossados, a chefia explicou o que são regras deontológicas e para que servem os códigos de ética no serviço público. Está de acordo com esse conteúdo a afirmação de que",
     alternativas: [
-      "substituir as leis e a Constituição como fonte de deveres do servidor, que passa a responder apenas às normas internas do órgão.",
-      "orientar e padronizar a conduta esperada dos agentes, deixando claras as normas e os valores que devem guiar o trabalho.",
-      "prevenir conflitos de interesse, com regras para que o agente não use o cargo em benefício próprio, de amigos ou de seus familiares.",
-      "proteger quem denuncia irregularidades, encorajando o relato de condutas inadequadas sem medo de retaliação pelos colegas.",
-      "dar base à responsabilização do agente que viola normas éticas, garantindo que haja consequências para condutas antiéticas.",
+      "as regras deontológicas, do grego deon, virtude, reúnem os costumes de uma categoria, e os códigos de ética substituem a lei onde ela for omissa.",
+      "os códigos de ética orientam a conduta e previnem conflitos de interesse, mas não se destinam a proteger quem denuncia irregularidades.",
+      "as regras deontológicas, do grego deon, dever, reúnem os deveres éticos de uma categoria, e os códigos educam o servidor para dilemas éticos.",
+      "as regras deontológicas reúnem apenas deveres legais, e os códigos de ética servem só para punir, sem função educativa ou preventiva.",
+      "os códigos de ética, por somarem legalidade e moralidade, prevalecem sobre a lei sempre que houver conflito entre os dois.",
     ],
-    correta: 0,
+    correta: 2,
     explicacao:
-      "Os códigos de ética orientam e padronizam condutas, promovem a integridade, previnem a corrupção e os conflitos de interesse, protegem denunciantes, educam os servidores, dão base à responsabilização e fortalecem a confiança pública. Eles se somam à lei, sem substituí-la: o Código de Ética relaciona-se ao princípio da moralidade, que complementa a legalidade.",
+      "Deontologia vem do grego deon, dever: as regras deontológicas são os deveres éticos próprios de uma categoria, reunidos em códigos de ética que somam legalidade e moralidade. Entre as finalidades desses códigos estão orientar e padronizar a conduta, prevenir a corrupção e os conflitos de interesse, construir confiança pública, proteger quem denuncia, educar e capacitar os servidores para dilemas éticos e dar base à responsabilização.",
+    explicacaoErradas:
+      "A que traduz deon por virtude erra a etimologia, e os códigos se somam à lei, não a substituem. A que exclui a proteção de quem denuncia contraria uma das finalidades expressas dos códigos. A que reduz as regras a deveres legais e os códigos à punição ignora a função educativa e preventiva. A que põe o código acima da lei inverte a relação: o código se soma à lei e não prevalece sobre ela.",
+    pegadinha:
+      "A afirmação sobre conflitos de interesse começa certa e só erra no fim, ao negar a proteção a quem denuncia, que é finalidade expressa dos códigos.",
+    conhecimento:
+      "Deontologia (deon: dever), códigos de ética como soma de legalidade e moralidade e finalidades dos códigos no serviço público.",
     origem: "banco",
   },
   {
     id: "prf-etica-012",
     materia: "etica",
     topico: "Ética e função pública",
+    subassunto: "Informação privilegiada e conflito de interesses (Lei 12.813/2013 e Código de Ética, XV, m)",
+    dificuldade: 5,
+    raciocinio: "Análise de caso: verificar se a configuração da falta depende de resultado, como ganho do terceiro ou prejuízo ao órgão.",
     enunciado:
-      "Um agente administrativo da PRF fica sabendo, em razão do trabalho, que o órgão vai comprar um terreno às margens de uma rodovia para construir uma nova unidade, informação ainda não divulgada. Ele conta o fato a um amigo, que compra os lotes vizinhos antes da valorização. Sob a ótica da ética na função pública, a conduta",
+      "Um servidor do setor de patrimônio de um órgão federal conta a um amigo, corretor de imóveis, que o órgão vai alugar um prédio em determinado bairro para instalar sua nova sede, informação ainda não divulgada. O amigo tenta comprar imóveis na região para revendê-los, mas o negócio não se concretiza, e o órgão não sofre prejuízo. A conduta do servidor",
     alternativas: [
-      "é aceitável, pois o servidor não obteve vantagem para si, e só há conflito de interesses quando o proveito é do próprio agente público.",
-      "é aceitável, pois a informação seria divulgada mais cedo ou mais tarde, e o servidor apenas antecipou ao amigo um dado de interesse geral.",
-      "só seria reprovável se o amigo fosse parente do servidor até o segundo grau, pois a ética pública não se ocupa de relações de amizade.",
-      "configura uso de informação privilegiada em proveito de terceiro, situação típica de conflito entre o interesse público e interesses privados.",
-      "só seria reprovável se a compra do terreno pela PRF já tivesse sido publicada, pois antes disso a informação não pertence ao órgão.",
+      "não viola o Código de Ética, pois a vedação ao uso de informação privilegiada só alcança o benefício próprio ou o de parentes do servidor.",
+      "só configuraria conflito de interesses se o amigo tivesse obtido ganho com a informação ou se o órgão tivesse sofrido algum prejuízo.",
+      "não configura conflito de interesses, pois a informação se tornaria pública mais tarde, com a publicação do contrato de locação.",
+      "viola o Código de Ética e configura conflito de interesses, ainda que o amigo não tenha lucrado nem o órgão tenha sofrido dano.",
+      "configura conflito de interesses, mas não viola o Código de Ética, que só alcança a conduta do servidor dentro da repartição.",
     ],
     correta: 3,
     explicacao:
-      "Conflito de interesses é a situação gerada pelo confronto entre interesses públicos e privados que possa comprometer o interesse coletivo ou influenciar, de forma imprópria, o desempenho da função pública (Lei 12.813/2013, art. 3º, I). Divulgar ou usar informação privilegiada obtida em razão das atividades, em proveito próprio ou de terceiro, configura conflito de interesses para qualquer agente do Executivo federal (arts. 5º, I, e 10), e o Código de Ética veda esse uso em benefício de parentes, amigos ou terceiros (Decreto 1.171/1994, XV, m). Com dolo, pode haver também improbidade (Lei 8.429/1992, art. 11, III).",
+      "O Código de Ética veda fazer uso de informações privilegiadas obtidas no âmbito interno do serviço em benefício próprio, de parentes, de amigos ou de terceiros (Decreto 1.171/1994, XV, m). A Lei 12.813/2013 define conflito de interesses como a situação que possa comprometer o interesse coletivo ou influenciar de maneira imprópria o desempenho da função (art. 3º, I), inclui entre os casos divulgar ou usar informação privilegiada em proveito de terceiro (art. 5º, I) e estabelece que o conflito independe de lesão ao patrimônio público e de ganho do agente ou de terceiro (art. 4º, § 2º).",
+    explicacaoErradas:
+      "A que limita a vedação ao benefício próprio ou de parentes ignora que o Código menciona expressamente amigos e terceiros. A que exige ganho do amigo ou prejuízo ao órgão acrescenta um resultado que a lei dispensa: basta a situação que possa comprometer o interesse coletivo. A que invoca a publicação futura do contrato não afasta o caráter privilegiado da informação no momento em que foi divulgada. A que restringe o Código à repartição contraria o próprio Código, que alcança a conduta do servidor no cargo e fora dele.",
+    pegadinha:
+      "O fracasso do negócio e a ausência de prejuízo levam a pensar que nada aconteceu; mas o conflito de interesses e a vedação do Código se configuram com a divulgação, sem depender de resultado.",
+    conhecimento:
+      "Conflito de interesses na Lei 12.813/2013 (conceito, informação privilegiada, independência de lesão ou ganho) e vedação do Código de Ética ao uso de informação privilegiada (XV, m).",
     origem: "banco",
   },
   {
     id: "prf-etica-013",
     materia: "etica",
     topico: "Código de Ética do servidor (Decreto 1.171/1994)",
+    subassunto: "Comissões de ética no Código: censura, registros, alcance e conceito de servidor",
+    dificuldade: 5,
+    raciocinio: "Análise de afirmativas: conferir cada uma com o inciso correspondente do Capítulo II do Código.",
     enunciado:
-      "A comissão de ética de uma unidade da PRF conclui que um servidor violou o Código de Ética Profissional do Servidor Público Civil do Poder Executivo Federal. Pelo Decreto 1.171/1994, a pena que a comissão pode aplicar é a",
-    alternativas: [
-      "advertência, registrada nos assentamentos funcionais, cuja aplicação depende de prévia aprovação da autoridade máxima do órgão.",
-      "suspensão de até 30 dias, aplicada pela própria comissão sem necessidade de processo disciplinar, com perda da remuneração.",
-      "censura, fundamentada em parecer assinado apenas pelo presidente da comissão, dispensada a ciência do servidor faltoso.",
-      "demissão, nos casos mais graves, desde que a decisão seja tomada por unanimidade e confirmada pelo Ministro de Estado.",
-      "censura, cuja fundamentação consta de parecer assinado por todos os integrantes da comissão, com ciência do servidor faltoso.",
-    ],
-    correta: 4,
+      "Sobre as comissões de ética previstas no Código de Ética Profissional do Servidor Público Civil do Poder Executivo Federal (Decreto 1.171/1994), analise as afirmativas.\n\nI. A pena aplicável pela comissão de ética é a de censura, fundamentada em parecer assinado por todos os seus integrantes, com ciência do faltoso.\nII. Para fins de apuração do comprometimento ético, entende-se por servidor apenas quem presta ao Estado serviço permanente e remunerado.\nIII. Cabe à comissão fornecer os registros sobre a conduta ética do servidor para instruir e fundamentar promoções e os demais procedimentos da carreira.\nIV. Deve haver comissão de ética também em qualquer órgão ou entidade que exerça atribuições delegadas pelo poder público.\n\nEstá correto o que se afirma em",
+    alternativas: ["I e III, apenas.", "I, III e IV, apenas.", "II, III e IV, apenas.", "I, II e III, apenas.", "I, II, III e IV."],
+    correta: 1,
     explicacao:
-      "Pelo inciso XXII do Código de Ética, a pena aplicável pela comissão de ética é a de censura, e sua fundamentação constará do parecer, assinado por todos os integrantes, com ciência do faltoso. Advertência, suspensão e demissão são penalidades disciplinares da Lei 8.112/1990, apuradas em sindicância ou PAD; se a falta ética também for disciplinar, a comissão pode recomendar a abertura de procedimento (Decreto 6.029/2007, art. 12, § 5º).",
+      "A afirmativa I reproduz o inciso XXII: a pena é a censura, fundamentada no parecer assinado por todos os integrantes, com ciência do faltoso. A III corresponde ao XVIII: a comissão fornece os registros de conduta ética para promoções e demais procedimentos da carreira. A IV, ao XVI: deve haver comissão em todos os órgãos e entidades da administração direta, autárquica e fundacional e em quem exerça atribuições delegadas pelo poder público.",
+    explicacaoErradas:
+      "A afirmativa II está errada: pelo inciso XXIV, servidor, para fins de apuração do comprometimento ético, é todo aquele que presta serviço permanente, temporário ou excepcional, ainda que sem retribuição financeira, ligado direta ou indiretamente ao Estado. Toda combinação com a II está errada, e a que traz só I e III deixa de fora a IV, que é verdadeira.",
+    pegadinha:
+      "A afirmativa IV parece exagerar ao estender as comissões a quem exerce atribuições delegadas, e a II parece razoável ao exigir vínculo permanente e remunerado; o inciso XXIV, porém, é amplo de propósito.",
+    conhecimento:
+      "Capítulo II do Código de Ética (Decreto 1.171/1994): criação das comissões (XVI), registros para a carreira (XVIII), pena de censura (XXII) e conceito amplo de servidor (XXIV).",
     origem: "banco",
   },
   {
     id: "prf-etica-014",
     materia: "etica",
     topico: "Código de Ética do servidor (Decreto 1.171/1994)",
+    subassunto: "Vedações do Código de Ética (XV, c, e, l e n)",
+    dificuldade: 5,
+    raciocinio: "Subsunção: testar cada conduta contra a redação exata das vedações, atentando para requisitos como habitualidade e autorização.",
     enunciado:
-      "Um servidor da PRF, exemplar no expediente, é visto com frequência embriagado em bares da cidade nos fins de semana, provocando confusões. À luz do Código de Ética do Decreto 1.171/1994, é correto afirmar que",
-    alternativas: [
-      "a conduta não interessa ao Código, que só alcança atos praticados no local de trabalho e durante o horário de expediente.",
-      "a vedação alcança a embriaguez habitual fora do serviço, e os atos da vida privada podem diminuir o bom conceito do servidor na vida funcional.",
-      "a embriaguez só é vedada se ocorrer em serviço, pois a vida particular do servidor não pode, em nenhuma hipótese, afetar sua vida funcional.",
-      "a conduta só poderia ser apurada pela comissão se o servidor estivesse usando uniforme ou viatura do órgão no momento dos fatos.",
-      "a embriaguez fora do serviço é vedada mesmo que ocorra uma única vez, independentemente de habitualidade, e leva à demissão automática do servidor.",
-    ],
+      "Considere as condutas de cinco servidores de um órgão federal.\n\n1. Acoberta, por solidariedade, um erro grave cometido por um colega, para evitar que ele seja punido.\n2. Apresenta-se embriagado em uma festa particular, num fim de semana, fato isolado em sua vida.\n3. Leva para casa, sem autorização, o notebook da repartição para adiantar um relatório urgente.\n4. Recusa-se a usar o sistema eletrônico de protocolo implantado no órgão e continua registrando os pedidos à mão.\n5. Dá aulas de inglês em uma escola de idiomas, fora do horário de expediente.\n\nViolam vedações expressas do Código de Ética aprovado pelo Decreto 1.171/1994 as condutas",
+    alternativas: ["1 e 3, apenas.", "1, 3 e 4, apenas.", "1, 3, 4 e 5, apenas.", "3 e 4, apenas.", "1, 2, 3 e 4, apenas."],
     correta: 1,
     explicacao:
-      "O Código veda apresentar-se embriagado no serviço ou fora dele habitualmente (XV, n). Além disso, a função pública integra a vida particular do servidor, e os fatos da vida privada podem acrescer ou diminuir o seu bom conceito na vida funcional (VI). A pena aplicável pela comissão de ética é a censura, não a demissão.",
+      "Violam vedações expressas: a conduta 1, por ser conivente, por espírito de solidariedade, com erro ou infração (XV, c); a 3, por retirar bem da repartição sem estar legalmente autorizado, ainda que para trabalhar (XV, l); e a 4, por deixar de utilizar os avanços técnicos e científicos ao seu alcance (XV, e).",
+    explicacaoErradas:
+      "A conduta 2 não viola a vedação do XV, n, que alcança quem se apresenta embriagado no serviço ou, fora dele, habitualmente; um fato isolado numa festa particular não se enquadra. A conduta 5 não corresponde a nenhuma vedação do Código. Por isso estão erradas as combinações com 2 ou 5, e as que deixam de fora 1 ou 4 omitem condutas vedadas.",
+    pegadinha:
+      "A boa intenção da conduta 3 e a natureza técnica da 4 fazem parecer que não há falta ética, enquanto a embriaguez da 2 choca mais; o Código, porém, exige habitualidade para a embriaguez fora do serviço.",
+    conhecimento:
+      "Vedações do Código de Ética (XV): conivência por solidariedade (c), avanços técnicos (e), retirada de bens sem autorização (l), informação privilegiada (m) e embriaguez habitual (n).",
     origem: "banco",
   },
   {
     id: "prf-etica-015",
     materia: "etica",
     topico: "Código de Ética do servidor (Decreto 1.171/1994)",
+    subassunto: "Regras deontológicas: publicidade, verdade e dano moral (VII a X)",
+    dificuldade: 4,
+    raciocinio: "Julgamento de assertivas: comparar cada uma com a redação das regras deontológicas, atentando para a quem se imputa a falta.",
     enunciado:
-      "Um cidadão pergunta a um agente administrativo da PRF se seu recurso contra uma multa foi aceito. O recurso foi negado, mas o agente, para evitar discussão, diz que ainda está em análise. Pelo Código de Ética do Decreto 1.171/1994, a conduta",
-    alternativas: [
-      "é aceitável, pois o servidor pode omitir a verdade sempre que ela for contrária aos interesses da pessoa que pede a informação.",
-      "é aceitável, pois o dever de dizer a verdade só existe quando o cidadão formaliza o pedido por escrito e indica os motivos da consulta.",
-      "viola o direito à verdade, que o servidor não pode omitir nem falsear, ainda que ela contrarie os interesses do próprio interessado.",
-      "viola apenas a cortesia, pois o problema está no modo de tratar o cidadão, e não no conteúdo da informação prestada a ele.",
-      "é aceitável, pois o servidor deve proteger a Administração, e a verdade só é devida quando favorece os interesses do órgão público.",
-    ],
+      "Com base nas regras deontológicas do Código de Ética do Decreto 1.171/1994, marque V para a afirmativa verdadeira e F para a falsa.\n\n( ) A omissão da publicidade de um ato administrativo compromete a chefia do órgão, e não o servidor que, por iniciativa própria, a negou.\n( ) O servidor não pode omitir nem falsear a verdade, ainda que ela seja contrária aos interesses da própria pessoa interessada ou da Administração.\n( ) Deixar o usuário à espera de solução, com longas filas ou outra espécie de atraso, caracteriza grave dano moral aos usuários dos serviços públicos.\n( ) Tratar mal quem paga tributos configura falta de cortesia, mas não chega a causar dano moral à pessoa atendida.\n\nAs afirmativas são, respectivamente,",
+    alternativas: ["V – V – V – F.", "F – V – F – F.", "F – V – V – F.", "F – F – V – V.", "V – V – F – V."],
     correta: 2,
     explicacao:
-      "Pelo inciso VIII do Código, toda pessoa tem direito à verdade, e o servidor não pode omiti-la ou falseá-la, ainda que contrária aos interesses da própria pessoa interessada ou da Administração. O Código também veda iludir ou tentar iludir quem precisa do atendimento (XV, i).",
+      "A primeira afirmativa é falsa: a omissão da publicidade gera comprometimento ético imputável a quem a negar (VII). A segunda é verdadeira: toda pessoa tem direito à verdade, que o servidor não pode omitir nem falsear, ainda que contrária ao interessado ou à Administração (VIII). A terceira é verdadeira: as longas filas e outros atrasos causam grave dano moral aos usuários (X). A quarta é falsa: tratar mal quem paga tributos significa causar-lhe dano moral (IX). Sequência: F – V – V – F.",
+    explicacaoErradas:
+      "Toda sequência que começa por V aceita que a omissão da publicidade seja imputada à chefia, contra o inciso VII, que a imputa a quem a negar. Marcar F na terceira afirmativa ignora o inciso X; marcar V na quarta contraria o IX, que fala expressamente em dano moral; e marcar F na segunda nega o direito à verdade do VIII.",
+    pegadinha:
+      "A primeira afirmativa parece proteger o servidor subordinado, mas o inciso VII imputa o comprometimento ético a quem negar a publicidade; a quarta parece só exagerar, mas o Código fala, de fato, em dano moral.",
+    conhecimento:
+      "Regras deontológicas do Código de Ética: publicidade como requisito de eficácia e moralidade (VII), direito à verdade (VIII), dano moral pelo mau tratamento (IX) e grave dano moral pelas filas e atrasos (X).",
     origem: "banco",
   },
   {
     id: "prf-etica-016",
     materia: "etica",
     topico: "Sistema de Gestão da Ética (Decreto 6.029/2007)",
+    subassunto: "CEP × comissões dos órgãos: composição, designação e mandatos",
+    dificuldade: 5,
+    raciocinio: "Comparação de regimes: separar o que é comum à CEP e às comissões dos órgãos do que é próprio de cada uma.",
     enunciado:
-      "Sobre a Comissão de Ética Pública (CEP), que integra o Sistema de Gestão da Ética do Poder Executivo Federal, o Decreto 6.029/2007 estabelece que ela é composta por",
+      "Ao comparar a Comissão de Ética Pública (CEP) com as comissões de ética dos órgãos e entidades do Poder Executivo federal, ambas integrantes do sistema instituído pelo Decreto 6.029/2007, é correto afirmar que",
     alternativas: [
-      "sete brasileiros designados pelo Presidente da República, com mandatos de três anos, não coincidentes, permitida uma única recondução.",
-      "três servidores efetivos e três suplentes, designados pelo dirigente máximo de cada órgão ou entidade, com mandatos coincidentes de três anos.",
-      "sete brasileiros eleitos pelo Congresso Nacional, com mandatos de quatro anos, permitidas reconduções sucessivas sem limite de número.",
-      "sete brasileiros designados pelo Presidente da República, remunerados por sessão de que participam, com mandatos de dois anos.",
-      "cinco ministros de Estado indicados pela Casa Civil, com mandatos que coincidem com o do Presidente da República que os designa.",
+      "as duas são integradas por sete membros designados pelo Presidente da República, com mandatos de três anos e uma única recondução.",
+      "os membros da CEP recebem remuneração por sessão, e os das comissões dos órgãos são designados pelo dirigente máximo de cada órgão.",
+      "nas duas, os mandatos são de três anos, não coincidentes, mas só os membros da CEP são designados pelo Presidente da República.",
+      "o presidente da CEP é designado pelo Presidente da República e tem voto de qualidade nas deliberações da comissão.",
+      "a CEP tem três titulares e três suplentes do quadro permanente, e as comissões dos órgãos têm sete membros de reputação ilibada.",
     ],
-    correta: 0,
+    correta: 2,
     explicacao:
-      "Pelo art. 3º do Decreto 6.029/2007, a CEP é integrada por sete brasileiros de idoneidade moral, reputação ilibada e notória experiência em administração pública, designados pelo Presidente da República para mandatos de três anos, não coincidentes, permitida uma única recondução. A atuação não é remunerada e é considerada prestação de relevante serviço público; o Presidente da comissão tem voto de qualidade. Três titulares e três suplentes é a composição das comissões setoriais (art. 5º).",
+      "A CEP é integrada por sete brasileiros designados pelo Presidente da República, com mandatos de três anos, não coincidentes, permitida uma única recondução (art. 3º). As comissões de ética dos órgãos têm três titulares e três suplentes do quadro permanente, designados pelo dirigente máximo, também com mandatos não coincidentes de três anos (art. 5º). O traço comum é o mandato; a designação pelo Presidente da República é exclusiva da CEP.",
+    explicacaoErradas:
+      "A que atribui sete membros às duas comissões erra a composição das comissões dos órgãos, que têm três titulares e três suplentes. A da remuneração por sessão contraria o art. 3º, § 1º: a atuação na CEP não é remunerada e é considerada prestação de relevante serviço público. A que faz o Presidente da República designar o presidente da CEP erra: a própria comissão escolhe o seu presidente (art. 4º, VI), que tem voto de qualidade. A que dá três titulares e três suplentes à CEP inverte a composição das duas comissões.",
+    pegadinha:
+      "A afirmação sobre o presidente da CEP acerta o voto de qualidade e erra só a forma de escolha, que cabe à própria comissão, e não ao Presidente da República.",
+    conhecimento:
+      "Composição, designação, mandatos e funcionamento da CEP (arts. 3º e 4º) e das comissões de ética dos órgãos e entidades (art. 5º) no Decreto 6.029/2007.",
     origem: "banco",
   },
   {
     id: "prf-etica-017",
     materia: "etica",
     topico: "Sistema de Gestão da Ética (Decreto 6.029/2007)",
+    subassunto: "Legitimados para provocar a comissão (art. 11) e conceito de agente público",
+    dificuldade: 5,
+    raciocinio: "Análise de caso: verificar a legitimidade de quem provoca a comissão e o alcance do conceito de agente público.",
     enunciado:
-      "Um membro da comissão de ética de um órgão do Executivo federal é acusado de infração ética. Pelo Decreto 6.029/2007, a apuração cabe",
+      "Uma associação de transportadores de cargas leva à comissão de ética de um órgão federal a conduta de um profissional que, sem receber remuneração, prestou serviço eventual ao órgão em um projeto e teria exigido vantagens dos associados. À luz do Decreto 6.029/2007, é correto afirmar que",
     alternativas: [
-      "à própria comissão setorial de que ele faz parte, desde que o acusado não participe da votação sobre o seu caso.",
-      "ao dirigente máximo do órgão, que deve instaurar processo administrativo disciplinar antes de qualquer análise ética do caso.",
-      "à Controladoria-Geral da União, pois as comissões de ética não têm competência para apurar condutas de seus próprios membros.",
-      "à Comissão de Ética Pública, a quem o decreto atribui a apuração de infração ética cometida por membro de comissão setorial.",
-      "à comissão de ética de outro órgão, escolhida por sorteio, para garantir a independência e a imparcialidade da apuração.",
+      "a associação pode provocar a comissão, e o prestador eventual e sem remuneração é agente público para os fins do decreto.",
+      "a associação pode provocar a comissão, mas o prestador eventual e sem remuneração não é agente público para os fins do decreto.",
+      "a associação não tem legitimidade para provocar a comissão, e o prestador eventual e sem remuneração não é agente público para o decreto.",
+      "a associação só pode provocar a comissão por meio de denúncia anônima, e o prestador é agente público para os fins do decreto.",
+      "a associação só pode provocar a Comissão de Ética Pública, e não a do órgão, embora o prestador seja agente público para o decreto.",
     ],
-    correta: 3,
+    correta: 0,
     explicacao:
-      "Pelo art. 21 do Decreto 6.029/2007, a infração de natureza ética cometida por membro das comissões de ética setoriais (e das demais comissões do sistema) é apurada pela Comissão de Ética Pública, que coordena, avalia e supervisiona o Sistema de Gestão da Ética. A CGU entra em cena quando a comissão encaminha o caso para exame de eventuais transgressões disciplinares (art. 12, § 5º, II).",
+      "Qualquer cidadão, agente público, pessoa jurídica de direito privado, associação ou entidade de classe pode provocar a atuação da CEP ou de comissão de ética (art. 11). E, para os fins do decreto, agente público é todo aquele que, por força de lei, contrato ou qualquer ato jurídico, presta serviço de natureza permanente, temporária, excepcional ou eventual, ainda que sem retribuição financeira, a órgão ou entidade da administração federal (art. 11, parágrafo único).",
+    explicacaoErradas:
+      "A que nega a condição de agente público ao prestador eventual e não remunerado contraria o parágrafo único do art. 11, que inclui expressamente o serviço eventual e sem retribuição. A que nega legitimidade à associação contraria o caput do art. 11. A da denúncia anônima confunde a reserva sobre a identidade do denunciante, garantida se ele a desejar (art. 10), com uma exigência de anonimato que não existe. A que restringe a provocação à CEP contraria o art. 11, que admite provocar a CEP ou a comissão de ética do órgão.",
+    pegadinha:
+      "O serviço eventual e não remunerado parece afastar o vínculo com a Administração; o decreto, porém, adota conceito amplo de agente público justamente para alcançar esses casos.",
+    conhecimento:
+      "Decreto 6.029/2007: legitimados para provocar a CEP e as comissões de ética (art. 11), conceito de agente público (art. 11, parágrafo único) e reserva da identidade do denunciante (art. 10).",
     origem: "banco",
   },
   {
     id: "prf-etica-018",
     materia: "etica",
     topico: "Sistema de Gestão da Ética (Decreto 6.029/2007)",
+    subassunto: "Providências após a falta ética (art. 12, § 5º) e banco de sanções (art. 22)",
+    dificuldade: 5,
+    raciocinio: "Consequências jurídicas: identificar o que a comissão pode fazer e o destino da decisão, sem atribuir a ela poder que não tem.",
     enunciado:
-      "Um servidor da PRF descobre, por um colega, que responde a procedimento na comissão de ética do órgão, embora ainda não tenha sido notificado. Pelo Decreto 6.029/2007, é correto afirmar que ele",
+      "Concluída a apuração, a comissão de ética de um órgão federal constatou falta ética de um servidor ocupante de cargo efetivo que exercia função de confiança no órgão. Nos termos do Decreto 6.029/2007, a comissão",
     alternativas: [
-      "só poderá conhecer a acusação depois de notificado, pois o procedimento é sigiloso para todos até a decisão final da comissão.",
-      "pode ter vista dos autos antes da notificação, mas não tem direito a obter cópia nem certidão do teor do procedimento.",
-      "só terá acesso aos autos depois da decisão, já que o procedimento corre sem manifestação do investigado, por ser apenas ético.",
-      "pode conhecer a acusação e exigir a identidade do denunciante, que não pode ser mantida em reserva mesmo que este o deseje.",
-      "pode conhecer o teor da acusação e ter vista dos autos, com direito a cópia e certidão, mesmo antes de ser notificado.",
+      "pode aplicar suspensão ao servidor e divulgar a ementa da decisão no sítio do órgão, com o nome do investigado, para dar publicidade à sanção.",
+      "pode exonerar diretamente o servidor do cargo efetivo, e a sanção só é comunicada à CEP se o servidor reincidir na mesma falta.",
+      "deve manter os autos com a chancela de “reservado” mesmo depois da conclusão, e a sanção não é comunicada a nenhum outro órgão.",
+      "pode recomendar a abertura de procedimento administrativo, mas a sanção não poderá ser consultada em futuras nomeações para cargo em comissão.",
+      "pode sugerir à autoridade superior a exoneração da função de confiança, e a sanção integrará o banco de dados mantido pela CEP.",
     ],
     correta: 4,
     explicacao:
-      "Pelo art. 14, o investigado tem o direito de saber o que lhe é imputado, conhecer o teor da acusação e ter vista dos autos, no recinto da comissão, mesmo que ainda não tenha sido notificado, incluindo o direito de obter cópia e certidão. O procedimento é “reservado” até a conclusão (art. 13), a identidade do denunciante fica sob reserva se ele desejar (art. 10, II) e, notificado, o investigado tem 10 dias para se manifestar por escrito (art. 12).",
+      "Concluindo pela falta ética, a comissão pode encaminhar à autoridade hierarquicamente superior sugestão de exoneração de cargo ou função de confiança, encaminhar o caso à CGU ou ao Sistema de Correição e recomendar a abertura de procedimento administrativo, se a gravidade exigir (art. 12, § 5º). A CEP mantém banco de dados das sanções aplicadas pelas comissões, consultado em nomeações para cargo em comissão ou de alta relevância pública (art. 22).",
+    explicacaoErradas:
+      "A que fala em suspensão e em ementa com o nome do investigado erra duas vezes: a comissão de ética aplica censura, e a ementa é divulgada sem o nome do investigado (art. 18). A que permite exonerar diretamente do cargo efetivo dá à comissão um poder que ela não tem: ela só sugere a exoneração de cargo ou função de confiança. A dos autos reservados depois da conclusão contraria o art. 13, que limita a chancela até a conclusão, e o art. 18, que manda enviar a ementa à CEP. A que impede a consulta da sanção em nomeações contraria o art. 22.",
+    pegadinha:
+      "A afirmação sobre a recomendação de procedimento administrativo começa certa (art. 12, § 5º, III) e erra só no fim, ao negar a consulta da sanção em nomeações futuras.",
+    conhecimento:
+      "Providências após a conclusão pela falta ética (art. 12, § 5º), reserva dos autos até a conclusão (art. 13), ementa sem o nome do investigado (art. 18) e banco de sanções da CEP (art. 22).",
     origem: "banco",
   },
   {
     id: "prf-etica-019",
     materia: "etica",
     topico: "Regime disciplinar da Lei 8.112/1990",
+    subassunto: "Reincidência, cancelamento de registros e conversão da suspensão em multa",
+    dificuldade: 5,
+    raciocinio: "Prazos e consequências: verificar se o registro da advertência ainda vale e qual pena decorre da reincidência.",
     enunciado:
-      "O chefe de uma seção administrativa da PRF mantém a própria esposa, ocupante de função de confiança, sob sua chefia imediata. Pela Lei 8.112/1990, a proibição violada é punida com",
+      "Um servidor federal foi punido com advertência por se ausentar do serviço, durante o expediente, sem autorização do chefe imediato. Dois anos depois, sem ter cometido nenhuma outra infração nesse período, comete nova falta punível com advertência. Nos termos da Lei 8.112/1990,",
     alternativas: [
-      "demissão, pois a lei pune com a perda do cargo toda violação das proibições do art. 117, sem distinção entre os incisos.",
-      "advertência, aplicada por escrito, pois a lei reserva essa penalidade às proibições dos incisos I a VIII e XIX do art. 117.",
-      "suspensão de até 90 dias, pois a lei reserva a advertência apenas à inobservância de dever funcional, e não às proibições.",
-      "advertência verbal, sem registro, pois a lei não exige forma escrita para a penalidade aplicada às proibições mais leves.",
-      "destituição da função de confiança do chefe, pois a lei prevê essa penalidade para todos os ocupantes de cargo efetivo.",
+      "cabe nova advertência, pois o registro da primeira foi cancelado depois de dois anos de efetivo exercício sem nova infração disciplinar.",
+      "cabe suspensão, que, por conveniência do serviço, pode ser convertida em multa de 50% por dia de remuneração, com o servidor em serviço.",
+      "cabe suspensão, que, por conveniência do serviço, pode ser convertida em multa de 50% por dia de remuneração, com o servidor afastado do serviço.",
+      "cabe demissão, pois a reincidência em falta punível com advertência caracteriza insubordinação grave em serviço.",
+      "cabe suspensão de no máximo 15 dias, limite que a lei fixa para a reincidência em faltas punidas com advertência.",
     ],
     correta: 1,
     explicacao:
-      "O art. 117, VIII, proíbe manter sob chefia imediata, em cargo ou função de confiança, cônjuge, companheiro ou parente até o segundo grau civil. Pelo art. 129, a advertência é aplicada por escrito nas violações dos incisos I a VIII e XIX do art. 117 e na inobservância de dever funcional que não justifique penalidade mais grave. Se a conduta também configurar improbidade, comprovado o dolo, a demissão passa a ser possível (art. 132, IV).",
+      "Os registros de advertência só são cancelados após 3 anos de efetivo exercício sem nova infração (art. 131); depois de dois anos, a primeira advertência ainda conta, e a nova falta é reincidência. A reincidência em faltas punidas com advertência leva à suspensão, de até 90 dias (art. 130), e, quando houver conveniência para o serviço, a suspensão pode ser convertida em multa de 50% por dia de vencimento ou remuneração, ficando o servidor obrigado a permanecer em serviço (art. 130, § 2º).",
+    explicacaoErradas:
+      "A que considera cancelado o registro após dois anos troca o prazo: são 3 anos para a advertência e 5 para a suspensão. A da multa com o servidor afastado inverte a regra: na conversão, o servidor é obrigado a permanecer em serviço. A da demissão por insubordinação grave confunde reincidência com uma das hipóteses do art. 132. A do limite de 15 dias aplica à reincidência o teto previsto para quem se recusa a ser submetido a inspeção médica (art. 130, § 1º).",
+    pegadinha:
+      "A conversão em multa aparece duas vezes com os números certos (50% por dia); o erro de uma das versões está só na situação do servidor, que permanece em serviço.",
+    conhecimento:
+      "Penalidades da Lei 8.112/1990: advertência (art. 129), suspensão e conversão em multa (art. 130), cancelamento dos registros (art. 131) e hipóteses de demissão (art. 132).",
     origem: "banco",
   },
   {
     id: "prf-etica-020",
     materia: "etica",
     topico: "Regime disciplinar da Lei 8.112/1990",
+    subassunto: "Afastamento preventivo, sindicância, impedimentos da comissão e prazos",
+    dificuldade: 5,
+    raciocinio: "Análise de afirmativas: conferir números (dias, graus de parentesco) e efeitos de cada instituto da apuração.",
     enunciado:
-      "Instaurado PAD contra um servidor da PRF suspeito de alterar registros do sistema de multas, a autoridade instauradora teme que ele interfira na apuração. Pela Lei 8.112/1990, ela pode determinar o afastamento do servidor do exercício do cargo por até",
-    alternativas: [
-      "60 dias, com suspensão da remuneração, prorrogáveis por igual prazo, devolvendo-se os valores ao servidor se ele vier a ser absolvido.",
-      "90 dias, sem prejuízo da remuneração, prorrogáveis sucessivamente por iguais períodos, até que o processo disciplinar seja concluído.",
-      "60 dias, sem prejuízo da remuneração, prorrogáveis por igual prazo, após o qual cessam os efeitos, mesmo sem a conclusão do processo.",
-      "30 dias, sem prejuízo da remuneração, prorrogáveis uma única vez, desde que haja autorização judicial expressa para a medida cautelar.",
-      "120 dias, com perda de metade da remuneração, sem prorrogação, por se tratar de medida cautelar que antecipa a eventual penalidade.",
-    ],
-    correta: 2,
+      "Sobre a apuração de infrações disciplinares na Lei 8.112/1990, analise as afirmativas.\n\nI. Como medida cautelar, a autoridade instauradora pode afastar o servidor do exercício do cargo por até 60 dias, com suspensão da remuneração no período.\nII. Da sindicância pode resultar suspensão de até 30 dias, mas a suspensão por mais de 30 dias exige processo administrativo disciplinar.\nIII. Não pode integrar a comissão do processo disciplinar parente do acusado até o segundo grau; o parente de terceiro grau pode participar.\nIV. A sindicância deve ser concluída em até 30 dias, prorrogáveis por igual período, e o processo disciplinar, em até 60 dias, prorrogáveis por igual prazo.\n\nEstá correto o que se afirma em",
+    alternativas: ["I e II, apenas.", "II e IV, apenas.", "IV, apenas.", "II, III e IV, apenas.", "I, II e IV, apenas."],
+    correta: 1,
     explicacao:
-      "Pelo art. 147, como medida cautelar e para que o servidor não influa na apuração, a autoridade instauradora pode afastá-lo do exercício do cargo por até 60 dias, sem prejuízo da remuneração. O afastamento pode ser prorrogado por igual prazo, findo o qual cessam os seus efeitos, ainda que o processo não esteja concluído. Não confunda com o afastamento judicial da Lei de Improbidade: até 90 dias, prorrogáveis uma vez (art. 20, § 2º).",
+      "A afirmativa II está correta: a sindicância pode resultar em arquivamento, advertência ou suspensão de até 30 dias, ou na instauração de PAD (art. 145), que é obrigatório quando a infração sujeitar o servidor a suspensão por mais de 30 dias, demissão, cassação ou destituição (art. 146). A IV também: sindicância em até 30 dias, prorrogáveis por igual período (art. 145, parágrafo único), e PAD em até 60 dias, prorrogáveis por igual prazo (art. 152).",
+    explicacaoErradas:
+      "A afirmativa I está errada porque o afastamento preventivo é de até 60 dias, prorrogável por igual prazo, mas sem prejuízo da remuneração (art. 147). A III está errada porque o impedimento alcança cônjuge, companheiro e parentes até o terceiro grau (art. 149, § 2º). Toda combinação com I ou III está errada, e a que traz só a IV deixa de fora a II.",
+    pegadinha:
+      "As afirmativas I e III acertam a estrutura e erram um detalhe cada: a remuneração, que não é suspensa, e o grau de parentesco, que vai até o terceiro.",
+    conhecimento:
+      "Apuração na Lei 8.112/1990: sindicância e seus resultados (art. 145), PAD obrigatório (art. 146), afastamento preventivo (art. 147), comissão e impedimentos (art. 149) e prazos (arts. 145 e 152).",
     origem: "banco",
   },
   {
     id: "prf-etica-021",
     materia: "etica",
     topico: "Regime disciplinar da Lei 8.112/1990",
+    subassunto: "Independência das instâncias e repercussão da absolvição criminal (art. 126)",
+    dificuldade: 5,
+    raciocinio: "Distinção de fundamentos: separar a absolvição que nega o fato ou a autoria das demais absolvições penais.",
     enunciado:
-      "Um servidor da PRF responde, pelos mesmos fatos, a processo criminal e a PAD. No processo criminal, é absolvido por falta de provas suficientes para a condenação. Pela Lei 8.112/1990, é correto afirmar que",
+      "Três servidores federais respondem a processo penal e a processo administrativo disciplinar pelos mesmos fatos. No processo penal, o primeiro é absolvido por insuficiência de provas; o segundo, porque ficou provada a inexistência do fato; e o terceiro, porque o fato, embora provado, não constitui infração penal. Nos termos da Lei 8.112/1990, afasta a responsabilidade administrativa",
     alternativas: [
-      "a absolvição por falta de provas não afasta, por si só, a responsabilidade administrativa, que só cai se a sentença negar o fato ou a autoria.",
-      "a absolvição afasta automaticamente a responsabilidade administrativa, qualquer que seja o seu fundamento, por força do princípio da unidade da jurisdição.",
-      "o PAD deve ser obrigatoriamente anulado, pois a Administração não pode punir conduta que o Judiciário não considerou crime.",
-      "a responsabilidade administrativa só é afastada se a absolvição criminal reconhecer prescrição, pois as instâncias são dependentes.",
-      "o servidor deve ser reintegrado com ressarcimento das vantagens, pois qualquer absolvição criminal vincula a Administração.",
+      "as absolvições do segundo e do terceiro, pois em ambas a sentença penal reconhece que o servidor não cometeu ilícito algum.",
+      "as três absolvições, pois as instâncias penal e administrativa deixam de ser independentes depois da sentença penal absolutória.",
+      "apenas a absolvição do segundo, pois só a que negue a existência do fato ou a autoria repercute na via administrativa.",
+      "as absolvições do primeiro e do segundo, pois a falta de provas no juízo penal impede a punição administrativa pelos mesmos fatos.",
+      "nenhuma das absolvições, pois as instâncias civil, penal e administrativa são independentes e nunca se comunicam.",
     ],
-    correta: 0,
+    correta: 2,
     explicacao:
-      "As sanções civis, penais e administrativas são independentes entre si e podem cumular-se (art. 125). Pelo art. 126, a responsabilidade administrativa só é afastada pela absolvição criminal que negue a existência do fato ou a sua autoria. A absolvição por insuficiência de provas não impede a punição disciplinar, se o PAD reunir provas suficientes da falta.",
+      "As responsabilidades civil, penal e administrativa podem cumular-se e são independentes (arts. 121 e 125), mas a responsabilidade administrativa é afastada no caso de absolvição criminal que negue a existência do fato ou a sua autoria (art. 126). Só o segundo servidor foi absolvido por inexistência do fato. A absolvição por falta de provas e a que reconhece que o fato não constitui crime não impedem a punição administrativa, porque o fato pode ainda configurar infração disciplinar.",
+    explicacaoErradas:
+      "A que inclui o terceiro servidor confunde atipicidade penal com inexistência de ilícito: o fato que não é crime pode ser infração disciplinar. A das três absolvições ignora a independência das instâncias. A que inclui o primeiro servidor dá à falta de provas um efeito que a lei não lhe dá. A que nega qualquer comunicação entre as instâncias contraria o art. 126.",
+    pegadinha:
+      "A absolvição do terceiro servidor parece a mais forte (“o fato não é crime”), mas não nega o fato nem a autoria; o fato continua podendo ser punido como infração disciplinar.",
+    conhecimento:
+      "Responsabilidades do servidor na Lei 8.112/1990: cumulação e independência das instâncias (arts. 121 e 125) e efeito da absolvição criminal que nega o fato ou a autoria (art. 126).",
     origem: "banco",
   },
   {
     id: "prf-etica-022",
     materia: "etica",
     topico: "Improbidade administrativa (Lei 8.429/1992)",
+    subassunto: "Sujeitos da Lei de Improbidade: agente público, particular parceiro e terceiro",
+    dificuldade: 5,
+    raciocinio: "Subsunção: verificar, em cada situação, se há vínculo com a Administração, recurso público ou conduta dolosa do terceiro.",
     enunciado:
-      "Uma organização da sociedade civil firma com a PRF um termo de colaboração e recebe recursos federais para oferecer a motoristas profissionais um curso de primeiros socorros em sinistros de trânsito. Quanto à Lei 8.429/1992, é correto afirmar que essa entidade",
-    alternativas: [
-      "não se sujeita à lei em nenhuma hipótese, pois a Lei de Improbidade alcança apenas os agentes públicos que ocupam cargo efetivo.",
-      "sujeita-se à lei apenas se algum de seus dirigentes também for servidor público federal, ocupante de cargo efetivo ou em comissão.",
-      "sujeita-se à lei em relação a todos os seus recursos, inclusive os de origem privada, pois a parceria a equipara a órgão público.",
-      "sujeita-se às sanções da lei quanto aos recursos de origem pública, pois a lei alcança o particular que firma ajuste desse tipo.",
-      "não se sujeita à lei, pois as entidades privadas sem fins lucrativos respondem apenas perante o Tribunal de Contas, e nunca em juízo.",
-    ],
-    correta: 3,
+      "Considere as situações a seguir.\n\n1. Um engenheiro sem vínculo efetivo é designado para atuar, sem remuneração, por seis meses em uma comissão de um órgão federal.\n2. Uma organização da sociedade civil que celebrou termo de parceria com a União é acusada de desviar recursos recebidos de doadores privados.\n3. Um empresário, sem vínculo com a Administração, induz dolosamente um servidor a praticar ato de improbidade.\n4. Um particular é beneficiado por ato de improbidade sem saber de sua ocorrência e sem ter concorrido para ele.\n\nEstão sujeitos às sanções da Lei 8.429/1992, pelos fatos descritos, os envolvidos nas situações",
+    alternativas: ["1, 2 e 3, apenas.", "3, apenas.", "1 e 3, apenas.", "1, 3 e 4, apenas.", "2 e 4, apenas."],
+    correta: 2,
     explicacao:
-      "Pelo art. 2º, parágrafo único, da Lei 8.429/1992, no que se refere a recursos de origem pública, sujeita-se às sanções da lei o particular, pessoa física ou jurídica, que celebra com a Administração convênio, contrato de repasse, contrato de gestão, termo de parceria, termo de cooperação ou ajuste administrativo equivalente. A lei não se limita aos ocupantes de cargo efetivo: agente público abrange quem exerce mandato, cargo, emprego ou função, ainda que transitoriamente ou sem remuneração (art. 2º).",
+      "O engenheiro é agente público para a lei, que alcança quem exerce, ainda que transitoriamente ou sem remuneração, por designação ou qualquer outra forma de investidura, cargo, emprego ou função nas entidades protegidas (art. 2º). O empresário responde porque, mesmo sem ser agente público, induziu dolosamente a prática do ato (art. 3º). Estão sujeitos, portanto, os envolvidos nas situações 1 e 3.",
+    explicacaoErradas:
+      "A organização parceira só se sujeita à lei no que se refere a recursos de origem pública (art. 2º, parágrafo único); o desvio de doações privadas não a alcança. O particular beneficiado sem dolo também não: o art. 3º exige que o terceiro induza ou concorra dolosamente para o ato. Por isso, estão erradas as combinações com 2 ou 4 e a que deixa de fora o engenheiro.",
+    pegadinha:
+      "A situação 4 parece alcançada para quem lembra a redação anterior do art. 3º, que incluía quem se beneficiasse do ato; a redação dada pela Lei 14.230/2021 exige indução ou concurso doloso.",
+    conhecimento:
+      "Sujeitos da Lei 8.429/1992: agente público em sentido amplo (art. 2º), particular que celebra parceria, quanto a recursos públicos (art. 2º, parágrafo único), e terceiro que induz ou concorre dolosamente (art. 3º).",
     origem: "banco",
   },
   {
     id: "prf-etica-023",
     materia: "etica",
     topico: "Improbidade administrativa (Lei 8.429/1992)",
+    subassunto: "Declaração de bens (art. 13) e afastamento judicial do agente (art. 20)",
+    dificuldade: 5,
+    raciocinio: "Conjugação de dispositivos: aplicar a sanção da recusa da declaração e os limites do afastamento cautelar.",
     enunciado:
-      "Um agente administrativo da PRF deixa de entregar, no prazo fixado, a atualização anual da declaração de imposto de renda exigida pela Lei 8.429/1992, mesmo depois de cobrado pela área de pessoal. Pela lei, a recusa em prestar a declaração no prazo, assim como a prestação de declaração falsa, sujeita o agente à pena de",
+      "Um servidor federal deixa de apresentar, no prazo, a atualização anual de sua declaração de bens e, cobrado, recusa-se expressamente a fazê-lo. Ao mesmo tempo, responde a ação de improbidade, na qual o Ministério Público pede seu afastamento do cargo para evitar que ele destrua provas. À luz da Lei 8.429/1992, é correto afirmar que",
     alternativas: [
-      "advertência, pois a entrega da declaração é mera formalidade, sem relação com o controle da evolução patrimonial do agente.",
-      "demissão, sem prejuízo de outras sanções cabíveis, pois a lei trata a recusa e a declaração falsa com a mesma gravidade.",
-      "multa equivalente ao valor do patrimônio não declarado, sem afetar o vínculo do agente com a Administração Pública.",
-      "suspensão de até 15 dias, pois a lei equipara a recusa em entregar a declaração à recusa em se submeter a inspeção médica.",
-      "demissão apenas no caso de declaração falsa, pois a simples recusa em prestar a declaração no prazo não gera nenhuma sanção.",
+      "a recusa em atualizar a declaração no prazo sujeita o servidor só a advertência, e o juiz pode afastá-lo, sem prejuízo da remuneração, por até 90 dias.",
+      "a recusa em atualizar a declaração no prazo sujeita o servidor à demissão, e o juiz pode afastá-lo, com suspensão da remuneração, por até 90 dias, prorrogáveis uma vez.",
+      "a recusa em atualizar a declaração no prazo sujeita o servidor à demissão, e o juiz pode afastá-lo, sem prejuízo da remuneração, por até 90 dias, prorrogáveis uma vez.",
+      "a perda da função pode ser executada logo após a sentença de primeiro grau, e o afastamento do servidor depende de condenação definitiva.",
+      "a recusa só gera sanção se houver prova de enriquecimento ilícito, e o afastamento judicial é de até 60 dias, sem possibilidade de prorrogação.",
     ],
-    correta: 1,
+    correta: 2,
     explicacao:
-      "Pelo art. 13 da Lei 8.429/1992, a posse e o exercício do agente público dependem da apresentação da declaração de imposto de renda entregue à Receita Federal, que deve ser atualizada anualmente e na data em que ele deixa o cargo (§ 2º). Quem se recusa a prestar a declaração no prazo determinado ou presta declaração falsa é punido com demissão, sem prejuízo de outras sanções (§ 3º).",
+      "A recusa em prestar a declaração dentro do prazo, ou a declaração falsa, é punida com demissão, sem prejuízo de outras sanções (art. 13, § 3º); a declaração deve ser atualizada anualmente e na data em que o agente deixa o cargo (art. 13, § 2º). Na ação de improbidade, o juiz pode afastar o agente quando a medida for necessária à instrução processual ou para evitar a iminente prática de novos ilícitos, sem prejuízo da remuneração, por até 90 dias, prorrogáveis uma única vez por igual prazo (art. 20, §§ 1º e 2º).",
+    explicacaoErradas:
+      "A que prevê só advertência erra a sanção da recusa, que é a demissão. A que suspende a remuneração contraria o art. 20, § 1º: o afastamento é sem prejuízo da remuneração. A que admite executar a perda da função após a sentença de primeiro grau contraria o art. 20, que exige o trânsito em julgado, e o afastamento cautelar não depende de condenação. A que exige enriquecimento ilícito cria requisito que a lei não prevê, e o afastamento judicial é de até 90 dias, prorrogáveis uma vez.",
+    pegadinha:
+      "O prazo de 90 dias “prorrogáveis uma vez” aparece em duas versões; a diferença está na remuneração, que não é suspensa no afastamento judicial.",
+    conhecimento:
+      "Lei 8.429/1992: declaração de bens e sanção pela recusa (art. 13), perda da função só com o trânsito em julgado e afastamento cautelar do agente (art. 20).",
     origem: "banco",
   },
   {
     id: "prf-etica-024",
     materia: "etica",
     topico: "Improbidade administrativa (Lei 8.429/1992)",
+    subassunto: "Representação à autoridade (art. 14) e crime de representar contra inocente (art. 19)",
+    dificuldade: 4,
+    raciocinio: "Análise de caso: separar os efeitos da rejeição formal da representação das consequências da má-fé de quem representou.",
     enunciado:
-      "Um cidadão quer representar contra um servidor da PRF por suposto ato de improbidade. Sobre a representação prevista na Lei 8.429/1992, é correto afirmar que",
+      "Um cidadão representou à autoridade administrativa contra um servidor federal, imputando-lhe ato de improbidade. A representação foi rejeitada por não indicar as provas de que o cidadão tinha conhecimento. Mais tarde, apurou-se que o cidadão sabia que o servidor era inocente e pretendia apenas prejudicá-lo. Nos termos da Lei 8.429/1992,",
     alternativas: [
-      "deve ser escrita ou reduzida a termo e assinada, e quem representa sabendo que o servidor é inocente comete crime, além de responder pelos danos.",
-      "só pode ser feita por servidor público ou pelo Ministério Público, pois a lei não admite que o cidadão comum represente contra agente público.",
-      "pode ser anônima e verbal, e quem representa sabendo que o servidor é inocente não responde por isso, por se tratar de exercício de cidadania.",
-      "se rejeitada pela autoridade administrativa por falta de formalidades, impede que os mesmos fatos sejam levados ao Ministério Público.",
-      "deve ser escrita e assinada, mas quem representa sabendo que o servidor é inocente responde apenas civilmente, sem cometer crime.",
+      "a rejeição impede nova representação sobre os mesmos fatos, inclusive ao Ministério Público, e o cidadão responde só pelos danos causados.",
+      "a rejeição não impede a representação ao Ministério Público, e o cidadão responde apenas pelos danos materiais e morais que causou.",
+      "a rejeição não impede a representação ao Ministério Público, e o cidadão comete crime, além de indenizar os danos causados.",
+      "a rejeição não impede a representação ao Ministério Público, e o cidadão só comete crime se o servidor chegar a ser condenado.",
+      "a rejeição impede a representação ao Ministério Público, e não há crime, já que a representação nem chegou a ser recebida.",
     ],
-    correta: 0,
+    correta: 2,
     explicacao:
-      "Pelo art. 14, qualquer pessoa pode representar à autoridade administrativa para que se apure ato de improbidade; a representação é escrita ou reduzida a termo e assinada, com a qualificação do representante, as informações sobre o fato e a autoria e a indicação das provas. A rejeição por falta de formalidades não impede a representação ao Ministério Público. Representar contra quem se sabe inocente é crime, com detenção de 6 a 10 meses e multa, além do dever de indenizar os danos (art. 19).",
+      "A representação deve conter a qualificação do representante, as informações sobre o fato e sua autoria e a indicação das provas de que tenha conhecimento; sem essas formalidades, é rejeitada, mas a rejeição não impede a representação ao Ministério Público (art. 14, §§ 1º e 2º). Representar contra agente público sabendo-o inocente é crime, punido com detenção de seis a dez meses e multa, e o denunciante ainda deve indenizar os danos materiais, morais ou à imagem que causou (art. 19).",
+    explicacaoErradas:
+      "A que torna a rejeição impeditiva de nova representação ao Ministério Público contraria o art. 14, § 2º. A que limita a responsabilidade do cidadão aos danos ignora o crime do art. 19. A que condiciona o crime à condenação do servidor inverte a lógica do tipo, que pune justamente quem representa sabendo que o agente é inocente. A que nega o crime porque a representação não foi recebida acrescenta requisito que o art. 19 não prevê.",
+    pegadinha:
+      "A rejeição formal da representação parece encerrar o caso; mas ela não fecha a porta do Ministério Público e não apaga a má-fé de quem representou sabendo da inocência.",
+    conhecimento:
+      "Lei 8.429/1992: requisitos e rejeição da representação (art. 14) e crime de representação contra agente sabidamente inocente, com dever de indenizar (art. 19).",
     origem: "banco",
   },
 ];
