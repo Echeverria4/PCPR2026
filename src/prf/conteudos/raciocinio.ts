@@ -26,7 +26,13 @@ Associações lógicas (lógica das situações): o enunciado dá pistas sobre p
 • Cada linha e cada coluna têm um único "sim": achado um, os demais da linha e da coluna viram "não"
 • Todas as informações necessárias estão no enunciado; se parece faltar dado, falta uma dedução
 
-Verdades e mentiras: quando se sabe quantos dizem a verdade, suponha que cada um deles fala a verdade e confira se o cenário fica coerente. A hipótese que gera contradição é descartada.`,
+Verdades e mentiras: quando se sabe quantos dizem a verdade, suponha que cada um deles fala a verdade e confira se o cenário fica coerente. A hipótese que gera contradição é descartada.
+
+Complemento (problemas de associação e de "apenas uma verdadeira"):
+• Quando só uma afirmação é verdadeira, teste uma hipótese de cada vez: a escolhida fica V e as outras, F. Leia as falsas pela negação e descarte a hipótese que põe alguém em dois lugares ou deixa um lugar vazio
+• Negar uma afirmação com "não" a torna afirmativa: se "Rui não ficou com a escala" é falsa, Rui ficou com a escala
+• Comece pela pista mais restritiva, a que elimina várias possibilidades de uma vez: num grupo com carro, moto e ônibus, quem "não usou o carro nem a moto" usou o ônibus
+• Pistas que não citam nomes ("quem usou a moto foi ao norte") ligam duas categorias entre si e costumam decidir o problema quando cruzadas com outra pista`,
     exemplos: [
       "\"Brasília é a capital do Brasil\" é proposição verdadeira, \"Salvador é a capital do Brasil\" é proposição falsa e \"Qual é a capital do Brasil?\" não é proposição.",
       "Se, entre três servidores, um atua na seção de multas, outro no arquivo e outro na frota, e Ana não está no arquivo nem na frota, a tabela já põe Ana na seção de multas e tira essa seção dos outros dois.",
@@ -63,7 +69,13 @@ Como resolver questões de dedução:
 • Propague: com o valor de uma simples, as condicionais e as disjunções vão revelando as demais
 • Em cadeias de condicionais, a negação do último consequente volta até o início (modus tollens repetido)
 
-Para testar a validade, tente deixar a conclusão falsa com todas as premissas verdadeiras. Se conseguir, o argumento é inválido; se for impossível, é válido.`,
+Para testar a validade, tente deixar a conclusão falsa com todas as premissas verdadeiras. Se conseguir, o argumento é inválido; se for impossível, é válido.
+
+Complemento (premissas com "nem" e consequente composto):
+• "Não A, nem B" é a conjunção "não A e não B". Pela lei de De Morgan, sua negação é "A ou B", e não "A e B"
+• Se o consequente de uma condicional é uma conjunção, basta uma parte falsa para derrubá-lo, e o modus tollens então nega o antecedente. A outra parte do consequente continua sem valor conhecido
+• O modus tollens aplicado a um antecedente composto costuma gerar uma disjunção. Se outra premissa nega uma das partes, o silogismo disjuntivo entrega a outra
+• Só é conclusão o que decorre das premissas. Uma afirmação que parece natural pelo senso comum, mas não é garantida por elas, deve ser descartada`,
     exemplos: [
       "\"Se o semáforo está vermelho, o carro para. O carro não parou. Logo, o semáforo não estava vermelho.\" É modus tollens, forma válida.",
       "\"Se o servidor faltou, o ponto ficou em branco. O ponto ficou em branco. Logo, o servidor faltou.\" É afirmação do consequente: o ponto pode estar em branco por falha do sistema.",
@@ -129,7 +141,13 @@ Classificação:
 
 Montagem: na primeira coluna, metade das linhas é V e metade é F; na seguinte, os blocos têm a metade do tamanho; e assim por diante, até a última, que alterna V e F linha a linha. Resolva primeiro os parênteses e, por último, o conectivo principal.
 
-Atalho de prova: para saber se uma condicional pode ser falsa, procure o único caso que a derruba (antecedente V e consequente F). Se esse caso for impossível, a condicional é tautologia. Toda forma válida de argumento, escrita como "(premissas) → conclusão", é uma tautologia.`,
+Atalho de prova: para saber se uma condicional pode ser falsa, procure o único caso que a derruba (antecedente V e consequente F). Se esse caso for impossível, a condicional é tautologia. Toda forma válida de argumento, escrita como "(premissas) → conclusão", é uma tautologia.
+
+Complemento (quando o enunciado informa o valor de uma composta):
+• Condicional falsa: antecedente V e consequente F, sem outra possibilidade. Daí saem os valores de todas as proposições simples envolvidas
+• Também fixam os valores das partes a conjunção verdadeira (tudo V) e a disjunção falsa (tudo F). Condicional verdadeira, disjunção verdadeira e conjunção falsa admitem mais de um caso
+• Toda condicional de antecedente falso é verdadeira, mesmo que o consequente também seja falso
+• "~p ∨ q" tem sempre o mesmo valor de "p → q": se a condicional é falsa, essa disjunção também é`,
     exemplos: [
       "Com p: \"o posto está aberto\" (V) e q: \"há fila no posto\" (F), a proposição \"Se o posto está aberto, então há fila\" é F, pois é o único caso V → F.",
       "Se forem verdadeiras \"o servidor está de férias\" e \"o servidor está trabalhando\", a proposição \"Ou o servidor está de férias, ou está trabalhando\" é F, pois a exclusiva exige valores diferentes.",
@@ -166,7 +184,15 @@ Equivalências básicas:
 
 Condição necessária e suficiente: em p → q, p é suficiente para q, e q é necessário para p. Na bicondicional, cada parte é necessária e suficiente para a outra.
 
-Equivalência não é negação: a equivalência mantém o sentido; a negação o inverte. A negação de p → q é p ∧ ~q, tema das leis de De Morgan.`,
+Equivalência não é negação: a equivalência mantém o sentido; a negação o inverte. A negação de p → q é p ∧ ~q, tema das leis de De Morgan.
+
+Complemento (condicionais com partes compostas):
+• Antecedente com "e": (p ∧ q) → r ≡ ~p ∨ ~q ∨ r
+• Antecedente com "ou": (p ∨ q) → r ≡ (p → r) ∧ (q → r)
+• Consequente com "e": p → (q ∧ r) ≡ (p → q) ∧ (p → r). Separar a regra em duas condicionais com o mesmo antecedente não muda o sentido
+• Contrapositiva de p → (q ∧ r): o consequente é negado por De Morgan, e fica (~q ∨ ~r) → ~p
+• Armadilha: (~q ∧ ~r) → ~p, com o "e" mantido, equivale a p → (q ∨ r), regra mais fraca que a original
+• Condição necessária composta: "X e Y são necessários para Z" é Z → (X ∧ Y), cuja contrapositiva é "se não X ou não Y, então não Z"`,
     exemplos: [
       "\"Se o relatório foi assinado, o plantão foi encerrado\" equivale a \"Se o plantão não foi encerrado, o relatório não foi assinado\" e a \"O relatório não foi assinado ou o plantão foi encerrado\".",
       "\"O portão abre se, e somente se, o crachá é válido\" equivale a \"Se o portão abre, o crachá é válido, e, se o crachá é válido, o portão abre\".",
@@ -232,7 +258,12 @@ Silogismos válidos frequentes:
 • Nenhum A é B; todo C é A; logo, nenhum C é B
 • Nenhum A é B; algum C é A; logo, algum C não é B
 
-Armadilha comum: de "Todo A é B" e "Algum B é C" não se conclui nada sobre A e C, porque os elementos de B que são C podem estar fora de A. Também não se conclui "todo B é A" a partir de "todo A é B".`,
+Armadilha comum: de "Todo A é B" e "Algum B é C" não se conclui nada sobre A e C, porque os elementos de B que são C podem estar fora de A. Também não se conclui "todo B é A" a partir de "todo A é B".
+
+Complemento (o que se pode e o que não se pode concluir):
+• "Algum A é B" pode ser lido ao contrário ("algum B é A"), assim como "nenhum A é B" ("nenhum B é A"). "Todo A é B" e "algum A não é B" não se invertem
+• "Algum A é B" não garante "algum A não é B", e vice-versa: todos os A podem ser B, ou nenhum
+• Regra do termo médio: o conjunto que liga os outros dois precisa ser tomado por inteiro em pelo menos uma premissa, como sujeito de "todo" ou "nenhum" ou como predicado de uma negativa. Se isso não acontece, nada se conclui sobre os outros dois`,
     exemplos: [
       "Se todo radar fixo da rodovia é aferido e nenhum equipamento aferido está fora do prazo, conclui-se que nenhum radar fixo da rodovia está fora do prazo.",
       "\"Algum servidor da unidade é instrutor\" continua verdadeira mesmo que todos os servidores da unidade sejam instrutores, pois \"algum\" quer dizer \"pelo menos um\".",
@@ -300,7 +331,14 @@ Probabilidade, com resultados igualmente prováveis:
 • Sem reposição, a segunda retirada depende da primeira: o total e os casos favoráveis mudam
 • Em "um de cada tipo", há mais de uma ordem possível (primeiro A e depois B, ou o contrário)
 
-Alfabeto: desde o Acordo Ortográfico de 1990, em vigor no Brasil desde 2009, são 26 letras, com a volta de K, W e Y.`,
+Alfabeto: desde o Acordo Ortográfico de 1990, em vigor no Brasil desde 2009, são 26 letras, com a volta de K, W e Y.
+
+Complemento (armadilhas frequentes):
+• Restrições por posição (placas, senhas, códigos): trate cada posição separadamente; uma regra dada para algumas posições não vale para as outras
+• Dois elementos que não podem ficar juntos: desconte do total os grupos que reúnem os dois, mas só os que estavam no total. Se outra regra já tinha excluído alguns desses grupos, não os desconte de novo
+• "Exatamente um" em retiradas sucessivas: calcule a probabilidade de uma ordem e multiplique pelo número de posições em que o elemento pode sair, ou conte por combinações
+• Evento contido em outro: se, sempre que B ocorre, A também ocorre, então P(A e B) = P(B) e P(A ou B) = P(A). Multiplicar as probabilidades só é correto para eventos independentes
+• Dois dados: são 36 resultados ordenados e igualmente prováveis. Os 21 pares sem ordem não têm a mesma probabilidade: {1, 2} sai de duas formas; {1, 1}, de uma`,
     exemplos: [
       "Escolher, entre 7 servidores, quem dirige e quem acompanha numa viagem dá A(7, 2) = 7 × 6 = 42 maneiras; escolher só a dupla, sem funções, dá C(7, 2) = 21.",
       "Lançada uma moeda três vezes, a probabilidade de sair pelo menos uma cara é 1 − (1/2)³ = 7/8.",
@@ -332,7 +370,13 @@ Contagem com diagramas:
 • Preencha o diagrama de dentro para fora: primeiro a interseção de todos, depois as interseções de dois (descontando o centro), por último as partes exclusivas
 • "Apenas A" = n(A) − n(A ∩ B); "nenhum" = total − n(A ∪ B)
 
-Conjuntos numéricos: N ⊂ Z ⊂ Q ⊂ R. Racionais são os números que podem ser escritos como fração de inteiros com denominador diferente de zero, incluindo decimais finitos e dízimas periódicas. Irracionais, como √2 e π, têm infinitas casas decimais sem período. R = Q ∪ I, com Q ∩ I = ∅.`,
+Conjuntos numéricos: N ⊂ Z ⊂ Q ⊂ R. Racionais são os números que podem ser escritos como fração de inteiros com denominador diferente de zero, incluindo decimais finitos e dízimas periódicas. Irracionais, como √2 e π, têm infinitas casas decimais sem período. R = Q ∪ I, com Q ∩ I = ∅.
+
+Complemento (pontos que a banca cruza com o diagrama):
+• "Exatamente dois" não é a soma das interseções duas a duas. Em n(A) + n(B) + n(C), quem está em um só conjunto conta 1 vez, quem está em exatamente dois conta 2 vezes e quem está nos três conta 3 vezes
+• Conjunto com conjuntos como elementos: em M = {1, {1, 2}}, vale {1, 2} ∈ M, mas {1, 2} ⊄ M, porque 2 ∉ M; já {1} ⊂ M
+• O vazio pode ser elemento e subconjunto ao mesmo tempo: se ∅ aparece listado em M, vale ∅ ∈ M; e ∅ ⊂ M vale sempre
+• A diferença simétrica também se escreve (A − B) ∪ (B − A)`,
     exemplos: [
       "Com A = {1, 2, 3, 4} e B = {3, 4, 5}: A ∪ B = {1, 2, 3, 4, 5}, A ∩ B = {3, 4}, A − B = {1, 2} e B − A = {5}.",
       "Numa turma de 50 servidores, 30 fizeram o curso de primeiros socorros, 25 o de libras e 12 os dois: 43 fizeram pelo menos um curso e 7 não fizeram nenhum.",
@@ -365,7 +409,13 @@ Matriciais:
 • Identidade: 1 na diagonal principal e 0 fora dela. Transposta: troca linhas por colunas
 • Determinante de ordem 2: ad − bc. De ordem 3: regra de Sarrus
 • Propriedades: fila de zeros, duas filas iguais ou proporcionais, ou uma fila que é combinação linear de outras zeram o determinante; trocar duas filas troca o sinal; det(A × B) = det A × det B; det(kA) = kⁿ × det A, sendo n a ordem
-• A matriz quadrada é invertível se, e somente se, o determinante é diferente de zero`,
+• A matriz quadrada é invertível se, e somente se, o determinante é diferente de zero
+
+Complemento (calendário, percursos e porcentagens):
+• Calendário: os dias da semana se repetem a cada 7. Fixe um dia de referência e conte para a frente ou para trás; "véspera" é o dia anterior. Se a fala foi feita no passado ("há três dias, ele disse..."), conte a partir do dia da fala, e não de hoje
+• Percursos: some separadamente os trechos norte–sul (com sinais opostos) e leste–oeste; a distância em linha reta sai do teorema de Pitágoras com esses dois resultados
+• Para voltar ao valor inicial depois de uma alta, a queda necessária é menor que a alta: depois de +50%, basta −33,3% (1,5 × 2/3 = 1). Por isso as taxas não se somam: multiplicam-se os fatores
+• Frações sucessivas: tirar 1/4 deixa 3/4. Multiplique as frações que permanecem em cada etapa para achar a fração final do total`,
     exemplos: [
       "Duas viaturas saem juntas do posto às 6h; uma faz ronda a cada 45 minutos e a outra a cada 60. Voltam a sair juntas depois de mmc(45, 60) = 180 minutos, às 9h.",
       "A matriz de linhas (2, 1) e (4, 3) tem determinante 2 × 3 − 1 × 4 = 2; como é diferente de zero, a matriz é invertível.",
