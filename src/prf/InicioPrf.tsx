@@ -14,6 +14,7 @@ interface InicioPrfProps {
   onIniciar: (mode: QuizMode, materia?: MateriaPrfId) => void;
   onResetarMateria: (materia: MateriaPrfId) => void;
   onPersonalizado: (filtros: FiltrosPrf) => void;
+  onProva2014: () => void;
 }
 
 const pontos = (n: number) => n.toLocaleString("pt-BR");
@@ -26,6 +27,7 @@ export default function InicioPrf({
   onIniciar,
   onResetarMateria,
   onPersonalizado,
+  onProva2014,
 }: InicioPrfProps) {
   const statsPorMateria = new Map(stats.map((s) => [s.materia, s]));
   const ed = PRF_ULTIMO_EDITAL;
@@ -66,6 +68,13 @@ export default function InicioPrf({
           <p>
             {ed.totalQuestoes} questões na proporção daquela prova: 12 de Português e 6 de cada outra matéria, com a
             correção a cada questão.
+          </p>
+        </button>
+        <button className="modo-card modo-card-destaque" onClick={onProva2014}>
+          <h3>Prova de {ed.ano} na íntegra</h3>
+          <p>
+            As {ed.totalQuestoes} questões do último concurso da PRF ({ed.banca}, Prova P de 22/06/{ed.ano}), na ordem do
+            caderno, com o gabarito definitivo.
           </p>
         </button>
         <button className="modo-card" onClick={() => onIniciar("revisao")} disabled={wrongCount === 0}>

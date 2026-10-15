@@ -17,6 +17,29 @@ export interface GravacaoQuiz<M extends string> {
 
 const GRAVACAO_PCPR: GravacaoQuiz<SubjectId> = { registrar: recordAttempt, atualizarConfianca };
 
+/**
+ * Selo das questões de prova real no curso da PRF: o último concurso (FUNCAB, 2014) e as originais da FGV.
+ * Aparece antes da resposta e só diz de onde a questão veio.
+ */
+function seloProvaPrf(q: Pick<Question<string>, "origem" | "prova">) {
+  const p = q.origem === "prova" ? q.prova : undefined;
+  if (p?.banca === "FUNCAB") {
+    return {
+      classe: "questao-selo-prf2014",
+      titulo: "Último concurso da PRF",
+      detalhe: `Prova de 2014 (FUNCAB) · ${p.caderno}, questão ${p.numero}`,
+    };
+  }
+  if (p?.banca === "FGV") {
+    return {
+      classe: "questao-selo-fgv",
+      titulo: "Questão original da FGV",
+      detalhe: `${p.prova} · ${p.caderno}, questão ${p.numero}`,
+    };
+  }
+  return null;
+}
+
 interface QuizProps<M extends string> {
   questions: Question<M>[];
   modo: QuizMode;
@@ -96,6 +119,8 @@ export default function Quiz<M extends string = SubjectId>({
       </div>
     );
   }
+
+  const selo = curso === "prf-adm" ? seloProvaPrf(questao) : null;
 
   function escolher(idx: number) {
     if (selecionada !== null) return;
@@ -211,9 +236,15 @@ export default function Quiz<M extends string = SubjectId>({
       </div>
 
       <div className="questao-card">
+        {selo && (
+          <div className={`questao-selo ${selo.classe}`}>
+            <strong>{selo.titulo}</strong>
+            <span>{selo.detalhe}</span>
+          </div>
+        )}
         <div className="questao-tags">
           <span className="questao-tag">{questao.topico}</span>
-          {questao.fonte && <span className="questao-tag questao-tag-fonte">{questao.fonte}</span>}
+          {questao.fonte && !selo && <span className="questao-tag questao-tag-fonte">{questao.fonte}</span>}
           {questao.origem === "inedita" && (
             <span
               className="questao-tag questao-tag-fonte"
@@ -310,7 +341,9 @@ export default function Quiz<M extends string = SubjectId>({
             )}
             {questao.prova && (
               <p className="explicacao-prova">
-                {questao.fonte}. Nos outros cadernos: {questao.prova.equivalentes.join("; ")}.
+                {questao.fonte}.
+                {questao.prova.equivalentes.length > 0 &&
+                  ` Nos outros cadernos: ${questao.prova.equivalentes.join("; ")}.`}
                 {questao.prova.pendencia && ` ${questao.prova.pendencia}`}
               </p>
             )}

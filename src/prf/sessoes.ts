@@ -1,7 +1,7 @@
 import { embaralharAlternativas, shuffle } from "../lib/quizEngine";
-import type { Dificuldade } from "../lib/types";
 import { PRF_MATERIAS, type MateriaPrfId, type QuestaoPrf } from "../data/prf";
 import { BANCO_PRF, QUESTOES_PRF_POR_MATERIA } from "./questoes";
+import { QUESTOES_PRF_PROVA_2014 } from "./questoes/provaPrf2014";
 import { getErradasPrf, type TentativaPrf } from "./armazenamento";
 
 export function sessaoMateriaPrf(materia: MateriaPrfId, quantidade = 10): QuestaoPrf[] {
@@ -18,6 +18,11 @@ export function sessaoProvaPrf(): QuestaoPrf[] {
   return shuffle(questoes).map(embaralharAlternativas);
 }
 
+/** A prova de 2014 inteira, como foi aplicada: as 60 questões na ordem do caderno, alternativas na ordem original. */
+export function sessaoProva2014Prf(): QuestaoPrf[] {
+  return [...QUESTOES_PRF_PROVA_2014];
+}
+
 export function sessaoRevisaoPrf(): QuestaoPrf[] {
   const mapa = new Map(BANCO_PRF.map((q) => [q.id, q]));
   return getErradasPrf()
@@ -30,29 +35,35 @@ export function sessaoFocoPrf(materia: MateriaPrfId): QuestaoPrf[] {
   return sessaoMateriaPrf(materia, 12);
 }
 
-/** Origem como o filtro mostra: as próprias antigas não têm o campo e contam como "banco". */
-export type OrigemFiltroPrf = "banco" | "prova" | "inedita";
+/**
+ * Origem como o filtro mostra: as próprias antigas não têm o campo e contam como "banco";
+ * "prova" são as originais FGV da PCPR 2026 e "prf2014", as da prova PRF 2014 (FUNCAB).
+ */
+export type OrigemFiltroPrf = "banco" | "prova" | "prf2014" | "inedita";
+
+export function origemFiltroPrf(q: QuestaoPrf): OrigemFiltroPrf {
+  if (q.origem === "prova" && q.prova?.banca === "FUNCAB") return "prf2014";
+  return q.origem === "prova" || q.origem === "inedita" ? q.origem : "banco";
+}
 
 /** Situação pela última resposta dada à questão; "revisao" = está na fila dos errados. */
 export type SituacaoFiltroPrf = "nunca" | "errada" | "acertada" | "revisao";
 
-/** "todos" = sem filtro; null no nível = questão ainda sem nível. */
+/** "todos"/"todas" = sem filtro; materias vazio = todas as matérias. */
 export interface FiltrosPrf {
-  materia: MateriaPrfId | "todas";
+  materias: MateriaPrfId[];
   topico: string | "todos";
-  subassunto: string | "todos";
   origem: OrigemFiltroPrf | "todas";
-  dificuldade: Dificuldade | "sem" | "todos";
   situacao: SituacaoFiltroPrf | "todas";
   quantidade: number | "todas";
+  /** Só o atalho dos erros recorrentes usa; o painel não tem esse filtro. */
+  subassunto?: string;
 }
 
 export const FILTROS_PRF_PADRAO: FiltrosPrf = {
-  materia: "todas",
+  materias: [],
   topico: "todos",
-  subassunto: "todos",
   origem: "todas",
-  dificuldade: "todos",
   situacao: "todas",
   quantidade: 10,
 };
@@ -68,12 +79,10 @@ export function filtrarBancoPrf(f: FiltrosPrf, tentativas: TentativaPrf[], revis
   const ultima = ultimaRespostaPrf(tentativas);
   const naRevisao = new Set(revisao);
   return BANCO_PRF.filter((q) => {
-    if (f.materia !== "todas" && q.materia !== f.materia) return false;
+    if (f.materias.length > 0 && !f.materias.includes(q.materia)) return false;
     if (f.topico !== "todos" && q.topico !== f.topico) return false;
-    if (f.subassunto !== "todos" && q.subassunto !== f.subassunto) return false;
-    if (f.origem !== "todas" && (q.origem ?? "banco") !== f.origem) return false;
-    if (f.dificuldade === "sem" && q.dificuldade !== undefined) return false;
-    if (typeof f.dificuldade === "number" && q.dificuldade !== f.dificuldade) return false;
+    if (f.subassunto && q.subassunto !== f.subassunto) return false;
+    if (f.origem !== "todas" && origemFiltroPrf(q) !== f.origem) return false;
     const u = ultima.get(q.id);
     if (f.situacao === "nunca" && u !== undefined) return false;
     if (f.situacao === "errada" && u !== false) return false;

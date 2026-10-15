@@ -12,6 +12,7 @@ import {
   sessaoFocoPrf,
   sessaoMateriaPrf,
   sessaoPersonalizadaPrf,
+  sessaoProva2014Prf,
   sessaoProvaPrf,
   sessaoRevisaoPrf,
   type FiltrosPrf,
@@ -57,6 +58,10 @@ export default function AppPrf({ onTrocarCurso }: AppPrfProps) {
     else if (mode === "revisao") questions = sessaoRevisaoPrf();
     else if (mode === "treino-alvo" && materia) questions = sessaoFocoPrf(materia);
     abrirSessao(mode, questions);
+  }
+
+  function iniciarProva2014() {
+    abrirSessao("prova", sessaoProva2014Prf());
   }
 
   function iniciarPersonalizado(filtros: FiltrosPrf) {
@@ -115,6 +120,7 @@ export default function AppPrf({ onTrocarCurso }: AppPrfProps) {
           materiaFoco={materiaFoco}
           onIniciar={iniciarQuiz}
           onPersonalizado={iniciarPersonalizado}
+          onProva2014={iniciarProva2014}
           onResetarMateria={resetarMateria}
         />
       )}

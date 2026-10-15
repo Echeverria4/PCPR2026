@@ -9,6 +9,7 @@ import { QUESTOES_PRF_LEG } from "./legislacao";
 import { QUESTOES_PRF_ETICA } from "./etica";
 import { QUESTOES_PRF_RLM } from "./raciocinio";
 import { QUESTOES_PRF_PROVA_PCPR26 } from "./provaPcpr2026";
+import { QUESTOES_PRF_PROVA_2014 } from "./provaPrf2014";
 import { QUESTOES_PRF_INEDITAS } from "./ineditas";
 
 /** Questões próprias, escritas a partir do conteúdo programático e da lei em vigor (origem "banco"). */
@@ -25,10 +26,11 @@ const PROPRIAS: Record<MateriaPrfId, QuestaoPrf[]> = {
 };
 
 /**
- * Banco da PRF por matéria, com três origens:
+ * Banco da PRF por matéria, com quatro origens:
  * - próprias (origem "banco");
  * - Banco 1: originais da prova PCPR 2026 (FGV) que cobram conteúdo do programa da PRF (origem "prova");
- * - Banco 2: inéditas autorais de nível 4 e 5, no padrão de cobrança daquela prova; não são da FGV (origem "inedita").
+ * - Banco 2: inéditas autorais de nível 4 e 5, no padrão de cobrança daquela prova; não são da FGV (origem "inedita");
+ * - prova PRF 2014 (FUNCAB), o último concurso para Agente Administrativo, como foi aplicada (origem "prova").
  */
 export const QUESTOES_PRF_POR_MATERIA = Object.fromEntries(
   (Object.keys(PROPRIAS) as MateriaPrfId[]).map((m) => [
@@ -37,6 +39,7 @@ export const QUESTOES_PRF_POR_MATERIA = Object.fromEntries(
       ...PROPRIAS[m],
       ...QUESTOES_PRF_PROVA_PCPR26.filter((q) => q.materia === m),
       ...QUESTOES_PRF_INEDITAS.filter((q) => q.materia === m),
+      ...QUESTOES_PRF_PROVA_2014.filter((q) => q.materia === m),
     ],
   ]),
 ) as Record<MateriaPrfId, QuestaoPrf[]>;

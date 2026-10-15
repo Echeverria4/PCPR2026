@@ -1393,6 +1393,48 @@ button {
   margin-bottom: 0;
 }
 
+/* Selo das questões de prova real no curso da PRF (último concurso e originais da FGV) */
+.questao-selo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 10px;
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  border: 1px solid var(--borda-forte);
+  border-left-width: 4px;
+  border-radius: var(--raio-peq);
+  font-size: 0.82rem;
+  color: var(--texto);
+}
+
+.questao-selo strong {
+  font-family: var(--fonte-cond);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.questao-selo-prf2014 {
+  border-color: rgba(202, 160, 58, 0.5);
+  border-left-color: var(--ouro);
+  background: rgba(202, 160, 58, 0.12);
+}
+
+.questao-selo-prf2014 strong {
+  color: var(--ouro-forte);
+}
+
+.questao-selo-fgv {
+  border-color: rgba(79, 143, 199, 0.5);
+  border-left-color: var(--aco);
+  background: rgba(79, 143, 199, 0.12);
+}
+
+.questao-selo-fgv strong {
+  color: var(--azul);
+}
+
 .questao-tag-fonte {
   color: var(--texto);
   background: transparent;
@@ -5282,7 +5324,8 @@ button {
   min-width: 0;
 }
 
-.filtro label {
+.filtro label,
+.filtro-rotulo {
   font-size: 0.75rem;
   color: var(--texto-fraco);
   text-transform: uppercase;
@@ -5307,6 +5350,51 @@ button {
 
 .filtro select:disabled {
   opacity: 0.5;
+}
+
+.filtro-materias {
+  margin-bottom: 14px;
+}
+
+.materias-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.materia-chip {
+  border: 1px solid var(--borda-forte);
+  background: transparent;
+  color: var(--texto);
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: var(--fonte-cond);
+  font-weight: 700;
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.materia-chip:hover {
+  border-color: var(--ouro);
+}
+
+.materia-chip:focus-visible {
+  outline: 2px solid var(--ouro-forte);
+  outline-offset: 2px;
+}
+
+.materia-chip-ativa {
+  border-color: var(--ouro);
+  background: rgba(202, 160, 58, 0.16);
+  color: var(--ouro-forte);
+}
+
+.filtro-dica {
+  font-size: 0.75rem;
+  color: var(--texto-fraco);
 }
 
 .personalizado-rodape {
