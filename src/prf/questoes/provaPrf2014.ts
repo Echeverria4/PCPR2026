@@ -1854,7 +1854,7 @@ export const QUESTOES_PRF_PROVA_2014: QuestaoPrf[] = [
     topico: "Internet e intranet: conceitos e protocolos",
     subassunto: "Estrutura da URL: protocolo, domínio, diretório e arquivo",
     dificuldade: 2,
-    raciocinio: "Decomposição de URL",
+    raciocinio: "Decomposição da URL em suas partes",
     enunciado: "Em uma pesquisa sobre leilão no site da Polícia Rodoviária Federal, foi acessada a seguinte URL: https://prf.gov.br/PortalInternet/indexLeilao.faces. Nessa URL, “PortalInternet” e “indexLeilao.faces” são, respectivamente:",
     alternativas: [
       "nome do portal e nome do diretório.",

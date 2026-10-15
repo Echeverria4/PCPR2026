@@ -29,7 +29,16 @@ Seções e páginas:
 Formatos:
 • Word: .docx (padrão desde o Office 2007), .docm (com macros) e .dotx (modelo); o antigo .doc ainda abre
 • Writer: .odt (padrão ODF) e .ott (modelo); abre e salva .docx
-• Os dois exportam para PDF`,
+• Os dois exportam para PDF
+
+Complemento (revisão, cabeçalhos por seção e outros recursos):
+• Marca-d'água: texto ou imagem esmaecido atrás do conteúdo, repetido em todas as páginas. No Word, guia Design, grupo Plano de Fundo da Página; no Writer, Formatar > Marca-d'água
+• Controlar Alterações: Ctrl+Shift+E no Word (guia Revisão) e Ctrl+Shift+C no Writer (Editar > Controlar alterações > Gravar). Cada inserção, exclusão e mudança de formatação fica marcada com autor e data até ser aceita ou rejeitada
+• Vincular ao Anterior: a seção nova nasce com cabeçalho e rodapé ligados aos da anterior. Desfazer o vínculo numa seção a separa da anterior, e a seção seguinte, se continuar vinculada, repete o cabeçalho novo
+• Substituir com a opção de palavras inteiras (Somente palavras inteiras, no Writer) troca “ato” sem mexer em “contrato” nem em “fato”
+• .dotm: modelo do Word com macros, ao lado de .docx, .docm e .dotx
+• Coautoria: um arquivo salvo no OneDrive ou no SharePoint pode ser editado por várias pessoas ao mesmo tempo, e o Histórico de Versões permite abrir e restaurar versões anteriores
+• PDF/A, versão do PDF própria para arquivamento de longo prazo, não sai por padrão: é preciso marcá-la nas opções da exportação, nos dois programas`,
     exemplos: [
       "Ctrl+B com uma palavra selecionada: no Word, salva o arquivo; no Writer, aplica negrito.",
       "Ctrl+Enter no meio de um relatório leva o texto seguinte para o começo da próxima página, tanto no Word quanto no Writer.",
@@ -61,7 +70,17 @@ Erros mais vistos no Excel:
 • #DIV/0! divisão por zero; #NOME? função ou nome escrito errado
 • #REF! referência apagada; #VALOR! tipo de dado errado
 • #N/D valor não encontrado, comum no PROCV
-• ##### coluna estreita demais para mostrar o número`,
+• ##### coluna estreita demais para mostrar o número
+
+Complemento (copiar, preencher, somar com critérios e procurar):
+• Copiar e colar uma fórmula ajusta as referências relativas ao novo lugar; recortar e colar a move sem alterar nenhuma referência
+• A alça de preenchimento, o quadradinho no canto da seleção, copia a fórmula para as células vizinhas com o mesmo ajuste
+• Arrastada a partir de uma célula com um número só, a alça repete o valor no Excel (com Ctrl, cria a sequência) e cria a sequência de 1 em 1 no Calc (com Ctrl, repete)
+• SOMASE(intervalo;critério;intervalo_soma) põe o intervalo a somar no fim; SOMASES(intervalo_soma;intervalo1;critério1;intervalo2;critério2) o põe no começo e aceita vários critérios ao mesmo tempo
+• Com negativos, INT e TRUNCAR divergem: =INT(-2,4) dá -3, e =TRUNCAR(-2,4) dá -2
+• Nome de aba com espaço vai entre apóstrofos: ='Frota Leve'!C4 no Excel e ='Frota Leve'.C4 no Calc
+• PROCV só procura na primeira coluna da tabela e devolve colunas à direita dela; para trazer um dado de uma coluna à esquerda, usa-se PROCX, nas versões recentes, ou ÍNDICE com CORRESP
+• PROCV com VERDADEIRO, ou sem o quarto argumento, faz correspondência aproximada e supõe a primeira coluna em ordem crescente`,
     exemplos: [
       "Com 18 em A1 e 0 em A2, =A1/A2 mostra #DIV/0!; =SE(A2=0;0;A1/A2) evita o erro.",
       "=MAIOR(C2:C40;2) devolve a segunda maior velocidade registrada no intervalo.",
@@ -91,7 +110,13 @@ Mestres:
 
 Formatos:
 • PowerPoint: .pptx (padrão), .ppsx (abre direto na apresentação) e .potx (modelo)
-• Impress: .odp e .otp (modelo)`,
+• Impress: .odp e .otp (modelo)
+
+Complemento (comandos na exibição e organização dos slides):
+• Durante a exibição, B deixa a tela preta e W, branca; a mesma tecla devolve o slide. Digitar o número de um slide e pressionar Enter salta direto para ele. Vale nos dois programas
+• A formatação aplicada direto num slide prevalece sobre a do mestre; Redefinir (Página Inicial > Slides) devolve os espaços reservados à posição, ao tamanho e à formatação do layout
+• Apresentação personalizada: reúne parte dos slides do arquivo, na ordem desejada, para uma plateia específica, sem criar outro arquivo
+• Ocultar slide: o slide continua no arquivo e aparece no modo Normal, mas a exibição o pula`,
     exemplos: [
       "Transição: o slide com o mapa da rodovia entra deslizando. Animação: dentro dele, as setas do desvio aparecem uma a uma.",
       "Salva como .ppsx, a apresentação de boas-vindas abre direto em tela cheia no telão do auditório.",
@@ -118,7 +143,14 @@ Abrangência:
 Computação em nuvem:
 • SaaS: software pronto, usado pela internet (Microsoft 365, Gmail)
 • PaaS: plataforma para desenvolver e hospedar aplicações
-• IaaS: infraestrutura sob demanda (máquinas virtuais, armazenamento, rede)`,
+• IaaS: infraestrutura sob demanda (máquinas virtuais, armazenamento, rede)
+
+Complemento (modelos de nuvem, portas e endereços):
+• Modelos de implantação (NIST): pública, aberta a qualquer cliente do provedor; privada, de uso exclusivo de uma organização, dentro ou fora das instalações dela; comunitária, de uso exclusivo de um grupo de organizações com interesses comuns; híbrida, composta de duas ou mais delas, integradas de modo que dados e aplicações possam passar de uma para outra
+• Portas padrão: FTP 20 e 21, SSH 22, Telnet 23, DNS 53, DHCP 67 e 68, HTTP 80 e HTTPS 443
+• SSH e Telnet dão acesso remoto a um terminal; o SSH cifra a sessão inteira, e o Telnet trafega tudo sem criptografia, inclusive a senha
+• Endereços privados (RFC 1918): 10.0.0.0 a 10.255.255.255, 172.16.0.0 a 172.31.255.255 e 192.168.0.0 a 192.168.255.255. Não são roteados na internet; o roteador faz NAT, e as máquinas da rede saem com o endereço público dele
+• Gateway padrão: endereço do roteador que leva os pacotes para fora da rede local. Ele cuida da rota, e o DNS só da tradução de nomes; por isso, uma falha de DNS não impede o acesso direto pelo IP`,
     exemplos: [
       "Em viagem, um servidor conecta a VPN no notebook e passa a acessar os sistemas da intranet como se estivesse na rede interna.",
       "O endereço IPv4 192.168.10.25 tem quatro números de 0 a 255 separados por pontos, 32 bits no total.",
@@ -146,7 +178,13 @@ Navegação privada:
 Outros conceitos:
 • Cookies: pequenos arquivos que o site grava no navegador para lembrar login, preferências e carrinho
 • Cache: cópias de páginas e imagens guardadas para carregar mais rápido
-• Cadeado e HTTPS indicam conexão criptografada com o site, não que o site seja confiável`,
+• Cadeado e HTTPS indicam conexão criptografada com o site, não que o site seja confiável
+
+Complemento (recarga, limpeza de dados e leitura do endereço):
+• Ctrl+F5 (ou Ctrl+Shift+R) recarrega a página ignorando o cache; o F5 comum pode reaproveitar cópias guardadas
+• Na limpeza de dados (Ctrl+Shift+Del), cada item é marcado à parte: histórico, downloads, cookies, cache, senhas e dados de formulário. Apagar o histórico de downloads tira só a lista; o arquivo continua na pasta. Os favoritos não entram nessa limpeza
+• O domínio se lê da direita para a esquerda, a partir da extensão: em consulta.exemplo.com.br, o domínio registrado é exemplo.com.br, e consulta é um subdomínio criado por quem o controla
+• No HTTPS, a criptografia assimétrica, apoiada no certificado do site, entra só no começo da conexão, para autenticar o servidor e combinar uma chave de sessão; o tráfego segue cifrado com essa chave, de forma simétrica, que é bem mais rápida`,
     exemplos: [
       "Ctrl+Shift+Del no Edge abre a janela para limpar histórico, cookies e cache de um período escolhido.",
       "Um site de notícias que lembra a cidade escolhida na visita anterior faz isso com cookies gravados no navegador.",
@@ -174,7 +212,13 @@ Responder e encaminhar:
 Protocolos:
 • SMTP: envio, do programa ao servidor e entre servidores
 • POP3: recebimento; por padrão, baixa as mensagens para um aparelho e as apaga do servidor
-• IMAP: recebimento com sincronização; as mensagens ficam no servidor e aparecem iguais em todos os aparelhos`,
+• IMAP: recebimento com sincronização; as mensagens ficam no servidor e aparecem iguais em todos os aparelhos
+
+Complemento (cópia oculta, POP3 e portas):
+• Quem recebeu em Cco e usa Responder a todos se expõe: a resposta vai ao remetente e a todos de Para e Cc, que passam a ver esse endereço
+• O POP3 pode ser configurado para deixar uma cópia no servidor, mas não sincroniza pastas nem marcações de lida entre aparelhos
+• Portas: SMTP 25 entre servidores e 587 (com STARTTLS) ou 465 (com TLS) no envio pelo programa do usuário; POP3 110, ou 995 com TLS; IMAP 143, ou 993 com TLS
+• No webmail, o navegador acessa a caixa por HTTP ou HTTPS, sem configurar POP3 nem IMAP`,
     exemplos: [
       "Para avisar 80 condutores sobre uma audiência sem expor o e-mail de um para o outro, coloque todos em Cco.",
       "Um e-mail sem assunto chega normalmente; muitos programas só perguntam se você quer mesmo enviá-lo assim.",
@@ -202,7 +246,14 @@ Como combinar:
 Cuidados:
 • Aspas podem esconder resultados úteis, porque exigem a frase exatamente como foi digitada
 • O sinal de mais deixou de funcionar como operador no Google em 2011
-• As ferramentas da página de resultados filtram por período, imagens, notícias e vídeos`,
+• As ferramentas da página de resultados filtram por período, imagens, notícias e vídeos
+
+Complemento (mais operadores e o que não funciona):
+• -site: tira dos resultados um site ou domínio inteiro (concurso -site:exemplo.com.br)
+• intitle: exige o termo no título da página; inurl:, no endereço
+• Dentro de aspas, o asterisco serve de curinga para uma palavra qualquer: "multa * trânsito"
+• Dentro de aspas, o OR perde a função: "multa OR infração" busca a frase com a palavra or no meio
+• O Google não tem operador NOT; para excluir, vale o sinal de menos colado ao termo`,
     exemplos: [
       "\"lei seca\" site:gov.br filetype:pdf traz só PDFs de sites do governo com a expressão exata.",
       "pneu recapado -caminhão descarta as páginas que falam de caminhão.",
@@ -281,7 +332,22 @@ Defesas:
 • Firewall: filtra o tráfego que entra e sai conforme regras; não substitui o antivírus
 • Criptografia simétrica usa a mesma chave para cifrar e decifrar; a assimétrica usa um par de chaves, uma pública e uma privada
 • Assinatura digital: feita com a chave privada do autor, garante autenticidade, integridade e não repúdio, mas não sigilo
-• Backup: cópias periódicas, guardadas fora do equipamento, permitem recuperar os dados depois de um ransomware`,
+• Backup: cópias periódicas, guardadas fora do equipamento, permitem recuperar os dados depois de um ransomware
+
+Complemento (hash, certificados, cópias e controle de acesso):
+• Hash: resumo de tamanho fixo calculado sobre um arquivo ou mensagem; não permite reconstruir o original, e a menor mudança gera outro resumo. Comparar o hash divulgado com o do arquivo recebido confere a integridade, mas não identifica o autor nem esconde o conteúdo
+• ICP-Brasil (MP 2.200-2/2001): a AC Raiz, função exercida pelo ITI, emite os certificados das AC do nível seguinte e não pode emitir para o usuário final; a AC emite, renova e revoga certificados; a AR identifica e cadastra o titular e encaminha o pedido à AC
+• Certificado A1: arquivo instalado no computador, protegido por senha, com validade de até 1 ano. A3: chave gerada e guardada em token ou cartão, de onde não pode ser exportada, com validade de até 5 anos
+• Backup completo copia tudo; o incremental, o que mudou desde o último backup de qualquer tipo; o diferencial, o que mudou desde o último completo. Para restaurar, o incremental exige o completo e todos os incrementais seguintes; o diferencial, o completo e o último diferencial
+• Regra 3-2-1: três cópias dos dados, em dois tipos de mídia, uma delas fora do local
+• Compactar reduz o tamanho, mas não protege o conteúdo, a menos que se aplique senha com criptografia; criptografar protege, mas não reduz. Arquivos já comprimidos, como JPG e MP3, quase não diminuem
+• Vulnerabilidade é a fraqueza; ameaça, o que pode explorá-la; risco, a probabilidade de isso acontecer combinada com o impacto
+• Controle de acesso (IAAA): identificação (quem o usuário diz ser), autenticação (a prova disso), autorização (o que ele pode fazer) e auditoria (o registro do que fez)
+• Autenticação multifator: fatores de categorias diferentes, entre algo que se sabe (senha, PIN), algo que se tem (token, cartão) e algo que se é (biometria). Dois itens da mesma categoria contam como um fator só
+• Segregação de funções: quem executa uma etapa sensível não a aprova. Menor privilégio: só o acesso que a tarefa exige. Revisão periódica: retira os acessos que sobraram depois de mudanças de setor
+• Rootkit: esconde a presença do invasor (arquivos, processos, conexões). Backdoor: deixa uma entrada para ele voltar sem passar pela autenticação normal
+• Dupla extorsão: o ransomware copia os dados antes de cifrá-los e ameaça publicá-los; o backup devolve a disponibilidade, mas não desfaz o vazamento
+• Responsabilidade compartilhada na nuvem: o provedor responde pela infraestrutura; o cliente, pelos próprios dados, contas, permissões e configurações. Quanto mais perto do IaaS, mais coisas ficam com o cliente`,
     exemplos: [
       "Um e-mail com o brasão do órgão pedindo a senha do sistema por meio de um link é phishing: instituições sérias não pedem senha por mensagem.",
       "O vazamento de fichas de servidores fere a confidencialidade; um auto alterado sem registro fere a integridade.",
