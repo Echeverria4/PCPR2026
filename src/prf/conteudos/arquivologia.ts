@@ -19,6 +19,7 @@ Arquivo × biblioteca:
 • Arquivo: exemplares únicos ou em poucas vias, acumulação natural, conjuntos unidos pela origem (fundos), finalidade inicialmente administrativa e classificação própria de cada instituição
 • Biblioteca: exemplares múltiplos, entrada por compra, permuta ou doação, coleções reunidas por assunto, finalidade cultural e científica e classificação por sistemas padronizados
 • Fundo aberto: de instituição em funcionamento, ainda recebe documentos; fundo fechado: de instituição extinta, não recebe acréscimos
+• Instituição pública extinta: os documentos são recolhidos à instituição arquivística pública ou transferidos à sucessora (Lei 8.159, art. 7º, § 2º); mesmo com a sucessora, o fundo continua sendo do produtor extinto e não se mistura ao dela
 
 Princípios:
 • Proveniência (respeito aos fundos): documentos de um produtor não se misturam aos de outro; é o primeiro a ser aplicado e o que forma o fundo
