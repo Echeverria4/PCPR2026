@@ -1435,6 +1435,16 @@ button {
   color: var(--azul);
 }
 
+.questao-selo-pf2025 {
+  border-color: rgba(53, 212, 136, 0.45);
+  border-left-color: var(--verde);
+  background: rgba(53, 212, 136, 0.1);
+}
+
+.questao-selo-pf2025 strong {
+  color: var(--verde);
+}
+
 .questao-tag-fonte {
   color: var(--texto);
   background: transparent;

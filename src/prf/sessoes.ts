@@ -2,6 +2,7 @@ import { embaralharAlternativas, shuffle } from "../lib/quizEngine";
 import { PRF_MATERIAS, type MateriaPrfId, type QuestaoPrf } from "../data/prf";
 import { BANCO_PRF, QUESTOES_PRF_POR_MATERIA } from "./questoes";
 import { QUESTOES_PRF_PROVA_2014 } from "./questoes/provaPrf2014";
+import { PROVA_PF2025_COMPLETA } from "./questoes/provaPf2025";
 import { getErradasPrf, type TentativaPrf } from "./armazenamento";
 
 export function sessaoMateriaPrf(materia: MateriaPrfId, quantidade = 10): QuestaoPrf[] {
@@ -23,6 +24,11 @@ export function sessaoProva2014Prf(): QuestaoPrf[] {
   return [...QUESTOES_PRF_PROVA_2014];
 }
 
+/** A prova da PF 2025 inteira, como foi aplicada: os 118 itens válidos na ordem do caderno (os anulados ficam fora). */
+export function sessaoProvaPf2025Prf(): QuestaoPrf[] {
+  return [...PROVA_PF2025_COMPLETA];
+}
+
 export function sessaoRevisaoPrf(): QuestaoPrf[] {
   const mapa = new Map(BANCO_PRF.map((q) => [q.id, q]));
   return getErradasPrf()
@@ -37,12 +43,14 @@ export function sessaoFocoPrf(materia: MateriaPrfId): QuestaoPrf[] {
 
 /**
  * Origem como o filtro mostra: as próprias antigas não têm o campo e contam como "banco";
- * "prova" são as originais FGV da PCPR 2026 e "prf2014", as da prova PRF 2014 (FUNCAB).
+ * "prova" são as originais FGV da PCPR 2026, "prf2014", as da prova PRF 2014 (FUNCAB), e "pf2025", os itens
+ * da prova PF 2025 (Cebraspe).
  */
-export type OrigemFiltroPrf = "banco" | "prova" | "prf2014" | "inedita";
+export type OrigemFiltroPrf = "banco" | "prova" | "prf2014" | "pf2025" | "inedita";
 
 export function origemFiltroPrf(q: QuestaoPrf): OrigemFiltroPrf {
   if (q.origem === "prova" && q.prova?.banca === "FUNCAB") return "prf2014";
+  if (q.origem === "prova" && q.prova?.banca === "Cebraspe") return "pf2025";
   return q.origem === "prova" || q.origem === "inedita" ? q.origem : "banco";
 }
 

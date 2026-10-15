@@ -13,7 +13,7 @@ export function shuffle<T>(arr: T[]): T[] {
 }
 
 /**
- * Embaralha a ordem das 5 alternativas de uma questão (e remapeia o índice
+ * Embaralha a ordem das alternativas de uma questão (e remapeia o índice
  * da correta) sem tocar no banco original. Sem isso, o gabarito do banco
  * fica concentrado nas mesmas letras (ex.: maioria em B), criando um padrão
  * explorável em vez de exigir conhecimento real do conteúdo.
@@ -21,7 +21,7 @@ export function shuffle<T>(arr: T[]): T[] {
 export function embaralharAlternativas<M extends string>(q: Question<M>): Question<M> {
   // Questão de prova real: fica como no caderno, porque a explicação cita as letras originais.
   if (q.ordemFixa) return q;
-  const indices = shuffle([0, 1, 2, 3, 4]);
+  const indices = shuffle(q.alternativas.map((_, i) => i));
   const alternativas = indices.map((i) => q.alternativas[i]) as Question["alternativas"];
   const correta = indices.indexOf(q.correta) as Question["correta"];
   return { ...q, alternativas, correta };

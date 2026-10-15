@@ -13,6 +13,7 @@ import {
   sessaoMateriaPrf,
   sessaoPersonalizadaPrf,
   sessaoProva2014Prf,
+  sessaoProvaPf2025Prf,
   sessaoProvaPrf,
   sessaoRevisaoPrf,
   type FiltrosPrf,
@@ -62,6 +63,10 @@ export default function AppPrf({ onTrocarCurso }: AppPrfProps) {
 
   function iniciarProva2014() {
     abrirSessao("prova", sessaoProva2014Prf());
+  }
+
+  function iniciarProvaPf2025() {
+    abrirSessao("prova", sessaoProvaPf2025Prf());
   }
 
   function iniciarPersonalizado(filtros: FiltrosPrf) {
@@ -121,6 +126,7 @@ export default function AppPrf({ onTrocarCurso }: AppPrfProps) {
           onIniciar={iniciarQuiz}
           onPersonalizado={iniciarPersonalizado}
           onProva2014={iniciarProva2014}
+          onProvaPf2025={iniciarProvaPf2025}
           onResetarMateria={resetarMateria}
         />
       )}

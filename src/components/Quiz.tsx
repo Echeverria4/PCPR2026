@@ -8,6 +8,8 @@ import { ROTULO_MODO, ROTULO_NIVEL } from "../lib/quizEngine";
 import Alternativa from "./Alternativa";
 
 const LETRAS = ["A", "B", "C", "D", "E"];
+/** Itens de julgamento (Cebraspe): duas opções, Certo e Errado. */
+const LETRAS_CE = ["C", "E"];
 
 /** Onde o quiz grava as respostas: cada curso tem o seu armazenamento. */
 export interface GravacaoQuiz<M extends string> {
@@ -18,11 +20,18 @@ export interface GravacaoQuiz<M extends string> {
 const GRAVACAO_PCPR: GravacaoQuiz<SubjectId> = { registrar: recordAttempt, atualizarConfianca };
 
 /**
- * Selo das questões de prova real no curso da PRF: o último concurso (FUNCAB, 2014) e as originais da FGV.
- * Aparece antes da resposta e só diz de onde a questão veio.
+ * Selo das questões de prova real no curso da PRF: o último concurso (FUNCAB, 2014), a prova da PF 2025
+ * (Cebraspe) e as originais da FGV. Aparece antes da resposta e só diz de onde a questão veio.
  */
 function seloProvaPrf(q: Pick<Question<string>, "origem" | "prova">) {
   const p = q.origem === "prova" ? q.prova : undefined;
+  if (p?.banca === "Cebraspe") {
+    return {
+      classe: "questao-selo-pf2025",
+      titulo: "Concurso PF 2025 (Cebraspe)",
+      detalhe: `Agente Administrativo · item ${p.numero}${p.compatibilidade === "C" ? " · fora do programa da PRF" : ""}`,
+    };
+  }
   if (p?.banca === "FUNCAB") {
     return {
       classe: "questao-selo-prf2014",
@@ -121,6 +130,8 @@ export default function Quiz<M extends string = SubjectId>({
   }
 
   const selo = curso === "prf-adm" ? seloProvaPrf(questao) : null;
+  const certoErrado = questao.alternativas.length === 2;
+  const letras = certoErrado ? LETRAS_CE : LETRAS;
 
   function escolher(idx: number) {
     if (selecionada !== null) return;
@@ -271,7 +282,7 @@ export default function Quiz<M extends string = SubjectId>({
             return (
               <Alternativa
                 key={idx}
-                letra={LETRAS[idx]}
+                letra={letras[idx]}
                 texto={alt}
                 classe={classe}
                 disabled={selecionada !== null}
@@ -303,7 +314,7 @@ export default function Quiz<M extends string = SubjectId>({
             <strong>{selecionada === questao.correta ? "Correto. " : "Incorreto. "}</strong>
             {(questao.prova || questao.dificuldade) && (
               <strong>
-                Gabarito: {LETRAS[questao.correta]}
+                Gabarito: {certoErrado ? questao.alternativas[questao.correta] : LETRAS[questao.correta]}
                 {questao.prova &&
                   ` (oficial ${questao.prova.gabaritoStatus} da ${questao.prova.banca}: ${questao.prova.gabaritoOficial}). `}
                 {!questao.prova && ". "}
@@ -347,7 +358,7 @@ export default function Quiz<M extends string = SubjectId>({
                 {questao.prova.pendencia && ` ${questao.prova.pendencia}`}
               </p>
             )}
-            {selecionada !== questao.correta && curso === "prf-adm" && (
+            {selecionada !== questao.correta && curso === "prf-adm" && questao.prova?.compatibilidade !== "C" && (
               <p className="explicacao-revisao">
                 Registrado para revisão: {questao.topico}
                 {questao.subassunto && ` › ${questao.subassunto}`}. A questão entrou na fila de revisão dos errados.

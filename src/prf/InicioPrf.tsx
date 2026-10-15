@@ -2,6 +2,7 @@ import type { CSSProperties } from "react";
 import { PRF_MATERIAS, PRF_MATERIA_MAP, PRF_SITUACAO, PRF_ULTIMO_EDITAL, type MateriaPrfId } from "../data/prf";
 import type { QuizMode, SubjectStats } from "../lib/types";
 import { BANCO_PRF, QUESTOES_PRF_POR_MATERIA } from "./questoes";
+import { PROVA_PF2025_COMPLETA } from "./questoes/provaPf2025";
 import type { TentativaPrf } from "./armazenamento";
 import type { FiltrosPrf } from "./sessoes";
 import TreinoPersonalizadoPrf from "./TreinoPersonalizadoPrf";
@@ -15,6 +16,7 @@ interface InicioPrfProps {
   onResetarMateria: (materia: MateriaPrfId) => void;
   onPersonalizado: (filtros: FiltrosPrf) => void;
   onProva2014: () => void;
+  onProvaPf2025: () => void;
 }
 
 const pontos = (n: number) => n.toLocaleString("pt-BR");
@@ -28,6 +30,7 @@ export default function InicioPrf({
   onResetarMateria,
   onPersonalizado,
   onProva2014,
+  onProvaPf2025,
 }: InicioPrfProps) {
   const statsPorMateria = new Map(stats.map((s) => [s.materia, s]));
   const ed = PRF_ULTIMO_EDITAL;
@@ -75,6 +78,14 @@ export default function InicioPrf({
           <p>
             As {ed.totalQuestoes} questões do último concurso da PRF ({ed.banca}, Prova P de 22/06/{ed.ano}), na ordem do
             caderno, com o gabarito definitivo.
+          </p>
+        </button>
+        <button className="modo-card modo-card-destaque" onClick={onProvaPf2025}>
+          <h3>Prova PF 2025 na íntegra</h3>
+          <p>
+            Os {PROVA_PF2025_COMPLETA.length} itens de Certo ou Errado da prova de Agente Administrativo da Polícia
+            Federal (Cebraspe, 29/06/2025), na ordem do caderno, com o gabarito definitivo. Os itens 96 e 97 foram
+            anulados e ficam fora; os de assunto fora do programa da PRF vêm marcados e não contam no desempenho.
           </p>
         </button>
         <button className="modo-card" onClick={() => onIniciar("revisao")} disabled={wrongCount === 0}>

@@ -39,10 +39,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     !nomeMateria ||
     typeof enunciado !== "string" ||
     !Array.isArray(alternativas) ||
-    alternativas.length !== 5 ||
+    (alternativas.length !== 5 && alternativas.length !== 2) ||
     typeof correta !== "number" ||
     correta < 0 ||
-    correta > 4
+    correta >= alternativas.length
   ) {
     res.status(400).json({ erro: "Corpo da requisição inválido." });
     return;
@@ -56,22 +56,30 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return;
   }
 
+  // Duas alternativas = item de julgamento (Certo/Errado), no modelo da Cebraspe.
+  const certoErrado = alternativas.length === 2;
   const letras = ["A", "B", "C", "D", "E"];
-  const listaAlternativas = alternativas.map((alt, i) => `${letras[i]}) ${alt}`).join("\n");
+  const listaAlternativas = certoErrado
+    ? "Julgue o item como Certo ou Errado."
+    : alternativas.map((alt, i) => `${letras[i]}) ${alt}`).join("\n");
+  const gabarito = certoErrado ? `Gabarito: ${correta === 0 ? "Certo" : "Errado"}.` : `Gabarito: alternativa ${letras[correta]}.`;
+  const pedidoPadrao = certoErrado
+    ? "Explique em profundidade por que o item está certo ou errado, apontando o trecho que decide o julgamento e citando a base legal, súmula ou conceito técnico aplicável sempre que existir."
+    : "Explique em profundidade por que o gabarito está correto e por que cada uma das outras alternativas está errada, citando a base legal, súmula ou conceito técnico aplicável sempre que existir.";
 
   const prompt = `Você é um professor especialista em "${nomeMateria}", preparando um candidato para ${prf ? CONTEXTO_PRF : CONTEXTO_PCPR}.
 
-Questão${topico ? ` (tópico: ${topico})` : ""}:
+${certoErrado ? "Item" : "Questão"}${topico ? ` (tópico: ${topico})` : ""}:
 ${enunciado}
 
 ${listaAlternativas}
 
-Gabarito: alternativa ${letras[correta]}.
+${gabarito}
 
 ${
   typeof pergunta === "string" && pergunta.trim()
     ? `O candidato tem esta dúvida específica sobre a questão: "${pergunta.trim()}". Responda diretamente a ela.`
-    : "Explique em profundidade por que o gabarito está correto e por que cada uma das outras alternativas está errada, citando a base legal, súmula ou conceito técnico aplicável sempre que existir."
+    : pedidoPadrao
 }
 
 Seja rigoroso, cite fontes reais (nunca invente lei ou súmula) e escreva em português do Brasil, de forma didática e direta.`;

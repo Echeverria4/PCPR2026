@@ -35,8 +35,11 @@ export interface OrigemProva {
   equivalentes: string[];
   gabaritoOficial: string;
   gabaritoStatus: "preliminar" | "definitivo";
-  /** A: cobra conteúdo do programa; B: cobra, com a ressalva de motivoCompat. */
-  compatibilidade: "A" | "B";
+  /**
+   * A: cobra conteúdo do programa; B: cobra, com a ressalva de motivoCompat;
+   * C: fora do programa, fica só na prova completa e não entra no banco.
+   */
+  compatibilidade: "A" | "B" | "C";
   motivoCompat: string;
   adaptada: boolean;
   adaptacao?: string;
@@ -56,7 +59,8 @@ export interface Question<M extends string = SubjectId> {
   /** Tipo de raciocínio que a questão exige. */
   raciocinio?: string;
   enunciado: string;
-  alternativas: [string, string, string, string, string];
+  /** Cinco alternativas, ou duas ("Certo" e "Errado") nos itens de julgamento da Cebraspe. */
+  alternativas: [string, string, string, string, string] | [string, string];
   correta: 0 | 1 | 2 | 3 | 4;
   explicacao: string;
   /** Por que as outras alternativas estão erradas; exibida abaixo da explicação da certa, separada por uma linha. */
