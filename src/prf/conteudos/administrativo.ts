@@ -26,7 +26,11 @@ Atributos:
 
 Teoria dos motivos determinantes: o motivo declarado passa a condicionar a validade do ato, mesmo quando a lei dispensava motivação. Motivo falso ou inexistente torna o ato nulo.
 
-Convalidação (art. 55 da Lei 9.784/1999): defeitos sanáveis podem ser corrigidos, com efeitos retroativos, se não houver lesão ao interesse público nem prejuízo a terceiros. Em regra, são sanáveis o vício de competência (salvo competência exclusiva) e o de forma (salvo forma essencial). Vícios de motivo, objeto e finalidade não se convalidam.`,
+Convalidação (art. 55 da Lei 9.784/1999): defeitos sanáveis podem ser corrigidos, com efeitos retroativos, se não houver lesão ao interesse público nem prejuízo a terceiros. Em regra, são sanáveis o vício de competência (salvo competência exclusiva) e o de forma (salvo forma essencial). Vícios de motivo, objeto e finalidade não se convalidam.
+
+Complemento (forma não escrita e dever de decidir):
+• A forma escrita é a regra, mas a lei admite ordens verbais, por gestos ou por sinais. No trânsito, os gestos do agente são sinais de trânsito (CTB, art. 87, VI), e as ordens dele prevalecem sobre as normas de circulação e os demais sinais (art. 89, I).
+• Sem lei que dê efeito ao silêncio, a Administração continua obrigada a decidir: tem até 30 dias depois de concluída a instrução, prorrogáveis por igual período com motivação expressa (Lei 9.784/1999, arts. 48 e 49). Se ela não decide, o interessado pode pedir ao Judiciário que a obrigue a decidir.`,
     exemplos: [
       "Um motorista é multado pela PRF por excesso de velocidade: o ato é imperativo e se presume verdadeiro, mas, se a multa não for paga, a Administração não pode tomar o dinheiro por conta própria. A cobrança forçada depende de execução judicial.",
       "Um diretor exonera um comissionado alegando \"extinção do cargo\" e, na semana seguinte, nomeia outra pessoa para o mesmo cargo. O motivo declarado era falso, e a exoneração pode ser anulada pela teoria dos motivos determinantes.",
@@ -55,6 +59,10 @@ Outras formas de extinção:
 • Cassação: o beneficiário descumpre as condições do ato (licença cassada).
 • Caducidade: norma nova torna incompatível a situação antes permitida.
 • Contraposição: ato posterior, de competência diversa, com efeitos opostos (a exoneração extingue os efeitos da nomeação).
+
+Complemento (outras extinções e caducidade da concessão):
+• O ato também se extingue pelo cumprimento dos seus efeitos, pelo desaparecimento do sujeito ou do objeto e pela renúncia do beneficiário.
+• A caducidade do ato não se confunde com a caducidade da concessão (Lei 8.987/1995, art. 38). Esta é a extinção do contrato por inexecução da concessionária, declarada pelo poder concedente, e por isso se parece mais com a cassação.
 
 Prescrição contra e a favor da Administração:
 • Dívidas e ações contra a Fazenda Pública: 5 anos (Decreto 20.910/1932). Indenização por danos causados por agentes públicos: 5 anos (Lei 9.494/1997, art. 1º-C).
@@ -129,7 +137,12 @@ Direitos e deveres na Constituição:
 • Remuneração por subsídio (parcela única) ou por vencimentos, com irredutibilidade (art. 37, XV).
 • Teto (art. 37, XI): o subsídio dos Ministros do STF é o limite geral. Não entram no cálculo as parcelas de caráter indenizatório previstas em lei, como diárias e ajuda de custo (§ 11).
 • Livre associação sindical (art. 37, VI) e direito de greve nos termos de lei específica (art. 37, VII).
-• Deveres de probidade, eficiência e prestação de contas.`,
+• Deveres de probidade, eficiência e prestação de contas.
+
+Complemento (teto e cargos em comissão):
+• Desde a EC 135/2024, o § 11 só exclui do teto as parcelas indenizatórias expressamente previstas em lei ordinária, aprovada pelo Congresso Nacional, de caráter nacional e aplicada a todos os Poderes e órgãos autônomos. Enquanto essa lei não for editada, ficam fora do teto as parcelas indenizatórias previstas na legislação (art. 3º da EC 135).
+• Na acumulação permitida pela Constituição, o teto incide sobre cada vínculo isoladamente, e não sobre a soma dos ganhos (STF, Temas 377 e 384).
+• Cargos em comissão (STF, Tema 1.010): só para direção, chefia e assessoramento, nunca para atividades burocráticas, técnicas ou operacionais; pressupõem relação de confiança; o número deve ser proporcional à necessidade e ao de servidores efetivos; e as atribuições devem estar descritas, de forma clara e objetiva, na própria lei que os cria.`,
     exemplos: [
       "Quem é convocado para trabalhar como mesário numa eleição é agente público na categoria de particular em colaboração: exerce função pública sem perder a condição de particular.",
       "Um agente administrativo da PRF que viaja a serviço recebe diárias. Elas indenizam despesas e não entram no cálculo do teto remuneratório.",
@@ -167,7 +180,12 @@ Poder de polícia:
 
 Abuso de poder:
 • Excesso de poder: o agente atua além da sua competência.
-• Desvio de finalidade (ou de poder): o agente age dentro da competência, mas para fim diverso do previsto em lei.`,
+• Desvio de finalidade (ou de poder): o agente age dentro da competência, mas para fim diverso do previsto em lei.
+
+Complemento (consentimento de polícia e Tema 532):
+• O consentimento se dá por licença ou por autorização. A licença é ato vinculado e, em regra, definitivo: quem preenche os requisitos tem direito a ela, como na habilitação para dirigir. A autorização é ato discricionário e, em regra, precário. A possibilidade de cassar a CNH não a transforma em autorização: atos vinculados também se extinguem quando o titular descumpre as condições.
+• A autorização especial de trânsito (AET), para veículo de carga acima dos limites de peso e dimensões do Contran, “poderá ser concedida” pela autoridade com circunscrição sobre a via, com prazo certo, válida para cada viagem ou por período (CTB, art. 101). Ela não exime o beneficiário da responsabilidade pelos danos causados à via ou a terceiros (§ 2º).
+• A tese de delegação descrita acima é a do Tema 532 do STF (RE 633.782, 2020). Ela superou o entendimento do STJ que considerava a sanção indelegável a pessoas de direito privado e não alcança concessionárias privadas, que não integram a administração indireta.`,
     exemplos: [
       "Na fiscalização de uma rodovia, a PRF retém um veículo sem condições de segurança até que a irregularidade seja sanada: é poder de polícia autoexecutório, sem necessidade de ordem judicial.",
       "Uma empresa contratada para a limpeza de uma unidade da PRF descumpre o contrato e é multada: é poder disciplinar, porque há vínculo específico com a Administração. A multa a um motorista qualquer decorre do poder de polícia.",
@@ -227,7 +245,13 @@ Omissão:
 • Na omissão genérica, a doutrina tradicional e o STJ exigem culpa do serviço: o serviço não funcionou, funcionou mal ou funcionou tarde (responsabilidade subjetiva).
 • Quando o Estado tinha dever específico de agir, como na custódia de presos, o STF aplica a responsabilidade objetiva.
 
-Atos legislativos e judiciais: em regra não geram indenização, salvo lei de efeitos concretos, lei declarada inconstitucional que cause dano e erro judiciário (art. 5º, LXXV).`,
+Atos legislativos e judiciais: em regra não geram indenização, salvo lei de efeitos concretos, lei declarada inconstitucional que cause dano e erro judiciário (art. 5º, LXXV).
+
+Complemento (segurança pública, presos, foragidos e rodovias concedidas):
+• Operações de segurança pública (STF, Tema 1.237): o Estado responde, pelo risco administrativo, por morte ou ferimento decorrente dessas operações. Cabe a ele provar eventual excludente, e a perícia inconclusiva sobre a origem do disparo não basta, por si só, para afastar a responsabilidade.
+• Morte de detento (STF, Tema 592): o Estado responde quando descumpre o dever específico de proteção do art. 5º, XLIX.
+• Crime de foragido (STF, Tema 362): não há responsabilidade objetiva quando não demonstrado o nexo causal direto entre o momento da fuga e a conduta praticada.
+• Animais na pista (STJ, Tema 1.122): as concessionárias de rodovias respondem, independentemente de culpa, pelos acidentes causados por animais domésticos nas pistas de rolamento, com base no CDC e na Lei das Concessões.`,
     exemplos: [
       "Uma viatura da PRF, em serviço, bate num carro estacionado. O dono do carro processa a União, que responde objetivamente; se o motorista da viatura agiu com culpa, a União pode cobrar dele depois, em ação regressiva.",
       "Um ônibus de empresa prestadora de serviço de transporte coletivo atinge um ciclista. A responsabilidade da empresa é objetiva mesmo ele não sendo passageiro; a conduta da vítima só exclui (culpa exclusiva) ou reduz (culpa concorrente) a indenização.",
@@ -255,7 +279,13 @@ Sanções (art. 12), aplicáveis isolada ou cumulativamente, conforme a gravidad
 • Art. 9º: perda dos bens acrescidos ilicitamente, perda da função, suspensão dos direitos políticos até 14 anos, multa equivalente ao acréscimo patrimonial e proibição de contratar com o poder público até 14 anos.
 • Art. 10: perda dos bens acrescidos, se houver, perda da função, suspensão dos direitos políticos até 12 anos, multa equivalente ao dano e proibição de contratar até 12 anos.
 • Art. 11: multa de até 24 vezes a remuneração e proibição de contratar até 4 anos. Não há perda da função nem suspensão dos direitos políticos.
-• As sanções não se confundem com o ressarcimento integral do dano efetivo nem afastam as sanções penais e administrativas.`,
+• As sanções não se confundem com o ressarcimento integral do dano efetivo nem afastam as sanções penais e administrativas.
+
+Complemento (requisitos do art. 11 e aplicação das sanções):
+• Nos atos do art. 11, só há improbidade quando comprovado o fim de obter proveito ou benefício indevido para si ou para outra pessoa ou entidade (§ 1º), e a ilegalidade deve ser demonstrada objetivamente, com a indicação das normas violadas (§ 3º).
+• O nepotismo (inciso XI) alcança cônjuge, companheiro ou parente até o terceiro grau, inclusive por afinidade, e também o ajuste mediante designações recíprocas. A mera nomeação ou indicação política por detentores de mandato eletivo não é improbidade sem dolo com finalidade ilícita (§ 5º).
+• Na dosimetria, o juiz considera, entre outros fatores, a natureza, a gravidade e o impacto da infração, a extensão do dano, o proveito obtido, a atuação do agente para minorar os prejuízos e os seus antecedentes (art. 17-C, IV).
+• No ato de menor ofensa, a sanção se limita à multa, sem prejuízo do ressarcimento e da perda dos valores obtidos (art. 12, § 5º), e o ressarcimento já obtido em outras instâncias pelos mesmos fatos é deduzido (§ 6º).`,
     exemplos: [
       "Um servidor usa, num sábado, a caminhonete da unidade para fazer a mudança da família: enriquecimento ilícito (art. 9º, IV). Se fosse o chefe que deixasse um terceiro usar o veículo, a conduta seria lesão ao erário (art. 10, XIII).",
       "Um gestor deixa de prestar contas, embora tivesse condições para isso, com o objetivo de ocultar irregularidades. A conduta atenta contra os princípios (art. 11, VI) e se sujeita a multa e proibição de contratar, sem perda da função por esse enquadramento.",
@@ -351,7 +381,12 @@ Vantagens, férias e licenças:
 • Indenizações (ajuda de custo, diárias, transporte e auxílio-moradia) não se incorporam ao vencimento; gratificações e adicionais se incorporam nos casos e condições da lei.
 • Férias: 30 dias, acumuláveis até 2 períodos por necessidade do serviço; 12 meses de exercício para o primeiro período; parcelamento em até 3 etapas, a pedido e no interesse da Administração.
 • Licença para capacitação: após cada quinquênio de efetivo exercício, no interesse da Administração, com remuneração, por até 3 meses; os períodos não se acumulam.
-• Licença para tratar de interesses particulares: a critério da Administração, por até 3 anos consecutivos, sem remuneração, só para ocupante de cargo efetivo que não esteja em estágio probatório.`,
+• Licença para tratar de interesses particulares: a critério da Administração, por até 3 anos consecutivos, sem remuneração, só para ocupante de cargo efetivo que não esteja em estágio probatório.
+
+Complemento (vacância, reintegração em cadeia e prazos do PAD):
+• Vacância (art. 33): exoneração, demissão, promoção, readaptação, aposentadoria, posse em outro cargo inacumulável e falecimento. A exoneração de ofício ocorre quando o servidor não satisfaz as condições do estágio probatório ou não entra em exercício no prazo (art. 34, parágrafo único); a do ocupante de cargo em comissão, a juízo da autoridade ou a pedido (art. 35). A exoneração não é penalidade; a demissão e a destituição de cargo em comissão são (art. 127, III e V).
+• Em cadeia: o ocupante que cede o lugar ao reintegrado é reconduzido; se o cargo de origem dele também estiver provido, ele é aproveitado em outro, de atribuições e vencimentos compatíveis (arts. 29, parágrafo único, e 30).
+• PAD: comissão de três servidores estáveis (art. 149); conclusão em até 60 dias, prorrogáveis por igual prazo (art. 152); defesa em 10 dias, ou em 20 dias comuns se houver dois ou mais indiciados, prorrogáveis pelo dobro para diligências indispensáveis (art. 161); defensor dativo para o revel (art. 164, § 2º); julgamento em 20 dias (art. 167). A autoridade acata o relatório, salvo se contrário às provas dos autos, caso em que pode, motivadamente, agravar, abrandar ou isentar o servidor de responsabilidade (art. 168).`,
     exemplos: [
       "Um servidor estável da PRF é aprovado em outro concurso federal e inabilitado no estágio probatório do novo cargo: ele é reconduzido ao cargo anterior.",
       "Um candidato nomeado deixa passar os 30 dias sem tomar posse: a nomeação é tornada sem efeito. Se tivesse tomado posse e não entrasse em exercício em 15 dias, seria exonerado.",
@@ -385,7 +420,12 @@ Recurso e revisão:
 • Cabe recurso por razões de legalidade e de mérito, dirigido à autoridade que decidiu. Se ela não reconsiderar em 5 dias, encaminha à autoridade superior.
 • No máximo três instâncias; prazo de 10 dias para recorrer; decisão em até 30 dias, prorrogáveis por igual período.
 • Em regra, o recurso independe de caução e não tem efeito suspensivo, que pode ser concedido se houver justo receio de prejuízo de difícil reparação.
-• No recurso, a decisão pode piorar a situação do recorrente, que deve ser cientificado antes para apresentar alegações (art. 64). Na revisão, cabível a qualquer tempo diante de fatos novos, não pode haver agravamento da sanção (art. 65).`,
+• No recurso, a decisão pode piorar a situação do recorrente, que deve ser cientificado antes para apresentar alegações (art. 64). Na revisão, cabível a qualquer tempo diante de fatos novos, não pode haver agravamento da sanção (art. 65).
+
+Complemento (intimação, prova e legitimidade para recorrer):
+• A intimação respeita a antecedência mínima de 3 dias úteis da data de comparecimento (art. 26, § 2º) e pode ser feita por ciência no processo, via postal com aviso de recebimento, telegrama ou outro meio que assegure a certeza da ciência (§ 3º). É nula se feita sem as prescrições legais, mas o comparecimento supre a falta ou a irregularidade (§ 5º). O desatendimento não importa reconhecimento da verdade dos fatos nem renúncia a direito (art. 27).
+• Cabe ao interessado provar os fatos que alegou, sem prejuízo do dever de instrução do órgão (art. 36). Se ele declarar que os fatos estão em documentos da própria Administração ou de outro órgão administrativo, o órgão competente obtém de ofício os documentos ou as cópias (art. 37).
+• Podem recorrer os que foram parte no processo, quem tiver direitos ou interesses indiretamente afetados pela decisão, as organizações e associações representativas, quanto a direitos e interesses coletivos, e os cidadãos ou associações, quanto a direitos ou interesses difusos (art. 58).`,
     exemplos: [
       "O superintendente delega a um chefe de seção a assinatura de autorizações de rotina. As autorizações assinadas por delegação se consideram do chefe de seção, e um eventual mandado de segurança é impetrado contra ele (Súmula 510 do STF).",
       "Um particular punido em processo regido pela Lei 9.784/1999 recorre pedindo a redução da sanção. A autoridade superior até pode agravá-la, mas precisa cientificá-lo antes. Se, anos depois, ele pedir revisão com base em fato novo, a sanção não poderá piorar.",

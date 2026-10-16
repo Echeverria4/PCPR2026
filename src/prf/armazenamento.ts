@@ -1,7 +1,5 @@
 import type { AttemptRecord, Confianca } from "../lib/types";
 import type { MateriaPrfId } from "../data/prf";
-import type { GravacaoQuiz } from "../components/Quiz";
-import { IDS_PF2025_FORA_DO_PROGRAMA } from "./questoes/provaPf2025";
 
 /**
  * Progresso da PRF: só neste aparelho, com chaves próprias (prf:…). A tabela remota de tentativas
@@ -73,11 +71,3 @@ export function zerarMateriaPrf(materia: MateriaPrfId): TentativaPrf[] {
   );
   return restantes;
 }
-
-export const GRAVACAO_PRF: GravacaoQuiz<MateriaPrfId> = {
-  // Os itens da PF 2025 fora do programa da PRF só aparecem na prova completa: não entram no desempenho nem na revisão.
-  registrar: (tentativa) => {
-    if (!IDS_PF2025_FORA_DO_PROGRAMA.has(tentativa.questionId)) registrarTentativaPrf(tentativa);
-  },
-  atualizarConfianca: atualizarConfiancaPrf,
-};

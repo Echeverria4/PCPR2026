@@ -7,7 +7,8 @@ import { PRF_MATERIAS, PRF_NOMES, type MateriaPrfId, type QuestaoPrf } from "../
 import LayoutPrf, { type AbaPrf } from "./LayoutPrf";
 import InicioPrf from "./InicioPrf";
 import ConteudoPrfTela from "./ConteudoPrfTela";
-import { GRAVACAO_PRF, getErradasPrf, getTentativasPrf, zerarMateriaPrf, type TentativaPrf } from "./armazenamento";
+import { getErradasPrf, getTentativasPrf, zerarMateriaPrf, type TentativaPrf } from "./armazenamento";
+import { GRAVACAO_PRF } from "./gravacao";
 import {
   sessaoFocoPrf,
   sessaoMateriaPrf,
