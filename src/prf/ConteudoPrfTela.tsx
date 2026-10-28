@@ -2,8 +2,13 @@ import { useState, type CSSProperties } from "react";
 import { PRF_MATERIAS, PRF_MATERIA_MAP, type MateriaPrfId } from "../data/prf";
 import { CONTEUDO_PRF_POR_MATERIA } from "./conteudos";
 
-export default function ConteudoPrfTela() {
-  const [materia, setMateria] = useState<MateriaPrfId | null>(null);
+interface ConteudoPrfTelaProps {
+  /** Abre direto nesta matéria (atalho vindo do Português Inteligente). */
+  materiaInicial?: MateriaPrfId;
+}
+
+export default function ConteudoPrfTela({ materiaInicial }: ConteudoPrfTelaProps) {
+  const [materia, setMateria] = useState<MateriaPrfId | null>(materiaInicial ?? null);
 
   if (!materia) {
     return (

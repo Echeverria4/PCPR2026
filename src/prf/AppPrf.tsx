@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import Quiz from "../components/Quiz";
 import Result from "../components/Result";
 import { computeStats, focoRecomendado } from "../lib/storage";
@@ -9,7 +9,10 @@ import InicioPrf from "./InicioPrf";
 import ConteudoPrfTela from "./ConteudoPrfTela";
 import { getErradasPrf, getTentativasPrf, zerarMateriaPrf, type TentativaPrf } from "./armazenamento";
 import { GRAVACAO_PRF } from "./gravacao";
+import { QUESTOES_PRF_POR_MATERIA } from "./questoes";
+import type { TelaPt } from "./portugues/PortuguesInteligente";
 import {
+  FILTROS_PRF_PADRAO,
   sessaoFocoPrf,
   sessaoMateriaPrf,
   sessaoPersonalizadaPrf,
@@ -21,6 +24,15 @@ import {
 } from "./sessoes";
 
 type View = AbaPrf | "quiz" | "result";
+
+// A aba de português tem muito texto: só baixa quando o aluno abre.
+const PortuguesInteligente = lazy(() => import("./portugues/PortuguesInteligente"));
+
+/** Questões de português do banco por tópico do programa (para os atalhos de treino da aba). */
+const QUESTOES_PT_POR_TOPICO = (QUESTOES_PRF_POR_MATERIA.pt ?? []).reduce<Record<string, number>>((acc, q) => {
+  acc[q.topico] = (acc[q.topico] ?? 0) + 1;
+  return acc;
+}, {});
 
 interface SessaoAtiva {
   mode: QuizMode;
@@ -45,6 +57,10 @@ export default function AppPrf({ onTrocarCurso }: AppPrfProps) {
   const [erradas, setErradas] = useState(() => getErradasPrf().length);
   const [sessao, setSessao] = useState<SessaoAtiva | null>(null);
   const [resultado, setResultado] = useState<QuizSessionResult<MateriaPrfId> | null>(null);
+  // Aba para onde o quiz volta, e a tela aberta no Português Inteligente (não se perde durante o quiz).
+  const [origem, setOrigem] = useState<AbaPrf>("home");
+  const [telaPt, setTelaPt] = useState<TelaPt>({ tipo: "geral" });
+  const [materiaConteudo, setMateriaConteudo] = useState<MateriaPrfId | undefined>();
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
@@ -96,6 +112,18 @@ export default function AppPrf({ onTrocarCurso }: AppPrfProps) {
     setView("result");
   }
 
+  function treinarTopicoPt(topico: string) {
+    const questions = sessaoPersonalizadaPrf({ ...FILTROS_PRF_PADRAO, materias: ["pt"], topico }, tentativas);
+    if (questions.length === 0) return;
+    setOrigem("portugues");
+    abrirSessao("personalizado", questions);
+  }
+
+  function trocarAba(aba: AbaPrf) {
+    setMateriaConteudo(undefined);
+    setView(aba);
+  }
+
   function resetarMateria(materia: MateriaPrfId) {
     setTentativas(zerarMateriaPrf(materia));
     setErradas(getErradasPrf().length);
@@ -107,7 +135,8 @@ export default function AppPrf({ onTrocarCurso }: AppPrfProps) {
     setErradas(getErradasPrf().length);
     setSessao(null);
     setResultado(null);
-    setView("home");
+    setView(origem);
+    setOrigem("home");
   }
 
   return (
@@ -115,8 +144,8 @@ export default function AppPrf({ onTrocarCurso }: AppPrfProps) {
       mostrarVoltar={view === "quiz" || view === "result"}
       onVoltar={voltarHome}
       onTrocarCurso={onTrocarCurso}
-      abaAtiva={view === "conteudo" ? "conteudo" : "home"}
-      onTrocarAba={(aba) => setView(aba)}
+      abaAtiva={view === "conteudo" || view === "portugues" ? view : "home"}
+      onTrocarAba={trocarAba}
     >
       {view === "home" && (
         <InicioPrf
@@ -131,7 +160,21 @@ export default function AppPrf({ onTrocarCurso }: AppPrfProps) {
           onResetarMateria={resetarMateria}
         />
       )}
-      {view === "conteudo" && <ConteudoPrfTela />}
+      {view === "conteudo" && <ConteudoPrfTela key={materiaConteudo ?? "todas"} materiaInicial={materiaConteudo} />}
+      {view === "portugues" && (
+        <Suspense fallback={<div className="vazio">Carregando o Português Inteligente…</div>}>
+          <PortuguesInteligente
+            tela={telaPt}
+            onTela={setTelaPt}
+            questoesPorTopico={QUESTOES_PT_POR_TOPICO}
+            onTreinarTopico={treinarTopicoPt}
+            onAbrirResumo={() => {
+              setMateriaConteudo("pt");
+              setView("conteudo");
+            }}
+          />
+        </Suspense>
+      )}
       {view === "quiz" && sessao && (
         <Quiz
           questions={sessao.questions}

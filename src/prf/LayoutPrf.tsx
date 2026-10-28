@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import prfBrasao from "../assets/prf-brasao.png";
 import { PRF_ULTIMO_EDITAL } from "../data/prf";
 
-export type AbaPrf = "home" | "conteudo";
+export type AbaPrf = "home" | "conteudo" | "portugues";
 
 interface LayoutPrfProps {
   children: ReactNode;
@@ -59,6 +59,12 @@ export default function LayoutPrf({
               onClick={() => onTrocarAba("conteudo")}
             >
               📚 Conteúdo
+            </button>
+            <button
+              className={`tab ${abaAtiva === "portugues" ? "tab-ativa" : ""}`}
+              onClick={() => onTrocarAba("portugues")}
+            >
+              ✍️ Português Inteligente
             </button>
           </nav>
         )}
