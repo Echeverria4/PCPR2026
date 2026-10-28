@@ -59,7 +59,7 @@ export interface Question<M extends string = SubjectId> {
   /** Tipo de raciocínio que a questão exige. */
   raciocinio?: string;
   enunciado: string;
-  /** Cinco alternativas, ou duas ("Certo" e "Errado") nos itens de julgamento da Cebraspe. */
+  /** Cinco alternativas, ou duas ("Certo" e "Errado") nos itens de julgamento do Cespe/Cebraspe. */
   alternativas: [string, string, string, string, string] | [string, string];
   correta: 0 | 1 | 2 | 3 | 4;
   explicacao: string;

@@ -20,8 +20,8 @@ export interface GravacaoQuiz<M extends string> {
 const GRAVACAO_PCPR: GravacaoQuiz<SubjectId> = { registrar: recordAttempt, atualizarConfianca };
 
 /**
- * Selo das questões de prova real no curso da PRF: o último concurso (FUNCAB, 2014), a prova da PF 2025
- * (Cebraspe) e as originais da FGV. Aparece antes da resposta e só diz de onde a questão veio.
+ * Selo das questões de prova real no curso da PRF: o último concurso (FUNCAB, 2014), o de 2012 (Cespe/UnB),
+ * a prova da PF 2025 (Cebraspe) e as originais da FGV. Aparece antes da resposta e só diz de onde a questão veio.
  */
 function seloProvaPrf(q: Pick<Question<string>, "origem" | "prova">) {
   const p = q.origem === "prova" ? q.prova : undefined;
@@ -37,6 +37,13 @@ function seloProvaPrf(q: Pick<Question<string>, "origem" | "prova">) {
       classe: "questao-selo-prf2014",
       titulo: "Último concurso da PRF",
       detalhe: `Prova de 2014 (FUNCAB) · ${p.caderno}, questão ${p.numero}`,
+    };
+  }
+  if (p?.banca === "Cespe/UnB") {
+    return {
+      classe: "questao-selo-prf2012",
+      titulo: "Concurso PRF 2012 (Cespe/UnB)",
+      detalhe: `Agente Administrativo · prova de ${p.aplicadaEm} · item ${p.numero}`,
     };
   }
   if (p?.banca === "FGV") {
@@ -316,7 +323,7 @@ export default function Quiz<M extends string = SubjectId>({
               <strong>
                 Gabarito: {certoErrado ? questao.alternativas[questao.correta] : LETRAS[questao.correta]}
                 {questao.prova &&
-                  ` (oficial ${questao.prova.gabaritoStatus} da ${questao.prova.banca}: ${questao.prova.gabaritoOficial}). `}
+                  ` (oficial ${questao.prova.gabaritoStatus} ${questao.prova.banca === "Cespe/UnB" ? "do" : "da"} ${questao.prova.banca}: ${questao.prova.gabaritoOficial}). `}
                 {!questao.prova && ". "}
               </strong>
             )}

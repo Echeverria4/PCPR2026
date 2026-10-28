@@ -19,6 +19,7 @@ interface TreinoPersonalizadoPrfProps {
 const ROTULO_ORIGEM: Record<OrigemFiltroPrf, string> = {
   banco: "Próprias do app",
   prf2014: "Prova PRF 2014 (FUNCAB, último concurso)",
+  prf2012: "Prova PRF 2012 (Cespe/UnB, Agente Administrativo)",
   pf2025: "Prova PF 2025 (Cebraspe, Agente Administrativo)",
   prova: "Prova PCPR 2026 (FGV, originais)",
   inedita: "Inéditas autorais",

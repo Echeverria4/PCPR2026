@@ -1445,6 +1445,16 @@ button {
   color: var(--verde);
 }
 
+.questao-selo-prf2012 {
+  border-color: rgba(180, 140, 240, 0.45);
+  border-left-color: #b48cf0;
+  background: rgba(180, 140, 240, 0.1);
+}
+
+.questao-selo-prf2012 strong {
+  color: #c9a8ff;
+}
+
 .questao-tag-fonte {
   color: var(--texto);
   background: transparent;
