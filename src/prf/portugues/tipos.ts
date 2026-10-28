@@ -26,7 +26,15 @@ export type Bloco =
   /** Caixa central com chaves abrindo os ramos (tipos, categorias). */
   | { tipo: "chaves"; titulo: string; ramos: { rotulo: string; texto?: string; exemplo?: string; classe?: ClasseId }[] }
   /** Perguntas em sequência: "sim" leva à conclusão; "não" desce para a próxima. */
-  | { tipo: "fluxo"; titulo?: string; passos: { pergunta: string; sim: string; classe?: ClasseId }[]; senao?: string }
+  | {
+      tipo: "fluxo";
+      titulo?: string;
+      passos: { pergunta: string; sim: string; classe?: ClasseId }[];
+      senao?: string;
+      /** Só no passo a passo, quando o fluxo é dividido em telas: de onde a numeração parte e se o fluxo continua. */
+      inicio?: number;
+      continua?: boolean;
+    }
   | { tipo: "frase"; palavras: Palavra[]; comentario?: string }
   /** Quadro X × Y: uma coluna por caso, com a frase-síntese embaixo. */
   | { tipo: "comparativo"; titulo?: string; colunas: { titulo: string; classe?: ClasseId; itens: string[] }[]; sintese?: string }

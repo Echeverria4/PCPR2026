@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { shuffle } from "../../lib/quizEngine";
+import EstudoGuiado, { montarPassos, type SecaoGuiada } from "./EstudoGuiado";
 import FixacaoPt from "./FixacaoPt";
-import { Blocos, ChipClasse, Rico } from "./Visuais";
+import { Blocos, ChipClasse, GlossarioToque, Rico } from "./Visuais";
 import { FIXACAO, GLOSSARIO, LICOES, MODELOS, TOPICO_CLASSES } from "./dados";
 import {
   idsErradosPt,
@@ -10,6 +11,8 @@ import {
   marcarVistaPt,
   precisaRetomar,
   registrarRespostaPt,
+  salvarModoPt,
+  salvarPassoPt,
   ultimaPorQuestao,
   type ProgressoPt,
 } from "./progresso";
@@ -53,6 +56,22 @@ const GRUPOS: { id: GrupoPt; titulo: string; descricao: string }[] = [
 
 const LICAO_POR_ID = new Map(LICOES.map((l) => [l.id, l]));
 const MODELO_POR_ID = new Map(MODELOS.map((m) => [m.id, m]));
+
+/** As partes de cada lição e de cada modelo, na ordem em que o passo a passo as mostra. */
+const SECOES_POR_ID = new Map<string, SecaoGuiada[]>([
+  ...LICOES.map((l): [string, SecaoGuiada[]] => [
+    l.id,
+    [
+      { titulo: "Modelo mental", ancora: "pi-sec-modelo", blocos: l.modelo },
+      ...l.secoes.map((s) => ({
+        titulo: `${s.letra} · ${s.titulo ?? TITULO_BLOCO[s.letra]}`,
+        ancora: `pi-sec-${s.letra}`,
+        blocos: s.blocos,
+      })),
+    ],
+  ]),
+  ...MODELOS.map((m): [string, SecaoGuiada[]] => [m.id, [{ titulo: "", blocos: m.blocos }]]),
+]);
 
 function nomePagina(id: string): string {
   return LICAO_POR_ID.get(id)?.titulo ?? MODELO_POR_ID.get(id)?.titulo ?? id;
@@ -105,6 +124,24 @@ export default function PortuguesInteligente({
     setProgresso(marcarConcluidaPt(id, !progresso.paginas[id]?.concluidaEm));
   }
 
+  // Lições e modelos abrem no passo a passo; a página inteira fica a um toque.
+  const modo = progresso.modo ?? "guiado";
+  // Seção em que a página inteira abre ("" = topo), depois de sair do passo a passo.
+  const [ancora, setAncora] = useState<string | null>(null);
+  useEffect(() => {
+    if (ancora === null) return;
+    const alvo = ancora ? document.getElementById(ancora) : null;
+    if (alvo) alvo.scrollIntoView();
+    else window.scrollTo({ top: 0 });
+    setAncora(null);
+  }, [ancora]);
+
+  function paginaInteira(a?: string) {
+    setProgresso(salvarModoPt("tudo"));
+    setAncora(a ?? "");
+  }
+  const passoAPasso = () => setProgresso(salvarModoPt("guiado"));
+
   if (tela.tipo === "fixacao") {
     return (
       <FixacaoPt
@@ -124,36 +161,59 @@ export default function PortuguesInteligente({
   if (tela.tipo === "licao") {
     const licao = LICAO_POR_ID.get(tela.id);
     if (!licao) return <Voltar onTela={onTela} />;
+    const props = {
+      licao,
+      progresso,
+      onTela,
+      onConcluir: () => alternarConcluida(licao.id),
+      onFixacao: () =>
+        abrirFixacao(
+          `Fixação · ${licao.titulo}`,
+          FIXACAO.filter((q) => q.licao === licao.id),
+          tela,
+        ),
+    };
     return (
-      <TelaLicao
-        licao={licao}
-        progresso={progresso}
-        onTela={onTela}
-        onConcluir={() => alternarConcluida(licao.id)}
-        onFixacao={() =>
-          abrirFixacao(
-            `Fixação · ${licao.titulo}`,
-            FIXACAO.filter((q) => q.licao === licao.id),
-            tela,
-          )
-        }
-      />
+      <GlossarioToque>
+        {modo === "tudo" ? (
+          <TelaLicao {...props} onPassoAPasso={passoAPasso} />
+        ) : (
+          <GuiadoLicao
+            key={licao.id}
+            {...props}
+            onPasso={(n) => setProgresso(salvarPassoPt(licao.id, n))}
+            onPaginaInteira={paginaInteira}
+          />
+        )}
+      </GlossarioToque>
     );
   }
 
   if (tela.tipo === "modelo") {
     const modelo = MODELO_POR_ID.get(tela.id);
     if (!modelo) return <Voltar onTela={onTela} />;
+    const props = {
+      modelo,
+      progresso,
+      onTela,
+      onConcluir: () => alternarConcluida(modelo.id),
+      questoesPorTopico,
+      onTreinarTopico,
+      onAbrirResumo,
+    };
     return (
-      <TelaModelo
-        modelo={modelo}
-        progresso={progresso}
-        onTela={onTela}
-        onConcluir={() => alternarConcluida(modelo.id)}
-        questoesPorTopico={questoesPorTopico}
-        onTreinarTopico={onTreinarTopico}
-        onAbrirResumo={onAbrirResumo}
-      />
+      <GlossarioToque>
+        {modo === "tudo" ? (
+          <TelaModelo {...props} onPassoAPasso={passoAPasso} />
+        ) : (
+          <GuiadoModelo
+            key={modelo.id}
+            {...props}
+            onPasso={(n) => setProgresso(salvarPassoPt(modelo.id, n))}
+            onPaginaInteira={paginaInteira}
+          />
+        )}
+      </GlossarioToque>
     );
   }
 
@@ -259,6 +319,13 @@ function VisaoGeral({
   const nada = Object.keys(progresso.paginas).length === 0 && progresso.respostas.length === 0;
 
   const ultimo = progresso.ultimo && (LICAO_POR_ID.get(progresso.ultimo.id) || MODELO_POR_ID.get(progresso.ultimo.id));
+  // No passo a passo, diz também em que tela parou.
+  const passoSalvo = ultimo ? progresso.paginas[ultimo.id]?.passo : undefined;
+  const nPassos = ultimo ? montarPassos(SECOES_POR_ID.get(ultimo.id) ?? []).length : 0;
+  const ondeParou =
+    (progresso.modo ?? "guiado") === "guiado" && passoSalvo && passoSalvo <= nPassos
+      ? ` · passo ${passoSalvo} de ${nPassos}`
+      : "";
   const licoesComErro = LICOES.filter((l) => FIXACAO.some((q) => q.licao === l.id && errados.has(q.id)));
   const retomar = [...LICOES, ...MODELOS].filter((p) => precisaRetomar(progresso, p.id));
   const nErros = FIXACAO.filter((q) => errados.has(q.id)).length;
@@ -315,6 +382,7 @@ function VisaoGeral({
               }
             >
               Continuar de onde parei: {ultimo.titulo}
+              {ondeParou}
             </button>
           ) : (
             <button className="botao botao-ouro" onClick={() => onTela({ tipo: "licao", id: LICOES[0].id })}>
@@ -403,7 +471,7 @@ function VisaoGeral({
         </button>
         <button className="modo-card" onClick={() => onTela({ tipo: "glossario" })}>
           <h3>Glossário</h3>
-          <p>{GLOSSARIO.length} termos da gramática explicados em uma ou duas frases.</p>
+          <p>{GLOSSARIO.length} termos da gramática explicados em palavras simples.</p>
         </button>
         <button className="modo-card" onClick={() => onTela({ tipo: "licao", id: "mesma-palavra" })}>
           <h3>Mesma palavra, classes diferentes</h3>
@@ -425,12 +493,14 @@ function TelaLicao({
   onTela,
   onConcluir,
   onFixacao,
+  onPassoAPasso,
 }: {
   licao: Licao;
   progresso: ProgressoPt;
   onTela: (t: TelaPt) => void;
   onConcluir: () => void;
   onFixacao: () => void;
+  onPassoAPasso: () => void;
 }) {
   const i = LICOES.indexOf(licao);
   const anterior = LICOES[i - 1];
@@ -447,6 +517,11 @@ function TelaLicao({
       <p className="pi-resumo">
         {licao.classe && <ChipClasse classe={licao.classe} />} <Rico texto={licao.resumo} />
       </p>
+      <div className="pi-acoes pi-modo">
+        <button className="botao botao-ouro" onClick={onPassoAPasso}>
+          Estudar passo a passo
+        </button>
+      </div>
 
       <nav className="pi-indice" aria-label="Blocos da lição">
         <a href="#pi-sec-modelo">Modelo mental</a>
@@ -543,6 +618,7 @@ function TelaModelo({
   questoesPorTopico,
   onTreinarTopico,
   onAbrirResumo,
+  onPassoAPasso,
 }: {
   modelo: ModeloPt;
   progresso: ProgressoPt;
@@ -551,6 +627,7 @@ function TelaModelo({
   questoesPorTopico: Record<string, number>;
   onTreinarTopico: (topico: string) => void;
   onAbrirResumo: () => void;
+  onPassoAPasso: () => void;
 }) {
   const concluida = !!progresso.paginas[modelo.id]?.concluidaEm;
   const grupo = GRUPOS.find((g) => g.id === modelo.grupo);
@@ -564,6 +641,11 @@ function TelaModelo({
       </button>
       <h2 className="secao-titulo">{modelo.titulo}</h2>
       <p className="pi-grupo-descricao">Modelo mental · {grupo?.titulo}</p>
+      <div className="pi-acoes pi-modo">
+        <button className="botao botao-ouro" onClick={onPassoAPasso}>
+          Estudar passo a passo
+        </button>
+      </div>
       <div className="pi-gancho">
         <Rico texto={modelo.gancho} />
       </div>
@@ -590,11 +672,136 @@ function TelaModelo({
   );
 }
 
+interface GuiadoProps {
+  progresso: ProgressoPt;
+  onTela: (t: TelaPt) => void;
+  onConcluir: () => void;
+  onPasso: (tela: number) => void;
+  onPaginaInteira: (ancora?: string) => void;
+}
+
+function GuiadoLicao({ licao, progresso, onTela, onConcluir, onFixacao, onPasso, onPaginaInteira }: GuiadoProps & {
+  licao: Licao;
+  onFixacao: () => void;
+}) {
+  const proxima = LICOES[LICOES.indexOf(licao) + 1];
+  const nFix = FIXACAO.filter((q) => q.licao === licao.id).length;
+  const concluida = !!progresso.paginas[licao.id]?.concluidaEm;
+  return (
+    <EstudoGuiado
+      titulo={licao.titulo}
+      voltarRotulo="← Classes de palavras"
+      onVoltar={() => onTela({ tipo: "classes" })}
+      secoes={SECOES_POR_ID.get(licao.id) ?? []}
+      passoInicial={progresso.paginas[licao.id]?.passo}
+      onPasso={onPasso}
+      onPaginaInteira={onPaginaInteira}
+      abertura={
+        <p className="pi-guiado-resumo">
+          {licao.classe && <ChipClasse classe={licao.classe} />} <strong>Nesta lição:</strong>{" "}
+          <Rico texto={licao.resumo} />
+        </p>
+      }
+      fim={
+        <>
+          <p className="pi-guiado-parabens">Você chegou ao fim da lição.</p>
+          <p className="pi-guiado-fim-texto">
+            {nFix > 0
+              ? "Agora fixe com as questões desta lição. Errar faz parte: cada alternativa vem com a explicação."
+              : "Marque como estudada para acompanhar o seu progresso."}
+          </p>
+          <div className="pi-acoes">
+            {nFix > 0 && (
+              <button className="botao botao-ouro" onClick={onFixacao}>
+                Fixação desta lição ({nFix} questões)
+              </button>
+            )}
+            <button className={`botao ${concluida ? "pi-botao-feito" : ""}`} onClick={onConcluir} aria-pressed={concluida}>
+              {concluida ? "✓ Estudada (desmarcar)" : "Marcar como estudada"}
+            </button>
+            {proxima && (
+              <button className="botao" onClick={() => onTela({ tipo: "licao", id: proxima.id })}>
+                Próxima lição: {proxima.titulo} →
+              </button>
+            )}
+          </div>
+        </>
+      }
+    />
+  );
+}
+
+function GuiadoModelo({
+  modelo,
+  progresso,
+  onTela,
+  onConcluir,
+  questoesPorTopico,
+  onTreinarTopico,
+  onAbrirResumo,
+  onPasso,
+  onPaginaInteira,
+}: GuiadoProps & {
+  modelo: ModeloPt;
+  questoesPorTopico: Record<string, number>;
+  onTreinarTopico: (topico: string) => void;
+  onAbrirResumo: () => void;
+}) {
+  const concluida = !!progresso.paginas[modelo.id]?.concluidaEm;
+  const grupo = GRUPOS.find((g) => g.id === modelo.grupo);
+  const doGrupo = MODELOS.filter((m) => m.grupo === modelo.grupo);
+  const proximo = doGrupo[doGrupo.indexOf(modelo) + 1];
+  return (
+    <EstudoGuiado
+      titulo={modelo.titulo}
+      voltarRotulo="← Português Inteligente"
+      onVoltar={() => onTela({ tipo: "geral" })}
+      secoes={SECOES_POR_ID.get(modelo.id) ?? []}
+      passoInicial={progresso.paginas[modelo.id]?.passo}
+      onPasso={onPasso}
+      onPaginaInteira={onPaginaInteira}
+      abertura={
+        <>
+          <p className="pi-grupo-descricao">Modelo mental · {grupo?.titulo}</p>
+          <div className="pi-gancho">
+            <Rico texto={modelo.gancho} />
+          </div>
+        </>
+      }
+      fim={
+        <>
+          <p className="pi-guiado-parabens">Você chegou ao fim deste modelo.</p>
+          <BancoPrf
+            topicos={modelo.topicosPrf}
+            questoesPorTopico={questoesPorTopico}
+            onTreinarTopico={onTreinarTopico}
+            onAbrirResumo={onAbrirResumo}
+          />
+          <div className="pi-acoes">
+            <button className={`botao ${concluida ? "pi-botao-feito" : ""}`} onClick={onConcluir} aria-pressed={concluida}>
+              {concluida ? "✓ Estudado (desmarcar)" : "Marcar como estudado"}
+            </button>
+            {proximo && (
+              <button className="botao" onClick={() => onTela({ tipo: "modelo", id: proximo.id })}>
+                Próximo: {proximo.titulo} →
+              </button>
+            )}
+          </div>
+        </>
+      }
+    />
+  );
+}
+
 function TelaGlossario({ onTela }: { onTela: (t: TelaPt) => void }) {
   const [busca, setBusca] = useState("");
   const termo = busca.trim().toLowerCase();
   const lista = GLOSSARIO.filter(
-    (g) => !termo || g.termo.toLowerCase().includes(termo) || g.definicao.toLowerCase().includes(termo),
+    (g) =>
+      !termo ||
+      g.termo.toLowerCase().includes(termo) ||
+      g.simples.toLowerCase().includes(termo) ||
+      g.definicao.toLowerCase().includes(termo),
   );
   return (
     <>
@@ -614,7 +821,12 @@ function TelaGlossario({ onTela }: { onTela: (t: TelaPt) => void }) {
           <div key={g.termo} className="pi-glossario-item">
             <dt>{g.termo}</dt>
             <dd>
-              <Rico texto={g.definicao} />
+              <p className="pi-glossario-simples">
+                <Rico texto={g.simples} />
+              </p>
+              <p className="pi-glossario-tecnico">
+                <span className="pi-termo-tecnico-rotulo">Na linguagem da gramática:</span> <Rico texto={g.definicao} />
+              </p>
             </dd>
           </div>
         ))}

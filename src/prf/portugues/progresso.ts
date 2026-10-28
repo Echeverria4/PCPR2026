@@ -17,13 +17,19 @@ export interface RespostaPt {
 export interface EstadoPagina {
   vistaEm: string;
   concluidaEm?: string;
+  /** Tela do passo a passo em que a pessoa parou (0 = abertura). */
+  passo?: number;
 }
+
+/** Como as lições e os modelos abrem: passo a passo (o padrão) ou a página inteira. */
+export type ModoEstudo = "guiado" | "tudo";
 
 export interface ProgressoPt {
   /** Lições e modelos abertos (vistaEm) e marcados como estudados (concluidaEm). */
   paginas: Record<string, EstadoPagina>;
   ultimo?: { id: string; em: string };
   respostas: RespostaPt[];
+  modo?: ModoEstudo;
 }
 
 const VAZIO: ProgressoPt = { paginas: {}, respostas: [] };
@@ -37,6 +43,7 @@ export function lerProgressoPt(): ProgressoPt {
       paginas: p.paginas && typeof p.paginas === "object" ? p.paginas : {},
       ultimo: p.ultimo && typeof p.ultimo.id === "string" ? p.ultimo : undefined,
       respostas: Array.isArray(p.respostas) ? p.respostas.filter((r) => r && typeof r.q === "string") : [],
+      modo: p.modo === "guiado" || p.modo === "tudo" ? p.modo : undefined,
     };
   } catch {
     return { paginas: {}, respostas: [] };
@@ -63,7 +70,26 @@ export function marcarVistaPt(id: string): ProgressoPt {
 export function marcarConcluidaPt(id: string, concluida: boolean): ProgressoPt {
   const p = lerProgressoPt();
   const atual = p.paginas[id] ?? { vistaEm: new Date().toISOString() };
-  p.paginas[id] = concluida ? { ...atual, concluidaEm: new Date().toISOString() } : { vistaEm: atual.vistaEm };
+  if (concluida) p.paginas[id] = { ...atual, concluidaEm: new Date().toISOString() };
+  else {
+    const { concluidaEm: _, ...resto } = atual;
+    p.paginas[id] = resto;
+  }
+  return salvar(p);
+}
+
+/** Guarda a tela do passo a passo em que a pessoa está, para retomar dali. */
+export function salvarPassoPt(id: string, passo: number): ProgressoPt {
+  const p = lerProgressoPt();
+  const agora = new Date().toISOString();
+  p.paginas[id] = { ...p.paginas[id], vistaEm: p.paginas[id]?.vistaEm ?? agora, passo };
+  p.ultimo = { id, em: agora };
+  return salvar(p);
+}
+
+export function salvarModoPt(modo: ModoEstudo): ProgressoPt {
+  const p = lerProgressoPt();
+  p.modo = modo;
   return salvar(p);
 }
 

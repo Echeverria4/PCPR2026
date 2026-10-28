@@ -6016,6 +6016,200 @@ button {
 .pi-fim-erros { list-style: none; margin: 0 0 14px; padding: 0; display: flex; flex-direction: column; gap: 8px; }
 .pi-fim-erros li { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between; font-size: 0.86rem; }
 
+/* Passo a passo: um pedaço por tela, letra maior e a navegação fixa embaixo. */
+.pi-modo { margin: 0 0 14px; }
+.pi-guiado { padding-bottom: 92px; }
+
+.pi-guiado-cabeca {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px 14px;
+  margin: 0 0 8px;
+}
+
+.pi-guiado-onde { font-family: var(--fonte-mono); font-size: 0.86rem; color: var(--ouro-forte); }
+.pi-guiado-tudo { font-size: 0.88rem; }
+.pi-guiado-progresso { margin-bottom: 16px; }
+.pi-guiado-card { padding: 24px 26px; min-height: 180px; }
+
+.pi-guiado-letra {
+  margin: 0 0 16px;
+  font-family: var(--fonte-cond);
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ouro-forte);
+}
+
+.pi-guiado-letra span { color: var(--texto-fraco); }
+
+.pi-guiado-card .pi-texto,
+.pi-guiado-card .pi-lista ul,
+.pi-guiado-card .pi-perguntas ul { font-size: 1.06rem; line-height: 1.7; }
+.pi-guiado-card .pi-lista li,
+.pi-guiado-card .pi-perguntas li { margin-bottom: 8px; }
+.pi-guiado-card .pi-mini-titulo { font-size: 0.86rem; }
+.pi-guiado-card .pi-ramo,
+.pi-guiado-card .pi-fluxo-pergunta,
+.pi-guiado-card .pi-coluna-titulo,
+.pi-guiado-card .pi-coluna ul,
+.pi-guiado-card .pi-sintese,
+.pi-guiado-card .pi-pegadinha,
+.pi-guiado-card .pi-passos ol,
+.pi-guiado-card .pi-passos-conclusao { font-size: 0.99rem; line-height: 1.6; }
+.pi-guiado-card .pi-fluxo-sim,
+.pi-guiado-card .pi-fluxo-senao,
+.pi-guiado-card .pi-macete-explicacao,
+.pi-guiado-card .pi-nota { font-size: 0.97rem; line-height: 1.6; }
+.pi-guiado-card .pi-fluxo-seta,
+.pi-guiado-card .pi-fluxo-nao { font-size: 0.82rem; }
+.pi-guiado-card .pi-grade table { font-size: 0.93rem; line-height: 1.5; }
+.pi-guiado-card .pi-grade-nota { font-size: 0.9rem; }
+.pi-guiado-card .pi-macete-texto { font-size: 1.22rem; line-height: 1.45; }
+.pi-guiado-card .pi-passos-frase { font-size: 1.14rem; }
+.pi-guiado-card .pi-frase-linha { gap: 14px 10px; }
+.pi-guiado-card .pi-palavra-t { font-size: 1.25rem; }
+.pi-guiado-card .pi-palavra-rotulo { font-size: 0.75rem; }
+.pi-guiado-card .pi-frase-comentario { font-size: 0.99rem; line-height: 1.6; color: var(--texto); }
+.pi-guiado-card .pi-exemplo { padding: 16px 18px; }
+.pi-guiado-card .pi-exemplo-nivel { font-size: 0.75rem; }
+.pi-guiado-card .pi-exemplo-frase { margin: 10px 0 16px; font-size: 1.3rem; line-height: 1.45; }
+.pi-guiado-card .pi-exemplo-analise { font-size: 1.02rem; line-height: 1.65; color: var(--texto); }
+
+.pi-pense {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 14px;
+  padding: 12px 14px;
+  border: 1px dashed var(--borda-forte);
+  border-radius: var(--raio);
+}
+
+.pi-pense p { margin: 0; font-size: 0.98rem; line-height: 1.5; color: var(--texto-fraco); }
+
+.pi-guiado-resumo { margin: 0 0 14px; font-size: 1.08rem; line-height: 1.65; }
+.pi-guiado-conta { margin: 0 0 16px; font-size: 0.98rem; line-height: 1.55; color: var(--texto-fraco); }
+.pi-guiado-mapa { margin: 0 0 16px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 7px; }
+.pi-guiado-mapa .pi-link { font-size: 0.98rem; }
+.pi-guiado-dicas { margin: 0; padding-left: 20px; font-size: 0.92rem; line-height: 1.6; color: var(--texto-fraco); }
+.pi-guiado-dicas li { margin-bottom: 4px; }
+.pi-guiado-parabens { margin: 0 0 8px; font-family: var(--fonte-titulo); font-size: 1.3rem; color: var(--ouro-forte); }
+.pi-guiado-fim-texto { margin: 0 0 14px; font-size: 1rem; line-height: 1.6; }
+.pi-guiado-rever { margin-top: 16px; }
+
+.pi-guiado-barra {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  padding: 10px 20px calc(10px + env(safe-area-inset-bottom));
+  background: #0a1524;
+  border-top: 1px solid var(--borda-forte);
+  box-shadow: 0 -2px 14px rgba(0, 0, 0, 0.45);
+}
+
+.pi-guiado-barra-interno {
+  max-width: 940px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 10px;
+}
+
+.pi-guiado-barra .botao { min-height: 46px; padding: 9px 18px; font-size: 0.95rem; }
+.pi-guiado-barra .botao:first-child { justify-self: start; }
+.pi-guiado-barra .botao-ouro { justify-self: end; }
+
+/* .botao:hover troca o fundo por azul e, no toque, o hover fica preso: o dourado sumiria a cada "Próximo". */
+.pi-guiado-barra .botao-ouro:hover,
+.pi-licao .botao-ouro:hover,
+.pi-acoes .botao-ouro:hover,
+.pi-painel .botao-ouro:hover { background: linear-gradient(180deg, var(--ouro-forte), var(--ouro)); }
+.pi-guiado-contador { font-family: var(--fonte-mono); font-size: 0.9rem; color: var(--texto-fraco); }
+
+/* Termo da gramática: um toque abre a explicação simples. */
+.pi-termo {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  text-align: inherit;
+  text-decoration: underline dotted rgba(242, 193, 78, 0.8);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.pi-termo:hover { color: var(--ouro-forte); }
+.pi-termo:focus-visible { outline: 2px solid var(--ouro-forte); outline-offset: 2px; border-radius: 2px; }
+
+.pi-termo-fundo { position: fixed; inset: 0; z-index: 40; background: rgba(0, 0, 0, 0.45); }
+
+.pi-termo-painel {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  z-index: 41;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+  width: min(940px, 100%);
+  max-height: 62vh;
+  overflow-y: auto;
+  padding: 16px 20px calc(18px + env(safe-area-inset-bottom));
+  background: var(--bg-elevado);
+  border: 1px solid var(--ouro);
+  border-bottom: 0;
+  border-radius: var(--raio) var(--raio) 0 0;
+  box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.5);
+}
+
+.pi-termo-cabeca { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
+.pi-termo-nome { font-family: var(--fonte-titulo); font-size: 1.2rem; color: var(--ouro-forte); }
+.pi-termo-simples { margin: 0 0 12px; font-size: 1.05rem; line-height: 1.65; }
+.pi-termo-tecnico { margin: 0; font-size: 0.88rem; line-height: 1.55; color: var(--texto-fraco); }
+
+.pi-termo-tecnico-rotulo {
+  display: block;
+  margin-bottom: 2px;
+  font-family: var(--fonte-cond);
+  font-weight: 700;
+  font-size: 0.74rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.pi-glossario-simples { margin: 0 0 6px; font-size: 0.98rem; line-height: 1.6; color: var(--texto); }
+.pi-glossario-tecnico { margin: 0; font-size: 0.84rem; line-height: 1.5; color: var(--texto-fraco); }
+
+/* Frase interativa: a classe aparece no toque. */
+.pi-frase-instrucao { margin: 0 0 12px; font-size: 0.94rem; line-height: 1.5; color: var(--texto-fraco); }
+.pi-frase-interativa.pi-frase { padding: 16px; }
+
+.pi-palavra-botao {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.pi-palavra-oculta .pi-palavra-t { border-bottom: 3px dashed var(--borda-forte); }
+.pi-palavra-oculta .pi-palavra-rotulo { color: var(--ouro-forte); font-weight: 700; }
+.pi-palavra-oculta:hover .pi-palavra-t { border-bottom-color: var(--ouro); }
+.pi-palavra-botao:focus-visible { outline: 2px solid var(--ouro-forte); outline-offset: 3px; border-radius: 2px; }
+.pi-frase-todas { margin-top: 14px; }
+
 @media (max-width: 640px) {
   .pi-chaves { grid-template-columns: 1fr; gap: 8px; }
   .pi-chaves-ramos { padding-left: 10px; }
@@ -6023,4 +6217,12 @@ button {
   .pi-grade table { font-size: 0.76rem; }
   .pi-grade th, .pi-grade td { padding: 5px; }
   .pi-palavra-t { font-size: 0.98rem; }
+  .pi-guiado-card { padding: 18px 16px; }
+  .pi-guiado-card .pi-palavra-t { font-size: 1.12rem; }
+  .pi-guiado-card .pi-exemplo { padding: 14px; }
+  .pi-guiado-card .pi-exemplo-frase { font-size: 1.18rem; }
+  .pi-guiado-card .pi-grade table { font-size: 0.84rem; }
+  .pi-guiado-barra { padding: 8px 14px calc(8px + env(safe-area-inset-bottom)); }
+  .pi-guiado-barra .botao { padding: 9px 14px; }
+  .pi-termo-painel { padding: 14px 16px calc(16px + env(safe-area-inset-bottom)); }
 }
