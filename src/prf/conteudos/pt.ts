@@ -12,7 +12,12 @@ As alternativas erradas costumam repetir três defeitos. A extrapolação diz ma
 
 Também vale distinguir o pressuposto do subentendido. O pressuposto vem marcado na própria frase: "voltou a atrasar" pressupõe um atraso anterior, e quem diz isso não pode negar o atraso antigo sem se contradizer. O subentendido depende da situação e é responsabilidade de quem ouve: "Já são dez horas" pode ser um convite para encerrar a reunião, e quem falou pode alegar que só informava a hora.
 
-Na prática, leia o texto inteiro antes das alternativas. Marque os conectivos ("mas", "portanto", "embora", "porque"), que mostram como as ideias se articulam, e os modalizadores ("talvez", "possivelmente", "em geral"), que medem o grau de certeza do autor. Depois julgue cada alternativa com o trecho correspondente à vista.`,
+Na prática, leia o texto inteiro antes das alternativas. Marque os conectivos ("mas", "portanto", "embora", "porque"), que mostram como as ideias se articulam, e os modalizadores ("talvez", "possivelmente", "em geral"), que medem o grau de certeza do autor. Depois julgue cada alternativa com o trecho correspondente à vista.
+
+Complemento (coesão referencial e estrutura argumentativa):
+• Para achar o termo que um pronome retoma, use primeiro a concordância: em "a placa do caminhão, que estava amassada", o feminino "amassada" mostra que o "que" retoma "a placa". Quando a forma não decide, decide o sentido: em "o laudo da perícia, que o perito assinou", só o laudo pode ter sido assinado.
+• Termos de gêneros diferentes são retomados no masculino plural: "conferiu a CNH e o CRLV e devolveu-os ao condutor".
+• Muitos textos argumentativos começam por uma opinião que não é a do autor ("Há quem defenda...", "Muitos acreditam..."), contestam essa opinião com dados ou argumentos ("porém", "no entanto") e só então apresentam a tese ("Por isso", "Portanto"). Tomar a opinião contestada pela tese do autor é erro comum.`,
     exemplos: [
       "Texto: \"Parte dos acidentes do trecho acontece à noite.\" A alternativa \"A maioria dos acidentes do trecho acontece à noite\" extrapola: \"parte\" pode ser qualquer fração, inclusive pequena.",
       "\"O servidor deixou de usar o sistema antigo\" pressupõe que ele usava o sistema antes. A informação está marcada pela expressão \"deixou de\" e não depende do contexto.",
@@ -31,7 +36,12 @@ A descrição retrata um ser, um objeto ou um lugar num momento determinado, com
 
 A dissertação trata de um tema por meio de ideias. Na dissertação expositiva o autor informa e explica sem defender posição, como num verbete ou num relatório técnico. Na argumentativa ele sustenta uma tese com argumentos (dados, exemplos, relações de causa e consequência, citações de autoridade) e costuma seguir a estrutura de introdução, desenvolvimento e conclusão.
 
-O texto injuntivo, também chamado instrucional, orienta o leitor a fazer algo, passo a passo, em geral com verbos no imperativo ou no infinitivo: receitas, manuais, tutoriais. Alguns autores separam dele o texto prescritivo, que impõe regras de cumprimento obrigatório, com sanção para quem as descumpre: leis, regulamentos, normas internas. A diferença está na obrigatoriedade. A receita sugere; o regulamento obriga.`,
+O texto injuntivo, também chamado instrucional, orienta o leitor a fazer algo, passo a passo, em geral com verbos no imperativo ou no infinitivo: receitas, manuais, tutoriais. Alguns autores separam dele o texto prescritivo, que impõe regras de cumprimento obrigatório, com sanção para quem as descumpre: leis, regulamentos, normas internas. A diferença está na obrigatoriedade. A receita sugere; o regulamento obriga.
+
+Complemento (descrição objetiva × subjetiva):
+• A descrição objetiva registra o que se pode verificar: quantidade, forma, cor, posição e estado ("o veículo tinha dois eixos e o para-choque solto").
+• A descrição subjetiva traz a impressão de quem descreve, marcada por adjetivos avaliativos ("cena assustadora", "sala imunda") ou por advérbios que comentam o fato ("felizmente", "infelizmente", "por sorte").
+• Relatórios, laudos e autos pedem descrição objetiva. Adjetivo, por si só, não marca subjetividade: "amassado", "quebrado" e "molhado" descrevem estados verificáveis.`,
     exemplos: [
       "\"Desligue o equipamento, retire o cabo e aguarde trinta segundos antes de religar.\" É um texto injuntivo: instruções em sequência, com verbos no imperativo.",
       "\"É proibido o uso de celular durante a condução do veículo oficial; o descumprimento sujeita o servidor às sanções do regulamento.\" É um texto prescritivo: impõe a regra e prevê consequência.",
@@ -102,7 +112,14 @@ Pronomes. Os retos (eu, tu, ele...) funcionam como sujeito, e os oblíquos (me, 
 
 Advérbios. Modificam o verbo, o adjetivo ou outro advérbio e não variam. Por isso "meio" fica invariável quando significa "um pouco" ("a porta estava meio aberta") e varia quando é numeral ("meia hora"). "Bastante" segue a mesma lógica: varia como adjetivo ("bastantes provas") e não varia como advérbio ("provas bastante claras").
 
-Conjunções. As coordenativas ligam orações independentes: aditivas (e, nem), adversativas (mas, porém, contudo, todavia, entretanto), alternativas (ou, ora... ora), conclusivas (logo, portanto, por isso) e explicativas (pois, porque, que). As subordinativas introduzem orações dependentes e expressam causa, concessão, condição, conformidade, comparação, consequência, finalidade, proporção ou tempo, além das integrantes "que" e "se". Trocar uma conjunção por outra de valor diferente muda o sentido da frase, e as provas exploram muito essa troca.`,
+Conjunções. As coordenativas ligam orações independentes: aditivas (e, nem), adversativas (mas, porém, contudo, todavia, entretanto), alternativas (ou, ora... ora), conclusivas (logo, portanto, por isso) e explicativas (pois, porque, que). As subordinativas introduzem orações dependentes e expressam causa, concessão, condição, conformidade, comparação, consequência, finalidade, proporção ou tempo, além das integrantes "que" e "se". Trocar uma conjunção por outra de valor diferente muda o sentido da frase, e as provas exploram muito essa troca.
+
+Complemento (colocação pronominal, conectivos e futuro do pretérito):
+• Próclise (pronome antes do verbo) é obrigatória quando há palavra que atrai o pronome: negação ("não se sabe"), pronome relativo ("o agente que me atendeu"), conjunção subordinativa ("quando se aproximou"), pronome indefinido ("tudo se resolveu"), advérbio sem vírgula ("aqui se fiscaliza") e "em" seguido de gerúndio ("em se confirmando a infração").
+• Mesóclise: no futuro do presente e no futuro do pretérito, sem palavra atrativa ("informar-lhe-emos", "dir-se-ia"). Com palavra atrativa, usa-se a próclise ("não lhe informaremos").
+• Ênclise: no início da frase ("Informaram-me") e com infinitivo sem palavra atrativa ("convém avisá-lo"). Nunca há pronome depois de particípio ("tinha-lhe entregado", e não "tinha entregado-lhe").
+• "E" tem valor adversativo quando liga ideias que se opõem ("estudou e não passou"). "Pois" é explicativo antes do verbo de sua oração ("parou, pois chovia") e conclusivo depois dele, entre vírgulas ("chovia; devia, pois, parar").
+• Futuro do pretérito: hipótese ("se tivesse freado, teria evitado a batida"), futuro em relação ao passado ("disse que a pista seria liberada"), polidez ("gostaria de saber") e incerteza, para atribuir a informação a outra fonte sem confirmá-la ("segundo a polícia, o suspeito teria fugido").`,
     exemplos: [
       "\"Embora o sistema estivesse lento, o relatório saiu no prazo\": \"embora\" é concessiva, e poderia ser trocada por \"ainda que\" ou \"mesmo que\" sem mudar o sentido.",
       "\"Este relatório que tenho em mãos\" (perto de quem fala). \"Esse relatório que você enviou\" (perto do ouvinte). \"Aquele relatório do ano passado\" (distante de ambos).",
@@ -145,7 +162,12 @@ Vozes verbais. Na passiva analítica, usa-se ser mais particípio ("as multas fo
 No período composto por coordenação, as orações são independentes entre si: assindéticas (sem conjunção) ou sindéticas (aditivas, adversativas, alternativas, conclusivas, explicativas). Na subordinação, uma oração exerce função na outra:
 • substantivas: subjetiva, objetiva direta, objetiva indireta, completiva nominal, predicativa, apositiva;
 • adjetivas: restritivas, sem vírgula, e explicativas, entre vírgulas;
-• adverbiais: causa, consequência, concessão, condição, conformidade, comparação, finalidade, proporção, tempo.`,
+• adverbiais: causa, consequência, concessão, condição, conformidade, comparação, finalidade, proporção, tempo.
+
+Complemento (complemento nominal, oração predicativa e passiva em locução):
+• Com substantivo abstrato de ação, o termo com "de" que pratica a ação é adjunto adnominal ("a vistoria do perito": o perito vistoriou), e o que sofre a ação é complemento nominal ("a vistoria do veículo": o veículo foi vistoriado). "A resposta do órgão" (o órgão respondeu) traz adjunto adnominal; "a resposta ao ofício", complemento nominal.
+• A oração substantiva predicativa vem depois do verbo de ligação e caracteriza um sujeito expresso ("A meta é zerar as mortes no feriado"; "O certo é que a ponte cedeu"). Na subjetiva, a própria oração é o sujeito ("É necessário que o condutor pare").
+• Na passiva analítica com locução, o auxiliar se mantém, e o "ser" toma a forma do verbo principal: "vinha apreendendo as cargas" → "as cargas vinham sendo apreendidas"; "tinha lavrado o auto" → "o auto tinha sido lavrado"; "vai interditar a pista" → "a pista vai ser interditada".`,
     exemplos: [
       "\"Venderam-se os veículos apreendidos\": \"se\" é partícula apassivadora, \"os veículos\" é o sujeito, e o verbo vai ao plural. Já em \"Precisa-se de técnicos\" o \"se\" indetermina o sujeito, e o verbo fica no singular.",
       "\"Os agentes que trabalharam no feriado terão folga\": só alguns trabalharam (restritiva). \"Os agentes, que trabalharam no feriado, terão folga\": todos trabalharam (explicativa).",
@@ -171,7 +193,10 @@ Ela também separa orações coordenadas. Antes de "e", não se usa vírgula qua
 
 O ponto e vírgula separa itens de enumeração, como os incisos de uma lei, e orações coordenadas mais longas ou que já tenham vírgulas internas. Os dois-pontos anunciam uma enumeração, uma citação, uma explicação ou uma síntese do que veio antes. O travessão marca falas e intercalações enfáticas. As aspas destacam citações, estrangeirismos e palavras usadas em sentido especial ou irônico.
 
-Pontuação muda o sentido. Em "Não, quero o relatório" e "Não quero o relatório", a vírgula inverte a mensagem.`,
+Pontuação muda o sentido. Em "Não, quero o relatório" e "Não quero o relatório", a vírgula inverte a mensagem.
+
+Complemento (objeto pleonástico):
+• Quando o complemento é antecipado e depois retomado por pronome, a vírgula marca o deslocamento: "O relatório, o chefe o assinou ontem"; "Ao condutor, devolveram-lhe a CNH". O termo antecipado é objeto pleonástico (direto ou indireto), e não sujeito: em "O relatório, o chefe o assinou", o sujeito é "o chefe".`,
     exemplos: [
       "Errado: \"Os servidores do setor de protocolo, receberam novas instruções.\" A vírgula separa o sujeito do verbo. Certo: \"Os servidores do setor de protocolo receberam novas instruções.\"",
       "\"No posto da rodovia, havia três viaturas; no da cidade, duas.\" A segunda vírgula marca a omissão do verbo \"havia\".",
@@ -198,7 +223,11 @@ Casos que mais caem:
 • "menos" e "alerta" não variam;
 • "é proibido", "é necessário" e "é bom" ficam invariáveis quando o substantivo vem sem determinante ("é proibido entrada") e concordam quando há artigo ("é proibida a entrada");
 • "meio" e "bastante" variam como numeral ou adjetivo e ficam invariáveis como advérbio;
-• "só" varia quando significa "sozinho" ("eles estavam sós") e não varia quando significa "somente" ("só eles vieram").`,
+• "só" varia quando significa "sozinho" ("eles estavam sós") e não varia quando significa "somente" ("só eles vieram").
+
+Complemento (substituições de "haver"):
+• "Haver" de tempo decorrido se troca por "fazer", também impessoal ("Havia anos que a ponte estava interditada" → "Fazia anos que a ponte estava interditada"), e não por "existir".
+• O "ter" com sentido de existir ("tem buraco na pista") é próprio da fala; na norma-padrão, usa-se "haver" ou "existir" ("há buracos na pista", "existem buracos na pista").`,
     exemplos: [
       "\"Houve muitas reclamações\", \"Deve haver novas vagas\", \"Faz três meses que o pedido chegou\": verbos impessoais, sempre no singular.",
       "\"Seguem anexas as planilhas\" ou \"Seguem em anexo as planilhas\". \"É proibida a entrada\" ou \"É proibido entrada\".",
@@ -241,7 +270,10 @@ Nomes também têm regência: acessível a, apto a ou para, compatível com, con
 • Parônimos são palavras parecidas, mas não idênticas, na grafia e na pronúncia, e com sentidos distintos. Os que mais caem: eminente (notável) e iminente (prestes a acontecer); ratificar (confirmar) e retificar (corrigir); tráfego (fluxo de veículos) e tráfico (comércio ilegal); infringir (violar) e infligir (aplicar pena); deferir (atender) e diferir (adiar, ser diferente); descriminar (deixar de ser crime) e discriminar (distinguir, segregar); mandado (ordem judicial) e mandato (período de representação); emigrar (sair do país) e imigrar (entrar no país); vultoso (volumoso, de grande valor) e vultuoso (inchado, congestionado).
 • Polissemia é a palavra com vários sentidos ligados entre si: o pé da pessoa, o pé da mesa, o pé da serra.
 
-A denotação é o sentido literal, de dicionário. A conotação é o sentido figurado, criado pelo contexto ("o trânsito parou o coração da cidade"). Hiperônimo é o termo geral e hipônimo o específico: "veículo" é hiperônimo de "carro" e "moto". Retomar "o carro" com "o veículo" é um recurso de coesão muito usado em textos oficiais e jornalísticos.`,
+A denotação é o sentido literal, de dicionário. A conotação é o sentido figurado, criado pelo contexto ("o trânsito parou o coração da cidade"). Hiperônimo é o termo geral e hipônimo o específico: "veículo" é hiperônimo de "carro" e "moto". Retomar "o carro" com "o veículo" é um recurso de coesão muito usado em textos oficiais e jornalísticos.
+
+Complemento (sentido pelo contexto):
+• Em verbos com muitos sentidos, o complemento decide qual deles vale: "tomar o remédio" (ingerir), "tomar a cidade" (conquistar), "tomar o ônibus" (embarcar), "tomar posse" (assumir o cargo). Para comparar dois empregos, troque o verbo por um sinônimo e veja se a troca serve nas duas frases.`,
     exemplos: [
       "\"O diretor ratificou a decisão\" (confirmou) × \"O servidor retificou a data digitada errada\" (corrigiu).",
       "\"Os juízes deferiram o pedido\" (atenderam) × \"Os juízes diferiram o julgamento\" (adiaram).",
@@ -266,6 +298,8 @@ Desde a 3ª edição, o aviso e o memorando deixaram de existir como tipos próp
 Só dois fechos são usados: "Respeitosamente," para autoridades de hierarquia superior, inclusive o Presidente da República, e "Atenciosamente," para autoridades de mesma hierarquia, de hierarquia inferior e demais casos. O fecho não é numerado. Os parágrafos do texto só são numerados quando há três ou mais.
 
 Os pronomes de tratamento levam o verbo à terceira pessoa ("Vossa Excelência decidirá") e o adjetivo concorda com o sexo da pessoa ("Vossa Senhoria está convidado", dirigindo-se a um homem). O vocativo "Excelentíssimo Senhor" fica reservado aos chefes de Poder: Presidente da República, Presidente do Congresso Nacional e Presidente do STF. Para eles o tratamento é escrito por extenso, sem abreviar. As demais autoridades recebem "Senhor" ou "Senhora" seguido do cargo. "Digníssimo" e "Ilustríssimo" foram abolidos, e o uso indiscriminado de "doutor" deve ser evitado. "Vossa" é usado para falar com a autoridade; "Sua" é usado para falar dela.
+
+No Executivo federal, o Decreto 9.758/2019 adota "senhor" como único pronome de tratamento na comunicação com agentes públicos federais, qualquer que seja o nível hierárquico, e veda "Vossa Excelência", "Excelentíssimo", "Vossa Senhoria", "Vossa Magnificência", "doutor", "ilustre", "digno" e "respeitável" (arts. 2º e 3º). O decreto não se aplica à comunicação com autoridades estrangeiras e organismos internacionais, nem com autoridades de outros Poderes ou entes que exijam, por norma própria, tratamento especial. As questões seguem o MRPR, que é o conteúdo do edital.
 
 A formatação usa papel A4 e fonte Calibri ou Carlito, corpo 12, com 11 nas citações recuadas e 10 nas notas de rodapé. As margens são de no mínimo 3 cm à esquerda, 1,5 cm à direita e 2 cm em cima e embaixo. O texto é justificado, com recuo de 2,5 cm na primeira linha do parágrafo e espaçamento simples. As páginas são numeradas a partir da segunda.`,
     exemplos: [
