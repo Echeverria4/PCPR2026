@@ -115,6 +115,10 @@ export const ADJETIVO: Licao = {
             { frase: "A fiscalização **rodoviária** foi intensificada.", analise: "Adjetivo de relação: classifica a fiscalização (a de rodovias) e não admite grau." },
             { frase: "Os uniformes **azul-marinho** chegaram.", analise: "Cor composta com 'marinho' fica invariável: uniformes azul-marinho." },
             {
+              frase: "É um **simples** agente. × É um agente **simples**.",
+              analise: "Antes do nome, 'simples' = mero, apenas; depois, = modesto, sem sofisticação. A posição do adjetivo muda o sentido.",
+            },
+            {
               frase: "Comprou camisas **verde-claras** e calças **verde-oliva**.",
               analise: "Adjetivo + adjetivo: só o último varia (verde-claras). Se o último elemento é substantivo (oliva), o composto fica invariável.",
               concurso: true,
@@ -122,6 +126,21 @@ export const ADJETIVO: Licao = {
             {
               frase: "O plano é **mais bom** que eficiente.",
               analise: "Quando se comparam duas qualidades do mesmo ser, a norma aceita 'mais bom', 'mais mau', 'mais grande', 'mais pequeno'.",
+              concurso: true,
+            },
+            {
+              frase: "Água **de chuva** é água **pluvial**; peixe **de rio** é peixe **fluvial**.",
+              analise: "Locução adjetiva (preposição + substantivo) equivale a um adjetivo: de chuva = pluvial; de rio = fluvial; de guerra = bélico; de chumbo = plúmbeo.",
+              concurso: true,
+            },
+            {
+              frase: "O perito era **integérrimo**, e o caso, **antiquíssimo**.",
+              analise: "Superlativos eruditos: íntegro → integérrimo; antigo → antiquíssimo (volta o radical latino 'antiqu-'). Outros do mesmo tipo: célebre → celebérrimo, livre → libérrimo.",
+              concurso: true,
+            },
+            {
+              frase: "O governo assinou acordos **luso-brasileiros** e financiou pesquisas **técnico-científicas**.",
+              analise: "Nos compostos de dois adjetivos, o primeiro elemento fica no masculino singular e a flexão vai para o fim: luso-brasileiros, técnico-científicas. Exceção clássica: surdo-mudo → surdos-mudos (os dois variam).",
               concurso: true,
             },
           ],

@@ -105,6 +105,14 @@ export const INTERJEICAO: Licao = {
             { frase: "**Ufa!** Terminamos o relatório.", analise: "Interjeição de alívio; 'Terminamos o relatório' é outra frase, completa." },
             { frase: "**Ai de mim!** Perdi o prazo.", analise: "Locução interjetiva: um conjunto de palavras com valor de interjeição." },
             {
+              frase: "**Oxalá** a pista seque antes do feriado!",
+              analise: "Interjeição de desejo (= tomara, Deus queira), seguida de verbo no subjuntivo (seque).",
+            },
+            {
+              frase: "**Ai!** Machuquei o pé. × Fique **aí** até eu voltar.",
+              analise: "Ai = interjeição de dor (sem acento). Aí = advérbio de lugar (com acento).",
+            },
+            {
               frase: "**Vivam** os aprovados!",
               analise: "Particularidade: quando 'viva' mantém valor de verbo (= que vivam), a norma recomenda a concordância com o termo seguinte: 'Vivam os aprovados'. Usado como interjeição pura, aceita-se 'Viva os aprovados!'.",
               concurso: true,
@@ -112,6 +120,16 @@ export const INTERJEICAO: Licao = {
             {
               frase: "**Psiu!** O comandante está falando.",
               analise: "Interjeição de pedido de silêncio. A banca pode pedir a função da linguagem predominante: apelativa (conativa).",
+              concurso: true,
+            },
+            {
+              frase: "**Ah!** Agora entendi o recado. × **Há** dois carros no acostamento. × A viatura chegou **à** base.",
+              analise: "Mesma pronúncia, três classes: 'ah' (com h no fim) é interjeição; 'há' é o verbo haver (= existem); 'à' é a preposição 'a' + o artigo 'a'.",
+              concurso: true,
+            },
+            {
+              frase: "— O motorista estava nervoso. — **Pudera!** Já tinha duas multas no mês.",
+              analise: "'Pudera' é o verbo poder (pretérito mais-que-perfeito) fixado como interjeição: indica que o fato era de esperar (= não admira!).",
               concurso: true,
             },
           ],

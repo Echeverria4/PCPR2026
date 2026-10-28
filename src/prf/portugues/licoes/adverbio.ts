@@ -112,6 +112,14 @@ export const ADVERBIO: Licao = {
             { frase: "Os documentos estão **anexos**; segue **em anexo** o parecer.", analise: "'Anexo' é adjetivo e concorda (documentos anexos); 'em anexo' é locução adverbial e não varia." },
             { frase: "Elas **mesmas** assinaram; o prazo acaba **mesmo** hoje.", analise: "'Mesmo' = próprio: concorda (pronome). 'Mesmo' = de fato, realmente: advérbio, invariável." },
             {
+              frase: "**Talvez** a rodovia **seja** liberada amanhã.",
+              analise: "'Talvez' é advérbio de dúvida. Antes do verbo, pede o subjuntivo (talvez seja), e não o indicativo ('talvez é'). Depois do verbo, aceita o indicativo: a rodovia será liberada, talvez, amanhã.",
+            },
+            {
+              frase: "O motorista falou **demais**. × Não houve nada **de mais** na abordagem.",
+              analise: "Demais = excessivamente (advérbio de intensidade). De mais = a mais, de extraordinário, o oposto de 'de menos' (nada de mais = nada de anormal). 'Os demais' é pronome: os outros.",
+            },
+            {
               frase: "Os servidores agiram **rápida e corretamente**.",
               analise: "Advérbios em '-mente' em sequência: o sufixo pode ficar só no último. O primeiro fica na forma feminina do adjetivo.",
               concurso: true,
@@ -119,6 +127,16 @@ export const ADVERBIO: Licao = {
             {
               frase: "Havia **menos** reclamações e **bastantes** elogios.",
               analise: "'Menos' é sempre invariável (nunca 'menas'). 'Bastantes' acompanha o substantivo 'elogios' (= muitos): concorda.",
+              concurso: true,
+            },
+            {
+              frase: "Os agentes **mais bem** treinados foram para a fronteira.",
+              analise: "Antes de particípio, a norma prefere 'mais bem' e 'mais mal' a 'melhor' e 'pior': os mais bem treinados, os mais mal pagos. Depois do verbo, usa-se 'melhor': eles treinaram melhor.",
+              concurso: true,
+            },
+            {
+              frase: "**Mal** chegou ao posto, recebeu o chamado.",
+              analise: "Aqui 'mal' é conjunção temporal (= assim que). Em 'dirige mal', é advérbio de modo; em 'o mal da pressa', substantivo.",
               concurso: true,
             },
           ],

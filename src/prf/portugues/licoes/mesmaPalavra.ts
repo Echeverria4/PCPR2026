@@ -135,6 +135,26 @@ export const MESMA_PALAVRA: Licao = {
             { frase: "Não sei o **porquê** da autuação.", analise: "'Porquê' com artigo e acento = o motivo: substantivo." },
             { frase: "O muro é **alto**; ele falou **alto**.", analise: "1º: adjetivo (caracteriza 'muro' por meio do verbo: predicativo). 2º: advérbio de modo (invariável)." },
             { frase: "O ingresso é **caro**; o ingresso custou **caro**.", analise: "'É caro': adjetivo predicativo. 'Custou caro': advérbio (= por alto preço), invariável: 'as entradas custaram caro'." },
+            {
+              frase: "**Certo** agente disse algo **certo**.",
+              analise: "Antes do substantivo, 'certo' é pronome indefinido (= um, algum). Depois de 'algo', é adjetivo (= correto). A posição muda a classe e o sentido.",
+              concurso: true,
+            },
+            {
+              frase: "A pista **que** fechou é perigosa. × O agente disse **que** a pista fechou. × **Que** perigoso!",
+              analise: "Pronome relativo (= a qual), conjunção integrante (a oração vira 'isso': disse isso) e advérbio de intensidade (= quão, muito).",
+              concurso: true,
+            },
+            {
+              frase: "**A** agente viu **a** viatura e **a** levou **a** Brasília.",
+              analise: "Artigo (a agente, a viatura), pronome oblíquo (a levou = levou a viatura) e preposição (levou a Brasília). Sem artigo antes de Brasília, não há crase.",
+              concurso: true,
+            },
+            {
+              frase: "**Se** chover, a pista fecha. × Não sei **se** a pista fechou. × O agente **se** olhou no espelho.",
+              analise: "Conjunção condicional (= caso), conjunção integrante (introduz o objeto: não sei isso) e pronome reflexivo (olhou a si mesmo).",
+              concurso: true,
+            },
           ],
         },
       ],

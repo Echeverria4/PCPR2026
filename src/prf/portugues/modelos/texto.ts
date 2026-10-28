@@ -68,9 +68,16 @@ export const MODELOS_TEXTO: ModeloPt[] = [
       {
         tipo: "exemplos",
         itens: [
+          { frase: "O agente falou com o motorista, e **ele** ficou nervoso.", analise: "Referência ambígua: 'ele' pode ser o agente ou o motorista. Falha de coesão." },
+          { frase: "Os agentes chegaram cedo. **Eles** conferiram a pista.", analise: "Coesão referencial por pronome: 'eles' retoma 'os agentes' (anáfora)." },
+          { frase: "Trocou pneus, filtros e óleo. **Tudo** foi feito no mesmo dia.", analise: "'Tudo' resume a enumeração anterior: retomada por pronome indefinido." },
+          { frase: "O condutor freou; **depois**, ligou o pisca-alerta.", analise: "Coesão sequencial: 'depois' ordena os fatos no tempo." },
           { frase: "O agente apreendeu o caminhão. **O veículo** estava sem placa.", analise: "Retomada por hiperônimo: 'veículo' é termo mais geral que 'caminhão'.", concurso: true },
           { frase: "O problema é **este**: faltam viaturas.", analise: "'Este' anuncia o que vem depois: catáfora.", concurso: true },
-          { frase: "O agente falou com o motorista, e **ele** ficou nervoso.", analise: "Referência ambígua: 'ele' pode ser o agente ou o motorista. Falha de coesão." },
+          { frase: "A pista foi interditada **porque** choveu. → Choveu; **por isso**, a pista foi interditada.", analise: "Mesmo sentido: 'porque' introduz a causa; 'por isso', a consequência. Na reescrita, a ordem das orações se inverte para manter a relação.", concurso: true },
+          { frase: "**Conforme** o agente informou, a pista abrirá às 8h. × **Conforme** a chuva aumentava, o trânsito piorava.", analise: "O mesmo conectivo muda de valor: no primeiro, conformidade (= segundo); no segundo, proporção (= à medida que).", concurso: true },
+          { frase: "**Como** estava cansado, parou no posto. × Fez tudo **como** o chefe mandou.", analise: "'Como' no início, antes da principal, indica causa (= porque). Depois do verbo, aqui indica conformidade (= conforme).", concurso: true },
+          { frase: "Fiscais e motoristas discutiram: **estes** queriam sair; **aqueles**, terminar a vistoria.", analise: "'Estes' retoma o termo mais próximo (motoristas); 'aqueles', o mais distante (fiscais).", concurso: true },
         ],
       },
       {
@@ -137,9 +144,14 @@ export const MODELOS_TEXTO: ModeloPt[] = [
       {
         tipo: "exemplos",
         itens: [
+          { frase: "'Ele tem a paciência de Jó.'", analise: "Alusão a uma personagem bíblica: exige repertório do leitor." },
+          { frase: "'Como a pista estava seca, o carro derrapou na água.'", analise: "Incoerente: 'pista seca' contradiz 'derrapou na água'. A frase está gramaticalmente correta, mas as ideias se chocam." },
+          { frase: "Como diz o ditado, 'devagar se vai ao longe'.", analise: "Intertextualidade explícita: o texto retoma outro (o provérbio) e marca a citação." },
           { frase: "'Minha terra tem palmeiras onde canta o sabiá' → 'Minha terra tem engarrafamentos onde buzina o caminhão'.", analise: "Paródia: mantém a forma do poema de Gonçalves Dias e troca o sentido para criticar a vida urbana.", concurso: true },
           { frase: "'O trecho estava deserto; os carros, parados em fila, buzinavam sem parar.'", analise: "Incoerência: o trecho não pode estar deserto e ter fila de carros ao mesmo tempo.", concurso: true },
-          { frase: "'Ele tem a paciência de Jó.'", analise: "Alusão a uma personagem bíblica: exige repertório do leitor." },
+          { frase: "Anúncio de pneus: 'Ser ou não ser seguro, eis a questão.'", analise: "Intertextualidade implícita: o anúncio adapta a fala de Hamlet, de Shakespeare, e conta que o leitor reconheça a fonte para entender o efeito.", concurso: true },
+          { frase: "'O agente trabalha na rodovia. A rodovia passa por várias cidades. As cidades têm prefeitos. Os prefeitos gostam de futebol.'", analise: "Coeso (cada frase retoma a anterior), mas incoerente: as ideias não convergem para um sentido. Coesão não garante coerência.", concurso: true },
+          { frase: "'Chuva forte. Pista alagada. Trânsito parado.'", analise: "Sem nenhum conectivo, mas coerente: o leitor reconstrói a relação de causa e consequência. Coerência não depende de marcas explícitas.", concurso: true },
         ],
       },
       {
@@ -201,8 +213,13 @@ export const MODELOS_TEXTO: ModeloPt[] = [
       {
         tipo: "exemplos",
         itens: [
+          { frase: "— Estou cansado — disse o motorista.", analise: "Discurso direto: a fala aparece como foi dita, com travessão e verbo de elocução (disse)." },
+          { frase: "O motorista disse **que estava cansado**.", analise: "Discurso indireto: o narrador relata a fala numa oração introduzida por 'que', e 'estou' passa a 'estava'." },
           { frase: "O motorista olhou o relógio. Meu Deus, como ia explicar o atraso? Acelerou.", analise: "A pergunta é pensamento do personagem, sem travessão nem verbo dicendi: indireto livre.", concurso: true },
           { frase: "— Você conferiu os documentos? — perguntou o chefe. → O chefe perguntou se ele tinha conferido os documentos.", analise: "Pergunta direta vira oração com 'se'; o perfeito vira mais-que-perfeito composto.", concurso: true },
+          { frase: "— **Vou** resolver **isto hoje** — prometeu o chefe. → O chefe prometeu que **iria** resolver **aquilo naquele dia**.", analise: "Na transposição, o presente com valor de futuro (vou) vira futuro do pretérito (iria); isto vira aquilo; hoje vira naquele dia.", concurso: true },
+          { frase: "— **Onde** está o documento? — perguntou o agente. → O agente perguntou **onde estava** o documento.", analise: "Pergunta com palavra interrogativa: ela se mantém (onde), o ponto de interrogação some e o presente vira pretérito imperfeito.", concurso: true },
+          { frase: "Hoje cedo, o agente disse que **amanhã** voltará à base.", analise: "Relato feito no mesmo dia: 'amanhã' continua valendo, e o futuro pode ficar porque o fato ainda está por vir. A troca por 'no dia seguinte' e 'voltaria' é a esperada quando o relato é de outro momento.", concurso: true },
         ],
       },
       {

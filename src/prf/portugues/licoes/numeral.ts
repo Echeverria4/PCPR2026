@@ -99,6 +99,10 @@ export const NUMERAL: Licao = {
             { frase: "A equipe apreendeu **o dobro** da carga do ano passado.", analise: "'Dobro' é multiplicativo usado como substantivo (com artigo)." },
             { frase: "Já é **meio-dia e meia**.", analise: "'Meia' é numeral fracionário: concorda com 'hora' subentendida (meio-dia e meia hora)." },
             {
+              frase: "Cumpriu **um terço** da pena em **meio** ano.",
+              analise: "Numerais fracionários indicam parte de um todo: meio, terço, quarto, quinto... A partir de onze, usa-se o cardinal + avos: um onze avos.",
+            },
+            {
               frase: "Comprou **duzentos gramas** de presunto.",
               analise: "'Grama' (unidade de massa) é masculino; o numeral concorda: duzentos gramas, não 'duzentas'.",
               concurso: true,
@@ -106,6 +110,21 @@ export const NUMERAL: Licao = {
             {
               frase: "O art. 10 da lei revogou o art. 9º.",
               analise: "Lê-se 'artigo dez' (cardinal, a partir do 10) e 'artigo nono' (ordinal, até o 9).",
+              concurso: true,
+            },
+            {
+              frase: "Leia a página **12** (doze) do laudo; o agente mora no apartamento **201** (duzentos e um).",
+              analise: "Página, folha, casa, apartamento e quarto levam cardinal depois do nome: página doze, apartamento duzentos e um. Com o numeral antes do nome, vale o ordinal: a décima segunda página.",
+              concurso: true,
+            },
+            {
+              frase: "**Os** milhares de denúncias chegaram pelo telefone.",
+              analise: "Milhar e milhão são substantivos masculinos: o artigo concorda com eles, e não com o substantivo seguinte. 'As milhares de denúncias' está errado.",
+              concurso: true,
+            },
+            {
+              frase: "A operação começa em **1º** de maio e termina em **2** de junho.",
+              analise: "No primeiro dia do mês, a tradição usa o ordinal (1º = primeiro); nos demais, o cardinal (2 = dois).",
               concurso: true,
             },
           ],

@@ -136,6 +136,14 @@ export const SUBSTANTIVO: Licao = {
             { frase: "A **coragem** do socorrista salvou o motorista.", analise: "'Coragem' é abstrato: é uma qualidade de alguém." },
             { frase: "A **frota** foi revisada.", analise: "'Frota' é coletivo (conjunto de veículos) no singular." },
             {
+              frase: "**O** motorista do ônibus e **a** motorista do carro apresentaram a CNH.",
+              analise: "Comum de dois gêneros: a palavra não muda, e o artigo indica o gênero (o/a motorista, o/a policial, o/a intérprete).",
+            },
+            {
+              frase: "Os **ladrões** fugiram, e os **cidadãos** chamaram a polícia.",
+              analise: "O plural de -ão tem três formas: -ões (ladrões), -ãos (cidadãos) e -ães (capitães, pães). Não há regra fixa: memorize os mais cobrados.",
+            },
+            {
               frase: "Ninguém explicou o **porquê** da autuação.",
               analise: "Com artigo, 'porquê' é substantivo (derivação imprópria) e leva acento.",
               concurso: true,
@@ -143,6 +151,16 @@ export const SUBSTANTIVO: Licao = {
             {
               frase: "A **vítima** foi socorrida; ele estava consciente.",
               analise: "'Vítima' é sobrecomum: o feminino gramatical vale para homem ou mulher.",
+              concurso: true,
+            },
+            {
+              frase: "Os **ex-agentes** assinaram dois **abaixo-assinados**.",
+              analise: "Elemento invariável na frente (o prefixo 'ex', o advérbio 'abaixo'): só o último vai para o plural: ex-agentes, abaixo-assinados.",
+              concurso: true,
+            },
+            {
+              frase: "**O** moral da equipe subiu após a operação; **a** moral do servidor não se negocia.",
+              analise: "Aqui o artigo não indica sexo, e sim o sentido: o moral = ânimo, disposição; a moral = ética, conjunto de valores.",
               concurso: true,
             },
           ],

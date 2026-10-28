@@ -62,8 +62,13 @@ export const MODELOS_BASE: ModeloPt[] = [
         tipo: "exemplos",
         itens: [
           { frase: "Os agentes **analisaram** o caso e **realizaram** a vistoria.", analise: "Analisar vem de 'análise' (com S); realizar vem de 'real' (sem S)." },
+          { frase: "A **paralisação** dos caminhoneiros durou dois dias.", analise: "Paralisação vem de paralisar, que vem de 'paralisia' (com S). A forma 'paralização' não existe." },
+          { frase: "A pista estava **mal** sinalizada, e o **mau** tempo piorou tudo.", analise: "Mal é o oposto de bem (advérbio: mal sinalizada); mau é o oposto de bom (adjetivo: mau tempo)." },
+          { frase: "O motorista **pôs** o cinto, mas não **quis** parar.", analise: "Pôr e querer se escrevem com S em todas as formas: pus, pôs, puser, pusesse; quis, quiser, quisesse." },
           { frase: "Espero que eles **viajem** cedo, porque a **viagem** é longa.", analise: "'Viajem' é o verbo viajar (mantém J); 'viagem' é o substantivo (sufixo -agem, com G).", concurso: true },
           { frase: "A **cessão** do imóvel foi votada na **sessão** de ontem, na **seção** de patrimônio.", analise: "Cessão = ato de ceder; sessão = reunião; seção = divisão, setor. O sentido escolhe a grafia.", concurso: true },
+          { frase: "O juiz negou a **pretensão** do autor e a **extensão** do prazo.", analise: "Pretender gera pretensão (com S, como compreender → compreensão). Já estender, com S, gera extensão e extenso, com X: a família nem sempre mantém a letra.", concurso: true },
+          { frase: "A **detenção** do suspeito gerou **repercussão** e **discussão** na imprensa.", analise: "Deter → detenção (-ter vira -tenção, com Ç, como reter → retenção). Repercutir → repercussão e discutir → discussão (-tir vira -ssão, com SS).", concurso: true },
         ],
       },
       {
@@ -118,10 +123,14 @@ export const MODELOS_BASE: ModeloPt[] = [
       {
         tipo: "exemplos",
         itens: [
-          { frase: "Não se sabe **por que** o radar falhou.", analise: "Interrogativa indireta (= por qual motivo): separado, mesmo sem ponto de interrogação.", concurso: true },
-          { frase: "Eis o motivo **por que** a estrada foi interditada.", analise: "= pelo qual: preposição + pronome relativo, separado.", concurso: true },
           { frase: "O condutor não explicou **o porquê** da manobra.", analise: "Com artigo e = o motivo: substantivo." },
           { frase: "A pista foi fechada **porque** havia óleo.", analise: "= pois: conjunção causal, junto e sem acento." },
+          { frase: "O motorista parou no acostamento. **Por quê**?", analise: "No fim da frase, antes da pontuação, a pergunta leva 'por quê', separado e com acento." },
+          { frase: "O relatório explica os **porquês** da interdição.", analise: "Substantivo (= os motivos): aceita artigo e plural, por isso junto e com acento." },
+          { frase: "Não se sabe **por que** o radar falhou.", analise: "Interrogativa indireta (= por qual motivo): separado, mesmo sem ponto de interrogação.", concurso: true },
+          { frase: "Eis o motivo **por que** a estrada foi interditada.", analise: "= pelo qual: preposição + pronome relativo, separado.", concurso: true },
+          { frase: "Ninguém entendeu **por que** o radar foi desligado, mas todos sabem **por quê**.", analise: "Os dois são interrogativos indiretos (= por qual razão). No meio da frase, sem acento; no fim, antes do ponto, com acento.", concurso: true },
+          { frase: "Os moradores **anseiam por que** a ponte seja reconstruída.", analise: "Aqui é a preposição 'por', exigida por 'ansiar por', mais a conjunção integrante 'que'. Teste: 'anseiam por isto: a reconstrução'. Separado e sem acento, sem sentido de causa.", concurso: true },
         ],
       },
       {
@@ -192,8 +201,13 @@ export const MODELOS_BASE: ModeloPt[] = [
         tipo: "exemplos",
         itens: [
           { frase: "O **ex-diretor** participou da **autoavaliação**.", analise: "Ex- (= anterior) sempre com hífen; auto + avaliação junta o com a, vogais diferentes: junto." },
+          { frase: "O exame **antirrábico** e o **ultrassom** ficaram prontos.", analise: "Prefixo terminado em vogal diante de R ou S: a consoante dobra e não há hífen (antirrábico, ultrassom, minissaia)." },
+          { frase: "O **vice-presidente** cumprimentou os **recém-chegados**.", analise: "Ex-, vice-, recém-, sem-, além- e aquém- pedem hífen sempre." },
           { frase: "A operação **inter-regional** contou com equipes **semiautônomas**.", analise: "Inter + r (consoantes iguais) → hífen; semi + a (vogais diferentes) → junto.", concurso: true },
           { frase: "O **contrarregra** chegou ao **micro-ônibus**.", analise: "Contra + r → dobra e junta; micro + o → vogais iguais, hífen.", concurso: true },
+          { frase: "O agente fez **pós-graduação** e agora tenta **prever** novos cenários.", analise: "Pré-, pós- e pró- tônicos, pronunciados à parte, levam hífen (pós-graduação, pré-escolar). Átonos se juntam: prever, pospor, promover.", concurso: true },
+          { frase: "O **coautor** do relatório defendeu a **reeleição** do **coordenador**.", analise: "Co- e re- se juntam sempre, mesmo diante de vogal igual: coordenar, cooperar, reeleição, reescrever. É a exceção à regra das vogais iguais.", concurso: true },
+          { frase: "No **dia a dia** do posto, o **mal-estar** dos agentes era visível.", analise: "Composto com elemento de ligação não leva hífen (dia a dia, fim de semana). Mal- leva hífen antes de vogal, H ou L (mal-estar, mal-humorado), mas não antes de consoante: malcriado, malfeito.", concurso: true },
         ],
       },
       {
@@ -274,10 +288,15 @@ export const MODELOS_BASE: ModeloPt[] = [
       {
         tipo: "exemplos",
         itens: [
-          { frase: "O **juiz** ouviu os **juízes** auxiliares.", analise: "Ju-iz: o I forma sílaba com Z, sem acento. Ju-í-zes: o I fica sozinho na sílaba, com acento.", concurso: true },
-          { frase: "A **ideia** saiu nos **papéis** da **assembleia**.", analise: "Ideia e assembleia são paroxítonas com ditongo aberto: perderam o acento. Papéis é oxítona: manteve.", concurso: true },
           { frase: "Os **hifens** foram corrigidos, mas o **hífen** do título não.", analise: "Hífen termina em N (paroxítona acentuada); hifens termina em ENS (paroxítona sem acento)." },
           { frase: "Eles **têm** razão e **veem** o problema.", analise: "Têm: plural de ter, circunflexo diferencial. Veem: hiato EE, sem acento desde o Acordo." },
+          { frase: "O **herói** ganhou um **troféu**, mas a **plateia** achou a cena pouco **heroica**.", analise: "Ditongo aberto ói, éu, éi: acento só na oxítona (herói, troféu, papéis). Na paroxítona não há acento desde 2009: plateia, heroica, assembleia." },
+          { frase: "Ele **pôde** sair ontem, mas hoje não **pode**.", analise: "Acento diferencial obrigatório: pôde (pretérito) × pode (presente). Também ficou pôr (verbo) × por (preposição)." },
+          { frase: "O **júri** avaliou o **caráter** do **réu**.", analise: "Paroxítonas terminadas em i e r levam acento (júri, caráter). Réu é monossílabo tônico com ditongo aberto éu: acento." },
+          { frase: "O **juiz** ouviu os **juízes** auxiliares.", analise: "Ju-iz: o I forma sílaba com Z, sem acento. Ju-í-zes: o I fica sozinho na sílaba, com acento.", concurso: true },
+          { frase: "A **ideia** saiu nos **papéis** da **assembleia**.", analise: "Ideia e assembleia são paroxítonas com ditongo aberto: perderam o acento. Papéis é oxítona: manteve.", concurso: true },
+          { frase: "Na **saída**, o fiscal viu a **ruína** do posto e a **bainha** da faca.", analise: "Saída e ruína: i tônico em hiato, sozinho na sílaba, leva acento. Bainha não leva: o i vem antes de NH.", concurso: true },
+          { frase: "Os passageiros **creem** que o **voo** vai atrasar e pedem que os agentes **deem** informações.", analise: "Sem acento desde 2009: os verbos em -eem (creem, deem, leem, veem) e as palavras em -oo (voo, enjoo). Têm e vêm, plurais de ter e vir, continuam acentuados.", concurso: true },
         ],
       },
       {
@@ -357,9 +376,14 @@ export const MODELOS_BASE: ModeloPt[] = [
       {
         tipo: "exemplos",
         itens: [
+          { frase: "**Planalto** e **pernalta** são aglutinações.", analise: "Plano + alto e perna + alta: perdem som na junção." },
+          { frase: "Comprou um **guarda-chuva** e um vaso de **girassol**.", analise: "Composição por justaposição: os radicais se unem sem perder sons (guarda + chuva, gira + sol)." },
+          { frase: "Deixou a **moto** no posto e tirou uma **foto** do acidente.", analise: "Abreviação (redução): a palavra perde uma parte e mantém o sentido: motocicleta → moto, fotografia → foto." },
           { frase: "O **combate** às fraudes exigiu nova **fiscalização**.", analise: "Combate: regressiva (de combater). Fiscalização: sufixal (fiscalizar + -ção).", concurso: true },
           { frase: "O **amanhecer** na **rodovia** foi tranquilo.", analise: "Amanhecer: verbo parassintético (a + manhã + ecer) usado como substantivo, com artigo: aqui houve também derivação imprópria.", concurso: true },
-          { frase: "**Planalto** e **pernalta** são aglutinações.", analise: "Plano + alto e perna + alta: perdem som na junção." },
+          { frase: "A **deslealdade** do sócio surpreendeu a todos.", analise: "Derivação prefixal e sufixal: existem 'desleal' e 'lealdade', então os afixos podem sair um de cada vez. Na parassíntese, isso não acontece.", concurso: true },
+          { frase: "A cidade **anoiteceu** sem energia, e o motorista **emagreceu** de preocupação.", analise: "Parassíntese: prefixo e sufixo entram juntos. Sem um deles a palavra não existe ('anoite', 'noitecer', 'emagro', 'magrecer').", concurso: true },
+          { frase: "**Automóvel** e **sociologia** são palavras formadas por hibridismo.", analise: "Hibridismo: elementos de línguas diferentes. Auto (grego) + móvel (latim); socio (latim) + logia (grego).", concurso: true },
         ],
       },
       {

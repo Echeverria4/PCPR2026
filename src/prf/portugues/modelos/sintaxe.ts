@@ -72,10 +72,15 @@ export const MODELOS_SINTAXE: ModeloPt[] = [
       {
         tipo: "exemplos",
         itens: [
-          { frase: "A **defesa da pátria** é dever de todos.", analise: "'Da pátria' sofre a ação de defender (a pátria é defendida): complemento nominal.", concurso: true },
           { frase: "A **chegada dos agentes** atrasou.", analise: "'Dos agentes' pratica a ação (os agentes chegaram): adjunto adnominal." },
-          { frase: "Os jurados consideraram **o réu culpado**.", analise: "'O réu' é objeto direto; 'culpado' é predicativo do objeto. O predicado é verbo-nominal.", concurso: true },
           { frase: "**Senhor diretor**, o relatório, **documento sigiloso**, está pronto.", analise: "'Senhor diretor' chama o interlocutor (vocativo); 'documento sigiloso' explica 'o relatório' (aposto)." },
+          { frase: "O agente **entregou** o relatório **ao chefe**.", analise: "Entregar é transitivo direto e indireto: 'o relatório' é objeto direto (sem preposição) e 'ao chefe' é objeto indireto (com a preposição que o verbo exige)." },
+          { frase: "**Ontem**, **na rodovia**, os fiscais trabalharam **com atenção**.", analise: "Adjuntos adverbiais de tempo, lugar e modo: indicam circunstâncias e podem ser deslocados ou retirados sem deixar a frase incompleta." },
+          { frase: "A **defesa da pátria** é dever de todos.", analise: "'Da pátria' sofre a ação de defender (a pátria é defendida): complemento nominal.", concurso: true },
+          { frase: "Os jurados consideraram **o réu culpado**.", analise: "'O réu' é objeto direto; 'culpado' é predicativo do objeto. O predicado é verbo-nominal.", concurso: true },
+          { frase: "O motorista chegou **cansado**.", analise: "Predicado verbo-nominal: 'chegou' é verbo significativo e 'cansado' é predicativo do sujeito. Não é adjunto adverbial: concorda com o sujeito (a motorista chegou cansada).", concurso: true },
+          { frase: "A **crítica do jornalista** foi dura, mas a **crítica ao jornalista** foi injusta.", analise: "'Do jornalista': ele critica (agente) → adjunto adnominal. 'Ao jornalista': ele é criticado (paciente) → complemento nominal. Pergunte quem pratica e quem sofre a ação.", concurso: true },
+          { frase: "O agente estava **certo da infração** e **orgulhoso do trabalho**.", analise: "Complemento nominal: completa, com preposição, o sentido de um adjetivo (certo de, orgulhoso de). Adjunto adnominal só se liga a substantivo; ligado a adjetivo ou advérbio, o complemento é nominal.", concurso: true },
         ],
       },
       {
@@ -148,10 +153,16 @@ export const MODELOS_SINTAXE: ModeloPt[] = [
       {
         tipo: "exemplos",
         itens: [
-          { frase: "**Houve** muitos acidentes no feriado.", analise: "Haver = ocorrer: impessoal, oração sem sujeito; 'muitos acidentes' é objeto direto.", concurso: true },
-          { frase: "**Deve haver** soluções × **Devem existir** soluções.", analise: "Com haver, o auxiliar fica no singular; com existir, concorda com 'soluções' (sujeito).", concurso: true },
           { frase: "**Precisa-se** de motoristas experientes.", analise: "'Precisar de' é transitivo indireto: SE indeterminador, verbo no singular." },
           { frase: "**Disseram** que a pista seria liberada.", analise: "3ª do plural sem referente: sujeito indeterminado." },
+          { frase: "**Choveu** muito durante a madrugada.", analise: "Fenômeno da natureza: oração sem sujeito, verbo impessoal na 3ª pessoa do singular." },
+          { frase: "**Estudamos** a lei antes da prova.", analise: "Sujeito oculto (desinencial): a terminação -mos revela 'nós', mesmo sem a palavra na frase." },
+          { frase: "**Houve** muitos acidentes no feriado.", analise: "Haver = ocorrer: impessoal, oração sem sujeito; 'muitos acidentes' é objeto direto.", concurso: true },
+          { frase: "**Deve haver** soluções × **Devem existir** soluções.", analise: "Com haver, o auxiliar fica no singular; com existir, concorda com 'soluções' (sujeito).", concurso: true },
+          { frase: "**Faz** dez anos que a ponte caiu.", analise: "Fazer indicando tempo decorrido é impessoal: oração sem sujeito, singular obrigatório ('Fazem dez anos' está errado). 'Dez anos' é objeto direto.", concurso: true },
+          { frase: "Na rodovia, **trabalha-se** dia e noite; **consertam-se** buracos toda semana.", analise: "Trabalha-se: verbo intransitivo + se → sujeito indeterminado, verbo no singular. Consertam-se buracos: verbo transitivo direto + se → voz passiva sintética; 'buracos' é o sujeito e o verbo concorda com ele.", concurso: true },
+          { frase: "**São** dez horas; **é** uma hora; **é** meio-dia.", analise: "Ser indicando hora, data ou distância forma oração sem sujeito, mas concorda com o numeral. É a exceção entre os verbos impessoais.", concurso: true },
+          { frase: "**Alguém** bateu à porta do posto.", analise: "Sujeito simples: 'alguém' é pronome indefinido e está expresso. Indeterminado é quando não há termo nenhum que represente quem age.", concurso: true },
         ],
       },
       {
@@ -231,10 +242,17 @@ export const MODELOS_SINTAXE: ModeloPt[] = [
       {
         tipo: "exemplos",
         itens: [
-          { frase: "É provável **que chova à tarde**.", analise: "Isso é provável: a oração é o sujeito (subjetiva). O verbo 'é' fica no singular.", concurso: true },
           { frase: "O condutor **que foi multado** recorreu.", analise: "Restringe: só o condutor multado. Adjetiva restritiva, sem vírgulas." },
-          { frase: "**Mal o sinal abriu**, os carros avançaram.", analise: "'Mal' = assim que: oração adverbial temporal.", concurso: true },
           { frase: "Choveu **tanto que a pista alagou**.", analise: "'Tanto... que': consecutiva. A consecutiva traz intensificador na principal." },
+          { frase: "O motorista freou, **mas** o carro derrapou.", analise: "Coordenada sindética adversativa: 'mas' liga duas orações independentes com ideia de oposição." },
+          { frase: "Saiu cedo, **pois** tinha plantão.", analise: "Coordenada sindética explicativa: 'pois' antes do verbo justifica o que se disse antes." },
+          { frase: "**Embora** chovesse, a operação continuou.", analise: "Subordinada adverbial concessiva: admite um fato contrário que não impede o principal (= apesar de chover). Pede subjuntivo." },
+          { frase: "É provável **que chova à tarde**.", analise: "Isso é provável: a oração é o sujeito (subjetiva). O verbo 'é' fica no singular.", concurso: true },
+          { frase: "**Mal o sinal abriu**, os carros avançaram.", analise: "'Mal' = assim que: oração adverbial temporal.", concurso: true },
+          { frase: "Os agentes **que estavam de folga** foram convocados. × Os agentes, **que estavam de folga**, foram convocados.", analise: "Sem vírgulas, adjetiva restritiva: só os que estavam de folga foram convocados. Com vírgulas, explicativa: todos estavam de folga e todos foram convocados.", concurso: true },
+          { frase: "**Terminada a vistoria**, o caminhão foi liberado.", analise: "Oração reduzida de particípio, adverbial temporal (= quando a vistoria terminou). A reduzida não tem conjunção e o verbo vem em forma nominal.", concurso: true },
+          { frase: "A notícia **de que a ponte caiu** assustou; a notícia **que recebemos** era falsa.", analise: "'De que a ponte caiu' completa o nome 'notícia' (substantiva completiva nominal: é o conteúdo da notícia). 'Que recebemos' é adjetiva: 'que' é pronome relativo (= a qual) e funciona como objeto de 'recebemos'.", concurso: true },
+          { frase: "Tenho certeza **de que** a ponte será reaberta.", analise: "Completiva nominal: 'certeza' pede a preposição 'de' (certeza de algo). Tirar o 'de' ('Tenho certeza que') é erro de regência na norma-padrão.", concurso: true },
         ],
       },
       {
@@ -309,9 +327,14 @@ export const MODELOS_SINTAXE: ModeloPt[] = [
       {
         tipo: "exemplos",
         itens: [
+          { frase: "Os condutores **se ofenderam** mutuamente.", analise: "Recíproca: um ofendeu o outro." },
+          { frase: "O agente **multou** o motorista. → O motorista **foi multado** pelo agente.", analise: "Ativa → passiva analítica: o objeto direto vira sujeito, o sujeito vira agente da passiva e o verbo passa a ser + particípio, no mesmo tempo (multou → foi multado)." },
+          { frase: "O agente **se protegeu** com o colete.", analise: "Voz reflexiva: o sujeito pratica e sofre a ação (protegeu a si mesmo)." },
           { frase: "**Analisaram-se** os recursos.", analise: "= Os recursos foram analisados: passiva sintética, verbo no plural.", concurso: true },
           { frase: "O relatório **tinha sido entregue** pelo agente.", analise: "Na ativa: 'O agente tinha entregado o relatório' (mais-que-perfeito composto, nos dois casos).", concurso: true },
-          { frase: "Os condutores **se ofenderam** mutuamente.", analise: "Recíproca: um ofendeu o outro." },
+          { frase: "Os documentos **serão analisados** pela comissão. → A comissão **analisará** os documentos.", analise: "Passiva → ativa: o agente da passiva volta a ser sujeito e o tempo se mantém (serão analisados, futuro do presente → analisará).", concurso: true },
+          { frase: "**Obedece-se** às normas; **cumprem-se** as normas.", analise: "Obedecer é transitivo indireto (obedecer a): o 'se' indetermina o sujeito e o verbo fica no singular. Cumprir é transitivo direto: voz passiva sintética, 'as normas' é sujeito e o verbo vai ao plural.", concurso: true },
+          { frase: "Os feridos **foram assistidos** pela equipe médica.", analise: "Correto: no sentido de ajudar, assistir é transitivo direto e aceita a passiva. No sentido de ver, é transitivo indireto (assistir ao jogo), e a gramática tradicional condena 'o jogo foi assistido'.", concurso: true },
         ],
       },
       {

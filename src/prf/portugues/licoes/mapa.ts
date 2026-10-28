@@ -305,6 +305,14 @@ export const MAPA: Licao = {
               analise: "Verbo no infinitivo precedido de artigo vira substantivo (derivação imprópria): 'o andar'.",
             },
             {
+              frase: "**Hoje**, **três** viaturas **novas** saíram **do** posto.",
+              analise: "Hoje = advérbio (tempo); três = numeral; viaturas e posto = substantivos; novas = adjetivo; saíram = verbo; do = preposição de + artigo o.",
+            },
+            {
+              frase: "Os agentes **voltaram** **depressa**.",
+              analise: "'Voltaram' flexiona (voltou, voltaremos): o verbo é variável. 'Depressa' tem forma fixa, sem gênero nem número: o advérbio é invariável.",
+            },
+            {
               frase: "Os agentes falaram **baixo** durante a abordagem.",
               analise: "'Baixo' modifica 'falaram' e não concorda com 'agentes': advérbio de modo, não adjetivo.",
               concurso: true,
@@ -312,6 +320,11 @@ export const MAPA: Licao = {
             {
               frase: "Pedimos **um** relatório, e não três.",
               analise: "O contraste de quantidade (um, e não três) faz de 'um' numeral, não artigo indefinido.",
+              concurso: true,
+            },
+            {
+              frase: "**Nada** foi apreendido, e o motorista não parecia **nada** nervoso.",
+              analise: "O primeiro 'nada' é pronome indefinido (= nenhuma coisa) e é o sujeito. O segundo modifica o adjetivo 'nervoso' (= de modo nenhum): advérbio de intensidade.",
               concurso: true,
             },
           ],

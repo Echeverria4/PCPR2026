@@ -50,9 +50,14 @@ export const MODELOS_ESTILO: ModeloPt[] = [
       {
         tipo: "exemplos",
         itens: [
-          { frase: "Segundo a polícia, o motorista **estaria** embriagado.", analise: "O futuro do pretérito marca informação não confirmada: o jornal atribui a afirmação à polícia e não se compromete.", concurso: true },
           { frase: "**Lamentavelmente**, o número de mortes cresceu.", analise: "Modalizador avaliativo: o fato é informado com um juízo de valor do autor." },
+          { frase: "**É obrigatório** o uso do cinto no banco de trás.", analise: "Modalização deôntica: expressa obrigação. O autor não descreve um fato, impõe uma norma." },
+          { frase: "**Certamente** a obra vai atrasar.", analise: "Modalização epistêmica de certeza: o autor se compromete com a afirmação." },
+          { frase: "Segundo a polícia, o motorista **estaria** embriagado.", analise: "O futuro do pretérito marca informação não confirmada: o jornal atribui a afirmação à polícia e não se compromete.", concurso: true },
           { frase: "**Talvez** a nova sinalização reduza os acidentes.", analise: "Modalizador epistêmico: o autor apresenta hipótese, não certeza. Alternativa que diga 'o autor afirma que a sinalização reduzirá' está errada.", concurso: true },
+          { frase: "**Do ponto de vista técnico**, a ponte é segura.", analise: "Modalização delimitadora: a afirmação vale só no aspecto técnico. O autor não diz que a ponte é segura em todos os sentidos.", concurso: true },
+          { frase: "A medida, **sem dúvida**, é necessária, mas **talvez** seja insuficiente.", analise: "Duas modalizações no mesmo período: certeza sobre a necessidade, dúvida sobre a suficiência. Alternativa que chame a medida de suficiente contraria o texto.", concurso: true },
+          { frase: "**Infelizmente**, **apenas** 10% dos passageiros usam o cinto atrás.", analise: "O dado é objetivo, mas 'infelizmente' (avaliação negativa) e 'apenas' (o autor acha o número baixo) revelam a posição de quem escreve.", concurso: true },
         ],
       },
       {
@@ -136,9 +141,17 @@ export const MODELOS_ESTILO: ModeloPt[] = [
       {
         tipo: "exemplos",
         itens: [
+          { frase: "O asfalto derretia sob o sol do meio-dia.", analise: "Hipérbole: exagero para intensificar o calor." },
+          { frase: "Os faróis **eram dois olhos** na escuridão.", analise: "Metáfora: comparação implícita, sem conectivo (os faróis parecem olhos)." },
+          { frase: "A ponte velha **gemia** a cada caminhão que passava.", analise: "Prosopopeia: ação humana (gemer) atribuída a um ser inanimado." },
+          { frase: "O motorista **faltou com a verdade** no depoimento.", analise: "Eufemismo: suaviza 'mentiu'." },
           { frase: "'Foi uma decisão brilhante', disse ele, depois do acidente causado pela decisão.", analise: "Ironia: o elogio diz o contrário do que se pensa.", concurso: true },
           { frase: "Toda a rodovia parou para ver o resgate.", analise: "Metonímia: o lugar pelas pessoas que estavam nele.", concurso: true },
-          { frase: "O asfalto derretia sob o sol do meio-dia.", analise: "Hipérbole: exagero para intensificar o calor." },
+          { frase: "O **Planalto** vetou a proposta.", analise: "Metonímia: o lugar (o Palácio do Planalto) pela instituição que funciona nele (a Presidência da República).", concurso: true },
+          { frase: "O motorista sentiu uma **alegre tristeza** ao deixar a cidade.", analise: "Paradoxo (oxímoro): os opostos se fundem e parecem se anular (como a tristeza pode ser alegre?). Na antítese, eles só se contrapõem, sem contradição lógica: 'uns riem, outros choram'.", concurso: true },
+          { frase: "Ouviu-se o **grito vermelho** da sirene.", analise: "Sinestesia: mistura de sentidos (o som do grito e a cor vermelha).", concurso: true },
+          { frase: "A equipe chegou cedo ao posto e, depois do plantão, **saíram** exaustos.", analise: "Silepse de número: o sujeito de 'saíram' é 'a equipe' (singular), mas o verbo e o adjetivo concordam com a ideia de várias pessoas. A forma gramatical seria 'saiu exausta'.", concurso: true },
+          { frase: "Na pista, **muita chuva**; no acostamento, **lama**.", analise: "Elipse: o verbo (havia) não aparece em lugar nenhum, mas o contexto o recupera. Se tivesse aparecido antes, a omissão seguinte seria zeugma.", concurso: true },
         ],
       },
       {
@@ -213,9 +226,17 @@ export const MODELOS_ESTILO: ModeloPt[] = [
       {
         tipo: "exemplos",
         itens: [
+          { frase: "Vi o acidente com meus próprios olhos.", analise: "Pleonasmo: figura quando a ênfase é intencional (relato pessoal); vício em texto técnico." },
+          { frase: "Na reunião, o chefe repetia '**certo?**' e '**entenderam?**' a cada frase.", analise: "Função fática: as perguntas não pedem informação, só verificam se o contato com os ouvintes se mantém." },
+          { frase: "'Que alívio! Achei que não chegaria a tempo.'", analise: "Função emotiva: 1ª pessoa, exclamação e o sentimento de quem fala em primeiro plano." },
+          { frase: "'Fofoca' significa conversa sobre a vida alheia.", analise: "Função metalinguística: a língua explica a própria língua (o sentido de uma palavra)." },
+          { frase: "O agente **encarou de frente** o problema.", analise: "Pleonasmo vicioso: quem encara já está de frente. Basta 'encarou o problema'." },
           { frase: "O chefe falou com o agente em sua sala.", analise: "Ambiguidade: a sala é do chefe ou do agente? Reescrita: 'na sala do chefe'.", concurso: true },
           { frase: "Campanha: 'Se beber, não dirija. Sua família espera por você.'", analise: "Predomina a função conativa: imperativo e apelo direto ao leitor (você).", concurso: true },
-          { frase: "Vi o acidente com meus próprios olhos.", analise: "Pleonasmo: figura quando a ênfase é intencional (relato pessoal); vício em texto técnico." },
+          { frase: "Poema cujo tema é a dificuldade de escrever aquele mesmo poema.", analise: "Função metalinguística: o poema fala do próprio fazer poético (o código falando do código), ainda que a linguagem seja poética.", concurso: true },
+          { frase: "O agente viu o acidente **da viatura**.", analise: "Ambiguidade: 'da viatura' pode dizer de onde ele viu ou qual veículo se acidentou. Reescrita: 'De dentro da viatura, o agente viu o acidente'.", concurso: true },
+          { frase: "O motorista **obedeceu o** sinal.", analise: "Solecismo de regência: na norma-padrão, obedecer pede 'a' (obedeceu ao sinal).", concurso: true },
+          { frase: "O agente **reaveu** o documento.", analise: "Barbarismo (erro de flexão): reaver segue haver, só nas formas em que haver tem 'v'. Como haver → houve, reaver → reouve. Correto: 'reouve o documento'.", concurso: true },
         ],
       },
       {

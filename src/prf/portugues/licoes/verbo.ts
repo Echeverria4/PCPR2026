@@ -123,6 +123,10 @@ export const VERBO: Licao = {
             { frase: "Se ele **vier**, resolveremos o caso.", analise: "Futuro do subjuntivo de 'vir' é 'vier' (não 'vir'). De 'ver' é 'vir': 'se eu vir o carro'." },
             { frase: "Quando você **puser** a assinatura, o processo segue.", analise: "Futuro do subjuntivo de 'pôr': puser. Derivados também: se ele **mantiver**, se **intervier**, se **propuser**." },
             {
+              frase: "Ontem eu **trouxe** a escala; amanhã **trarei** o boletim.",
+              analise: "Trazer é irregular: pretérito trouxe (e não 'trazi'); futuro trarei e condicional traria (e não 'trazerei', 'trazeria').",
+            },
+            {
               frase: "**Haviam** muitas pendências no relatório.",
               analise: "Erro: 'haver' = existir é impessoal. Correto: 'Havia muitas pendências'. Com 'existir', o verbo concorda: 'Existiam muitas pendências'.",
               concurso: true,
@@ -130,6 +134,26 @@ export const VERBO: Licao = {
             {
               frase: "O pagamento **foi efetuado** pela empresa.",
               analise: "Voz passiva analítica: ser + particípio. Na ativa: 'A empresa efetuou o pagamento'. O sujeito da passiva sofre a ação.",
+              concurso: true,
+            },
+            {
+              frase: "O agente **medeia** o conflito, e os motoristas **anseiam** por um acordo.",
+              analise: "Mediar e ansiar conjugam como odiar no presente: medeio, medeia, medeiam; anseio, anseia, anseiam (e não 'media', 'ansia'). O mesmo vale para remediar, incendiar e intermediar.",
+              concurso: true,
+            },
+            {
+              frase: "Se o radar **funcionasse**, o motorista **seria** multado. × Se o radar **funcionar**, o motorista **será** multado.",
+              analise: "Correlação: imperfeito do subjuntivo com futuro do pretérito; futuro do subjuntivo com futuro do presente. 'Se funcionasse, será' mistura os pares.",
+              concurso: true,
+            },
+            {
+              frase: "Se o motorista **requerer** a revisão, o prazo será reaberto.",
+              analise: "Requerer não segue querer no pretérito: requereu (e não 'requis'), logo o futuro do subjuntivo é 'requerer' (e não 'requiser'). A irregularidade fica no presente: eu requeiro.",
+              concurso: true,
+            },
+            {
+              frase: "**Apresente** a CNH e **desligue** o motor.",
+              analise: "No imperativo, mantenha a mesma pessoa: apresente e desligue (você). 'Apresenta a CNH e desligue o motor' mistura tu (apresenta) e você (desligue).",
               concurso: true,
             },
           ],

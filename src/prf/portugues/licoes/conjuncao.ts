@@ -133,6 +133,14 @@ export const CONJUNCAO: Licao = {
             { frase: "Estudou muito; passou, **pois**, na prova.", analise: "'Pois' depois do verbo e entre vírgulas = portanto: conclusiva." },
             { frase: "Passou na prova, **pois** estudou muito.", analise: "'Pois' antes do verbo = porque: explicativa." },
             {
+              frase: "**Ou** o motorista paga a multa, **ou** recorre.",
+              analise: "Conjunção alternativa: as opções se excluem. Repetida (ou... ou), leva vírgula antes do segundo 'ou'.",
+            },
+            {
+              frase: "**Não só** fiscalizou a carga, **mas também** orientou o motorista.",
+              analise: "Aditiva correlativa: soma as duas ações com ênfase (não só... mas também, não só... como também).",
+            },
+            {
               frase: "Estudou o ano inteiro **e** não passou.",
               analise: "O 'e' pode ter valor adversativo (= mas) quando liga ideias que se contrariam. A banca pergunta o valor no contexto.",
               concurso: true,
@@ -140,6 +148,21 @@ export const CONJUNCAO: Licao = {
             {
               frase: "**Como** a pista estava interditada, os motoristas desviaram **como** o agente orientou.",
               analise: "1º 'como' (no início, = porque): causal. 2º 'como' (= conforme): conformativo. A mesma palavra, dois valores.",
+              concurso: true,
+            },
+            {
+              frase: "**À medida que** o prazo se aproximava, a fila crescia. × A pista fechou, **na medida em que** não havia visibilidade.",
+              analise: "À medida que = proporção (= conforme, quanto mais). Na medida em que = causa (= porque, tendo em vista que). 'À medida em que' mistura as duas e está errado.",
+              concurso: true,
+            },
+            {
+              frase: "Pague a multa, **senão** o carro fica retido. × **Se não** pagar a multa, perderá o desconto.",
+              analise: "Junto, 'senão' = caso contrário (ou 'mas sim': não foi o motorista, senão o passageiro). Separado, é a conjunção condicional 'se' + o advérbio 'não': troca por 'caso não' (caso não pague).",
+              concurso: true,
+            },
+            {
+              frase: "**Conquanto** fosse tarde, o agente concluiu a vistoria.",
+              analise: "Conquanto = embora (concessiva, com subjuntivo). Não confundir com porquanto (= porque, causal ou explicativa).",
               concurso: true,
             },
           ],

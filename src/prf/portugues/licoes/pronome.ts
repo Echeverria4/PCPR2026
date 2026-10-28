@@ -116,8 +116,12 @@ export const PRONOME: Licao = {
         {
           tipo: "exemplos",
           itens: [
-            { frase: "Trouxe o relatório **para eu** revisar.", analise: "Antes de infinitivo, o pronome é sujeito: 'para eu revisar' (reto). 'Para mim' só quando não há verbo depois: 'trouxe para mim'." },
+            { frase: "Trouxe o relatório **para eu** revisar.", analise: "Quando o pronome é sujeito do infinitivo, vai o reto: 'para eu revisar'. Sem verbo depois, o oblíquo tônico: 'trouxe para mim'." },
             { frase: "Isso fica **entre mim e você**.", analise: "Depois de preposição, oblíquo tônico: entre mim e você, nunca 'entre eu e você'." },
+            {
+              frase: "Recebi o ofício: vou **encaminhá-lo** hoje e **pô-lo** no arquivo.",
+              analise: "Depois de verbo terminado em r, s ou z, essa letra cai e o pronome 'o' vira 'lo' (encaminhar + o → encaminhá-lo; pôr + o → pô-lo). Depois de som nasal, vira 'no': põem-no, deram-no.",
+            },
             {
               frase: "**Vossa Excelência** aprovou o **seu** projeto?",
               analise: "Tratamento pede verbo e possessivo na 3ª pessoa: 'aprovou', 'seu' (não 'vosso'). Fala-se 'Vossa' com a autoridade; 'Sua Excelência', sobre ela.",
@@ -126,6 +130,26 @@ export const PRONOME: Licao = {
             {
               frase: "O agente **cujo** relatório chegou disse que **o** entregaria **a mim**.",
               analise: "'Cujo' indica posse (o relatório do agente) e não leva artigo depois; 'o' retoma 'o relatório' (objeto direto); 'a mim' é objeto indireto com oblíquo tônico.",
+              concurso: true,
+            },
+            {
+              frase: "**Quaisquer** dúvidas serão esclarecidas no posto.",
+              analise: "'Qualquer' é o único pronome que faz o plural no meio: qual + quer → quais + quer. 'Qualquers' não existe, e 'qualquer dúvidas' é erro de concordância.",
+              concurso: true,
+            },
+            {
+              frase: "O chefe **o** viu e **lhe** deu os parabéns.",
+              analise: "Ver é transitivo direto → o (objeto direto). Dar algo a alguém → lhe (objeto indireto). 'O chefe lhe viu' usa o pronome de objeto indireto no lugar do direto.",
+              concurso: true,
+            },
+            {
+              frase: "**Para mim**, conferir a carga é fácil.",
+              analise: "Correto: 'para mim' não é sujeito de 'conferir'; completa 'é fácil' (conferir a carga é fácil para mim). Quando o pronome é sujeito do infinitivo, usa-se 'eu': para eu conferir.",
+              concurso: true,
+            },
+            {
+              frase: "O irmão da agente, **o qual** mora em Brasília, chegou ontem.",
+              analise: "Com 'que', ficaria ambíguo quem mora em Brasília: o irmão ou a agente. 'O qual', no masculino, concorda com 'irmão' e desfaz a dúvida; 'a qual' apontaria para a agente.",
               concurso: true,
             },
           ],

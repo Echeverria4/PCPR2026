@@ -55,9 +55,16 @@ export const MODELOS_PONTUACAO_SENTIDO: ModeloPt[] = [
       {
         tipo: "exemplos",
         itens: [
-          { frase: "Os agentes**,** que estavam de plantão**,** atenderam a ocorrência.", analise: "Com vírgulas: todos estavam de plantão (explicativa). Sem vírgulas: só os de plantão atenderam (restritiva). A vírgula muda o sentido.", concurso: true },
           { frase: "Os condutores multados na operação de feriado, recorreram.", analise: "Errado: a vírgula separa o sujeito (longo) do verbo." },
+          { frase: "Ontem à noite**,** a pista foi interditada.", analise: "Adjunto adverbial deslocado para o início: a vírgula é recomendada, sobretudo se ele for longo. Curto, ela é facultativa." },
+          { frase: "O agente conferiu os documentos**,** a carga **e** os pneus.", analise: "Enumeração: vírgula entre os termos; antes do 'e' final, não se usa vírgula." },
+          { frase: "Só faltava uma coisa**:** o laudo.", analise: "Dois-pontos anunciam explicação, enumeração ou citação: o que vem depois esclarece o que veio antes." },
+          { frase: "Os agentes**,** que estavam de plantão**,** atenderam a ocorrência.", analise: "Com vírgulas: todos estavam de plantão (explicativa). Sem vírgulas: só os de plantão atenderam (restritiva). A vírgula muda o sentido.", concurso: true },
           { frase: "Eu fiquei no posto; ele**,** na pista.", analise: "A vírgula marca a omissão do verbo 'ficou' (zeugma).", concurso: true },
+          { frase: "Os fiscais chegaram cedo**;** os motoristas**,** porém**,** atrasaram.", analise: "O ponto e vírgula separa orações que já têm vírgulas internas. 'Porém', deslocado para o meio da oração, fica entre vírgulas.", concurso: true },
+          { frase: "Não**,** espere. × Não espere.", analise: "A vírgula muda o sentido: 'Não, espere' recusa algo e pede que a pessoa espere; 'Não espere' manda não esperar.", concurso: true },
+          { frase: "O agente parou o caminhão**,** e o motorista desceu.", analise: "Vírgula antes de 'e' é aceita quando as orações têm sujeitos diferentes, e é usada quando o 'e' vale 'mas' ('Estudou muito, e não passou').", concurso: true },
+          { frase: "A equipe analisou, todos os documentos da carga.", analise: "Errado: a vírgula separa o verbo do objeto direto. Sujeito e verbo, verbo e complemento não se separam por vírgula única.", concurso: true },
         ],
       },
       {
@@ -116,9 +123,16 @@ export const MODELOS_PONTUACAO_SENTIDO: ModeloPt[] = [
         tipo: "exemplos",
         itens: [
           { frase: "**Não se** conhecem as causas do acidente.", analise: "A negação atrai o pronome: próclise." },
+          { frase: "Ninguém **o** viu, mas todos **o** procuraram.", analise: "'Ninguém' (indefinido) e 'todos' (indefinido) atraem o pronome." },
+          { frase: "**Entregue-me** o documento, por favor.", analise: "Imperativo afirmativo no início da frase: ênclise." },
+          { frase: "O agente **que me** atendeu foi gentil.", analise: "Pronome relativo atrai o pronome átono: próclise." },
+          { frase: "Quando **lhe** perguntaram, ele não respondeu.", analise: "Conjunção subordinativa (quando, se, embora, porque) atrai o pronome: próclise." },
           { frase: "**Comunicar-lhe-emos** a decisão amanhã.", analise: "Futuro do presente no início, sem atrativo: mesóclise.", concurso: true },
           { frase: "**Me** disseram que a pista fechou.", analise: "Errado na norma-padrão: não se inicia frase com pronome átono. Forma correta: 'Disseram-me'.", concurso: true },
-          { frase: "Ninguém **o** viu, mas todos **o** procuraram.", analise: "'Ninguém' (indefinido) e 'todos' (indefinido) atraem o pronome." },
+          { frase: "**Aqui se** trabalha com seriedade. × Aqui**,** **trabalha-se** com seriedade.", analise: "Advérbio sem vírgula atrai o pronome (próclise). Com a vírgula, a pausa desfaz a atração e vale a ênclise.", concurso: true },
+          { frase: "**Far-se-á** a vistoria amanhã. × **Não se fará** a vistoria amanhã.", analise: "Futuro do presente sem atrativo: mesóclise. Com a negação, vence a próclise. Ênclise com futuro ('fará-se') nunca.", concurso: true },
+          { frase: "O agente **tinha-se esquecido** do laudo.", analise: "Locução com particípio: o pronome fica junto do auxiliar (tinha-se esquecido ou se tinha esquecido). Depois do particípio, nunca: 'tinha esquecido-se' está errado.", concurso: true },
+          { frase: "**Em se tratando** de segurança, nada é exagero.", analise: "Gerúndio precedido de 'em' pede próclise. Sem o 'em', ênclise: 'Tratando-se de segurança'.", concurso: true },
         ],
       },
       {
@@ -195,9 +209,17 @@ export const MODELOS_PONTUACAO_SENTIDO: ModeloPt[] = [
       {
         tipo: "exemplos",
         itens: [
+          { frase: "Discutiram **acerca do** novo plano.", analise: "= sobre o novo plano." },
+          { frase: "O agente mediu o **comprimento** da carga e fez o **cumprimento** do mandado.", analise: "Parônimos: comprimento = extensão; cumprimento = execução (ou saudação)." },
+          { frase: "O **tráfego** na rodovia aumentou, e o **tráfico** de drogas também.", analise: "Tráfego = trânsito, fluxo de veículos; tráfico = comércio ilegal." },
+          { frase: "Os sócios **concertaram** um acordo, e o mecânico **consertou** o pneu.", analise: "Homônimos homófonos: mesmo som, grafia e sentido diferentes. Concertar = combinar, harmonizar; consertar = reparar." },
+          { frase: "A **pedra** rolou da encosta. × Ele tem coração de **pedra**.", analise: "Sentido denotativo (literal) × conotativo (figurado): o contexto decide o sentido da mesma palavra." },
           { frase: "A pena foi **infligida** ao motorista que **infringiu** a lei.", analise: "Inflige-se a pena; infringe-se a lei.", concurso: true },
           { frase: "A medida veio **ao encontro** dos interesses da equipe.", analise: "= favoreceu. 'De encontro aos interesses' diria o contrário.", concurso: true },
-          { frase: "Discutiram **acerca do** novo plano.", analise: "= sobre o novo plano." },
+          { frase: "O **eminente** jurista alertou para o risco **iminente** de queda da ponte.", analise: "Parônimos: eminente = notável, ilustre; iminente = prestes a acontecer.", concurso: true },
+          { frase: "O depoente **ratificou** o depoimento e, dias depois, o **retificou**.", analise: "Ratificar = confirmar; retificar = corrigir. Trocar um pelo outro inverte o sentido da frase.", concurso: true },
+          { frase: "O juiz expediu o **mandado** de busca durante o **mandato** do prefeito.", analise: "Mandado = ordem judicial; mandato = período no exercício de um cargo eletivo (ou procuração).", concurso: true },
+          { frase: "Foram apreendidas **armas**: dois **revólveres** e uma **pistola**.", analise: "'Armas' é hiperônimo (sentido geral); 'revólver' e 'pistola' são hipônimos (casos específicos). Retomar pelo hiperônimo é recurso de coesão.", concurso: true },
         ],
       },
       {
@@ -270,9 +292,16 @@ export const MODELOS_PONTUACAO_SENTIDO: ModeloPt[] = [
       {
         tipo: "exemplos",
         itens: [
-          { frase: "Texto: 'O número de acidentes caiu nas rodovias que receberam radares.' Alternativa: 'Os radares eliminaram os acidentes nas rodovias.'", analise: "Extrapolação dupla: o texto fala em queda (não em fim) e só nas rodovias com radar (não em todas).", concurso: true },
           { frase: "Texto: 'O agente voltou a fiscalizar o trecho.'", analise: "Pressuposto marcado por 'voltou a': ele já havia fiscalizado o trecho antes." },
+          { frase: "Texto: 'O motorista **deixou de** beber antes de dirigir.'", analise: "Pressuposto: antes, ele bebia antes de dirigir. Deixar de, parar de, continuar a e voltar a carregam informação implícita." },
+          { frase: "Texto: '**Até** o diretor compareceu à operação.'", analise: "Implícito marcado por 'até': a presença do diretor não era esperada." },
+          { frase: "Texto: 'O número de acidentes caiu nas rodovias que receberam radares.' Alternativa: 'Os radares eliminaram os acidentes nas rodovias.'", analise: "Extrapolação dupla: o texto fala em queda (não em fim) e só nas rodovias com radar (não em todas).", concurso: true },
           { frase: "Texto: 'Alguns condutores ignoram a sinalização.' Alternativa: 'Os condutores ignoram a sinalização.'", analise: "Generalização: 'alguns' virou 'os' (todos).", concurso: true },
+          { frase: "Texto: 'A ponte foi reformada, **mas** ainda há buracos.' Alternativa: 'O autor considera a reforma um sucesso.'", analise: "Errada: o 'mas' põe o peso no segundo argumento (ainda há buracos). Para o autor, a reforma não resolveu o problema.", concurso: true },
+          { frase: "Texto: 'Poucos motoristas usam o cinto **no banco de trás**.' Alternativa: 'Quase nenhum motorista usa o cinto.'", analise: "Errada: o texto restringe ao banco de trás e a alternativa generaliza para qualquer uso do cinto. Confira o alcance de cada termo.", concurso: true },
+          { frase: "Texto: '**Só** os agentes treinados **podem** operar o radar.' Alternativa: 'Os agentes treinados devem operar o radar.'", analise: "Errada: 'só... podem' indica exclusividade de permissão, não obrigação. 'Poder' virou 'dever'.", concurso: true },
+          { frase: "Texto: 'Ele **não é um mau** motorista.' Alternativa: 'Ele é um ótimo motorista.'", analise: "Errada: negar 'mau' não equivale a afirmar 'ótimo'. O texto só diz que ele não é ruim (atenuação).", concurso: true },
+          { frase: "Texto: 'O agente multou o motorista porque **ele** estava sem cinto.' Alternativa: 'Ele retoma o agente.'", analise: "Errada: o contexto da multa mostra que 'ele' retoma o motorista. Quando a gramática permite duas leituras, o sentido decide.", concurso: true },
         ],
       },
       {
@@ -344,9 +373,15 @@ export const MODELOS_PONTUACAO_SENTIDO: ModeloPt[] = [
       {
         tipo: "exemplos",
         itens: [
-          { frase: "Editorial critica a falta de fiscalização e conta um acidente para ilustrar.", analise: "Gênero editorial; tipo predominante argumentativo; o trecho narrativo serve de argumento (exemplo).", concurso: true },
           { frase: "'Recomenda-se reduzir a velocidade e manter distância do veículo à frente.'", analise: "Injuntivo: orienta o leitor, com verbo no infinitivo." },
           { frase: "'A rodovia tem pista dupla, acostamento largo e iluminação fraca.'", analise: "Descritivo: caracteriza o lugar com adjetivos e enumeração." },
+          { frase: "'Na madrugada de domingo, um caminhão tombou na serra. O motorista saiu ileso e foi levado ao posto.'", analise: "Narrativo: fatos em sequência temporal, com personagem, tempo e lugar, e verbos no pretérito perfeito." },
+          { frase: "'O airbag é uma bolsa que infla em milésimos de segundo e reduz o impacto da batida.'", analise: "Expositivo: explica um conceito de forma objetiva, sem defender uma tese." },
+          { frase: "Editorial critica a falta de fiscalização e conta um acidente para ilustrar.", analise: "Gênero editorial; tipo predominante argumentativo; o trecho narrativo serve de argumento (exemplo).", concurso: true },
+          { frase: "'Radares não devem servir para arrecadar. Se a meta fosse arrecadar, eles ficariam escondidos, e não sinalizados.'", analise: "Argumentativo: defende uma tese (radar não é arrecadação) e a sustenta com um argumento (a sinalização). Opinião + justificativa definem o tipo.", concurso: true },
+          { frase: "A notícia relata o acidente de ontem; a reportagem investiga por que aquele trecho tem tantos acidentes.", analise: "Notícia: fato recente, relato breve e objetivo. Reportagem: aprofunda o tema com dados, entrevistas e contexto.", concurso: true },
+          { frase: "Texto curto que parte de um engarrafamento comum para refletir, com humor, sobre a pressa das pessoas.", analise: "Crônica: parte de um fato do cotidiano para uma reflexão pessoal, em linguagem leve, misturando narração e comentário.", concurso: true },
+          { frase: "'Pedágio (s.m.): taxa cobrada pelo direito de passar por uma via.'", analise: "Verbete: gênero expositivo que define palavras. Predominam as funções referencial e metalinguística.", concurso: true },
         ],
       },
       {

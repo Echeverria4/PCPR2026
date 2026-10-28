@@ -116,6 +116,14 @@ export const PREPOSICAO: Licao = {
             { frase: "Este é o cargo **a que** aspiro.", analise: "'Aspirar' (= desejar) pede 'a': a preposição vem antes do relativo. 'O cargo que aspiro' fica fora da norma culta." },
             { frase: "Chegou **há** duas horas e sai **daqui a** duas horas.", analise: "'Há' (verbo, tempo passado) × 'a' (preposição, tempo futuro ou distância)." },
             {
+              frase: "Saiu **de** madrugada **para** a fronteira **com** a equipe.",
+              analise: "A preposição liga termos e marca a relação entre eles: de = tempo; para = destino; com = companhia.",
+            },
+            {
+              frase: "Abriu a porta **com** a chave e saiu **sem** o colete.",
+              analise: "'Com' muda de valor: aqui indica instrumento (com a chave), e não companhia. 'Sem' indica ausência.",
+            },
+            {
               frase: "Está na hora **de a** equipe sair.",
               analise: "Quando o termo depois da preposição é sujeito de infinitivo, a norma pede não contrair: 'de a equipe', 'antes de o prazo acabar'.",
               concurso: true,
@@ -123,6 +131,16 @@ export const PREPOSICAO: Licao = {
             {
               frase: "Agiu **conforme** o regulamento e **segundo** as ordens.",
               analise: "'Conforme' e 'segundo' são preposições acidentais aqui (= de acordo com). Em 'conforme chegavam, eram atendidos', 'conforme' é conjunção.",
+              concurso: true,
+            },
+            {
+              frase: "Trabalhou **sob** chuva; o relatório **sobre** o acidente ficou **sobre** a mesa.",
+              analise: "Sob = debaixo de; sobre = em cima de ou a respeito de. Em 'sob chuva', o agente está debaixo da chuva.",
+              concurso: true,
+            },
+            {
+              frase: "Todos são iguais **perante a** lei, e o motorista recuou **ante o** perigo.",
+              analise: "'Perante' e 'ante' já são preposições e não aceitam outra depois: não há crase em 'perante a lei', e 'ante ao perigo' está errado.",
               concurso: true,
             },
           ],

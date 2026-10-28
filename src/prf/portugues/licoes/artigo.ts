@@ -119,6 +119,10 @@ export const ARTIGO: Licao = {
             { frase: "**Os** documentos estão na mesa.", analise: "'Os' é artigo definido; 'na' é em + a (preposição + artigo)." },
             { frase: "Ela tem **uns** trinta anos.", analise: "'Uns' antes de numeral indica aproximação (cerca de)." },
             {
+              frase: "Chegou **uma** denúncia; **a** denúncia pede urgência.",
+              analise: "O indefinido apresenta algo novo; o definido retoma o que já é conhecido.",
+            },
+            {
               frase: "**Toda a** equipe participou; **toda** equipe precisa de treino.",
               analise: "Com artigo, 'toda a equipe' = a equipe inteira; sem artigo, 'toda equipe' = qualquer equipe.",
               concurso: true,
@@ -126,6 +130,21 @@ export const ARTIGO: Licao = {
             {
               frase: "**Ambos os** relatórios foram aprovados.",
               analise: "A norma pede artigo depois de 'ambos' quando vem substantivo: 'ambos os relatórios'.",
+              concurso: true,
+            },
+            {
+              frase: "No time do posto, ele é **um** Pelé.",
+              analise: "Artigo indefinido antes de nome próprio cria comparação: um Pelé = alguém que joga como Pelé.",
+              concurso: true,
+            },
+            {
+              frase: "Ele não é um agente qualquer: é **o** agente.",
+              analise: "Artigo definido com valor de realce: 'o agente' = o melhor, o modelo de agente.",
+              concurso: true,
+            },
+            {
+              frase: "Comprou viaturas **o** mais modernas **possível**. × Comprou **as** viaturas mais modernas **possíveis**.",
+              analise: "'Possível' concorda com o artigo da expressão: o mais... possível (singular); os/as mais... possíveis (plural).",
               concurso: true,
             },
           ],

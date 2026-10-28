@@ -58,10 +58,17 @@ export const MODELOS_CONCORDANCIA_REGENCIA: ModeloPt[] = [
       {
         tipo: "exemplos",
         itens: [
-          { frase: "**Faltam** três dias para o fim do prazo.", analise: "Sujeito posposto: 'três dias'. Verbo no plural.", concurso: true },
-          { frase: "A análise dos documentos enviados pelos agentes **foi** concluída.", analise: "O núcleo do sujeito é 'análise'; 'documentos' e 'agentes' estão em adjuntos e não mandam no verbo.", concurso: true },
           { frase: "**Mais de um** agente **faltou** ao plantão.", analise: "'Mais de um' pede singular." },
           { frase: "Os **Estados Unidos aprovaram** o acordo.", analise: "Nome próprio plural com artigo: verbo no plural." },
+          { frase: "**Chegaram** ao posto os novos agentes.", analise: "Sujeito posposto: o verbo concorda com ele mesmo quando vem depois (os novos agentes chegaram)." },
+          { frase: "Eu e você **iremos** juntos à vistoria.", analise: "Sujeito composto de pessoas diferentes: a 1ª pessoa prevalece (eu e você = nós → iremos)." },
+          { frase: "**Faltam** três dias para o fim do prazo.", analise: "Sujeito posposto: 'três dias'. Verbo no plural.", concurso: true },
+          { frase: "A análise dos documentos enviados pelos agentes **foi** concluída.", analise: "O núcleo do sujeito é 'análise'; 'documentos' e 'agentes' estão em adjuntos e não mandam no verbo.", concurso: true },
+          { frase: "A maioria dos condutores **respeitou** (ou **respeitaram**) o limite.", analise: "Expressão partitiva (a maioria de, grande parte de) + plural: o verbo concorda com o núcleo (singular) ou com o especificador (plural). As duas formas são aceitas.", concurso: true },
+          { frase: "Fui eu **que fiz** o relatório. × Fui eu **quem fez** o relatório.", analise: "Com 'que', o verbo concorda com o pronome anterior (eu fiz). Com 'quem', o mais seguro é a 3ª pessoa do singular (quem fez); a concordância com o pronome também é registrada.", concurso: true },
+          { frase: "Um dos agentes **que mais trabalharam** foi premiado.", analise: "Em 'um dos que', o verbo da adjetiva vai ao plural, porque 'que' retoma 'os agentes'. O verbo principal (foi) concorda com 'um'.", concurso: true },
+          { frase: "O pai ou o filho **dirigirá** o carro na viagem.", analise: "Núcleos ligados por 'ou' com ideia de exclusão (só um dirige): singular. Sem exclusão, plural: 'O frio ou o calor prejudicam a pista'.", concurso: true },
+          { frase: "O problema **são** as multas atrasadas.", analise: "Ser entre um termo no singular e outro no plural (coisas): a preferência é o plural. Se um dos termos for pessoa, o verbo concorda com a pessoa.", concurso: true },
         ],
       },
       {
@@ -125,9 +132,15 @@ export const MODELOS_CONCORDANCIA_REGENCIA: ModeloPt[] = [
       {
         tipo: "exemplos",
         itens: [
-          { frase: "Seguem **anexos** os relatórios e **anexa** a planilha.", analise: "Anexo é adjetivo: concorda com cada substantivo.", concurso: true },
           { frase: "A pista e o acostamento estavam **molhados**.", analise: "Predicativo de sujeito composto com gêneros diferentes: masculino plural." },
+          { frase: "Ela **mesma** assinou o termo, e elas **próprias** conferiram os dados.", analise: "Mesmo e próprio, como reforço, concordam com o nome: ela mesma, eles mesmos, elas próprias." },
+          { frase: "Os agentes estavam **meio** cansados e comeram **meia** porção.", analise: "Meio como advérbio (= um pouco) não varia. Como numeral (= metade), concorda: meia porção, meio-dia e meia (hora)." },
+          { frase: "Havia **menos** viaturas e **menos** pessoas no feriado.", analise: "Menos é sempre invariável: 'menas' não existe." },
+          { frase: "Seguem **anexos** os relatórios e **anexa** a planilha.", analise: "Anexo é adjetivo: concorda com cada substantivo.", concurso: true },
           { frase: "Comprou camisas **azul-escuras** e ternos **cinza**.", analise: "Adjetivo composto: só o último elemento varia. Cor indicada por substantivo (cinza, vinho, creme) fica invariável.", concurso: true },
+          { frase: "**É proibido** entrada de pedestres. × **É proibida a** entrada de pedestres.", analise: "Sem artigo, a expressão fica no masculino singular (é proibido entrada, é necessário paciência). Com artigo ou outro determinante, concorda (é proibida a entrada, é necessária a paciência).", concurso: true },
+          { frase: "**Bastantes** agentes ficaram **bastante** cansados.", analise: "Ligado a substantivo, bastante varia (bastantes agentes = muitos agentes). Ligado a adjetivo, é advérbio e não varia (bastante cansados = muito cansados).", concurso: true },
+          { frase: "Estuda a língua e a literatura **portuguesa** (ou **portuguesas**).", analise: "Adjetivo adjunto depois de dois substantivos: concorda com o mais próximo ou vai ao plural. Com gêneros diferentes, o plural fica no masculino: o código e a lei novos.", concurso: true },
         ],
       },
       {
@@ -197,9 +210,16 @@ export const MODELOS_CONCORDANCIA_REGENCIA: ModeloPt[] = [
       {
         tipo: "exemplos",
         itens: [
+          { frase: "Os agentes **chegaram ao** posto às 7h.", analise: "Verbo de movimento pede 'a': 'chegaram no posto' é coloquial." },
+          { frase: "Todos **assistiram ao** jogo na sala do posto.", analise: "Assistir no sentido de ver é transitivo indireto: assistir ao jogo, assistir à palestra." },
+          { frase: "**Prefiro** trabalhar **a** ficar parado.", analise: "Preferir pede 'a': prefiro isto a aquilo. 'Prefiro mais' e 'prefiro... do que' contrariam a norma-padrão." },
+          { frase: "Ele tem **aversão a** filas e é **favorável à** mudança.", analise: "Regência nominal: o nome também exige preposição (aversão a, favorável a, compatível com, preferível a)." },
           { frase: "A nova regra **implica** gastos adicionais.", analise: "Implicar (= acarretar) é transitivo direto: 'implica em gastos' foge da norma-padrão.", concurso: true },
           { frase: "Ele **esqueceu o** prazo / Ele **se esqueceu do** prazo.", analise: "Sem pronome, direto; com pronome, 'de'. 'Esqueceu do prazo' mistura as duas formas.", concurso: true },
-          { frase: "Os agentes **chegaram ao** posto às 7h.", analise: "Verbo de movimento pede 'a': 'chegaram no posto' é coloquial." },
+          { frase: "O atirador **visou** o alvo; o chefe **visou** o documento; o agente **visava ao** cargo.", analise: "Visar = mirar ou dar visto: transitivo direto. Visar = pretender: a norma tradicional pede 'a' (visava ao cargo), embora a regência direta já seja aceita por parte dos gramáticos.", concurso: true },
+          { frase: "**Aspirou** o ar da serra, mas **aspirava ao** cargo de chefe.", analise: "Aspirar = respirar: transitivo direto. Aspirar = desejar: transitivo indireto, com 'a', e não aceita 'lhe' (aspirava a ele, não 'aspirava-lhe').", concurso: true },
+          { frase: "Este é o cargo **a que** aspiro, e esta é a norma **de que** me esqueci.", analise: "Na oração adjetiva, a preposição exigida pelo verbo vai antes do relativo: aspirar a → a que; esquecer-se de → de que; trabalhar em → em que.", concurso: true },
+          { frase: "**Informei-o de que** a pista fechou. × **Informei-lhe que** a pista fechou.", analise: "Informar e avisar admitem informar alguém de algo (o + de que) ou informar algo a alguém (lhe + que). O erro é misturar as duas: 'informei-lhe de que'.", concurso: true },
         ],
       },
       {
@@ -261,10 +281,17 @@ export const MODELOS_CONCORDANCIA_REGENCIA: ModeloPt[] = [
       {
         tipo: "exemplos",
         itens: [
-          { frase: "Os agentes chegaram **às** 7h e saíram **à** noite.", analise: "Hora exata e locução adverbial feminina: crase nas duas.", concurso: true },
           { frase: "Entregou o relatório **a** Vossa Excelência.", analise: "Pronome de tratamento não aceita artigo: sem crase." },
-          { frase: "Refiro-me **àquela** norma, não **a** esta.", analise: "Referir-se a + aquela = àquela. 'Esta' não aceita artigo: só preposição.", concurso: true },
           { frase: "Foi **a** uma reunião e voltou **à** uma hora.", analise: "Artigo indefinido 'uma': sem crase. 'Uma' indicando hora: com crase." },
+          { frase: "Fomos **a** Brasília e depois **à** Bahia.", analise: "Teste da volta: 'voltei de Brasília' (sem artigo) → a; 'voltei da Bahia' (com artigo) → à." },
+          { frase: "Ele foi **a** pé até o posto e voltou **a** cavalo.", analise: "Antes de palavra masculina não há artigo feminino, então não há crase: a pé, a cavalo, a prazo." },
+          { frase: "Os agentes chegaram **às** 7h e saíram **à** noite.", analise: "Hora exata e locução adverbial feminina: crase nas duas.", concurso: true },
+          { frase: "Refiro-me **àquela** norma, não **a** esta.", analise: "Referir-se a + aquela = àquela. 'Esta' não aceita artigo: só preposição.", concurso: true },
+          { frase: "O plantão vai **das** 8h **às** 18h; o curso, **de** segunda **a** sexta.", analise: "Paralelismo: com artigo no primeiro termo (das), crase no segundo (às). Sem artigo no primeiro (de), sem crase no segundo (a).", concurso: true },
+          { frase: "Saiu **à** francesa e comemorou o gol **à** Pelé.", analise: "Com a ideia de 'à moda de', há crase mesmo antes de palavra masculina ou de nome próprio: à (moda de) Pelé.", concurso: true },
+          { frase: "A viatura ficou **à** distância de 2 km. × O curso é **a** distância.", analise: "Antes de 'distância', a regra tradicional só põe crase quando a distância é determinada (à distância de 2 km). Indeterminada, sem crase.", concurso: true },
+          { frase: "Dirigiu-se **à** casa dos pais e depois voltou **a** casa.", analise: "'Casa' no sentido de lar, sem determinante, não leva artigo: voltou a casa. Determinada, leva: à casa dos pais.", concurso: true },
+          { frase: "Entregou o prêmio **a** (ou **à**) sua equipe e foi **até a** (ou **à**) praia.", analise: "Crase facultativa: antes de pronome possessivo feminino, de nome próprio feminino de pessoa e depois de 'até'.", concurso: true },
         ],
       },
       {
