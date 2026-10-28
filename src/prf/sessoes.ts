@@ -44,14 +44,16 @@ export function sessaoFocoPrf(materia: MateriaPrfId): QuestaoPrf[] {
 /**
  * Origem como o filtro mostra: as próprias antigas não têm o campo e contam como "banco";
  * "prova" são as originais FGV da PCPR 2026, "prf2014", as da prova PRF 2014 (FUNCAB), "prf2012", os itens da
- * prova PRF 2012 (Cespe/UnB), e "pf2025", os itens da prova PF 2025 (Cebraspe).
+ * prova PRF 2012 (Cespe/UnB), "pf2025", os itens da prova PF 2025 (Cebraspe), e "cnu2025", as questões do
+ * CNU 2025 (FGV, Bloco 9), que também são FGV e por isso são separadas pelo nome da prova.
  */
-export type OrigemFiltroPrf = "banco" | "prova" | "prf2014" | "prf2012" | "pf2025" | "inedita";
+export type OrigemFiltroPrf = "banco" | "prova" | "prf2014" | "prf2012" | "pf2025" | "cnu2025" | "inedita";
 
 export function origemFiltroPrf(q: QuestaoPrf): OrigemFiltroPrf {
   if (q.origem === "prova" && q.prova?.banca === "FUNCAB") return "prf2014";
   if (q.origem === "prova" && q.prova?.banca === "Cespe/UnB") return "prf2012";
   if (q.origem === "prova" && q.prova?.banca === "Cebraspe") return "pf2025";
+  if (q.origem === "prova" && q.prova?.banca === "FGV" && q.prova.prova.startsWith("CNU")) return "cnu2025";
   return q.origem === "prova" || q.origem === "inedita" ? q.origem : "banco";
 }
 

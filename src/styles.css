@@ -1455,6 +1455,16 @@ button {
   color: #c9a8ff;
 }
 
+.questao-selo-cnu2025 {
+  border-color: rgba(240, 140, 90, 0.45);
+  border-left-color: #f08c5a;
+  background: rgba(240, 140, 90, 0.1);
+}
+
+.questao-selo-cnu2025 strong {
+  color: #ffab80;
+}
+
 .questao-tag-fonte {
   color: var(--texto);
   background: transparent;

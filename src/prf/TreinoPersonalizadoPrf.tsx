@@ -21,6 +21,7 @@ const ROTULO_ORIGEM: Record<OrigemFiltroPrf, string> = {
   prf2014: "Prova PRF 2014 (FUNCAB, último concurso)",
   prf2012: "Prova PRF 2012 (Cespe/UnB, Agente Administrativo)",
   pf2025: "Prova PF 2025 (Cebraspe, Agente Administrativo)",
+  cnu2025: "Prova CNU 2025 (FGV, Bloco 9, nível intermediário)",
   prova: "Prova PCPR 2026 (FGV, originais)",
   inedita: "Inéditas autorais",
 };
