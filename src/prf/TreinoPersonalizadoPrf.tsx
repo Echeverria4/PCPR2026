@@ -42,12 +42,23 @@ const TOPICOS_POR_MATERIA = Object.fromEntries(
   PRF_MATERIAS.map((m) => [m.id, ordenados(BANCO_PRF.filter((q) => q.materia === m.id).map((q) => q.topico))]),
 ) as Record<MateriaPrfId, string[]>;
 
+/** Matéria de cada assunto (nenhum nome de assunto se repete entre matérias). */
+const MATERIA_DO_TOPICO = new Map(BANCO_PRF.map((q) => [q.topico, q.materia]));
+
 export default function TreinoPersonalizadoPrf({ tentativas, onIniciar }: TreinoPersonalizadoPrfProps) {
   const [f, setF] = useState<FiltrosPrf>(FILTROS_PRF_PADRAO);
+  const [assuntosAbertos, setAssuntosAbertos] = useState(false);
 
   // Nenhuma matéria marcada = todas. Os assuntos vêm agrupados por matéria, salvo quando só uma está marcada.
   const materiasDoAssunto = PRF_MATERIAS.filter((m) => f.materias.length === 0 || f.materias.includes(m.id));
   const encontradas = useMemo(() => filtrarBancoPrf(f, tentativas, getErradasPrf()).length, [f, tentativas]);
+  // Questões de cada assunto com os outros filtros (matéria, origem, situação), para mostrar no chip.
+  const porTopico = useMemo(() => {
+    const conta = new Map<string, number>();
+    for (const q of filtrarBancoPrf({ ...f, topicos: [] }, tentativas, getErradasPrf()))
+      conta.set(q.topico, (conta.get(q.topico) ?? 0) + 1);
+    return conta;
+  }, [f, tentativas]);
   const recorrentes = useMemo(() => errosRecorrentesPrf(tentativas).slice(0, 8), [tentativas]);
   const vaoEntrar = f.quantidade === "todas" ? encontradas : Math.min(f.quantidade, encontradas);
 
@@ -55,17 +66,25 @@ export default function TreinoPersonalizadoPrf({ tentativas, onIniciar }: Treino
     setF((atual) => ({ ...atual, [campo]: valor }));
   }
 
-  /** Marca ou desmarca uma matéria (null = todas). O assunto depende das matérias e volta para "todos". */
+  /** Marca ou desmarca uma matéria (null = todas). Saem os assuntos marcados das matérias que ficaram de fora. */
   function alternaMateria(id: MateriaPrfId | null) {
-    setF((atual) => ({
-      ...atual,
-      materias:
+    setF((atual) => {
+      const materias =
         id === null
           ? []
           : atual.materias.includes(id)
             ? atual.materias.filter((m) => m !== id)
-            : [...atual.materias, id],
-      topico: "todos",
+            : [...atual.materias, id];
+      const topicos =
+        materias.length === 0 ? atual.topicos : atual.topicos.filter((t) => materias.includes(MATERIA_DO_TOPICO.get(t)!));
+      return { ...atual, materias, topicos };
+    });
+  }
+
+  function alternaTopico(t: string) {
+    setF((atual) => ({
+      ...atual,
+      topicos: atual.topicos.includes(t) ? atual.topicos.filter((x) => x !== t) : [...atual.topicos, t],
     }));
   }
 
@@ -104,28 +123,91 @@ export default function TreinoPersonalizadoPrf({ tentativas, onIniciar }: Treino
           </div>
           <span className="filtro-dica">Marque uma ou mais. Sem nenhuma marcada, entram todas.</span>
         </div>
-        <div className="filtros-grid">
-          <div className="filtro">
-            <label htmlFor="f-topico">Assunto</label>
-            <select id="f-topico" value={f.topico} onChange={(e) => muda("topico", e.target.value)}>
-              <option value="todos">Todos</option>
-              {materiasDoAssunto.length === 1
-                ? TOPICOS_POR_MATERIA[materiasDoAssunto[0].id].map((t) => (
-                    <option key={t} value={t}>
-                      {t}
-                    </option>
-                  ))
-                : materiasDoAssunto.map((m) => (
-                    <optgroup key={m.id} label={m.nome}>
-                      {TOPICOS_POR_MATERIA[m.id].map((t) => (
-                        <option key={t} value={t}>
+        <div className="filtro filtro-materias">
+          <span className="filtro-rotulo" id="f-assuntos-rotulo">
+            Assuntos
+          </span>
+          <button
+            type="button"
+            className="prf-assuntos-abrir"
+            aria-expanded={assuntosAbertos}
+            aria-controls="f-assuntos"
+            onClick={() => setAssuntosAbertos((a) => !a)}
+          >
+            <span>
+              {f.topicos.length === 0
+                ? "Todos os assuntos"
+                : f.topicos.length === 1
+                  ? "1 assunto marcado"
+                  : `${f.topicos.length} assuntos marcados`}
+            </span>
+            <span aria-hidden="true">{assuntosAbertos ? "▲" : "▼"}</span>
+          </button>
+          {assuntosAbertos ? (
+            <div id="f-assuntos" className="prf-assuntos-lista" role="group" aria-labelledby="f-assuntos-rotulo">
+              {materiasDoAssunto.map((m) => (
+                <div key={m.id} className="prf-assuntos-grupo" data-materia={m.id}>
+                  {materiasDoAssunto.length > 1 && <span className="prf-assuntos-grupo-nome">{m.nome}</span>}
+                  <div className="materias-chips">
+                    {TOPICOS_POR_MATERIA[m.id].map((t) => {
+                      const ativo = f.topicos.includes(t);
+                      const n = porTopico.get(t) ?? 0;
+                      return (
+                        <button
+                          key={t}
+                          type="button"
+                          className={`prf-assunto-chip${ativo ? " prf-assunto-chip-ativa" : ""}`}
+                          aria-pressed={ativo}
+                          disabled={n === 0 && !ativo}
+                          onClick={() => alternaTopico(t)}
+                        >
                           {t}
-                        </option>
-                      ))}
-                    </optgroup>
-                  ))}
-            </select>
-          </div>
+                          <span className="prf-assunto-qtd">{n}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
+              <div className="prf-assuntos-acoes">
+                <button
+                  type="button"
+                  className="botao"
+                  disabled={f.topicos.length === 0}
+                  onClick={() => muda("topicos", [])}
+                >
+                  Desmarcar todos
+                </button>
+                <button type="button" className="botao botao-ouro" onClick={() => setAssuntosAbertos(false)}>
+                  Pronto
+                </button>
+              </div>
+            </div>
+          ) : (
+            f.topicos.length > 0 && (
+              <div className="materias-chips prf-assuntos-marcados">
+                {f.topicos.map((t) => (
+                  <button
+                    key={t}
+                    type="button"
+                    className="prf-assunto-chip prf-assunto-chip-ativa"
+                    aria-label={`Tirar ${t}`}
+                    onClick={() => alternaTopico(t)}
+                  >
+                    {t}
+                    <span className="prf-assunto-qtd" aria-hidden="true">
+                      ×
+                    </span>
+                  </button>
+                ))}
+              </div>
+            )
+          )}
+          <span className="filtro-dica">
+            Marque os que você já estudou, de uma ou mais disciplinas. Sem nenhum marcado, entram todos.
+          </span>
+        </div>
+        <div className="filtros-grid">
           <div className="filtro">
             <label htmlFor="f-origem">Origem</label>
             <select
@@ -203,7 +285,7 @@ export default function TreinoPersonalizadoPrf({ tentativas, onIniciar }: Treino
                     onIniciar({
                       ...FILTROS_PRF_PADRAO,
                       materias: [r.materia],
-                      topico: r.topico,
+                      topicos: [r.topico],
                       subassunto: r.subassunto,
                     })
                   }

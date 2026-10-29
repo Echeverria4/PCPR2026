@@ -113,7 +113,7 @@ export default function AppPrf({ onTrocarCurso }: AppPrfProps) {
   }
 
   function treinarTopicoPt(topico: string) {
-    const questions = sessaoPersonalizadaPrf({ ...FILTROS_PRF_PADRAO, materias: ["pt"], topico }, tentativas);
+    const questions = sessaoPersonalizadaPrf({ ...FILTROS_PRF_PADRAO, materias: ["pt"], topicos: [topico] }, tentativas);
     if (questions.length === 0) return;
     setOrigem("portugues");
     abrirSessao("personalizado", questions);

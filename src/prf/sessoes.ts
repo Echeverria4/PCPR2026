@@ -63,7 +63,8 @@ export type SituacaoFiltroPrf = "nunca" | "errada" | "acertada" | "revisao";
 /** "todos"/"todas" = sem filtro; materias vazio = todas as matérias. */
 export interface FiltrosPrf {
   materias: MateriaPrfId[];
-  topico: string | "todos";
+  /** Vazio = todos os assuntos das matérias escolhidas. */
+  topicos: string[];
   origem: OrigemFiltroPrf | "todas";
   situacao: SituacaoFiltroPrf | "todas";
   quantidade: number | "todas";
@@ -73,7 +74,7 @@ export interface FiltrosPrf {
 
 export const FILTROS_PRF_PADRAO: FiltrosPrf = {
   materias: [],
-  topico: "todos",
+  topicos: [],
   origem: "todas",
   situacao: "todas",
   quantidade: 10,
@@ -91,7 +92,7 @@ export function filtrarBancoPrf(f: FiltrosPrf, tentativas: TentativaPrf[], revis
   const naRevisao = new Set(revisao);
   return BANCO_PRF.filter((q) => {
     if (f.materias.length > 0 && !f.materias.includes(q.materia)) return false;
-    if (f.topico !== "todos" && q.topico !== f.topico) return false;
+    if (f.topicos.length > 0 && !f.topicos.includes(q.topico)) return false;
     if (f.subassunto && q.subassunto !== f.subassunto) return false;
     if (f.origem !== "todas" && origemFiltroPrf(q) !== f.origem) return false;
     const u = ultima.get(q.id);
