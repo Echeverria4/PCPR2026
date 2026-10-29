@@ -5427,57 +5427,19 @@ button {
   color: var(--texto-fraco);
 }
 
-/* Assuntos do treino personalizado da PRF (vários de uma vez) */
-.prf-assuntos-abrir {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  width: 100%;
-  background: var(--bg-elevado);
-  border: 1px solid var(--borda);
-  border-radius: var(--raio-peq);
-  padding: 8px 10px;
-  color: var(--texto);
-  font-size: 0.88rem;
-  text-align: left;
-  cursor: pointer;
-}
-
-.prf-assuntos-abrir:hover,
-.prf-assuntos-abrir:focus-visible {
-  outline: none;
-  border-color: var(--ouro);
-}
-
-.prf-assuntos-abrir[aria-expanded="true"] {
-  border-color: var(--ouro);
-}
-
-.prf-assuntos-lista {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  border: 1px solid var(--borda);
-  border-radius: var(--raio-peq);
-  padding: 12px;
-}
-
+/* Assuntos do treino personalizado da PRF: aparecem embaixo de cada matéria marcada */
 .prf-assuntos-grupo {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  margin: 4px 0 6px;
 }
 
 .prf-assuntos-grupo-nome {
   font-size: 0.72rem;
-  color: var(--texto-fraco);
+  color: var(--ouro-forte);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-}
-
-.prf-assuntos-marcados {
-  margin-top: 2px;
 }
 
 .prf-assunto-chip {
@@ -5526,13 +5488,6 @@ button {
 
 .prf-assunto-chip-ativa .prf-assunto-qtd {
   color: var(--ouro-forte);
-}
-
-.prf-assuntos-acoes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 8px;
 }
 
 .personalizado-rodape {

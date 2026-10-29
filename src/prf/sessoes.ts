@@ -63,7 +63,7 @@ export type SituacaoFiltroPrf = "nunca" | "errada" | "acertada" | "revisao";
 /** "todos"/"todas" = sem filtro; materias vazio = todas as matérias. */
 export interface FiltrosPrf {
   materias: MateriaPrfId[];
-  /** Vazio = todos os assuntos das matérias escolhidas. */
+  /** Assuntos marcados; a matéria sem nenhum assunto marcado entra inteira. */
   topicos: string[];
   origem: OrigemFiltroPrf | "todas";
   situacao: SituacaoFiltroPrf | "todas";
@@ -80,6 +80,9 @@ export const FILTROS_PRF_PADRAO: FiltrosPrf = {
   quantidade: 10,
 };
 
+/** Matéria de cada assunto (nenhum nome de assunto se repete entre matérias). */
+export const MATERIA_DO_TOPICO = new Map(BANCO_PRF.map((q) => [q.topico, q.materia]));
+
 /** Última resposta dada a cada questão (true = acertou). */
 export function ultimaRespostaPrf(tentativas: TentativaPrf[]): Map<string, boolean> {
   const ultima = new Map<string, boolean>();
@@ -90,9 +93,10 @@ export function ultimaRespostaPrf(tentativas: TentativaPrf[]): Map<string, boole
 export function filtrarBancoPrf(f: FiltrosPrf, tentativas: TentativaPrf[], revisao: string[]): QuestaoPrf[] {
   const ultima = ultimaRespostaPrf(tentativas);
   const naRevisao = new Set(revisao);
+  const materiasComAssunto = new Set(f.topicos.map((tp) => MATERIA_DO_TOPICO.get(tp)));
   return BANCO_PRF.filter((q) => {
     if (f.materias.length > 0 && !f.materias.includes(q.materia)) return false;
-    if (f.topicos.length > 0 && !f.topicos.includes(q.topico)) return false;
+    if (materiasComAssunto.has(q.materia) && !f.topicos.includes(q.topico)) return false;
     if (f.subassunto && q.subassunto !== f.subassunto) return false;
     if (f.origem !== "todas" && origemFiltroPrf(q) !== f.origem) return false;
     const u = ultima.get(q.id);
