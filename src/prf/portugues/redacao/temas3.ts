@@ -1,0 +1,83 @@
+import type { TemaRedacao } from "./tipos";
+
+export const TEMAS_3: TemaRedacao[] = [
+  {
+    n: 11,
+    bloco: 2,
+    recorte: "Saúde mental dos profissionais de segurança",
+    tema: "A saúde mental dos profissionais de segurança pública em debate.",
+    titulo: "Quem protege quem protege?",
+    paragrafos: [
+      "Policiais lidam diariamente com violência, morte e situações extremas de risco. **Apesar disso**, a saúde mental desses profissionais ainda é tratada como tabu, dentro e fora das corporações. Esse silêncio tem um custo alto, com adoecimentos, afastamentos e perdas que poderiam ser evitados, resultado de uma cultura que associa sofrimento à fraqueza e da falta de acompanhamento psicológico contínuo.",
+      "**Em primeiro lugar**, a cultura institucional muitas vezes desestimula a busca por ajuda. Admitir ansiedade ou estresse pode ser visto como sinal de despreparo e gerar receio de prejuízos na carreira. Nesse sentido, muitos agentes acumulam traumas em silêncio, o que afeta **não apenas** a vida pessoal e familiar, **mas também** a qualidade das decisões tomadas durante o serviço.",
+      "**Além disso**, as condições de trabalho agravam o desgaste. Jornadas extensas, escalas irregulares, exposição constante ao perigo e cobrança por resultados compõem um cenário de esgotamento. **Como observa** o filósofo Byung-Chul Han, a sociedade do desempenho produz sujeitos exaustos, e, na segurança pública, esse cansaço pode custar vidas, **tanto** dos profissionais **quanto** da população.",
+      "**Portanto**, as corporações devem oferecer atendimento psicológico preventivo e sigiloso, acompanhamento após ocorrências traumáticas e programas de valorização profissional. Cuidar da mente do policial **não é** um benefício, **mas** uma condição para uma segurança pública eficiente e humana.",
+    ],
+    repertorio: ["Byung-Chul Han (Sociedade do Cansaço)", "Cultura institucional", "Valorização profissional"],
+    conectivos: ["Apesar disso", "não apenas… mas também", "Como observa", "tanto… quanto", "não é… mas"],
+  },
+  {
+    n: 12,
+    bloco: 2,
+    recorte: "IA, deepfakes e desinformação",
+    tema: "Inteligência artificial, deepfakes e a desinformação na era digital.",
+    titulo: "Ver não é mais crer",
+    paragrafos: [
+      "Durante séculos, imagens e vídeos foram considerados provas quase incontestáveis. Com o avanço da inteligência artificial, **porém**, tornou-se possível criar deepfakes, **isto é**, vídeos e áudios falsos extremamente realistas, em poucos minutos. Esse cenário ameaça a democracia e a segurança das pessoas, **sobretudo porque** a tecnologia avança mais rápido do que a regulação e a capacidade crítica do público.",
+      "**Em primeiro lugar**, as deepfakes potencializam a desinformação política. Um vídeo falso de um candidato pode circular por milhões de celulares antes de ser desmentido, influenciando eleitores de forma irreversível. **Por isso**, o Tribunal Superior Eleitoral proibiu, em 2024, o uso de conteúdo fabricado por inteligência artificial para enganar o eleitor, reconhecendo o risco à lisura das eleições.",
+      "**Além disso**, a tecnologia também é usada contra cidadãos comuns. Criminosos clonam vozes para aplicar golpes em familiares, e montagens de cunho sexual são produzidas para humilhar e extorquir vítimas, especialmente mulheres e adolescentes. **Nesse contexto**, a facilidade de criação contrasta com a dificuldade de identificar os autores e de retirar o conteúdo do ar.",
+      "**Dessa forma**, é necessário aprovar uma regulação da inteligência artificial que responsabilize plataformas e criadores de conteúdo falso, **bem como** capacitar as polícias em perícia digital. Ao mesmo tempo, a educação midiática nas escolas deve ensinar a checar fontes, pois, na era da IA, desconfiar também é uma forma de proteção.",
+    ],
+    repertorio: ["Resolução do TSE de 2024 sobre IA na propaganda eleitoral", "Clonagem de voz", "Educação midiática"],
+    conectivos: ["porém", "isto é", "sobretudo porque", "Por isso", "Nesse contexto", "bem como"],
+  },
+  {
+    n: 13,
+    bloco: 2,
+    recorte: "Exposição e adultização de crianças nas redes",
+    tema: "A exposição e a adultização de crianças nas redes sociais.",
+    titulo: "Infância não é conteúdo",
+    paragrafos: [
+      "Em 2025, a denúncia de um influenciador sobre a adultização de crianças nas redes sociais viralizou e mobilizou o país, contribuindo para a aprovação do ECA Digital, a Lei 15.211/2025. O episódio expôs um problema antigo: crianças transformadas em produto de engajamento e expostas a riscos que não compreendem. **Essa realidade resulta da** lógica lucrativa das plataformas e da omissão de adultos responsáveis.",
+      "**Em primeiro lugar**, os algoritmos recompensam conteúdos que geram visualizações, **inclusive quando** envolvem crianças em poses, danças ou falas inadequadas para a idade. Nesse sentido, a busca por audiência leva pais e produtores a expor menores, **enquanto** as plataformas lucram com o alcance desses vídeos. O resultado é a erotização precoce e a exposição a predadores virtuais.",
+      "**Além disso**, a exposição excessiva viola direitos garantidos por lei. O Estatuto da Criança e do Adolescente assegura a proteção da imagem, da dignidade e do desenvolvimento saudável. **Quando** a infância vira vitrine, perdem-se a privacidade e o direito de crescer longe da pressão por curtidas, com efeitos sobre a autoestima e a segurança de quem ainda não pode consentir.",
+      "**Portanto**, cabe ao poder público fiscalizar o cumprimento do ECA Digital, exigindo das plataformas mecanismos eficazes de proteção e de remoção de conteúdo, e às famílias e escolas conscientizar sobre os riscos da exposição. **Afinal**, nenhum número de seguidores vale mais do que a proteção de uma criança.",
+    ],
+    repertorio: ["ECA Digital (Lei 15.211/2025)", "ECA (direito à imagem e à dignidade)", "Algoritmos e engajamento"],
+    conectivos: ["Essa realidade resulta de", "inclusive quando", "enquanto", "Quando", "Afinal"],
+  },
+  {
+    n: 14,
+    bloco: 2,
+    recorte: "Celulares nas escolas e saúde mental dos jovens",
+    tema: "O uso de celulares nas escolas e a saúde mental dos jovens.",
+    titulo: "Desconectar para aprender",
+    paragrafos: [
+      "Em janeiro de 2025, a Lei 15.100 restringiu o uso de celulares nas escolas brasileiras, inclusive nos intervalos. A medida reacendeu o debate sobre os efeitos da hiperconectividade sobre crianças e adolescentes. **De fato**, o uso excessivo dos aparelhos compromete **tanto** a aprendizagem **quanto** a saúde mental dos jovens, o que justifica limites claros no ambiente escolar.",
+      "**Em primeiro lugar**, o celular disputa a atenção do aluno com o professor e frequentemente vence. Notificações constantes fragmentam a concentração e reduzem a capacidade de leitura e de reflexão profunda. **Nesse sentido**, avaliações internacionais, como o Pisa, têm associado a distração causada por dispositivos digitais a um pior desempenho escolar, o que reforça a necessidade de regras.",
+      "**Além disso**, as redes sociais afetam a saúde emocional dos estudantes. A comparação permanente com vidas aparentemente perfeitas, o cyberbullying e a dependência de curtidas estão ligados ao aumento da ansiedade entre adolescentes. **Como define** o filósofo Byung-Chul Han, vivemos uma sociedade do cansaço, e os jovens estão entre os mais atingidos por essa exaustão digital.",
+      "**Assim**, é importante que as escolas apliquem a nova lei com diálogo, oferecendo atividades de convivência e esporte nos intervalos, e que as famílias estabeleçam limites de uso em casa. Desconectar, nesse caso, **não é** retroceder, **mas** recuperar o tempo de aprender e de conviver.",
+    ],
+    repertorio: ["Lei 15.100/2025", "Pisa", "Byung-Chul Han", "Cyberbullying"],
+    conectivos: ["De fato", "tanto… quanto", "Nesse sentido", "Como define", "não é… mas"],
+  },
+  {
+    n: 15,
+    bloco: 2,
+    recorte: "Desastres climáticos e forças de segurança",
+    tema: "Os desastres climáticos e o papel das forças de segurança no Brasil.",
+    titulo: "Quando a farda vira resgate",
+    paragrafos: [
+      "As enchentes que atingiram o Rio Grande do Sul em 2024, a maior tragédia climática da história do estado, mostraram que os eventos extremos já fazem parte da realidade brasileira. **Nesse cenário**, policiais, bombeiros e militares atuaram na linha de frente dos resgates. A frequência desses desastres exige, **porém**, que a resposta deixe de ser improvisada e passe a ser planejada.",
+      "**Em primeiro lugar**, as mudanças climáticas tornam os eventos extremos mais frequentes e intensos. Chuvas torrenciais, secas prolongadas e incêndios florestais deixaram de ser exceção. Nesse sentido, a ocupação desordenada de encostas e de margens de rios, **somada à** falta de planejamento urbano, multiplica o número de pessoas expostas ao risco.",
+      "**Além disso**, as forças de segurança assumem papel decisivo nessas crises. Além do resgate, cabe a elas manter a ordem, impedir saques e proteger os desabrigados, inclusive contra a violência em abrigos. **Contudo**, muitas vezes atuam sem equipamentos adequados e sem treinamento específico, o que expõe os próprios agentes a riscos e reduz a eficiência das operações.",
+      "**Portanto**, é necessário que os governos invistam na Política Nacional de Proteção e Defesa Civil, com mapeamento de áreas de risco e sistemas de alerta, **além de** capacitar e equipar as forças de segurança para emergências. Prevenir custa menos, em recursos e em vidas, do que reconstruir.",
+    ],
+    repertorio: [
+      "Enchentes do RS (2024)",
+      "Política Nacional de Proteção e Defesa Civil (Lei 12.608/2012)",
+      "Planejamento urbano",
+    ],
+    conectivos: ["Nesse cenário", "porém", "somada a", "Contudo", "além de"],
+  },
+];

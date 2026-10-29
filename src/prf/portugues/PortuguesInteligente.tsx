@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import { shuffle } from "../../lib/quizEngine";
 import EstudoGuiado, { montarPassos, type SecaoGuiada } from "./EstudoGuiado";
 import FixacaoPt from "./FixacaoPt";
@@ -16,7 +16,11 @@ import {
   ultimaPorQuestao,
   type ProgressoPt,
 } from "./progresso";
+import { contaFeitas, feitasNaSemana, lerProgressoRedacao, temaDaSemana, TOTAL_TEMAS } from "./redacao/progressoRedacao";
 import { TITULO_BLOCO, type GrupoPt, type Licao, type ModeloPt, type QuestaoFixacao } from "./tipos";
+
+// Os 25 temas e as redações-modelo só carregam quando a pessoa abre a redação.
+const Redacao = lazy(() => import("./redacao/Redacao"));
 
 export type TelaPt =
   | { tipo: "geral" }
@@ -25,7 +29,10 @@ export type TelaPt =
   | { tipo: "modelo"; id: string }
   | { tipo: "fixacao"; titulo: string; questoes: QuestaoFixacao[]; voltar: TelaPt }
   | { tipo: "glossario" }
-  | { tipo: "revisao" };
+  | { tipo: "revisao" }
+  | { tipo: "redacao" }
+  | { tipo: "redacao-tema"; n: number }
+  | { tipo: "redacao-guia" };
 
 interface PortuguesInteligenteProps {
   tela: TelaPt;
@@ -272,6 +279,12 @@ export default function PortuguesInteligente({
 
   if (tela.tipo === "glossario") return <TelaGlossario onTela={onTela} />;
   if (tela.tipo === "revisao") return <TelaRevisao progresso={progresso} onTela={onTela} />;
+  if (tela.tipo === "redacao" || tela.tipo === "redacao-tema" || tela.tipo === "redacao-guia")
+    return (
+      <Suspense fallback={<div className="vazio">Carregando a redação…</div>}>
+        <Redacao tela={tela} onTela={onTela} />
+      </Suspense>
+    );
 
   return (
     <VisaoGeral
@@ -329,6 +342,9 @@ function VisaoGeral({
   const licoesComErro = LICOES.filter((l) => FIXACAO.some((q) => q.licao === l.id && errados.has(q.id)));
   const retomar = [...LICOES, ...MODELOS].filter((p) => precisaRetomar(progresso, p.id));
   const nErros = FIXACAO.filter((q) => errados.has(q.id)).length;
+  const redacao = lerProgressoRedacao();
+  const redacaoFeitas = feitasNaSemana(redacao);
+  const redacaoDaSemana = temaDaSemana(redacao);
 
   return (
     <>
@@ -462,6 +478,32 @@ function VisaoGeral({
           </div>
         </section>
       ))}
+
+      <section>
+        <h3 className="secao-titulo">Redação</h3>
+        <p className="pi-grupo-descricao">Bloco próprio para a prova de soldado: um tema por semana até sair o edital.</p>
+        <div className="modos-grid">
+          <button className="modo-card pi-red-card" onClick={() => onTela({ tipo: "redacao" })}>
+            <h3>Redação · PMPR Soldado 2027</h3>
+            <p>
+              25 temas com grande chance de cair, uma redação por semana: planejar, escrever, comparar com o modelo e dar a
+              sua nota.
+            </p>
+            <span className="pi-card-meta">
+              <span className={`pi-status ${redacaoFeitas.length ? "pi-status-ok" : "pi-status-visto"}`}>
+                {redacaoFeitas.length
+                  ? `Esta semana: ✓ feita (tema ${redacaoFeitas[0]})`
+                  : redacaoDaSemana !== undefined
+                    ? `Tema da semana: nº ${redacaoDaSemana}`
+                    : `${TOTAL_TEMAS} temas feitos`}
+              </span>
+              <span>
+                {contaFeitas(redacao)} de {TOTAL_TEMAS} feitas
+              </span>
+            </span>
+          </button>
+        </div>
+      </section>
 
       <h3 className="secao-titulo">Recursos de apoio</h3>
       <div className="modos-grid">

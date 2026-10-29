@@ -1,0 +1,93 @@
+import type { TemaRedacao } from "./tipos";
+
+export const TEMAS_2: TemaRedacao[] = [
+  {
+    n: 6,
+    bloco: 1,
+    recorte: "Cassinos on-line e golpes digitais",
+    tema: "Cassinos on-line e golpes digitais: riscos para a população brasileira.",
+    titulo: "O tigre que devora salários",
+    paragrafos: [
+      "Jogos de cassino on-line, como o popular “jogo do tigrinho”, espalharam-se pelas redes com a promessa de lucro rápido e diversão inofensiva. Por trás das cores chamativas, **contudo**, muitas dessas plataformas funcionam sem autorização, manipulam resultados ou simplesmente desaparecem com o dinheiro dos usuários. Esse quadro decorre da desinformação do público e da facilidade com que golpistas se aproveitam do ambiente digital.",
+      "**Em primeiro lugar**, grande parte dos usuários não sabe distinguir uma plataforma regular de um golpe. Sites clandestinos exibem ganhos falsos nas primeiras jogadas para conquistar a confiança e, depois, bloqueiam saques ou exigem novos depósitos. **Assim**, o jogador acredita estar apostando, **quando, na verdade**, está sendo vítima de estelionato.",
+      "**Além disso**, os criminosos usam perfis falsos e anúncios patrocinados para atrair vítimas, especialmente jovens e idosos. **Como** o dinheiro é transferido instantaneamente, muitas vezes para contas de terceiros, a recuperação dos valores é difícil e a identificação dos autores exige investigação especializada. A Lei 14.155/2021 agravou as penas da fraude eletrônica, **mas** a repressão ainda não acompanha a velocidade dos golpes.",
+      "**Portanto**, cabe ao governo ampliar o bloqueio de sites ilegais e divulgar amplamente a lista de plataformas autorizadas, **enquanto** as polícias devem investir em unidades especializadas em crimes cibernéticos. Informação e repressão qualificada são as melhores defesas contra quem transforma diversão em armadilha.",
+    ],
+    repertorio: ["Lei 14.155/2021 (fraude eletrônica)", "Estelionato", "Contas de laranjas"],
+    conectivos: ["contudo", "Assim", "quando, na verdade", "Como", "mas", "enquanto"],
+  },
+  {
+    n: 7,
+    bloco: 2,
+    recorte: "Violência contra a mulher e feminicídio",
+    tema: "Os desafios para o enfrentamento da violência contra a mulher no Brasil.",
+    titulo: "Quando a casa não é abrigo",
+    paragrafos: [
+      "A Lei Maria da Penha, de 2006, é reconhecida como uma das legislações mais avançadas do mundo na proteção às mulheres. **Ainda assim**, o Brasil registra mais de mil feminicídios por ano, segundo o Fórum Brasileiro de Segurança Pública. **Essa contradição revela** que a lei, sozinha, não basta: persistem uma cultura machista enraizada e falhas na rede de proteção às vítimas.",
+      "**Em primeiro lugar**, a violência de gênero tem raízes culturais profundas. A ideia de que a mulher pertence ao parceiro, reforçada por séculos de patriarcado, ainda justifica controle, ciúme e agressões. **Nesse sentido**, o feminicídio raramente é um ato isolado: costuma ser o último estágio de um ciclo de violência psicológica, moral e física que se repete, muitas vezes, diante de familiares e vizinhos.",
+      "**Além disso**, muitas vítimas não conseguem romper esse ciclo por falta de apoio. A dependência financeira, o medo de represálias e a demora no atendimento afastam as mulheres das delegacias. **Embora** a Lei 14.994/2024 tenha tornado o feminicídio crime autônomo e endurecido as penas, a punição chega depois da tragédia, e a prevenção exige medidas protetivas cumpridas e fiscalizadas.",
+      "**Assim**, é preciso que o poder público amplie as patrulhas especializadas no acompanhamento de medidas protetivas e os centros de atendimento às vítimas, enquanto escolas e meios de comunicação promovam a educação para a igualdade de gênero. Somente com prevenção e proteção efetiva a casa voltará a ser um lugar de segurança.",
+    ],
+    repertorio: [
+      "Lei Maria da Penha (11.340/2006)",
+      "Lei 14.994/2024 (pacote antifeminicídio)",
+      "Fórum Brasileiro de Segurança Pública",
+      "Ciclo da violência",
+    ],
+    conectivos: ["Ainda assim", "Essa contradição revela", "Nesse sentido", "Embora", "Assim"],
+  },
+  {
+    n: 8,
+    bloco: 2,
+    recorte: "Golpes digitais e crimes via Pix",
+    tema: "O crescimento dos golpes digitais e dos crimes envolvendo o Pix.",
+    titulo: "Um clique, um prejuízo",
+    paragrafos: [
+      "Criado em 2020 pelo Banco Central, o Pix revolucionou os pagamentos no país ao tornar as transferências instantâneas e gratuitas. A mesma agilidade, **entretanto**, foi apropriada por criminosos, que passaram a aplicar golpes em escala industrial. Esse fenômeno é impulsionado pela engenharia social praticada pelos golpistas e pela baixa educação digital de grande parte da população.",
+      "**Em primeiro lugar**, a maioria dos golpes **não** depende de invasão tecnológica, **mas** de manipulação psicológica. Falsas centrais bancárias, mensagens de supostos parentes pedindo dinheiro e falsos sequestros exploram o medo e a urgência para levar a vítima a transferir valores por conta própria. **Não por acaso**, levantamentos do Fórum Brasileiro de Segurança Pública mostram forte crescimento do estelionato nos últimos anos, impulsionado justamente pelo meio digital.",
+      "**Ademais**, a velocidade do Pix dificulta a recuperação do dinheiro. Em minutos, os valores são pulverizados em contas de “laranjas”, o que exige das polícias investigação financeira especializada. Embora a Lei 14.155/2021 tenha aumentado as penas da fraude eletrônica e o Banco Central tenha criado um mecanismo de devolução de valores, muitas vítimas sequer registram ocorrência, por vergonha ou desconhecimento.",
+      "**Logo**, cabe aos bancos reforçar os sistemas de detecção de transações suspeitas e às polícias ampliar as delegacias e os núcleos de combate a crimes cibernéticos. **Paralelamente**, campanhas de educação digital, sobretudo voltadas aos idosos, devem ensinar a regra mais simples de todas: desconfiar de toda pressa.",
+    ],
+    repertorio: ["Pix (2020)", "Engenharia social", "Lei 14.155/2021", "Mecanismo de devolução do Banco Central (MED)"],
+    conectivos: ["entretanto", "não… mas", "Não por acaso", "Ademais", "Logo", "Paralelamente"],
+  },
+  {
+    n: 9,
+    bloco: 2,
+    recorte: "Expansão do crime organizado",
+    tema: "A expansão do crime organizado no Brasil e seus impactos na segurança pública.",
+    titulo: "O Estado paralelo",
+    paragrafos: [
+      "Antes concentradas em presídios e em periferias de grandes capitais, as facções criminosas brasileiras expandiram-se para o interior, para as fronteiras e até para setores da economia formal. Esse avanço ameaça a autoridade do Estado e a vida de milhões de cidadãos. **Tal cenário decorre do** poder financeiro dessas organizações e da fragilidade do controle estatal sobre presídios e territórios.",
+      "**Em primeiro lugar**, o crime organizado deixou de ser apenas tráfico de drogas e tornou-se um empreendimento diversificado. Em 2025, a Operação Carbono Oculto revelou a infiltração de uma facção no setor de combustíveis e em instituições financeiras digitais para lavar bilhões de reais. Nesse sentido, as facções agem como empresas, o que exige do Estado **não apenas** policiamento, **mas também** inteligência financeira.",
+      "**Além disso**, o sistema prisional funciona, muitas vezes, como centro de recrutamento. Superlotadas e sem controle efetivo, as unidades permitem que lideranças comandem crimes de dentro das celas e cooptem novos integrantes. **Assim**, a prisão de pequenos infratores sem a separação adequada acaba fortalecendo as próprias facções que o Estado pretende combater.",
+      "**Portanto**, é necessário integrar as forças de segurança, como prevê o Sistema Único de Segurança Pública, com foco em inteligência e no bloqueio de bens das organizações, além de retomar o controle efetivo dos presídios. Enfrentar o crime organizado exige atingir sua estrutura, e não apenas seus soldados.",
+    ],
+    repertorio: [
+      "Operação Carbono Oculto (2025)",
+      "Lei 12.850/2013 (organizações criminosas)",
+      "SUSP (Lei 13.675/2018)",
+      "Sistema prisional",
+    ],
+    conectivos: ["Tal cenário decorre de", "não apenas… mas também", "Assim", "Portanto"],
+  },
+  {
+    n: 10,
+    bloco: 2,
+    recorte: "Câmeras corporais e confiança na polícia",
+    tema: "O uso de câmeras corporais e a confiança da população nas forças policiais.",
+    titulo: "A lente que protege os dois lados",
+    paragrafos: [
+      "A confiança entre polícia e sociedade é condição essencial para a segurança pública. **Nesse debate**, as câmeras corporais acopladas aos uniformes ganharam destaque, e o Ministério da Justiça publicou, em 2024, diretrizes nacionais para o seu uso. Bem implementadas, elas fortalecem a legitimidade da atuação policial, **desde que** acompanhadas de regras claras e da valorização do profissional.",
+      "**Em primeiro lugar**, a gravação das ocorrências protege o cidadão contra abusos e o policial contra acusações falsas. Estudos sobre programas estaduais de câmeras apontaram redução do uso excessivo da força e de agressões contra agentes. Nesse sentido, a câmera produz uma prova técnica e imparcial, o que fortalece o trabalho policial também nos tribunais.",
+      "**Por outro lado**, a tecnologia não substitui o treinamento e a confiança mútua. Se for percebida apenas como instrumento de vigilância e punição, a câmera pode gerar receio e insegurança na tomada de decisões em situações de risco. **Além disso**, sem regras sobre armazenamento, acesso e privacidade das imagens, o equipamento perde credibilidade perante a população e os próprios agentes.",
+      "**Assim**, cabe aos governos estaduais ampliar o uso das câmeras com protocolos transparentes de gravação e guarda das imagens, aliados a treinamento contínuo e a apoio jurídico aos policiais. **Desse modo**, a tecnologia deixará de ser motivo de desconfiança e passará a ser uma aliada de quem cumpre a lei, dos dois lados da lente.",
+    ],
+    repertorio: [
+      "Diretrizes do Ministério da Justiça (2024)",
+      "Estudos sobre programas estaduais de câmeras",
+      "Legitimidade policial",
+    ],
+    conectivos: ["Nesse debate", "desde que", "Por outro lado", "Além disso", "Desse modo"],
+  },
+];

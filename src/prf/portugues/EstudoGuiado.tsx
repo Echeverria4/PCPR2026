@@ -10,6 +10,8 @@ export interface SecaoGuiada {
   /** Id da seção na página inteira, para abrir nela. */
   ancora?: string;
   blocos: Bloco[];
+  /** Telas prontas, uma por passo, no lugar dos blocos (plano, escrita e nota da redação). */
+  telas?: ReactNode[];
 }
 
 type ItemExemplo = Extract<Bloco, { tipo: "exemplos" }>["itens"][number];
@@ -17,7 +19,8 @@ type ItemExemplo = Extract<Bloco, { tipo: "exemplos" }>["itens"][number];
 type Passo =
   | { tipo: "blocos"; secao: number; blocos: Bloco[] }
   | { tipo: "frase"; secao: number; bloco: Extract<Bloco, { tipo: "frase" }> }
-  | { tipo: "exemplo"; secao: number; item: ItemExemplo; n: number; de: number };
+  | { tipo: "exemplo"; secao: number; item: ItemExemplo; n: number; de: number }
+  | { tipo: "tela"; secao: number; no: ReactNode };
 
 function textos(v: unknown, out: string[] = []): string[] {
   if (typeof v === "string") out.push(v.replace(/\*\*/g, ""));
@@ -37,6 +40,10 @@ const peso = (b: Bloco) => textos(b).reduce((a, s) => a + Math.max(1, Math.ceil(
 export function montarPassos(secoes: SecaoGuiada[]): Passo[] {
   const passos: Passo[] = [];
   secoes.forEach((s, secao) => {
+    if (s.telas) {
+      for (const no of s.telas) passos.push({ tipo: "tela", secao, no });
+      return;
+    }
     const de = s.blocos.reduce((a, b) => a + (b.tipo === "exemplos" ? b.itens.length : 0), 0);
     let n = 0;
     let atual: Bloco[] = [];
@@ -117,8 +124,8 @@ interface EstudoGuiadoProps {
   fim: ReactNode;
   passoInicial?: number;
   onPasso: (tela: number) => void;
-  /** Troca para a página inteira, aberta na seção da tela atual (sem âncora, no topo). */
-  onPaginaInteira: (ancora?: string) => void;
+  /** Troca para a página inteira, aberta na seção da tela atual (sem âncora, no topo). Sem ela, não há o link. */
+  onPaginaInteira?: (ancora?: string) => void;
 }
 
 /** A lição ou o modelo em telas curtas: abertura, um pedaço por vez e o fim, com o progresso à vista. */
@@ -176,9 +183,11 @@ export default function EstudoGuiado({
       <h2 className="secao-titulo">{titulo}</h2>
       <div className="pi-guiado-cabeca">
         <span className="pi-guiado-onde">{onde}</span>
-        <button type="button" className="pi-link pi-guiado-tudo" onClick={() => onPaginaInteira(secao?.ancora)}>
-          Ver a página inteira
-        </button>
+        {onPaginaInteira && (
+          <button type="button" className="pi-link pi-guiado-tudo" onClick={() => onPaginaInteira(secao?.ancora)}>
+            Ver a página inteira
+          </button>
+        )}
       </div>
       <div
         className="progresso-barra pi-guiado-progresso"
@@ -232,6 +241,7 @@ export default function EstudoGuiado({
         {passo?.tipo === "blocos" && <Blocos blocos={passo.blocos} />}
         {passo?.tipo === "frase" && <FraseInterativa palavras={passo.bloco.palavras} comentario={passo.bloco.comentario} />}
         {passo?.tipo === "exemplo" && <ExemploGuiado item={passo.item} />}
+        {passo?.tipo === "tela" && passo.no}
 
         {tela === ultima && (
           <>

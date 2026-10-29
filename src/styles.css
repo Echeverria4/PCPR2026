@@ -6226,3 +6226,122 @@ button {
   .pi-guiado-barra .botao { padding: 9px 14px; }
   .pi-termo-painel { padding: 14px 16px calc(16px + env(safe-area-inset-bottom)); }
 }
+
+/* Redação (PMPR Soldado 2027): bloco próprio dentro do Português Inteligente. */
+.pi-red-card,
+.pi-red-card-guia { display: flex; flex-direction: column; gap: 6px; }
+.pi-red-card { border-color: var(--ouro); }
+.pi-red-lista { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+.pi-red-da-semana { color: var(--ouro-forte); font-weight: 700; text-transform: uppercase; }
+
+.pi-red-semana { border-color: var(--ouro); }
+.pi-red-semana-datas {
+  margin: 0 0 4px;
+  font-family: var(--fonte-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+}
+.pi-red-semana-meta { margin: 0 0 12px; font-size: 1.04rem; line-height: 1.5; }
+.pi-red-semana-meta strong { color: var(--ouro-forte); }
+.pi-red-barra { margin: 14px 0 8px; }
+.pi-red-conta { margin: 0; font-size: 0.84rem; line-height: 1.5; color: var(--texto-fraco); }
+
+.pi-red-rotulo {
+  display: block;
+  margin-bottom: 4px;
+  font-family: var(--fonte-mono);
+  font-size: 0.7rem;
+  font-style: normal;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ouro-forte);
+}
+.pi-red-ideia { margin: 0 0 12px; font-style: italic; line-height: 1.5; color: var(--texto-fraco); }
+.pi-red-proposta { font-size: 1.06rem; }
+.pi-red-nota-tema { margin: -4px 0 14px; font-size: 0.86rem; line-height: 1.5; color: var(--texto-fraco); }
+.pi-red-tema-curto {
+  margin: 0 0 14px;
+  padding: 10px 12px;
+  border-left: 3px solid var(--ouro);
+  background: var(--bg-elevado);
+  line-height: 1.5;
+}
+
+.pi-red-campo { display: flex; flex-direction: column; gap: 4px; margin-bottom: 14px; }
+.pi-red-campo-rotulo {
+  font-family: var(--fonte-cond);
+  font-size: 0.92rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ouro-forte);
+}
+.pi-red-campo-dica { font-size: 0.86rem; line-height: 1.45; color: var(--texto-fraco); }
+.pi-red-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--borda-forte);
+  border-radius: var(--raio);
+  background: var(--bg);
+  color: var(--texto);
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1.5;
+  resize: vertical;
+}
+.pi-red-textarea:focus { outline: none; border-color: var(--ouro); box-shadow: 0 0 0 1px var(--ouro); }
+.pi-red-textarea-texto { min-height: 180px; }
+.pi-red-contador { margin: -4px 0 0; font-family: var(--fonte-mono); font-size: 0.8rem; line-height: 1.5; }
+.pi-red-contador-ok { color: var(--verde); }
+.pi-red-contador-alerta { color: var(--vermelho); }
+
+.pi-red-planejou { margin: 14px 0 0; padding: 10px 12px; border: 1px dashed var(--borda-forte); border-radius: var(--raio); }
+.pi-red-planejou p,
+.pi-red-planejou ul { margin: 0; line-height: 1.55; }
+.pi-red-planejou p,
+.pi-red-planejou li { white-space: pre-wrap; }
+.pi-red-planejou ul { padding-left: 18px; }
+.pi-red-planejou li + li { margin-top: 4px; }
+.pi-red-pista { margin-top: 4px; }
+.pi-red-dica { margin: 12px 0 0; font-size: 0.88rem; line-height: 1.5; color: var(--texto-fraco); }
+
+.pi-red-trava { margin-top: 4px; }
+.pi-red-parte {
+  margin: 0 0 10px;
+  font-family: var(--fonte-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ouro-forte);
+}
+.pi-red-parte span { color: var(--texto-fraco); }
+.pi-red-titulo-modelo { margin: 0 0 10px; font-family: var(--fonte-titulo); font-size: 1.2rem; text-align: center; color: var(--ouro-forte); }
+.pi-red-paragrafo { margin: 0 0 6px; font-family: var(--fonte-titulo); font-size: 1.08rem; line-height: 1.75; text-indent: 1.5em; }
+
+.pi-red-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; padding: 0; list-style: none; }
+.pi-red-chip {
+  padding: 6px 10px;
+  border: 1px solid var(--borda-forte);
+  border-radius: var(--raio);
+  background: var(--bg-elevado);
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+.pi-red-chip-conectivo { border-color: var(--ouro); font-weight: 700; color: var(--ouro-forte); }
+
+.pi-red-opcoes { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 0; }
+/* A opção escolhida fica dourada também sob o cursor (e no toque, em que o hover fica preso). */
+.botao.pi-red-opcao-ativa,
+.botao.pi-red-opcao-ativa:hover { border-color: var(--ouro-forte); background: var(--ouro-forte); color: #241a03; }
+.pi-red-alerta { margin: 12px 0 0; padding: 10px 12px; border-left: 3px solid var(--vermelho); line-height: 1.5; color: var(--vermelho); }
+.pi-red-criterio { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--borda); }
+.pi-red-criterio-nome { margin: 0 0 4px; font-size: 1rem; }
+.pi-red-criterio-pergunta { margin: 0; font-size: 0.94rem; line-height: 1.55; color: var(--texto-fraco); }
+.pi-red-total { margin: 16px 0 0; font-size: 1.06rem; font-weight: 700; line-height: 1.5; color: var(--ouro-forte); }
+
+@media (max-width: 640px) {
+  .pi-red-paragrafo { font-size: 1.04rem; line-height: 1.7; }
+  .pi-red-opcoes .botao { flex: 1 1 auto; }
+}
