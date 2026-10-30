@@ -7705,7 +7705,8 @@ button.prf-bloco-link {
   background: #000;
 }
 
-.prf-player-quadro iframe {
+.prf-player-quadro iframe,
+.prf-leitor-quadro iframe {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -7713,7 +7714,8 @@ button.prf-bloco-link {
   border: 0;
 }
 
-.prf-player-carregando {
+/* Fica por trás do iframe até o Drive desenhar por cima */
+.prf-drive-carregando {
   position: absolute;
   inset: 0;
   display: grid;
@@ -7760,12 +7762,6 @@ button.prf-bloco-link {
   gap: 8px 16px;
 }
 
-.prf-player-drive {
-  font-size: 0.85rem;
-  color: var(--texto-fraco);
-  text-underline-offset: 3px;
-}
-
 .prf-player-fim {
   display: flex;
   align-items: center;
@@ -7788,22 +7784,83 @@ button.prf-bloco-link {
   font-weight: 900;
 }
 
-.prf-player-ajuda {
+.prf-player-fim-link {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ouro-forte);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.prf-player-fim-link:focus-visible {
+  outline: 2px solid var(--ouro-forte);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Ajuda do vídeo e do PDF, com o link de reserva para o Drive */
+.prf-drive-ajuda {
   padding: 0 4px;
 }
 
-.prf-player-ajuda > summary {
+.prf-drive-ajuda > summary {
   width: fit-content;
   cursor: pointer;
   font-size: 0.85rem;
   color: var(--texto-fraco);
 }
 
-.prf-player-ajuda > p {
+.prf-drive-ajuda > p {
   margin: 6px 0 0;
   font-size: 0.85rem;
   line-height: 1.5;
   color: var(--texto-fraco);
+}
+
+.prf-drive-ajuda > a {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ouro-forte);
+  text-underline-offset: 3px;
+}
+
+/* Leitor do PDF: abre logo abaixo da linha do PDF */
+.prf-bloco-pdf {
+  flex-wrap: wrap;
+}
+
+.prf-bloco-link[aria-expanded="true"] {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.prf-bloco-link[aria-expanded="true"] .prf-bloco-abrir {
+  border-color: var(--borda-forte);
+  color: var(--texto-fraco);
+}
+
+.prf-leitor {
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  margin-left: -6px;
+  padding-bottom: 6px;
+}
+
+.prf-leitor-quadro {
+  position: relative;
+  height: min(75vh, 900px);
+  min-height: 360px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #000;
 }
 
 .prf-fixacao-cartao {
@@ -8040,15 +8097,19 @@ button.prf-bloco-link {
     background: rgba(255, 255, 255, 0.05);
   }
 
-  .prf-player-drive:hover,
-  .prf-player-ajuda > summary:hover {
+  .prf-drive-ajuda > summary:hover {
     color: var(--ouro-forte);
   }
 
-  .prf-bloco-link:not([aria-current]):hover .prf-bloco-abrir {
+  .prf-bloco-link:not([aria-current]):not([aria-expanded="true"]):hover .prf-bloco-abrir {
     border-color: var(--ouro-forte);
     background: var(--ouro-forte);
     color: #241a03;
+  }
+
+  .prf-bloco-link[aria-expanded="true"]:hover .prf-bloco-abrir {
+    border-color: var(--texto-fraco);
+    color: var(--texto);
   }
 
   .prf-vizinha:hover {

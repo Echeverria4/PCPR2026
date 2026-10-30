@@ -652,6 +652,32 @@ const SEGMENTOS = [
   { id: "nunca", um: "não feita", varios: "não feitas" },
 ] as const;
 
+/** Rola até o elemento ficar logo abaixo do cabeçalho fixo; com `soSeAcima`, só quando ele subiu para fora da tela. */
+function rolaPara(el: HTMLElement | null, soSeAcima = false) {
+  if (!el) return;
+  const topo = document.querySelector(".topo-fixo")?.getBoundingClientRect().bottom ?? 0;
+  const y = el.getBoundingClientRect().top - topo - 12;
+  if (soSeAcima && y >= -12) return;
+  const suave = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  window.scrollBy({ top: y, behavior: suave ? "smooth" : "auto" });
+}
+
+/** Reserva para quando o player do Drive não carrega aqui (sem login, iPhone, janela anônima). */
+function AjudaDrive({ id, coisa, onAbrir }: { id: string; coisa: string; onAbrir: () => void }) {
+  return (
+    <details className="prf-drive-ajuda">
+      <summary>O {coisa} não abre?</summary>
+      <p>
+        O {coisa} vem do seu Google Drive e só abre com a sua conta Google conectada neste navegador. No iPhone ou numa
+        janela anônima ele pode pedir login; nesse caso, abra direto no Drive.
+      </p>
+      <a href={urlArquivo(id)} target="_blank" rel="noopener noreferrer" onClick={onAbrir}>
+        Abrir no Drive ↗
+      </a>
+    </details>
+  );
+}
+
 interface TelaAulaProps extends ListaProps {
   grupo: GrupoAulasDrive;
   aula: AulaDrive;
@@ -667,6 +693,9 @@ function TelaAula({ grupo, aula, estudo, tentativas, onTela, onFixar }: TelaAula
   const player = useRef<HTMLDivElement>(null);
   const quadro = useRef<HTMLIFrameElement>(null);
   const tocou = useRef(false);
+  const [pdf, setPdf] = useState<string | null>(null);
+  const passoPdf = useRef<HTMLElement>(null);
+  const rolarPdf = useRef(false);
   const fix = pesoFixacao(aula.materia, aula.topicos);
   const banco = useMemo(() => {
     const ultima = ultimaRespostaPrf(tentativas);
@@ -721,12 +750,7 @@ function TelaAula({ grupo, aula, estudo, tentativas, onTela, onFixar }: TelaAula
     setAtual(id);
     tocou.current = false;
     aoAbrir();
-    const topo = document.querySelector(".topo-fixo")?.getBoundingClientRect().bottom ?? 0;
-    const caixa = player.current?.getBoundingClientRect();
-    if (caixa && caixa.top < topo) {
-      const suave = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      window.scrollBy({ top: caixa.top - topo - 12, behavior: suave ? "smooth" : "auto" });
-    }
+    rolaPara(player.current, true);
   }
 
   function terminei() {
@@ -734,6 +758,35 @@ function TelaAula({ grupo, aula, estudo, tentativas, onTela, onFixar }: TelaAula
     alternaVisto(bloco.id);
     if (pendente) escolhe(pendente.id);
   }
+
+  /** Abre o PDF aqui mesmo (um por vez); abrir também liga o cronômetro. */
+  function alternaPdf(id: string) {
+    if (pdf === id) {
+      setPdf(null);
+      return;
+    }
+    setPdf(id);
+    aoAbrir();
+  }
+
+  /** Do aviso de fim dos vídeos: abre o primeiro PDF e desce até ele. */
+  function vaiAoMaterial() {
+    const primeiro = aula.pdfs[0].id;
+    aoAbrir();
+    if (pdf === primeiro) {
+      rolaPara(passoPdf.current);
+    } else {
+      rolarPdf.current = true;
+      setPdf(primeiro);
+    }
+  }
+
+  // Desce até o material depois que o leitor do PDF já está na tela.
+  useEffect(() => {
+    if (!rolarPdf.current) return;
+    rolarPdf.current = false;
+    rolaPara(passoPdf.current);
+  }, [pdf]);
 
   return (
     <div className="prf-aulas-tela" style={corGrupo(grupo)}>
@@ -782,7 +835,7 @@ function TelaAula({ grupo, aula, estudo, tentativas, onTela, onFixar }: TelaAula
         {bloco && (
           <div className="prf-player" ref={player}>
             <div className="prf-player-quadro">
-              <span className="prf-player-carregando" aria-hidden="true">
+              <span className="prf-drive-carregando" aria-hidden="true">
                 Carregando o vídeo…
               </span>
               {/* Um iframe novo por vídeo: trocar o src de um iframe aberto empilha o histórico do navegador. */}
@@ -804,42 +857,38 @@ function TelaAula({ grupo, aula, estudo, tentativas, onTela, onFixar }: TelaAula
                 )}
                 <span className="prf-player-nome">{bloco.nome}</span>
               </div>
-              <div className="prf-player-acoes">
-                {!vistoAtual ? (
+              {!vistoAtual ? (
+                <div className="prf-player-acoes">
                   <button type="button" className="botao botao-ouro" onClick={terminei}>
                     ✓ Terminei{pendente ? " · próximo vídeo" : ""}
                   </button>
-                ) : proximo ? (
+                </div>
+              ) : proximo ? (
+                <div className="prf-player-acoes">
                   <button type="button" className="botao" onClick={() => escolhe(proximo.id)}>
                     Próximo vídeo →
                   </button>
-                ) : null}
-                <a
-                  className="prf-player-drive"
-                  href={urlArquivo(bloco.id)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={aoAbrir}
-                >
-                  Abrir no Drive ↗
-                </a>
-              </div>
+                </div>
+              ) : null}
             </div>
             {feitos === total && (
               <p className="prf-player-fim">
                 <span className="prf-player-fim-icone" aria-hidden="true">
                   ✓
                 </span>
-                Todos os vídeos vistos. Próximo passo: {temPdf ? "ler o material" : "a fixação"}.
+                <span>
+                  Todos os vídeos vistos. Próximo passo:{" "}
+                  {temPdf ? (
+                    <button type="button" className="prf-player-fim-link" onClick={vaiAoMaterial}>
+                      ler o material ↓
+                    </button>
+                  ) : (
+                    "a fixação."
+                  )}
+                </span>
               </p>
             )}
-            <details className="prf-player-ajuda">
-              <summary>O vídeo não abre?</summary>
-              <p>
-                O vídeo vem do seu Google Drive e só abre com a sua conta Google conectada neste navegador. No iPhone ou
-                numa janela anônima ele pode pedir login; nesse caso, use “Abrir no Drive ↗”.
-              </p>
-            </details>
+            <AjudaDrive id={bloco.id} coisa="vídeo" onAbrir={aoAbrir} />
           </div>
         )}
         <ul className="prf-bloco-lista">
@@ -876,7 +925,7 @@ function TelaAula({ grupo, aula, estudo, tentativas, onTela, onFixar }: TelaAula
       </section>
 
       {temPdf && (
-        <section className="prf-passo" aria-label="Material em PDF">
+        <section className="prf-passo" aria-label="Material em PDF" ref={passoPdf}>
           <h3 className="prf-passo-titulo">
             <span className="prf-passo-num" aria-hidden="true">
               2
@@ -884,23 +933,36 @@ function TelaAula({ grupo, aula, estudo, tentativas, onTela, onFixar }: TelaAula
             Leia o material
           </h3>
           <ul className="prf-bloco-lista">
-            {aula.pdfs.map((p) => (
-              <li key={p.id} className="prf-bloco prf-bloco-pdf">
-                <span className="prf-bloco-icone" aria-hidden="true">
-                  📄
-                </span>
-                <a
-                  className="prf-bloco-link"
-                  href={urlArquivo(p.id)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={aoAbrir}
-                >
-                  <span className="prf-bloco-nome">{p.nome}</span>
-                  <span className="prf-bloco-abrir">Abrir PDF ↗</span>
-                </a>
-              </li>
-            ))}
+            {aula.pdfs.map((p) => {
+              const aberto = p.id === pdf;
+              return (
+                <li key={p.id} className="prf-bloco prf-bloco-pdf">
+                  <span className="prf-bloco-icone" aria-hidden="true">
+                    📄
+                  </span>
+                  <button
+                    type="button"
+                    className="prf-bloco-link"
+                    aria-expanded={aberto}
+                    onClick={() => alternaPdf(p.id)}
+                  >
+                    <span className="prf-bloco-nome">{p.nome}</span>
+                    <span className="prf-bloco-abrir">{aberto ? "Fechar ✕" : "Ler aqui ↓"}</span>
+                  </button>
+                  {aberto && (
+                    <div className="prf-leitor">
+                      <div className="prf-leitor-quadro">
+                        <span className="prf-drive-carregando" aria-hidden="true">
+                          Carregando o PDF…
+                        </span>
+                        <iframe src={urlPlayer(p.id)} title={`PDF: ${p.nome}`} />
+                      </div>
+                      <AjudaDrive id={p.id} coisa="PDF" onAbrir={aoAbrir} />
+                    </div>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </section>
       )}
