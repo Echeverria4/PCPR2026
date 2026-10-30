@@ -180,6 +180,29 @@ export function totaisEstudo(e: EstadoEstudo, agora: number): TotaisEstudo {
   return t;
 }
 
+/** Tempo de cada um dos últimos `dias` dias, do mais antigo até hoje. A sessão conta no dia em que começou. */
+export function porDia(e: EstadoEstudo, agora: number, dias = 7): { dia: number; ms: number }[] {
+  const hoje = new Date(agora);
+  hoje.setHours(0, 0, 0, 0);
+  const lista: { dia: number; ms: number }[] = [];
+  for (let i = dias - 1; i >= 0; i--) {
+    const d = new Date(hoje);
+    d.setDate(hoje.getDate() - i);
+    lista.push({ dia: d.getTime(), ms: 0 });
+  }
+  const conta = (inicio: number, ms: number) => {
+    for (let i = lista.length - 1; i >= 0; i--) {
+      if (inicio >= lista[i].dia) {
+        lista[i].ms += ms;
+        return;
+      }
+    }
+  };
+  for (const s of e.sessoes) conta(s.inicio, s.ms);
+  if (e.ativo) conta(e.ativo.inicio, tempoAtivo(e.ativo, agora));
+  return lista;
+}
+
 const dois = (n: number) => String(n).padStart(2, "0");
 
 /** 1:05:09 ou 05:09. */

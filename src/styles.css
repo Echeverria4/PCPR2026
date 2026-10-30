@@ -6410,43 +6410,372 @@ button {
 }
 
 /* ---------- PRF: aulas do Drive, cronômetro de estudo e fixação ---------- */
-.prf-crono {
-  background: var(--bg-card);
-  border: 1px solid var(--borda-forte);
-  border-radius: var(--raio);
-  padding: 14px 16px;
-  margin-bottom: 22px;
+.prf-aulas {
+  --aulas-raio: 14px;
+  --aulas-linha: rgba(255, 255, 255, 0.08);
 }
 
-.prf-crono-topo {
+.prf-aulas-tela {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  animation: prf-aulas-entra 0.25s ease-out;
+}
+
+@keyframes prf-aulas-entra {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* O hover genérico do .botao apaga o dourado (e no celular fica preso depois do toque). */
+.prf-aulas .botao-ouro:hover {
+  background: linear-gradient(180deg, var(--ouro-forte), var(--ouro));
+}
+
+.prf-aulas-topo {
+  display: grid;
+  gap: 16px;
+}
+
+/* ---------- Cartões em destaque (retomar, matéria, aula) ---------- */
+.prf-retomar,
+.prf-materia-cabeca,
+.prf-aula-cabeca {
+  position: relative;
+  overflow: hidden;
+  padding: 22px;
+  border: 1px solid var(--borda);
+  border-radius: var(--aulas-raio);
+  background: var(--bg-card);
+  background:
+    radial-gradient(120% 90% at 100% 0%, color-mix(in srgb, var(--cor-materia, var(--ouro)) 26%, transparent), transparent 62%),
+    linear-gradient(160deg, var(--bg-elevado), var(--bg-card) 72%);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.prf-retomar::before,
+.prf-materia-cabeca::before,
+.prf-aula-cabeca::before,
+.prf-grupo::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: var(--cor-materia, var(--ouro));
+}
+
+.prf-retomar > *,
+.prf-aula-cabeca > * {
+  position: relative;
+}
+
+.prf-retomar .prf-retomar-marca,
+.prf-aula-cabeca .prf-aula-marca {
+  position: absolute;
+  right: -4px;
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--cor-materia, var(--ouro));
+  opacity: 0.13;
+  pointer-events: none;
+  user-select: none;
+}
+
+.prf-retomar .prf-retomar-marca {
+  bottom: -30px;
+  font-size: 9rem;
+}
+
+.prf-aula-cabeca .prf-aula-marca {
+  top: -22px;
+  font-size: 8.5rem;
+}
+
+.prf-retomar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.prf-retomar-olho {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--fonte-cond);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ouro-forte);
+}
+
+.prf-retomar-contando .prf-retomar-olho::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--verde);
+  animation: prf-pulso 1.6s ease-out infinite;
+}
+
+.prf-retomar-grupo,
+.prf-aula-sobre {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--fonte-cond);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+}
+
+.prf-retomar-titulo,
+.prf-materia-titulo,
+.prf-aula-titulo {
+  margin: 0;
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--texto);
+  text-wrap: balance;
+}
+
+.prf-retomar-titulo {
+  margin-top: 2px;
+  font-size: clamp(1.35rem, 1.1rem + 1vw, 1.75rem);
+}
+
+/* Os passos da aula (vídeos, PDF, fixação) em miniatura */
+.prf-retomar-passos {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-self: stretch;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.prf-retomar-passos li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  font-size: 0.92rem;
+  color: var(--texto);
+}
+
+.prf-retomar-passo-num {
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--borda-forte);
+  border: 1px solid color-mix(in srgb, var(--cor-materia, var(--ouro)) 60%, transparent);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--texto);
+}
+
+.prf-retomar-feito .prf-retomar-passo-num {
+  border-color: var(--verde);
+  background: var(--verde);
+  color: var(--bg);
+}
+
+.prf-retomar-feito .prf-retomar-passo-texto {
+  color: var(--texto-fraco);
+}
+
+.prf-retomar-passo-info {
+  margin-left: auto;
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--texto-fraco);
+}
+
+.prf-retomar-acao {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  align-self: stretch;
+  margin-top: auto;
+  padding-top: 14px;
+}
+
+.prf-retomar-meta {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--texto-fraco);
+}
+
+.prf-retomar-botao {
+  padding: 12px 22px;
+  font-size: 1rem;
+}
+
+/* ---------- Ícone da matéria e medidor de progresso ---------- */
+.prf-grupo-icone {
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  font-size: 1.35rem;
+  line-height: 1;
+  background: rgba(255, 255, 255, 0.06);
+  background: color-mix(in srgb, var(--cor-materia, var(--ouro)) 18%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--cor-materia, var(--ouro)) 35%, transparent);
+}
+
+.prf-grupo-icone.prf-icone-mini {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.prf-grupo-icone.prf-icone-grande {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  font-size: 2rem;
+}
+
+.prf-medidor {
+  display: block;
+  width: 100%;
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  background: color-mix(in srgb, var(--cor-materia, var(--ouro)) 20%, transparent);
+}
+
+.prf-medidor > span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--cor-materia, var(--ouro));
+  transition: width 0.4s ease;
+}
+
+/* ---------- Cronômetro de estudo ---------- */
+.prf-crono {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px;
+  border: 1px solid var(--borda);
+  border-radius: var(--aulas-raio);
+  background: var(--bg-card);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.prf-crono-contando {
+  border-color: color-mix(in srgb, var(--verde) 40%, var(--borda));
+}
+
+.prf-crono-cabeca {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 6px 12px;
 }
 
-.prf-crono-mostrador {
-  min-width: 0;
+.prf-crono-titulo {
+  font-family: var(--fonte-cond);
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--texto-fraco);
 }
 
 .prf-crono-rotulo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  max-width: 100%;
   font-size: 0.85rem;
   color: var(--texto-fraco);
-  overflow-wrap: anywhere;
+}
+
+.prf-crono-rotulo-texto {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.prf-crono-contando .prf-crono-rotulo {
+  color: var(--texto);
+}
+
+.prf-crono-ponto {
+  flex-shrink: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 2px var(--texto-fraco);
+}
+
+.prf-crono-contando .prf-crono-ponto {
+  background: var(--verde);
+  box-shadow: none;
+  animation: prf-pulso 1.6s ease-out infinite;
+}
+
+.prf-crono-pausado .prf-crono-ponto {
+  background: var(--ouro-forte);
+  box-shadow: none;
+}
+
+@keyframes prf-pulso {
+  0% {
+    box-shadow: 0 0 0 0 rgba(53, 212, 136, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(53, 212, 136, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(53, 212, 136, 0);
+  }
 }
 
 .prf-crono-tempo {
-  font-family: var(--fonte-cond);
-  font-size: 2.4rem;
-  font-weight: 900;
-  line-height: 1.1;
-  color: var(--ouro-forte);
+  font-family: var(--fonte-corpo);
+  font-size: clamp(3rem, 2.4rem + 2.4vw, 3.75rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
   font-variant-numeric: tabular-nums;
+  color: var(--texto);
 }
 
-.prf-crono-parado {
+.prf-crono-parado .prf-crono-tempo {
   color: var(--texto-fraco);
+}
+
+.prf-crono-pausado .prf-crono-tempo {
+  color: var(--ouro-forte);
 }
 
 .prf-crono-botoes {
@@ -6455,59 +6784,295 @@ button {
   gap: 8px;
 }
 
-.prf-crono-descartar {
+.prf-crono .prf-crono-descartar {
+  border-color: transparent;
+  background: transparent;
   color: var(--texto-fraco);
+}
+
+.prf-crono .prf-crono-descartar:hover {
+  border-color: rgba(240, 85, 92, 0.5);
+  background: rgba(240, 85, 92, 0.12);
+  color: var(--vermelho);
 }
 
 .prf-crono-aviso {
-  margin: 10px 0 0;
-  font-size: 0.85rem;
-  color: var(--ouro-forte);
-}
-
-.prf-crono-totais {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 18px;
-  margin-top: 10px;
-  font-size: 0.9rem;
-  color: var(--texto-fraco);
-}
-
-.prf-crono-totais b {
+  margin: 0;
+  padding: 10px 12px;
+  border: 1px solid rgba(240, 85, 92, 0.45);
+  border-radius: 10px;
+  background: rgba(240, 85, 92, 0.1);
+  font-size: 0.88rem;
+  line-height: 1.45;
   color: var(--texto);
 }
 
-.prf-crono-historico {
-  margin-top: 10px;
-  font-size: 0.85rem;
+.prf-crono-totais {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
 }
 
-.prf-crono-historico summary {
-  cursor: pointer;
+.prf-crono-totais > div {
+  padding: 10px 12px;
+  border: 1px solid var(--aulas-linha);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.prf-crono-totais dt {
+  font-size: 0.78rem;
   color: var(--texto-fraco);
 }
 
-.prf-crono-historico ul {
-  list-style: none;
-  padding: 0;
-  margin: 8px 0 0;
+.prf-crono-totais dd {
+  margin: 2px 0 0;
+  font-family: var(--fonte-corpo);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--texto);
 }
 
-.prf-crono-historico li {
+/* Gráfico dos últimos 7 dias */
+.prf-semana {
+  margin: 0;
+}
+
+.prf-semana-titulo {
+  margin-bottom: 8px;
+  font-size: 0.78rem;
+  color: var(--texto-fraco);
+}
+
+.prf-semana-barras {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 4px;
+}
+
+/* Semana sem nenhum tempo: recado no lugar das barras */
+.prf-semana-vazio {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  height: 84px;
+  margin: 0;
+  padding: 0 16px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  text-align: center;
+  color: var(--texto-fraco);
+  pointer-events: none;
+}
+
+.prf-semana-col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  border-radius: 6px;
+  outline: none;
+}
+
+.prf-semana-col:focus-visible {
+  box-shadow: 0 0 0 2px var(--ouro-forte);
+}
+
+.prf-semana-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 84px;
+  border-bottom: 1px solid var(--borda);
+}
+
+.prf-semana-valor {
+  margin-bottom: 4px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--texto);
+}
+
+.prf-semana-barra {
+  display: block;
+  width: min(24px, 70%);
+  border-radius: 4px 4px 0 0;
+  background: rgba(202, 160, 58, 0.55);
+  background: color-mix(in srgb, var(--ouro) 55%, var(--bg-card));
+}
+
+.prf-semana-hoje .prf-semana-barra {
+  background: var(--ouro-forte);
+}
+
+.prf-semana-barra.prf-semana-zero {
+  height: 2px;
+  border-radius: 1px 1px 0 0;
+  background: var(--borda-forte);
+}
+
+.prf-semana-dia {
+  font-size: 0.72rem;
+  color: var(--texto-fraco);
+}
+
+.prf-semana-hoje .prf-semana-dia {
+  font-weight: 700;
+  color: var(--texto);
+}
+
+.prf-semana-col::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  z-index: 2;
+  transform: translateX(-50%);
+  padding: 5px 8px;
+  border: 1px solid var(--borda-forte);
+  border-radius: 6px;
+  background: var(--bg);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  font-size: 0.75rem;
+  white-space: nowrap;
+  color: var(--texto);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s;
+}
+
+.prf-semana-col:first-child::after {
+  left: 0;
+  transform: none;
+}
+
+.prf-semana-col:last-child::after {
+  left: auto;
+  right: 0;
+  transform: none;
+}
+
+.prf-semana-col:focus::after {
+  opacity: 1;
+}
+
+/* Histórico (tabela do gráfico + últimas sessões) */
+.prf-crono-historico {
+  padding-top: 2px;
+  border-top: 1px solid var(--aulas-linha);
+}
+
+.prf-crono-historico > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0 2px;
+  list-style: none;
+  cursor: pointer;
+  font-family: var(--fonte-cond);
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+}
+
+.prf-crono-historico > summary::-webkit-details-marker {
+  display: none;
+}
+
+.prf-crono-historico > summary::after {
+  content: "▾";
+  transition: transform 0.2s;
+}
+
+.prf-crono-historico[open] > summary::after {
+  transform: rotate(180deg);
+}
+
+.prf-crono-historico > summary:focus-visible {
+  outline: 2px solid var(--ouro-forte);
+  outline-offset: 2px;
+}
+
+.prf-crono-hist-grade {
+  display: grid;
+  gap: 16px;
+  padding-top: 10px;
+}
+
+.prf-crono-hist-titulo {
+  margin: 0 0 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--texto-fraco);
+}
+
+.prf-crono-tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.prf-crono-tabela th,
+.prf-crono-tabela td {
+  padding: 6px 0;
+  border-bottom: 1px solid var(--aulas-linha);
+}
+
+.prf-crono-tabela th {
+  font-weight: 400;
+  text-align: left;
+  color: var(--texto-fraco);
+}
+
+.prf-crono-tabela td {
+  text-align: right;
+  color: var(--texto);
+}
+
+.prf-crono-sessoes {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.prf-crono-sessoes li {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: baseline;
   gap: 10px;
-  padding: 5px 0;
-  border-bottom: 1px solid var(--borda);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--aulas-linha);
+  font-size: 0.85rem;
+}
+
+.prf-crono-hist-quando {
+  white-space: nowrap;
+  color: var(--texto-fraco);
 }
 
 .prf-crono-hist-rotulo {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  color: var(--texto);
 }
 
+.prf-crono-sessoes b {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Chip do cronômetro no topo do curso (LayoutPrf) */
 .prf-crono-chip {
   display: inline-flex;
   align-items: center;
@@ -6537,263 +7102,908 @@ button {
   color: var(--texto-fraco);
 }
 
+/* ---------- Início: matérias ---------- */
+.prf-aulas-cabeca {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.prf-aulas-cabeca .secao-titulo {
+  margin: 10px 0 4px;
+}
+
+.prf-aulas-resumo {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--texto-fraco);
+}
+
+.prf-aulas-resumo b {
+  font-weight: 700;
+  color: var(--texto);
+}
+
+.prf-aulas-intro {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--texto-fraco);
+}
+
+.prf-grupos {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+}
+
+.prf-grupo {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-areas:
+    "icone texto pct"
+    "medidor medidor medidor";
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 18px 16px 16px;
+  overflow: hidden;
+  border: 1px solid var(--borda);
+  border-radius: var(--aulas-raio);
+  background: var(--bg-card);
+  color: var(--texto);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+}
+
+.prf-grupo > .prf-grupo-icone {
+  grid-area: icone;
+}
+
+.prf-grupo-texto {
+  grid-area: texto;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.prf-grupo-nome {
+  font-family: var(--fonte-cond);
+  font-size: 1.02rem;
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.prf-grupo-meta {
+  font-size: 0.8rem;
+  color: var(--texto-fraco);
+}
+
+.prf-grupo-pct {
+  grid-area: pct;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--texto);
+}
+
+.prf-grupo-completo .prf-grupo-pct {
+  color: var(--verde);
+}
+
+.prf-grupo > .prf-medidor {
+  grid-area: medidor;
+  height: 6px;
+}
+
+.prf-grupo:focus-visible {
+  outline: 2px solid var(--ouro-forte);
+  outline-offset: 2px;
+}
+
+.prf-grupo-destaque {
+  grid-column: 1 / -1;
+  padding: 20px;
+  border-color: rgba(202, 160, 58, 0.5);
+  background: var(--bg-card);
+  background: linear-gradient(135deg, rgba(202, 160, 58, 0.18), rgba(202, 160, 58, 0) 55%), var(--bg-card);
+}
+
+.prf-grupo-destaque .prf-grupo-nome {
+  font-family: var(--fonte-titulo);
+  font-size: 1.25rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* ---------- Matéria: trilha das aulas ---------- */
 .prf-aulas-nav {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 8px;
-  margin-bottom: 14px;
 }
 
-.prf-botao-link {
+.prf-voltar {
   display: inline-flex;
   align-items: center;
-  text-decoration: none;
-}
-
-.prf-aulas-lista {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 8px;
-}
-
-.prf-aula-item {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-align: left;
-  font: inherit;
-  color: var(--texto);
-  background: var(--bg-card);
-  border: 1px solid var(--borda);
-  border-left: 4px solid var(--cor-materia, var(--ouro));
-  border-radius: var(--raio);
-  padding: 10px 12px;
+  gap: 6px;
+  margin-left: -8px;
+  padding: 6px 10px 6px 8px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--texto-fraco);
+  font-family: var(--fonte-cond);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   cursor: pointer;
 }
 
-.prf-aula-item:hover:not(:disabled) {
-  border-color: var(--borda-forte);
-  border-left-color: var(--cor-materia, var(--ouro));
+.prf-voltar:hover {
+  background: rgba(202, 160, 58, 0.08);
+  color: var(--ouro-forte);
+}
+
+.prf-voltar:focus-visible {
+  outline: 2px solid var(--ouro-forte);
+}
+
+.prf-materia-cabeca {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 16px 18px;
+}
+
+.prf-materia-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.prf-materia-titulo {
+  font-size: clamp(1.4rem, 1.15rem + 1vw, 1.9rem);
+  line-height: 1.15;
+}
+
+.prf-materia-meta {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--texto-fraco);
+}
+
+.prf-materia-progresso,
+.prf-aula-progresso {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 420px;
+  font-size: 0.85rem;
+  color: var(--texto-fraco);
+}
+
+.prf-materia-progresso {
+  margin-top: 4px;
+}
+
+.prf-materia-botao,
+.prf-materia-fim {
+  grid-column: 1 / -1;
+  justify-self: start;
+}
+
+.prf-materia-fim {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(53, 212, 136, 0.12);
+  color: var(--verde);
+  font-family: var(--fonte-cond);
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.prf-aulas-lista {
+  position: relative;
+  margin: 0;
+  padding: 8px;
+  list-style: none;
+  border: 1px solid var(--borda);
+  border-radius: var(--aulas-raio);
+  background: var(--bg-card);
+}
+
+/* Linha da trilha, passando pelo centro dos círculos */
+.prf-aulas-lista::before {
+  content: "";
+  position: absolute;
+  top: 40px;
+  bottom: 40px;
+  left: 37px;
+  width: 2px;
+  background: var(--borda);
+}
+
+.prf-aula + .prf-aula {
+  margin-top: 2px;
+}
+
+.prf-aula-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--texto);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.prf-aula-item:focus-visible {
+  outline: 2px solid var(--ouro-forte);
+  outline-offset: -2px;
 }
 
 .prf-aula-item:disabled {
-  opacity: 0.55;
   cursor: default;
 }
 
-.prf-aula-num {
-  flex: none;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: var(--bg-elevado);
-  font-family: var(--fonte-cond);
-  font-weight: 900;
+.prf-aula-breve .prf-aula-item {
+  opacity: 0.55;
 }
 
-.prf-aula-completa .prf-aula-num {
-  background: var(--verde);
+.prf-aula-no {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--borda);
+  background: conic-gradient(var(--cor-materia, var(--ouro)) var(--prog, 0%), var(--borda) 0);
+}
+
+.prf-aula-no::before {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: var(--bg-card);
+}
+
+.prf-aula-no > span {
+  position: relative;
+  font-family: var(--fonte-cond);
+  font-size: 0.9rem;
+  font-weight: 900;
+  color: var(--texto-fraco);
+}
+
+.prf-aula-andamento .prf-aula-no > span,
+.prf-aula-proxima .prf-aula-no > span {
+  color: var(--texto);
+}
+
+.prf-aula-feita .prf-aula-no::before {
+  background: var(--cor-materia, var(--ouro));
+}
+
+.prf-aula-feita .prf-aula-no > span {
   color: var(--bg);
+}
+
+.prf-aula-proxima .prf-aula-no {
+  box-shadow: 0 0 0 4px rgba(202, 160, 58, 0.25);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--cor-materia, var(--ouro)) 28%, transparent);
 }
 
 .prf-aula-texto {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
   min-width: 0;
 }
 
 .prf-aula-nome {
-  font-weight: 700;
-  overflow-wrap: anywhere;
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.3;
 }
 
 .prf-aula-meta {
-  font-size: 0.82rem;
-  color: var(--texto-fraco);
-}
-
-.prf-aula-cabeca {
-  border-left: 4px solid var(--cor-materia, var(--ouro));
-  padding-left: 12px;
-  margin-bottom: 8px;
-}
-
-.prf-aula-sobre {
-  font-size: 0.85rem;
-  color: var(--texto-fraco);
-}
-
-.prf-aula-titulo {
-  margin: 4px 0 10px;
-  font-size: 1.35rem;
-  line-height: 1.25;
-  overflow-wrap: anywhere;
-}
-
-.prf-aula-contando {
-  display: inline-block;
-  font-weight: 700;
-  color: var(--verde);
-}
-
-.prf-aula-dica {
-  margin: 6px 0 0;
   font-size: 0.8rem;
   color: var(--texto-fraco);
 }
 
-.prf-aula-secao {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 8px;
-  margin: 20px 0 8px;
+.prf-aula-selo {
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--ouro-forte);
+  color: #241a03;
   font-family: var(--fonte-cond);
-  font-size: 1rem;
-  letter-spacing: 0.04em;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--ouro);
+  white-space: nowrap;
 }
 
-.prf-aula-secao span {
+.prf-aula-seta {
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--texto-fraco);
+  transition: transform 0.15s, color 0.15s;
+}
+
+/* ---------- Aula: cabeçalho, passos, vídeos e fixação ---------- */
+.prf-aula-cabeca {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.prf-aula-titulo {
+  font-size: clamp(1.45rem, 1.2rem + 1.1vw, 2rem);
+}
+
+/* Cronômetro compacto dentro do cabeçalho da aula */
+.prf-crono.prf-crono-compacto {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 16px;
+  margin-top: 4px;
+  padding: 12px 14px;
+  border-color: var(--aulas-linha);
+  border-radius: 12px;
+  background: rgba(10, 21, 36, 0.55);
+  box-shadow: none;
+}
+
+.prf-crono-compacto.prf-crono-contando {
+  border-color: rgba(53, 212, 136, 0.4);
+}
+
+.prf-crono-info {
+  display: flex;
+  flex: 1 1 220px;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 14px;
+  min-width: 0;
+}
+
+.prf-crono-compacto .prf-crono-tempo {
+  font-size: 1.6rem;
+}
+
+.prf-crono-dica {
+  flex-basis: 100%;
+  font-size: 0.8rem;
+  color: var(--texto-fraco);
+}
+
+.prf-crono-rotulo.prf-aula-contando {
+  font-weight: 600;
+}
+
+.prf-passo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.prf-passo-titulo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 0 0;
+  font-family: var(--fonte-cond);
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--texto);
+}
+
+.prf-passo-num {
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, var(--ouro-forte), var(--ouro));
+  color: #241a03;
+  font-size: 0.9rem;
+}
+
+.prf-passo-extra {
+  margin-left: auto;
+  font-family: var(--fonte-corpo);
   font-size: 0.85rem;
+  font-weight: 600;
   letter-spacing: 0;
   text-transform: none;
   color: var(--texto-fraco);
 }
 
+.prf-passo-dica {
+  margin: -4px 0 0 38px;
+  font-size: 0.85rem;
+  color: var(--texto-fraco);
+}
+
 .prf-bloco-lista {
-  list-style: none;
-  padding: 0;
   margin: 0;
-  display: grid;
-  gap: 6px;
+  padding: 4px 6px;
+  list-style: none;
+  border: 1px solid var(--borda);
+  border-radius: var(--aulas-raio);
+  background: var(--bg-card);
 }
 
 .prf-bloco {
   display: flex;
   align-items: center;
-  gap: 10px;
-  background: var(--bg-card);
-  border: 1px solid var(--borda);
-  border-radius: var(--raio);
-  padding: 6px 10px;
+  gap: 12px;
+  padding: 6px 2px 6px 8px;
 }
 
-.prf-bloco-visto {
-  border-color: rgba(53, 212, 136, 0.45);
+.prf-bloco + .prf-bloco {
+  border-top: 1px solid var(--aulas-linha);
 }
 
 .prf-bloco-check {
-  flex: none;
-  width: 30px;
-  height: 30px;
+  position: relative;
   display: grid;
   place-items: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  padding: 0;
   border: 2px solid var(--borda-forte);
-  border-radius: var(--raio-peq);
-  background: var(--bg);
+  border-radius: 50%;
+  background: transparent;
   color: var(--bg);
+  font-size: 0.95rem;
   font-weight: 900;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
 }
 
-.prf-bloco-check[aria-pressed="true"] {
-  background: var(--verde);
+/* Área de toque maior que o círculo */
+.prf-bloco-check::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+}
+
+.prf-bloco-check:active {
+  transform: scale(0.92);
+}
+
+.prf-bloco-check:focus-visible {
+  outline: 2px solid var(--ouro-forte);
+  outline-offset: 2px;
+}
+
+.prf-bloco-visto .prf-bloco-check {
   border-color: var(--verde);
+  background: var(--verde);
 }
 
 .prf-bloco-icone {
-  flex: none;
-  width: 30px;
-  text-align: center;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  font-size: 1.15rem;
 }
 
 .prf-bloco-link {
+  display: flex;
   flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   min-width: 0;
-  padding: 6px 0;
+  padding: 10px;
+  border-radius: 10px;
   color: var(--texto);
   text-decoration: none;
-  overflow-wrap: anywhere;
 }
 
-.prf-bloco-link:hover {
-  color: var(--ouro-forte);
-  text-decoration: underline;
+.prf-bloco-link:focus-visible {
+  outline: 2px solid var(--ouro-forte);
+  outline-offset: -2px;
 }
 
-.prf-bloco-visto .prf-bloco-link {
+.prf-bloco-nome {
+  min-width: 0;
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+.prf-bloco-visto .prf-bloco-nome {
   color: var(--texto-fraco);
 }
 
-.prf-aula-pasta {
-  display: inline-block;
-  margin-top: 12px;
-  font-size: 0.9rem;
+.prf-bloco-abrir {
+  flex-shrink: 0;
+  padding: 5px 11px;
+  border: 1px solid rgba(202, 160, 58, 0.55);
+  border-radius: 999px;
   color: var(--ouro-forte);
+  font-family: var(--fonte-cond);
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
 
-.prf-fixacao {
-  margin-top: 22px;
-  padding: 14px 16px;
+.prf-fixacao-cartao {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid rgba(202, 160, 58, 0.45);
+  border-radius: var(--aulas-raio);
   background: var(--bg-card);
-  border: 1px solid var(--ouro);
-  border-radius: var(--raio);
+  background: linear-gradient(160deg, rgba(202, 160, 58, 0.12), rgba(202, 160, 58, 0) 50%), var(--bg-card);
 }
 
-.prf-fixacao .prf-aula-secao {
-  margin-top: 0;
-}
-
-.prf-fixacao p {
-  margin: 0 0 8px;
+.prf-fixacao-topo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 16px;
 }
 
 .prf-fixacao-qtd {
-  font-size: 1.05rem;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--texto-fraco);
 }
 
-.prf-fixacao-peso,
+.prf-fixacao-qtd b {
+  font-family: var(--fonte-corpo);
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--texto);
+}
+
+.prf-fixacao-assuntos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.prf-fixacao-assuntos li {
+  padding: 4px 10px;
+  border: 1px solid var(--aulas-linha);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 0.8rem;
+  color: var(--texto);
+}
+
+.prf-fixacao-banco-bloco {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--aulas-linha);
+}
+
 .prf-fixacao-banco {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--texto-fraco);
+}
+
+.prf-fixacao-banco b {
+  font-weight: 600;
+  color: var(--texto);
+}
+
+.prf-pilha {
+  display: flex;
+  gap: 2px;
+  height: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+}
+
+.prf-pilha > span {
+  display: block;
+  min-width: 4px;
+}
+
+.prf-pilha-certas {
+  background: var(--verde);
+}
+
+.prf-pilha-erradas {
+  background: var(--vermelho);
+}
+
+.prf-pilha-nunca {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.prf-pilha-legenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.82rem;
+  color: var(--texto-fraco);
+}
+
+.prf-pilha-legenda li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.prf-pilha-legenda i {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+}
+
+.prf-fixacao-ordem {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--texto-fraco);
+}
+
+.prf-fixacao-porque > summary {
+  width: fit-content;
+  cursor: pointer;
   font-size: 0.85rem;
   color: var(--texto-fraco);
 }
 
-.prf-fixacao-assuntos {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 10px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
+.prf-fixacao-porque > summary:hover {
+  color: var(--ouro-forte);
 }
 
-.prf-fixacao-assuntos li {
-  padding: 3px 10px;
-  border: 1px solid var(--borda-forte);
-  border-radius: 999px;
-  font-size: 0.8rem;
+.prf-fixacao-peso {
+  margin: 8px 0 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--texto-fraco);
 }
 
+.prf-fixacao-vazia {
+  margin: 0;
+  padding: 14px 16px;
+  border: 1px dashed var(--borda);
+  border-radius: var(--aulas-raio);
+  color: var(--texto-fraco);
+}
+
+/* Aula anterior / próxima */
 .prf-aula-navegacao {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 8px;
-  margin-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 4px;
 }
 
-/* O hover genérico do .botao troca o fundo por azul e apaga o dourado (no celular o hover fica preso depois do toque). */
-.prf-crono .botao-ouro:hover,
-.prf-aula-cabeca .botao-ouro:hover,
-.prf-fixacao .botao-ouro:hover {
-  background: linear-gradient(180deg, var(--ouro-forte), var(--ouro));
+.prf-vizinha {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  padding: 14px 16px;
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  background: var(--bg-card);
+  color: var(--texto);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.prf-vizinha-proxima {
+  grid-column: 2;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.prf-vizinha:focus-visible {
+  outline: 2px solid var(--ouro-forte);
+  outline-offset: 2px;
+}
+
+.prf-vizinha-dir {
+  font-family: var(--fonte-cond);
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ouro-forte);
+}
+
+.prf-vizinha-nome {
+  display: -webkit-box;
+  max-width: 100%;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+/* ---------- Hover só onde existe mouse (no celular ele fica preso depois do toque) ---------- */
+@media (hover: hover) {
+  .prf-grupo:hover {
+    transform: translateY(-2px);
+    border-color: color-mix(in srgb, var(--cor-materia, var(--ouro)) 55%, var(--borda));
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  }
+
+  .prf-aula-item:not(:disabled):hover {
+    border-color: var(--aulas-linha);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .prf-aula-item:not(:disabled):hover .prf-aula-seta {
+    transform: translateX(3px);
+    color: var(--ouro-forte);
+  }
+
+  .prf-bloco-check:hover {
+    border-color: var(--verde);
+  }
+
+  .prf-bloco-link:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .prf-bloco-link:hover .prf-bloco-abrir {
+    border-color: var(--ouro-forte);
+    background: var(--ouro-forte);
+    color: #241a03;
+  }
+
+  .prf-vizinha:hover {
+    transform: translateY(-1px);
+    border-color: var(--ouro);
+  }
+
+  .prf-semana-col:hover::after {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 560px) {
+  .prf-grupos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .prf-crono-hist-grade {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 720px) {
+  .prf-materia-cabeca {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+
+  .prf-materia-botao,
+  .prf-materia-fim {
+    grid-column: auto;
+    align-self: center;
+  }
+}
+
+@media (min-width: 860px) {
+  .prf-aulas-topo {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  }
+
+  .prf-crono-hist-grade {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (min-width: 880px) {
+  .prf-grupos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .prf-retomar,
+  .prf-materia-cabeca,
+  .prf-aula-cabeca,
+  .prf-fixacao-cartao,
+  .prf-crono:not(.prf-crono-compacto) {
+    padding: 16px;
+  }
+
+  .prf-retomar-botao,
+  .prf-materia-botao,
+  .prf-fixacao-topo .botao-ouro {
+    width: 100%;
+  }
+
+  /* No celular o número grande ficava atrás do texto */
+  .prf-retomar .prf-retomar-marca,
+  .prf-aula-cabeca .prf-aula-marca {
+    display: none;
+  }
+
+  .prf-aula-navegacao {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .prf-vizinha-proxima {
+    grid-column: auto;
+  }
+
+  .prf-grupo-icone.prf-icone-grande {
+    width: 52px;
+    height: 52px;
+    font-size: 1.6rem;
+  }
+
+  .prf-crono-compacto .prf-crono-botoes {
+    width: 100%;
+  }
+
+  /* Botões do cronômetro da aula: cada um na largura toda, em vez de larguras desencontradas */
+  .prf-crono-compacto .prf-crono-botoes > .botao {
+    flex: 1 1 auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .prf-aulas *,
+  .prf-aulas *::before,
+  .prf-aulas *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }
