@@ -1,4 +1,4 @@
-import { useEffect, useMemo, type CSSProperties } from "react";
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { PRF_MATERIA_MAP, type MateriaPrfId } from "../../data/prf";
 import type { TentativaPrf } from "../armazenamento";
 import { ultimaRespostaPrf } from "../sessoes";
@@ -41,6 +41,8 @@ const LIMITE_AVISO = 4 * 60 * 60 * 1000;
 const ESCALA_MINIMA = 30 * 60 * 1000;
 const ALTURA_BARRA = 64;
 const urlArquivo = (id: string) => `https://drive.google.com/file/d/${id}/view`;
+/** Player do próprio Drive: só toca com a conta Google do dono conectada no navegador. */
+const urlPlayer = (id: string) => `https://drive.google.com/file/d/${id}/preview`;
 const ICONE: Record<string, string> = {
   niv: "🚀",
   pt: "📖",
@@ -154,7 +156,15 @@ export default function AulasPrf({ tela, onTela, tentativas, onFixar }: AulasPrf
   return (
     <div className="prf-aulas">
       {grupo && aula ? (
-        <TelaAula grupo={grupo} aula={aula} estudo={estudo} tentativas={tentativas} onTela={onTela} onFixar={onFixar} />
+        <TelaAula
+          key={aula.id}
+          grupo={grupo}
+          aula={aula}
+          estudo={estudo}
+          tentativas={tentativas}
+          onTela={onTela}
+          onFixar={onFixar}
+        />
       ) : grupo ? (
         <ListaAulas grupo={grupo} estudo={estudo} onTela={onTela} />
       ) : (
@@ -652,6 +662,11 @@ interface TelaAulaProps extends ListaProps {
 function TelaAula({ grupo, aula, estudo, tentativas, onTela, onFixar }: TelaAulaProps) {
   const vistos = useMemo(() => new Set(estudo.vistos), [estudo.vistos]);
   const { feitos, total } = progresso(aula, vistos);
+  // O player abre no primeiro vídeo que falta ver.
+  const [atual, setAtual] = useState(() => (aula.blocos.find((b) => !vistos.has(b.id)) ?? aula.blocos[0])?.id);
+  const player = useRef<HTMLDivElement>(null);
+  const quadro = useRef<HTMLIFrameElement>(null);
+  const tocou = useRef(false);
   const fix = pesoFixacao(aula.materia, aula.topicos);
   const banco = useMemo(() => {
     const ultima = ultimaRespostaPrf(tentativas);
@@ -672,11 +687,52 @@ function TelaAula({ grupo, aula, estudo, tentativas, onTela, onFixar }: TelaAula
   const alvo: AlvoEstudo = { aula: aula.id, grupo: grupo.id, rotulo: rotuloAula(grupo, aula) };
   const ativo = estudo.ativo;
   const temPdf = aula.pdfs.length > 0;
+  const iAtual = aula.blocos.findIndex((b) => b.id === atual);
+  const bloco = aula.blocos[iAtual];
+  const vistoAtual = bloco ? vistos.has(bloco.id) : false;
+  // Próximo que falta ver, dando a volta na lista; com todos vistos, o seguinte da ordem.
+  const pendente = [...aula.blocos.slice(iAtual + 1), ...aula.blocos.slice(0, Math.max(iAtual, 0))].find(
+    (b) => !vistos.has(b.id),
+  );
+  const proximo = pendente ?? aula.blocos[iAtual + 1];
 
   /** Abrir um vídeo ou PDF liga o cronômetro desta aula quando ele está parado. */
   function aoAbrir() {
     if (!ativo) iniciarEstudo(alvo);
     else if (ativo.aula === aula.id && ativo.desde === null) continuarEstudo();
+  }
+
+  // O player do Drive é de outro site: o clique nele só aparece aqui como a página perdendo o foco.
+  // No primeiro clique em cada vídeo, liga o cronômetro se ele estiver desligado (pausado continua pausado).
+  useEffect(() => {
+    function aoSairDaPagina() {
+      window.setTimeout(() => {
+        if (tocou.current || !quadro.current || document.activeElement !== quadro.current) return;
+        tocou.current = true;
+        if (!ativo) iniciarEstudo(alvo);
+      }, 0);
+    }
+    window.addEventListener("blur", aoSairDaPagina);
+    return () => window.removeEventListener("blur", aoSairDaPagina);
+  });
+
+  /** Põe o vídeo no player e, se o player ficou para cima da tela, rola até ele. */
+  function escolhe(id: string) {
+    setAtual(id);
+    tocou.current = false;
+    aoAbrir();
+    const topo = document.querySelector(".topo-fixo")?.getBoundingClientRect().bottom ?? 0;
+    const caixa = player.current?.getBoundingClientRect();
+    if (caixa && caixa.top < topo) {
+      const suave = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollBy({ top: caixa.top - topo - 12, behavior: suave ? "smooth" : "auto" });
+    }
+  }
+
+  function terminei() {
+    if (!bloco) return;
+    alternaVisto(bloco.id);
+    if (pendente) escolhe(pendente.id);
   }
 
   return (
@@ -722,12 +778,79 @@ function TelaAula({ grupo, aula, estudo, tentativas, onTela, onFixar }: TelaAula
             {feitos}/{total} vistos
           </span>
         </h3>
-        <p className="prf-passo-dica">Toque no círculo para marcar o vídeo que já assistiu.</p>
+        <p className="prf-passo-dica">O vídeo abre aqui mesmo. Ao terminar, toque em “Terminei”.</p>
+        {bloco && (
+          <div className="prf-player" ref={player}>
+            <div className="prf-player-quadro">
+              <span className="prf-player-carregando" aria-hidden="true">
+                Carregando o vídeo…
+              </span>
+              {/* Um iframe novo por vídeo: trocar o src de um iframe aberto empilha o histórico do navegador. */}
+              <iframe
+                key={bloco.id}
+                ref={quadro}
+                src={urlPlayer(bloco.id)}
+                title={`Vídeo: ${bloco.nome}`}
+                allow="autoplay; fullscreen"
+                allowFullScreen
+              />
+            </div>
+            <div className="prf-player-rodape">
+              <div className="prf-player-sobre">
+                {total > 1 && (
+                  <span className="prf-player-posicao">
+                    Vídeo {iAtual + 1} de {total}
+                  </span>
+                )}
+                <span className="prf-player-nome">{bloco.nome}</span>
+              </div>
+              <div className="prf-player-acoes">
+                {!vistoAtual ? (
+                  <button type="button" className="botao botao-ouro" onClick={terminei}>
+                    ✓ Terminei{pendente ? " · próximo vídeo" : ""}
+                  </button>
+                ) : proximo ? (
+                  <button type="button" className="botao" onClick={() => escolhe(proximo.id)}>
+                    Próximo vídeo →
+                  </button>
+                ) : null}
+                <a
+                  className="prf-player-drive"
+                  href={urlArquivo(bloco.id)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={aoAbrir}
+                >
+                  Abrir no Drive ↗
+                </a>
+              </div>
+            </div>
+            {feitos === total && (
+              <p className="prf-player-fim">
+                <span className="prf-player-fim-icone" aria-hidden="true">
+                  ✓
+                </span>
+                Todos os vídeos vistos. Próximo passo: {temPdf ? "ler o material" : "a fixação"}.
+              </p>
+            )}
+            <details className="prf-player-ajuda">
+              <summary>O vídeo não abre?</summary>
+              <p>
+                O vídeo vem do seu Google Drive e só abre com a sua conta Google conectada neste navegador. No iPhone ou
+                numa janela anônima ele pode pedir login; nesse caso, use “Abrir no Drive ↗”.
+              </p>
+            </details>
+          </div>
+        )}
         <ul className="prf-bloco-lista">
           {aula.blocos.map((b) => {
             const visto = vistos.has(b.id);
+            const aberto = b.id === bloco?.id;
             return (
-              <li key={b.id} className={`prf-bloco${visto ? " prf-bloco-visto" : ""}`}>
+              <li
+                key={b.id}
+                className={`prf-bloco${visto ? " prf-bloco-visto" : ""}${aberto ? " prf-bloco-aberto" : ""}`}
+              >
                 <button
                   type="button"
                   className="prf-bloco-check"
@@ -737,16 +860,15 @@ function TelaAula({ grupo, aula, estudo, tentativas, onTela, onFixar }: TelaAula
                 >
                   {visto ? "✓" : ""}
                 </button>
-                <a
+                <button
+                  type="button"
                   className="prf-bloco-link"
-                  href={urlArquivo(b.id)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={aoAbrir}
+                  aria-current={aberto ? "true" : undefined}
+                  onClick={() => escolhe(b.id)}
                 >
                   <span className="prf-bloco-nome">{b.nome}</span>
-                  <span className="prf-bloco-abrir">Assistir ↗</span>
-                </a>
+                  <span className="prf-bloco-abrir">{aberto ? "Aberto ↑" : "▶ Assistir"}</span>
+                </button>
               </li>
             );
           })}

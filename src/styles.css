@@ -7666,6 +7666,146 @@ button {
   transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
 
+/* Nos vídeos, a linha é um botão que põe o vídeo no player */
+button.prf-bloco-link {
+  border: 0;
+  background: transparent;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.prf-bloco-aberto .prf-bloco-link {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: inset 3px 0 0 var(--cor-materia, var(--ouro));
+}
+
+.prf-bloco-aberto .prf-bloco-abrir {
+  border-color: transparent;
+  color: var(--texto-fraco);
+}
+
+/* Player do Drive dentro da aula */
+.prf-player {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 10px;
+  border: 1px solid var(--borda);
+  border-radius: var(--aulas-raio);
+  background: var(--bg-card);
+}
+
+.prf-player-quadro {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #000;
+}
+
+.prf-player-quadro iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.prf-player-carregando {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 0.85rem;
+  color: var(--texto-fraco);
+}
+
+.prf-player-rodape {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 16px;
+  padding: 0 4px;
+}
+
+.prf-player-sobre {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.prf-player-posicao {
+  font-family: var(--fonte-cond);
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+}
+
+.prf-player-nome {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.prf-player-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+}
+
+.prf-player-drive {
+  font-size: 0.85rem;
+  color: var(--texto-fraco);
+  text-underline-offset: 3px;
+}
+
+.prf-player-fim {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 0 4px;
+  font-size: 0.9rem;
+}
+
+.prf-player-fim-icone {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--verde);
+  color: var(--bg);
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+.prf-player-ajuda {
+  padding: 0 4px;
+}
+
+.prf-player-ajuda > summary {
+  width: fit-content;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--texto-fraco);
+}
+
+.prf-player-ajuda > p {
+  margin: 6px 0 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--texto-fraco);
+}
+
 .prf-fixacao-cartao {
   display: flex;
   flex-direction: column;
@@ -7900,7 +8040,12 @@ button {
     background: rgba(255, 255, 255, 0.05);
   }
 
-  .prf-bloco-link:hover .prf-bloco-abrir {
+  .prf-player-drive:hover,
+  .prf-player-ajuda > summary:hover {
+    color: var(--ouro-forte);
+  }
+
+  .prf-bloco-link:not([aria-current]):hover .prf-bloco-abrir {
     border-color: var(--ouro-forte);
     background: var(--ouro-forte);
     color: #241a03;
@@ -7995,6 +8140,19 @@ button {
 
   /* Botões do cronômetro da aula: cada um na largura toda, em vez de larguras desencontradas */
   .prf-crono-compacto .prf-crono-botoes > .botao {
+    flex: 1 1 auto;
+  }
+
+  /* Vídeo maior no celular e "Terminei" fácil de tocar */
+  .prf-player {
+    padding: 6px;
+  }
+
+  .prf-player-acoes {
+    width: 100%;
+  }
+
+  .prf-player-acoes > .botao {
     flex: 1 1 auto;
   }
 }
