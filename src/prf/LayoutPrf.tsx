@@ -1,8 +1,29 @@
 import type { ReactNode } from "react";
 import prfBrasao from "../assets/prf-brasao.png";
 import { PRF_ULTIMO_EDITAL } from "../data/prf";
+import { continuarEstudo, pausarEstudo, relogio, tempoAtivo, useAgora, useEstudo } from "./aulas/estudo";
 
-export type AbaPrf = "home" | "conteudo" | "portugues";
+export type AbaPrf = "home" | "aulas" | "conteudo" | "portugues";
+
+/** Cronômetro de estudo ligado: fica à vista em todas as telas, inclusive durante as questões. */
+function ChipCronometro() {
+  const { ativo } = useEstudo();
+  const agora = useAgora(ativo !== null && ativo.desde !== null);
+  if (!ativo) return null;
+  const pausado = ativo.desde === null;
+  return (
+    <span className={`prf-crono-chip${pausado ? " prf-crono-chip-pausado" : ""}`} title={ativo.rotulo}>
+      <span aria-label="Tempo de estudo">⏱ {relogio(tempoAtivo(ativo, agora))}</span>
+      <button
+        type="button"
+        onClick={pausado ? continuarEstudo : pausarEstudo}
+        aria-label={pausado ? "Continuar o cronômetro" : "Pausar o cronômetro"}
+      >
+        {pausado ? "▶" : "⏸"}
+      </button>
+    </span>
+  );
+}
 
 interface LayoutPrfProps {
   children: ReactNode;
@@ -33,6 +54,7 @@ export default function LayoutPrf({
             </div>
           </div>
           <div className="topbar-acoes">
+            <ChipCronometro />
             {mostrarVoltar ? (
               <button className="botao" onClick={onVoltar}>
                 ← Início
@@ -53,6 +75,9 @@ export default function LayoutPrf({
           <nav className="tabs">
             <button className={`tab ${abaAtiva === "home" ? "tab-ativa" : ""}`} onClick={() => onTrocarAba("home")}>
               Treino
+            </button>
+            <button className={`tab ${abaAtiva === "aulas" ? "tab-ativa" : ""}`} onClick={() => onTrocarAba("aulas")}>
+              🎬 Aulas
             </button>
             <button
               className={`tab ${abaAtiva === "conteudo" ? "tab-ativa" : ""}`}

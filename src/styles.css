@@ -6408,3 +6408,392 @@ button {
   .pi-red-paragrafo { font-size: 1.04rem; line-height: 1.7; }
   .pi-red-opcoes .botao { flex: 1 1 auto; }
 }
+
+/* ---------- PRF: aulas do Drive, cronômetro de estudo e fixação ---------- */
+.prf-crono {
+  background: var(--bg-card);
+  border: 1px solid var(--borda-forte);
+  border-radius: var(--raio);
+  padding: 14px 16px;
+  margin-bottom: 22px;
+}
+
+.prf-crono-topo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.prf-crono-mostrador {
+  min-width: 0;
+}
+
+.prf-crono-rotulo {
+  font-size: 0.85rem;
+  color: var(--texto-fraco);
+  overflow-wrap: anywhere;
+}
+
+.prf-crono-tempo {
+  font-family: var(--fonte-cond);
+  font-size: 2.4rem;
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--ouro-forte);
+  font-variant-numeric: tabular-nums;
+}
+
+.prf-crono-parado {
+  color: var(--texto-fraco);
+}
+
+.prf-crono-botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.prf-crono-descartar {
+  color: var(--texto-fraco);
+}
+
+.prf-crono-aviso {
+  margin: 10px 0 0;
+  font-size: 0.85rem;
+  color: var(--ouro-forte);
+}
+
+.prf-crono-totais {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: var(--texto-fraco);
+}
+
+.prf-crono-totais b {
+  color: var(--texto);
+}
+
+.prf-crono-historico {
+  margin-top: 10px;
+  font-size: 0.85rem;
+}
+
+.prf-crono-historico summary {
+  cursor: pointer;
+  color: var(--texto-fraco);
+}
+
+.prf-crono-historico ul {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+}
+
+.prf-crono-historico li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 10px;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--borda);
+}
+
+.prf-crono-hist-rotulo {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.prf-crono-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 3px 2px 10px;
+  border: 1px solid var(--ouro);
+  border-radius: 999px;
+  color: var(--ouro-forte);
+  font-family: var(--fonte-cond);
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+}
+
+.prf-crono-chip button {
+  width: 26px;
+  height: 26px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(202, 160, 58, 0.18);
+  color: inherit;
+  cursor: pointer;
+  font-size: 0.75rem;
+}
+
+.prf-crono-chip-pausado {
+  border-color: var(--borda-forte);
+  color: var(--texto-fraco);
+}
+
+.prf-aulas-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.prf-botao-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.prf-aulas-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.prf-aula-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  font: inherit;
+  color: var(--texto);
+  background: var(--bg-card);
+  border: 1px solid var(--borda);
+  border-left: 4px solid var(--cor-materia, var(--ouro));
+  border-radius: var(--raio);
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+.prf-aula-item:hover:not(:disabled) {
+  border-color: var(--borda-forte);
+  border-left-color: var(--cor-materia, var(--ouro));
+}
+
+.prf-aula-item:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.prf-aula-num {
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--bg-elevado);
+  font-family: var(--fonte-cond);
+  font-weight: 900;
+}
+
+.prf-aula-completa .prf-aula-num {
+  background: var(--verde);
+  color: var(--bg);
+}
+
+.prf-aula-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.prf-aula-nome {
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.prf-aula-meta {
+  font-size: 0.82rem;
+  color: var(--texto-fraco);
+}
+
+.prf-aula-cabeca {
+  border-left: 4px solid var(--cor-materia, var(--ouro));
+  padding-left: 12px;
+  margin-bottom: 8px;
+}
+
+.prf-aula-sobre {
+  font-size: 0.85rem;
+  color: var(--texto-fraco);
+}
+
+.prf-aula-titulo {
+  margin: 4px 0 10px;
+  font-size: 1.35rem;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.prf-aula-contando {
+  display: inline-block;
+  font-weight: 700;
+  color: var(--verde);
+}
+
+.prf-aula-dica {
+  margin: 6px 0 0;
+  font-size: 0.8rem;
+  color: var(--texto-fraco);
+}
+
+.prf-aula-secao {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  margin: 20px 0 8px;
+  font-family: var(--fonte-cond);
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ouro);
+}
+
+.prf-aula-secao span {
+  font-size: 0.85rem;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--texto-fraco);
+}
+
+.prf-bloco-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.prf-bloco {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 6px 10px;
+}
+
+.prf-bloco-visto {
+  border-color: rgba(53, 212, 136, 0.45);
+}
+
+.prf-bloco-check {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--borda-forte);
+  border-radius: var(--raio-peq);
+  background: var(--bg);
+  color: var(--bg);
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.prf-bloco-check[aria-pressed="true"] {
+  background: var(--verde);
+  border-color: var(--verde);
+}
+
+.prf-bloco-icone {
+  flex: none;
+  width: 30px;
+  text-align: center;
+}
+
+.prf-bloco-link {
+  flex: 1;
+  min-width: 0;
+  padding: 6px 0;
+  color: var(--texto);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.prf-bloco-link:hover {
+  color: var(--ouro-forte);
+  text-decoration: underline;
+}
+
+.prf-bloco-visto .prf-bloco-link {
+  color: var(--texto-fraco);
+}
+
+.prf-aula-pasta {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: var(--ouro-forte);
+}
+
+.prf-fixacao {
+  margin-top: 22px;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--ouro);
+  border-radius: var(--raio);
+}
+
+.prf-fixacao .prf-aula-secao {
+  margin-top: 0;
+}
+
+.prf-fixacao p {
+  margin: 0 0 8px;
+}
+
+.prf-fixacao-qtd {
+  font-size: 1.05rem;
+}
+
+.prf-fixacao-peso,
+.prf-fixacao-banco {
+  font-size: 0.85rem;
+  color: var(--texto-fraco);
+}
+
+.prf-fixacao-assuntos {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.prf-fixacao-assuntos li {
+  padding: 3px 10px;
+  border: 1px solid var(--borda-forte);
+  border-radius: 999px;
+  font-size: 0.8rem;
+}
+
+.prf-aula-navegacao {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+/* O hover genérico do .botao troca o fundo por azul e apaga o dourado (no celular o hover fica preso depois do toque). */
+.prf-crono .botao-ouro:hover,
+.prf-aula-cabeca .botao-ouro:hover,
+.prf-fixacao .botao-ouro:hover {
+  background: linear-gradient(180deg, var(--ouro-forte), var(--ouro));
+}

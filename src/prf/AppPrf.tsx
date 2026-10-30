@@ -11,6 +11,9 @@ import { getErradasPrf, getTentativasPrf, zerarMateriaPrf, type TentativaPrf } f
 import { GRAVACAO_PRF } from "./gravacao";
 import { QUESTOES_PRF_POR_MATERIA } from "./questoes";
 import type { TelaPt } from "./portugues/PortuguesInteligente";
+import type { TelaAulas } from "./aulas/AulasPrf";
+import type { AulaDrive } from "./aulas/aulasDrive";
+import { sessaoFixacao } from "./aulas/fixacao";
 import {
   FILTROS_PRF_PADRAO,
   sessaoFocoPrf,
@@ -27,6 +30,8 @@ type View = AbaPrf | "quiz" | "result";
 
 // A aba de português tem muito texto: só baixa quando o aluno abre.
 const PortuguesInteligente = lazy(() => import("./portugues/PortuguesInteligente"));
+// A lista das aulas do Drive também só baixa quando o aluno abre a aba.
+const AulasPrf = lazy(() => import("./aulas/AulasPrf"));
 
 /** Questões de português do banco por tópico do programa (para os atalhos de treino da aba). */
 const QUESTOES_PT_POR_TOPICO = (QUESTOES_PRF_POR_MATERIA.pt ?? []).reduce<Record<string, number>>((acc, q) => {
@@ -61,6 +66,7 @@ export default function AppPrf({ onTrocarCurso }: AppPrfProps) {
   const [origem, setOrigem] = useState<AbaPrf>("home");
   const [telaPt, setTelaPt] = useState<TelaPt>({ tipo: "geral" });
   const [materiaConteudo, setMateriaConteudo] = useState<MateriaPrfId | undefined>();
+  const [telaAulas, setTelaAulas] = useState<TelaAulas>({});
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
@@ -119,8 +125,18 @@ export default function AppPrf({ onTrocarCurso }: AppPrfProps) {
     abrirSessao("personalizado", questions);
   }
 
+  /** Fixação no fim da aula: ao terminar, o quiz volta para a mesma aula. */
+  function fixarAula(aula: AulaDrive, quantidade: number) {
+    const questions = sessaoFixacao(aula.materia, aula.topicos, quantidade, tentativas);
+    if (questions.length === 0) return;
+    setOrigem("aulas");
+    abrirSessao("personalizado", questions);
+  }
+
   function trocarAba(aba: AbaPrf) {
     setMateriaConteudo(undefined);
+    // Tocar de novo na aba das aulas volta para a lista das matérias.
+    if (aba === "aulas" && view === "aulas") setTelaAulas({});
     setView(aba);
   }
 
@@ -144,7 +160,7 @@ export default function AppPrf({ onTrocarCurso }: AppPrfProps) {
       mostrarVoltar={view === "quiz" || view === "result"}
       onVoltar={voltarHome}
       onTrocarCurso={onTrocarCurso}
-      abaAtiva={view === "conteudo" || view === "portugues" ? view : "home"}
+      abaAtiva={view === "aulas" || view === "conteudo" || view === "portugues" ? view : "home"}
       onTrocarAba={trocarAba}
     >
       {view === "home" && (
@@ -159,6 +175,11 @@ export default function AppPrf({ onTrocarCurso }: AppPrfProps) {
           onProvaPf2025={iniciarProvaPf2025}
           onResetarMateria={resetarMateria}
         />
+      )}
+      {view === "aulas" && (
+        <Suspense fallback={<div className="vazio">Carregando as aulas…</div>}>
+          <AulasPrf tela={telaAulas} onTela={setTelaAulas} tentativas={tentativas} onFixar={fixarAula} />
+        </Suspense>
       )}
       {view === "conteudo" && <ConteudoPrfTela key={materiaConteudo ?? "todas"} materiaInicial={materiaConteudo} />}
       {view === "portugues" && (
