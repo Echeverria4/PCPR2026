@@ -8226,3 +8226,519 @@ button.prf-bloco-link {
     transition: none !important;
   }
 }
+
+/* ---------- PRF: acompanhamento semanal ---------- */
+.prf-acomp {
+  --acomp-raio: 14px;
+  --acomp-linha: rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: prf-aulas-entra 0.25s ease-out;
+}
+
+.prf-acomp-cabeca {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px 16px;
+}
+
+.prf-acomp-olho {
+  margin: 0 0 4px;
+  font-family: var(--fonte-cond);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ouro-forte);
+}
+
+.prf-acomp-titulo {
+  margin: 0;
+  font-family: var(--fonte-titulo);
+  font-size: 1.5rem;
+  line-height: 1.2;
+  color: var(--texto);
+}
+
+.prf-acomp-titulo span {
+  display: inline-block;
+  font-family: var(--fonte-corpo);
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--texto-fraco);
+}
+
+.prf-acomp-nav {
+  display: flex;
+  gap: 8px;
+}
+
+.prf-acomp-nav .botao {
+  display: inline-grid;
+  place-items: center;
+  min-width: 44px;
+  min-height: 40px;
+  padding: 6px 12px;
+}
+
+.prf-acomp-nav svg {
+  display: block;
+}
+
+.prf-acomp-aviso {
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  background: var(--bg-card);
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--texto-fraco);
+}
+
+/* Os quatro números da semana */
+.prf-acomp-numeros {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.prf-acomp-num {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--borda);
+  border-radius: var(--acomp-raio);
+  background: var(--bg-card);
+}
+
+.prf-acomp-num-titulo,
+.prf-acomp-bloco-titulo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-family: var(--fonte-cond);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.prf-acomp-num-titulo {
+  font-size: 0.8rem;
+  line-height: 1.25;
+  color: var(--texto-fraco);
+}
+
+.prf-acomp-bloco-titulo {
+  font-size: 0.92rem;
+  color: var(--texto);
+}
+
+.prf-acomp-n {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border: 1px solid rgba(202, 160, 58, 0.6);
+  border-radius: 50%;
+  font-size: 0.75rem;
+  letter-spacing: 0;
+  color: var(--ouro-forte);
+}
+
+.prf-acomp-valor {
+  margin: 2px 0 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+  color: var(--texto);
+}
+
+.prf-acomp-detalhe {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--texto-fraco);
+}
+
+.prf-acomp-destaque {
+  font-weight: 600;
+  color: var(--ouro-forte);
+}
+
+.prf-acomp-antes {
+  margin: auto 0 0;
+  padding-top: 8px;
+  border-top: 1px solid var(--acomp-linha);
+  font-size: 0.78rem;
+  color: var(--texto-fraco);
+}
+
+.prf-acomp-barra {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.prf-acomp-barra > span {
+  display: block;
+  height: 100%;
+  border-radius: 3px;
+  background: var(--ouro-forte);
+}
+
+/* Blocos: horas por dia, matérias, dificuldades e ajustes */
+.prf-acomp-grade {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+}
+
+/* Duas pilhas lado a lado no computador: o que aconteceu na semana e o que fazer com isso */
+.prf-acomp-coluna {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.prf-acomp-bloco {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid var(--borda);
+  border-radius: var(--acomp-raio);
+  background: var(--bg-card);
+}
+
+.prf-acomp-sub,
+.prf-acomp-vazio,
+.prf-acomp-salvo {
+  margin: 0;
+  color: var(--texto-fraco);
+}
+
+.prf-acomp-sub {
+  margin-top: -6px;
+  font-size: 0.82rem;
+}
+
+.prf-acomp-vazio {
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+.prf-acomp-salvo {
+  font-size: 0.75rem;
+}
+
+.prf-acomp-tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.prf-acomp-tabela th,
+.prf-acomp-tabela td {
+  padding: 7px 4px;
+  border-bottom: 1px solid var(--acomp-linha);
+  text-align: right;
+  white-space: nowrap;
+  color: var(--texto);
+}
+
+.prf-acomp-tabela th:first-child {
+  padding-left: 0;
+  text-align: left;
+  white-space: normal;
+}
+
+.prf-acomp-tabela th:last-child,
+.prf-acomp-tabela td:last-child {
+  padding-right: 0;
+}
+
+.prf-acomp-tabela thead th {
+  padding-top: 0;
+  font-family: var(--fonte-cond);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+}
+
+.prf-acomp-tabela tbody th {
+  font-weight: 600;
+}
+
+.prf-acomp-tabela tbody tr:last-child > * {
+  border-bottom: none;
+}
+
+.prf-acomp-parada th,
+.prf-acomp-parada td {
+  color: var(--texto-fraco);
+}
+
+.prf-acomp-tabela .prf-acomp-parada th {
+  font-weight: 400;
+}
+
+.prf-acomp-cor {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 8px;
+  border-radius: 50%;
+  vertical-align: 1px;
+}
+
+.prf-acomp-parada .prf-acomp-cor {
+  opacity: 0.45;
+}
+
+.prf-acomp-cor-livre {
+  background: var(--borda-forte);
+}
+
+.prf-acomp-aulas > summary {
+  padding: 6px 0;
+  font-size: 0.85rem;
+  color: var(--texto-fraco);
+  cursor: pointer;
+}
+
+.prf-acomp-aulas ul {
+  margin: 4px 0 0;
+  padding-left: 18px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--texto);
+}
+
+.prf-acomp-dific {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.prf-acomp-dific li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--acomp-linha);
+}
+
+.prf-acomp-dific li:first-child {
+  padding-top: 0;
+}
+
+.prf-acomp-dific-texto {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.prf-acomp-dific-materia {
+  font-family: var(--fonte-cond);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+}
+
+.prf-acomp-dific-topico {
+  font-weight: 600;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  color: var(--texto);
+}
+
+.prf-acomp-dific-conta {
+  font-size: 0.8rem;
+  color: var(--texto-fraco);
+}
+
+.prf-acomp-dific .botao,
+.prf-acomp-sugestoes .botao {
+  flex: none;
+  min-height: 40px;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+}
+
+.prf-acomp-combinado {
+  margin: 0;
+  padding: 10px 12px;
+  border: 1px dashed var(--borda-forte);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  color: var(--texto);
+}
+
+.prf-acomp-combinado > span {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.78rem;
+  white-space: normal;
+  color: var(--texto-fraco);
+}
+
+.prf-acomp-sugestoes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 12px 14px;
+  border-left: 3px solid var(--ouro);
+  border-radius: 0 10px 10px 0;
+  background: rgba(202, 160, 58, 0.08);
+  list-style: none;
+}
+
+.prf-acomp-sugestoes li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--texto);
+}
+
+.prf-acomp-sugestoes li > span {
+  flex: 1;
+  min-width: 0;
+}
+
+.prf-acomp-nota,
+.prf-acomp-meta {
+  font-size: 0.85rem;
+  color: var(--texto-fraco);
+}
+
+.prf-acomp-nota {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.prf-acomp-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px 12px;
+}
+
+.prf-acomp-meta-campo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 1rem nos campos: o iPhone não dá zoom ao tocar */
+.prf-acomp-nota textarea,
+.prf-acomp-meta input {
+  border: 1px solid var(--borda-forte);
+  border-radius: 10px;
+  background: var(--bg);
+  font-family: var(--fonte-corpo);
+  font-size: 1rem;
+  color: var(--texto);
+}
+
+.prf-acomp-nota textarea {
+  width: 100%;
+  min-height: 84px;
+  padding: 10px 12px;
+  line-height: 1.45;
+  resize: vertical;
+}
+
+.prf-acomp-nota textarea::placeholder {
+  color: var(--texto-fraco);
+  opacity: 0.75;
+}
+
+.prf-acomp-meta input {
+  width: 90px;
+  min-height: 40px;
+  padding: 6px 10px;
+}
+
+.prf-acomp-nota textarea:focus-visible,
+.prf-acomp-meta input:focus-visible {
+  border-color: var(--ouro-forte);
+  outline: 2px solid var(--ouro-forte);
+  outline-offset: 1px;
+}
+
+.prf-semana-futuro .prf-semana-dia {
+  opacity: 0.45;
+}
+
+@media (min-width: 900px) {
+  .prf-acomp-grade {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+}
+
+@media (max-width: 720px) {
+  .prf-acomp-numeros {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  /* Cinco abas não cabem no celular: com menos folga, a última aparece cortada e mostra que a barra rola */
+  .prf-tabs {
+    gap: 2px;
+    padding: 0 8px;
+  }
+
+  .prf-tabs .tab {
+    padding: 12px 8px;
+    letter-spacing: 0.02em;
+  }
+
+  .prf-acomp-bloco {
+    padding: 16px;
+  }
+
+  .prf-acomp-num {
+    padding: 14px;
+  }
+
+  .prf-acomp-valor {
+    font-size: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .prf-acomp {
+    animation: none;
+  }
+}

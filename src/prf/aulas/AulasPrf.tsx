@@ -6,7 +6,9 @@ import { AULAS_DRIVE, type AulaDrive, type GrupoAulasDrive } from "./aulasDrive"
 import {
   alternaVisto,
   continuarEstudo,
+  curto,
   descartarEstudo,
+  diaLongo,
   duracao,
   encerrarEstudo,
   iniciarEstudo,
@@ -21,6 +23,8 @@ import {
   type EstadoEstudo,
   type TotaisEstudo,
 } from "./estudo";
+import GraficoDias, { type Dia } from "./GraficoDias";
+import { aulaParaRetomar, pendente, progresso, videosDoGrupo, type Motivo } from "./progresso";
 import { PONTOS_PROVA, pesoFixacao, questoesDaAula } from "./fixacao";
 
 /** Onde o aluno está dentro da aba (fica no AppPrf para não se perder durante a fixação). */
@@ -37,9 +41,6 @@ interface AulasPrfProps {
 }
 
 const LIMITE_AVISO = 4 * 60 * 60 * 1000;
-/** No gráfico da semana, a barra só enche a altura toda a partir de meia hora no dia. */
-const ESCALA_MINIMA = 30 * 60 * 1000;
-const ALTURA_BARRA = 64;
 const urlArquivo = (id: string) => `https://drive.google.com/file/d/${id}/view`;
 /** Player do próprio Drive: só toca com a conta Google do dono conectada no navegador. */
 const urlPlayer = (id: string) => `https://drive.google.com/file/d/${id}/preview`;
@@ -63,58 +64,8 @@ const nomeAula = (a: AulaDrive) => (a.n ? `Aula ${a.n} · ${a.nome}` : a.nome);
 const pct = (parte: number, todo: number) => (todo > 0 ? Math.floor((parte / todo) * 100) : 0);
 const largura = (p: number): CSSProperties => ({ width: `${p}%` });
 const plural = (n: number, um: string, varios: string) => `${n} ${n === 1 ? um : varios}`;
-const maiuscula = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 const quando = (ms: number) =>
   new Date(ms).toLocaleString("pt-BR", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" });
-const diaCurto = (ms: number) => new Date(ms).toLocaleDateString("pt-BR", { weekday: "short" }).replace(".", "");
-const diaMes = (ms: number) => new Date(ms).toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" });
-const diaLongo = (ms: number) =>
-  maiuscula(new Date(ms).toLocaleDateString("pt-BR", { weekday: "long", day: "2-digit", month: "2-digit" }));
-/** Tempo curto para caber no quadro e na barra: <1min, 25min, 2h05. */
-const curto = (ms: number) => {
-  const min = Math.floor(ms / 60000);
-  if (min < 1) return ms > 0 ? "<1min" : "0min";
-  return min < 60 ? `${min}min` : `${Math.floor(min / 60)}h${String(min % 60).padStart(2, "0")}`;
-};
-
-/** Vídeos vistos da aula. Aula que ainda não está no Drive (sem vídeos) nunca fica completa. */
-function progresso(a: AulaDrive, vistos: Set<string>) {
-  const feitos = a.blocos.filter((b) => vistos.has(b.id)).length;
-  return { feitos, total: a.blocos.length, completa: a.blocos.length > 0 && feitos === a.blocos.length };
-}
-
-function videosDoGrupo(g: GrupoAulasDrive, vistos: Set<string>) {
-  let feitos = 0;
-  let total = 0;
-  for (const a of g.aulas) {
-    const p = progresso(a, vistos);
-    feitos += p.feitos;
-    total += p.total;
-  }
-  return { feitos, total };
-}
-
-/** Primeira aula do grupo, da posição `desde` em diante, que já está no Drive e não foi concluída. */
-function pendente(g: GrupoAulasDrive, vistos: Set<string>, desde = 0) {
-  return g.aulas.slice(desde).find((a) => a.blocos.length > 0 && !progresso(a, vistos).completa);
-}
-
-function acharAula(id?: string) {
-  if (!id) return null;
-  for (const grupo of AULAS_DRIVE) {
-    const aula = grupo.aulas.find((a) => a.id === id);
-    if (aula) return { grupo, aula };
-  }
-  return null;
-}
-
-type Motivo = "contando" | "pausado" | "parou" | "proxima" | "comeco";
-
-interface Retomada {
-  grupo: GrupoAulasDrive;
-  aula: AulaDrive;
-  motivo: Motivo;
-}
 
 const TEXTO_RETOMAR: Record<Motivo, { olho: string; botao: string }> = {
   contando: { olho: "Cronômetro contando nesta aula", botao: "▶ Voltar para a aula" },
@@ -123,26 +74,6 @@ const TEXTO_RETOMAR: Record<Motivo, { olho: string; botao: string }> = {
   proxima: { olho: "Próxima aula", botao: "▶ Começar a aula" },
   comeco: { olho: "Comece por aqui", botao: "▶ Começar" },
 };
-
-/** Aula sugerida no topo: a do cronômetro; senão a última estudada (ou a seguinte, se acabou); senão a 1ª pendente. */
-function aulaParaRetomar(estudo: EstadoEstudo, vistos: Set<string>): Retomada | null {
-  const ativa = acharAula(estudo.ativo?.aula);
-  if (ativa) return { ...ativa, motivo: estudo.ativo?.desde === null ? "pausado" : "contando" };
-  for (let i = estudo.sessoes.length - 1; i >= 0; i--) {
-    const ultima = acharAula(estudo.sessoes[i].aula);
-    if (!ultima) continue;
-    if (!progresso(ultima.aula, vistos).completa) return { ...ultima, motivo: "parou" };
-    const seguinte = pendente(ultima.grupo, vistos, ultima.grupo.aulas.indexOf(ultima.aula) + 1);
-    if (seguinte) return { grupo: ultima.grupo, aula: seguinte, motivo: "proxima" };
-    break;
-  }
-  const comecou = estudo.sessoes.length > 0 || vistos.size > 0;
-  for (const grupo of AULAS_DRIVE) {
-    const aula = pendente(grupo, vistos);
-    if (aula) return { grupo, aula, motivo: comecou ? "proxima" : "comeco" };
-  }
-  return null;
-}
 
 export default function AulasPrf({ tela, onTela, tentativas, onFixar }: AulasPrfProps) {
   const estudo = useEstudo();
@@ -369,54 +300,14 @@ function PainelCronometro({ estudo }: { estudo: EstadoEstudo }) {
           <dd>{curto(t.total)}</dd>
         </div>
       </dl>
-      <GraficoSemana dias={dias} jaEstudou={t.total > 0} />
+      <GraficoDias
+        dias={dias}
+        titulo="Últimos 7 dias"
+        vazio={t.total > 0 ? "Nenhum estudo nos últimos 7 dias." : "O tempo de estudo de cada dia aparece aqui."}
+        hoje={dias[dias.length - 1].dia}
+      />
       {t.total > 0 && <Historico estudo={estudo} dias={dias} />}
     </section>
-  );
-}
-
-type Dia = { dia: number; ms: number };
-
-function GraficoSemana({ dias, jaEstudou }: { dias: Dia[]; jaEstudou: boolean }) {
-  const maior = Math.max(0, ...dias.map((d) => d.ms));
-  const escala = Math.max(maior, ESCALA_MINIMA);
-  const hoje = dias[dias.length - 1];
-  return (
-    <figure className="prf-semana">
-      <figcaption className="prf-semana-titulo">Últimos 7 dias</figcaption>
-      <div className="prf-semana-barras">
-        {maior === 0 && (
-          <p className="prf-semana-vazio">
-            {jaEstudou ? "Nenhum estudo nos últimos 7 dias." : "O tempo de estudo de cada dia aparece aqui."}
-          </p>
-        )}
-        {dias.map((d) => {
-          const eHoje = d === hoje;
-          const tempo = d.ms > 0 ? duracao(d.ms) : "sem estudo";
-          return (
-            <div
-              key={d.dia}
-              className={`prf-semana-col${eHoje ? " prf-semana-hoje" : ""}`}
-              role="img"
-              tabIndex={0}
-              aria-label={`${eHoje ? "Hoje" : diaLongo(d.dia)}: ${tempo}`}
-              data-tip={`${eHoje ? "hoje" : diaCurto(d.dia)} ${diaMes(d.dia)} · ${d.ms > 0 ? curto(d.ms) : "sem estudo"}`}
-            >
-              <span className="prf-semana-area">
-                {maior > 0 && d.ms === maior && <span className="prf-semana-valor">{curto(d.ms)}</span>}
-                <span
-                  className={`prf-semana-barra${d.ms > 0 ? "" : " prf-semana-zero"}`}
-                  style={d.ms > 0 ? { height: Math.max(3, Math.round((d.ms / escala) * ALTURA_BARRA)) } : undefined}
-                />
-              </span>
-              <span className="prf-semana-dia" aria-hidden="true">
-                {eHoje ? "hoje" : diaCurto(d.dia)}
-              </span>
-            </div>
-          );
-        })}
-      </div>
-    </figure>
   );
 }
 

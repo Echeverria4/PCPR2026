@@ -32,6 +32,8 @@ type View = AbaPrf | "quiz" | "result";
 const PortuguesInteligente = lazy(() => import("./portugues/PortuguesInteligente"));
 // A lista das aulas do Drive também só baixa quando o aluno abre a aba.
 const AulasPrf = lazy(() => import("./aulas/AulasPrf"));
+// O acompanhamento semanal também usa a lista das aulas: só baixa quando o aluno abre a aba.
+const SemanaPrf = lazy(() => import("./semana/SemanaPrf"));
 
 /** Questões de português do banco por tópico do programa (para os atalhos de treino da aba). */
 const QUESTOES_PT_POR_TOPICO = (QUESTOES_PRF_POR_MATERIA.pt ?? []).reduce<Record<string, number>>((acc, q) => {
@@ -67,6 +69,8 @@ export default function AppPrf({ onTrocarCurso }: AppPrfProps) {
   const [telaPt, setTelaPt] = useState<TelaPt>({ tipo: "geral" });
   const [materiaConteudo, setMateriaConteudo] = useState<MateriaPrfId | undefined>();
   const [telaAulas, setTelaAulas] = useState<TelaAulas>({});
+  // Semana aberta no acompanhamento (segunda-feira 0h); null = a semana atual.
+  const [semanaAberta, setSemanaAberta] = useState<number | null>(null);
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
@@ -133,10 +137,24 @@ export default function AppPrf({ onTrocarCurso }: AppPrfProps) {
     abrirSessao("personalizado", questions);
   }
 
+  /** Treino de um assunto difícil da semana: ao terminar, o quiz volta para o acompanhamento. */
+  function treinarDaSemana(filtros: FiltrosPrf) {
+    const questions = sessaoPersonalizadaPrf(filtros, tentativas);
+    if (questions.length === 0) return;
+    setOrigem("semana");
+    abrirSessao("personalizado", questions);
+  }
+
+  function abrirAula(tela: TelaAulas) {
+    setTelaAulas(tela);
+    setView("aulas");
+  }
+
   function trocarAba(aba: AbaPrf) {
     setMateriaConteudo(undefined);
-    // Tocar de novo na aba das aulas volta para a lista das matérias.
+    // Tocar de novo na aba das aulas volta para a lista das matérias; na da semana, para a semana atual.
     if (aba === "aulas" && view === "aulas") setTelaAulas({});
+    if (aba === "semana" && view === "semana") setSemanaAberta(null);
     setView(aba);
   }
 
@@ -160,7 +178,7 @@ export default function AppPrf({ onTrocarCurso }: AppPrfProps) {
       mostrarVoltar={view === "quiz" || view === "result"}
       onVoltar={voltarHome}
       onTrocarCurso={onTrocarCurso}
-      abaAtiva={view === "aulas" || view === "conteudo" || view === "portugues" ? view : "home"}
+      abaAtiva={view === "quiz" || view === "result" ? "home" : view}
       onTrocarAba={trocarAba}
     >
       {view === "home" && (
@@ -179,6 +197,17 @@ export default function AppPrf({ onTrocarCurso }: AppPrfProps) {
       {view === "aulas" && (
         <Suspense fallback={<div className="vazio">Carregando as aulas…</div>}>
           <AulasPrf tela={telaAulas} onTela={setTelaAulas} tentativas={tentativas} onFixar={fixarAula} />
+        </Suspense>
+      )}
+      {view === "semana" && (
+        <Suspense fallback={<div className="vazio">Carregando o acompanhamento…</div>}>
+          <SemanaPrf
+            tentativas={tentativas}
+            inicio={semanaAberta}
+            onInicio={setSemanaAberta}
+            onTreinar={treinarDaSemana}
+            onAbrirAula={abrirAula}
+          />
         </Suspense>
       )}
       {view === "conteudo" && <ConteudoPrfTela key={materiaConteudo ?? "todas"} materiaInicial={materiaConteudo} />}

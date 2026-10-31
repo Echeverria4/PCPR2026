@@ -3,7 +3,7 @@ import prfBrasao from "../assets/prf-brasao.png";
 import { PRF_ULTIMO_EDITAL } from "../data/prf";
 import { continuarEstudo, pausarEstudo, relogio, tempoAtivo, useAgora, useEstudo } from "./aulas/estudo";
 
-export type AbaPrf = "home" | "aulas" | "conteudo" | "portugues";
+export type AbaPrf = "home" | "aulas" | "semana" | "conteudo" | "portugues";
 
 /** Cronômetro de estudo ligado: fica à vista em todas as telas, inclusive durante as questões. */
 function ChipCronometro() {
@@ -72,12 +72,15 @@ export default function LayoutPrf({
           </div>
         </header>
         {!mostrarVoltar && (
-          <nav className="tabs">
+          <nav className="tabs prf-tabs">
             <button className={`tab ${abaAtiva === "home" ? "tab-ativa" : ""}`} onClick={() => onTrocarAba("home")}>
               Treino
             </button>
             <button className={`tab ${abaAtiva === "aulas" ? "tab-ativa" : ""}`} onClick={() => onTrocarAba("aulas")}>
               🎬 Aulas
+            </button>
+            <button className={`tab ${abaAtiva === "semana" ? "tab-ativa" : ""}`} onClick={() => onTrocarAba("semana")}>
+              📈 Semana
             </button>
             <button
               className={`tab ${abaAtiva === "conteudo" ? "tab-ativa" : ""}`}

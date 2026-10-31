@@ -35,9 +35,14 @@ export interface EstadoEstudo {
   sessoes: SessaoEstudo[];
   /** Ids (do Drive) dos blocos marcados como vistos. */
   vistos: string[];
+  /** Quando cada bloco foi marcado (ms). Os marcados antes de a data existir não estão aqui. */
+  vistosEm: Record<string, number>;
 }
 
-const VAZIO: EstadoEstudo = { ativo: null, sessoes: [], vistos: [] };
+const VAZIO: EstadoEstudo = { ativo: null, sessoes: [], vistos: [], vistosEm: {} };
+
+/** Em 30/10/26 o cronômetro só foi testado; o estudo valendo começou em 31/10/26. */
+const COMECO_ESTUDO = new Date(2026, 9, 31).getTime();
 
 function ler(): EstadoEstudo {
   try {
@@ -45,9 +50,10 @@ function ler(): EstadoEstudo {
     if (!raw) return VAZIO;
     const p = JSON.parse(raw) as Partial<EstadoEstudo>;
     return {
-      ativo: p.ativo ?? null,
-      sessoes: Array.isArray(p.sessoes) ? p.sessoes : [],
+      ativo: p.ativo && p.ativo.inicio >= COMECO_ESTUDO ? p.ativo : null,
+      sessoes: Array.isArray(p.sessoes) ? p.sessoes.filter((s) => s.inicio >= COMECO_ESTUDO) : [],
       vistos: Array.isArray(p.vistos) ? p.vistos : [],
+      vistosEm: p.vistosEm && typeof p.vistosEm === "object" ? p.vistosEm : {},
     };
   } catch {
     return VAZIO;
@@ -147,10 +153,24 @@ export function descartarEstudo() {
 }
 
 export function alternaVisto(blocoId: string) {
-  const vistos = estado.vistos.includes(blocoId)
-    ? estado.vistos.filter((v) => v !== blocoId)
-    : [...estado.vistos, blocoId];
-  salvar({ ...estado, vistos });
+  const vistosEm = { ...estado.vistosEm };
+  let vistos: string[];
+  if (estado.vistos.includes(blocoId)) {
+    vistos = estado.vistos.filter((v) => v !== blocoId);
+    delete vistosEm[blocoId];
+  } else {
+    vistos = [...estado.vistos, blocoId];
+    vistosEm[blocoId] = Date.now();
+  }
+  salvar({ ...estado, vistos, vistosEm });
+}
+
+/** A aba das aulas entrou no app em 30/10/26: bloco marcado antes de a data ser guardada conta nesse dia. */
+const VISTO_SEM_DATA = new Date(2026, 9, 30, 12).getTime();
+
+/** Quando o bloco foi marcado como visto. */
+export function quandoVisto(e: EstadoEstudo, blocoId: string): number {
+  return e.vistosEm[blocoId] ?? VISTO_SEM_DATA;
 }
 
 export interface TotaisEstudo {
@@ -204,6 +224,22 @@ export function porDia(e: EstadoEstudo, agora: number, dias = 7): { dia: number;
 }
 
 const dois = (n: number) => String(n).padStart(2, "0");
+const maiuscula = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+
+/** seg, ter, qua… */
+export const diaCurto = (ms: number) => new Date(ms).toLocaleDateString("pt-BR", { weekday: "short" }).replace(".", "");
+/** 30/10 */
+export const diaMes = (ms: number) => new Date(ms).toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" });
+/** Quinta-feira, 30/10 */
+export const diaLongo = (ms: number) =>
+  maiuscula(new Date(ms).toLocaleDateString("pt-BR", { weekday: "long", day: "2-digit", month: "2-digit" }));
+
+/** Tempo curto para caber no quadro e na barra: <1min, 25min, 2h05. */
+export function curto(ms: number): string {
+  const min = Math.floor(ms / 60000);
+  if (min < 1) return ms > 0 ? "<1min" : "0min";
+  return min < 60 ? `${min}min` : `${Math.floor(min / 60)}h${dois(min % 60)}`;
+}
 
 /** 1:05:09 ou 05:09. */
 export function relogio(ms: number): string {
