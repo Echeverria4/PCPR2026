@@ -1,5 +1,8 @@
 import { useMemo, useState, type ReactNode } from "react";
+import paranaBrasao from "../assets/parana-brasao.png";
 import pcprBrasao from "../assets/pcpr-brasao.png";
+import pfBrasao from "../assets/pf-brasao.png";
+import pmprBrasao from "../assets/pmpr-brasao.png";
 import prfBrasao from "../assets/prf-brasao.png";
 import { CURSOS, type Curso, type CursoId } from "../data/cursos";
 import { BANCO, QUESTOES_POR_MATERIA } from "../data/questions";
@@ -23,6 +26,14 @@ interface Selo {
 
 const DIA_MS = 86_400_000;
 const FUSO = "America/Sao_Paulo";
+
+/** Brasão dos cursos que ainda vão entrar. No DETRAN-PR, órgão estadual, vai o brasão do Estado do Paraná. */
+const BRASAO_EM_BREVE: Partial<Record<CursoId, string>> = {
+  "prf-policial": prfBrasao,
+  "pf-agente": pfBrasao,
+  "detran-pr": paranaBrasao,
+  pmpr: pmprBrasao,
+};
 
 /** Data (aaaa-mm-dd) no horário de Brasília, para contar dias de calendário. */
 function diaEmBrasilia(ms: number): string {
@@ -173,8 +184,14 @@ export default function Cursos({ onAbrir }: CursosProps) {
   const pcpr = useMemo(() => resumoPcpr(), []);
   const pct = pcpr.total > 0 ? Math.round((pcpr.vistas / pcpr.total) * 100) : 0;
   const prf = useMemo(() => resumoPrf(), []);
+  const naCentral = CURSOS.filter((c) => !c.oculto);
+  const abertos = naCentral.filter((c) => c.disponivel);
+  const emBreve = naCentral.filter((c) => !c.disponivel);
 
   function cartao(curso: Curso) {
+    if (!curso.disponivel) {
+      return <CartaoCurso curso={curso} imagem={BRASAO_EM_BREVE[curso.id]} selos={[]} />;
+    }
     if (curso.id === "pcpr2026") {
       return (
         <CartaoCurso
@@ -343,10 +360,21 @@ export default function Cursos({ onAbrir }: CursosProps) {
           Cada concurso tem o seu próprio espaço: questões, conteúdo, simulados e progresso ficam separados.
         </p>
         <ul className="cursos-lista">
-          {CURSOS.map((curso) => (
+          {abertos.map((curso) => (
             <li key={curso.id}>{cartao(curso)}</li>
           ))}
         </ul>
+        {emBreve.length > 0 && (
+          <>
+            <h2 className="secao-titulo cursos-breve-titulo">Em breve</h2>
+            <p className="cursos-intro">Concursos previstos para 2027. Cada curso abre aqui assim que ficar pronto.</p>
+            <ul className="cursos-lista">
+              {emBreve.map((curso) => (
+                <li key={curso.id}>{cartao(curso)}</li>
+              ))}
+            </ul>
+          </>
+        )}
       </main>
       <footer className="rodape">Material de estudo não oficial, para fins de treino.</footer>
     </div>
