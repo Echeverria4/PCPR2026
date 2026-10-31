@@ -200,6 +200,14 @@ export function totaisEstudo(e: EstadoEstudo, agora: number): TotaisEstudo {
   return t;
 }
 
+/** Quantos dias diferentes tiveram estudo cronometrado. */
+export function diasComEstudo(e: EstadoEstudo): number {
+  const dias = new Set<number>();
+  for (const s of e.sessoes) dias.add(new Date(s.inicio).setHours(0, 0, 0, 0));
+  if (e.ativo) dias.add(new Date(e.ativo.inicio).setHours(0, 0, 0, 0));
+  return dias.size;
+}
+
 /** Tempo de cada um dos últimos `dias` dias, do mais antigo até hoje. A sessão conta no dia em que começou. */
 export function porDia(e: EstadoEstudo, agora: number, dias = 7): { dia: number; ms: number }[] {
   const hoje = new Date(agora);

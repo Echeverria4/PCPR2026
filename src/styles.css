@@ -8403,6 +8403,45 @@ button.prf-bloco-link {
   gap: 16px;
 }
 
+/* Totalizador: tudo somado, no fim da aba */
+.prf-acomp-total {
+  border-color: rgba(202, 160, 58, 0.45);
+  background: linear-gradient(180deg, rgba(202, 160, 58, 0.08), transparent 70%), var(--bg-card);
+}
+
+.prf-acomp-total-numeros {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0;
+}
+
+.prf-acomp-total-numeros > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.prf-acomp-total-numeros > div + div {
+  padding-left: 16px;
+  border-left: 1px solid var(--acomp-linha);
+}
+
+.prf-acomp-total dt {
+  font-family: var(--fonte-cond);
+  font-size: 0.8rem;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+}
+
+.prf-acomp-total dd {
+  margin: 0;
+}
+
 /* Duas pilhas lado a lado no computador: o que aconteceu na semana e o que fazer com isso */
 .prf-acomp-coluna {
   display: flex;
@@ -8726,6 +8765,18 @@ button.prf-bloco-link {
 
   .prf-acomp-bloco {
     padding: 16px;
+  }
+
+  .prf-acomp-total-numeros {
+    gap: 10px;
+  }
+
+  .prf-acomp-total-numeros > div + div {
+    padding-left: 10px;
+  }
+
+  .prf-acomp-total .prf-acomp-valor {
+    font-size: 1.3rem;
   }
 
   .prf-acomp-num {

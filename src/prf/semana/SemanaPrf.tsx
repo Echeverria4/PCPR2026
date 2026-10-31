@@ -1,9 +1,9 @@
-import { useState, type CSSProperties, type ReactNode } from "react";
+import { useMemo, useState, type CSSProperties, type ReactNode } from "react";
 import { PRF_MATERIA_MAP, type MateriaPrfId } from "../../data/prf";
-import type { TentativaPrf } from "../armazenamento";
+import { totalQuestoesPrf, type TentativaPrf } from "../armazenamento";
 import { FILTROS_PRF_PADRAO, type FiltrosPrf } from "../sessoes";
 import type { TelaAulas } from "../aulas/AulasPrf";
-import { curto, diaMes, useAgora, useEstudo } from "../aulas/estudo";
+import { curto, diaMes, diasComEstudo, totaisEstudo, useAgora, useEstudo } from "../aulas/estudo";
 import GraficoDias from "../aulas/GraficoDias";
 import { aulaParaRetomar } from "../aulas/progresso";
 import {
@@ -47,6 +47,8 @@ const NOME_CURTO: Record<MateriaPrfId, string> = {
 const pct = (parte: number, todo: number) => (todo > 0 ? Math.round((parte / todo) * 100) : 0);
 const largura = (p: number): CSSProperties => ({ width: `${Math.min(100, p)}%` });
 const plural = (n: number, um: string, varios: string) => `${n} ${n === 1 ? um : varios}`;
+/** 1.234 */
+const milhar = (n: number) => n.toLocaleString("pt-BR");
 const nomeAula = (n: string, nome: string) => (n ? `Aula ${n} · ${nome}` : nome);
 const emLista = (itens: string[]) =>
   itens.length < 2 ? itens.join("") : `${itens.slice(0, -1).join(", ")} e ${itens[itens.length - 1]}`;
@@ -73,6 +75,10 @@ export default function SemanaPrf({ tentativas, inicio, onInicio, onTreinar, onA
   const r = resumoSemana(estudo, tentativas, semana, agora);
   const antes = resumoSemana(estudo, tentativas, anterior, agora);
   const primeira = primeiraSemana(estudo, tentativas);
+  // Totalizador: tudo somado, de todas as semanas.
+  const horasTotal = totaisEstudo(estudo, agora).total;
+  const diasTotal = diasComEstudo(estudo);
+  const qTotal = useMemo(() => totalQuestoesPrf(tentativas), [tentativas]);
 
   const chave = chaveSemana(semana);
   const minhas = notas[chave] ?? {};
@@ -423,6 +429,38 @@ export default function SemanaPrf({ tentativas, inicio, onInicio, onTreinar, onA
           </section>
         </div>
       </div>
+
+      <section className="prf-acomp-bloco prf-acomp-total" aria-label="Totalizador">
+        <h3 className="prf-acomp-bloco-titulo">Totalizador</h3>
+        <p className="prf-acomp-sub">Tudo somado, de todas as semanas.</p>
+        <dl className="prf-acomp-total-numeros">
+          <div>
+            <dt>Horas líquidas</dt>
+            <dd className="prf-acomp-valor">{curto(horasTotal)}</dd>
+            <dd className="prf-acomp-detalhe">
+              {diasTotal > 0 ? `em ${plural(diasTotal, "dia", "dias")} de estudo` : "Sem estudo cronometrado"}
+            </dd>
+          </div>
+          <div>
+            <dt>Questões resolvidas</dt>
+            <dd className="prf-acomp-valor">{milhar(qTotal.respondidas)}</dd>
+            <dd className="prf-acomp-detalhe">
+              {qTotal.respondidas > 0
+                ? `${milhar(qTotal.acertos)} certas · ${milhar(qTotal.respondidas - qTotal.acertos)} erradas`
+                : "Nenhuma ainda"}
+            </dd>
+          </div>
+          <div>
+            <dt>% de acertos</dt>
+            <dd className="prf-acomp-valor">
+              {qTotal.respondidas > 0 ? `${pct(qTotal.acertos, qTotal.respondidas)}%` : "—"}
+            </dd>
+            <dd className="prf-acomp-detalhe">
+              {qTotal.respondidas > 0 ? "Somando todas as questões" : "Aparece com a primeira questão"}
+            </dd>
+          </div>
+        </dl>
+      </section>
     </div>
   );
 }

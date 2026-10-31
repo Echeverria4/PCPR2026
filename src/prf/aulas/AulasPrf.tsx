@@ -599,6 +599,8 @@ function TelaAula({ grupo, aula, estudo, tentativas, onTela, onFixar }: TelaAula
     }
     return c;
   }, [aula, tentativas]);
+  // Acerto pela última resposta de cada questão da aula (o mesmo que a pilha mostra).
+  const feitas = banco.certas + banco.erradas;
   // Anterior e próxima pulam as aulas que ainda não estão no Drive.
   const navegaveis = grupo.aulas.filter((a) => a.blocos.length > 0);
   const i = navegaveis.indexOf(aula);
@@ -885,6 +887,12 @@ function TelaAula({ grupo, aula, estudo, tentativas, onTela, onFixar }: TelaAula
             <div className="prf-fixacao-banco-bloco">
               <p className="prf-fixacao-banco">
                 Banco desta aula: <b>{plural(fix.disponiveis, "questão", "questões")}</b>
+                {feitas > 0 && (
+                  <>
+                    {" "}
+                    · seu acerto: <b>{Math.round((banco.certas / feitas) * 100)}%</b>
+                  </>
+                )}
               </p>
               <div
                 className="prf-pilha"
