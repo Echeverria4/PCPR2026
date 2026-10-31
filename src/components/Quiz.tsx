@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import type { AttemptRecord, Confianca, Question, QuizMode, SubjectId } from "../lib/types";
 import type { CursoId } from "../data/cursos";
 import { atualizarConfianca, recordAttempt } from "../lib/storage";
@@ -76,6 +76,8 @@ interface QuizProps<M extends string> {
   respostasIniciais?: AttemptRecord<M>[];
   /** Chamado a cada resposta (e troca de confiança), para salvar o andamento. */
   onProgresso?: (respostas: AttemptRecord<M>[]) => void;
+  /** Camada em volta do enunciado e das alternativas (a caneta da PRF). Sem isso, a tela fica como sempre. */
+  envolverQuestao?: (questaoId: string, conteudo: ReactNode) => ReactNode;
 }
 
 export default function Quiz<M extends string = SubjectId>({
@@ -87,8 +89,10 @@ export default function Quiz<M extends string = SubjectId>({
   curso,
   respostasIniciais,
   onProgresso,
+  envolverQuestao,
 }: QuizProps<M>) {
   const grava = gravacao ?? (GRAVACAO_PCPR as unknown as GravacaoQuiz<M>);
+  const envolver = envolverQuestao ?? ((_id: string, conteudo: ReactNode) => conteudo);
   const [indice, setIndice] = useState(() => respostasIniciais?.length ?? 0);
   const [selecionada, setSelecionada] = useState<number | null>(null);
   const [respostas, setRespostas] = useState<AttemptRecord<M>[]>(() => respostasIniciais ?? []);
@@ -284,29 +288,34 @@ export default function Quiz<M extends string = SubjectId>({
             </span>
           )}
         </div>
-        <p className="questao-enunciado">{questao.enunciado}</p>
+        {envolver(
+          questao.id,
+          <>
+            <p className="questao-enunciado">{questao.enunciado}</p>
 
-        <div className="alternativas">
-          {questao.alternativas.map((alt, idx) => {
-            let classe = "";
-            if (selecionada !== null) {
-              if (idx === questao.correta) classe = "correta";
-              else if (idx === selecionada) classe = "errada";
-            }
-            return (
-              <Alternativa
-                key={idx}
-                letra={letras[idx]}
-                texto={alt}
-                classe={classe}
-                disabled={selecionada !== null}
-                eliminada={eliminadas.includes(idx)}
-                onEscolher={() => escolher(idx)}
-                onRiscar={selecionada === null ? () => alternarRiscada(idx) : undefined}
-              />
-            );
-          })}
-        </div>
+            <div className="alternativas">
+              {questao.alternativas.map((alt, idx) => {
+                let classe = "";
+                if (selecionada !== null) {
+                  if (idx === questao.correta) classe = "correta";
+                  else if (idx === selecionada) classe = "errada";
+                }
+                return (
+                  <Alternativa
+                    key={idx}
+                    letra={letras[idx]}
+                    texto={alt}
+                    classe={classe}
+                    disabled={selecionada !== null}
+                    eliminada={eliminadas.includes(idx)}
+                    onEscolher={() => escolher(idx)}
+                    onRiscar={selecionada === null ? () => alternarRiscada(idx) : undefined}
+                  />
+                );
+              })}
+            </div>
+          </>,
+        )}
 
         <div className="confianca-linha">
           <span className="confianca-rotulo">

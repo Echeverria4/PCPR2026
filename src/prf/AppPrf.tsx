@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useMemo, useState } from "react";
+import { lazy, Suspense, useEffect, useMemo, useState, type ReactNode } from "react";
 import Quiz from "../components/Quiz";
 import Result from "../components/Result";
 import { computeStats, focoRecomendado } from "../lib/storage";
@@ -14,6 +14,7 @@ import type { TelaPt } from "./portugues/PortuguesInteligente";
 import type { TelaAulas } from "./aulas/AulasPrf";
 import type { AulaDrive } from "./aulas/aulasDrive";
 import { sessaoFixacao } from "./aulas/fixacao";
+import CanetaPrf from "./caneta/CanetaPrf";
 import {
   FILTROS_PRF_PADRAO,
   sessaoFocoPrf,
@@ -56,6 +57,11 @@ const PONTOS_POR_MATERIA = Object.fromEntries(PRF_MATERIAS.map((m) => [m.id, m.q
 interface AppPrfProps {
   /** Volta para a central de cursos. */
   onTrocarCurso?: () => void;
+}
+
+/** Caneta por cima do enunciado e das alternativas, só no curso da PRF. */
+function comCaneta(questaoId: string, conteudo: ReactNode) {
+  return <CanetaPrf questaoId={questaoId}>{conteudo}</CanetaPrf>;
 }
 
 export default function AppPrf({ onTrocarCurso }: AppPrfProps) {
@@ -226,14 +232,19 @@ export default function AppPrf({ onTrocarCurso }: AppPrfProps) {
         </Suspense>
       )}
       {view === "quiz" && sessao && (
-        <Quiz
-          questions={sessao.questions}
-          modo={sessao.mode}
-          onFinalizar={finalizarQuiz}
-          onSair={voltarHome}
-          gravacao={GRAVACAO_PRF}
-          curso="prf-adm"
-        />
+        <>
+          <Quiz
+            questions={sessao.questions}
+            modo={sessao.mode}
+            onFinalizar={finalizarQuiz}
+            onSair={voltarHome}
+            gravacao={GRAVACAO_PRF}
+            curso="prf-adm"
+            envolverQuestao={comCaneta}
+          />
+          {/* Espaço no fim para a barra da caneta não cobrir os últimos botões. */}
+          <div className="prf-caneta-espaco" aria-hidden="true" />
+        </>
       )}
       {view === "result" && resultado && (
         <Result
