@@ -179,7 +179,7 @@ export const QUESTOES_PRF_PROVA_2014: QuestaoPrf[] = [
       "As palavras NASCIDO E CRIADO estabelecem ideia de continuidade.",
       "O primeiro QUE retoma, anaforicamente, a expressão NOSSO POVO.",
       "COMO tem por antecedentes as palavras POVO e CLIMA.",
-      "nESTE se refere, cataforicamente, à palavra CLIMA.",
+      "NESTE se refere, cataforicamente, à palavra CLIMA.",
       "A palavra TANTO é uma conjunção que intensifica a ideia de calor.",
     ],
     correta: 3,
@@ -1783,7 +1783,7 @@ export const QUESTOES_PRF_PROVA_2014: QuestaoPrf[] = [
     subassunto: "Conceitos de segurança: VPN, DMZ, IDS, bot e hijacker",
     dificuldade: 3,
     raciocinio: "Associação entre termos e definições",
-    enunciado: "Alguns termos relacionados com conceitos básicos de segurança da informação estão disponibilizados na coluna I. Estabeleça a correta correspondência com os seus significados, disponibilizados na coluna II.\n\nColuna I\n1. VPN\n2. DMZ\n3. IDS\n4. RoBOT\n5. Hijacker\n\nColuna II\n( ) ambiente criado para proteger a rede interna gerando um perímetro de segurança entre a rede interna e a Internet.\n( ) programa que pode ser utilizado para controlar computadores e comandar ataques de negação de serviço.\n( ) utilização do método de tunelamento que oferece conectividade de rede em longa distância.\n( ) sistema de detecção de intrusos.\n( ) programa ou script que contamina os registros de navegadores.\n\nA sequência correta é:",
+    enunciado: "Alguns termos relacionados com conceitos básicos de segurança da informação estão disponibilizados na coluna I. Estabeleça a correta correspondência com os seus significados, disponibilizados na coluna II.\n\nColuna I\n1. VPN\n2. DMZ\n3. IDS\n4. Robot\n5. Hijacker\n\nColuna II\n( ) ambiente criado para proteger a rede interna gerando um perímetro de segurança entre a rede interna e a Internet.\n( ) programa que pode ser utilizado para controlar computadores e comandar ataques de negação de serviço.\n( ) utilização do método de tunelamento que oferece conectividade de rede em longa distância.\n( ) sistema de detecção de intrusos.\n( ) programa ou script que contamina os registros de navegadores.\n\nA sequência correta é:",
     alternativas: [
       "1, 3, 2, 4 e 5.",
       "1, 5, 2, 3 e 4.",
