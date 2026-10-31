@@ -335,6 +335,9 @@ export default function Cursos({ onAbrir }: CursosProps) {
         </header>
       </div>
       <main className="conteudo">
+        <p className="cursos-lema">
+          Você é <span>responsável</span> pelo seu próprio sucesso.
+        </p>
         <h2 className="secao-titulo cursos-titulo">Cursos</h2>
         <p className="cursos-intro">
           Cada concurso tem o seu próprio espaço: questões, conteúdo, simulados e progresso ficam separados.

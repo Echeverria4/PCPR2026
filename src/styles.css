@@ -4984,6 +4984,29 @@ button {
   height: 22px;
 }
 
+/* Frase em destaque no topo da central, para lembrar de estudar */
+.cursos-lema {
+  margin: 4px 0 26px;
+  padding: 22px 24px 22px 22px;
+  border: 1px solid rgba(202, 160, 58, 0.45);
+  border-left: 6px solid var(--ouro);
+  border-radius: var(--raio);
+  background: radial-gradient(130% 160% at 0% 0%, rgba(242, 193, 78, 0.18), transparent 60%), var(--bg-card);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+  font-family: var(--fonte-cond);
+  font-weight: 900;
+  font-size: clamp(1.55rem, 4.6vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--texto);
+  text-wrap: balance;
+}
+
+.cursos-lema span {
+  color: var(--ouro-forte);
+}
+
 .cursos-titulo {
   margin-top: 4px;
 }
@@ -5281,6 +5304,11 @@ button {
 }
 
 @media (max-width: 640px) {
+  .cursos-lema {
+    margin-bottom: 20px;
+    padding: 18px 16px;
+  }
+
   .cursos-marca {
     width: 32px;
     height: 32px;
