@@ -37,9 +37,11 @@ export interface EstadoEstudo {
   vistos: string[];
   /** Quando cada bloco foi marcado (ms). Os marcados antes de a data existir não estão aqui. */
   vistosEm: Record<string, number>;
+  /** Última vez (ms) que o PDF de cada aula foi marcado como lido: a leitura vale só no dia. */
+  pdfLidoEm: Record<string, number>;
 }
 
-const VAZIO: EstadoEstudo = { ativo: null, sessoes: [], vistos: [], vistosEm: {} };
+const VAZIO: EstadoEstudo = { ativo: null, sessoes: [], vistos: [], vistosEm: {}, pdfLidoEm: {} };
 
 /** Em 30/10/26 o cronômetro só foi testado; o estudo valendo começou em 31/10/26. */
 const COMECO_ESTUDO = new Date(2026, 9, 31).getTime();
@@ -54,6 +56,7 @@ function ler(): EstadoEstudo {
       sessoes: Array.isArray(p.sessoes) ? p.sessoes.filter((s) => s.inicio >= COMECO_ESTUDO) : [],
       vistos: Array.isArray(p.vistos) ? p.vistos : [],
       vistosEm: p.vistosEm && typeof p.vistosEm === "object" ? p.vistosEm : {},
+      pdfLidoEm: p.pdfLidoEm && typeof p.pdfLidoEm === "object" ? p.pdfLidoEm : {},
     };
   } catch {
     return VAZIO;
@@ -163,6 +166,19 @@ export function alternaVisto(blocoId: string) {
     vistosEm[blocoId] = Date.now();
   }
   salvar({ ...estado, vistos, vistosEm });
+}
+
+/** Todo dia o estudo da aula começa pelo PDF, mesmo que a aula já tenha sido vista em outro dia. */
+export function pdfLidoHoje(e: EstadoEstudo, aulaId: string, agora: number): boolean {
+  const em = e.pdfLidoEm[aulaId];
+  return em !== undefined && em >= new Date(agora).setHours(0, 0, 0, 0);
+}
+
+export function alternaPdfLido(aulaId: string) {
+  const pdfLidoEm = { ...estado.pdfLidoEm };
+  if (pdfLidoHoje(estado, aulaId, Date.now())) delete pdfLidoEm[aulaId];
+  else pdfLidoEm[aulaId] = Date.now();
+  salvar({ ...estado, pdfLidoEm });
 }
 
 /** A aba das aulas entrou no app em 30/10/26: bloco marcado antes de a data ser guardada conta nesse dia. */

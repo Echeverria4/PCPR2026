@@ -5,6 +5,7 @@ import { FILTROS_PRF_PADRAO, type FiltrosPrf } from "../sessoes";
 import type { TelaAulas } from "../aulas/AulasPrf";
 import { curto, diaMes, diasComEstudo, totaisEstudo, useAgora, useEstudo } from "../aulas/estudo";
 import GraficoDias from "../aulas/GraficoDias";
+import { metaDoDia, useMeta } from "../aulas/meta";
 import { aulaParaRetomar } from "../aulas/progresso";
 import {
   chaveSemana,
@@ -63,6 +64,7 @@ interface Sugestao {
 
 export default function SemanaPrf({ tentativas, inicio, onInicio, onTreinar, onAbrirAula }: SemanaPrfProps) {
   const estudo = useEstudo();
+  const metaDiaria = useMeta();
   const agora = useAgora(estudo.ativo !== null && estudo.ativo.desde !== null);
   const [notas, setNotas] = useState(lerNotas);
 
@@ -256,6 +258,7 @@ export default function SemanaPrf({ tentativas, inicio, onInicio, onTreinar, onA
               titulo="De segunda a domingo"
               vazio={eAtual ? "O tempo de cada dia aparece aqui." : "Nenhum estudo nesta semana."}
               hoje={hoje}
+              metas={r.dias.map((d) => metaDoDia(metaDiaria, d.dia))}
             />
           </section>
 

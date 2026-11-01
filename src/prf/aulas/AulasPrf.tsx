@@ -4,6 +4,7 @@ import type { TentativaPrf } from "../armazenamento";
 import { ultimaRespostaPrf } from "../sessoes";
 import { AULAS_DRIVE, type AulaDrive, type GrupoAulasDrive } from "./aulasDrive";
 import {
+  alternaPdfLido,
   alternaVisto,
   continuarEstudo,
   curto,
@@ -13,6 +14,7 @@ import {
   encerrarEstudo,
   iniciarEstudo,
   pausarEstudo,
+  pdfLidoHoje,
   porDia,
   relogio,
   tempoAtivo,
@@ -25,7 +27,10 @@ import {
 } from "./estudo";
 import GraficoDias, { type Dia } from "./GraficoDias";
 import { aulaParaRetomar, pendente, progresso, videosDoGrupo, type Motivo } from "./progresso";
-import { PONTOS_PROVA, pesoFixacao, questoesDaAula } from "./fixacao";
+import { QUESTOES_POR_AULA, doNivelamento, fixacaoDaAula, questoesDaAula } from "./fixacao";
+import { metaDoDia, useMeta } from "./meta";
+import { MetaDoDia, MetaMini } from "./MetaDoDia";
+import { RESUMOS, type ResumoAula } from "./resumos";
 
 /** Onde o aluno está dentro da aba (fica no AppPrf para não se perder durante a fixação). */
 export interface TelaAulas {
@@ -41,6 +46,7 @@ interface AulasPrfProps {
 }
 
 const LIMITE_AVISO = 4 * 60 * 60 * 1000;
+const QUESTOES_TEXTO = `${QUESTOES_POR_AULA} questões`;
 const urlArquivo = (id: string) => `https://drive.google.com/file/d/${id}/view`;
 /** Player do próprio Drive: só toca com a conta Google do dono conectada no navegador. */
 const urlPlayer = (id: string) => `https://drive.google.com/file/d/${id}/preview`;
@@ -138,8 +144,8 @@ function Inicio({ estudo, onTela }: ListaProps) {
           <b>{concluidas}</b> de {noDrive.length} aulas concluídas · <b>{vistosTotal}</b> de {videos} vídeos vistos
         </p>
         <p className="prf-aulas-intro">
-          Os vídeos e PDFs abrem no Google Drive. Marque cada vídeo que assistir; no fim de cada aula há questões de
-          fixação.
+          Em cada aula, todo dia: primeiro o PDF, depois os vídeos, o resumo rápido e {QUESTOES_TEXTO}. Os vídeos e
+          PDFs abrem do Google Drive.
         </p>
       </div>
 
@@ -178,11 +184,17 @@ function Retomar({ estudo, vistos, tot, onTela }: RetomarProps) {
   const tempo = tot.porAula.get(r.aula.id) ?? 0;
   const texto = TEXTO_RETOMAR[r.motivo];
   const pdfs = r.aula.pdfs.length;
-  const fixacao = pesoFixacao(r.aula.materia, r.aula.topicos).quantidade;
+  const lido = pdfLidoHoje(estudo, r.aula.id, Date.now());
+  const fixacao = fixacaoDaAula(r.aula).quantidade;
+  // A ordem de todo dia: PDF, vídeos, resumo e questões (o Nivelamento não tem questões).
   const passos = [
+    ...(pdfs > 0
+      ? [{ texto: pdfs === 1 ? "Ler o PDF da aula" : `Ler os ${pdfs} PDFs da aula`, info: lido ? "hoje" : "todo dia", feito: lido }]
+      : []),
     { texto: `Assistir ${plural(total, "vídeo", "vídeos")}`, info: `${feitos}/${total}`, feito: completa },
-    ...(pdfs > 0 ? [{ texto: pdfs === 1 ? "Ler o PDF da aula" : `Ler os ${pdfs} PDFs da aula`, info: "", feito: false }] : []),
-    ...(fixacao > 0 ? [{ texto: `Fazer ${plural(fixacao, "questão", "questões")} de fixação`, info: "", feito: false }] : []),
+    ...(fixacao > 0
+      ? [{ texto: `Resumo rápido e ${plural(fixacao, "questão", "questões")}`, info: "", feito: false }]
+      : []),
   ];
   return (
     <section className={`prf-retomar prf-retomar-${r.motivo}`} style={corGrupo(r.grupo)} aria-label="Continuar estudando">
@@ -254,6 +266,7 @@ function PainelCronometro({ estudo }: { estudo: EstadoEstudo }) {
   const agora = useAgora(a !== null && a.desde !== null);
   const t = totaisEstudo(estudo, agora);
   const dias = porDia(estudo, agora);
+  const meta = useMeta();
   const ms = a ? tempoAtivo(a, agora) : 0;
   const pausado = a !== null && a.desde === null;
   const estado = !a ? "parado" : pausado ? "pausado" : "contando";
@@ -286,6 +299,7 @@ function PainelCronometro({ estudo }: { estudo: EstadoEstudo }) {
           ⚠ Ligado há mais de 4 horas. Se esqueceu ligado, descarte; se estudou mesmo, encerre e salve.
         </p>
       )}
+      <MetaDoDia estudo={estudo} meta={meta} agora={agora} />
       <dl className="prf-crono-totais">
         <div>
           <dt>Hoje</dt>
@@ -305,6 +319,7 @@ function PainelCronometro({ estudo }: { estudo: EstadoEstudo }) {
         titulo="Últimos 7 dias"
         vazio={t.total > 0 ? "Nenhum estudo nos últimos 7 dias." : "O tempo de estudo de cada dia aparece aqui."}
         hoje={dias[dias.length - 1].dia}
+        metas={dias.map((d) => metaDoDia(meta, d.dia))}
       />
       {t.total > 0 && <Historico estudo={estudo} dias={dias} />}
     </section>
@@ -437,13 +452,13 @@ function ListaAulas({ grupo, estudo, onTela }: ListaProps & { grupo: GrupoAulasD
         {grupo.aulas.map((a) => {
           const vazia = a.blocos.length === 0;
           const pr = progresso(a, vistos);
-          const { quantidade } = pesoFixacao(a.materia, a.topicos);
+          const { quantidade } = fixacaoDaAula(a);
           const tempoAula = tot.porAula.get(a.id) ?? 0;
           const meta = vazia
             ? "Ainda não está no Drive"
             : [
                 `${pr.feitos}/${plural(pr.total, "vídeo", "vídeos")}`,
-                quantidade > 0 && `${quantidade} questões de fixação`,
+                quantidade > 0 && plural(quantidade, "questão", "questões"),
                 tempoAula > 0 && duracao(tempoAula),
               ]
                 .filter(Boolean)
@@ -489,6 +504,7 @@ function ListaAulas({ grupo, estudo, onTela }: ListaProps & { grupo: GrupoAulasD
 function CronoAula({ estudo, alvo }: { estudo: EstadoEstudo; alvo: AlvoEstudo }) {
   const a = estudo.ativo;
   const agora = useAgora(a !== null && a.desde !== null);
+  const meta = useMeta();
   if (!a) {
     return (
       <div className="prf-crono prf-crono-compacto prf-crono-parado">
@@ -504,6 +520,7 @@ function CronoAula({ estudo, alvo }: { estudo: EstadoEstudo; alvo: AlvoEstudo })
             ▶ Estudar esta aula
           </button>
         </div>
+        <MetaMini estudo={estudo} meta={meta} agora={agora} />
       </div>
     );
   }
@@ -533,6 +550,7 @@ function CronoAula({ estudo, alvo }: { estudo: EstadoEstudo; alvo: AlvoEstudo })
           </button>
         )}
       </div>
+      <MetaMini estudo={estudo} meta={meta} agora={agora} />
     </div>
   );
 }
@@ -569,6 +587,33 @@ function AjudaDrive({ id, coisa, onAbrir }: { id: string; coisa: string; onAbrir
   );
 }
 
+/** O que a aula ensinou, em poucas linhas: o que cada coisa faz e como reconhecer na prova. */
+function ResumoRapido({ resumo }: { resumo: ResumoAula }) {
+  return (
+    <div className="prf-resumo-cartao">
+      <p className="prf-resumo-ideia">{resumo.ideia}</p>
+      <ul className="prf-resumo-itens">
+        {resumo.itens.map((it) => (
+          <li key={it.termo} className="prf-resumo-item">
+            <b className="prf-resumo-termo">{it.termo}</b>
+            <span className="prf-resumo-faz">{it.faz}</span>
+            {it.pista && (
+              <span className="prf-resumo-pista">
+                <span className="prf-resumo-rotulo">Como identificar:</span> {it.pista}
+              </span>
+            )}
+          </li>
+        ))}
+      </ul>
+      {resumo.cuidado && (
+        <p className="prf-resumo-cuidado">
+          <span className="prf-resumo-rotulo">Cuidado:</span> {resumo.cuidado}
+        </p>
+      )}
+    </div>
+  );
+}
+
 interface TelaAulaProps extends ListaProps {
   grupo: GrupoAulasDrive;
   aula: AulaDrive;
@@ -585,9 +630,16 @@ function TelaAula({ grupo, aula, estudo, tentativas, onTela, onFixar }: TelaAula
   const quadro = useRef<HTMLIFrameElement>(null);
   const tocou = useRef(false);
   const [pdf, setPdf] = useState<string | null>(null);
-  const passoPdf = useRef<HTMLElement>(null);
-  const rolarPdf = useRef(false);
-  const fix = pesoFixacao(aula.materia, aula.topicos);
+  const passoVideos = useRef<HTMLElement>(null);
+  const passoResumo = useRef<HTMLElement>(null);
+  const passoQuestoes = useRef<HTMLElement>(null);
+  const rolarVideos = useRef(false);
+  const fix = fixacaoDaAula(aula);
+  const niv = doNivelamento(aula);
+  const resumo = niv ? undefined : RESUMOS[aula.id];
+  // Todo dia a aula começa pelo PDF; os vídeos ficam guardados até a leitura (dá para pular).
+  const lido = pdfLidoHoje(estudo, aula.id, Date.now());
+  const [liberado, setLiberado] = useState(false);
   const banco = useMemo(() => {
     const ultima = ultimaRespostaPrf(tentativas);
     const c = { certas: 0, erradas: 0, nunca: 0 };
@@ -609,6 +661,13 @@ function TelaAula({ grupo, aula, estudo, tentativas, onTela, onFixar }: TelaAula
   const alvo: AlvoEstudo = { aula: aula.id, grupo: grupo.id, rotulo: rotuloAula(grupo, aula) };
   const ativo = estudo.ativo;
   const temPdf = aula.pdfs.length > 0;
+  const travado = temPdf && !lido && !liberado;
+  // Os passos se numeram conforme o que a aula tem: PDF, vídeos, resumo, questões.
+  let n = 0;
+  const nPdf = temPdf ? ++n : 0;
+  const nVideos = ++n;
+  const nResumo = resumo ? ++n : 0;
+  const nQuestoes = niv ? 0 : ++n;
   const iAtual = aula.blocos.findIndex((b) => b.id === atual);
   const bloco = aula.blocos[iAtual];
   const vistoAtual = bloco ? vistos.has(bloco.id) : false;
@@ -662,24 +721,24 @@ function TelaAula({ grupo, aula, estudo, tentativas, onTela, onFixar }: TelaAula
     aoAbrir();
   }
 
-  /** Do aviso de fim dos vídeos: abre o primeiro PDF e desce até ele. */
-  function vaiAoMaterial() {
-    const primeiro = aula.pdfs[0].id;
-    aoAbrir();
-    if (pdf === primeiro) {
-      rolaPara(passoPdf.current);
-    } else {
-      rolarPdf.current = true;
-      setPdf(primeiro);
-    }
+  /** "Li o PDF hoje": fecha o leitor, libera os vídeos e desce até eles. */
+  function liOPdf() {
+    setPdf(null);
+    rolarVideos.current = true;
+    alternaPdfLido(aula.id);
   }
 
-  // Desce até o material depois que o leitor do PDF já está na tela.
+  // Desce até os vídeos depois que eles já estão na tela.
   useEffect(() => {
-    if (!rolarPdf.current) return;
-    rolarPdf.current = false;
-    rolaPara(passoPdf.current);
-  }, [pdf]);
+    if (!rolarVideos.current || !lido) return;
+    rolarVideos.current = false;
+    rolaPara(passoVideos.current);
+  }, [lido]);
+
+  /** Do aviso de fim dos vídeos: desce até o resumo (ou direto às questões). */
+  function vaiAoFim() {
+    rolaPara(passoResumo.current ?? passoQuestoes.current);
+  }
 
   return (
     <div className="prf-aulas-tela" style={corGrupo(grupo)}>
@@ -714,117 +773,19 @@ function TelaAula({ grupo, aula, estudo, tentativas, onTela, onFixar }: TelaAula
         <CronoAula estudo={estudo} alvo={alvo} />
       </header>
 
-      <section className="prf-passo" aria-label="Vídeos">
-        <h3 className="prf-passo-titulo">
-          <span className="prf-passo-num" aria-hidden="true">
-            1
-          </span>
-          Assista aos vídeos
-          <span className="prf-passo-extra">
-            {feitos}/{total} vistos
-          </span>
-        </h3>
-        <p className="prf-passo-dica">O vídeo abre aqui mesmo. Ao terminar, toque em “Terminei”.</p>
-        {bloco && (
-          <div className="prf-player" ref={player}>
-            <div className="prf-player-quadro">
-              <span className="prf-drive-carregando" aria-hidden="true">
-                Carregando o vídeo…
-              </span>
-              {/* Um iframe novo por vídeo: trocar o src de um iframe aberto empilha o histórico do navegador. */}
-              <iframe
-                key={bloco.id}
-                ref={quadro}
-                src={urlPlayer(bloco.id)}
-                title={`Vídeo: ${bloco.nome}`}
-                allow="autoplay; fullscreen"
-                allowFullScreen
-              />
-            </div>
-            <div className="prf-player-rodape">
-              <div className="prf-player-sobre">
-                {total > 1 && (
-                  <span className="prf-player-posicao">
-                    Vídeo {iAtual + 1} de {total}
-                  </span>
-                )}
-                <span className="prf-player-nome">{bloco.nome}</span>
-              </div>
-              {!vistoAtual ? (
-                <div className="prf-player-acoes">
-                  <button type="button" className="botao botao-ouro" onClick={terminei}>
-                    ✓ Terminei{pendente ? " · próximo vídeo" : ""}
-                  </button>
-                </div>
-              ) : proximo ? (
-                <div className="prf-player-acoes">
-                  <button type="button" className="botao" onClick={() => escolhe(proximo.id)}>
-                    Próximo vídeo →
-                  </button>
-                </div>
-              ) : null}
-            </div>
-            {feitos === total && (
-              <p className="prf-player-fim">
-                <span className="prf-player-fim-icone" aria-hidden="true">
-                  ✓
-                </span>
-                <span>
-                  Todos os vídeos vistos. Próximo passo:{" "}
-                  {temPdf ? (
-                    <button type="button" className="prf-player-fim-link" onClick={vaiAoMaterial}>
-                      ler o material ↓
-                    </button>
-                  ) : (
-                    "a fixação."
-                  )}
-                </span>
-              </p>
-            )}
-            <AjudaDrive id={bloco.id} coisa="vídeo" onAbrir={aoAbrir} />
-          </div>
-        )}
-        <ul className="prf-bloco-lista">
-          {aula.blocos.map((b) => {
-            const visto = vistos.has(b.id);
-            const aberto = b.id === bloco?.id;
-            return (
-              <li
-                key={b.id}
-                className={`prf-bloco${visto ? " prf-bloco-visto" : ""}${aberto ? " prf-bloco-aberto" : ""}`}
-              >
-                <button
-                  type="button"
-                  className="prf-bloco-check"
-                  aria-pressed={visto}
-                  aria-label={`${b.nome}: ${visto ? "visto" : "marcar como visto"}`}
-                  onClick={() => alternaVisto(b.id)}
-                >
-                  {visto ? "✓" : ""}
-                </button>
-                <button
-                  type="button"
-                  className="prf-bloco-link"
-                  aria-current={aberto ? "true" : undefined}
-                  onClick={() => escolhe(b.id)}
-                >
-                  <span className="prf-bloco-nome">{b.nome}</span>
-                  <span className="prf-bloco-abrir">{aberto ? "Aberto ↑" : "▶ Assistir"}</span>
-                </button>
-              </li>
-            );
-          })}
-        </ul>
-      </section>
-
       {temPdf && (
-        <section className="prf-passo" aria-label="Material em PDF" ref={passoPdf}>
+        <section className={`prf-passo${lido ? " prf-passo-feito" : ""}`} aria-label="PDF da aula">
           <h3 className="prf-passo-titulo">
             <span className="prf-passo-num" aria-hidden="true">
-              2
+              {lido ? "✓" : nPdf}
             </span>
-            Leia o material
+            {aula.pdfs.length === 1 ? "Leia o PDF da aula" : "Leia os PDFs da aula"}
+            {lido && <span className="prf-passo-extra">lido hoje</span>}
           </h3>
+          <p className="prf-passo-dica">
+            Comece sempre por aqui, todo dia, mesmo que já tenha visto esta aula: o PDF prepara o cérebro para o que
+            vem, e os vídeos viram revisão do que você leu.
+          </p>
           <ul className="prf-bloco-lista">
             {aula.pdfs.map((p) => {
               const aberto = p.id === pdf;
@@ -857,76 +818,247 @@ function TelaAula({ grupo, aula, estudo, tentativas, onTela, onFixar }: TelaAula
               );
             })}
           </ul>
+          {lido ? (
+            <p className="prf-pdf-lido">
+              <span className="prf-pdf-lido-icone" aria-hidden="true">
+                ✓
+              </span>
+              <span className="prf-pdf-lido-texto">PDF lido hoje. Agora, os vídeos para revisar.</span>
+              <button type="button" className="prf-passo-pular" onClick={() => alternaPdfLido(aula.id)}>
+                Desmarcar
+              </button>
+            </p>
+          ) : (
+            <div className="prf-pdf-marcar">
+              <button type="button" className="botao botao-ouro" onClick={liOPdf}>
+                ✓ Li o PDF hoje
+              </button>
+            </div>
+          )}
         </section>
       )}
 
-      <section className="prf-passo prf-fixacao" aria-label="Fixação">
+      <section className="prf-passo" aria-label="Vídeos" ref={passoVideos}>
         <h3 className="prf-passo-titulo">
           <span className="prf-passo-num" aria-hidden="true">
-            {temPdf ? 3 : 2}
+            {nVideos}
           </span>
-          Faça a fixação
+          Assista aos vídeos
+          <span className="prf-passo-extra">
+            {feitos}/{total} vistos
+          </span>
         </h3>
-        {fix.quantidade === 0 ? (
-          <p className="prf-fixacao-vazia">Sem questões no banco para os assuntos desta aula.</p>
-        ) : (
-          <div className="prf-fixacao-cartao">
-            <div className="prf-fixacao-topo">
-              <p className="prf-fixacao-qtd">
-                <b>{fix.quantidade}</b> questões sobre o que a aula ensinou
-              </p>
-              <button className="botao botao-ouro" onClick={() => onFixar(aula, fix.quantidade)}>
-                Fazer a fixação ({fix.quantidade})
-              </button>
-            </div>
-            <ul className="prf-fixacao-assuntos" aria-label="Assuntos da fixação">
-              {aula.topicos.map((t) => (
-                <li key={t}>{t}</li>
-              ))}
-            </ul>
-            <div className="prf-fixacao-banco-bloco">
-              <p className="prf-fixacao-banco">
-                Banco desta aula: <b>{plural(fix.disponiveis, "questão", "questões")}</b>
-                {feitas > 0 && (
-                  <>
-                    {" "}
-                    · seu acerto: <b>{Math.round((banco.certas / feitas) * 100)}%</b>
-                  </>
-                )}
-              </p>
-              <div
-                className="prf-pilha"
-                role="img"
-                aria-label={SEGMENTOS.map((s) => plural(banco[s.id], s.um, s.varios)).join(", ")}
-              >
-                {SEGMENTOS.map(
-                  (s) =>
-                    banco[s.id] > 0 && (
-                      <span key={s.id} className={`prf-pilha-${s.id}`} style={{ flexGrow: banco[s.id] }} />
-                    ),
-                )}
-              </div>
-              <ul className="prf-pilha-legenda">
-                {SEGMENTOS.map((s) => (
-                  <li key={s.id}>
-                    <i className={`prf-pilha-${s.id}`} aria-hidden="true" />
-                    {plural(banco[s.id], s.um, s.varios)}
-                  </li>
-                ))}
-              </ul>
-              <p className="prf-fixacao-ordem">Entram primeiro as que você ainda não fez; depois, as que errou.</p>
-            </div>
-            <details className="prf-fixacao-porque">
-              <summary>Por que {fix.quantidade} questões?</summary>
-              <p className="prf-fixacao-peso">
-                Quantidade pelo peso: {PRF_MATERIA_MAP[aula.materia].nome} vale {fix.pontosMateria} dos {PONTOS_PROVA}{" "}
-                pontos da prova, e {aula.topicos.length > 1 ? "os assuntos desta aula são" : "o assunto desta aula é"}{" "}
-                {Math.max(1, Math.round(fix.fatia * 100))}% da matéria.
-              </p>
-            </details>
+        {travado ? (
+          <div className="prf-passo-trava">
+            <p className="prf-passo-trava-texto">
+              Primeiro o PDF (passo {nPdf}). Com a leitura feita, os vídeos viram revisão do que você leu.
+            </p>
+            <button type="button" className="prf-passo-pular" onClick={() => setLiberado(true)}>
+              Ver os vídeos mesmo assim
+            </button>
           </div>
+        ) : (
+          <>
+            <p className="prf-passo-dica">O vídeo abre aqui mesmo. Ao terminar, toque em “Terminei”.</p>
+            {bloco && (
+              <div className="prf-player" ref={player}>
+                <div className="prf-player-quadro">
+                  <span className="prf-drive-carregando" aria-hidden="true">
+                    Carregando o vídeo…
+                  </span>
+                  {/* Um iframe novo por vídeo: trocar o src de um iframe aberto empilha o histórico do navegador. */}
+                  <iframe
+                    key={bloco.id}
+                    ref={quadro}
+                    src={urlPlayer(bloco.id)}
+                    title={`Vídeo: ${bloco.nome}`}
+                    allow="autoplay; fullscreen"
+                    allowFullScreen
+                  />
+                </div>
+                <div className="prf-player-rodape">
+                  <div className="prf-player-sobre">
+                    {total > 1 && (
+                      <span className="prf-player-posicao">
+                        Vídeo {iAtual + 1} de {total}
+                      </span>
+                    )}
+                    <span className="prf-player-nome">{bloco.nome}</span>
+                  </div>
+                  {!vistoAtual ? (
+                    <div className="prf-player-acoes">
+                      <button type="button" className="botao botao-ouro" onClick={terminei}>
+                        ✓ Terminei{pendente ? " · próximo vídeo" : ""}
+                      </button>
+                    </div>
+                  ) : proximo ? (
+                    <div className="prf-player-acoes">
+                      <button type="button" className="botao" onClick={() => escolhe(proximo.id)}>
+                        Próximo vídeo →
+                      </button>
+                    </div>
+                  ) : null}
+                </div>
+                {feitos === total && (
+                  <p className="prf-player-fim">
+                    <span className="prf-player-fim-icone" aria-hidden="true">
+                      ✓
+                    </span>
+                    <span>
+                      Todos os vídeos vistos.{" "}
+                      {niv ? (
+                        proxima ? (
+                          <>
+                            Próximo passo:{" "}
+                            <button
+                              type="button"
+                              className="prf-player-fim-link"
+                              onClick={() => onTela({ grupo: grupo.id, aula: proxima.id })}
+                            >
+                              a próxima aula →
+                            </button>
+                          </>
+                        ) : (
+                          "Nivelamento concluído."
+                        )
+                      ) : resumo || fix.quantidade > 0 ? (
+                        <>
+                          Próximo passo:{" "}
+                          <button type="button" className="prf-player-fim-link" onClick={vaiAoFim}>
+                            {!resumo ? "as questões ↓" : fix.quantidade > 0 ? "o resumo e as questões ↓" : "o resumo ↓"}
+                          </button>
+                        </>
+                      ) : null}
+                    </span>
+                  </p>
+                )}
+                <AjudaDrive id={bloco.id} coisa="vídeo" onAbrir={aoAbrir} />
+              </div>
+            )}
+            <ul className="prf-bloco-lista">
+              {aula.blocos.map((b) => {
+                const visto = vistos.has(b.id);
+                const aberto = b.id === bloco?.id;
+                return (
+                  <li
+                    key={b.id}
+                    className={`prf-bloco${visto ? " prf-bloco-visto" : ""}${aberto ? " prf-bloco-aberto" : ""}`}
+                  >
+                    <button
+                      type="button"
+                      className="prf-bloco-check"
+                      aria-pressed={visto}
+                      aria-label={`${b.nome}: ${visto ? "visto" : "marcar como visto"}`}
+                      onClick={() => alternaVisto(b.id)}
+                    >
+                      {visto ? "✓" : ""}
+                    </button>
+                    <button
+                      type="button"
+                      className="prf-bloco-link"
+                      aria-current={aberto ? "true" : undefined}
+                      onClick={() => escolhe(b.id)}
+                    >
+                      <span className="prf-bloco-nome">{b.nome}</span>
+                      <span className="prf-bloco-abrir">{aberto ? "Aberto ↑" : "▶ Assistir"}</span>
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          </>
         )}
       </section>
+
+      {resumo && (
+        <section className="prf-passo prf-resumo" aria-label="Resumo rápido" ref={passoResumo}>
+          <h3 className="prf-passo-titulo">
+            <span className="prf-passo-num" aria-hidden="true">
+              {nResumo}
+            </span>
+            Resumo rápido
+          </h3>
+          <p className="prf-passo-dica">Antes das questões, relembre em um minuto o que a aula ensinou.</p>
+          <ResumoRapido resumo={resumo} />
+        </section>
+      )}
+
+      {niv ? (
+        <p className="prf-nivel-nota">
+          <span className="prf-nivel-nota-icone" aria-hidden="true">
+            ℹ
+          </span>
+          <span>
+            O Nivelamento só mostra o que vem pela frente nas matérias: aqui não tem questões. Elas ficam no fim de
+            cada aula das matérias, só sobre o assunto daquela aula.
+          </span>
+        </p>
+      ) : (
+        <section className="prf-passo prf-fixacao" aria-label="Questões" ref={passoQuestoes}>
+          <h3 className="prf-passo-titulo">
+            <span className="prf-passo-num" aria-hidden="true">
+              {nQuestoes}
+            </span>
+            Faça as questões
+          </h3>
+          {fix.quantidade === 0 ? (
+            <p className="prf-fixacao-vazia">Sem questões no banco para os assuntos desta aula.</p>
+          ) : (
+            <div className="prf-fixacao-cartao">
+              <div className="prf-fixacao-topo">
+                <p className="prf-fixacao-qtd">
+                  <b>{fix.quantidade}</b> {fix.quantidade === 1 ? "questão sorteada" : "questões sorteadas"} sobre
+                  esta aula
+                </p>
+                <button className="botao botao-ouro" onClick={() => onFixar(aula, fix.quantidade)}>
+                  {fix.quantidade === 1 ? "Fazer a questão" : `Fazer as ${fix.quantidade} questões`}
+                </button>
+              </div>
+              <ul className="prf-fixacao-assuntos" aria-label="Assuntos das questões">
+                {aula.topicos.map((t) => (
+                  <li key={t}>{t}</li>
+                ))}
+              </ul>
+              <div className="prf-fixacao-banco-bloco">
+                <p className="prf-fixacao-banco">
+                  Banco desta aula: <b>{plural(fix.disponiveis, "questão", "questões")}</b>
+                  {feitas > 0 && (
+                    <>
+                      {" "}
+                      · seu acerto: <b>{Math.round((banco.certas / feitas) * 100)}%</b>
+                    </>
+                  )}
+                </p>
+                <div
+                  className="prf-pilha"
+                  role="img"
+                  aria-label={SEGMENTOS.map((s) => plural(banco[s.id], s.um, s.varios)).join(", ")}
+                >
+                  {SEGMENTOS.map(
+                    (s) =>
+                      banco[s.id] > 0 && (
+                        <span key={s.id} className={`prf-pilha-${s.id}`} style={{ flexGrow: banco[s.id] }} />
+                      ),
+                  )}
+                </div>
+                <ul className="prf-pilha-legenda">
+                  {SEGMENTOS.map((s) => (
+                    <li key={s.id}>
+                      <i className={`prf-pilha-${s.id}`} aria-hidden="true" />
+                      {plural(banco[s.id], s.um, s.varios)}
+                    </li>
+                  ))}
+                </ul>
+                <p className="prf-fixacao-ordem">
+                  A cada vez, {plural(fix.quantidade, "questão sorteada", "questões sorteadas")} só sobre{" "}
+                  {aula.topicos.length > 1 ? "os assuntos" : "o assunto"} desta aula: primeiro as que você ainda não
+                  fez; depois, as que errou.
+                </p>
+              </div>
+            </div>
+          )}
+        </section>
+      )}
 
       {(anterior || proxima) && (
         <nav className="prf-aula-navegacao" aria-label="Outras aulas desta matéria">

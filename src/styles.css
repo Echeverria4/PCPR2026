@@ -6914,6 +6914,7 @@ button {
 }
 
 .prf-semana-area {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6972,7 +6973,10 @@ button {
   background: var(--bg);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
   font-size: 0.75rem;
-  white-space: nowrap;
+  /* Com a meta, a dica fica longa: quebra em duas linhas em vez de passar da borda da tela. */
+  width: max-content;
+  max-width: 150px;
+  text-align: center;
   color: var(--texto);
   opacity: 0;
   pointer-events: none;
@@ -8020,22 +8024,499 @@ button.prf-bloco-link {
   color: var(--texto-fraco);
 }
 
-.prf-fixacao-porque > summary {
-  width: fit-content;
-  cursor: pointer;
-  font-size: 0.85rem;
-  color: var(--texto-fraco);
+/* Passo a passo da aula: PDF primeiro, vídeos travados até a leitura */
+.prf-passo-feito .prf-passo-num {
+  background: var(--verde);
+  color: #062615;
 }
 
-.prf-fixacao-porque > summary:hover {
+.prf-passo-feito .prf-passo-extra {
+  color: var(--verde);
+}
+
+.prf-pdf-lido {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin: 0;
+  padding: 10px 14px;
+  border: 1px solid rgba(53, 212, 136, 0.4);
+  border-radius: 12px;
+  background: rgba(53, 212, 136, 0.08);
+}
+
+.prf-pdf-lido-icone,
+.prf-nivel-nota-icone {
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+.prf-pdf-lido-icone {
+  background: var(--verde);
+  color: #062615;
+}
+
+.prf-pdf-lido-texto {
+  flex: 1 1 200px;
+  font-size: 0.9rem;
+  color: var(--texto);
+}
+
+.prf-pdf-marcar {
+  display: flex;
+}
+
+.prf-pdf-marcar .botao {
+  min-height: 44px;
+}
+
+.prf-passo-pular {
+  padding: 6px 4px;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 0.85rem;
+  color: var(--texto-fraco);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.prf-passo-pular:hover {
   color: var(--ouro-forte);
 }
 
-.prf-fixacao-peso {
-  margin: 8px 0 0;
-  font-size: 0.85rem;
+.prf-passo-pular:focus-visible {
+  outline: 2px solid var(--ouro-forte);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.prf-passo-trava {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 14px 16px;
+  border: 1px dashed var(--borda-forte);
+  border-radius: var(--aulas-raio);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.prf-passo-trava-texto {
+  margin: 0;
+  font-size: 0.9rem;
   line-height: 1.5;
+  color: var(--texto);
+}
+
+/* Resumo rápido antes das questões */
+.prf-resumo-cartao {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 18px;
+  border: 1px solid rgba(79, 163, 227, 0.4);
+  border-radius: var(--aulas-raio);
+  background: var(--bg-card);
+  background: linear-gradient(160deg, rgba(79, 163, 227, 0.12), rgba(79, 163, 227, 0) 50%), var(--bg-card);
+}
+
+.prf-resumo-ideia {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--texto);
+}
+
+.prf-resumo-itens {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.prf-resumo-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 10px 12px;
+  border: 1px solid var(--aulas-linha);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.prf-resumo-termo {
+  font-size: 0.95rem;
+  color: var(--azul);
+}
+
+.prf-resumo-faz {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--texto);
+}
+
+.prf-resumo-pista {
+  font-size: 0.85rem;
+  line-height: 1.45;
   color: var(--texto-fraco);
+}
+
+.prf-resumo-rotulo {
+  font-weight: 700;
+  color: var(--texto);
+}
+
+.prf-resumo-cuidado {
+  margin: 0;
+  padding: 10px 12px;
+  border-left: 3px solid var(--ouro-forte);
+  border-radius: 6px;
+  background: rgba(242, 193, 78, 0.08);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--texto);
+}
+
+.prf-resumo-cuidado .prf-resumo-rotulo {
+  color: var(--ouro-forte);
+}
+
+/* Nivelamento: aviso de que não há questões */
+.prf-nivel-nota {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid rgba(79, 163, 227, 0.4);
+  border-radius: 12px;
+  background: rgba(79, 163, 227, 0.08);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--texto);
+}
+
+.prf-nivel-nota-icone {
+  background: var(--azul);
+  color: #04182a;
+}
+
+/* Meta do dia: painel do cronômetro e linha curta na aula */
+.prf-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 16px;
+  border: 1px solid rgba(202, 160, 58, 0.45);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  background: linear-gradient(160deg, rgba(202, 160, 58, 0.12), rgba(202, 160, 58, 0) 55%), rgba(255, 255, 255, 0.03);
+}
+
+.prf-meta.prf-meta-batida {
+  border-color: rgba(53, 212, 136, 0.5);
+  background: linear-gradient(160deg, rgba(53, 212, 136, 0.12), rgba(53, 212, 136, 0) 55%), rgba(255, 255, 255, 0.03);
+}
+
+.prf-meta-cabeca {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 12px;
+}
+
+.prf-meta-titulo {
+  font-family: var(--fonte-cond);
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ouro-forte);
+}
+
+.prf-meta-batida .prf-meta-titulo {
+  color: var(--verde);
+}
+
+.prf-meta-valor {
+  font-size: 0.95rem;
+  color: var(--texto-fraco);
+}
+
+.prf-meta-valor b {
+  font-size: 1.25rem;
+  color: var(--texto);
+}
+
+.prf-meta-barra {
+  display: block;
+  height: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.prf-meta-barra > span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--ouro), var(--ouro-forte));
+  transition: width 0.4s ease;
+}
+
+.prf-meta-batida .prf-meta-barra > span {
+  background: var(--verde);
+}
+
+.prf-meta-status {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--texto);
+}
+
+.prf-meta-batida .prf-meta-status {
+  font-weight: 600;
+  color: var(--verde);
+}
+
+.prf-meta-nova {
+  margin: 0;
+  padding: 8px 12px;
+  border-left: 3px solid var(--verde);
+  border-radius: 6px;
+  background: rgba(53, 212, 136, 0.1);
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--texto);
+}
+
+.prf-meta-dados {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+}
+
+.prf-meta-dados > div {
+  padding: 8px 10px;
+  border: 1px solid var(--aulas-linha);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.prf-meta-dados dt {
+  font-size: 0.75rem;
+  color: var(--texto-fraco);
+}
+
+.prf-meta-dados dd {
+  margin: 0;
+}
+
+.prf-meta-numero {
+  margin-top: 2px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--texto);
+}
+
+.prf-meta-aprov .prf-meta-numero {
+  color: var(--ouro-forte);
+}
+
+.prf-meta-sub {
+  margin-top: 2px;
+  font-size: 0.72rem;
+  line-height: 1.35;
+  color: var(--texto-fraco);
+}
+
+.prf-meta-selo {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: rgba(53, 212, 136, 0.14);
+  font-weight: 600;
+  color: var(--verde);
+}
+
+.prf-meta-proposta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(242, 193, 78, 0.55);
+  border-radius: 10px;
+  background: rgba(242, 193, 78, 0.08);
+}
+
+.prf-meta-proposta-titulo {
+  margin: 0;
+  font-weight: 700;
+  color: var(--ouro-forte);
+}
+
+.prf-meta-proposta-texto {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--texto);
+}
+
+.prf-meta-proposta-nota {
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--texto-fraco);
+}
+
+.prf-meta-opcoes {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.prf-meta-opcao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-height: 56px;
+  padding: 6px 4px;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  background: var(--bg-card);
+  font: inherit;
+  color: var(--texto);
+  cursor: pointer;
+}
+
+.prf-meta-opcao b {
+  font-size: 0.95rem;
+}
+
+.prf-meta-opcao span {
+  font-size: 0.75rem;
+  color: var(--texto-fraco);
+}
+
+.prf-meta-opcao i {
+  font-size: 0.65rem;
+  font-style: normal;
+  color: var(--ouro-forte);
+}
+
+.prf-meta-opcao:hover {
+  border-color: var(--ouro);
+}
+
+.prf-meta-opcao:focus-visible {
+  outline: 2px solid var(--ouro-forte);
+  outline-offset: 2px;
+}
+
+.prf-meta-opcao-ativa {
+  border-color: var(--ouro-forte);
+  background: rgba(242, 193, 78, 0.16);
+  box-shadow: inset 0 0 0 1px var(--ouro-forte);
+}
+
+.prf-meta-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.prf-meta-mini {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  gap: 6px;
+  min-width: 0;
+}
+
+.prf-meta-mini-texto {
+  font-size: 0.82rem;
+  color: var(--texto-fraco);
+}
+
+.prf-meta-mini-texto b {
+  color: var(--texto);
+}
+
+.prf-meta-mini .prf-meta-barra {
+  height: 6px;
+}
+
+.prf-meta-mini.prf-meta-batida .prf-meta-mini-texto {
+  color: var(--verde);
+}
+
+@media (max-width: 480px) {
+  .prf-meta-dados {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .prf-meta-aprov {
+    grid-column: 1 / -1;
+  }
+
+  .prf-meta-opcao span {
+    font-size: 0.68rem;
+  }
+}
+
+/* Gráfico de dias: traço da meta e meta batida */
+.prf-semana-meta {
+  position: absolute;
+  left: 50%;
+  width: min(34px, 92%);
+  height: 0;
+  border-top: 2px dashed rgba(231, 238, 248, 0.7);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.prf-semana-batida .prf-semana-meta {
+  border-top-color: var(--verde);
+}
+
+.prf-semana-check {
+  font-weight: 700;
+  color: var(--verde);
+}
+
+.prf-semana-legenda {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 8px 0 0;
+  font-size: 0.75rem;
+  color: var(--texto-fraco);
+}
+
+.prf-semana-legenda b {
+  color: var(--verde);
+}
+
+.prf-semana-legenda-meta {
+  display: inline-block;
+  width: 18px;
+  border-top: 2px dashed rgba(231, 238, 248, 0.7);
 }
 
 .prf-fixacao-vazia {
