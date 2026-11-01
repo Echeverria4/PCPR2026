@@ -1,20 +1,26 @@
-import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
+import { createPortal } from "react-dom";
 import { PRF_MATERIA_MAP, type MateriaPrfId } from "../../data/prf";
 import type { TentativaPrf } from "../armazenamento";
+import { ChipCronometro } from "../LayoutPrf";
 import { ultimaRespostaPrf } from "../sessoes";
 import { AULAS_DRIVE, type AulaDrive, type GrupoAulasDrive } from "./aulasDrive";
 import {
   alternaPdfLido,
   alternaVisto,
+  continuarAposVirada,
   continuarEstudo,
   curto,
   descartarEstudo,
+  descartarVirada,
   diaLongo,
+  dispensarVirada,
   duracao,
   encerrarEstudo,
   iniciarEstudo,
   pausarEstudo,
   pdfLidoHoje,
+  podeContinuarVirada,
   porDia,
   relogio,
   tempoAtivo,
@@ -261,6 +267,55 @@ function ControlesAtivo({ pausado }: { pausado: boolean }) {
   );
 }
 
+/** À meia-noite o dia anterior foi encerrado com uma sessão aberta: avisa o que ficou guardado e em que dia. */
+function AvisoVirada({ estudo }: { estudo: EstadoEstudo }) {
+  const v = estudo.virada;
+  if (!v) return null;
+  // "no sábado", "no domingo", mas "na segunda-feira"
+  const semana = new Date(v.dia).getDay();
+  const dia = `${semana === 0 || semana === 6 ? "no" : "na"} ${diaLongo(v.dia).toLowerCase()}`;
+  return (
+    <div className="prf-virada" role="status">
+      <p className="prf-virada-texto">
+        <span aria-hidden="true">🌙 </span>
+        {v.contando ? (
+          <>
+            Virou o dia. O cronômetro parou à meia-noite e guardou <b>{curto(v.ms)}</b> {dia}.
+          </>
+        ) : (
+          <>
+            Virou o dia. O cronômetro estava pausado: guardou <b>{curto(v.ms)}</b> {dia}, e o tempo de hoje conta à
+            parte.
+          </>
+        )}
+      </p>
+      <div className="prf-virada-botoes">
+        {podeContinuarVirada(estudo, Date.now()) && (
+          <button type="button" className="botao botao-ouro" onClick={continuarAposVirada}>
+            ▶ Continuar contando hoje
+          </button>
+        )}
+        {v.contando && (
+          <button
+            type="button"
+            className="botao"
+            onClick={() => {
+              if (window.confirm("Descartar esse tempo? Use se o cronômetro ficou ligado sem você estudar.")) {
+                descartarVirada();
+              }
+            }}
+          >
+            Descartar esse tempo
+          </button>
+        )}
+        <button type="button" className="botao" onClick={dispensarVirada}>
+          Ok
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function PainelCronometro({ estudo }: { estudo: EstadoEstudo }) {
   const a = estudo.ativo;
   const agora = useAgora(a !== null && a.desde !== null);
@@ -294,6 +349,7 @@ function PainelCronometro({ estudo }: { estudo: EstadoEstudo }) {
           </button>
         )}
       </div>
+      <AvisoVirada estudo={estudo} />
       {ms > LIMITE_AVISO && (
         <p className="prf-crono-aviso">
           ⚠ Ligado há mais de 4 horas. Se esqueceu ligado, descarte; se estudou mesmo, encerre e salve.
@@ -571,6 +627,68 @@ function rolaPara(el: HTMLElement | null, soSeAcima = false) {
   window.scrollBy({ top: y, behavior: suave ? "smooth" : "auto" });
 }
 
+interface LeitorPdfProps {
+  id: string;
+  nome: string;
+  lido: boolean;
+  onLi: () => void;
+  onFechar: () => void;
+  onAbrir: () => void;
+}
+
+/**
+ * O PDF numa tela cheia dentro do app, por cima da aula. O arquivo continua vindo do Drive (o app é público e o
+ * material é pago, então o PDF não fica no app); o botão do Drive que abre o arquivo fora daqui fica tampado.
+ */
+function LeitorPdf({ id, nome, lido, onLi, onFechar, onAbrir }: LeitorPdfProps) {
+  const voltar = useRef<HTMLButtonElement>(null);
+
+  // Esc fecha; a página da aula não rola por trás; ao fechar, o foco volta para a linha do PDF.
+  useEffect(() => {
+    const antes = document.activeElement as HTMLElement | null;
+    const rolagem = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    voltar.current?.focus({ preventScroll: true });
+    const tecla = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onFechar();
+    };
+    window.addEventListener("keydown", tecla);
+    return () => {
+      window.removeEventListener("keydown", tecla);
+      document.body.style.overflow = rolagem;
+      antes?.focus({ preventScroll: true });
+    };
+  }, [onFechar]);
+
+  return createPortal(
+    <div className="prf-leitor" role="dialog" aria-modal="true" aria-label={`PDF: ${nome}`}>
+      <div className="prf-leitor-barra">
+        <button type="button" className="prf-voltar" ref={voltar} onClick={onFechar}>
+          ← Voltar à aula
+        </button>
+        <span className="prf-leitor-nome">{nome}</span>
+        <ChipCronometro />
+        {lido ? (
+          <span className="prf-leitor-lido">✓ Lido hoje</span>
+        ) : (
+          <button type="button" className="botao botao-ouro" onClick={onLi}>
+            ✓ Li o PDF hoje
+          </button>
+        )}
+      </div>
+      <div className="prf-leitor-quadro">
+        <span className="prf-drive-carregando" aria-hidden="true">
+          Carregando o PDF…
+        </span>
+        <iframe src={urlPlayer(id)} title={`PDF: ${nome}`} allow="fullscreen" allowFullScreen />
+        <span className="prf-leitor-tampa" aria-hidden="true" />
+      </div>
+      <AjudaDrive id={id} coisa="PDF" onAbrir={onAbrir} />
+    </div>,
+    document.body,
+  );
+}
+
 /** Reserva para quando o player do Drive não carrega aqui (sem login, iPhone, janela anônima). */
 function AjudaDrive({ id, coisa, onAbrir }: { id: string; coisa: string; onAbrir: () => void }) {
   return (
@@ -630,6 +748,7 @@ function TelaAula({ grupo, aula, estudo, tentativas, onTela, onFixar }: TelaAula
   const quadro = useRef<HTMLIFrameElement>(null);
   const tocou = useRef(false);
   const [pdf, setPdf] = useState<string | null>(null);
+  const fechaPdf = useCallback(() => setPdf(null), []);
   const passoVideos = useRef<HTMLElement>(null);
   const passoResumo = useRef<HTMLElement>(null);
   const passoQuestoes = useRef<HTMLElement>(null);
@@ -711,12 +830,8 @@ function TelaAula({ grupo, aula, estudo, tentativas, onTela, onFixar }: TelaAula
     if (pendente) escolhe(pendente.id);
   }
 
-  /** Abre o PDF aqui mesmo (um por vez); abrir também liga o cronômetro. */
-  function alternaPdf(id: string) {
-    if (pdf === id) {
-      setPdf(null);
-      return;
-    }
+  /** Abre o PDF numa tela cheia dentro do app; abrir também liga o cronômetro. */
+  function abrePdf(id: string) {
     setPdf(id);
     aoAbrir();
   }
@@ -771,6 +886,7 @@ function TelaAula({ grupo, aula, estudo, tentativas, onTela, onFixar }: TelaAula
           </span>
         </div>
         <CronoAula estudo={estudo} alvo={alvo} />
+        <AvisoVirada estudo={estudo} />
       </header>
 
       {temPdf && (
@@ -797,22 +913,21 @@ function TelaAula({ grupo, aula, estudo, tentativas, onTela, onFixar }: TelaAula
                   <button
                     type="button"
                     className="prf-bloco-link"
-                    aria-expanded={aberto}
-                    onClick={() => alternaPdf(p.id)}
+                    aria-haspopup="dialog"
+                    onClick={() => abrePdf(p.id)}
                   >
                     <span className="prf-bloco-nome">{p.nome}</span>
-                    <span className="prf-bloco-abrir">{aberto ? "Fechar ✕" : "Ler aqui ↓"}</span>
+                    <span className="prf-bloco-abrir">Ler aqui</span>
                   </button>
                   {aberto && (
-                    <div className="prf-leitor">
-                      <div className="prf-leitor-quadro">
-                        <span className="prf-drive-carregando" aria-hidden="true">
-                          Carregando o PDF…
-                        </span>
-                        <iframe src={urlPlayer(p.id)} title={`PDF: ${p.nome}`} />
-                      </div>
-                      <AjudaDrive id={p.id} coisa="PDF" onAbrir={aoAbrir} />
-                    </div>
+                    <LeitorPdf
+                      id={p.id}
+                      nome={p.nome}
+                      lido={lido}
+                      onLi={liOPdf}
+                      onFechar={fechaPdf}
+                      onAbrir={aoAbrir}
+                    />
                   )}
                 </li>
               );

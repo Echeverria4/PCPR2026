@@ -1,15 +1,36 @@
 import type { ReactNode } from "react";
 import prfBrasao from "../assets/prf-brasao.png";
 import { PRF_ULTIMO_EDITAL } from "../data/prf";
-import { continuarEstudo, pausarEstudo, relogio, tempoAtivo, useAgora, useEstudo } from "./aulas/estudo";
+import {
+  continuarAposVirada,
+  continuarEstudo,
+  pausarEstudo,
+  podeContinuarVirada,
+  relogio,
+  tempoAtivo,
+  useAgora,
+  useEstudo,
+} from "./aulas/estudo";
 
 export type AbaPrf = "home" | "aulas" | "semana" | "conteudo" | "portugues";
 
-/** Cronômetro de estudo ligado: fica à vista em todas as telas, inclusive durante as questões. */
-function ChipCronometro() {
-  const { ativo } = useEstudo();
+/** Cronômetro de estudo ligado: fica à vista em todas as telas, inclusive durante as questões e no leitor do PDF. */
+export function ChipCronometro() {
+  const estudo = useEstudo();
+  const { ativo } = estudo;
   const agora = useAgora(ativo !== null && ativo.desde !== null);
-  if (!ativo) return null;
+  if (!ativo) {
+    // Parou sozinho à meia-noite: um toque volta a contar, já no dia novo.
+    if (!podeContinuarVirada(estudo, agora)) return null;
+    return (
+      <span className="prf-crono-chip prf-crono-chip-pausado" title="O dia virou e o cronômetro parou à meia-noite">
+        <span>🌙 Dia novo</span>
+        <button type="button" onClick={continuarAposVirada} aria-label="Continuar contando hoje">
+          ▶
+        </button>
+      </span>
+    );
+  }
   const pausado = ativo.desde === null;
   return (
     <span className={`prf-crono-chip${pausado ? " prf-crono-chip-pausado" : ""}`} title={ativo.rotulo}>

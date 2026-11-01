@@ -7864,37 +7864,89 @@ button.prf-bloco-link {
   text-underline-offset: 3px;
 }
 
-/* Leitor do PDF: abre logo abaixo da linha do PDF */
-.prf-bloco-pdf {
-  flex-wrap: wrap;
-}
-
-.prf-bloco-link[aria-expanded="true"] {
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.prf-bloco-link[aria-expanded="true"] .prf-bloco-abrir {
-  border-color: var(--borda-forte);
-  color: var(--texto-fraco);
-}
-
+/* Leitor do PDF: tela cheia dentro do app, por cima da aula */
 .prf-leitor {
+  position: fixed;
+  inset: 0;
+  z-index: 950;
   display: flex;
-  flex: 1 1 100%;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
+  padding: max(8px, env(safe-area-inset-top)) max(10px, env(safe-area-inset-right))
+    max(8px, env(safe-area-inset-bottom)) max(10px, env(safe-area-inset-left));
+  background: var(--bg);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.prf-leitor-barra {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 12px;
   min-width: 0;
-  margin-left: -6px;
-  padding-bottom: 6px;
+}
+
+.prf-leitor-barra .prf-voltar {
+  margin-left: 0;
+}
+
+.prf-leitor-nome {
+  flex: 1 1 160px;
+  min-width: 0;
+  overflow: hidden;
+  font-weight: 700;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.prf-leitor-lido {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--verde);
 }
 
 .prf-leitor-quadro {
   position: relative;
-  height: min(75vh, 900px);
-  min-height: 360px;
+  flex: 1 1 auto;
+  min-height: 240px;
   overflow: hidden;
   border-radius: 10px;
   background: #000;
+}
+
+/* Tampa o botão do Drive (canto de cima, à direita) que abriria o PDF fora do app */
+.prf-leitor-tampa {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 72px;
+  height: 64px;
+}
+
+/* À meia-noite o dia anterior foi encerrado */
+.prf-virada {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--borda-forte);
+  border-radius: 10px;
+  background: rgba(79, 163, 227, 0.08);
+}
+
+.prf-virada-texto {
+  flex: 1 1 240px;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.prf-virada-botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .prf-fixacao-cartao {
@@ -8612,15 +8664,10 @@ button.prf-bloco-link {
     color: var(--ouro-forte);
   }
 
-  .prf-bloco-link:not([aria-current]):not([aria-expanded="true"]):hover .prf-bloco-abrir {
+  .prf-bloco-link:not([aria-current]):hover .prf-bloco-abrir {
     border-color: var(--ouro-forte);
     background: var(--ouro-forte);
     color: #241a03;
-  }
-
-  .prf-bloco-link[aria-expanded="true"]:hover .prf-bloco-abrir {
-    border-color: var(--texto-fraco);
-    color: var(--texto);
   }
 
   .prf-vizinha:hover {

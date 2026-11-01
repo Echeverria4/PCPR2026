@@ -9,6 +9,16 @@ const CHAVE = "prf:estudo:v1";
 const MAX_SESSOES = 3000;
 const DIA = 24 * 60 * 60 * 1000;
 
+/** Meia-noite do dia de `ms`. */
+const meiaNoite = (ms: number) => new Date(ms).setHours(0, 0, 0, 0);
+
+/** Meia-noite que encerra o dia de `ms`. */
+function fimDoDia(ms: number): number {
+  const d = new Date(meiaNoite(ms));
+  d.setDate(d.getDate() + 1);
+  return d.getTime();
+}
+
 /** Sobre o que é o tempo contado: uma aula, ou estudo livre (sem aula). */
 export interface AlvoEstudo {
   aula?: string;
@@ -30,6 +40,17 @@ export interface CronometroAtivo extends AlvoEstudo {
   acumulado: number;
 }
 
+/** Sessão que a meia-noite fechou sozinha: aparece como aviso até ser dispensada ou até começar outra. */
+export interface ViradaDia extends AlvoEstudo {
+  /** Meia-noite do dia que foi encerrado. */
+  dia: number;
+  /** Início da sessão guardada, para achá-la se o tempo for descartado. */
+  inicio: number;
+  ms: number;
+  /** O cronômetro estava contando (não pausado) quando o dia acabou. */
+  contando: boolean;
+}
+
 export interface EstadoEstudo {
   ativo: CronometroAtivo | null;
   sessoes: SessaoEstudo[];
@@ -39,9 +60,10 @@ export interface EstadoEstudo {
   vistosEm: Record<string, number>;
   /** Última vez (ms) que o PDF de cada aula foi marcado como lido: a leitura vale só no dia. */
   pdfLidoEm: Record<string, number>;
+  virada: ViradaDia | null;
 }
 
-const VAZIO: EstadoEstudo = { ativo: null, sessoes: [], vistos: [], vistosEm: {}, pdfLidoEm: {} };
+const VAZIO: EstadoEstudo = { ativo: null, sessoes: [], vistos: [], vistosEm: {}, pdfLidoEm: {}, virada: null };
 
 /** Em 30/10/26 o cronômetro só foi testado; o estudo valendo começou em 31/10/26. */
 const COMECO_ESTUDO = new Date(2026, 9, 31).getTime();
@@ -57,6 +79,7 @@ function ler(): EstadoEstudo {
       vistos: Array.isArray(p.vistos) ? p.vistos : [],
       vistosEm: p.vistosEm && typeof p.vistosEm === "object" ? p.vistosEm : {},
       pdfLidoEm: p.pdfLidoEm && typeof p.pdfLidoEm === "object" ? p.pdfLidoEm : {},
+      virada: p.virada && typeof p.virada === "object" ? p.virada : null,
     };
   } catch {
     return VAZIO;
@@ -96,19 +119,71 @@ function assinar(f: () => void) {
   };
 }
 
+/* ---------- Virada do dia: à meia-noite o dia anterior é encerrado ---------- */
+
+/**
+ * Sessão aberta que vem de um dia anterior: o tempo até a meia-noite fica naquele dia e o cronômetro para.
+ * Devolve true se fechou alguma coisa (uma sessão de vários dias fecha um dia por vez).
+ */
+function fecharDiaAnterior(agora: number): boolean {
+  const a = estado.ativo;
+  if (!a || a.inicio >= meiaNoite(agora)) return false;
+  const fim = fimDoDia(a.inicio);
+  const { aula, grupo, rotulo, inicio, desde } = a;
+  const contando = desde !== null && desde < fim;
+  const ms = a.acumulado + (contando ? fim - desde : 0);
+  const sessoes = ms >= 1000 ? [...estado.sessoes, { aula, grupo, rotulo, inicio, fim, ms }].slice(-MAX_SESSOES) : estado.sessoes;
+  // Retomado depois da meia-noite (antes de existir a virada): o trecho que está correndo é do dia novo.
+  const ativo = desde !== null && desde >= fim ? { aula, grupo, rotulo, inicio: desde, desde, acumulado: 0 } : null;
+  const virada = ms >= 1000 ? { aula, grupo, rotulo, dia: meiaNoite(inicio), inicio, ms, contando } : estado.virada;
+  salvar({ ...estado, sessoes, ativo, virada });
+  return true;
+}
+
+/** Dia (meia-noite) que as telas estão mostrando. */
+let diaVisto = meiaNoite(Date.now());
+
+/** Confere se o dia virou (meia-noite, aparelho que dormiu, app que voltou do fundo) e encerra o dia anterior. */
+function conferirDia() {
+  const agora = Date.now();
+  while (fecharDiaAnterior(agora)) {
+    // um dia por vez
+  }
+  const dia = meiaNoite(agora);
+  if (dia === diaVisto) return;
+  diaVisto = dia;
+  // Mesmo sem sessão para fechar, as telas refazem as contas de "hoje".
+  estado = { ...estado };
+  avisar();
+}
+
+conferirDia();
+if (typeof window !== "undefined") {
+  window.setInterval(conferirDia, 30_000);
+  window.addEventListener("focus", conferirDia);
+  window.addEventListener("pageshow", conferirDia);
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") conferirDia();
+  });
+}
+
 export function useEstudo(): EstadoEstudo {
   return useSyncExternalStore(assinar, () => estado);
 }
 
-/** Relógio que anda de segundo em segundo enquanto `ligado`. */
+/** Relógio que anda de segundo em segundo enquanto `ligado`; parado, ainda acompanha a virada do dia. */
 export function useAgora(ligado: boolean): number {
+  const dia = useSyncExternalStore(assinar, () => diaVisto);
   const [agora, setAgora] = useState(() => Date.now());
   useEffect(() => {
     setAgora(Date.now());
     if (!ligado) return;
-    const t = window.setInterval(() => setAgora(Date.now()), 1000);
+    const t = window.setInterval(() => {
+      conferirDia(); // contando, a virada acontece no segundo da meia-noite
+      setAgora(Date.now());
+    }, 1000);
     return () => window.clearInterval(t);
-  }, [ligado]);
+  }, [ligado, dia]);
   return agora;
 }
 
@@ -127,17 +202,25 @@ function fecharAtivo(agora: number): SessaoEstudo[] {
 
 /** Liga o cronômetro para o alvo. Se já estava contando outra coisa, salva aquele tempo antes. */
 export function iniciarEstudo(alvo: AlvoEstudo) {
+  conferirDia();
   const agora = Date.now();
-  salvar({ ...estado, sessoes: fecharAtivo(agora), ativo: { ...alvo, inicio: agora, desde: agora, acumulado: 0 } });
+  salvar({
+    ...estado,
+    sessoes: fecharAtivo(agora),
+    ativo: { ...alvo, inicio: agora, desde: agora, acumulado: 0 },
+    virada: null,
+  });
 }
 
 export function pausarEstudo() {
+  conferirDia();
   const a = estado.ativo;
   if (!a || a.desde === null) return;
   salvar({ ...estado, ativo: { ...a, acumulado: tempoAtivo(a, Date.now()), desde: null } });
 }
 
 export function continuarEstudo() {
+  conferirDia();
   const a = estado.ativo;
   if (!a || a.desde !== null) return;
   salvar({ ...estado, ativo: { ...a, desde: Date.now() } });
@@ -145,14 +228,40 @@ export function continuarEstudo() {
 
 /** Para e guarda a sessão no histórico. */
 export function encerrarEstudo() {
+  conferirDia();
   if (!estado.ativo) return;
   salvar({ ...estado, sessoes: fecharAtivo(Date.now()), ativo: null });
 }
 
 /** Para sem guardar (cronômetro esquecido ligado, por exemplo). */
 export function descartarEstudo() {
+  conferirDia();
   if (!estado.ativo) return;
   salvar({ ...estado, ativo: null });
+}
+
+/** O cronômetro estava contando quando o dia de ontem acabou: dá para seguir contando hoje. */
+export function podeContinuarVirada(e: EstadoEstudo, agora: number): boolean {
+  return !e.ativo && e.virada !== null && e.virada.contando && meiaNoite(agora) === fimDoDia(e.virada.dia);
+}
+
+/** Volta a contar, no dia novo, o que estava sendo estudado na virada. */
+export function continuarAposVirada() {
+  const v = estado.virada;
+  if (v) iniciarEstudo({ aula: v.aula, grupo: v.grupo, rotulo: v.rotulo });
+}
+
+/** Tira do histórico o tempo que a virada guardou (cronômetro esquecido ligado). */
+export function descartarVirada() {
+  const v = estado.virada;
+  if (!v) return;
+  const i = estado.sessoes.findIndex((s) => s.inicio === v.inicio && s.ms === v.ms);
+  const sessoes = i < 0 ? estado.sessoes : [...estado.sessoes.slice(0, i), ...estado.sessoes.slice(i + 1)];
+  salvar({ ...estado, sessoes, virada: null });
+}
+
+export function dispensarVirada() {
+  if (estado.virada) salvar({ ...estado, virada: null });
 }
 
 export function alternaVisto(blocoId: string) {
@@ -197,7 +306,7 @@ export interface TotaisEstudo {
   porAula: Map<string, number>;
 }
 
-/** Somas do histórico mais o trecho que está correndo. A sessão conta no dia em que começou. */
+/** Somas do histórico mais o trecho que está correndo. A sessão conta no dia em que começou (a meia-noite fecha a sessão aberta). */
 export function totaisEstudo(e: EstadoEstudo, agora: number): TotaisEstudo {
   const meiaNoite = new Date(agora);
   meiaNoite.setHours(0, 0, 0, 0);
