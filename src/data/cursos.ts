@@ -1,5 +1,5 @@
 /** Cursos da central de estudos. Cada concurso tem banco, progresso e simulados próprios. */
-export type CursoId = "pcpr2026" | "prf-adm" | "prf-policial" | "pf-agente" | "detran-pr" | "pmpr";
+export type CursoId = "pcpr2026" | "prf-adm" | "prf-policial" | "pf-agente" | "detran-pr" | "pmpr" | "banco-brasil";
 
 export interface Curso {
   id: CursoId;
@@ -55,6 +55,13 @@ export const CURSOS: Curso[] = [
     sigla: "PMPR",
     nome: "PMPR — Soldado",
     orgao: "Polícia Militar do Paraná",
+    disponivel: false,
+  },
+  {
+    id: "banco-brasil",
+    sigla: "BB",
+    nome: "Banco do Brasil — Escriturário",
+    orgao: "Banco do Brasil · nível médio · banca a definir",
     disponivel: false,
   },
 ];

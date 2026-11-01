@@ -1,4 +1,5 @@
 import { useMemo, useState, type ReactNode } from "react";
+import bbLogo from "../assets/bb-logo.png";
 import paranaBrasao from "../assets/parana-brasao.png";
 import pcprBrasao from "../assets/pcpr-brasao.png";
 import pfBrasao from "../assets/pf-brasao.png";
@@ -27,12 +28,16 @@ interface Selo {
 const DIA_MS = 86_400_000;
 const FUSO = "America/Sao_Paulo";
 
-/** Brasão dos cursos que ainda vão entrar. No DETRAN-PR, órgão estadual, vai o brasão do Estado do Paraná. */
+/**
+ * Brasão dos cursos que ainda vão entrar. No DETRAN-PR, órgão estadual, vai o brasão do Estado do Paraná;
+ * no Banco do Brasil, que não tem brasão, vai o símbolo do banco.
+ */
 const BRASAO_EM_BREVE: Partial<Record<CursoId, string>> = {
   "prf-policial": prfBrasao,
   "pf-agente": pfBrasao,
   "detran-pr": paranaBrasao,
   pmpr: pmprBrasao,
+  "banco-brasil": bbLogo,
 };
 
 /** Data (aaaa-mm-dd) no horário de Brasília, para contar dias de calendário. */
