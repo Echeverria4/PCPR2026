@@ -134,54 +134,54 @@ export const QUESTOES_PRF_PT: QuestaoPrf[] = [
     id: "prf-pt-006",
     materia: "pt",
     topico: "Tipologia textual",
-    subassunto: "Sequência injuntiva e sequência expositiva no mesmo texto",
+    subassunto: "Trecho injuntivo e trecho expositivo no mesmo texto",
     dificuldade: 4,
-    raciocinio: "Classificar a função de cada período e reconhecer que um texto combina sequências",
+    raciocinio: "Classificar a função de cada período e reconhecer que um texto mistura tipos",
     enunciado:
       "Leia o texto.\n\n“Antes de iniciar a viagem, confira a calibragem dos pneus, inclusive a do estepe, sempre com os pneus frios. A pressão recomendada pelo fabricante costuma vir indicada na coluna da porta do motorista ou no manual do veículo. Pneus com pressão abaixo da indicada aquecem mais, desgastam-se de forma irregular e aumentam o consumo de combustível.”\n\nSobre a organização do texto, é correto afirmar que",
     alternativas: [
       "o texto é predominantemente narrativo, pois encadeia ações numa sequência temporal.",
-      "o terceiro período é descritivo, pois caracteriza os pneus por meio de adjetivos.",
-      "o imperativo do primeiro período dá ao texto caráter argumentativo, por exprimir opinião.",
+      "o terceiro período é descritivo, pois apresenta as características dos pneus mal calibrados.",
+      "a ordem dada no primeiro período torna o texto argumentativo, por exprimir uma opinião.",
       "o primeiro período é injuntivo, e os demais dão informações que sustentam a instrução.",
       "o segundo período reformula a instrução inicial, apresentando-a como mera sugestão.",
     ],
     correta: 3,
     explicacao:
-      "O primeiro período é injuntivo: o imperativo (“confira”) orienta o comportamento do leitor. O segundo informa onde encontrar a pressão recomendada, e o terceiro expõe as consequências da pressão baixa. Os dois últimos são expositivos e dão o meio e a razão para cumprir a instrução.",
+      "O primeiro período é injuntivo: a ordem “confira” orienta o que o leitor deve fazer. O segundo informa onde encontrar a pressão recomendada, e o terceiro explica as consequências da pressão baixa. Os dois últimos são expositivos e dão o meio e a razão para cumprir a instrução.",
     explicacaoErradas:
-      "Não há narração: as ações não são fatos ocorridos numa sequência temporal, mas instruções e informações gerais. O terceiro período não descreve os pneus; expõe relações de causa e consequência (pressão baixa → aquecimento, desgaste, consumo). O imperativo marca instrução, não opinião, e por isso não torna o texto argumentativo. O segundo período não reformula a instrução como sugestão: acrescenta uma informação nova (onde a pressão está indicada).",
+      "Não há narração: as ações não são fatos que aconteceram com alguém numa sequência de tempo, mas instruções e informações gerais. O terceiro período não descreve os pneus; explica causa e consequência (pressão baixa → aquecimento, desgaste, consumo). Dar uma ordem é instruir, não opinar, e por isso não torna o texto argumentativo. O segundo período não reformula a instrução como sugestão: acrescenta uma informação nova (onde a pressão está indicada).",
     pegadinha:
-      "Sequência de ações não é narração. Na injunção, os verbos indicam o que o leitor deve fazer; na narração, o que aconteceu com alguém num tempo.",
+      "Uma lista de ações não é narração. Na injunção, as ações são o que o leitor deve fazer; na narração, o que aconteceu com alguém num tempo.",
     conhecimento:
-      "Marcas dos tipos: narração (fatos em progressão temporal, pretérito perfeito), descrição (características, simultaneidade, imperfeito), exposição (informação, presente atemporal, relações de causa), argumentação (tese e defesa) e injunção (imperativo, instrução). Um texto costuma combinar sequências; classifica-se pelo predominante e pela função de cada trecho.",
+      "Como reconhecer cada tipo: narração (fatos que acontecem um depois do outro), descrição (características, tudo ao mesmo tempo, como numa foto), exposição (informação e explicação, com causas e consequências), argumentação (uma opinião defendida com argumentos) e injunção (ordens e instruções ao leitor). Um texto costuma misturar trechos de tipos diferentes; classifica-se pelo que predomina e pela função de cada trecho.",
     origem: "banco",
   },
   {
     id: "prf-pt-007",
     materia: "pt",
     topico: "Tipologia textual",
-    subassunto: "Marcas da descrição: pretérito imperfeito e simultaneidade",
+    subassunto: "Marcas da descrição: estados simultâneos, sem avanço no tempo",
     dificuldade: 4,
     raciocinio: "Reconhecer a marca que define a sequência descritiva e descartar falsas pistas de narração",
     enunciado:
       "Leia o trecho.\n\n“A sala do protocolo era estreita e comprida. Pelas duas janelas altas entrava uma luz amarelada, que mal alcançava o balcão. Atrás dele, três servidores se revezavam entre o telefone e as pilhas de pastas, e o relógio da parede, parado havia meses, marcava sempre dez e quinze.”\n\nNo trecho, predomina a sequência descritiva. Comprova essa classificação principalmente",
     alternativas: [
-      "a presença de verbos de ação, que indicam a sucessão dos fatos ocorridos na sala.",
-      "o pretérito imperfeito, que mostra estados e ações simultâneos, sem avanço no tempo.",
-      "a ausência de adjetivos, compensada pela enumeração dos objetos que compõem o ambiente.",
-      "o emprego da primeira pessoa, que revela a impressão do narrador sobre o lugar descrito.",
+      "a sucessão de acontecimentos, que altera a situação da sala do início ao fim do trecho.",
+      "a apresentação de estados e ações simultâneos, sem que os fatos avancem no tempo.",
+      "a ausência de características, compensada pela enumeração dos objetos do ambiente.",
+      "a voz de um narrador que fala de si e revela a impressão pessoal sobre o lugar.",
       "a menção ao relógio parado, que introduz um conflito a ser resolvido ao longo do texto.",
     ],
     correta: 1,
     explicacao:
-      "Os verbos estão no pretérito imperfeito (“era”, “entrava”, “alcançava”, “se revezavam”, “marcava”), que apresenta estados e ações habituais ou simultâneos, como num quadro. Nada avança no tempo: o trecho mostra como a sala era, e não o que aconteceu nela.",
+      "O trecho mostra como a sala era, e não o que aconteceu nela. Tudo se passa ao mesmo tempo, como num quadro: a sala “era” estreita, a luz “entrava”, os servidores “se revezavam”, o relógio “marcava” sempre a mesma hora. Nenhum fato puxa o outro, e a situação do fim é a mesma do começo.",
     explicacaoErradas:
-      "O único verbo de ação relevante (“se revezavam”) indica hábito, não sucessão de fatos. Há vários adjetivos (“estreita”, “comprida”, “altas”, “amarelada”). O trecho está em terceira pessoa, sem marca de narrador que fale de si. E o relógio parado é um detalhe descritivo, não um conflito.",
+      "Não há sucessão de acontecimentos: o revezamento dos servidores é um hábito, que se repete, e não um fato que muda a situação. Há várias características (“estreita”, “comprida”, “altas”, “amarelada”). Ninguém fala de si no trecho: não há “eu”. E o relógio parado é um detalhe do retrato, não um conflito.",
     pegadinha:
-      "“Se revezavam” é verbo de ação e leva a pensar em narração. Mas a ação está no imperfeito, com valor de hábito: compõe o retrato do lugar sem fazer a história avançar.",
+      "“Se revezavam” é uma ação e leva a pensar em narração. Mas é uma ação que se repete o tempo todo: compõe o retrato do lugar sem fazer a história avançar.",
     conhecimento:
-      "Na descrição, o tempo fica suspenso: predominam verbos de estado e o pretérito imperfeito, além de adjetivos e locuções que caracterizam. Na narração, o pretérito perfeito marca fatos sucessivos (“entrou”, “disse”, “saiu”) que alteram a situação inicial.",
+      "Na descrição, o tempo fica parado: o texto mostra estados e características, como uma fotografia. Na narração, os fatos acontecem um depois do outro (“entrou”, “disse”, “saiu”) e mudam a situação inicial.",
     origem: "banco",
   },
   {
@@ -1296,7 +1296,7 @@ export const QUESTOES_PRF_PT: QuestaoPrf[] = [
     id: "prf-pt-050",
     materia: "pt",
     topico: "Compreensão e interpretação de textos",
-    subassunto: "Coesão referencial: relativos e pronomes oblíquos",
+    subassunto: "Coesão referencial: a que termo cada palavra se refere",
     dificuldade: 5,
     raciocinio: "Testar cada referente pela concordância e, quando ela não decide, pelo sentido",
     enunciado:
@@ -1305,14 +1305,14 @@ export const QUESTOES_PRF_PT: QuestaoPrf[] = [
       "“que estava vencida havia dois anos” retoma “o irmão”, dono da habilitação.",
       "“examinou-os” retoma “o motorista” e “o irmão”, mencionados antes.",
       "“conduziu-o” retoma “o documento da carreta”, citado no período anterior.",
-      "o sujeito oculto de “Trazia” é “o agente”, nomeado no período seguinte.",
+      "quem “Trazia” os documentos era “o agente”, nomeado no período seguinte.",
       "“que a transportadora emitira na véspera” retoma “o documento da carreta”.",
     ],
     correta: 4,
     explicacao:
       "O relativo “que” retoma “o documento da carreta”: é o documento que a transportadora emitiu na véspera, e não a carreta. A concordância não ajuda aqui, pois “emitira” concorda com “a transportadora”, seu sujeito; quem decide é o sentido.",
     explicacaoErradas:
-      "“Vencida”, no feminino, mostra que o relativo retoma “a carteira de habilitação”, e não “o irmão”. “Examinou-os” retoma os dois documentos (a carteira e o documento da carreta), no masculino plural por serem de gêneros diferentes. “Conduziu-o” retoma “o motorista”, levado à sala de atendimento. O sujeito oculto de “Trazia” é “o motorista”, sujeito do período anterior.",
+      "“Vencida”, no feminino, mostra que o relativo retoma “a carteira de habilitação”, e não “o irmão”. “Examinou-os” retoma os dois documentos (a carteira e o documento da carreta), no masculino plural por serem de gêneros diferentes. “Conduziu-o” retoma “o motorista”, levado à sala de atendimento. Quem trazia os documentos era o motorista, citado no período anterior.",
     pegadinha:
       "No segundo relativo, nada na forma indica o referente: “a carreta” está mais perto, mas só o documento pode ter sido emitido pela transportadora.",
     conhecimento:
@@ -1350,8 +1350,8 @@ export const QUESTOES_PRF_PT: QuestaoPrf[] = [
   {
     id: "prf-pt-052",
     materia: "pt",
-    topico: "Tipologia textual",
-    subassunto: "Descrição objetiva × subjetiva: advérbio modalizador em relatório",
+    topico: "Emprego das classes de palavras",
+    subassunto: "Advérbio que avalia o fato (modalizador) × adjetivo que descreve, num relatório",
     dificuldade: 4,
     raciocinio: "Separar o que se pode verificar no objeto descrito do que exprime a avaliação de quem escreve",
     enunciado:
@@ -1507,6 +1507,168 @@ export const QUESTOES_PRF_PT: QuestaoPrf[] = [
       "Três frases usam “teria” + particípio, mas só na que atribui o fato a uma fonte (conforme o boletim) quem escreve deixa de confirmá-lo; nas outras duas, a forma expressa hipótese.",
     conhecimento:
       "Valores do futuro do pretérito: hipótese ou condição (Se tivesse freado, teria evitado), futuro em relação ao passado (Disse que a pista seria liberada), polidez (Gostaria de saber) e incerteza ou distanciamento, comum no jornalismo para atribuir a informação a outra fonte sem confirmá-la (Segundo a polícia, o suspeito teria fugido).",
+    origem: "banco",
+  },
+  {
+    id: "prf-pt-058",
+    materia: "pt",
+    topico: "Tipologia textual",
+    subassunto: "Narração predominante num registro de ocorrência, com trecho descritivo",
+    dificuldade: 4,
+    raciocinio: "Separar o que o trecho conta do que ele mostra e decidir pelo que predomina",
+    enunciado:
+      "Leia o trecho de um registro de ocorrência.\n\n“Por volta das 14h, a equipe abordou um caminhão-baú branco, com a lona lateral rasgada e a placa traseira parcialmente encoberta por barro. O condutor desceu, apresentou a habilitação e informou que vinha de um depósito na cidade vizinha. Durante a vistoria, os agentes encontraram, sob a carga declarada, quarenta caixas de cigarros sem nota fiscal. Diante disso, o veículo foi retido e o condutor, encaminhado à delegacia.”\n\nSobre a organização do trecho, é correto afirmar que",
+    alternativas: [
+      "predomina a descrição, pois o trecho começa pelas características do caminhão abordado.",
+      "predomina a exposição, pois o registro informa fatos de forma neutra, sem opinião do redator.",
+      "predomina a narração, e a caracterização do caminhão é um trecho descritivo a serviço dela.",
+      "predomina a injunção, pois o registro determina a retenção do veículo e o encaminhamento do condutor.",
+      "predomina a argumentação, pois a apreensão das caixas é a prova que sustenta a retenção do veículo.",
+    ],
+    correta: 2,
+    explicacao:
+      "O trecho conta fatos que acontecem um depois do outro e mudam a situação: a equipe aborda o caminhão, o condutor desce e se explica, os agentes encontram os cigarros e, por isso, o veículo é retido. Isso é narração. A primeira frase mostra como era o caminhão (branco, lona rasgada, placa com barro): é um trecho descritivo, que está ali para ajudar a contar o fato.",
+    explicacaoErradas:
+      "O trecho começa descrevendo o caminhão, mas a maior parte conta acontecimentos em sequência, e é isso que predomina. Ser neutro não torna o texto expositivo: a exposição explica um assunto em geral (como funciona, por que acontece), e aqui se conta o que aconteceu numa abordagem. O registro não manda o leitor fazer nada: a retenção é um fato contado (“foi retido”), não uma ordem. E “Diante disso” liga um fato à consequência dele, sem que o redator defenda opinião; por isso não há argumentação.",
+    pegadinha:
+      "Neutralidade não define o tipo. Um registro de ocorrência é neutro e, mesmo assim, é narrativo, porque conta fatos em sequência. Expositivo é o texto que explica um assunto, não o que relata um caso.",
+    conhecimento:
+      "Registros de ocorrência, notícias e relatos misturam narração e descrição: a descrição mostra pessoas, veículos e lugares, e a narração conta o que aconteceu. Vale o tipo que predomina, e os trechos de outro tipo servem a ele.",
+    origem: "banco",
+  },
+  {
+    id: "prf-pt-059",
+    materia: "pt",
+    topico: "Tipologia textual",
+    subassunto: "Dissertativo-expositivo × dissertativo-argumentativo sobre o mesmo tema",
+    dificuldade: 4,
+    raciocinio: "Comparar o objetivo de cada texto: explicar ou convencer",
+    enunciado:
+      "Leia os dois textos.\n\nTexto 1: “O cinto de segurança prende o corpo ao banco e distribui a força da freada brusca pelo tórax e pela bacia, as partes mais resistentes do esqueleto. Sem ele, o passageiro do banco traseiro é lançado para a frente e pode atingir quem está sentado à sua frente.”\n\nTexto 2: “Ainda há quem acredite que o banco de trás dispensa o cinto. Engano perigoso: numa colisão, quem viaja atrás sem cinto vira projétil dentro do carro. Por isso, a fiscalização do cinto no banco traseiro deveria ser tão rigorosa quanto a do banco da frente.”\n\nÉ correto afirmar que",
+    alternativas: [
+      "os dois textos são argumentativos, pois ambos mostram os riscos de viajar sem o cinto.",
+      "o texto 1 é argumentativo, pois os dados técnicos que apresenta servem de prova de uma tese.",
+      "o texto 2 é expositivo, pois explica o que acontece com o passageiro sem cinto numa colisão.",
+      "os dois textos são expositivos, pois ambos tratam do mesmo assunto em linguagem impessoal.",
+      "o texto 1 explica como o cinto funciona, e o texto 2 usa o risco para defender uma opinião.",
+    ],
+    correta: 4,
+    explicacao:
+      "O texto 1 só explica: diz como o cinto funciona e o que acontece sem ele, sem tentar convencer ninguém. É expositivo. O texto 2 defende uma opinião (a fiscalização do cinto no banco de trás deveria ser tão rigorosa quanto a do banco da frente) e usa o risco da colisão como argumento. É argumentativo.",
+    explicacaoErradas:
+      "Mostrar um risco não é defender uma opinião: o texto 1 não diz o que deveria ser feito, por isso não é argumentativo, e os dados dele não estão ali para provar uma tese. O texto 2 até cita o que acontece na colisão, mas para sustentar a opinião anunciada no “Por isso”; o objetivo dele é convencer, não explicar. E o texto 2 não é impessoal: “Engano perigoso” e “deveria ser” mostram a posição de quem escreve.",
+    pegadinha:
+      "O mesmo assunto pode render um texto expositivo e um argumentativo. O que decide é o objetivo: explicar (expositivo) ou convencer o leitor de uma opinião (argumentativo).",
+    conhecimento:
+      "Dissertativo-expositivo: informa e explica, sem tomar partido (verbetes, aulas, relatórios técnicos). Dissertativo-argumentativo: defende uma opinião, a tese, com argumentos como dados, exemplos e consequências (artigos de opinião, editoriais). Pistas do argumentativo: avaliações (“engano perigoso”), o que “deveria” ser feito e conclusões (“por isso”, “portanto”).",
+    origem: "banco",
+  },
+  {
+    id: "prf-pt-060",
+    materia: "pt",
+    topico: "Tipologia textual",
+    subassunto: "Injuntivo × prescritivo: conselho × regra com punição",
+    dificuldade: 4,
+    raciocinio: "Separar conselho de obrigação pela consequência para quem não cumpre",
+    enunciado:
+      "Leia os dois trechos.\n\nI. “Antes de pegar a estrada, descanse bem. Em viagens longas, faça uma pausa a cada duas horas e, se sentir sono, pare num local seguro.”\n\nII. “O motorista profissional não pode dirigir por mais de cinco horas e meia seguidas sem descanso. Quem descumpre a regra fica sujeito a multa e à retenção do veículo até completar o tempo de descanso.”\n\nSobre os trechos, é correto afirmar que",
+    alternativas: [
+      "o trecho I recomenda condutas, e o trecho II impõe uma regra com punição para quem a descumpre.",
+      "os dois trechos são prescritivos, pois ambos dizem ao motorista o que ele deve fazer na estrada.",
+      "o trecho I é prescritivo, pois suas ordens diretas obrigam o leitor a parar quando sentir sono.",
+      "o trecho II é injuntivo, pois apenas aconselha o motorista a descansar durante a viagem.",
+      "os dois trechos são argumentativos, pois defendem que o descanso evita acidentes nas rodovias.",
+    ],
+    correta: 0,
+    explicacao:
+      "O trecho I dá conselhos ao motorista (“descanse”, “faça uma pausa”, “pare”): quem não seguir corre um risco, mas não é punido. É injuntivo. O trecho II impõe uma regra (“não pode dirigir”) e prevê punição para quem a descumpre (multa e retenção do veículo). É prescritivo.",
+    explicacaoErradas:
+      "Dizer o que o motorista deve fazer não basta para o texto ser prescritivo: o que marca o prescritivo é a obrigação, com punição, e isso só existe no trecho II. A forma de ordem do trecho I (“pare”, “descanse”) não cria obrigação; é um conselho. O trecho II não aconselha: proíbe e pune. E nenhum dos dois defende uma opinião com argumentos; um orienta e o outro obriga.",
+    pegadinha:
+      "A forma de ordem engana. “Pare num local seguro” parece uma obrigação, mas é conselho. O que separa o injuntivo do prescritivo é a consequência para quem não cumpre.",
+    conhecimento:
+      "Injuntivo (instrucional): orienta o leitor e recomenda condutas, como em receitas, manuais, cartilhas e tutoriais. Prescritivo: impõe regras obrigatórias, com punição, como em leis, regulamentos e normas internas. Pergunta-chave: se o leitor não fizer, ele é punido?",
+    origem: "banco",
+  },
+  {
+    id: "prf-pt-061",
+    materia: "pt",
+    topico: "Tipologia textual",
+    subassunto: "Descrição objetiva × subjetiva: reescrever o relatório sem opinião",
+    dificuldade: 5,
+    raciocinio: "Separar o que se pode conferir do que é avaliação de quem escreve, sem cortar dado verificável",
+    enunciado:
+      "Num relatório de vistoria, um agente escreveu:\n\n“O ônibus estava num estado lamentável: os bancos, rasgados e imundos, tinham espuma exposta, e a saída de emergência, para espanto de todos, não abria.”\n\nO relatório deve trazer só descrição objetiva. A reescrita que retira as marcas de opinião sem perder nenhum dado que se possa conferir é:",
+    alternativas: [
+      "“O ônibus estava em péssimo estado: os bancos tinham espuma exposta, e a saída de emergência não abria.”",
+      "“Infelizmente, os bancos do ônibus estavam rasgados e tinham espuma exposta, e a saída de emergência não abria.”",
+      "“Os bancos do ônibus estavam rasgados e tinham espuma exposta, e a saída de emergência não abria.”",
+      "“Os bancos do ônibus tinham espuma exposta, e a saída de emergência não abria.”",
+      "“Os bancos do ônibus estavam rasgados e imundos, e a saída de emergência não abria.”",
+    ],
+    correta: 2,
+    explicacao:
+      "Os dados que qualquer pessoa pode conferir são três: os bancos estavam rasgados, tinham espuma exposta, e a saída de emergência não abria. A reescrita correta mantém os três e retira as marcas de opinião: “estado lamentável” e “imundos” (avaliações de quem escreve) e “para espanto de todos” (comentário sobre o fato).",
+    explicacaoErradas:
+      "“Em péssimo estado” é avaliação, como “lamentável”, e essa reescrita ainda perde “rasgados”. “Infelizmente” comenta o fato e mostra o sentimento do redator. A reescrita sem “rasgados” é objetiva, mas perde um dado verificável: um banco rasgado é algo que se vê, não uma opinião. E a que mantém “imundos” conserva uma avaliação e ainda perde a espuma exposta.",
+    pegadinha:
+      "Nem toda característica é opinião. “Rasgados” descreve um estado que qualquer pessoa confere olhando o banco; “imundos” mede a sujeira pelo julgamento de quem escreve. Quem corta tudo o que caracteriza perde dado do relatório.",
+    conhecimento:
+      "Descrição objetiva: o que qualquer pessoa pode conferir (quantidade, forma, cor, posição e estado, como “rasgado”, “amassado”, “molhado”). Descrição subjetiva: impressões e avaliações (“lamentável”, “imundo”, “assustador”) e comentários sobre o fato (“infelizmente”, “para espanto de todos”). Relatórios, laudos e autos pedem descrição objetiva.",
+    origem: "banco",
+  },
+  {
+    id: "prf-pt-062",
+    materia: "pt",
+    topico: "Tipologia textual",
+    subassunto: "Narração: narrador personagem, observador ou onisciente",
+    dificuldade: 4,
+    raciocinio: "Ver se o narrador fala de si e se conhece os pensamentos da personagem",
+    enunciado:
+      "Leia o trecho.\n\n“O caminhoneiro reduziu a marcha ao avistar o posto da PRF. Sabia que o tacógrafo denunciaria as horas seguidas ao volante e, por um instante, pensou em seguir direto. A lembrança da filha, que o esperava em casa naquela noite, fez com que acionasse a seta e entrasse no pátio.”\n\nSobre o narrador do trecho, é correto afirmar que",
+    alternativas: [
+      "participa da história, pois conta os fatos de dentro da cabine, ao lado do caminhoneiro.",
+      "é apenas observador, pois se limita a registrar o que qualquer pessoa veria na estrada.",
+      "é o próprio caminhoneiro, que relata as lembranças da viagem e da filha que o esperava.",
+      "é um agente da PRF, que conta o que viu da chegada do caminhão ao pátio do posto.",
+      "conta a história de fora, mas sabe o que o caminhoneiro pensa e sente: é onisciente.",
+    ],
+    correta: 4,
+    explicacao:
+      "O narrador não é personagem: fala do caminhoneiro como “ele”, sem nunca dizer “eu”. Mesmo assim, sabe o que se passa na cabeça do motorista: que ele “sabia” do tacógrafo, que “pensou” em seguir direto e que a lembrança da filha o fez entrar no posto. Narrador que conta de fora e conhece pensamentos e sentimentos das personagens é o onisciente.",
+    explicacaoErradas:
+      "Nada indica que o narrador esteja na cabine ou participe dos fatos: ele não fala de si. O observador só conta o que se vê de fora, e este narrador revela pensamentos, que ninguém veria na estrada. Se fosse o caminhoneiro, a história viria com “eu” (“reduzi a marcha”, “pensei”). E não há agente narrando: o posto aparece só como lugar da ação.",
+    pegadinha:
+      "Contar de fora, sem “eu”, não faz do narrador um simples observador. A pista do onisciente é o acesso ao que a personagem pensa, sabe e sente.",
+    conhecimento:
+      "Tipos de narrador: personagem (participa da história e fala de si, com “eu”), observador (conta de fora só o que se pode ver) e onisciente (conta de fora e conhece pensamentos e sentimentos das personagens).",
+    origem: "banco",
+  },
+  {
+    id: "prf-pt-063",
+    materia: "pt",
+    topico: "Tipologia textual",
+    subassunto: "Tese, argumentos e concessão no texto argumentativo",
+    dificuldade: 5,
+    raciocinio: "Separar o ponto que o autor admite da opinião que ele defende e das razões que a sustentam",
+    enunciado:
+      "Leia o texto.\n\n“É verdade que o radar fixo, sozinho, não resolve a violência no trânsito: muitos motoristas freiam diante do equipamento e voltam a acelerar logo depois. Ainda assim, ele precisa continuar nas rodovias. Nos trechos em que foi instalado, o número de mortes caiu de forma consistente, e nenhum outro meio de fiscalização funciona vinte e quatro horas por dia.”\n\nA respeito da organização do texto, é correto afirmar que",
+    alternativas: [
+      "a primeira frase traz a tese do autor, e o restante do texto apresenta exemplos que a confirmam.",
+      "a freada diante do radar é o principal argumento do autor para defender a manutenção do equipamento.",
+      "a queda no número de mortes é a tese, e a expressão “Ainda assim” introduz um argumento contrário a ela.",
+      "o autor admite um limite do radar, mas defende mantê-lo e sustenta essa posição com dois argumentos.",
+      "o texto é expositivo, pois apresenta vantagens e desvantagens do radar sem tomar posição.",
+    ],
+    correta: 3,
+    explicacao:
+      "O texto começa admitindo um ponto fraco do radar (“É verdade que… não resolve a violência no trânsito”). Depois, com “Ainda assim”, vem a opinião do autor: o radar precisa continuar nas rodovias. Essa é a tese. O último período traz dois argumentos para sustentá-la: as mortes caíram onde o radar foi instalado, e nenhum outro meio de fiscalização funciona o dia todo.",
+    explicacaoErradas:
+      "A primeira frase não é a tese: é uma concessão, um ponto que o autor admite antes de defender o contrário. A freada diante do radar faz parte dessa concessão; não é argumento a favor do equipamento. A queda no número de mortes é argumento, não tese, e “Ainda assim” não traz argumento contrário: introduz a própria tese. E o texto não é expositivo, porque toma posição clara (“precisa continuar”).",
+    pegadinha:
+      "A primeira frase parece a tese porque abre o texto, mas “É verdade que… Ainda assim…” é a estrutura da concessão: o autor reconhece o outro lado e só depois mostra a própria posição.",
+    conhecimento:
+      "No texto argumentativo, a tese é a opinião defendida; os argumentos são as razões que a sustentam (dados, exemplos, causas e consequências); a concessão é o ponto contrário que o autor admite antes de reafirmar a tese (“É verdade que…, mas…”, “Embora…, …”).",
     origem: "banco",
   },
 ];

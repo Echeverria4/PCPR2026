@@ -623,7 +623,7 @@ export const QUESTOES_PRF_PROVA_PRF2012: QuestaoPrf[] = [
   {
     id: "prf-pt-prf12-i019",
     materia: "pt",
-    topico: "Emprego das classes de palavras",
+    topico: "Ortografia oficial",
     subassunto: "“A” (distância) × “há” (tempo passado)",
     dificuldade: 2,
     raciocinio: "Emprego de “a” e “há”",

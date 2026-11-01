@@ -36,32 +36,37 @@ export const PT: Record<string, ResumoAula> = {
   },
   "pt-02": {
     ideia:
-      "Tipo textual é o jeito como o texto se organiza por dentro. Para reconhecer, veja o que predomina: contar, mostrar, defender, explicar ou instruir.",
+      "Tipo textual é o jeito como o texto se organiza por dentro. Para reconhecer, pergunte o que o texto quer fazer: contar, mostrar, explicar, convencer, orientar ou obrigar.",
     itens: [
       {
         termo: "Narrativo",
         faz: "Conta fatos em sequência, com personagens, tempo e lugar: algo acontece e muda do começo ao fim.",
-        pista: "Verbos de ação no passado (“chegou”, “saiu”) e marcas de tempo (“depois”, “naquela noite”).",
+        pista: "Um fato puxa o outro (“chegou”, “parou”, “saiu”) e há marcas de tempo (“depois”, “naquela noite”).",
       },
       {
         termo: "Descritivo",
         faz: "Mostra como é um ser, um objeto, um lugar ou uma cena, como uma fotografia em palavras.",
-        pista: "Muitos adjetivos e verbos de estado (ser, estar, parecer, ter); o tempo fica parado, nada acontece.",
+        pista: "Características (“estreita”, “amassado”, “de madeira”) e o tempo parado: tudo acontece ao mesmo tempo, nenhum fato puxa o outro.",
+      },
+      {
+        termo: "Dissertativo-expositivo",
+        faz: "Explica ou informa um assunto, sem tentar convencer ninguém.",
+        pista: "Definições, dados e explicações em tom neutro, como num verbete ou numa aula; não há opinião em disputa.",
       },
       {
         termo: "Dissertativo-argumentativo",
         faz: "Defende um ponto de vista (a tese) e tenta convencer o leitor com argumentos.",
-        pista: "Há opinião a defender e conectivos de causa e conclusão (“pois”, “portanto”, “logo”).",
-      },
-      {
-        termo: "Expositivo",
-        faz: "Explica ou informa um assunto, sem tentar convencer ninguém.",
-        pista: "Definições, dados e explicações em tom neutro, quase sempre no presente; não há tese em disputa.",
+        pista: "Há opinião a defender e palavras que ligam causa e conclusão (“porque”, “portanto”, “por isso”).",
       },
       {
         termo: "Injuntivo (instrucional)",
-        faz: "Orienta o leitor a fazer algo, passo a passo.",
-        pista: "Verbos no imperativo ou no infinitivo (“clique”, “misture”, “apresentar o documento”), como em receitas, manuais e regulamentos.",
+        faz: "Orienta o leitor a fazer algo, passo a passo. Seguir é recomendado, não obrigatório.",
+        pista: "Ordens e instruções ao leitor (“clique”, “misture”, “aguarde”), como em receitas, manuais e tutoriais.",
+      },
+      {
+        termo: "Prescritivo",
+        faz: "Impõe regras que precisam ser cumpridas, com punição para quem descumpre.",
+        pista: "Leis, regulamentos e normas internas (“é proibido”, “fica obrigado”, “sujeita o infrator a multa”). A receita sugere; o regulamento obriga.",
       },
     ],
     cuidado:
@@ -147,7 +152,7 @@ export const PT: Record<string, ResumoAula> = {
       },
       {
         termo: "Advérbio",
-        faz: "Modifica o verbo, o adjetivo ou outro advérbio (tempo, lugar, modo, intensidade) e não varia.",
+        faz: "Modifica o verbo, o adjetivo ou outro advérbio (tempo, lugar, modo, intensidade) e não varia. Alguns, como “felizmente”, comentam a frase toda e mostram a opinião de quem escreve.",
         pista: "“Elas estavam meio cansadas”: meio = um pouco, fica no masculino singular.",
       },
       {

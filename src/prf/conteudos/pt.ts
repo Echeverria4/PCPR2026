@@ -28,23 +28,27 @@ Complemento (coesão referencial e estrutura argumentativa):
   {
     materia: "pt",
     topico: "Tipologia textual",
-    texto: `Tipo textual é o modo de organizar a linguagem conforme o objetivo de quem escreve. São poucos: narrar, descrever, expor, argumentar e instruir. Gênero textual é a forma concreta que o texto assume na vida social: ofício, notícia, crônica, receita, edital, bula, e-mail. Os gêneros são incontáveis, e quase todos misturam tipos. Por isso, classifica-se o texto pelo tipo que predomina nele.
+    texto: `Tipo textual é o jeito de organizar o texto conforme o que ele quer fazer. Para descobrir o tipo, pergunte: o texto quer contar, mostrar, explicar, convencer, orientar ou obrigar? Gênero textual é o formato que o texto ganha no dia a dia: ofício, notícia, crônica, receita, edital, bula, e-mail. Os gêneros são incontáveis, e quase todos misturam tipos: às vezes cada período (frase que termina em ponto) faz uma coisa. Por isso, classifica-se o texto pelo tipo que predomina nele.
 
-A narração conta fatos encadeados no tempo, vividos por personagens em algum lugar, com conflito, clímax e desfecho. Predominam verbos de ação no pretérito perfeito. O narrador pode participar da história (primeira pessoa) ou observá-la de fora (terceira pessoa); quando conhece até os pensamentos das personagens, é chamado de onisciente.
+Narrativo (contar). Conta fatos que acontecem um depois do outro, com personagens, lugar e tempo. Um fato puxa o outro e a situação muda do começo ao fim, em geral com conflito, clímax e desfecho ("o motorista freou, a carreta derrapou e tombou na pista"). O narrador pode participar da história (narrador-personagem, que fala de si, com "eu") ou contá-la de fora (observador, que só conta o que se vê); quando conta de fora, mas sabe até o que as personagens pensam e sentem, é chamado de onisciente.
 
-A descrição retrata um ser, um objeto ou um lugar num momento determinado, como uma fotografia. Predominam adjetivos, verbos de estado e o presente ou o pretérito imperfeito. Não há progressão de acontecimentos.
+Descritivo (mostrar). Mostra como é um ser, um objeto ou um lugar num momento, como uma fotografia. O texto lista características ("estreita", "amassado", "de madeira") e o tempo fica parado: tudo acontece ao mesmo tempo, e nenhum fato puxa o outro.
 
-A dissertação trata de um tema por meio de ideias. Na dissertação expositiva o autor informa e explica sem defender posição, como num verbete ou num relatório técnico. Na argumentativa ele sustenta uma tese com argumentos (dados, exemplos, relações de causa e consequência, citações de autoridade) e costuma seguir a estrutura de introdução, desenvolvimento e conclusão.
+Dissertativo-expositivo (explicar). Informa e explica um assunto sem defender opinião, como num verbete, numa aula ou num relatório técnico ("o pneu com pressão baixa aquece mais e se desgasta antes").
 
-O texto injuntivo, também chamado instrucional, orienta o leitor a fazer algo, passo a passo, em geral com verbos no imperativo ou no infinitivo: receitas, manuais, tutoriais. Alguns autores separam dele o texto prescritivo, que impõe regras de cumprimento obrigatório, com sanção para quem as descumpre: leis, regulamentos, normas internas. A diferença está na obrigatoriedade. A receita sugere; o regulamento obriga.
+Dissertativo-argumentativo (convencer). Defende uma opinião (a tese) e tenta convencer o leitor com argumentos: dados, exemplos, causas e consequências, citação de especialistas. Costuma ter introdução, desenvolvimento e conclusão, e palavras que ligam causa e conclusão ("porque", "portanto", "por isso").
+
+Injuntivo ou instrucional (orientar). Diz ao leitor o que fazer, passo a passo, como em receitas, manuais e tutoriais ("desligue o aparelho e aguarde trinta segundos"). Seguir é recomendado, não obrigatório.
+
+Prescritivo (obrigar). Impõe regras que precisam ser cumpridas, com punição para quem descumpre: leis, regulamentos, normas internas ("é proibido", "fica obrigado", "sujeita o infrator a multa"). Alguns autores tratam o prescritivo como um tipo de injuntivo; a diferença está na obrigação. A receita sugere; o regulamento obriga.
 
 Complemento (descrição objetiva × subjetiva):
-• A descrição objetiva registra o que se pode verificar: quantidade, forma, cor, posição e estado ("o veículo tinha dois eixos e o para-choque solto").
-• A descrição subjetiva traz a impressão de quem descreve, marcada por adjetivos avaliativos ("cena assustadora", "sala imunda") ou por advérbios que comentam o fato ("felizmente", "infelizmente", "por sorte").
-• Relatórios, laudos e autos pedem descrição objetiva. Adjetivo, por si só, não marca subjetividade: "amassado", "quebrado" e "molhado" descrevem estados verificáveis.`,
+• A descrição objetiva registra o que qualquer pessoa pode conferir: quantidade, forma, cor, posição e estado ("o veículo tinha dois eixos e o para-choque solto").
+• A descrição subjetiva traz a impressão de quem descreve: palavras que avaliam ("cena assustadora", "sala imunda") ou que comentam o fato ("felizmente", "infelizmente", "por sorte").
+• Relatórios, laudos e autos pedem descrição objetiva. Caracterizar, por si só, não é dar opinião: "amassado", "quebrado" e "molhado" descrevem estados que qualquer pessoa pode conferir.`,
     exemplos: [
-      "\"Desligue o equipamento, retire o cabo e aguarde trinta segundos antes de religar.\" É um texto injuntivo: instruções em sequência, com verbos no imperativo.",
-      "\"É proibido o uso de celular durante a condução do veículo oficial; o descumprimento sujeita o servidor às sanções do regulamento.\" É um texto prescritivo: impõe a regra e prevê consequência.",
+      "\"Desligue o equipamento e aguarde trinta segundos antes de religar.\" É injuntivo: orienta, e quem não seguir não é punido. \"É proibido o uso de celular durante a condução do veículo oficial; o descumprimento sujeita o servidor às sanções do regulamento.\" É prescritivo: impõe a regra e prevê punição.",
+      "\"O pneu com pressão baixa aquece mais e se desgasta antes.\" É expositivo: só explica. \"Toda frota deveria calibrar os pneus toda semana, porque o prejuízo do pneu murcho é maior que o custo da calibragem.\" É argumentativo: defende uma opinião.",
     ],
     curiosidade:
       "O ofício é um gênero, não um tipo. Num ofício bem escrito predomina a exposição, e às vezes a argumentação, quando ele pede ou justifica uma providência.",
@@ -110,7 +114,7 @@ Continuam obrigatórios os diferenciais de pôde (passado) e pode (presente), de
 
 Pronomes. Os retos (eu, tu, ele...) funcionam como sujeito, e os oblíquos (me, mim, o, lhe...) como complemento. Por isso se diz "entre mim e você" e "para eu fazer": no segundo caso, "eu" é o sujeito do infinitivo. Os pronomes de tratamento levam o verbo e os possessivos para a terceira pessoa ("Vossa Senhoria receberá seu processo"). Entre os demonstrativos, "este" indica o que está perto de quem fala ou o que ainda vai ser dito, e "esse" indica o que está perto do ouvinte ou o que já foi dito. O relativo "cujo" indica posse, concorda com o termo que vem depois e nunca é seguido de artigo ("o servidor cuja portaria saiu"). "Onde" deve indicar lugar físico.
 
-Advérbios. Modificam o verbo, o adjetivo ou outro advérbio e não variam. Por isso "meio" fica invariável quando significa "um pouco" ("a porta estava meio aberta") e varia quando é numeral ("meia hora"). "Bastante" segue a mesma lógica: varia como adjetivo ("bastantes provas") e não varia como advérbio ("provas bastante claras").
+Advérbios. Modificam o verbo, o adjetivo ou outro advérbio e não variam. Por isso "meio" fica invariável quando significa "um pouco" ("a porta estava meio aberta") e varia quando é numeral ("meia hora"). "Bastante" segue a mesma lógica: varia como adjetivo ("bastantes provas") e não varia como advérbio ("provas bastante claras"). Alguns advérbios comentam a frase inteira e mostram a avaliação de quem escreve, em vez de dizer como, quando ou onde algo aconteceu: são os modalizadores ("felizmente", "lamentavelmente", "talvez", "certamente"). Num relatório, que deve ser objetivo, eles revelam a opinião do redator.
 
 Conjunções. As coordenativas ligam orações independentes: aditivas (e, nem), adversativas (mas, porém, contudo, todavia, entretanto), alternativas (ou, ora... ora), conclusivas (logo, portanto, por isso) e explicativas (pois, porque, que). As subordinativas introduzem orações dependentes e expressam causa, concessão, condição, conformidade, comparação, consequência, finalidade, proporção ou tempo, além das integrantes "que" e "se". Trocar uma conjunção por outra de valor diferente muda o sentido da frase, e as provas exploram muito essa troca.
 
