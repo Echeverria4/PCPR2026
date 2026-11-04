@@ -10431,13 +10431,21 @@ body.prf-cad-cheia {
   }
 }
 
-/* No painel estreito a barra quebra em duas linhas: a divisória do fim da 1ª linha ficava sobrando. */
-.prf-cad-painel:not(.prf-cad-cheio) .prf-cad-barra > .prf-cad-sep:first-of-type {
-  display: none;
+/* Painel estreito: a barra fica em duas linhas fixas. A 1ª divisória vira a quebra, e os 3 alinhamentos não se separam. */
+@media (max-width: 700px) {
+  .prf-cad-barra > .prf-cad-sep:first-of-type {
+    flex-basis: 100%;
+    height: 0;
+    margin: -4px 0 0;
+    background: none;
+  }
 }
 
-@media (max-width: 640px) {
-  .prf-cad-barra > .prf-cad-sep:first-of-type {
-    display: none;
+@media (min-width: 900px) {
+  .prf-cad-painel:not(.prf-cad-cheio) .prf-cad-barra > .prf-cad-sep:first-of-type {
+    flex-basis: 100%;
+    height: 0;
+    margin: -4px 0 0;
+    background: none;
   }
 }
