@@ -1,15 +1,16 @@
-import { AULAS_DRIVE, type AulaDrive, type GrupoAulasDrive } from "./aulasDrive";
+import { gruposAtuais } from "./catalogo";
 import type { EstadoEstudo } from "./estudo";
+import type { AulaCurso, GrupoCurso } from "./tipos";
 
 /* Progresso das aulas (blocos vistos) e a aula sugerida para continuar: usados nas Aulas e no acompanhamento semanal. */
 
 /** Vídeos vistos da aula. Aula que ainda não está no Drive (sem vídeos) nunca fica completa. */
-export function progresso(a: AulaDrive, vistos: Set<string>) {
+export function progresso(a: AulaCurso, vistos: Set<string>) {
   const feitos = a.blocos.filter((b) => vistos.has(b.id)).length;
   return { feitos, total: a.blocos.length, completa: a.blocos.length > 0 && feitos === a.blocos.length };
 }
 
-export function videosDoGrupo(g: GrupoAulasDrive, vistos: Set<string>) {
+export function videosDoGrupo(g: GrupoCurso, vistos: Set<string>) {
   let feitos = 0;
   let total = 0;
   for (const a of g.aulas) {
@@ -21,25 +22,36 @@ export function videosDoGrupo(g: GrupoAulasDrive, vistos: Set<string>) {
 }
 
 /** Primeira aula do grupo, da posição `desde` em diante, que já está no Drive e não foi concluída. */
-export function pendente(g: GrupoAulasDrive, vistos: Set<string>, desde = 0) {
+export function pendente(g: GrupoCurso, vistos: Set<string>, desde = 0) {
   return g.aulas.slice(desde).find((a) => a.blocos.length > 0 && !progresso(a, vistos).completa);
 }
 
-const AULA_POR_ID = new Map<string, { grupo: GrupoAulasDrive; aula: AulaDrive }>();
-for (const grupo of AULAS_DRIVE) {
-  for (const aula of grupo.aulas) if (!AULA_POR_ID.has(aula.id)) AULA_POR_ID.set(aula.id, { grupo, aula });
+type LocalAula = { grupo: GrupoCurso; aula: AulaCurso };
+
+/** Índice das aulas do curso aberto; refeito quando o curso muda. */
+let indice: { grupos: GrupoCurso[]; porId: Map<string, LocalAula> } | null = null;
+
+function aulasPorId() {
+  const grupos = gruposAtuais();
+  if (indice?.grupos === grupos) return indice.porId;
+  const porId = new Map<string, LocalAula>();
+  for (const grupo of grupos) {
+    for (const aula of grupo.aulas) if (!porId.has(aula.id)) porId.set(aula.id, { grupo, aula });
+  }
+  indice = { grupos, porId };
+  return porId;
 }
 
 export function acharAula(id?: string) {
   if (!id) return null;
-  return AULA_POR_ID.get(id) ?? null;
+  return aulasPorId().get(id) ?? null;
 }
 
 export type Motivo = "contando" | "pausado" | "parou" | "proxima" | "comeco";
 
 export interface Retomada {
-  grupo: GrupoAulasDrive;
-  aula: AulaDrive;
+  grupo: GrupoCurso;
+  aula: AulaCurso;
   motivo: Motivo;
 }
 
@@ -56,7 +68,7 @@ export function aulaParaRetomar(estudo: EstadoEstudo, vistos: Set<string>): Reto
     break;
   }
   const comecou = estudo.sessoes.length > 0 || vistos.size > 0;
-  for (const grupo of AULAS_DRIVE) {
+  for (const grupo of gruposAtuais()) {
     const aula = pendente(grupo, vistos);
     if (aula) return { grupo, aula, motivo: comecou ? "proxima" : "comeco" };
   }

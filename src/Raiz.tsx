@@ -1,10 +1,12 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import App from "./App";
 import Cursos from "./components/Cursos";
-import { cursoAbrivel, type CursoId } from "./data/cursos";
+import { CURSOS, cursoAbrivel, type CursoId } from "./data/cursos";
 
 // O curso da PRF só baixa quando é aberto: quem estuda para a PCPR não carrega o banco dele.
 const AppPrf = lazy(() => import("./prf/AppPrf"));
+// Os outros cursos têm só as aulas: não baixam o banco da PRF.
+const AppCurso = lazy(() => import("./prf/cursos/AppCurso"));
 
 /** O curso aberto fica na URL (?curso=…): recarregar mantém o curso e o voltar do navegador leva à central. */
 function cursoDaUrl(): CursoId | null {
@@ -29,7 +31,9 @@ export default function Raiz() {
 
   useEffect(() => {
     document.title =
-      curso === "pcpr2026" ? "Operação PCPR 2026" : curso === "prf-adm" ? "PRF — Agente Administrativo" : "Central de Estudos";
+      curso === "pcpr2026"
+        ? "Operação PCPR 2026"
+        : (CURSOS.find((c) => c.id === curso)?.nome ?? "Central de Estudos");
     if (!curso) window.scrollTo({ top: 0 });
   }, [curso]);
 
@@ -48,6 +52,12 @@ export default function Raiz() {
     return (
       <Suspense fallback={<div className="vazio">Carregando o curso…</div>}>
         <AppPrf onTrocarCurso={voltarParaCursos} />
+      </Suspense>
+    );
+  if (curso)
+    return (
+      <Suspense fallback={<div className="vazio">Carregando o curso…</div>}>
+        <AppCurso key={curso} curso={curso} onTrocarCurso={voltarParaCursos} />
       </Suspense>
     );
   return <Cursos onAbrir={abrir} />;

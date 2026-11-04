@@ -28,20 +28,21 @@ export const CURSOS: Curso[] = [
     orgao: "Polícia Rodoviária Federal · nível médio · banca a definir",
     disponivel: true,
   },
-  // Concursos previstos para 2027: aparecem na central como "Em breve" até o curso ficar pronto.
+  // Concursos previstos para 2027. Por enquanto só com as aulas (vídeos e PDFs do Drive), como a aba Aulas da PRF ADM;
+  // o que ainda não tem material fica na central como "Em breve".
   {
     id: "prf-policial",
     sigla: "PRF",
     nome: "PRF — Policial Rodoviário Federal",
     orgao: "Polícia Rodoviária Federal · nível superior",
-    disponivel: false,
+    disponivel: true,
   },
   {
     id: "pf-agente",
     sigla: "PF",
     nome: "PF — Agente de Polícia Federal",
     orgao: "Polícia Federal · nível superior",
-    disponivel: false,
+    disponivel: true,
   },
   {
     id: "detran-pr",
@@ -55,14 +56,14 @@ export const CURSOS: Curso[] = [
     sigla: "PMPR",
     nome: "PMPR — Soldado",
     orgao: "Polícia Militar do Paraná",
-    disponivel: false,
+    disponivel: true,
   },
   {
     id: "banco-brasil",
     sigla: "BB",
     nome: "Banco do Brasil — Escriturário",
     orgao: "Banco do Brasil · nível médio · banca a definir",
-    disponivel: false,
+    disponivel: true,
   },
 ];
 

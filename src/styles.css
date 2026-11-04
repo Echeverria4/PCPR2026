@@ -7722,6 +7722,48 @@ button.prf-bloco-link {
   color: var(--texto-fraco);
 }
 
+/* Arquivos de apoio do vídeo ou do PDF: slides, transcrição, outras versões do PDF */
+.prf-anexos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.prf-bloco-com-anexos {
+  flex-wrap: wrap;
+}
+
+.prf-bloco-com-anexos .prf-anexos {
+  flex-basis: 100%;
+  padding: 0 0 6px 44px;
+}
+
+.prf-anexo {
+  min-height: 36px;
+  padding: 6px 12px;
+  border: 1px solid var(--borda);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--texto);
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: border-color 0.15s;
+}
+
+.prf-anexo:hover {
+  border-color: var(--ouro-forte);
+}
+
+.prf-anexo:focus-visible {
+  outline: 2px solid var(--ouro-forte);
+  outline-offset: 2px;
+}
+
 /* Player do Drive dentro da aula */
 .prf-player {
   display: flex;
@@ -8974,6 +9016,12 @@ button.prf-bloco-link {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
   margin: 0;
+}
+
+/* Cursos sem banco de questões: dois números em vez de quatro (ou três) */
+.prf-acomp-numeros-dois,
+.prf-acomp-total-dois {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .prf-acomp-total-numeros > div {

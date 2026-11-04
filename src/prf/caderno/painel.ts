@@ -69,6 +69,11 @@ export function irNoCaderno(tela: TelaCaderno) {
   mudar({ tela });
 }
 
+/** Outro curso abriu: o caderno volta fechado e no começo. */
+export function zerarPainelCaderno() {
+  mudar({ aberto: false, cheia: false, tela: { tipo: "materias" } });
+}
+
 export function cadernoEmTelaCheia(cheia: boolean) {
   mudar({ cheia });
 }

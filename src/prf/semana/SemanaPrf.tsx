@@ -1,4 +1,4 @@
-import { useMemo, useState, type CSSProperties, type ReactNode } from "react";
+import { useMemo, useState, type CSSProperties } from "react";
 import { PRF_MATERIA_MAP, type MateriaPrfId } from "../../data/prf";
 import { totalQuestoesPrf, type TentativaPrf } from "../armazenamento";
 import { FILTROS_PRF_PADRAO, type FiltrosPrf } from "../sessoes";
@@ -7,6 +7,7 @@ import { curto, diaMes, diasComEstudo, totaisEstudo, useAgora, useEstudo } from 
 import GraficoDias from "../aulas/GraficoDias";
 import { metaDoDia, useMeta } from "../aulas/meta";
 import { aulaParaRetomar } from "../aulas/progresso";
+import { Numero, Seta } from "./partes";
 import {
   chaveSemana,
   gravarNotas,
@@ -467,38 +468,5 @@ export default function SemanaPrf({ tentativas, inicio, onInicio, onTreinar, onA
         </dl>
       </section>
     </div>
-  );
-}
-
-/** Seta das semanas: desenhada, porque o ‹ › da fonte condensada fica miúdo. */
-function Seta({ caminho }: { caminho: string }) {
-  return (
-    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
-      <path d={caminho} fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-interface NumeroProps {
-  n: number;
-  titulo: string;
-  valor: string;
-  antes: string;
-  children?: ReactNode;
-}
-
-function Numero({ n, titulo, valor, antes, children }: NumeroProps) {
-  return (
-    <section className="prf-acomp-num" aria-label={titulo}>
-      <h3 className="prf-acomp-num-titulo">
-        <span className="prf-acomp-n" aria-hidden="true">
-          {n}
-        </span>
-        {titulo}
-      </h3>
-      <p className="prf-acomp-valor">{valor}</p>
-      {children}
-      <p className="prf-acomp-antes">{antes}</p>
-    </section>
   );
 }

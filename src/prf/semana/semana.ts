@@ -5,27 +5,15 @@ import { AULAS_DRIVE, type AulaDrive, type GrupoAulasDrive } from "../aulas/aula
 import { quandoVisto, tempoAtivo, type EstadoEstudo } from "../aulas/estudo";
 import type { Dia } from "../aulas/GraficoDias";
 import { acharAula, progresso } from "../aulas/progresso";
+import { inicioSemana, maisDias } from "./base";
+
+export { chaveSemana, gravarNotas, inicioSemana, lerNotas, maisDias, type NotasSemana } from "./base";
 
 /*
  * Acompanhamento semanal da PRF: soma, de segunda a domingo, o que já fica guardado no aparelho
  * (cronômetro e blocos vistos em prf:estudo:v1, respostas em prf:attempts). As anotações da
  * semana ficam numa chave própria, prf:semana:v1.
  */
-
-/** Segunda-feira 0h da semana de `ms`: a semana vai de segunda a domingo, no fuso do aparelho. */
-export function inicioSemana(ms: number): number {
-  const d = new Date(ms);
-  d.setHours(0, 0, 0, 0);
-  d.setDate(d.getDate() - ((d.getDay() + 6) % 7));
-  return d.getTime();
-}
-
-/** Soma dias de calendário (a meia-noite continua meia-noite). */
-export function maisDias(ms: number, dias: number): number {
-  const d = new Date(ms);
-  d.setDate(d.getDate() + dias);
-  return d.getTime();
-}
 
 export interface LinhaMateria {
   materia: MateriaPrfId;
@@ -104,7 +92,7 @@ export function resumoSemana(e: EstadoEstudo, tentativas: TentativaPrf[], inicio
     let i = dias.length - 1;
     while (i > 0 && comeco < dias[i].dia) i--;
     dias[i].ms += ms;
-    const materia = acharAula(aula)?.aula.materia;
+    const materia = acharAula(aula)?.aula.materia as MateriaPrfId | undefined;
     const linha = materia && linhas.get(materia);
     if (linha) linha.ms += ms;
     else r.livreMs += ms;
@@ -176,41 +164,4 @@ export function primeiraSemana(e: EstadoEstudo, tentativas: TentativaPrf[]): num
     if (!Number.isNaN(ms)) menor = Math.min(menor, ms);
   }
   return Number.isFinite(menor) ? inicioSemana(menor) : null;
-}
-
-// ---------- Anotações da semana ----------
-
-const CHAVE_NOTAS = "prf:semana:v1";
-
-export interface NotasSemana {
-  /** O que travou na semana. */
-  dificuldades?: string;
-  /** O que mudar na semana seguinte. */
-  ajustes?: string;
-  /** Meta de horas líquidas para a semana seguinte. */
-  metaHoras?: number;
-}
-
-/** As notas ficam pela data da segunda-feira da semana (2026-10-26). */
-export function chaveSemana(inicio: number): string {
-  const d = new Date(inicio);
-  const dois = (n: number) => String(n).padStart(2, "0");
-  return `${d.getFullYear()}-${dois(d.getMonth() + 1)}-${dois(d.getDate())}`;
-}
-
-export function lerNotas(): Record<string, NotasSemana> {
-  try {
-    const p: unknown = JSON.parse(localStorage.getItem(CHAVE_NOTAS) ?? "{}");
-    return p && typeof p === "object" && !Array.isArray(p) ? (p as Record<string, NotasSemana>) : {};
-  } catch {
-    return {};
-  }
-}
-
-export function gravarNotas(todas: Record<string, NotasSemana>) {
-  try {
-    localStorage.setItem(CHAVE_NOTAS, JSON.stringify(todas));
-  } catch {
-    // localStorage indisponível: as anotações valem só enquanto a aba estiver aberta
-  }
 }

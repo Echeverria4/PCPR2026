@@ -5,7 +5,28 @@ import { useSyncExternalStore } from "react";
  * sempre passado pelo filtro abaixo. Tudo fica só neste aparelho, numa chave própria; a cópia de segurança vai e
  * volta por um arquivo.
  */
-const CHAVE = "prf:caderno:v1";
+const CHAVE_PRF = "prf:caderno:v1";
+
+/** Como a cópia de segurança se identifica: cada curso tem o próprio caderno. */
+export interface RotuloCaderno {
+  /** Marca do arquivo: a cópia de um curso não entra no caderno de outro. */
+  tag: string;
+  titulo: string;
+  cabecalho: string;
+  /** Começo do nome do arquivo baixado. */
+  arquivo: string;
+}
+
+export const ROTULO_CADERNO_PRF: RotuloCaderno = {
+  tag: "caderno-prf",
+  titulo: "Caderno PRF",
+  cabecalho: "Caderno · PRF Agente Administrativo",
+  arquivo: "caderno-prf",
+};
+
+/** Curso aberto. */
+let chave = CHAVE_PRF;
+let rotulo = ROTULO_CADERNO_PRF;
 
 export interface FolhaCaderno {
   id: string;
@@ -157,7 +178,7 @@ function folhasValidas(lista: unknown): FolhaCaderno[] {
 
 function ler(): EstadoCaderno {
   try {
-    const raw = localStorage.getItem(CHAVE);
+    const raw = localStorage.getItem(chave);
     if (!raw) return { folhas: [] };
     return { folhas: folhasValidas((JSON.parse(raw) as { folhas?: unknown }).folhas) };
   } catch {
@@ -177,7 +198,7 @@ function salvar(novo: EstadoCaderno): boolean {
   estado = novo;
   let ok = true;
   try {
-    localStorage.setItem(CHAVE, JSON.stringify(novo));
+    localStorage.setItem(chave, JSON.stringify(novo));
   } catch {
     ok = false;
   }
@@ -188,7 +209,7 @@ function salvar(novo: EstadoCaderno): boolean {
 // Outra aba do navegador mexeu no caderno: esta acompanha.
 if (typeof window !== "undefined") {
   window.addEventListener("storage", (e) => {
-    if (e.key !== CHAVE) return;
+    if (e.key !== chave) return;
     estado = ler();
     avisar();
   });
@@ -200,6 +221,18 @@ function assinar(f: () => void) {
     ouvintes.delete(f);
   };
 }
+
+/** Passa a mostrar o caderno de outro curso. */
+export function trocarCaderno(novaChave: string, novoRotulo: RotuloCaderno) {
+  rotulo = novoRotulo;
+  if (novaChave === chave) return;
+  chave = novaChave;
+  estado = ler();
+  avisar();
+}
+
+/** Começo do nome do arquivo da cópia. */
+export const nomeArquivoCaderno = () => rotulo.arquivo;
 
 export function useFolhas(): FolhaCaderno[] {
   return useSyncExternalStore(assinar, () => estado).folhas;
@@ -269,13 +302,13 @@ export function arquivoDoCaderno(folhas: FolhaCaderno[], ordem: string[], nomeGr
     })
     .join("\n");
   // Sem `<` cru no JSON: o texto das folhas nunca fecha a tag dos dados.
-  const dados = JSON.stringify({ app: "caderno-prf", versao: 1, feitaEm: agora, folhas }).replace(/</g, "\\u003c");
+  const dados = JSON.stringify({ app: rotulo.tag, versao: 1, feitaEm: agora, folhas }).replace(/</g, "\\u003c");
   return `<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Caderno PRF · cópia de ${escapar(dataHora(agora))}</title>
+<title>${escapar(rotulo.titulo)} · cópia de ${escapar(dataHora(agora))}</title>
 <style>
 body { max-width: 760px; margin: 24px auto; padding: 0 16px 40px; background: #fbf7ec; color: #1f2430; font: 16px/1.7 Georgia, "Times New Roman", serif; }
 h1 { margin: 0 0 4px; font: 700 1.5rem system-ui, sans-serif; }
@@ -289,7 +322,7 @@ h1 { margin: 0 0 4px; font: 700 1.5rem system-ui, sans-serif; }
 </style>
 </head>
 <body>
-<h1>Caderno · PRF Agente Administrativo</h1>
+<h1>${escapar(rotulo.cabecalho)}</h1>
 <p class="nota">Cópia feita em ${escapar(dataHora(agora))} · ${lista.length} ${lista.length === 1 ? "folha" : "folhas"}.
 Para restaurar: no app, abra o Caderno, toque em "Cópia de segurança" e depois em "Restaurar de um arquivo".</p>
 ${secoes}
@@ -306,7 +339,7 @@ export interface Restauracao {
 
 /**
  * Lê um arquivo de cópia (o .html baixado aqui ou um .json) e junta com o caderno. Na mesma folha, fica a versão
- * mais nova. Devolve null se o arquivo não é uma cópia do caderno.
+ * mais nova. Devolve null se o arquivo não é uma cópia do caderno deste curso.
  */
 export function restaurarCaderno(conteudo: string): Restauracao | null {
   let json = conteudo.trim();
@@ -321,6 +354,9 @@ export function restaurarCaderno(conteudo: string): Restauracao | null {
     return null;
   }
   if (!dados || typeof dados !== "object" || !Array.isArray((dados as { folhas?: unknown }).folhas)) return null;
+  // Cópia de outro curso: as matérias e as aulas não são as mesmas.
+  const app = (dados as { app?: unknown }).app;
+  if (typeof app === "string" && app !== rotulo.tag) return null;
   const porId = new Map(estado.folhas.map((f) => [f.id, f]));
   let novas = 0;
   let atualizadas = 0;

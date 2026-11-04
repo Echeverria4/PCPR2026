@@ -12,8 +12,12 @@ import { GRAVACAO_PRF } from "./gravacao";
 import { QUESTOES_PRF_POR_MATERIA } from "./questoes";
 import type { TelaPt } from "./portugues/PortuguesInteligente";
 import type { TelaAulas } from "./aulas/AulasPrf";
-import type { AulaDrive } from "./aulas/aulasDrive";
+import { AULAS_DRIVE, type AulaDrive } from "./aulas/aulasDrive";
+import { ComCatalogo, type Catalogo } from "./aulas/catalogo";
+import { COMECO_ESTUDO } from "./aulas/estudo";
 import { sessaoFixacao } from "./aulas/fixacao";
+import { COMECO_META } from "./aulas/meta";
+import { ROTULO_CADERNO_PRF } from "./caderno/dados";
 import CanetaPrf from "./caneta/CanetaPrf";
 import {
   FILTROS_PRF_PADRAO,
@@ -64,7 +68,25 @@ function comCaneta(questaoId: string, conteudo: ReactNode) {
   return <CanetaPrf questaoId={questaoId}>{conteudo}</CanetaPrf>;
 }
 
-export default function AppPrf({ onTrocarCurso }: AppPrfProps) {
+const CATALOGO_PRF: Catalogo = {
+  id: "prf-adm",
+  nome: "PRF — Agente Administrativo",
+  grupos: AULAS_DRIVE,
+  chaves: { estudo: "prf:estudo:v1", meta: "prf:meta:v1", caderno: "prf:caderno:v1", semana: "prf:semana:v1" },
+  comecoEstudo: COMECO_ESTUDO,
+  comecoMeta: COMECO_META,
+  caderno: ROTULO_CADERNO_PRF,
+};
+
+export default function AppPrf(props: AppPrfProps) {
+  return (
+    <ComCatalogo catalogo={CATALOGO_PRF}>
+      <CursoPrf {...props} />
+    </ComCatalogo>
+  );
+}
+
+function CursoPrf({ onTrocarCurso }: AppPrfProps) {
   const [view, setView] = useState<View>("home");
   const [tentativas, setTentativas] = useState<TentativaPrf[]>(() => getTentativasPrf());
   const [erradas, setErradas] = useState(() => getErradasPrf().length);

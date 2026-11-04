@@ -5,7 +5,7 @@ import { useEffect, useState, useSyncExternalStore } from "react";
  * própria (não mexe em prf:attempts nem no progresso do Português Inteligente). O cronômetro
  * guarda o horário em que começou, então continua certo depois de recarregar ou fechar a aba.
  */
-const CHAVE = "prf:estudo:v1";
+const CHAVE_PRF = "prf:estudo:v1";
 const MAX_SESSOES = 3000;
 const DIA = 24 * 60 * 60 * 1000;
 
@@ -66,16 +66,20 @@ export interface EstadoEstudo {
 const VAZIO: EstadoEstudo = { ativo: null, sessoes: [], vistos: [], vistosEm: {}, pdfLidoEm: {}, virada: null };
 
 /** Em 30/10/26 o cronômetro só foi testado; o estudo valendo começou em 31/10/26. */
-const COMECO_ESTUDO = new Date(2026, 9, 31).getTime();
+export const COMECO_ESTUDO = new Date(2026, 9, 31).getTime();
+
+/** Curso aberto: cada curso guarda o estudo na própria chave (a PRF continua em prf:estudo:v1). */
+let chave = CHAVE_PRF;
+let comecoEstudo = COMECO_ESTUDO;
 
 function ler(): EstadoEstudo {
   try {
-    const raw = localStorage.getItem(CHAVE);
+    const raw = localStorage.getItem(chave);
     if (!raw) return VAZIO;
     const p = JSON.parse(raw) as Partial<EstadoEstudo>;
     return {
-      ativo: p.ativo && p.ativo.inicio >= COMECO_ESTUDO ? p.ativo : null,
-      sessoes: Array.isArray(p.sessoes) ? p.sessoes.filter((s) => s.inicio >= COMECO_ESTUDO) : [],
+      ativo: p.ativo && p.ativo.inicio >= comecoEstudo ? p.ativo : null,
+      sessoes: Array.isArray(p.sessoes) ? p.sessoes.filter((s) => s.inicio >= comecoEstudo) : [],
       vistos: Array.isArray(p.vistos) ? p.vistos : [],
       vistosEm: p.vistosEm && typeof p.vistosEm === "object" ? p.vistosEm : {},
       pdfLidoEm: p.pdfLidoEm && typeof p.pdfLidoEm === "object" ? p.pdfLidoEm : {},
@@ -96,7 +100,7 @@ function avisar() {
 function salvar(novo: EstadoEstudo) {
   estado = novo;
   try {
-    localStorage.setItem(CHAVE, JSON.stringify(novo));
+    localStorage.setItem(chave, JSON.stringify(novo));
   } catch {
     // localStorage indisponível: o cronômetro funciona nesta aba, só não fica salvo
   }
@@ -106,7 +110,7 @@ function salvar(novo: EstadoEstudo) {
 // Outra aba do navegador mexeu no cronômetro: esta acompanha.
 if (typeof window !== "undefined") {
   window.addEventListener("storage", (e) => {
-    if (e.key !== CHAVE) return;
+    if (e.key !== chave) return;
     estado = ler();
     avisar();
   });
@@ -165,6 +169,44 @@ if (typeof window !== "undefined") {
   document.addEventListener("visibilitychange", () => {
     if (document.visibilityState === "visible") conferirDia();
   });
+}
+
+/** Passa a mostrar o estudo de outro curso. */
+export function trocarEstudo(novaChave: string, comeco: number) {
+  if (novaChave === chave) return;
+  chave = novaChave;
+  comecoEstudo = comeco;
+  estado = ler();
+  conferirDia();
+  avisar();
+}
+
+/** Meia-noite do primeiro dia com estudo cronometrado no curso aberto; null se ainda não houve. */
+export function primeiroDiaEstudado(): number | null {
+  let menor = estado.ativo?.inicio ?? Infinity;
+  for (const s of estado.sessoes) if (s.inicio < menor) menor = s.inicio;
+  return menor === Infinity ? null : meiaNoite(menor);
+}
+
+/**
+ * Só um curso conta de cada vez: ao entrar num curso, o cronômetro que ficou ligado nos outros é pausado
+ * (o tempo até aqui fica guardado e dá para retomar quando voltar a esse curso).
+ */
+export function pausarOutrosCursos(chaveAtual: string) {
+  try {
+    const agora = Date.now();
+    for (let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i);
+      if (!k || k === chaveAtual || !/^(prf|curso:[^:]+):estudo:v1$/.test(k)) continue;
+      const raw = localStorage.getItem(k);
+      const p = raw ? (JSON.parse(raw) as Partial<EstadoEstudo>) : null;
+      const a = p?.ativo;
+      if (!a || a.desde === null) continue;
+      localStorage.setItem(k, JSON.stringify({ ...p, ativo: { ...a, acumulado: tempoAtivo(a, agora), desde: null } }));
+    }
+  } catch {
+    // localStorage indisponível ou chave estragada: nada a pausar
+  }
 }
 
 export function useEstudo(): EstadoEstudo {

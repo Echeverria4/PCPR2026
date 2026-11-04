@@ -13,6 +13,8 @@ import { PRF_MATERIAS, PRF_SITUACAO, PRF_ULTIMO_EDITAL } from "../data/prf";
 import { getLocalAttempts } from "../lib/storage";
 // Só leitura do localStorage (prf:…): o banco da PRF continua fora do pacote principal.
 import { getTentativasPrf } from "../prf/armazenamento";
+// Só números: a lista das aulas de cada curso baixa quando ele é aberto.
+import { TOTAIS_CURSOS, type TotaisCurso } from "../prf/cursos/totais";
 
 interface CursosProps {
   onAbrir: (id: CursoId) => void;
@@ -29,10 +31,10 @@ const DIA_MS = 86_400_000;
 const FUSO = "America/Sao_Paulo";
 
 /**
- * Brasão dos cursos que ainda vão entrar. No DETRAN-PR, órgão estadual, vai o brasão do Estado do Paraná;
+ * Brasão dos cursos que entraram depois da PRF ADM. No DETRAN-PR, órgão estadual, vai o brasão do Estado do Paraná;
  * no Banco do Brasil, que não tem brasão, vai o símbolo do banco.
  */
-const BRASAO_EM_BREVE: Partial<Record<CursoId, string>> = {
+const BRASAO_CURSO: Partial<Record<CursoId, string>> = {
   "prf-policial": prfBrasao,
   "pf-agente": pfBrasao,
   "detran-pr": paranaBrasao,
@@ -101,6 +103,31 @@ function resumoPrf() {
     acerto: tentativas.length > 0 ? Math.round((acertos / tentativas.length) * 100) : null,
     ultimo,
   };
+}
+
+/** Lê direto a chave do curso: o módulo do cronômetro só carrega quando um curso é aberto. */
+function resumoAulas(id: CursoId, totais: TotaisCurso) {
+  let vistos = 0;
+  let ultimo: number | null = null;
+  try {
+    const e = JSON.parse(localStorage.getItem(`curso:${id}:estudo:v1`) ?? "null") as {
+      vistos?: unknown;
+      vistosEm?: unknown;
+      sessoes?: unknown;
+      ativo?: { inicio?: unknown } | null;
+    } | null;
+    if (e && Array.isArray(e.vistos)) vistos = Math.min(new Set(e.vistos).size, totais.blocos);
+    const momentos: unknown[] = [];
+    if (e && Array.isArray(e.sessoes)) for (const s of e.sessoes as { inicio?: unknown }[]) momentos.push(s?.inicio);
+    if (e?.ativo) momentos.push(e.ativo.inicio);
+    if (e?.vistosEm && typeof e.vistosEm === "object") momentos.push(...Object.values(e.vistosEm));
+    for (const ms of momentos) {
+      if (typeof ms === "number" && Number.isFinite(ms) && ms > 0 && (ultimo === null || ms > ultimo)) ultimo = ms;
+    }
+  } catch {
+    // Sem dados legíveis: o cartão mostra o curso como ainda não começado.
+  }
+  return { vistos, ultimo };
 }
 
 interface CartaoProps {
@@ -195,7 +222,7 @@ export default function Cursos({ onAbrir }: CursosProps) {
 
   function cartao(curso: Curso) {
     if (!curso.disponivel) {
-      return <CartaoCurso curso={curso} imagem={BRASAO_EM_BREVE[curso.id]} selos={[]} />;
+      return <CartaoCurso curso={curso} imagem={BRASAO_CURSO[curso.id]} selos={[]} />;
     }
     if (curso.id === "pcpr2026") {
       return (
@@ -258,6 +285,73 @@ export default function Cursos({ onAbrir }: CursosProps) {
                   </>
                 ) : (
                   "nenhuma questão respondida ainda"
+                )}
+              </span>
+            </div>
+          </div>
+        </CartaoCurso>
+      );
+    }
+    const totais = TOTAIS_CURSOS[curso.id];
+    if (totais) {
+      const { vistos, ultimo } = resumoAulas(curso.id, totais);
+      const feito = totais.blocos > 0 ? Math.round((vistos / totais.blocos) * 100) : 0;
+      return (
+        <CartaoCurso
+          curso={curso}
+          imagem={BRASAO_CURSO[curso.id]}
+          selos={[
+            { texto: "Pré-edital", tom: "neutro" },
+            { texto: "Aulas e PDFs", tom: "neutro" },
+          ]}
+          onAbrir={() => onAbrir(curso.id)}
+          detalhes={
+            <>
+              <dl className="curso-ficha">
+                <dt>No app</dt>
+                <dd>
+                  {totais.videos.toLocaleString("pt-BR")} vídeos e {totais.pdfs.toLocaleString("pt-BR")} PDFs em{" "}
+                  {totais.materias.length} matérias
+                </dd>
+              </dl>
+              <p className="curso-legenda">Matérias: vídeos · PDFs</p>
+              <ul className="curso-materias">
+                {totais.materias.map((m) => (
+                  <li key={m.nome}>
+                    <span className="curso-materia-cor" style={{ background: m.cor }} aria-hidden="true" />
+                    <span className="curso-materia-nome">{m.nome}</span>
+                    <span className="curso-materia-qtd">
+                      {m.videos} · {m.pdfs}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </>
+          }
+        >
+          <div className="curso-progresso">
+            <div
+              className="curso-barra"
+              role="progressbar"
+              aria-label="Vídeos e PDFs já concluídos"
+              aria-valuemin={0}
+              aria-valuemax={totais.blocos}
+              aria-valuenow={vistos}
+            >
+              <span style={{ width: `${feito}%` }} />
+            </div>
+            <div className="curso-numeros">
+              <span>
+                <strong>{vistos.toLocaleString("pt-BR")}</strong> de {totais.blocos.toLocaleString("pt-BR")} vídeos e
+                PDFs
+              </span>
+              <span>
+                {ultimo !== null ? (
+                  <>
+                    último estudo <strong>{quando(ultimo, agora)}</strong>
+                  </>
+                ) : (
+                  "nenhuma aula estudada ainda"
                 )}
               </span>
             </div>
@@ -362,7 +456,7 @@ export default function Cursos({ onAbrir }: CursosProps) {
         </p>
         <h2 className="secao-titulo cursos-titulo">Cursos</h2>
         <p className="cursos-intro">
-          Cada concurso tem o seu próprio espaço: questões, conteúdo, simulados e progresso ficam separados.
+          Cada concurso tem o seu próprio espaço: aulas, anotações e progresso ficam separados.
         </p>
         <ul className="cursos-lista">
           {abertos.map((curso) => (
@@ -372,7 +466,7 @@ export default function Cursos({ onAbrir }: CursosProps) {
         {emBreve.length > 0 && (
           <>
             <h2 className="secao-titulo cursos-breve-titulo">Em breve</h2>
-            <p className="cursos-intro">Concursos previstos para 2027. Cada curso abre aqui assim que ficar pronto.</p>
+            <p className="cursos-intro">Abre aqui assim que o material do curso chegar.</p>
             <ul className="cursos-lista">
               {emBreve.map((curso) => (
                 <li key={curso.id}>{cartao(curso)}</li>

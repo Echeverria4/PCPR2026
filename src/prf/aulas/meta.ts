@@ -1,5 +1,5 @@
 import { useSyncExternalStore } from "react";
-import { porDia, type EstadoEstudo } from "./estudo";
+import { porDia, primeiroDiaEstudado, type EstadoEstudo } from "./estudo";
 
 /**
  * Meta diária de estudo na PRF: 1h de segunda a sexta e 2h no sábado e no domingo, valendo desde 31/10/26.
@@ -7,7 +7,7 @@ import { porDia, type EstadoEstudo } from "./estudo";
  * de dia; aceita, a meta nova vale a partir do dia seguinte. Uma proposta por dia, respondida ou não. Fica só
  * neste aparelho, numa chave própria (o tempo vem do cronômetro, em prf:estudo:v1).
  */
-const CHAVE = "prf:meta:v1";
+const CHAVE_PRF = "prf:meta:v1";
 const MINUTO = 60 * 1000;
 /** Proposta só a partir de 10% além da meta (o menor aumento oferecido): tempo × 10 ≥ meta × 11. */
 const PASSOU_PARA_PROPOSTA = 11;
@@ -47,9 +47,13 @@ export interface EstadoMeta {
 
 const VAZIO: EstadoMeta = { respostas: [] };
 
+/** Curso aberto: cada curso tem a própria meta. Nos cursos novos ela começa no primeiro dia de estudo. */
+let chave = CHAVE_PRF;
+let comecoFixo: number | null = COMECO_META;
+
 function ler(): EstadoMeta {
   try {
-    const raw = localStorage.getItem(CHAVE);
+    const raw = localStorage.getItem(chave);
     if (!raw) return VAZIO;
     const p = JSON.parse(raw) as Partial<EstadoMeta>;
     return { respostas: Array.isArray(p.respostas) ? p.respostas : [] };
@@ -64,7 +68,7 @@ const ouvintes = new Set<() => void>();
 function salvar(novo: EstadoMeta) {
   estado = novo;
   try {
-    localStorage.setItem(CHAVE, JSON.stringify(novo));
+    localStorage.setItem(chave, JSON.stringify(novo));
   } catch {
     // localStorage indisponível: a resposta vale nesta aba, só não fica salva
   }
@@ -74,7 +78,7 @@ function salvar(novo: EstadoMeta) {
 // Outra aba do navegador respondeu a proposta: esta acompanha.
 if (typeof window !== "undefined") {
   window.addEventListener("storage", (e) => {
-    if (e.key !== CHAVE) return;
+    if (e.key !== chave) return;
     estado = ler();
     ouvintes.forEach((f) => f());
   });
@@ -87,11 +91,23 @@ function assinar(f: () => void) {
   };
 }
 
+/** Passa a mostrar a meta de outro curso. `comeco` null = a meta vale desde o primeiro dia de estudo. */
+export function trocarMeta(novaChave: string, comeco: number | null) {
+  if (novaChave === chave) return;
+  chave = novaChave;
+  comecoFixo = comeco;
+  estado = ler();
+  ouvintes.forEach((f) => f());
+}
+
 export function useMeta(): EstadoMeta {
   return useSyncExternalStore(assinar, () => estado);
 }
 
 const meiaNoite = (ms: number) => new Date(ms).setHours(0, 0, 0, 0);
+
+/** Dia em que a meta do curso aberto começou a valer. */
+const comeco = () => comecoFixo ?? primeiroDiaEstudado() ?? meiaNoite(Date.now());
 
 function maisUmDia(dia: number): number {
   const d = new Date(dia);
@@ -123,7 +139,7 @@ export function metaDoTipo(m: EstadoMeta, tipo: TipoDia, dia: number): number {
 
 /** Meta do dia em ms; 0 antes de a meta começar a valer. */
 export function metaDoDia(m: EstadoMeta, dia: number): number {
-  return dia < COMECO_META ? 0 : metaDoTipo(m, tipoDoDia(dia), dia) * MINUTO;
+  return dia < comeco() ? 0 : metaDoTipo(m, tipoDoDia(dia), dia) * MINUTO;
 }
 
 /** Meta nova em minutos depois de um aumento de `aumento`%. */
@@ -141,9 +157,10 @@ export function ultimoAumento(m: EstadoMeta, tipo: TipoDia): RespostaProposta | 
 /** Dias desde o começo da meta até hoje, com o tempo de cada um. */
 function diasDaMeta(e: EstadoEstudo, agora: number) {
   const hoje = meiaNoite(agora);
-  if (hoje < COMECO_META) return [];
+  const inicio = comeco();
+  if (hoje < inicio) return [];
   let n = 1;
-  for (let d = COMECO_META; d < hoje; d = maisUmDia(d)) n++;
+  for (let d = inicio; d < hoje; d = maisUmDia(d)) n++;
   return porDia(e, agora, n);
 }
 

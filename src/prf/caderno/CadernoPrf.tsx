@@ -1,12 +1,14 @@
 import { useEffect, useLayoutEffect, useState, type ChangeEvent, type CSSProperties } from "react";
 import { createPortal } from "react-dom";
-import { AULAS_DRIVE, type AulaDrive, type GrupoAulasDrive } from "../aulas/aulasDrive";
+import { gruposAtuais } from "../aulas/catalogo";
 import { useEstudo } from "../aulas/estudo";
 import { corDoGrupo, iconeGrupo, nomeAula } from "../aulas/rotulos";
+import type { AulaCurso, GrupoCurso } from "../aulas/tipos";
 import {
   arquivoDoCaderno,
   folhaDaAula,
   folhasAgora,
+  nomeArquivoCaderno,
   rascunhoFolha,
   restaurarCaderno,
   resumoTexto,
@@ -18,7 +20,7 @@ import { cadernoEmTelaCheia, irNoCaderno, minimizarCaderno, usePainelCaderno, ty
 
 const LIMITE_ARQUIVO = 20 * 1024 * 1024;
 
-const nomeDoGrupo = (id: string) => AULAS_DRIVE.find((g) => g.id === id)?.nome ?? "Matéria";
+const nomeDoGrupo = (id: string) => gruposAtuais().find((g) => g.id === id)?.nome ?? "Matéria";
 const corDe = (grupo: string) => ({ "--cor-materia": corDoGrupo(grupo) }) as CSSProperties;
 const contaFolhas = (n: number) => `${n} ${n === 1 ? "folha" : "folhas"}`;
 const diaCurto = (ms: number) => new Date(ms).toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" });
@@ -36,13 +38,13 @@ function CopiaSeguranca({ folhas }: { folhas: FolhaCaderno[] }) {
   const [aviso, setAviso] = useState("");
 
   function baixar() {
-    const arquivo = arquivoDoCaderno(folhas, AULAS_DRIVE.map((g) => g.id), nomeDoGrupo);
+    const arquivo = arquivoDoCaderno(folhas, gruposAtuais().map((g) => g.id), nomeDoGrupo);
     const url = URL.createObjectURL(new Blob([arquivo], { type: "text/html;charset=utf-8" }));
     const d = new Date();
     const dois = (n: number) => String(n).padStart(2, "0");
     const link = document.createElement("a");
     link.href = url;
-    link.download = `caderno-prf-${d.getFullYear()}-${dois(d.getMonth() + 1)}-${dois(d.getDate())}.html`;
+    link.download = `${nomeArquivoCaderno()}-${d.getFullYear()}-${dois(d.getMonth() + 1)}-${dois(d.getDate())}.html`;
     document.body.append(link);
     link.click();
     link.remove();
@@ -59,7 +61,7 @@ function CopiaSeguranca({ folhas }: { folhas: FolhaCaderno[] }) {
       return;
     }
     const r = restaurarCaderno(await arquivo.text());
-    if (!r) setAviso("Esse arquivo não é uma cópia do caderno.");
+    if (!r) setAviso("Esse arquivo não é uma cópia do caderno deste curso.");
     else if (r.novas + r.atualizadas === 0) setAviso("Nada de novo: o caderno já tem tudo o que está na cópia.");
     else setAviso(`Pronto: ${r.novas} ${r.novas === 1 ? "nova" : "novas"} e ${r.atualizadas} ${r.atualizadas === 1 ? "atualizada" : "atualizadas"}.`);
   }
@@ -92,7 +94,7 @@ function CopiaSeguranca({ folhas }: { folhas: FolhaCaderno[] }) {
 /** Começo do caderno: a matéria da aula que vai assistir. */
 function TelaMaterias({ folhas }: { folhas: FolhaCaderno[] }) {
   const { ativo } = useEstudo();
-  const grupoAgora = ativo?.aula ? AULAS_DRIVE.find((g) => g.id === ativo.grupo) : undefined;
+  const grupoAgora = ativo?.aula ? gruposAtuais().find((g) => g.id === ativo.grupo) : undefined;
   const aulaAgora = grupoAgora?.aulas.find((a) => a.id === ativo?.aula);
   const porGrupo = new Map<string, number>();
   for (const f of folhas) porGrupo.set(f.grupo, (porGrupo.get(f.grupo) ?? 0) + 1);
@@ -115,7 +117,7 @@ function TelaMaterias({ folhas }: { folhas: FolhaCaderno[] }) {
         </button>
       )}
       <ul className="prf-cad-itens">
-        {AULAS_DRIVE.map((g) => {
+        {gruposAtuais().map((g) => {
           const n = porGrupo.get(g.id) ?? 0;
           return (
             <li key={g.id}>
@@ -159,10 +161,10 @@ function ItemFolha({ folha }: { folha: FolhaCaderno }) {
 }
 
 /** As aulas da matéria e as anotações livres. */
-function TelaMateria({ grupo, folhas }: { grupo: GrupoAulasDrive; folhas: FolhaCaderno[] }) {
+function TelaMateria({ grupo, folhas }: { grupo: GrupoCurso; folhas: FolhaCaderno[] }) {
   const daMateria = folhas.filter((f) => f.grupo === grupo.id);
   const idsAulas = new Set(grupo.aulas.map((a) => a.id));
-  const daAula = (a: AulaDrive) => folhaDaAula(daMateria, a.id);
+  const daAula = (a: AulaCurso) => folhaDaAula(daMateria, a.id);
   const principais = new Set(grupo.aulas.map((a) => daAula(a)?.id));
   // Também aparecem aqui as folhas que a lista de aulas não alcança: uma segunda folha da mesma aula (dois aparelhos
   // juntados pela cópia) ou a de uma aula que saiu do curso.
@@ -272,7 +274,7 @@ export default function CadernoPrf() {
   );
 
   const folha = tela.tipo === "folha" ? (folhas.find((f) => f.id === tela.id) ?? tela.rascunho) : undefined;
-  const grupo = tela.tipo === "materia" ? AULAS_DRIVE.find((g) => g.id === tela.grupo) : undefined;
+  const grupo = tela.tipo === "materia" ? gruposAtuais().find((g) => g.id === tela.grupo) : undefined;
 
   return createPortal(
     <aside
