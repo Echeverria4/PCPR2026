@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { lazy, Suspense, type ReactNode } from "react";
 import prfBrasao from "../assets/prf-brasao.png";
 import { PRF_ULTIMO_EDITAL } from "../data/prf";
 import {
@@ -11,8 +11,11 @@ import {
   useAgora,
   useEstudo,
 } from "./aulas/estudo";
+import { alternarCaderno, usePainelCaderno } from "./caderno/painel";
 
-export type AbaPrf = "home" | "aulas" | "semana" | "conteudo" | "portugues";
+const CadernoPrf = lazy(() => import("./caderno/CadernoPrf"));
+
+export type AbaPrf ="home" | "aulas" | "semana" | "conteudo" | "portugues";
 
 /** Cronômetro de estudo ligado: fica à vista em todas as telas, inclusive durante as questões e no leitor do PDF. */
 export function ChipCronometro() {
@@ -63,6 +66,7 @@ export default function LayoutPrf({
   abaAtiva,
   onTrocarAba,
 }: LayoutPrfProps) {
+  const caderno = usePainelCaderno();
   return (
     <div className="app-shell">
       <div className="topo-fixo">
@@ -76,6 +80,9 @@ export default function LayoutPrf({
           </div>
           <div className="topbar-acoes">
             <ChipCronometro />
+            <button className="botao" onClick={alternarCaderno} aria-expanded={caderno.aberto}>
+              📝 Caderno
+            </button>
             {mostrarVoltar ? (
               <button className="botao" onClick={onVoltar}>
                 ← Início
@@ -123,6 +130,11 @@ export default function LayoutPrf({
         Material de estudo não oficial, montado sobre o conteúdo programático do edital de {PRF_ULTIMO_EDITAL.ano} da
         PRF para fins de treino. O novo edital pode mudar matérias e formato.
       </footer>
+      {caderno.aberto && (
+        <Suspense fallback={null}>
+          <CadernoPrf />
+        </Suspense>
+      )}
     </div>
   );
 }

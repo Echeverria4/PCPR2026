@@ -9772,3 +9772,672 @@ button.prf-bloco-link {
 .prf-caneta-espaco {
   height: 84px;
 }
+
+/* ---------- Caderno da PRF: painel ao lado da aula (computador) ou embaixo dela (celular) ---------- */
+
+body.prf-cad-aberto,
+body.prf-cad-cheia {
+  --prf-cad-l: clamp(360px, 32vw, 480px);
+  --prf-cad-h: 55vh;
+}
+
+body.prf-cad-cheia {
+  overflow: hidden;
+}
+
+.prf-cad-painel {
+  position: fixed;
+  z-index: 960;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--texto);
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.45);
+}
+
+@media (min-width: 900px) {
+  .prf-cad-painel {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: var(--prf-cad-l);
+    border-left: 2px solid var(--ouro);
+  }
+
+  body.prf-cad-aberto .app-shell {
+    padding-right: var(--prf-cad-l);
+  }
+
+  body.prf-cad-aberto .prf-leitor {
+    right: var(--prf-cad-l);
+  }
+
+  body.prf-cad-aberto .prf-caneta-doca {
+    left: calc(50% - var(--prf-cad-l) / 2);
+    max-width: calc(100vw - var(--prf-cad-l) - 16px);
+  }
+
+  body.prf-cad-aberto .prf-cad-flutua {
+    right: calc(var(--prf-cad-l) + 16px);
+  }
+}
+
+@media (max-width: 899px) {
+  .prf-cad-painel {
+    left: 0;
+    right: 0;
+    bottom: var(--prf-cad-kb, 0px);
+    height: min(var(--prf-cad-h), calc(var(--prf-cad-vh, 100vh) - 56px));
+    border-top: 2px solid var(--ouro);
+    border-radius: 14px 14px 0 0;
+  }
+
+  body.prf-cad-aberto .app-shell {
+    padding-bottom: var(--prf-cad-h);
+  }
+
+  body.prf-cad-aberto .prf-leitor {
+    bottom: var(--prf-cad-h);
+  }
+
+  body.prf-cad-aberto .prf-caneta-doca {
+    bottom: calc(var(--prf-cad-h) + 8px);
+  }
+
+  body.prf-cad-aberto .prf-cad-flutua {
+    bottom: calc(var(--prf-cad-h) + 14px);
+  }
+}
+
+.prf-cad-painel.prf-cad-cheio {
+  top: 0;
+  right: 0;
+  bottom: var(--prf-cad-kb, 0px);
+  left: 0;
+  width: auto;
+  height: auto;
+  border: 0;
+  border-radius: 0;
+}
+
+.prf-cad-cheio .prf-cad-folha,
+.prf-cad-cheio .prf-cad-tela {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.prf-cad-topo {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: var(--bg-elevado);
+  border-bottom: 1px solid var(--borda);
+}
+
+.prf-cad-nome {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  color: var(--ouro-forte);
+}
+
+.prf-cad-topo-botao {
+  min-width: 36px;
+  min-height: 36px;
+  padding: 0 10px;
+  background: transparent;
+  color: var(--texto);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-peq);
+  font: 700 0.82rem var(--fonte-cond);
+  cursor: pointer;
+}
+
+.prf-cad-topo-botao:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Listas: matérias, aulas e folhas */
+
+.prf-cad-tela {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px;
+  overflow-y: auto;
+}
+
+.prf-cad-tela > .prf-voltar {
+  align-self: flex-start;
+}
+
+.prf-cad-pergunta {
+  margin: 0;
+  font: 700 1.15rem/1.3 var(--fonte-titulo);
+  color: var(--ouro-forte);
+}
+
+.prf-cad-dica {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--texto-fraco);
+}
+
+.prf-cad-sub {
+  margin: 8px 0 0;
+  font: 700 0.78rem var(--fonte-cond);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+}
+
+.prf-cad-nova {
+  align-self: flex-start;
+}
+
+.prf-cad-itens {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.prf-cad-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 48px;
+  padding: 9px 12px;
+  text-align: left;
+  background: var(--bg-card);
+  color: var(--texto);
+  border: 1px solid var(--borda);
+  border-left: 4px solid var(--cor-materia, var(--ouro));
+  border-radius: var(--raio);
+  font: inherit;
+  cursor: pointer;
+}
+
+.prf-cad-item:hover {
+  background: var(--bg-elevado);
+}
+
+.prf-cad-agora {
+  flex: none;
+  border-top-color: rgba(242, 193, 78, 0.6);
+  border-right-color: rgba(242, 193, 78, 0.6);
+  border-bottom-color: rgba(242, 193, 78, 0.6);
+}
+
+.prf-cad-item-texto {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.prf-cad-item-nome {
+  font-weight: 600;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.prf-cad-item-sub {
+  font-size: 0.78rem;
+  color: var(--texto-fraco);
+}
+
+.prf-cad-item-marca {
+  flex: none;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  color: var(--ouro-forte);
+}
+
+.prf-cad-copia {
+  margin-top: 6px;
+  padding: 8px 10px;
+  font-size: 0.85rem;
+  color: var(--texto-fraco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+}
+
+.prf-cad-copia summary {
+  font-weight: 600;
+  color: var(--texto);
+  cursor: pointer;
+}
+
+.prf-cad-copia p {
+  margin: 8px 0;
+  line-height: 1.45;
+}
+
+.prf-cad-copia-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.prf-cad-copia-arquivo {
+  position: relative;
+  cursor: pointer;
+}
+
+.prf-cad-copia-arquivo:focus-within {
+  outline: 2px solid var(--ouro-forte);
+  outline-offset: 1px;
+}
+
+.prf-cad-copia-arquivo input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.prf-cad-copia-aviso {
+  color: var(--ouro-forte);
+}
+
+/* A folha */
+
+.prf-cad-folha {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.prf-cad-folha-topo {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 8px;
+  padding: 2px 10px 2px 18px;
+}
+
+.prf-cad-folha-topo .prf-voltar {
+  display: block;
+  flex: 0 1 auto;
+  min-width: 0;
+  margin-right: auto;
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.prf-cad-situacao {
+  flex: none;
+  font: 700 0.75rem var(--fonte-cond);
+  white-space: nowrap;
+  color: var(--texto-fraco);
+}
+
+.prf-cad-situacao-salvo {
+  color: var(--verde);
+}
+
+.prf-cad-situacao-erro {
+  color: var(--vermelho);
+}
+
+.prf-cad-confirma {
+  display: flex;
+  flex: none;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  font-size: 0.85rem;
+  background: var(--bg-elevado);
+  border-bottom: 1px solid var(--borda);
+}
+
+.prf-cad-confirma span {
+  flex: 1 1 100%;
+}
+
+.prf-cad-erro {
+  flex: none;
+  margin: 0;
+  padding: 8px 10px;
+  font-size: 0.82rem;
+  background: rgba(240, 85, 92, 0.14);
+  border-bottom: 1px solid var(--vermelho);
+}
+
+.prf-cad-barra {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex: none;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px;
+  background: var(--bg-card);
+  border-top: 1px solid var(--borda);
+  border-bottom: 1px solid var(--borda);
+}
+
+.prf-cad-botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  min-width: 36px;
+  min-height: 36px;
+  padding: 0 7px;
+  background: transparent;
+  color: var(--texto);
+  border: 1px solid transparent;
+  border-radius: var(--raio-peq);
+  font: 700 0.88rem var(--fonte-cond);
+  cursor: pointer;
+}
+
+.prf-cad-botao:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.prf-cad-botao[aria-pressed="true"],
+.prf-cad-botao[aria-expanded="true"],
+.prf-cad-botao-marcado {
+  background: rgba(242, 193, 78, 0.16);
+  border-color: rgba(242, 193, 78, 0.6);
+  color: var(--ouro-forte);
+}
+
+.prf-cad-botao:focus-visible,
+.prf-cad-topo-botao:focus-visible,
+.prf-cad-item:focus-visible,
+.prf-cad-opcao:focus-visible,
+.prf-cad-cor:focus-visible,
+.prf-cad-flutua:focus-visible {
+  outline: 2px solid var(--ouro-forte);
+  outline-offset: 1px;
+}
+
+.prf-cad-seta {
+  font-size: 0.7em;
+}
+
+.prf-cad-sep {
+  width: 1px;
+  height: 22px;
+  margin: 0 2px;
+  background: var(--borda);
+}
+
+.prf-cad-menu {
+  position: absolute;
+  top: 100%;
+  left: 6px;
+  right: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 2px;
+  padding: 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--borda-forte);
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.prf-cad-menu-titulo {
+  font: 700 0.72rem var(--fonte-cond);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+}
+
+.prf-cad-opcao {
+  width: 100%;
+  min-height: 40px;
+  padding: 6px 10px;
+  text-align: left;
+  background: transparent;
+  color: var(--texto);
+  border: 0;
+  border-radius: var(--raio-peq);
+  font: inherit;
+  cursor: pointer;
+}
+
+.prf-cad-opcao:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.prf-cad-opcao.prf-cad-tam-p {
+  font-size: 0.82rem;
+}
+
+.prf-cad-opcao.prf-cad-tam-g {
+  font-size: 1.25rem;
+}
+
+.prf-cad-opcao.prf-cad-tam-e {
+  font-size: 1.5rem;
+}
+
+.prf-cad-opcao.prf-cad-cab-h2 {
+  font: 700 1.25rem var(--fonte-titulo);
+}
+
+.prf-cad-opcao.prf-cad-cab-h3 {
+  font: 700 1.05rem var(--fonte-titulo);
+}
+
+.prf-cad-cores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.prf-cad-cor {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.prf-cad-cor-sem {
+  background: linear-gradient(135deg, transparent 45%, var(--vermelho) 45% 55%, transparent 55%), #fff;
+}
+
+/* O papel: a única área clara do app, com as pautas e a margem de um caderno */
+
+.prf-cad-papel {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 14px 16px 40px 44px;
+  overflow-y: auto;
+  color: #1f2430;
+  background:
+    linear-gradient(90deg, transparent 31px, rgba(214, 69, 69, 0.35) 31px 32px, transparent 32px),
+    #fbf7ec;
+}
+
+.prf-cad-cabecalho {
+  flex: none;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid rgba(31, 36, 48, 0.55);
+}
+
+.prf-cad-cabecalho p {
+  margin: 0;
+}
+
+.prf-cad-cabecalho-materia {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font: 700 0.78rem var(--fonte-cond);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #4a4638;
+}
+
+.prf-cad-ponto {
+  flex: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--cor-materia, var(--ouro));
+}
+
+.prf-cad-cabecalho-aula {
+  font: 700 1rem/1.3 var(--fonte-titulo);
+  color: #14305a;
+}
+
+.prf-cad-cabecalho-data {
+  font-size: 0.78rem;
+  color: #6b6557;
+}
+
+.prf-cad-titulo {
+  flex: none;
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 4px 0;
+  background: transparent;
+  color: #1f2430;
+  border: 0;
+  border-bottom: 1px dashed rgba(31, 36, 48, 0.35);
+  border-radius: 0;
+  outline: none;
+  font: 700 1.15rem var(--fonte-titulo);
+}
+
+.prf-cad-titulo::placeholder {
+  font-weight: 400;
+  color: #6b6557;
+}
+
+.prf-cad-titulo:focus {
+  border-bottom-color: #1d5fbf;
+}
+
+.prf-cad-editor {
+  position: relative;
+  flex: 1 0 auto;
+  min-height: 280px;
+  font: 16px/1.75 var(--fonte-corpo);
+  overflow-wrap: anywhere;
+  caret-color: #1f2430;
+  outline: none;
+  background: repeating-linear-gradient(transparent 0 27px, rgba(64, 120, 200, 0.18) 27px 28px);
+}
+
+.prf-cad-editor p,
+.prf-cad-editor div {
+  margin: 0;
+}
+
+.prf-cad-editor h2 {
+  margin: 0;
+  font: 700 1.4rem/28px var(--fonte-titulo);
+  letter-spacing: normal;
+  text-transform: none;
+  color: #14305a;
+}
+
+.prf-cad-editor h3 {
+  margin: 0;
+  font: 700 1.15rem/28px var(--fonte-titulo);
+  letter-spacing: normal;
+  text-transform: none;
+  color: #14305a;
+}
+
+.prf-cad-editor ul,
+.prf-cad-editor ol {
+  margin: 0;
+  padding-left: 1.4em;
+}
+
+.prf-cad-editor[data-vazio]::before {
+  content: "Escreva aqui…";
+  position: absolute;
+  color: #6b6557;
+  pointer-events: none;
+}
+
+/* Atalho na tela da aula: sempre à vista no canto */
+
+.prf-cad-flutua {
+  position: fixed;
+  right: 16px;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  z-index: 45;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 52px;
+  min-height: 52px;
+  padding: 0;
+  background: var(--bg-card);
+  color: var(--ouro-forte);
+  border: 2px solid var(--ouro);
+  border-radius: 26px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  font: 900 0.85rem var(--fonte-cond);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.prf-cad-flutua:hover {
+  background: var(--bg-elevado);
+}
+
+.prf-cad-flutua > span:first-child {
+  font-size: 1.3rem;
+}
+
+.prf-cad-flutua-texto {
+  display: none;
+}
+
+@media (min-width: 641px) {
+  .prf-cad-flutua {
+    padding: 0 16px;
+  }
+
+  .prf-cad-flutua-texto {
+    display: inline;
+  }
+}
+
+/* No painel estreito a barra quebra em duas linhas: a divisória do fim da 1ª linha ficava sobrando. */
+.prf-cad-painel:not(.prf-cad-cheio) .prf-cad-barra > .prf-cad-sep:first-of-type {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .prf-cad-barra > .prf-cad-sep:first-of-type {
+    display: none;
+  }
+}

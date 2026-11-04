@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { createPortal } from "react-dom";
-import { PRF_MATERIA_MAP, type MateriaPrfId } from "../../data/prf";
 import type { TentativaPrf } from "../armazenamento";
+import { abrirCaderno, usePainelCaderno } from "../caderno/painel";
 import { ChipCronometro } from "../LayoutPrf";
 import { ultimaRespostaPrf } from "../sessoes";
 import { AULAS_DRIVE, type AulaDrive, type GrupoAulasDrive } from "./aulasDrive";
@@ -37,6 +37,7 @@ import { QUESTOES_POR_AULA, doNivelamento, fixacaoDaAula, questoesDaAula } from 
 import { metaDoDia, useMeta } from "./meta";
 import { MetaDoDia, MetaMini } from "./MetaDoDia";
 import { RESUMOS, type ResumoAula } from "./resumos";
+import { corDoGrupo, iconeGrupo, nomeAula } from "./rotulos";
 
 /** Onde o aluno está dentro da aba (fica no AppPrf para não se perder durante a fixação). */
 export interface TelaAulas {
@@ -56,24 +57,10 @@ const QUESTOES_TEXTO = `${QUESTOES_POR_AULA} questões`;
 const urlArquivo = (id: string) => `https://drive.google.com/file/d/${id}/view`;
 /** Player do próprio Drive: só toca com a conta Google do dono conectada no navegador. */
 const urlPlayer = (id: string) => `https://drive.google.com/file/d/${id}/preview`;
-const ICONE: Record<string, string> = {
-  niv: "🚀",
-  pt: "📖",
-  etica: "⚖️",
-  rlm: "🧩",
-  con: "🏛️",
-  adm: "📜",
-  administracao: "📊",
-  arq: "🗂️",
-  info: "💻",
-  leg: "🚓",
-};
-const icone = (g: GrupoAulasDrive) => ICONE[g.id] ?? "🎬";
-const corGrupo = (g: GrupoAulasDrive) =>
-  ({ "--cor-materia": PRF_MATERIA_MAP[g.id as MateriaPrfId]?.cor ?? "var(--ouro)" }) as CSSProperties;
+const icone = (g: GrupoAulasDrive) => iconeGrupo(g.id);
+const corGrupo = (g: GrupoAulasDrive) => ({ "--cor-materia": corDoGrupo(g.id) }) as CSSProperties;
 const rotuloAula = (g: GrupoAulasDrive, a: AulaDrive) => `${g.nome} · ${a.n ? `Aula ${a.n}: ` : ""}${a.nome}`;
-const nomeAula = (a: AulaDrive) => (a.n ? `Aula ${a.n} · ${a.nome}` : a.nome);
-const pct = (parte: number, todo: number) => (todo > 0 ? Math.floor((parte / todo) * 100) : 0);
+const pct =(parte: number, todo: number) => (todo > 0 ? Math.floor((parte / todo) * 100) : 0);
 const largura = (p: number): CSSProperties => ({ width: `${p}%` });
 const plural = (n: number, um: string, varios: string) => `${n} ${n === 1 ? um : varios}`;
 const quando = (ms: number) =>
@@ -634,14 +621,16 @@ interface LeitorPdfProps {
   onLi: () => void;
   onFechar: () => void;
   onAbrir: () => void;
+  onAnotar: () => void;
 }
 
 /**
  * O PDF numa tela cheia dentro do app, por cima da aula. O arquivo continua vindo do Drive (o app é público e o
  * material é pago, então o PDF não fica no app); o botão do Drive que abre o arquivo fora daqui fica tampado.
  */
-function LeitorPdf({ id, nome, lido, onLi, onFechar, onAbrir }: LeitorPdfProps) {
+function LeitorPdf({ id, nome, lido, onLi, onFechar, onAbrir, onAnotar }: LeitorPdfProps) {
   const voltar = useRef<HTMLButtonElement>(null);
+  const caderno = usePainelCaderno();
 
   // Esc fecha; a página da aula não rola por trás; ao fechar, o foco volta para a linha do PDF.
   useEffect(() => {
@@ -661,13 +650,16 @@ function LeitorPdf({ id, nome, lido, onLi, onFechar, onAbrir }: LeitorPdfProps) 
   }, [onFechar]);
 
   return createPortal(
-    <div className="prf-leitor" role="dialog" aria-modal="true" aria-label={`PDF: ${nome}`}>
+    <div className="prf-leitor" role="dialog" aria-modal={!caderno.aberto} aria-label={`PDF: ${nome}`}>
       <div className="prf-leitor-barra">
         <button type="button" className="prf-voltar" ref={voltar} onClick={onFechar}>
           ← Voltar à aula
         </button>
         <span className="prf-leitor-nome">{nome}</span>
         <ChipCronometro />
+        <button type="button" className="botao" onClick={onAnotar}>
+          📝 Anotar
+        </button>
         {lido ? (
           <span className="prf-leitor-lido">✓ Lido hoje</span>
         ) : (
@@ -749,6 +741,9 @@ function TelaAula({ grupo, aula, estudo, tentativas, onTela, onFixar }: TelaAula
   const tocou = useRef(false);
   const [pdf, setPdf] = useState<string | null>(null);
   const fechaPdf = useCallback(() => setPdf(null), []);
+  const caderno = usePainelCaderno();
+  const naFolhaDaAula = caderno.aberto && caderno.tela.tipo === "folha" && caderno.tela.aula === aula.id;
+  const anotar = () => abrirCaderno({ grupo: grupo.id, aula: aula.id, nomeAula: nomeAula(aula) });
   const passoVideos = useRef<HTMLElement>(null);
   const passoResumo = useRef<HTMLElement>(null);
   const passoQuestoes = useRef<HTMLElement>(null);
@@ -927,6 +922,7 @@ function TelaAula({ grupo, aula, estudo, tentativas, onTela, onFixar }: TelaAula
                       onLi={liOPdf}
                       onFechar={fechaPdf}
                       onAbrir={aoAbrir}
+                      onAnotar={anotar}
                     />
                   )}
                 </li>
@@ -1194,6 +1190,22 @@ function TelaAula({ grupo, aula, estudo, tentativas, onTela, onFixar }: TelaAula
           )}
         </nav>
       )}
+
+      {/* Portal: a entrada animada da tela tiraria um botão fixo do canto. */}
+      {!naFolhaDaAula &&
+        createPortal(
+          <button
+            type="button"
+            className="prf-cad-flutua"
+            onClick={anotar}
+            aria-label="Anotar no caderno"
+            title="Anotar no caderno"
+          >
+            <span aria-hidden="true">📝</span>
+            <span className="prf-cad-flutua-texto">Anotar</span>
+          </button>,
+          document.body,
+        )}
     </div>
   );
 }
