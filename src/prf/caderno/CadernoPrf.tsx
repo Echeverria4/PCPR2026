@@ -14,7 +14,7 @@ import {
   type FolhaCaderno,
 } from "./dados";
 import Folha from "./Folha";
-import { cadernoEmTelaCheia, fecharCaderno, irNoCaderno, usePainelCaderno, type TelaCaderno } from "./painel";
+import { cadernoEmTelaCheia, irNoCaderno, minimizarCaderno, usePainelCaderno, type TelaCaderno } from "./painel";
 
 const LIMITE_ARQUIVO = 20 * 1024 * 1024;
 
@@ -219,8 +219,8 @@ function TelaMateria({ grupo, folhas }: { grupo: GrupoAulasDrive; folhas: FolhaC
 }
 
 /**
- * O caderno: um painel que não tampa a aula (ao lado dela no computador, embaixo no celular), para escrever com o
- * vídeo tocando. Só carrega quando abre.
+ * O caderno: um painel que não tampa a aula (à direita dela, com menos da metade da tela; embaixo no celular em pé),
+ * para escrever com o vídeo tocando. Só carrega quando abre.
  */
 export default function CadernoPrf() {
   const { cheia, tela } = usePainelCaderno();
@@ -291,11 +291,11 @@ export default function CadernoPrf() {
         <button
           type="button"
           className="prf-cad-topo-botao"
-          aria-label="Fechar o caderno"
-          title="Fechar o caderno"
-          onClick={fecharCaderno}
+          aria-label="Minimizar o caderno"
+          title="Minimizar o caderno"
+          onClick={minimizarCaderno}
         >
-          ✕
+          — Minimizar
         </button>
       </div>
       {folha ? (

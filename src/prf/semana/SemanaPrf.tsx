@@ -264,47 +264,49 @@ export default function SemanaPrf({ tentativas, inicio, onInicio, onTreinar, onA
 
           <section className="prf-acomp-bloco" aria-label="Por matéria">
             <h3 className="prf-acomp-bloco-titulo">Por matéria</h3>
-            <table className="prf-acomp-tabela">
-              <thead>
-                <tr>
-                  <th scope="col">Matéria</th>
-                  <th scope="col">Horas</th>
-                  <th scope="col">Blocos</th>
-                  <th scope="col">Questões</th>
-                  <th scope="col">Acerto</th>
-                </tr>
-              </thead>
-              <tbody>
-                {r.materias.map((l) => (
-                  <tr key={l.materia} className={parada(l) ? "prf-acomp-parada" : undefined}>
-                    <th scope="row">
-                      <span
-                        className="prf-acomp-cor"
-                        style={{ background: PRF_MATERIA_MAP[l.materia].cor }}
-                        aria-hidden="true"
-                      />
-                      {NOME_CURTO[l.materia]}
-                    </th>
-                    <td>{l.ms > 0 ? curto(l.ms) : "—"}</td>
-                    <td>{l.blocos > 0 ? l.blocos : "—"}</td>
-                    <td>{l.questoes > 0 ? l.questoes : "—"}</td>
-                    <td>{l.questoes > 0 ? `${pct(l.acertos, l.questoes)}%` : "—"}</td>
-                  </tr>
-                ))}
-                {r.livreMs > 0 && (
+            <div className="prf-acomp-rola">
+              <table className="prf-acomp-tabela">
+                <thead>
                   <tr>
-                    <th scope="row">
-                      <span className="prf-acomp-cor prf-acomp-cor-livre" aria-hidden="true" />
-                      Estudo livre
-                    </th>
-                    <td>{curto(r.livreMs)}</td>
-                    <td>—</td>
-                    <td>—</td>
-                    <td>—</td>
+                    <th scope="col">Matéria</th>
+                    <th scope="col">Horas</th>
+                    <th scope="col">Blocos</th>
+                    <th scope="col">Questões</th>
+                    <th scope="col">Acerto</th>
                   </tr>
-                )}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {r.materias.map((l) => (
+                    <tr key={l.materia} className={parada(l) ? "prf-acomp-parada" : undefined}>
+                      <th scope="row">
+                        <span
+                          className="prf-acomp-cor"
+                          style={{ background: PRF_MATERIA_MAP[l.materia].cor }}
+                          aria-hidden="true"
+                        />
+                        {NOME_CURTO[l.materia]}
+                      </th>
+                      <td>{l.ms > 0 ? curto(l.ms) : "—"}</td>
+                      <td>{l.blocos > 0 ? l.blocos : "—"}</td>
+                      <td>{l.questoes > 0 ? l.questoes : "—"}</td>
+                      <td>{l.questoes > 0 ? `${pct(l.acertos, l.questoes)}%` : "—"}</td>
+                    </tr>
+                  ))}
+                  {r.livreMs > 0 && (
+                    <tr>
+                      <th scope="row">
+                        <span className="prf-acomp-cor prf-acomp-cor-livre" aria-hidden="true" />
+                        Estudo livre
+                      </th>
+                      <td>{curto(r.livreMs)}</td>
+                      <td>—</td>
+                      <td>—</td>
+                      <td>—</td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
             {r.aulas.length > 0 && (
               <details className="prf-acomp-aulas">
                 <summary>{plural(r.aulas.length, "aula concluída", "aulas concluídas")} nesta semana</summary>

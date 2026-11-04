@@ -6468,8 +6468,10 @@ button {
   background: linear-gradient(180deg, var(--ouro-forte), var(--ouro));
 }
 
+/* minmax(0, ...): sem ele a linha do cronômetro, que não quebra, alarga os cartões para além da tela. */
 .prf-aulas-topo {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 16px;
 }
 
@@ -9040,6 +9042,10 @@ button.prf-bloco-link {
   font-size: 0.75rem;
 }
 
+.prf-acomp-rola {
+  overflow-x: auto;
+}
+
 .prf-acomp-tabela {
   width: 100%;
   border-collapse: collapse;
@@ -9773,12 +9779,12 @@ button.prf-bloco-link {
   height: 84px;
 }
 
-/* ---------- Caderno da PRF: painel ao lado da aula (computador) ou embaixo dela (celular) ---------- */
+/* ---------- Caderno da PRF: painel à direita da aula, com menos da metade da tela (embaixo dela no celular em pé) ---------- */
 
 body.prf-cad-aberto,
 body.prf-cad-cheia {
-  --prf-cad-l: clamp(360px, 32vw, 480px);
-  --prf-cad-h: 55vh;
+  --prf-cad-l: min(48vw, clamp(340px, 32vw, 480px));
+  --prf-cad-h: 45vh;
 }
 
 body.prf-cad-cheia {
@@ -9788,6 +9794,7 @@ body.prf-cad-cheia {
 .prf-cad-painel {
   position: fixed;
   z-index: 960;
+  container-type: inline-size;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -9796,11 +9803,11 @@ body.prf-cad-cheia {
   box-shadow: 0 0 24px rgba(0, 0, 0, 0.45);
 }
 
-@media (min-width: 900px) {
+@media (min-width: 641px) {
   .prf-cad-painel {
     top: 0;
     right: 0;
-    bottom: 0;
+    bottom: var(--prf-cad-kb, 0px);
     width: var(--prf-cad-l);
     border-left: 2px solid var(--ouro);
   }
@@ -9823,7 +9830,7 @@ body.prf-cad-cheia {
   }
 }
 
-@media (max-width: 899px) {
+@media (max-width: 640.98px) {
   .prf-cad-painel {
     left: 0;
     right: 0;
@@ -9847,6 +9854,13 @@ body.prf-cad-cheia {
 
   body.prf-cad-aberto .prf-cad-flutua {
     bottom: calc(var(--prf-cad-h) + 14px);
+  }
+}
+
+/* Com o caderno aberto sobra pouca largura para duas colunas. */
+@media (max-width: 1099px) {
+  body.prf-cad-aberto .prf-aulas-topo {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
@@ -9881,6 +9895,9 @@ body.prf-cad-cheia {
 .prf-cad-nome {
   flex: 1;
   min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-family: var(--fonte-titulo);
   font-weight: 700;
   color: var(--ouro-forte);
@@ -10385,7 +10402,7 @@ body.prf-cad-cheia {
   pointer-events: none;
 }
 
-/* Atalho na tela da aula: sempre à vista no canto */
+/* Atalho na tela da aula: sempre à vista; começa no canto e vai para onde for arrastado */
 
 .prf-cad-flutua {
   position: fixed;
@@ -10406,7 +10423,10 @@ body.prf-cad-cheia {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
   font: 900 0.85rem var(--fonte-cond);
   text-transform: uppercase;
-  cursor: pointer;
+  cursor: grab;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .prf-cad-flutua:hover {
@@ -10431,21 +10451,72 @@ body.prf-cad-cheia {
   }
 }
 
-/* Painel estreito: a barra fica em duas linhas fixas. A 1ª divisória vira a quebra, e os 3 alinhamentos não se separam. */
-@media (max-width: 700px) {
+/* Arrastado: --prf-cad-bx e --prf-cad-by vão de 0 a 1 dentro do espaço livre, e o transform desconta o próprio botão.
+   Assim ele não sai da tela, seja qual for o tamanho da janela (BotaoCaderno.tsx faz a conta ao contrário). */
+.prf-cad-flutua.prf-cad-movido,
+body.prf-cad-aberto .prf-cad-flutua.prf-cad-movido {
+  top: calc(8px + var(--prf-cad-by) * (100% - 16px - var(--prf-cad-fundo, 0px)));
+  right: auto;
+  bottom: auto;
+  left: calc(8px + var(--prf-cad-bx) * (100% - 16px - var(--prf-cad-lado, 0px)));
+  transform: translate(calc(var(--prf-cad-bx) * -100%), calc(var(--prf-cad-by) * -100%));
+}
+
+@media (min-width: 641px) {
+  body.prf-cad-aberto .prf-cad-flutua {
+    --prf-cad-lado: var(--prf-cad-l);
+  }
+}
+
+@media (max-width: 640.98px) {
+  body.prf-cad-aberto .prf-cad-flutua {
+    --prf-cad-fundo: var(--prf-cad-h);
+  }
+}
+
+.prf-cad-flutua.prf-cad-arrastando {
+  cursor: grabbing;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.6);
+}
+
+/* A barra segue a largura do painel: duas linhas fixas (a 1ª divisória vira a quebra, e os 3 alinhamentos não se
+   separam) e, no painel mais estreito, botões menores para cada linha caber. */
+@container (max-width: 700px) {
+  .prf-cad-barra {
+    row-gap: 2px;
+  }
+
   .prf-cad-barra > .prf-cad-sep:first-of-type {
     flex-basis: 100%;
     height: 0;
-    margin: -4px 0 0;
+    margin: 0;
     background: none;
   }
 }
 
-@media (min-width: 900px) {
-  .prf-cad-painel:not(.prf-cad-cheio) .prf-cad-barra > .prf-cad-sep:first-of-type {
-    flex-basis: 100%;
-    height: 0;
-    margin: -4px 0 0;
-    background: none;
+@container (max-width: 380px) {
+  .prf-cad-barra {
+    column-gap: 2px;
+    padding: 6px;
+  }
+
+  .prf-cad-botao {
+    min-width: 32px;
+    padding: 0 5px;
+  }
+
+  .prf-cad-topo-botao {
+    padding: 0 6px;
+  }
+}
+
+@container (max-width: 320px) {
+  .prf-cad-barra {
+    padding: 6px 4px;
+  }
+
+  .prf-cad-botao {
+    min-width: 28px;
+    padding: 0 3px;
   }
 }

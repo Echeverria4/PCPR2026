@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { createPortal } from "react-dom";
 import type { TentativaPrf } from "../armazenamento";
+import BotaoCaderno from "../caderno/BotaoCaderno";
 import { abrirCaderno, usePainelCaderno } from "../caderno/painel";
 import { ChipCronometro } from "../LayoutPrf";
 import { ultimaRespostaPrf } from "../sessoes";
@@ -1191,21 +1192,7 @@ function TelaAula({ grupo, aula, estudo, tentativas, onTela, onFixar }: TelaAula
         </nav>
       )}
 
-      {/* Portal: a entrada animada da tela tiraria um botão fixo do canto. */}
-      {!naFolhaDaAula &&
-        createPortal(
-          <button
-            type="button"
-            className="prf-cad-flutua"
-            onClick={anotar}
-            aria-label="Anotar no caderno"
-            title="Anotar no caderno"
-          >
-            <span aria-hidden="true">📝</span>
-            <span className="prf-cad-flutua-texto">Anotar</span>
-          </button>,
-          document.body,
-        )}
+      {!naFolhaDaAula && <BotaoCaderno onAbrir={anotar} />}
     </div>
   );
 }

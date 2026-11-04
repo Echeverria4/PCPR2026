@@ -3,7 +3,7 @@ import type { FolhaCaderno } from "./dados";
 
 /**
  * Onde o caderno está: aberto ou não e em que tela. Fica fora do caderno (que só carrega quando abre) e dura
- * enquanto o app está aberto, então fechar e abrir de novo volta para a mesma folha.
+ * enquanto o app está aberto, então minimizar e abrir de novo volta para a mesma folha.
  */
 export type TelaCaderno =
   | { tipo: "materias" }
@@ -15,7 +15,7 @@ export type TelaCaderno =
 
 export interface PainelCaderno {
   aberto: boolean;
-  /** Tela toda; senão fica ao lado da aula no computador e embaixo dela no celular. */
+  /** Tela toda, só a pedido; senão fica à direita da aula e, no celular em pé, embaixo dela. */
   cheia: boolean;
   tela: TelaCaderno;
 }
@@ -55,12 +55,13 @@ export function abrirCaderno(aula?: AulaCaderno) {
   mudar({ aberto: true, tela: { tipo: "aula", ...aula } });
 }
 
-export function fecharCaderno() {
-  mudar({ aberto: false });
+/** Tira o caderno da frente: o 📝 da aula e o botão do topo trazem ele de volta, sempre no painel. */
+export function minimizarCaderno() {
+  mudar({ aberto: false, cheia: false });
 }
 
 export function alternarCaderno() {
-  if (painel.aberto) fecharCaderno();
+  if (painel.aberto) minimizarCaderno();
   else abrirCaderno();
 }
 
