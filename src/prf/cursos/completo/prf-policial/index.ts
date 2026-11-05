@@ -1,4 +1,5 @@
 import { montarBanco, type DadosCursoCompleto } from "../tipos";
+import { AULAS_ETICA } from "./etica";
 import { AULAS_FISICA } from "./fisica";
 import { AULAS_INFO } from "./info";
 import { AULAS_RLM } from "./rlm";
@@ -6,7 +7,7 @@ import { AULAS_PT } from "./pt";
 
 /** Cada matéria entra aqui quando o lote dela fica pronto. */
 export const DADOS: DadosCursoCompleto = {
-  banco: montarBanco("pol", { pt: AULAS_PT, rlm: AULAS_RLM, info: AULAS_INFO, fisica: AULAS_FISICA }),
+  banco: montarBanco("pol", { pt: AULAS_PT, rlm: AULAS_RLM, info: AULAS_INFO, fisica: AULAS_FISICA, etica: AULAS_ETICA }),
   semQuestoes: ["carreira", "bizus", "trilha", "ebooks", "mentoria", "pt-15"],
   faixa: [
     { forte: "Sem edital", texto: "Novo concurso ainda sem edital nem banca definida" },
