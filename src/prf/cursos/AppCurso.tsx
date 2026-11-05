@@ -7,11 +7,13 @@ import { CURSOS, type CursoId } from "../../data/cursos";
 import type { TelaAulas } from "../aulas/AulasCurso";
 import { ComCatalogo, type Catalogo } from "../aulas/catalogo";
 import type { GrupoCurso } from "../aulas/tipos";
+import type { DadosCursoCompleto } from "./completo/tipos";
 import LayoutCurso, { type AbaCurso } from "./LayoutCurso";
 
 // Telas e lista das aulas só baixam ao abrir o curso, e cada curso só baixa as aulas dele.
 const AulasCurso = lazy(() => import("../aulas/AulasCurso"));
 const SemanaCurso = lazy(() => import("./SemanaCurso"));
+const CursoCompleto = lazy(() => import("./completo/CursoCompleto"));
 
 interface CursoSoAulas {
   /** Nome curto, no título do caderno. */
@@ -19,6 +21,8 @@ interface CursoSoAulas {
   brasao: string;
   brasaoAlt: string;
   aulas: () => Promise<{ GRUPOS: GrupoCurso[] }>;
+  /** Curso completo: banco de questões e resumos, além das aulas. */
+  completo?: () => Promise<{ DADOS: DadosCursoCompleto }>;
 }
 
 const CURSOS_SO_AULAS: Partial<Record<CursoId, CursoSoAulas>> = {
@@ -33,6 +37,7 @@ const CURSOS_SO_AULAS: Partial<Record<CursoId, CursoSoAulas>> = {
     brasao: prfBrasao,
     brasaoAlt: "Brasão da Polícia Rodoviária Federal",
     aulas: () => import("./dados/prf-policial"),
+    completo: () => import("./completo/prf-policial"),
   },
   "pf-agente": {
     curto: "PF Agente",
@@ -74,19 +79,21 @@ interface AppCursoProps {
   onTrocarCurso?: () => void;
 }
 
-/** Os cursos que por enquanto têm só as aulas: vídeos, PDFs, cronômetro, meta, caderno e semana, como na PRF ADM. */
+/** Os cursos além da PRF ADM: vídeos, PDFs, cronômetro, meta, caderno e semana; o curso completo soma questões e resumos. */
 export default function AppCurso({ curso, onTrocarCurso }: AppCursoProps) {
   const dados = CURSOS_SO_AULAS[curso];
   const [catalogo, setCatalogo] = useState<Catalogo | null>(null);
+  const [completo, setCompleto] = useState<DadosCursoCompleto | null>(null);
   const [erro, setErro] = useState(false);
 
   useEffect(() => {
     if (!dados) return;
     let vivo = true;
-    dados
-      .aulas()
-      .then((m) => {
-        if (vivo) setCatalogo(catalogoDe(curso, dados.curto, m.GRUPOS));
+    Promise.all([dados.aulas(), dados.completo?.()])
+      .then(([m, c]) => {
+        if (!vivo) return;
+        setCompleto(c?.DADOS ?? null);
+        setCatalogo(catalogoDe(curso, dados.curto, m.GRUPOS));
       })
       .catch(() => {
         if (vivo) setErro(true);
@@ -100,7 +107,20 @@ export default function AppCurso({ curso, onTrocarCurso }: AppCursoProps) {
   if (!catalogo) return <div className="vazio">Carregando o curso…</div>;
   return (
     <ComCatalogo catalogo={catalogo}>
-      <TelasCurso nome={catalogo.nome} dados={dados} onTrocarCurso={onTrocarCurso} />
+      {completo ? (
+        <Suspense fallback={<div className="vazio">Carregando o curso…</div>}>
+          <CursoCompleto
+            curso={curso}
+            nome={catalogo.nome}
+            brasao={dados.brasao}
+            brasaoAlt={dados.brasaoAlt}
+            dados={completo}
+            onTrocarCurso={onTrocarCurso}
+          />
+        </Suspense>
+      ) : (
+        <TelasCurso nome={catalogo.nome} dados={dados} onTrocarCurso={onTrocarCurso} />
+      )}
     </ComCatalogo>
   );
 }

@@ -13,6 +13,9 @@ import { PRF_MATERIAS, PRF_SITUACAO, PRF_ULTIMO_EDITAL } from "../data/prf";
 import { getLocalAttempts } from "../lib/storage";
 // Só leitura do localStorage (prf:…): o banco da PRF continua fora do pacote principal.
 import { getTentativasPrf } from "../prf/armazenamento";
+// Só leitura do localStorage e números: o banco do curso completo só baixa quando ele é aberto.
+import { progressoDoCurso } from "../prf/cursos/completo/armazenamento";
+import { TOTAIS_BANCO } from "../prf/cursos/completo/totaisBanco";
 // Só números: a lista das aulas de cada curso baixa quando ele é aberto.
 import { TOTAIS_CURSOS, type TotaisCurso } from "../prf/cursos/totais";
 
@@ -296,13 +299,15 @@ export default function Cursos({ onAbrir }: CursosProps) {
     if (totais) {
       const { vistos, ultimo } = resumoAulas(curso.id, totais);
       const feito = totais.blocos > 0 ? Math.round((vistos / totais.blocos) * 100) : 0;
+      const banco = TOTAIS_BANCO[curso.id];
+      const treino = banco ? progressoDoCurso(curso.id).total() : null;
       return (
         <CartaoCurso
           curso={curso}
           imagem={BRASAO_CURSO[curso.id]}
           selos={[
             { texto: "Pré-edital", tom: "neutro" },
-            { texto: "Aulas e PDFs", tom: "neutro" },
+            { texto: banco ? `${banco.questoes.toLocaleString("pt-BR")} questões` : "Aulas e PDFs", tom: "neutro" },
           ]}
           onAbrir={() => onAbrir(curso.id)}
           detalhes={
@@ -313,6 +318,15 @@ export default function Cursos({ onAbrir }: CursosProps) {
                   {totais.videos.toLocaleString("pt-BR")} vídeos e {totais.pdfs.toLocaleString("pt-BR")} PDFs em{" "}
                   {totais.materias.length} matérias
                 </dd>
+                {banco && (
+                  <>
+                    <dt>Treino</dt>
+                    <dd>
+                      {banco.questoes.toLocaleString("pt-BR")} questões e {banco.resumos} resumos, as duas partes
+                      crescendo por matéria
+                    </dd>
+                  </>
+                )}
               </dl>
               <p className="curso-legenda">Matérias: vídeos · PDFs</p>
               <ul className="curso-materias">
@@ -355,6 +369,22 @@ export default function Cursos({ onAbrir }: CursosProps) {
                 )}
               </span>
             </div>
+            {treino && (
+              <div className="curso-numeros">
+                <span>
+                  <strong>{treino.respondidas.toLocaleString("pt-BR")}</strong> questões respondidas
+                </span>
+                <span>
+                  {treino.respondidas > 0 ? (
+                    <>
+                      <strong>{Math.round((treino.acertos / treino.respondidas) * 100)}%</strong> de acerto
+                    </>
+                  ) : (
+                    "nenhuma questão respondida ainda"
+                  )}
+                </span>
+              </div>
+            )}
           </div>
         </CartaoCurso>
       );

@@ -381,7 +381,7 @@ export default function Quiz<M extends string = SubjectId>({
                 {questao.prova.pendencia && ` ${questao.prova.pendencia}`}
               </p>
             )}
-            {selecionada !== questao.correta && curso === "prf-adm" && questao.prova?.compatibilidade !== "C" && (
+            {selecionada !== questao.correta && (curso === "prf-adm" || curso === "prf-policial") && questao.prova?.compatibilidade !== "C" && (
               <p className="explicacao-revisao">
                 Registrado para revisão: {questao.topico}
                 {questao.subassunto && ` › ${questao.subassunto}`}. A questão entrou na fila de revisão dos errados.

@@ -4,6 +4,7 @@ import type { Dia } from "../aulas/GraficoDias";
 import { acharAula, progresso } from "../aulas/progresso";
 import type { AulaCurso, GrupoCurso } from "../aulas/tipos";
 import { inicioSemana, maisDias } from "../semana/base";
+import type { QuestaoCurso, TentativaCurso } from "./completo/tipos";
 
 /*
  * Acompanhamento semanal dos cursos sem banco de questões: soma, de segunda a domingo, o tempo do cronômetro e os
@@ -47,6 +48,55 @@ function grupoDoBloco() {
   }
   indice = { grupos, porBloco };
   return porBloco;
+}
+
+export interface DificuldadeCurso {
+  materia: string;
+  topico: string;
+  total: number;
+  erros: number;
+}
+
+export interface QuestoesSemana {
+  questoes: number;
+  acertos: number;
+  porMateria: Map<string, { questoes: number; acertos: number }>;
+  /** Assuntos com acerto de até 70%, do mais errado para o menos. */
+  dificuldades: DificuldadeCurso[];
+}
+
+const ERRO_MINIMO = 0.3;
+
+/** A parte das questões da semana, nos cursos que têm banco. */
+export function questoesDaSemana(
+  tentativas: TentativaCurso[],
+  questao: Map<string, QuestaoCurso>,
+  inicio: number,
+): QuestoesSemana {
+  const fim = maisDias(inicio, 7);
+  const r: QuestoesSemana = { questoes: 0, acertos: 0, porMateria: new Map(), dificuldades: [] };
+  const porAssunto = new Map<string, DificuldadeCurso>();
+  for (const t of tentativas) {
+    const ms = Date.parse(t.respondidaEm);
+    if (!(ms >= inicio && ms < fim)) continue;
+    r.questoes++;
+    if (t.acertou) r.acertos++;
+    const linha = r.porMateria.get(t.materia) ?? { questoes: 0, acertos: 0 };
+    linha.questoes++;
+    if (t.acertou) linha.acertos++;
+    r.porMateria.set(t.materia, linha);
+    const q = questao.get(t.questionId);
+    if (!q) continue;
+    const chave = `${q.materia}|${q.topico}`;
+    const d = porAssunto.get(chave) ?? { materia: q.materia, topico: q.topico, total: 0, erros: 0 };
+    d.total++;
+    if (!t.acertou) d.erros++;
+    porAssunto.set(chave, d);
+  }
+  r.dificuldades = [...porAssunto.values()]
+    .filter((d) => d.erros > 0 && d.erros / d.total >= ERRO_MINIMO)
+    .sort((a, b) => b.erros - a.erros || b.erros / b.total - a.erros / a.total);
+  return r;
 }
 
 export function resumoSemanaCurso(e: EstadoEstudo, inicio: number, agora: number): ResumoSemanaCurso {
@@ -106,12 +156,16 @@ export function resumoSemanaCurso(e: EstadoEstudo, inicio: number, agora: number
   return r;
 }
 
-/** Semana do primeiro registro (tempo ou bloco); null quando ainda não há nada. */
-export function primeiraSemanaCurso(e: EstadoEstudo): number | null {
+/** Semana do primeiro registro (tempo, bloco ou questão); null quando ainda não há nada. */
+export function primeiraSemanaCurso(e: EstadoEstudo, tentativas: TentativaCurso[] = []): number | null {
   let menor = Infinity;
   for (const s of e.sessoes) menor = Math.min(menor, s.inicio);
   if (e.ativo) menor = Math.min(menor, e.ativo.inicio);
   for (const id of e.vistos) menor = Math.min(menor, quandoVisto(e, id));
+  for (const t of tentativas) {
+    const ms = Date.parse(t.respondidaEm);
+    if (!Number.isNaN(ms)) menor = Math.min(menor, ms);
+  }
   return Number.isFinite(menor) ? inicioSemana(menor) : null;
 }
 

@@ -1,0 +1,20 @@
+/** Nome das matérias com banco, para a explicação da IA: arquivo sem as questões, que a função da API importa. */
+export const MATERIAS_PRF_POLICIAL = new Map<string, string>([
+  ["pt", "Português"],
+  ["rlm", "Raciocínio Lógico e Matemático"],
+  ["info", "Informática"],
+  ["fisica", "Física"],
+  ["etica", "Ética e Cidadania"],
+  ["geopolitica", "Geopolítica"],
+  ["ingles", "Inglês"],
+  ["espanhol", "Espanhol"],
+  ["transito", "Legislação de Trânsito e CONTRAN"],
+  ["adm-a", "Direito Administrativo"],
+  ["adm-b", "Direito Administrativo"],
+  ["con", "Direito Constitucional"],
+  ["penal", "Direito Penal"],
+  ["proc", "Direito Processual Penal"],
+  ["especial", "Legislação Penal Especial"],
+  ["dh", "Direitos Humanos"],
+  ["eca", "Estatuto da Criança e do Adolescente"],
+]);

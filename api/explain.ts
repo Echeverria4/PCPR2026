@@ -2,12 +2,16 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { getAnthropicClient } from "./_anthropic";
 import { SUBJECT_MAP } from "../src/data/subjects";
 import { PRF_MATERIAS } from "../src/data/prf";
+import { MATERIAS_PRF_POLICIAL } from "../src/prf/cursos/completo/prf-policial/materias";
 import type { SubjectId } from "../src/lib/types";
 
 /** Para quem a IA explica, por curso. Sem curso no pedido, vale a PCPR. */
 const CONTEXTO_PCPR = "o concurso de Agente de Polícia Judiciária da PCPR 2026 (banca FGV)";
 const CONTEXTO_PRF =
   "o concurso de Agente Administrativo da Polícia Rodoviária Federal (PRF), de nível médio, ainda sem edital nem banca definida (o último edital, de 2014, foi da FUNCAB). Use a legislação em vigor";
+
+const CONTEXTO_PRF_POLICIAL =
+  "o concurso de Policial Rodoviário Federal (PRF), de nível superior, ainda sem edital nem banca definida. Use a legislação em vigor";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {
@@ -26,14 +30,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   };
 
   const prf = curso === "prf-adm";
+  const policial = curso === "prf-policial";
   const nomeMateria =
     typeof materia !== "string"
       ? undefined
-      : prf
-        ? PRF_MATERIAS.find((m) => m.id === materia)?.nome
-        : materia in SUBJECT_MAP
-          ? SUBJECT_MAP[materia as SubjectId].nome
-          : undefined;
+      : policial
+        ? MATERIAS_PRF_POLICIAL.get(materia)
+        : prf
+          ? PRF_MATERIAS.find((m) => m.id === materia)?.nome
+          : materia in SUBJECT_MAP
+            ? SUBJECT_MAP[materia as SubjectId].nome
+            : undefined;
 
   if (
     !nomeMateria ||
@@ -67,7 +74,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     ? "Explique em profundidade por que o item está certo ou errado, apontando o trecho que decide o julgamento e citando a base legal, súmula ou conceito técnico aplicável sempre que existir."
     : "Explique em profundidade por que o gabarito está correto e por que cada uma das outras alternativas está errada, citando a base legal, súmula ou conceito técnico aplicável sempre que existir.";
 
-  const prompt = `Você é um professor especialista em "${nomeMateria}", preparando um candidato para ${prf ? CONTEXTO_PRF : CONTEXTO_PCPR}.
+  const prompt = `Você é um professor especialista em "${nomeMateria}", preparando um candidato para ${policial ? CONTEXTO_PRF_POLICIAL : prf ? CONTEXTO_PRF : CONTEXTO_PCPR}.
 
 ${certoErrado ? "Item" : "Questão"}${topico ? ` (tópico: ${topico})` : ""}:
 ${enunciado}

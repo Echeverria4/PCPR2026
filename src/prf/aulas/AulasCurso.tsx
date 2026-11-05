@@ -53,6 +53,11 @@ export interface ExtrasAula {
   resumo: (aula: AulaCurso) => ResumoAula | undefined;
   banco: (aula: AulaCurso) => { certas: number; erradas: number; nunca: number };
   onFixar: (aula: AulaCurso, quantidade: number) => void;
+  /** Assuntos mostrados nas questões da aula; sem isto, valem os `topicos` da própria aula. */
+  assuntos?: (aula: AulaCurso) => string[];
+  /** Nota e fim das aulas sem questões, no curso que não chama essa parte de Nivelamento. */
+  notaSemQuestoes?: string;
+  fimSemQuestoes?: string;
 }
 
 interface AulasCursoProps {
@@ -755,7 +760,7 @@ function AjudaDrive({ id, coisa, onAbrir }: { id: string; coisa: string; onAbrir
 }
 
 /** O que a aula ensinou, em poucas linhas: o que cada coisa faz e como reconhecer na prova. */
-function ResumoRapido({ resumo }: { resumo: ResumoAula }) {
+export function ResumoRapido({ resumo }: { resumo: ResumoAula }) {
   return (
     <div className="prf-resumo-cartao">
       <p className="prf-resumo-ideia">{resumo.ideia}</p>
@@ -1169,7 +1174,7 @@ function TelaAula({ grupo, aula, estudo, onTela, extras }: TelaAulaProps) {
                               </button>
                             </>
                           ) : niv ? (
-                            "Nivelamento concluído."
+                            (extras?.fimSemQuestoes ?? "Nivelamento concluído.")
                           ) : (
                             "Matéria concluída."
                           )
@@ -1242,8 +1247,8 @@ function TelaAula({ grupo, aula, estudo, onTela, extras }: TelaAulaProps) {
             ℹ
           </span>
           <span>
-            O Nivelamento só mostra o que vem pela frente nas matérias: aqui não tem questões. Elas ficam no fim de
-            cada aula das matérias, só sobre o assunto daquela aula.
+            {extras?.notaSemQuestoes ??
+              "O Nivelamento só mostra o que vem pela frente nas matérias: aqui não tem questões. Elas ficam no fim de cada aula das matérias, só sobre o assunto daquela aula."}
           </span>
         </p>
       ) : extras ? (
@@ -1268,7 +1273,7 @@ function TelaAula({ grupo, aula, estudo, onTela, extras }: TelaAulaProps) {
                 </button>
               </div>
               <ul className="prf-fixacao-assuntos" aria-label="Assuntos das questões">
-                {(aula.topicos ?? []).map((t) => (
+                {(extras?.assuntos?.(aula) ?? aula.topicos ?? []).map((t) => (
                   <li key={t}>{t}</li>
                 ))}
               </ul>

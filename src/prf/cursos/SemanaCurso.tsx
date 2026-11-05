@@ -1,4 +1,4 @@
-import { useState, type CSSProperties } from "react";
+import { useMemo, useState, type CSSProperties } from "react";
 import type { TelaAulas } from "../aulas/AulasCurso";
 import { curto, diaMes, diasComEstudo, totaisEstudo, useAgora, useEstudo } from "../aulas/estudo";
 import GraficoDias from "../aulas/GraficoDias";
@@ -14,16 +14,26 @@ import {
   type NotasSemana,
 } from "../semana/base";
 import { Numero, Seta } from "../semana/partes";
-import { blocosDoCurso, primeiraSemanaCurso, resumoSemanaCurso } from "./resumoSemana";
+import type { BancoCurso, TentativaCurso } from "./completo/tipos";
+import { blocosDoCurso, primeiraSemanaCurso, questoesDaSemana, resumoSemanaCurso } from "./resumoSemana";
 
 interface SemanaCursoProps {
   /** Segunda-feira da semana aberta; null = esta semana. */
   inicio: number | null;
   onInicio: (inicio: number | null) => void;
   onAbrirAula: (tela: TelaAulas) => void;
+  /** Só nos cursos com banco: soma as questões ao acompanhamento. */
+  questoes?: {
+    tentativas: TentativaCurso[];
+    banco: BancoCurso;
+    total: { respondidas: number; acertos: number };
+    onTreinar: (materia: string, topico?: string) => void;
+  };
 }
 
 const HORA = 60 * 60 * 1000;
+const ACERTO_BOM = 0.7;
+const MAX_DIFICULDADES = 4;
 
 const pct = (parte: number, todo: number) => (todo > 0 ? Math.round((parte / todo) * 100) : 0);
 const largura = (p: number): CSSProperties => ({ width: `${Math.min(100, p)}%` });
@@ -38,8 +48,8 @@ interface Sugestao {
   acao?: { rotulo: string; fazer: () => void };
 }
 
-/** O acompanhamento da PRF sem a parte das questões: tempo, vídeos e PDFs da semana, por matéria. */
-export default function SemanaCurso({ inicio, onInicio, onAbrirAula }: SemanaCursoProps) {
+/** O acompanhamento da PRF: tempo, vídeos e PDFs da semana, por matéria, e as questões quando o curso tem banco. */
+export default function SemanaCurso({ inicio, onInicio, onAbrirAula, questoes }: SemanaCursoProps) {
   const estudo = useEstudo();
   const metaDiaria = useMeta();
   const agora = useAgora(estudo.ativo !== null && estudo.ativo.desde !== null);
@@ -53,7 +63,12 @@ export default function SemanaCurso({ inicio, onInicio, onAbrirAula }: SemanaCur
   const hoje = new Date(agora).setHours(0, 0, 0, 0);
   const r = resumoSemanaCurso(estudo, semana, agora);
   const antes = resumoSemanaCurso(estudo, anterior, agora);
-  const primeira = primeiraSemanaCurso(estudo);
+  const banco = questoes?.banco;
+  const questaoPorId = useMemo(() => new Map((banco?.questoes ?? []).map((q) => [q.id, q])), [banco]);
+  const qs = questoes ? questoesDaSemana(questoes.tentativas, questaoPorId, semana) : null;
+  const qsAntes = questoes ? questoesDaSemana(questoes.tentativas, questaoPorId, anterior) : null;
+  const dificuldades = qs?.dificuldades.slice(0, MAX_DIFICULDADES) ?? [];
+  const primeira = primeiraSemanaCurso(estudo, questoes?.tentativas);
   const horasTotal = totaisEstudo(estudo, agora).total;
   const diasTotal = diasComEstudo(estudo);
   const blocosTotal = blocosDoCurso(estudo);
@@ -72,8 +87,8 @@ export default function SemanaCurso({ inicio, onInicio, onAbrirAula }: SemanaCur
 
   const titulo = eAtual ? "Esta semana" : semana === maisDias(atual, -7) ? "Semana passada" : "Semana";
   // Há curso com mais de 20 matérias: a tabela mostra só as que tiveram estudo.
-  const estudadas = r.materias.filter((l) => l.ms > 0 || l.blocos > 0);
-  const semNada = r.ms === 0 && r.blocos === 0;
+  const estudadas = r.materias.filter((l) => l.ms > 0 || l.blocos > 0 || qs?.porMateria.has(l.grupo.id));
+  const semNada = r.ms === 0 && r.blocos === 0 && !qs?.questoes;
 
   const sugestoes: Sugestao[] = [];
   if (meta) {
@@ -85,6 +100,21 @@ export default function SemanaCurso({ inicio, onInicio, onAbrirAula }: SemanaCur
           ? `Meta de ${meta}h batida: ${curto(r.ms)} de estudo líquido.`
           : `${eAtual ? "Faltam" : "Faltaram"} ${curto(falta)} para a meta de ${meta}h.`,
     });
+  }
+  if (qs && questoes) {
+    // As matérias mais fracas da semana. Sem edital não há peso: vale só o desempenho.
+    const fracas = r.materias
+      .map((l) => ({ grupo: l.grupo, n: qs.porMateria.get(l.grupo.id) }))
+      .filter(({ n }) => n && n.questoes >= 5 && n.acertos / n.questoes < ACERTO_BOM)
+      .sort((a, b) => a.n!.acertos / a.n!.questoes - b.n!.acertos / b.n!.questoes)
+      .slice(0, 2);
+    for (const { grupo, n } of fracas) {
+      sugestoes.push({
+        chave: `reforco-${grupo.id}`,
+        texto: `Reforçar ${grupo.nome}: ${pct(n!.acertos, n!.questoes)}% de acerto em ${n!.questoes} questões.`,
+        acao: { rotulo: "Treinar", fazer: () => questoes.onTreinar(grupo.id) },
+      });
+    }
   }
   const seguir = eAtual ? aulaParaRetomar(estudo, new Set(estudo.vistos)) : null;
   if (seguir) {
@@ -144,7 +174,7 @@ export default function SemanaCurso({ inicio, onInicio, onAbrirAula }: SemanaCur
         </p>
       )}
 
-      <div className="prf-acomp-numeros prf-acomp-numeros-dois">
+      <div className={`prf-acomp-numeros${qs ? "" : " prf-acomp-numeros-dois"}`}>
         <Numero n={1} titulo="Horas líquidas" valor={curto(r.ms)} antes={`Semana anterior: ${curto(antes.ms)}`}>
           {meta ? (
             <>
@@ -178,6 +208,30 @@ export default function SemanaCurso({ inicio, onInicio, onAbrirAula }: SemanaCur
             </p>
           )}
         </Numero>
+        {qs && qsAntes && (
+          <>
+            <Numero
+              n={3}
+              titulo="Questões resolvidas"
+              valor={String(qs.questoes)}
+              antes={`Semana anterior: ${qsAntes.questoes}`}
+            >
+              <p className="prf-acomp-detalhe">
+                {qs.questoes > 0 ? `${qs.acertos} certas · ${qs.questoes - qs.acertos} erradas` : "Treino e fixação"}
+              </p>
+            </Numero>
+            <Numero
+              n={4}
+              titulo="% de acertos"
+              valor={qs.questoes > 0 ? `${pct(qs.acertos, qs.questoes)}%` : "—"}
+              antes={`Semana anterior: ${qsAntes.questoes > 0 ? `${pct(qsAntes.acertos, qsAntes.questoes)}%` : "—"}`}
+            >
+              <p className="prf-acomp-detalhe">
+                {qs.questoes > 0 ? `${qs.acertos} de ${qs.questoes} questões` : "Sem questões nesta semana"}
+              </p>
+            </Numero>
+          </>
+        )}
       </div>
 
       <div className="prf-acomp-grade">
@@ -205,23 +259,30 @@ export default function SemanaCurso({ inicio, onInicio, onAbrirAula }: SemanaCur
                       <th scope="col">Matéria</th>
                       <th scope="col">Horas</th>
                       <th scope="col">Blocos</th>
+                      {qs && <th scope="col">Questões</th>}
+                      {qs && <th scope="col">Acerto</th>}
                     </tr>
                   </thead>
                   <tbody>
-                    {estudadas.map((l) => (
-                      <tr key={l.grupo.id}>
-                        <th scope="row">
-                          <span
-                            className="prf-acomp-cor"
-                            style={{ background: l.grupo.cor ?? "var(--ouro)" }}
-                            aria-hidden="true"
-                          />
-                          {l.grupo.nome}
-                        </th>
-                        <td>{l.ms > 0 ? curto(l.ms) : "—"}</td>
-                        <td>{l.blocos > 0 ? l.blocos : "—"}</td>
-                      </tr>
-                    ))}
+                    {estudadas.map((l) => {
+                      const n = qs?.porMateria.get(l.grupo.id);
+                      return (
+                        <tr key={l.grupo.id}>
+                          <th scope="row">
+                            <span
+                              className="prf-acomp-cor"
+                              style={{ background: l.grupo.cor ?? "var(--ouro)" }}
+                              aria-hidden="true"
+                            />
+                            {l.grupo.nome}
+                          </th>
+                          <td>{l.ms > 0 ? curto(l.ms) : "—"}</td>
+                          <td>{l.blocos > 0 ? l.blocos : "—"}</td>
+                          {qs && <td>{n ? n.questoes : "—"}</td>}
+                          {qs && <td>{n ? `${pct(n.acertos, n.questoes)}%` : "—"}</td>}
+                        </tr>
+                      );
+                    })}
                     {r.livreMs > 0 && (
                       <tr>
                         <th scope="row">
@@ -230,6 +291,8 @@ export default function SemanaCurso({ inicio, onInicio, onAbrirAula }: SemanaCur
                         </th>
                         <td>{curto(r.livreMs)}</td>
                         <td>—</td>
+                        {qs && <td>—</td>}
+                        {qs && <td>—</td>}
                       </tr>
                     )}
                   </tbody>
@@ -254,10 +317,37 @@ export default function SemanaCurso({ inicio, onInicio, onAbrirAula }: SemanaCur
           <section className="prf-acomp-bloco" aria-label="Principais dificuldades">
             <h3 className="prf-acomp-bloco-titulo">
               <span className="prf-acomp-n" aria-hidden="true">
-                3
+                {qs ? 5 : 3}
               </span>
               Principais dificuldades
             </h3>
+            {qs &&
+              (qs.questoes === 0 ? (
+                <p className="prf-acomp-vazio">
+                  Sem questões nesta semana: os assuntos em que você mais errar aparecem aqui.
+                </p>
+              ) : dificuldades.length === 0 ? (
+                <p className="prf-acomp-vazio">Nenhum assunto com acerto abaixo de 70% nesta semana.</p>
+              ) : (
+                <ol className="prf-acomp-dific">
+                  {dificuldades.map((d) => (
+                    <li key={`${d.materia}|${d.topico}`}>
+                      <div className="prf-acomp-dific-texto">
+                        <span className="prf-acomp-dific-materia">
+                          {r.materias.find((l) => l.grupo.id === d.materia)?.grupo.nome ?? d.materia}
+                        </span>
+                        <span className="prf-acomp-dific-topico">{d.topico}</span>
+                        <span className="prf-acomp-dific-conta">
+                          {plural(d.erros, "erro", "erros")} em {d.total} · {pct(d.total - d.erros, d.total)}% de acerto
+                        </span>
+                      </div>
+                      <button type="button" className="botao" onClick={() => questoes?.onTreinar(d.materia, d.topico)}>
+                        Treinar
+                      </button>
+                    </li>
+                  ))}
+                </ol>
+              ))}
             <label className="prf-acomp-nota">
               <span>Suas anotações</span>
               <textarea
@@ -272,7 +362,7 @@ export default function SemanaCurso({ inicio, onInicio, onAbrirAula }: SemanaCur
           <section className="prf-acomp-bloco" aria-label="Ajustes para a próxima semana">
             <h3 className="prf-acomp-bloco-titulo">
               <span className="prf-acomp-n" aria-hidden="true">
-                4
+                {qs ? 6 : 4}
               </span>
               Ajustes para a próxima semana
             </h3>
@@ -337,7 +427,7 @@ export default function SemanaCurso({ inicio, onInicio, onAbrirAula }: SemanaCur
       <section className="prf-acomp-bloco prf-acomp-total" aria-label="Totalizador">
         <h3 className="prf-acomp-bloco-titulo">Totalizador</h3>
         <p className="prf-acomp-sub">Tudo somado, de todas as semanas.</p>
-        <dl className="prf-acomp-total-numeros prf-acomp-total-dois">
+        <dl className={`prf-acomp-total-numeros${questoes ? "" : " prf-acomp-total-dois"}`}>
           <div>
             <dt>Horas líquidas</dt>
             <dd className="prf-acomp-valor">{curto(horasTotal)}</dd>
@@ -345,11 +435,36 @@ export default function SemanaCurso({ inicio, onInicio, onAbrirAula }: SemanaCur
               {diasTotal > 0 ? `em ${plural(diasTotal, "dia", "dias")} de estudo` : "Sem estudo cronometrado"}
             </dd>
           </div>
-          <div>
-            <dt>Blocos concluídos</dt>
-            <dd className="prf-acomp-valor">{milhar(blocosTotal.feitos)}</dd>
-            <dd className="prf-acomp-detalhe">de {milhar(blocosTotal.total)} vídeos e PDFs do curso</dd>
-          </div>
+          {questoes ? (
+            <>
+              <div>
+                <dt>Questões resolvidas</dt>
+                <dd className="prf-acomp-valor">{milhar(questoes.total.respondidas)}</dd>
+                <dd className="prf-acomp-detalhe">
+                  {questoes.total.respondidas > 0
+                    ? `${milhar(questoes.total.acertos)} certas · ${milhar(
+                        questoes.total.respondidas - questoes.total.acertos,
+                      )} erradas`
+                    : "Nenhuma ainda"}
+                </dd>
+              </div>
+              <div>
+                <dt>% de acertos</dt>
+                <dd className="prf-acomp-valor">
+                  {questoes.total.respondidas > 0 ? `${pct(questoes.total.acertos, questoes.total.respondidas)}%` : "—"}
+                </dd>
+                <dd className="prf-acomp-detalhe">
+                  {questoes.total.respondidas > 0 ? "Somando todas as questões" : "Aparece com a primeira questão"}
+                </dd>
+              </div>
+            </>
+          ) : (
+            <div>
+              <dt>Blocos concluídos</dt>
+              <dd className="prf-acomp-valor">{milhar(blocosTotal.feitos)}</dd>
+              <dd className="prf-acomp-detalhe">de {milhar(blocosTotal.total)} vídeos e PDFs do curso</dd>
+            </div>
+          )}
         </dl>
       </section>
     </div>
