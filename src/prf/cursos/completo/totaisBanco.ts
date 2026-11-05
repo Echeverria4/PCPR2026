@@ -5,5 +5,5 @@ import type { CursoId } from "../../../data/cursos";
  * confere estes números com o que está nos arquivos das aulas.
  */
 export const TOTAIS_BANCO: Partial<Record<CursoId, { questoes: number; resumos: number }>> = {
-  "prf-policial": { questoes: 349, resumos: 55 },
+  "prf-policial": { questoes: 403, resumos: 64 },
 };
