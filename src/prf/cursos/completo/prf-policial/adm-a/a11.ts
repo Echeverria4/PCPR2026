@@ -40,7 +40,7 @@ export const AULA: AulaEscrita = {
       },
       {
         termo: "Acumulação",
-        faz: "Dois de professor, professor com técnico ou científico, dois da saúde. Só importa a compatibilidade de horários (Tema 1.081).",
+        faz: "Dois de professor, professor com outro de qualquer natureza (EC 138/2025), dois da saúde. Só importa a compatibilidade de horários (Tema 1.081).",
       },
       {
         termo: "Remuneração",
