@@ -31,6 +31,9 @@ export interface ProgressoRedacao {
   atual?: number;
   guiaPasso?: number;
   guiaLido?: boolean;
+  /** A Redação Oficial (questões objetivas do Manual): passo a passo próprio. */
+  oficialPasso?: number;
+  oficialLido?: boolean;
 }
 
 const CAMPOS: CampoPlano[] = ["intro", "asp1", "asp2", "asp3", "fecho"];
@@ -91,6 +94,8 @@ function limpar(bruto: unknown): ProgressoRedacao {
     atual: atual !== undefined && !temas[atual]?.feitaEm ? atual : undefined,
     guiaPasso: inteiro(p?.guiaPasso, 0, 999),
     guiaLido: p?.guiaLido === true || undefined,
+    oficialPasso: inteiro(p?.oficialPasso, 0, 999),
+    oficialLido: p?.oficialLido === true || undefined,
   };
 }
 
@@ -133,6 +138,11 @@ export function atualizarTema(n: number, mudar: (t: EstadoTema) => EstadoTema): 
 export function salvarPassoGuia(passo: number, chegouAoFim: boolean): ProgressoRedacao {
   const p = lerProgresso();
   return salvar({ ...p, guiaPasso: passo, guiaLido: p.guiaLido || chegouAoFim || undefined });
+}
+
+export function salvarPassoOficial(passo: number, chegouAoFim: boolean): ProgressoRedacao {
+  const p = lerProgresso();
+  return salvar({ ...p, oficialPasso: passo, oficialLido: p.oficialLido || chegouAoFim || undefined });
 }
 
 /** A semana da meta: de segunda-feira, 0h, até a segunda seguinte (exclusive). */

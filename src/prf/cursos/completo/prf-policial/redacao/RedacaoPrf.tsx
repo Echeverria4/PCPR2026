@@ -16,12 +16,14 @@ import {
   PESO_ERROS,
 } from "./guia";
 import { ORDEM_TEMAS, TEMAS, TEMA_POR_N } from "./index";
+import { OFICIAL } from "./oficial";
 import {
   atualizarTema,
   contaFeitas,
   feitasNaSemana,
   lerProgresso,
   salvarPassoGuia,
+  salvarPassoOficial,
   semanaDe,
   temaDaSemana,
   TOTAL_TEMAS,
@@ -36,6 +38,7 @@ type IrPara = (t: TelaRedacaoPrf) => void;
 /** Telas de cada tema: plano (2), escrita (2), modelo (5), repertório e conectivos (2), nota (2). */
 const PASSOS_TEMA = 13;
 const PASSOS_GUIA = montarPassos(GUIA).length;
+const PASSOS_OFICIAL = montarPassos(OFICIAL).length;
 const INICIO: TelaRedacaoPrf = { tipo: "inicio" };
 
 const PONTOS: Record<Avaliacao, number> = { sim: 1, parte: 0.5, nao: 0 };
@@ -117,6 +120,7 @@ export default function RedacaoPrf({ tela, onTela }: { tela: TelaRedacaoPrf; onT
   const [progresso, setProgresso] = useState(lerProgresso);
 
   if (tela.tipo === "guia") return <GuiaRedacao progresso={progresso} onProgresso={setProgresso} onTela={onTela} />;
+  if (tela.tipo === "oficial") return <OficialRedacao progresso={progresso} onProgresso={setProgresso} onTela={onTela} />;
   const tema = tela.tipo === "tema" ? TEMA_POR_N[tela.n] : undefined;
   if (tema) return <FluxoTema key={tema.n} tema={tema} progresso={progresso} onProgresso={setProgresso} onTela={onTela} />;
   return <InicioRedacao progresso={progresso} onTela={onTela} />;
@@ -139,6 +143,11 @@ function InicioRedacao({ progresso, onTela }: { progresso: ProgressoRedacao; onT
     ? { rotulo: "Lido", classe: "pi-status-ok" }
     : progresso.guiaPasso
       ? { rotulo: `Em andamento: passo ${progresso.guiaPasso} de ${PASSOS_GUIA}`, classe: "pi-status-visto" }
+      : { rotulo: "Novo", classe: "pi-status-novo" };
+  const oficial = progresso.oficialLido
+    ? { rotulo: "Lido", classe: "pi-status-ok" }
+    : progresso.oficialPasso
+      ? { rotulo: `Em andamento: passo ${progresso.oficialPasso} de ${PASSOS_OFICIAL}`, classe: "pi-status-visto" }
       : { rotulo: "Novo", classe: "pi-status-novo" };
 
   return (
@@ -209,6 +218,22 @@ function InicioRedacao({ progresso, onTela }: { progresso: ProgressoRedacao; onT
           <span className="pi-card-meta">
             <span className={`pi-status ${guia.classe}`}>{guia.rotulo}</span>
             <span>{PASSOS_GUIA} passos curtos</span>
+          </span>
+        </button>
+      </div>
+
+      <h3 className="secao-titulo">Redação Oficial · cai nas objetivas</h3>
+      <p className="pi-grupo-descricao">
+        Não é para escrever: são as regras do Manual da Presidência e do Decreto 9.758/2019 que a prova cobra em questões de
+        Português.
+      </p>
+      <div className="modos-grid">
+        <button className="modo-card prf-of-card" onClick={() => onTela({ tipo: "oficial" })}>
+          <h3>📄 Redação Oficial</h3>
+          <p>Atributos, pronomes de tratamento, Manual × Decreto, fechos, o ofício desenhado parte por parte e as pegadinhas.</p>
+          <span className="pi-card-meta">
+            <span className={`pi-status ${oficial.classe}`}>{oficial.rotulo}</span>
+            <span>{PASSOS_OFICIAL} passos curtos</span>
           </span>
         </button>
       </div>
@@ -839,6 +864,93 @@ function GuiaRedacao({
           <>
             <p className="pi-guiado-parabens">Pronto: agora é escrever.</p>
             <p className="pi-guiado-fim-texto">O guia fica a um toque na tela da redação, para rever quando precisar.</p>
+            {acoes}
+          </>
+        }
+      />
+    </GlossarioToque>
+  );
+}
+
+/** A Redação Oficial: regras do Manual e do Decreto 9.758/2019, no passo a passo ou numa página só. */
+function OficialRedacao({
+  progresso,
+  onProgresso,
+  onTela,
+}: {
+  progresso: ProgressoRedacao;
+  onProgresso: (p: ProgressoRedacao) => void;
+  onTela: IrPara;
+}) {
+  const [inteira, setInteira] = useState<string | null>(null);
+  useEffect(() => {
+    if (inteira === null) return;
+    const alvo = inteira ? document.getElementById(inteira) : null;
+    if (alvo) alvo.scrollIntoView();
+    else window.scrollTo({ top: 0 });
+  }, [inteira]);
+
+  const acoes = (
+    <div className="pi-acoes">
+      <button className="botao" onClick={() => onTela(INICIO)}>
+        ← Redação
+      </button>
+    </div>
+  );
+
+  if (inteira !== null)
+    return (
+      <GlossarioToque>
+        <article className="pi-licao">
+          <button className="botao" onClick={() => onTela(INICIO)}>
+            ← Redação
+          </button>
+          <h2 className="secao-titulo">Redação Oficial</h2>
+          <div className="pi-acoes pi-modo">
+            <button className="botao botao-ouro" onClick={() => setInteira(null)}>
+              Estudar passo a passo
+            </button>
+          </div>
+          <nav className="pi-indice" aria-label="Partes da Redação Oficial">
+            {OFICIAL.map((s) => (
+              <a key={s.ancora} href={`#${s.ancora}`}>
+                {s.titulo}
+              </a>
+            ))}
+          </nav>
+          {OFICIAL.map((s) => (
+            <section key={s.ancora} id={s.ancora} className="conteudo-card pi-secao">
+              <h3 className="pi-secao-titulo">{s.titulo}</h3>
+              {s.telas ? s.telas : <Blocos blocos={s.blocos} />}
+            </section>
+          ))}
+          {acoes}
+        </article>
+      </GlossarioToque>
+    );
+
+  return (
+    <GlossarioToque>
+      <EstudoGuiado
+        titulo="Redação Oficial"
+        voltarRotulo="← Redação"
+        onVoltar={() => onTela(INICIO)}
+        secoes={OFICIAL}
+        passoInicial={progresso.oficialPasso}
+        onPasso={(n) => onProgresso(salvarPassoOficial(n, n === PASSOS_OFICIAL + 1))}
+        onPaginaInteira={(a) => setInteira(a ?? "")}
+        abertura={
+          <div className="pi-gancho">
+            📄 Na prova, a Redação Oficial vem em questões de Português. São regras fixas: vale decorar a forma certa.
+          </div>
+        }
+        fim={
+          <>
+            <p className="pi-guiado-parabens">Pronto: agora são as questões.</p>
+            <p className="pi-guiado-fim-texto">
+              As 9 questões, de nível 4 e 5, ficam no fim da aula 14 de Português, na aba Aulas, junto com o resumo e o PDF. No
+              Treino, elas entram em Português, nos assuntos de pronomes, fechos e padrão ofício.
+            </p>
             {acoes}
           </>
         }

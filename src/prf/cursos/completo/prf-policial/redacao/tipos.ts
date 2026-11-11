@@ -23,4 +23,4 @@ export type CriterioId = "estrutura" | "asp1" | "asp2" | "asp3";
 export type Avaliacao = "sim" | "parte" | "nao";
 
 /** As telas do bloco, guardadas pelo curso para a aba não perder o lugar. */
-export type TelaRedacaoPrf = { tipo: "inicio" } | { tipo: "tema"; n: number } | { tipo: "guia" };
+export type TelaRedacaoPrf = { tipo: "inicio" } | { tipo: "tema"; n: number } | { tipo: "guia" } | { tipo: "oficial" };

@@ -1,0 +1,105 @@
+/* Redação Oficial da PRF Policial: o ofício desenhado como folha de papel. Só classes prf-of-*. */
+.prf-of {
+  display: grid;
+  gap: 12px;
+}
+.prf-of-intro,
+.prf-of-nota {
+  margin: 0;
+  color: var(--texto-fraco);
+  line-height: 1.5;
+}
+.prf-of-folha {
+  position: relative;
+  background: #f6f1e4;
+  color: #1d2530;
+  border-radius: var(--raio-peq);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  padding: 18px 16px 20px 28px;
+  font-family: var(--fonte-corpo);
+  font-size: 0.86rem;
+  line-height: 1.45;
+  display: grid;
+  gap: 10px;
+}
+.prf-of-folha p {
+  margin: 0;
+}
+.prf-of-folha > * {
+  position: relative;
+}
+.prf-of-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--ouro);
+  color: #10161f;
+  font-size: 0.72rem;
+  font-weight: 700;
+  flex: none;
+}
+.prf-of-folha .prf-of-tag {
+  position: absolute;
+  left: -24px;
+  top: 0;
+}
+.prf-of-cab {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #c9bfa8;
+}
+.prf-of-brasao {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+.prf-of-id {
+  font-weight: 700;
+}
+.prf-of-data {
+  text-align: right;
+}
+.prf-of-end,
+.prf-of-sig {
+  display: grid;
+}
+.prf-of-sig {
+  justify-items: center;
+  text-align: center;
+  margin-top: 4px;
+}
+.prf-of-texto {
+  display: grid;
+  gap: 6px;
+}
+.prf-of-texto p {
+  text-indent: 1.2em;
+}
+.prf-of-legenda {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.prf-of-legenda li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  line-height: 1.45;
+}
+.prf-of-legenda .prf-of-tag {
+  margin-top: 1px;
+}
+.prf-of-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
