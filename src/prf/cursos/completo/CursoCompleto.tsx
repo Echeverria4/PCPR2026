@@ -24,7 +24,7 @@ import {
   ultimaResposta,
   type FiltrosCurso,
 } from "./sessoes";
-import type { DadosCursoCompleto, TentativaCurso } from "./tipos";
+import type { DadosCursoCompleto, PropsRedacao, TentativaCurso } from "./tipos";
 
 const AulasCurso = lazy(() => import("../../aulas/AulasCurso"));
 const SemanaCurso = lazy(() => import("../SemanaCurso"));
@@ -76,6 +76,10 @@ export default function CursoCompleto({ curso, nome, brasao, brasaoAlt, dados, o
   const [telaAulas, setTelaAulas] = useState<TelaAulas>({});
   // Semana aberta no acompanhamento (segunda-feira 0h); null = a semana atual.
   const [semanaAberta, setSemanaAberta] = useState<number | null>(null);
+  const [telaRedacao, setTelaRedacao] = useState<PropsRedacao["tela"]>({ tipo: "inicio" });
+  // A aba de redação só existe no curso que traz uma; o código dela carrega quando a aba abre.
+  const Redacao = useMemo(() => (dados.redacao ? lazy(dados.redacao) : null), [dados.redacao]);
+  const abas = useMemo(() => (Redacao ? [...ABAS, { id: "redacao" as const, rotulo: "✍️ Redação" }] : ABAS), [Redacao]);
 
   const grupos = gruposAtuais();
   const materias = useMemo(
@@ -160,6 +164,7 @@ export default function CursoCompleto({ curso, nome, brasao, brasaoAlt, dados, o
     // Tocar de novo na aba das aulas volta para a lista das matérias; na da semana, para a semana atual.
     if (aba === "aulas" && view === "aulas") setTelaAulas({});
     if (aba === "semana" && view === "semana") setSemanaAberta(null);
+    if (aba === "redacao" && view === "redacao") setTelaRedacao({ tipo: "inicio" });
     setView(aba);
   }
 
@@ -213,7 +218,7 @@ export default function CursoCompleto({ curso, nome, brasao, brasaoAlt, dados, o
       abaAtiva={view === "quiz" || view === "result" ? "treino" : view}
       onTrocarAba={trocarAba}
       onTrocarCurso={onTrocarCurso}
-      abas={ABAS}
+      abas={abas}
       sub="Pré-edital · aulas, questões e resumos"
       mostrarVoltar={noQuiz}
       onVoltar={voltar}
@@ -249,6 +254,11 @@ export default function CursoCompleto({ curso, nome, brasao, brasaoAlt, dados, o
       {view === "resumos" && (
         <Suspense fallback={<div className="vazio">Carregando os resumos…</div>}>
           <ResumosCurso materias={materias} resumos={banco.resumos} onAbrirAula={abrirAula} />
+        </Suspense>
+      )}
+      {view === "redacao" && Redacao && (
+        <Suspense fallback={<div className="vazio">Carregando a redação…</div>}>
+          <Redacao tela={telaRedacao} onTela={setTelaRedacao} />
         </Suspense>
       )}
       {view === "quiz" && sessao && (

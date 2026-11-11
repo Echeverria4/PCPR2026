@@ -10601,3 +10601,33 @@ body.prf-cad-aberto .prf-cad-flutua.prf-cad-movido {
 .prf-resumo-aula > .botao {
   margin-top: 10px;
 }
+
+/* Redação da PRF Policial: a proposta no formato da banca e a conta da nota. */
+.prf-red-proposta { font-family: inherit; font-size: 0.98rem; }
+.prf-red-proposta p { margin: 0 0 10px; }
+.prf-red-motivador { font-style: italic; color: var(--texto-fraco); }
+.prf-red-tema { font-family: var(--fonte-titulo); font-size: 1.06rem; font-weight: 700; color: var(--texto); }
+.prf-red-aspectos { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 6px; line-height: 1.45; }
+.prf-red-aspecto-pedido {
+  display: block;
+  margin: 0 0 4px;
+  padding: 6px 10px;
+  border-left: 3px solid var(--ouro);
+  background: var(--bg-elevado);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+.prf-red-numeros { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+.prf-red-numero { display: flex; flex-direction: column; gap: 4px; flex: 1 1 120px; font-size: 0.86rem; color: var(--texto-fraco); }
+.prf-red-numero input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1px solid var(--borda-forte);
+  border-radius: var(--raio);
+  background: var(--bg);
+  color: var(--texto);
+  font: inherit;
+  font-size: 1rem;
+}
+.prf-red-numero input:focus { outline: none; border-color: var(--ouro); box-shadow: 0 0 0 1px var(--ouro); }

@@ -1,5 +1,7 @@
 import type { AttemptRecord, Question } from "../../../lib/types";
+import type { ComponentType } from "react";
 import type { ResumoAula } from "../../aulas/resumos/tipos";
+import type { TelaRedacaoPrf } from "./prf-policial/redacao/tipos";
 
 /**
  * Curso completo: as aulas de `src/prf/cursos/dados/` mais banco de questões e resumos. A matéria da questão é o id
@@ -28,6 +30,13 @@ export interface DadosCursoCompleto {
   semQuestoes: string[];
   /** Faixa do alto da aba Treino. */
   faixa: { forte: string; texto: string }[];
+  /** Aba de redação do curso, carregada só quando aberta; sem ela, o curso não mostra a aba. */
+  redacao?: () => Promise<{ default: ComponentType<PropsRedacao> }>;
+}
+
+export interface PropsRedacao {
+  tela: TelaRedacaoPrf;
+  onTela: (t: TelaRedacaoPrf) => void;
 }
 
 export type TentativaCurso = AttemptRecord<string>;

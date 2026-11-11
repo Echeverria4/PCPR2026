@@ -27,4 +27,5 @@ export const DADOS: DadosCursoCompleto = {
     { forte: "Sem edital", texto: "Novo concurso ainda sem edital nem banca definida" },
     { forte: "Nível 4 e 5", texto: "Questões difíceis, no nível da prova de nível superior" },
   ],
+  redacao: () => import("./redacao/RedacaoPrf"),
 };

@@ -57,7 +57,7 @@ export const AULA: AulaEscrita = {
       },
     ],
     cuidado:
-      "A Lei 13.712 fala em “Ministro de Estado da Segurança Pública”; hoje a pasta é o Ministério da Justiça e Segurança Pública. O Decreto 8.282 cita o Decreto 5.707/2006 sobre capacitação, que já foi revogado; na prova, siga a regra do próprio Decreto 8.282.",
+      "A Lei 13.712 fala em “Ministro de Estado da Segurança Pública”; hoje a pasta é o Ministério da Justiça e Segurança Pública. O Decreto 8.282 cita o Decreto 5.707/2006 sobre capacitação, que já foi revogado pelo Decreto 9.991/2019 (hoje, a Política Nacional de Desenvolvimento de Pessoas); na prova, siga a regra do próprio Decreto 8.282.",
   },
   questoes: [
     {
