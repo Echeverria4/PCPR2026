@@ -5,7 +5,7 @@
 import type { Avaliacao, CampoPlano, CriterioId } from "./tipos";
 
 const CHAVE = "curso:prf-policial:redacao:v1";
-export const TOTAL_TEMAS = 13;
+export const TOTAL_TEMAS = 16;
 
 export interface EstadoTema {
   /** Tela do passo a passo em que a pessoa parou (0 = abertura). */
@@ -156,9 +156,9 @@ export function feitasNaSemana(p: ProgressoRedacao, hoje = new Date()): number[]
 }
 
 /** O tema começado e não feito; sem ele, o primeiro que falta fazer. */
-export function temaDaSemana(p: ProgressoRedacao): number | undefined {
+export function temaDaSemana(p: ProgressoRedacao, ordem: number[]): number | undefined {
   if (p.atual && !p.temas[p.atual]?.feitaEm) return p.atual;
-  for (let n = 1; n <= TOTAL_TEMAS; n++) if (!p.temas[n]?.feitaEm) return n;
+  for (const n of ordem) if (!p.temas[n]?.feitaEm) return n;
   return undefined;
 }
 

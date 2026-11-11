@@ -15,7 +15,7 @@ import {
   PERGUNTA_ASPECTO,
   PESO_ERROS,
 } from "./guia";
-import { TEMAS, TEMA_POR_N } from "./index";
+import { ORDEM_TEMAS, TEMAS, TEMA_POR_N } from "./index";
 import {
   atualizarTema,
   contaFeitas,
@@ -103,7 +103,7 @@ function statusTema(e: EstadoTema | undefined): { rotulo: string; classe: string
 
 /** O botão principal: continuar o tema começado, fazer o da semana ou, com a meta cumprida, adiantar o próximo. */
 function chamada(p: ProgressoRedacao): { n: number; rotulo: string } | null {
-  const n = temaDaSemana(p);
+  const n = temaDaSemana(p, ORDEM_TEMAS);
   if (n === undefined) return null;
   const passo = p.temas[n]?.passo ?? 0;
   if (passo > PASSOS_TEMA) return { n, rotulo: `Continuar o tema ${n}: falta marcar como feita` };
@@ -130,7 +130,7 @@ function InicioRedacao({ progresso, onTela }: { progresso: ProgressoRedacao; onT
   const feitas = feitasNaSemana(progresso, hoje);
   const total = contaFeitas(progresso);
   const faltam = TOTAL_TEMAS - total;
-  const daSemana = temaDaSemana(progresso);
+  const daSemana = temaDaSemana(progresso, ORDEM_TEMAS);
   const acao = chamada(progresso);
   // Uma por semana, a partir desta (ou da próxima, se a desta já foi feita): o domingo em que a última fica pronta.
   const prazo = new Date(domingo);

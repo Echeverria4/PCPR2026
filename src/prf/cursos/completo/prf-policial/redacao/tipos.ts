@@ -1,7 +1,7 @@
 /** Redação da PRF Policial no formato do Cebraspe: até 30 linhas, um tema e três aspectos pedidos. */
 export interface TemaPrf {
   n: number;
-  bloco: 1 | 2 | 3;
+  bloco: 1 | 2 | 3 | 4;
   /** Nome curto do tema, para a lista e o título das telas. */
   recorte: string;
   /** Texto curto de contexto, como o que abre a proposta da prova. */

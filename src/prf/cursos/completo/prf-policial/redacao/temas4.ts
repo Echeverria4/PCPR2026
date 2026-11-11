@@ -55,11 +55,11 @@ export const TEMAS_4: TemaPrf[] = [
       "Art. 4º, § 1º, da LGPD: esse tratamento será regido por lei específica, com medidas proporcionais e estritamente necessárias, respeitando os princípios gerais e os direitos do titular.",
       "Ideia: a máquina aponta, a pessoa decide; todo alerta passa por revisão humana.",
     ],
-    conectivos: ["Contudo", "Por isso", "Em primeiro lugar", "o que", "Além disso", "de modo que", "Por outro lado", "Assim", "Ademais", "Por fim", "Embora", "Nesse sentido", "desde que", "Portanto"],
+    conectivos: ["Contudo", "Por isso", "Em primeiro lugar", "o que", "Além disso", "de modo que", "Por outro lado", "Assim", "Ademais", "Por fim", "Embora", "Nesse sentido", "Portanto", "desde que"],
   },
   {
     n: 11,
-    bloco: 3,
+    bloco: 4,
     recorte: "A PRF em ferrovias e hidrovias (PEC 18/2025)",
     contexto:
       "Em 3/11/2026, o Senado aprovou em dois turnos a PEC 18/2025, a PEC da Segurança Pública, que, entre outros pontos, estende a atuação da PRF às ferrovias e hidrovias federais; o texto seguiu para promulgação. No texto em vigor, o art. 144, § 2º, da Constituição destina a PRF ao patrulhamento ostensivo das rodovias federais.",
