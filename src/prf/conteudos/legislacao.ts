@@ -34,7 +34,7 @@ Complemento (pontos que a banca costuma cruzar com o art. 144):
 • Art. 21, XIV: a União organiza e mantém a polícia civil, a polícia penal, a polícia militar e o corpo de bombeiros militar do Distrito Federal, que mesmo assim se subordinam ao Governador do DF (§ 6º). Ser mantido pela União não define a quem o órgão se subordina
 • Art. 22, XI: legislar sobre trânsito e transporte é privativo da União, e por isso o CTB é lei federal; já estabelecer e implantar política de educação para a segurança do trânsito é competência comum de todos os entes (art. 23, XII)
 
-Atenção: em outubro de 2026, a PEC 18/2025 (PEC da Segurança Pública), que entre outros pontos estende a atuação da PRF às ferrovias e hidrovias federais, ainda tramitava no Congresso. Até a promulgação, vale o texto atual do § 2º.`,
+Atenção: em 3/11/2026, o Senado aprovou em dois turnos a PEC 18/2025 (PEC da Segurança Pública), que, entre outros pontos, estende a atuação da PRF às ferrovias e hidrovias federais; o texto seguiu para promulgação. Até a promulgação, vale o texto atual do § 2º.`,
     exemplos: [
       "Ao prender em flagrante, numa rodovia federal, o motorista de um carro com registro de roubo, a PRF apresenta o preso à polícia judiciária competente: o patrulhamento é dela, mas a investigação fica com a polícia judiciária.",
       "Numa rodovia federal que atravessa uma cidade, o patrulhamento ostensivo da pista é da PRF; nas ruas do município, o policiamento ostensivo cabe à polícia militar (§ 5º).",
