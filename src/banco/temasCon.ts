@@ -95,3 +95,16 @@ export const TEMA_QUESTAO_PCPR_CON: Record<string, TemaCon | null> = {
   "con-015": "con.defesa",
   "con-016": "con.defesa",
 };
+
+/** PCPR (Processo Penal): princípios do art. 5º e o art. 144 têm aula em Constitucional. */
+export const TEMA_TOPICO_PCPR_PP_CON: Record<string, TemaCon | null> = {};
+
+export const TEMA_QUESTAO_PCPR_PP_CON: Record<string, TemaCon | null> = {
+  // Silêncio do preso, juiz natural e razoável duração do processo
+  "pp-051": "con.art5-garantias",
+  "pp-052": "con.art5-garantias",
+  "pp-055": "con.art5-garantias",
+  // Segurança pública: polícias penais e polícia administrativa
+  "pp-067": "con.defesa",
+  "pp-068": "con.defesa",
+};

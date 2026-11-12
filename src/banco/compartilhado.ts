@@ -4,6 +4,7 @@ import { QUESTOES_RLM as RLM_PCPR } from "../data/questions/rlm";
 import { QUESTOES_ADM as ADM_PCPR } from "../data/questions/adm";
 import { QUESTOES_CON as CON_PCPR } from "../data/questions/constitucional";
 import { QUESTOES_PEN as PENAL_PCPR } from "../data/questions/pen";
+import { QUESTOES_PP as PROC_PCPR } from "../data/questions/pp";
 import { QUESTOES_TI } from "../data/questions/ti";
 import { QUESTOES_TI_SEGURANCA } from "../data/questions/ti-seguranca";
 import { QUESTOES_PRF_POR_MATERIA } from "../prf/questoes";
@@ -51,9 +52,12 @@ import {
   TEMA_TOPICO_ADM_LEG_CON,
   TEMA_TOPICO_PCPR_CON,
   TEMAS_CON,
+  TEMA_QUESTAO_PCPR_PP_CON,
+  TEMA_TOPICO_PCPR_PP_CON,
 } from "./temasCon";
 import { AULA_POL_DO_TEMA_ETICA, TEMA_QUESTAO_ADM_ETICA, TEMA_TOPICO_ADM_ETICA, TEMAS_ETICA } from "./temasEtica";
 import { AULA_POL_DO_TEMA_PENAL, TEMA_QUESTAO_PCPR_PENAL, TEMA_TOPICO_PCPR_PENAL, TEMAS_PENAL } from "./temasPenal";
+import { AULA_POL_DO_TEMA_PROC, TEMA_QUESTAO_PCPR_PROC, TEMA_TOPICO_PCPR_PROC, TEMAS_PROC } from "./temasProc";
 
 /**
  * Banco por tema: cada curso que tem questões entra aqui como fonte, e cada questão ganha um tema. Um curso que
@@ -142,6 +146,7 @@ const MATERIAS_POL: MateriaBanco[] = [
       // O art. 144 está em Legislação na PRF ADM.
       { ...PRF_ADM, questoes: () => QUESTOES_PRF_POR_MATERIA.leg, tema: temaPor(TEMA_QUESTAO_ADM_LEG_CON, TEMA_TOPICO_ADM_LEG_CON) },
       { ...PCPR, questoes: () => CON_PCPR, tema: temaPor(TEMA_QUESTAO_PCPR_CON, TEMA_TOPICO_PCPR_CON) },
+      { ...PCPR, questoes: () => PROC_PCPR, tema: temaPor(TEMA_QUESTAO_PCPR_PP_CON, TEMA_TOPICO_PCPR_PP_CON) },
     ],
   },
   {
@@ -162,6 +167,13 @@ const MATERIAS_POL: MateriaBanco[] = [
     temas: TEMAS_PENAL,
     aula: AULA_POL_DO_TEMA_PENAL,
     fontes: [{ ...PCPR, questoes: () => PENAL_PCPR, tema: temaPor(TEMA_QUESTAO_PCPR_PENAL, TEMA_TOPICO_PCPR_PENAL) }],
+  },
+  {
+    // A PRF ADM não tem Processo Penal.
+    materia: "proc",
+    temas: TEMAS_PROC,
+    aula: AULA_POL_DO_TEMA_PROC,
+    fontes: [{ ...PCPR, questoes: () => PROC_PCPR, tema: temaPor(TEMA_QUESTAO_PCPR_PROC, TEMA_TOPICO_PCPR_PROC) }],
   },
 ];
 
