@@ -1261,3 +1261,159 @@
     justify-self: stretch;
   }
 }
+
+/* Questões: quatro jeitos de treinar (12/11/26). */
+.cx-modos {
+  margin: 0;
+}
+
+.cx-modos button {
+  padding: 6px 14px;
+  font-weight: 600;
+}
+
+.cx-treino-dica {
+  margin: 0;
+  color: var(--texto);
+}
+
+.cx-qtd {
+  margin: 0;
+}
+
+.cx-qtd button {
+  min-width: 52px;
+  justify-content: center;
+  padding: 6px 12px;
+}
+
+.cx-dist {
+  display: grid;
+  gap: 12px;
+}
+
+.cx-dist-titulo {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 6px;
+  font-family: var(--fonte-cond);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ouro);
+}
+
+.cx-dist ul,
+.cx-cotas {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cx-dist li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--borda);
+  font-size: 0.92rem;
+}
+
+.cx-dist li:last-child {
+  border-bottom: 0;
+}
+
+.cx-cotas-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cx-cotas li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--borda);
+}
+
+.cx-cotas li:last-child {
+  border-bottom: 0;
+}
+
+.cx-cota-nome {
+  min-width: 0;
+  font-size: 0.92rem;
+  color: var(--texto-fraco);
+}
+
+.cx-cota-ativa .cx-cota-nome {
+  color: var(--texto);
+}
+
+.cx-cota-max {
+  white-space: nowrap;
+  font-size: 0.78rem;
+  color: var(--texto-fraco);
+}
+
+.cx-passo {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex: none;
+}
+
+.cx-passo button {
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--borda-forte);
+  border-radius: var(--cx-raio);
+  background: var(--bg-elevado);
+  color: var(--texto);
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.cx-passo button:hover:not(:disabled) {
+  border-color: var(--ouro);
+}
+
+.cx-passo button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.cx-passo input {
+  width: 56px;
+  height: 38px;
+  border: 1px solid var(--borda-forte);
+  border-radius: var(--cx-raio);
+  background: var(--bg-elevado);
+  color: var(--texto);
+  color-scheme: dark;
+  font-size: 16px;
+  text-align: center;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.cx-passo input::-webkit-outer-spin-button,
+.cx-passo input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.cx-cota-ativa .cx-passo input {
+  border-color: var(--ouro);
+  color: var(--ouro);
+}
+
+.cx-passo button:focus-visible,
+.cx-passo input:focus-visible {
+  outline: 2px solid var(--ouro);
+  outline-offset: 2px;
+}
