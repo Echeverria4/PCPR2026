@@ -1,4 +1,4 @@
-import { useMemo, type ReactNode } from "react";
+import { useMemo, useState, type ReactNode } from "react";
 import { BRASOES } from "../components/Cursos";
 import { BANCO } from "../data/questions";
 import { PRF_NOMES, type MateriaPrfId } from "../data/prf";
@@ -6,8 +6,7 @@ import type { CursoId } from "../data/cursos";
 import { getLocalAttempts, getWrongQueue } from "../lib/storage";
 import type { AttemptRecord } from "../lib/types";
 import { TOTAIS_BANCO } from "../prf/cursos/completo/totaisBanco";
-import { AULA_POL_DO_TEMA, TEMAS_PT } from "../banco/temasPt";
-import { TOTAIS_TEMAS_PT_POL } from "../banco/totaisTemas";
+import { TOTAIS_TEMAS_POL } from "../banco/totaisTemas";
 import { lerProgresso as lerProgressoMapas } from "../prf/cursos/completo/prf-policial/mapas/progresso";
 import {
   contaFeitas as feitasPol,
@@ -41,7 +40,7 @@ interface HubProps {
 
 const n = (v: number) => v.toLocaleString("pt-BR");
 
-/** "1.811 questões em 18 matérias + 156 de outros cursos". */
+/** "1.811 questões em 18 matérias + 213 de outros cursos". */
 function subPol() {
   const t = TOTAIS_BANCO["prf-policial"];
   if (!t) return "";
@@ -267,38 +266,72 @@ export function Questoes({ onAbrir }: HubProps) {
         </section>
       ))}
 
-      <section className="cx-card">
-        <div className="cx-card-topo">
-          <h2 className="cx-card-titulo">📚 Português por tema · PRF Policial</h2>
-        </div>
-        <p className="cx-card-nota">
-          As questões da PRF ADM e da PCPR do mesmo assunto entram sozinhas na aula certa, com o selo de onde vieram.
-          Questões com exemplos regionais ou da Polícia Civil ficam de fora.
-        </p>
-        <ul className="cx-recs">
-          {TEMAS_PT.map((t) => {
-            const c = TOTAIS_TEMAS_PT_POL[t.id];
-            if (!c) return null;
-            const partes = [c["prf-adm"] && `PRF ADM ${c["prf-adm"]}`, c.pcpr2026 && `PCPR ${c.pcpr2026}`].filter(Boolean);
-            return (
-              <li key={t.id}>
-                <span className="cx-rec-texto">
-                  <strong>{c.proprias + c["prf-adm"] + c.pcpr2026}</strong> em {t.nome} · {c.proprias} do curso
-                  {partes.length > 0 && ` + ${partes.join(", ")}`}
-                </span>
-                <button
-                  type="button"
-                  className="botao cx-botao-peq"
-                  onClick={() => onAbrir("prf-policial", { aba: "aulas", grupo: "pt", aula: AULA_POL_DO_TEMA[t.id] })}
-                >
-                  Abrir a aula
-                </button>
-              </li>
-            );
-          })}
-        </ul>
-      </section>
+      <BancoPorTema onAbrir={onAbrir} />
     </div>
+  );
+}
+
+/** Banco por tema da PRF Policial: uma matéria por vez, cada tema com o total e o botão para a aula dele. */
+function BancoPorTema({ onAbrir }: HubProps) {
+  const [materia, setMateria] = useState(TOTAIS_TEMAS_POL[0].materia);
+  const [todos, setTodos] = useState(false);
+  const atual = TOTAIS_TEMAS_POL.find((m) => m.materia === materia) ?? TOTAIS_TEMAS_POL[0];
+  // Tela curta: primeiro só os temas que ganharam questões de outros cursos.
+  const comFora = atual.temas.filter((t) => t["prf-adm"] + t.pcpr2026 > 0);
+  const temas = todos ? atual.temas : comFora;
+  const deFora = (m: (typeof TOTAIS_TEMAS_POL)[number]) => m.temas.reduce((s, t) => s + t["prf-adm"] + t.pcpr2026, 0);
+  return (
+    <section className="cx-card">
+      <div className="cx-card-topo">
+        <h2 className="cx-card-titulo">📚 Banco por tema · PRF Policial</h2>
+      </div>
+      <p className="cx-card-nota">
+        As questões da PRF ADM e da PCPR do mesmo assunto entram sozinhas na aula certa, com o selo de onde vieram.
+        Questões com exemplos regionais ou da Polícia Civil ficam de fora.
+      </p>
+      <ul className="cx-chips" aria-label="Matérias do banco por tema">
+        {TOTAIS_TEMAS_POL.map((m) => (
+          <li key={m.materia}>
+            <button
+              type="button"
+              aria-pressed={m.materia === atual.materia}
+              onClick={() => {
+                setMateria(m.materia);
+                setTodos(false);
+              }}
+            >
+              <span>{m.nome}</span>
+              <span className="cx-chip-n">+{deFora(m)}</span>
+            </button>
+          </li>
+        ))}
+      </ul>
+      <ul className="cx-recs">
+        {temas.map((t) => {
+          const partes = [t["prf-adm"] && `PRF ADM ${t["prf-adm"]}`, t.pcpr2026 && `PCPR ${t.pcpr2026}`].filter(Boolean);
+          return (
+            <li key={t.aula}>
+              <span className="cx-rec-texto">
+                <strong>{t.proprias + t["prf-adm"] + t.pcpr2026}</strong> em {t.nome} · {t.proprias} do curso
+                {partes.length > 0 && ` + ${partes.join(", ")}`}
+              </span>
+              <button
+                type="button"
+                className="botao cx-botao-peq"
+                onClick={() => onAbrir("prf-policial", { aba: "aulas", grupo: atual.materia, aula: t.aula })}
+              >
+                Abrir a aula
+              </button>
+            </li>
+          );
+        })}
+      </ul>
+      {comFora.length < atual.temas.length && (
+        <button type="button" className="botao cx-botao-peq cx-tema-todos" onClick={() => setTodos((v) => !v)}>
+          {todos ? "Só os temas com questões de outros cursos" : `Ver todos os ${atual.temas.length} temas`}
+        </button>
+      )}
+    </section>
   );
 }
 

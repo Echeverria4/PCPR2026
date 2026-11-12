@@ -823,6 +823,20 @@
   background: rgba(242, 193, 78, 0.08);
 }
 
+.cx-chips + .cx-recs {
+  margin-top: 12px;
+}
+
+.cx-tema-todos {
+  margin-top: 12px;
+}
+
+.cx-chips button[aria-pressed="true"] {
+  border-color: var(--ouro);
+  background: rgba(242, 193, 78, 0.16);
+  color: var(--ouro);
+}
+
 .cx-chip-n {
   min-width: 26px;
   padding: 2px 7px;

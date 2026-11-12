@@ -1,5 +1,5 @@
 import { montarBanco, type BancoCurso, type DadosCursoCompleto } from "../tipos";
-import { compartilhadasPtPol } from "../../../../banco/compartilhado";
+import { compartilhadasPol } from "../../../../banco/compartilhado";
 import { AULAS_DISCURSIVAS } from "./discursivas";
 import { AULAS_CARREIRA } from "./carreira";
 import { AULAS_ECA } from "./eca";
@@ -32,11 +32,11 @@ function semEscondidas(banco: BancoCurso): BancoCurso {
 }
 
 /**
- * Banco por tema (12/11/26): as questões de Português da PRF ADM e da PCPR do mesmo assunto entram na aula certa,
+ * Banco por tema (12/11/26): as questões da PRF ADM e da PCPR do mesmo assunto (Português e RLM) entram na aula certa,
  * com selo de origem. Questão nova numa fonte entra aqui sozinha (src/banco/compartilhado.ts).
  */
 function comCompartilhadas(banco: BancoCurso): BancoCurso {
-  return { ...banco, questoes: [...banco.questoes, ...compartilhadasPtPol(banco.questoes)] };
+  return { ...banco, questoes: [...banco.questoes, ...compartilhadasPol(banco.questoes)] };
 }
 
 /** Cada matéria entra aqui quando o lote dela fica pronto. */
