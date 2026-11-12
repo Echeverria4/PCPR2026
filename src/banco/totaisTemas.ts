@@ -135,4 +135,23 @@ export const TOTAIS_TEMAS_POL: { materia: string; nome: string; temas: TotalTema
       { nome: "LAI e conflito de interesses", aula: "adm-a-15", proprias: 12, "prf-adm": 4, pcpr2026: 0 },
     ],
   },
+  {
+    materia: "penal",
+    nome: "Penal",
+    temas: [
+      { nome: "Princípios do Direito Penal", aula: "penal-01", proprias: 9, "prf-adm": 0, pcpr2026: 0 },
+      { nome: "Aplicação da lei penal", aula: "penal-02", proprias: 11, "prf-adm": 0, pcpr2026: 1 },
+      { nome: "Teoria do crime e ilicitude", aula: "penal-03", proprias: 12, "prf-adm": 0, pcpr2026: 8 },
+      { nome: "Culpabilidade e erro", aula: "penal-04", proprias: 10, "prf-adm": 0, pcpr2026: 1 },
+      { nome: "Extinção da punibilidade", aula: "penal-05", proprias: 11, "prf-adm": 0, pcpr2026: 2 },
+      { nome: "Crimes contra a pessoa", aula: "penal-06", proprias: 17, "prf-adm": 0, pcpr2026: 18 },
+      { nome: "Crimes contra o patrimônio", aula: "penal-07", proprias: 15, "prf-adm": 0, pcpr2026: 12 },
+      { nome: "Dignidade sexual e incolumidade pública", aula: "penal-08", proprias: 12, "prf-adm": 0, pcpr2026: 5 },
+      { nome: "Crimes contra a fé pública", aula: "penal-09", proprias: 11, "prf-adm": 0, pcpr2026: 1 },
+      { nome: "Crimes funcionais", aula: "penal-10", proprias: 11, "prf-adm": 0, pcpr2026: 10 },
+      { nome: "Crimes de particular contra a administração", aula: "penal-11", proprias: 10, "prf-adm": 0, pcpr2026: 0 },
+      { nome: "Justiça e finanças públicas", aula: "penal-12", proprias: 11, "prf-adm": 0, pcpr2026: 4 },
+      { nome: "Crimes em licitações", aula: "penal-13", proprias: 9, "prf-adm": 0, pcpr2026: 4 },
+    ],
+  },
 ];

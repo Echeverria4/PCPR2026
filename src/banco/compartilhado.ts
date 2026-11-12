@@ -3,6 +3,7 @@ import { QUESTOES_PT as PT_PCPR } from "../data/questions/pt";
 import { QUESTOES_RLM as RLM_PCPR } from "../data/questions/rlm";
 import { QUESTOES_ADM as ADM_PCPR } from "../data/questions/adm";
 import { QUESTOES_CON as CON_PCPR } from "../data/questions/constitucional";
+import { QUESTOES_PEN as PENAL_PCPR } from "../data/questions/pen";
 import { QUESTOES_TI } from "../data/questions/ti";
 import { QUESTOES_TI_SEGURANCA } from "../data/questions/ti-seguranca";
 import { QUESTOES_PRF_POR_MATERIA } from "../prf/questoes";
@@ -52,6 +53,7 @@ import {
   TEMAS_CON,
 } from "./temasCon";
 import { AULA_POL_DO_TEMA_ETICA, TEMA_QUESTAO_ADM_ETICA, TEMA_TOPICO_ADM_ETICA, TEMAS_ETICA } from "./temasEtica";
+import { AULA_POL_DO_TEMA_PENAL, TEMA_QUESTAO_PCPR_PENAL, TEMA_TOPICO_PCPR_PENAL, TEMAS_PENAL } from "./temasPenal";
 
 /**
  * Banco por tema: cada curso que tem questões entra aqui como fonte, e cada questão ganha um tema. Um curso que
@@ -153,6 +155,13 @@ const MATERIAS_POL: MateriaBanco[] = [
       { ...PRF_ADM, questoes: () => QUESTOES_PRF_POR_MATERIA.etica, tema: temaPor(TEMA_QUESTAO_ADM_ETICA_ADM, TEMA_TOPICO_ADM_ETICA_ADM) },
       { ...PCPR, questoes: () => ADM_PCPR, tema: temaPor(TEMA_QUESTAO_PCPR_ADM, TEMA_TOPICO_PCPR_ADM) },
     ],
+  },
+  {
+    // A PRF ADM não tem Direito Penal.
+    materia: "penal",
+    temas: TEMAS_PENAL,
+    aula: AULA_POL_DO_TEMA_PENAL,
+    fontes: [{ ...PCPR, questoes: () => PENAL_PCPR, tema: temaPor(TEMA_QUESTAO_PCPR_PENAL, TEMA_TOPICO_PCPR_PENAL) }],
   },
 ];
 
