@@ -40,7 +40,7 @@ interface HubProps {
 
 const n = (v: number) => v.toLocaleString("pt-BR");
 
-/** "1.811 questões em 18 matérias + 615 de outros cursos". */
+/** "1.811 questões em 18 matérias + 695 de outros cursos". */
 function subPol() {
   const t = TOTAIS_BANCO["prf-policial"];
   if (!t) return "";

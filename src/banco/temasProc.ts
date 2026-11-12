@@ -43,3 +43,11 @@ export const TEMA_QUESTAO_PCPR_PROC: Record<string, TemaProc | null> = {
   "pp-042": "proc.prisao",
   "pp-045": "proc.prisao",
 };
+
+/** PCPR, crimes cibernéticos (Informática): cadeia de custódia e hash da evidência digital. */
+export const TEMA_QUESTAO_PCPR_TI_PROC: Record<string, TemaProc | null> = {
+  "ti-316": "proc.especie",
+  "ti-317": "proc.especie",
+  "ti-318": "proc.especie",
+  "ti-350": "proc.especie",
+};

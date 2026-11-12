@@ -5,6 +5,9 @@ import { QUESTOES_ADM as ADM_PCPR } from "../data/questions/adm";
 import { QUESTOES_CON as CON_PCPR } from "../data/questions/constitucional";
 import { QUESTOES_PEN as PENAL_PCPR } from "../data/questions/pen";
 import { QUESTOES_PP as PROC_PCPR } from "../data/questions/pp";
+import { QUESTOES_LEG as LEG_PCPR } from "../data/questions/leg";
+import { QUESTOES_DH as DH_PCPR } from "../data/questions/dh";
+import { QUESTOES_TI_CRIMES } from "../data/questions/ti-crimes";
 import { QUESTOES_TI } from "../data/questions/ti";
 import { QUESTOES_TI_SEGURANCA } from "../data/questions/ti-seguranca";
 import { QUESTOES_PRF_POR_MATERIA } from "../prf/questoes";
@@ -56,8 +59,26 @@ import {
   TEMA_TOPICO_PCPR_PP_CON,
 } from "./temasCon";
 import { AULA_POL_DO_TEMA_ETICA, TEMA_QUESTAO_ADM_ETICA, TEMA_TOPICO_ADM_ETICA, TEMAS_ETICA } from "./temasEtica";
-import { AULA_POL_DO_TEMA_PENAL, TEMA_QUESTAO_PCPR_PENAL, TEMA_TOPICO_PCPR_PENAL, TEMAS_PENAL } from "./temasPenal";
-import { AULA_POL_DO_TEMA_PROC, TEMA_QUESTAO_PCPR_PROC, TEMA_TOPICO_PCPR_PROC, TEMAS_PROC } from "./temasProc";
+import {
+  AULA_POL_DO_TEMA_PENAL,
+  TEMA_QUESTAO_PCPR_PENAL,
+  TEMA_QUESTAO_PCPR_TI_PENAL,
+  TEMA_TOPICO_PCPR_PENAL,
+  TEMAS_PENAL,
+} from "./temasPenal";
+import { AULA_POL_DO_TEMA_PROC, TEMA_QUESTAO_PCPR_PROC, TEMA_QUESTAO_PCPR_TI_PROC, TEMA_TOPICO_PCPR_PROC, TEMAS_PROC } from "./temasProc";
+import {
+  AULA_POL_DO_TEMA_ESPECIAL,
+  TEMA_QUESTAO_ADM_LEG_ESPECIAL,
+  TEMA_QUESTAO_PCPR_DH_ESPECIAL,
+  TEMA_QUESTAO_PCPR_LEG_ESPECIAL,
+  TEMA_QUESTAO_PCPR_PEN_ESPECIAL,
+  TEMA_QUESTAO_PCPR_PP_ESPECIAL,
+  TEMA_TOPICO_ADM_LEG_ESPECIAL,
+  TEMA_TOPICO_PCPR_ESPECIAL,
+  TEMAS_ESPECIAL,
+} from "./temasEspecial";
+import { AULA_POL_DO_TEMA_TRANSITO, TEMA_QUESTAO_PCPR_TRANSITO, TEMA_TOPICO_PCPR_TRANSITO, TEMAS_TRANSITO } from "./temasTransito";
 
 /**
  * Banco por tema: cada curso que tem questões entra aqui como fonte, e cada questão ganha um tema. Um curso que
@@ -166,14 +187,41 @@ const MATERIAS_POL: MateriaBanco[] = [
     materia: "penal",
     temas: TEMAS_PENAL,
     aula: AULA_POL_DO_TEMA_PENAL,
-    fontes: [{ ...PCPR, questoes: () => PENAL_PCPR, tema: temaPor(TEMA_QUESTAO_PCPR_PENAL, TEMA_TOPICO_PCPR_PENAL) }],
+    fontes: [
+      { ...PCPR, questoes: () => PENAL_PCPR, tema: temaPor(TEMA_QUESTAO_PCPR_PENAL, TEMA_TOPICO_PCPR_PENAL) },
+      // Na PCPR, os crimes cibernéticos estão em Informática.
+      { ...PCPR, questoes: () => QUESTOES_TI_CRIMES, tema: temaPor(TEMA_QUESTAO_PCPR_TI_PENAL, TEMA_TOPICO_PCPR_PENAL) },
+    ],
   },
   {
     // A PRF ADM não tem Processo Penal.
     materia: "proc",
     temas: TEMAS_PROC,
     aula: AULA_POL_DO_TEMA_PROC,
-    fontes: [{ ...PCPR, questoes: () => PROC_PCPR, tema: temaPor(TEMA_QUESTAO_PCPR_PROC, TEMA_TOPICO_PCPR_PROC) }],
+    fontes: [
+      { ...PCPR, questoes: () => PROC_PCPR, tema: temaPor(TEMA_QUESTAO_PCPR_PROC, TEMA_TOPICO_PCPR_PROC) },
+      { ...PCPR, questoes: () => QUESTOES_TI_CRIMES, tema: temaPor(TEMA_QUESTAO_PCPR_TI_PROC, TEMA_TOPICO_PCPR_PROC) },
+    ],
+  },
+  {
+    // Na PCPR, as leis especiais estão espalhadas por Penal, Legislação, Processo Penal e Direitos Humanos.
+    materia: "especial",
+    temas: TEMAS_ESPECIAL,
+    aula: AULA_POL_DO_TEMA_ESPECIAL,
+    fontes: [
+      { ...PRF_ADM, questoes: () => QUESTOES_PRF_POR_MATERIA.leg, tema: temaPor(TEMA_QUESTAO_ADM_LEG_ESPECIAL, TEMA_TOPICO_ADM_LEG_ESPECIAL) },
+      { ...PCPR, questoes: () => PENAL_PCPR, tema: temaPor(TEMA_QUESTAO_PCPR_PEN_ESPECIAL, TEMA_TOPICO_PCPR_ESPECIAL) },
+      { ...PCPR, questoes: () => LEG_PCPR, tema: temaPor(TEMA_QUESTAO_PCPR_LEG_ESPECIAL, TEMA_TOPICO_PCPR_ESPECIAL) },
+      { ...PCPR, questoes: () => PROC_PCPR, tema: temaPor(TEMA_QUESTAO_PCPR_PP_ESPECIAL, TEMA_TOPICO_PCPR_ESPECIAL) },
+      { ...PCPR, questoes: () => DH_PCPR, tema: temaPor(TEMA_QUESTAO_PCPR_DH_ESPECIAL, TEMA_TOPICO_PCPR_ESPECIAL) },
+    ],
+  },
+  {
+    // Só os crimes de trânsito: a PCPR os tem em Direito Penal.
+    materia: "transito",
+    temas: TEMAS_TRANSITO,
+    aula: AULA_POL_DO_TEMA_TRANSITO,
+    fontes: [{ ...PCPR, questoes: () => PENAL_PCPR, tema: temaPor(TEMA_QUESTAO_PCPR_TRANSITO, TEMA_TOPICO_PCPR_TRANSITO) }],
   },
 ];
 

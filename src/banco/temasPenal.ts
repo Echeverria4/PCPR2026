@@ -77,6 +77,8 @@ export const TEMA_QUESTAO_PCPR_PENAL: Record<string, TemaPenal | null> = {
   "pen-059": "penal.pessoa",
   "pen-071": "penal.pessoa",
   "pen-072": "penal.pessoa",
+  // Ameaça (art. 147), com a mudança da Lei 14.994/2024
+  "pen-047": "penal.pessoa",
   "pen-003": "penal.patrimonio",
   "pen-009": "penal.patrimonio",
   "pen-010": "penal.patrimonio",
@@ -114,4 +116,32 @@ export const TEMA_QUESTAO_PCPR_PENAL: Record<string, TemaPenal | null> = {
   "pen-066": "penal.licitacoes",
   "pen-067": "penal.licitacoes",
   "pen-068": "penal.licitacoes",
+};
+
+/**
+ * PCPR, crimes cibernéticos (Informática): os do Código Penal. Ficam fora as que misturam artigos de aulas diferentes
+ * (ti-304, ti-310) e as de Marco Civil, LGPD, ECA Digital, lavagem e rastreamento, que não têm aula na PRF Policial.
+ */
+export const TEMA_QUESTAO_PCPR_TI_PENAL: Record<string, TemaPenal | null> = {
+  // Invasão de dispositivo (art. 154-A), honra na rede, violência psicológica e perseguição
+  "ti-306": "penal.pessoa",
+  "ti-307": "penal.pessoa",
+  "ti-308": "penal.pessoa",
+  "ti-309": "penal.pessoa",
+  "ti-311": "penal.pessoa",
+  "ti-312": "penal.pessoa",
+  "ti-315": "penal.pessoa",
+  // Furto e estelionato por fraude eletrônica, conta de passagem e fraude com ativos virtuais (art. 171-A)
+  "ti-301": "penal.patrimonio",
+  "ti-302": "penal.patrimonio",
+  "ti-305": "penal.patrimonio",
+  "ti-337": "penal.patrimonio",
+  "ti-338": "penal.patrimonio",
+  "ti-353": "penal.patrimonio",
+  // Exposição da intimidade sexual (arts. 216-B e 218-C)
+  "ti-313": "penal.sexual",
+  "ti-314": "penal.sexual",
+  // Violação de sigilo funcional (art. 325)
+  "ti-330": "penal.funcionais",
+  "ti-331": "penal.funcionais",
 };
