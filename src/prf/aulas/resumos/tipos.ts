@@ -14,6 +14,15 @@ export interface ResumoAula {
   cuidado?: string;
   /** Matérias de exatas: como usar as fórmulas da aula, com exemplo e passo a passo. */
   exemplos?: ExemploResolvido[];
+  /** Matérias de exatas: a lista das fórmulas da aula, para consulta rápida (também aparece no mapa mental). */
+  formulas?: Formula[];
+}
+
+/** Uma fórmula da aula: o nome, a expressão e, quando ajuda, o que as letras querem dizer. Texto próprio do app. */
+export interface Formula {
+  nome: string;
+  expr: string;
+  obs?: string;
 }
 
 /** Um passo do exemplo resolvido: o que fazer e, quando há, a conta desse passo. */

@@ -1,7 +1,7 @@
 import type { AttemptRecord, Question } from "../../../lib/types";
 import type { ComponentType } from "react";
 import type { TelaAulas } from "../../aulas/AulasCurso";
-import type { ExemploResolvido, ResumoAula } from "../../aulas/resumos/tipos";
+import type { ExemploResolvido, Formula, ResumoAula } from "../../aulas/resumos/tipos";
 import type { GrupoCurso } from "../../aulas/tipos";
 import type { TelaMapas } from "./prf-policial/mapas/tipos";
 import type { TelaRedacaoPrf } from "./prf-policial/redacao/tipos";
@@ -73,4 +73,9 @@ export function montarBanco(prefixo: string, materias: Record<string, AulaEscrit
 /** Junta às aulas os exemplos resolvidos das fórmulas, escritos à parte por aula. */
 export function comExemplos(aulas: AulaEscrita[], exemplos: Record<string, ExemploResolvido[]>): AulaEscrita[] {
   return aulas.map((a) => (exemplos[a.aula] ? { ...a, resumo: { ...a.resumo, exemplos: exemplos[a.aula] } } : a));
+}
+
+/** Junta às aulas a lista de fórmulas de cada uma, escrita à parte (a mesma lista vai para o mapa mental). */
+export function comFormulas(aulas: AulaEscrita[], formulas: Record<string, Formula[]>): AulaEscrita[] {
+  return aulas.map((a) => (formulas[a.aula] ? { ...a, resumo: { ...a.resumo, formulas: formulas[a.aula] } } : a));
 }

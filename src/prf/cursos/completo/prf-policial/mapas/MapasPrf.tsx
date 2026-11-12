@@ -2,9 +2,13 @@ import { useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperti
 import { nomeAula } from "../../../../aulas/rotulos";
 import type { AulaCurso, GrupoCurso } from "../../../../aulas/tipos";
 import type { PropsMapas } from "../../tipos";
+import FormulasAula from "../../../../aulas/resumos/FormulasAula";
+import { FORMULAS_FISICA } from "../fisica/formulas";
+import { FORMULAS_RLM } from "../rlm/formulas";
 import { MAPAS } from "./dados";
 import { Desenho } from "./desenhos";
 import { alternarRevisado, lerProgresso, salvarModoMemoria, type ProgressoMapas } from "./progresso";
+import type { Formula } from "../../../../aulas/resumos/tipos";
 import type { MapaAula, RamoMapa } from "./tipos";
 
 const MAPA_DA_AULA = new Map(MAPAS.map((m) => [m.aula, m]));
@@ -238,12 +242,15 @@ interface TelaMapaProps {
   onAbrirAula: () => void;
 }
 
+/** Matérias de exatas: as fórmulas de cada aula, as mesmas do resumo, entram no mapa mental. */
+const FORMULAS_EXATAS: Record<string, Formula[]> = { ...FORMULAS_RLM, ...FORMULAS_FISICA };
+
 function TelaMapa({ materia, posicao, memoria, revisadoEm, onMemoria, onRevisado, onTela, onAbrirAula }: TelaMapaProps) {
   const { grupo, itens } = materia;
   const { aula, mapa } = itens[posicao];
   const anterior = itens[posicao - 1];
   const proximo = itens[posicao + 1];
-  // No modo memória, o que a pessoa já abriu: "r0", "r1"… para os ramos, "macete" e "cuidado" para as notas.
+  // No modo memória, o que a pessoa já abriu: "r0", "r1"… para os ramos, "f0", "f1"… para as fórmulas, "macete" e "cuidado" para as notas.
   const [abertos, setAbertos] = useState<Set<string>>(() => new Set());
 
   function alternar(chave: string) {
@@ -274,6 +281,7 @@ function TelaMapa({ materia, posicao, memoria, revisadoEm, onMemoria, onRevisado
   }, [anterior, proximo, onTela]);
 
   const ramosAbertos = mapa.ramos.filter((_, i) => abertos.has(`r${i}`)).length;
+  const formulas = FORMULAS_EXATAS[mapa.aula];
   const revisado = Boolean(revisadoEm);
 
   return (
@@ -313,6 +321,10 @@ function TelaMapa({ materia, posicao, memoria, revisadoEm, onMemoria, onRevisado
       )}
 
       <Arvore mapa={mapa} memoria={memoria} abertos={abertos} onAlternar={alternar} />
+
+      {formulas && (
+        <FormulasAula formulas={formulas} nivel={3} memoria={memoria} abertos={abertos} onAlternar={alternar} />
+      )}
 
       <div className="prf-mapa-notas">
         <Nota

@@ -11369,3 +11369,79 @@ button.prf-mapa-ramo-topo:hover { background: color-mix(in srgb, var(--cor-ramo)
   text-decoration: underline;
   cursor: pointer;
 }
+
+/* Fórmulas da aula (exatas): no resumo e no mapa mental */
+.prf-formulas {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 14px;
+  border: 1px solid color-mix(in srgb, var(--azul) 45%, var(--borda));
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--azul) 6%, var(--bg-card));
+}
+.prf-mapa-tela .prf-formulas { margin: 18px 0 0; }
+.prf-formulas-titulo {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--texto);
+}
+.prf-formulas-dica {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--texto-fraco);
+}
+.prf-formulas-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.prf-formula {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  min-width: 0;
+}
+.prf-formula-nome {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--azul);
+}
+.prf-formula-expr {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--texto);
+  overflow-wrap: anywhere;
+}
+.prf-formula-obs {
+  font-size: 0.85rem;
+  color: var(--texto-fraco);
+}
+.prf-formula-botao {
+  width: 100%;
+  min-height: 44px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 12px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.prf-formula-botao:focus-visible { outline: 2px solid var(--azul); outline-offset: 2px; }
+.prf-formula-pista {
+  font-size: 0.76rem;
+  color: var(--texto-fraco);
+}

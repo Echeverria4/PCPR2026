@@ -38,6 +38,7 @@ import type { ResumoAula } from "./resumos";
 import { corDoGrupo, iconeGrupo, nomeAula, tituloAula } from "./rotulos";
 import type { ArquivoCurso, AulaCurso, GrupoCurso } from "./tipos";
 import ExemplosResolvidos from "./resumos/ExemplosResolvidos";
+import FormulasAula from "./resumos/FormulasAula";
 
 /** Onde o aluno está dentro da aba (fica no AppPrf para não se perder durante a fixação). */
 export interface TelaAulas {
@@ -783,6 +784,7 @@ export function ResumoRapido({ resumo }: { resumo: ResumoAula }) {
           <span className="prf-resumo-rotulo">Cuidado:</span> {resumo.cuidado}
         </p>
       )}
+      {resumo.formulas && resumo.formulas.length > 0 && <FormulasAula formulas={resumo.formulas} />}
       {resumo.exemplos && resumo.exemplos.length > 0 && <ExemplosResolvidos exemplos={resumo.exemplos} />}
     </div>
   );

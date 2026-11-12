@@ -1,0 +1,192 @@
+import type { Formula } from "../../../../aulas/resumos/tipos";
+
+/**
+ * Fórmulas de Raciocínio Lógico e Matemático, por aula, para consulta rápida.
+ * A mesma lista aparece no resumo e no mapa mental da aula. Texto próprio do app.
+ */
+export const FORMULAS_RLM: Record<string, Formula[]> = {
+  "rlm-01": [
+    { nome: "Dois conjuntos", expr: "n(A ∪ B) = n(A) + n(B) − n(A ∩ B)" },
+    {
+      nome: "Três conjuntos",
+      expr: "n(A ∪ B ∪ C) = n(A) + n(B) + n(C) − n(A ∩ B) − n(A ∩ C) − n(B ∩ C) + n(A ∩ B ∩ C)",
+      obs: "Soma os três, tira as duplas e devolve a tripla.",
+    },
+    { nome: "Conjunto das partes", expr: "n(P(A)) = 2ⁿ", obs: "n é o número de elementos de A." },
+    { nome: "De Morgan", expr: "(A ∪ B)' = A' ∩ B' · (A ∩ B)' = A' ∪ B'" },
+  ],
+  "rlm-02": [
+    { nome: "Par e ímpar", expr: "par = 2n · ímpar = 2n + 1", obs: "n é um inteiro qualquer." },
+    { nome: "Fração geratriz", expr: "0,ababab… = ab ÷ 99", obs: "Um 9 para cada algarismo do período: 0,272727… = 27/99 = 3/11." },
+    { nome: "Encaixe dos conjuntos", expr: "ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ", obs: "Os irracionais também estão em ℝ, mas fora de ℚ." },
+  ],
+  "rlm-03": [
+    { nome: "Produto de potências", expr: "aᵐ · aⁿ = aᵐ⁺ⁿ" },
+    { nome: "Divisão de potências", expr: "aᵐ ÷ aⁿ = aᵐ⁻ⁿ" },
+    { nome: "Potência de potência", expr: "(aᵐ)ⁿ = aᵐⁿ", obs: "Os expoentes se multiplicam: m · n." },
+    { nome: "Expoente zero e negativo", expr: "a⁰ = 1 · a⁻ⁿ = 1 ÷ aⁿ", obs: "Com a diferente de zero." },
+    { nome: "Quadrado da soma e da diferença", expr: "(a ± b)² = a² ± 2ab + b²" },
+    { nome: "Produto da soma pela diferença", expr: "(a + b)(a − b) = a² − b²" },
+  ],
+  "rlm-04": [
+    { nome: "Notação científica", expr: "A × 10ⁿ, com 1 ≤ A < 10", obs: "n é inteiro." },
+    { nome: "Comprimento e massa", expr: "km · hm · dam · m · dm · cm · mm: cada degrau × 10 ou ÷ 10", obs: "1 t = 1.000 kg." },
+    { nome: "Área", expr: "Cada degrau × 100 · 1 ha = 10.000 m² · 1 km² = 100 ha" },
+    { nome: "Volume e capacidade", expr: "Cada degrau × 1.000 · 1 dm³ = 1 L · 1 m³ = 1.000 L" },
+  ],
+  "rlm-05": [
+    { nome: "Proporção", expr: "a ÷ b = c ÷ d → a · d = b · c", obs: "Produto dos meios = produto dos extremos." },
+    { nome: "Propriedade da soma", expr: "a ÷ b = c ÷ d = (a + c) ÷ (b + d)" },
+    { nome: "Da parte para o todo", expr: "total = parte ÷ fração", obs: "3/4 do total valem 60: total = 60 · 4/3 = 80." },
+    { nome: "Escala", expr: "escala = medida no desenho ÷ medida real", obs: "As duas na mesma unidade." },
+    { nome: "Vazão", expr: "vazão = volume ÷ tempo", obs: "Torneiras se somam; o ralo se subtrai." },
+  ],
+  "rlm-06": [
+    { nome: "Regra de três direta", expr: "a ÷ b = c ÷ x → multiplica cruzado" },
+    { nome: "Regra de três inversa", expr: "a · b = c · x", obs: "O produto das duas grandezas fica constante." },
+    {
+      nome: "Regra de três composta",
+      expr: "x = valor antigo · (novo ÷ antigo) de cada direta · (antigo ÷ novo) de cada inversa",
+      obs: "Compare cada grandeza com x, uma de cada vez, com as outras paradas.",
+    },
+    { nome: "Trabalho total", expr: "agentes × dias = trabalho total" },
+  ],
+  "rlm-07": [
+    { nome: "Porcentagem", expr: "k% = k ÷ 100", obs: "20% de 50 = 0,2 · 50 = 10." },
+    { nome: "Aumento de k%", expr: "valor · (1 + k ÷ 100)", obs: "Aumento de 15%: × 1,15." },
+    { nome: "Desconto de k%", expr: "valor · (1 − k ÷ 100)", obs: "Desconto de 15%: × 0,85." },
+    { nome: "Aumentos seguidos", expr: "fator total = fator₁ · fator₂ · …", obs: "1,1 · 1,2 = 1,32: aumento de 32%." },
+    { nome: "Voltar ao valor antigo", expr: "valor antigo = valor novo ÷ fator" },
+    { nome: "Variação percentual", expr: "(final − inicial) ÷ inicial" },
+  ],
+  "rlm-08": [
+    { nome: "Equação do 1º grau", expr: "ax + b = 0 → x = −b ÷ a" },
+    { nome: "Delta", expr: "Δ = b² − 4ac", obs: "Δ > 0: duas raízes. Δ = 0: uma raiz dupla. Δ < 0: nenhuma raiz real." },
+    { nome: "Bhaskara", expr: "x = (−b ± √Δ) ÷ 2a", obs: "Para ax² + bx + c = 0, com a diferente de zero." },
+    { nome: "Soma e produto das raízes", expr: "S = −b ÷ a · P = c ÷ a" },
+    {
+      nome: "Sistema 2 × 2",
+      expr: "Retas que se cruzam: 1 solução · paralelas: nenhuma · uma equação múltipla da outra: infinitas",
+    },
+  ],
+  "rlm-09": [
+    { nome: "Produto cartesiano", expr: "n(A × B) = n(A) · n(B)" },
+    { nome: "Função composta", expr: "f(g(x)): aplica g primeiro e depois f" },
+    { nome: "Função inversa", expr: "Troque x por y e isole y" },
+  ],
+  "rlm-10": [
+    { nome: "Função do 1º grau", expr: "f(x) = ax + b", obs: "a é o coeficiente angular; b é onde a reta corta o eixo y." },
+    { nome: "Coeficiente angular", expr: "a = (y₂ − y₁) ÷ (x₂ − x₁)" },
+    { nome: "Raiz", expr: "x = −b ÷ a" },
+    { nome: "Função linear", expr: "b = 0 → f(x) = ax", obs: "Só aí x e y são diretamente proporcionais." },
+  ],
+  "rlm-11": [
+    { nome: "Função do 2º grau", expr: "f(x) = ax² + bx + c · f(0) = c", obs: "a > 0: boca para cima. a < 0: boca para baixo." },
+    { nome: "Raízes", expr: "x = (−b ± √Δ) ÷ 2a, com Δ = b² − 4ac" },
+    { nome: "Vértice", expr: "xᵥ = −b ÷ 2a · yᵥ = −Δ ÷ 4a", obs: "yᵥ é o valor máximo ou mínimo da função." },
+    { nome: "Forma fatorada", expr: "f(x) = a(x − x₁)(x − x₂)" },
+    { nome: "Sempre positiva", expr: "a > 0 e Δ < 0" },
+  ],
+  "rlm-12": [
+    { nome: "Função exponencial", expr: "f(x) = aˣ, com a > 0 e a diferente de 1", obs: "Corta o eixo y em (0, 1) e nunca toca o eixo x." },
+    { nome: "Igualar as bases", expr: "aˣ = aʸ → x = y", obs: "2ˣ = 32 = 2⁵ → x = 5." },
+    { nome: "Inequação", expr: "a > 1: mantém o sinal · 0 < a < 1: inverte o sinal" },
+    { nome: "Crescimento e queda", expr: "f(t) = C · aᵗ", obs: "C é o valor inicial; a é o fator de cada período." },
+  ],
+  "rlm-13": [
+    { nome: "Definição", expr: "log de a na base b = x ⇔ bˣ = a" },
+    { nome: "Produto", expr: "log (a · c) = log a + log c" },
+    { nome: "Divisão", expr: "log (a ÷ c) = log a − log c" },
+    { nome: "Potência", expr: "log aⁿ = n · log a" },
+    { nome: "Mudança de base", expr: "log de a na base b = log a ÷ log b" },
+    { nome: "Valores que sempre valem", expr: "log 1 = 0 · log da própria base = 1" },
+  ],
+  "rlm-14": [
+    { nome: "Termo geral da PA", expr: "aₙ = a₁ + (n − 1) · r" },
+    { nome: "Soma da PA", expr: "Sₙ = (a₁ + aₙ) · n ÷ 2" },
+    { nome: "Três termos em PA", expr: "x − r, x, x + r" },
+    { nome: "Termo geral da PG", expr: "aₙ = a₁ · qⁿ⁻¹" },
+    { nome: "Soma da PG", expr: "Sₙ = a₁ · (qⁿ − 1) ÷ (q − 1)" },
+    { nome: "Três termos em PG", expr: "(termo do meio)² = produto dos vizinhos" },
+  ],
+  "rlm-15": [
+    { nome: "Triângulo", expr: "Área = b · h ÷ 2 · ângulos internos somam 180°" },
+    { nome: "Pitágoras", expr: "a² = b² + c²", obs: "a é a hipotenusa, o lado oposto ao ângulo reto." },
+    { nome: "Quadriláteros", expr: "Retângulo: b · h · losango: D · d ÷ 2 · trapézio: (B + b) · h ÷ 2" },
+    { nome: "Polígonos", expr: "Soma dos ângulos = (n − 2) · 180° · diagonais = n(n − 3) ÷ 2" },
+    { nome: "Círculo", expr: "Comprimento = 2πr · área = πr²" },
+    { nome: "Coroa circular", expr: "Área = π(R² − r²)" },
+    { nome: "Quadrado inscrito", expr: "lado = r√2", obs: "A diagonal do quadrado é o diâmetro." },
+  ],
+  "rlm-16": [
+    { nome: "Prisma e cilindro", expr: "V = área da base · h" },
+    { nome: "Pirâmide e cone", expr: "V = área da base · h ÷ 3" },
+    { nome: "Esfera", expr: "V = 4πr³ ÷ 3 · área = 4πr²" },
+    { nome: "Cone", expr: "g² = r² + h² · área lateral = πrg", obs: "g é a geratriz." },
+    { nome: "Cilindro", expr: "Área lateral = 2πrh" },
+    { nome: "Litros", expr: "1 m³ = 1.000 L · 1 dm³ = 1 L" },
+  ],
+  "rlm-17": [
+    { nome: "Lei de formação", expr: "aₙ dado pela posição n", obs: "Exemplo: aₙ = 3n dá 3, 6, 9, 12…" },
+    { nome: "Fibonacci", expr: "aₙ = aₙ₋₁ + aₙ₋₂", obs: "1, 1, 2, 3, 5, 8…" },
+    { nome: "Ciclos", expr: "posição ÷ tamanho do ciclo → o resto diz o lugar", obs: "Resto zero é o último termo do ciclo." },
+  ],
+  "rlm-18": [
+    { nome: "Ângulos da rosa dos ventos", expr: "Cardeal vizinho: 90° · cardeal e colateral vizinho: 45°" },
+    { nome: "Saldos", expr: "norte − sul · leste − oeste" },
+    { nome: "Distância em linha reta", expr: "d² = (saldo norte-sul)² + (saldo leste-oeste)²", obs: "É Pitágoras com os dois saldos." },
+  ],
+  "rlm-19": [
+    { nome: "Frequência relativa", expr: "fr = f ÷ total" },
+    { nome: "Amplitude da classe", expr: "h = limite superior − limite inferior" },
+    { nome: "Ponto médio", expr: "(limite inferior + limite superior) ÷ 2" },
+    { nome: "Densidade", expr: "frequência ÷ amplitude", obs: "É a altura da barra do histograma com amplitudes diferentes." },
+    { nome: "Gráfico de setores", expr: "ângulo = fração do total · 360°" },
+  ],
+  "rlm-20": [
+    { nome: "Média aritmética", expr: "soma dos valores ÷ quantidade" },
+    { nome: "Média ponderada", expr: "Σ(valor · peso) ÷ Σ pesos" },
+    { nome: "Média geométrica", expr: "raiz n-ésima do produto dos n valores", obs: "Para taxas que se acumulam." },
+    { nome: "Média harmônica", expr: "n ÷ soma dos inversos", obs: "Duas velocidades em trechos iguais: 2 · v₁ · v₂ ÷ (v₁ + v₂)." },
+    { nome: "Ordem das médias", expr: "harmônica ≤ geométrica ≤ aritmética", obs: "Para valores positivos." },
+  ],
+  "rlm-21": [
+    { nome: "Posição da mediana", expr: "n ímpar: termo (n + 1) ÷ 2 · n par: média dos dois centrais" },
+    {
+      nome: "Mediana com classes",
+      expr: "Md = l + (n/2 − F) ÷ f · h",
+      obs: "l: início da classe da mediana. F: frequência acumulada antes dela. f: frequência dela. h: amplitude.",
+    },
+  ],
+  "rlm-22": [
+    { nome: "Moda bruta", expr: "ponto médio da classe modal" },
+    { nome: "Pearson", expr: "Mo = 3 · Md − 2 · média" },
+    { nome: "Czuber", expr: "Mo = l + d₁ ÷ (d₁ + d₂) · h", obs: "d₁ = frequência da modal − a da anterior. d₂ = frequência da modal − a da seguinte." },
+    { nome: "King", expr: "Mo = l + posterior ÷ (anterior + posterior) · h", obs: "Usa as frequências das classes vizinhas." },
+  ],
+  "rlm-23": [
+    { nome: "Amplitude total", expr: "maior valor − menor valor" },
+    { nome: "Variância populacional", expr: "σ² = Σ(x − média)² ÷ n" },
+    { nome: "Variância amostral", expr: "s² = Σ(x − média)² ÷ (n − 1)" },
+    { nome: "Atalho da variância", expr: "média dos quadrados − quadrado da média" },
+    { nome: "Desvio-padrão", expr: "√variância", obs: "Fica na mesma unidade dos dados." },
+    { nome: "Coeficiente de variação", expr: "CV = desvio-padrão ÷ média" },
+    { nome: "Multiplicar por c", expr: "desvio × c · variância × c²", obs: "Somar uma constante não muda a dispersão." },
+  ],
+  "rlm-24": [
+    { nome: "Fatorial", expr: "n! = n · (n − 1) · … · 1 · 0! = 1" },
+    { nome: "Permutação", expr: "Pₙ = n!", obs: "Com repetição: n! ÷ (a! · b! · …)." },
+    { nome: "Permutação circular", expr: "(n − 1)!" },
+    { nome: "Arranjo (a ordem importa)", expr: "A = n! ÷ (n − p)!" },
+    { nome: "Combinação (a ordem não importa)", expr: "C = n! ÷ [p! · (n − p)!]" },
+    { nome: "Partições de n em k partes", expr: "Todos positivos: C(n − 1, k − 1) · aceitando zero: C(n + k − 1, k − 1)" },
+  ],
+  "rlm-25": [
+    { nome: "Probabilidade", expr: "P(A) = casos favoráveis ÷ casos possíveis" },
+    { nome: "Complementar", expr: "P(não A) = 1 − P(A)" },
+    { nome: "União", expr: "P(A ou B) = P(A) + P(B) − P(A e B)" },
+    { nome: "Condicional", expr: "P(B dado A) = P(A e B) ÷ P(A)" },
+    { nome: "Multiplicação", expr: "P(A e B) = P(A) · P(B dado A)", obs: "Independentes: P(A e B) = P(A) · P(B)." },
+    { nome: "Bayes", expr: "P(A dado B) = P(B dado A) · P(A) ÷ P(B)" },
+  ],
+};
