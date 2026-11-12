@@ -1,6 +1,8 @@
 import type { Question } from "../lib/types";
 import { QUESTOES_PT as PT_PCPR } from "../data/questions/pt";
 import { QUESTOES_RLM as RLM_PCPR } from "../data/questions/rlm";
+import { QUESTOES_TI } from "../data/questions/ti";
+import { QUESTOES_TI_SEGURANCA } from "../data/questions/ti-seguranca";
 import { QUESTOES_PRF_POR_MATERIA } from "../prf/questoes";
 import type { QuestaoCurso } from "../prf/cursos/completo/tipos";
 import {
@@ -19,6 +21,14 @@ import {
   TEMA_TOPICO_PCPR_RLM,
   TEMAS_RLM,
 } from "./temasRlm";
+import {
+  AULA_POL_DO_TEMA_INFO,
+  TEMA_QUESTAO_ADM_INFO,
+  TEMA_QUESTAO_PCPR_INFO,
+  TEMA_TOPICO_ADM_INFO,
+  TEMA_TOPICO_PCPR_INFO,
+  TEMAS_INFO,
+} from "./temasInfo";
 
 /**
  * Banco por tema: cada curso que tem questões entra aqui como fonte, e cada questão ganha um tema. Um curso que
@@ -73,6 +83,19 @@ const MATERIAS_POL: MateriaBanco[] = [
     fontes: [
       { ...PRF_ADM, questoes: () => QUESTOES_PRF_POR_MATERIA.rlm, tema: temaPor(TEMA_QUESTAO_ADM_RLM, TEMA_TOPICO_ADM_RLM) },
       { ...PCPR, questoes: () => RLM_PCPR, tema: temaPor(TEMA_QUESTAO_PCPR_RLM, TEMA_TOPICO_PCPR_RLM) },
+    ],
+  },
+  {
+    materia: "info",
+    temas: TEMAS_INFO,
+    aula: AULA_POL_DO_TEMA_INFO,
+    fontes: [
+      { ...PRF_ADM, questoes: () => QUESTOES_PRF_POR_MATERIA.info, tema: temaPor(TEMA_QUESTAO_ADM_INFO, TEMA_TOPICO_ADM_INFO) },
+      {
+        ...PCPR,
+        questoes: () => [...QUESTOES_TI, ...QUESTOES_TI_SEGURANCA],
+        tema: temaPor(TEMA_QUESTAO_PCPR_INFO, TEMA_TOPICO_PCPR_INFO),
+      },
     ],
   },
 ];
