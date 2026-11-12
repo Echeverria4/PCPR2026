@@ -1189,3 +1189,75 @@
   color-scheme: dark;
   font-size: 16px;
 }
+
+/* ---------- Questões: treino com todos os cursos juntos ---------- */
+
+.cx-treino {
+  display: grid;
+  gap: 14px;
+  max-width: 640px;
+}
+
+.cx-campo {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.cx-campo-rotulo {
+  font-family: var(--fonte-cond);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+}
+
+.cx-campo select {
+  width: 100%;
+  min-width: 0;
+  min-height: 46px;
+  padding: 10px 12px;
+  border: 1px solid var(--borda-forte);
+  border-radius: var(--cx-raio);
+  background: var(--bg-elevado);
+  color: var(--texto);
+  color-scheme: dark;
+  font-size: 16px;
+  text-overflow: ellipsis;
+}
+
+.cx-campo select:focus-visible {
+  outline: 2px solid var(--ouro);
+  outline-offset: 2px;
+}
+
+.cx-treino-resumo {
+  margin: 0;
+  color: var(--texto-fraco);
+  font-size: 0.92rem;
+}
+
+.cx-treino-resumo strong {
+  color: var(--texto);
+  font-size: 1.05rem;
+}
+
+.cx-treino-iniciar {
+  justify-self: start;
+  min-height: 46px;
+  padding-inline: 22px;
+}
+
+.cx-treino .cx-card-nota {
+  margin: 0;
+}
+
+.cx-treino-quiz {
+  min-width: 0;
+}
+
+@media (max-width: 560px) {
+  .cx-treino-iniciar {
+    justify-self: stretch;
+  }
+}
