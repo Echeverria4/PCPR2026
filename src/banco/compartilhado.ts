@@ -1,6 +1,7 @@
 import type { Question } from "../lib/types";
 import { QUESTOES_PT as PT_PCPR } from "../data/questions/pt";
 import { QUESTOES_RLM as RLM_PCPR } from "../data/questions/rlm";
+import { QUESTOES_ADM as ADM_PCPR } from "../data/questions/adm";
 import { QUESTOES_CON as CON_PCPR } from "../data/questions/constitucional";
 import { QUESTOES_TI } from "../data/questions/ti";
 import { QUESTOES_TI_SEGURANCA } from "../data/questions/ti-seguranca";
@@ -31,6 +32,16 @@ import {
   TEMAS_INFO,
 } from "./temasInfo";
 import {
+  AULA_POL_DO_TEMA_ADM,
+  TEMA_QUESTAO_ADM_ADM,
+  TEMA_QUESTAO_ADM_ETICA_ADM,
+  TEMA_QUESTAO_PCPR_ADM,
+  TEMA_TOPICO_ADM_ADM,
+  TEMA_TOPICO_ADM_ETICA_ADM,
+  TEMA_TOPICO_PCPR_ADM,
+  TEMAS_ADM,
+} from "./temasAdm";
+import {
   AULA_POL_DO_TEMA_CON,
   TEMA_QUESTAO_ADM_CON,
   TEMA_QUESTAO_ADM_LEG_CON,
@@ -58,6 +69,8 @@ interface FonteBanco {
   selo: string;
   questoes: () => Question<string>[];
   tema: (q: Question<string>) => string | null;
+  /** Barra também Polícia Civil (delegado, delegacia, inquérito...): só para a PCPR, cujo contexto é de investigação. */
+  barraPoliciaCivil: boolean;
 }
 
 type TemaDe = Record<string, string | null>;
@@ -66,8 +79,9 @@ function temaPor(porQuestao: TemaDe, porTopico: TemaDe) {
   return (q: Question<string>): string | null => (q.id in porQuestao ? porQuestao[q.id] : (porTopico[q.topico] ?? null));
 }
 
-const PRF_ADM = { curso: "prf-adm", prefixo: "cmp-adm", selo: "Do curso PRF ADM" } as const;
-const PCPR = { curso: "pcpr2026", prefixo: "cmp-pcpr", selo: "Do curso PCPR 2026" } as const;
+// Na PRF ADM, "delegacia da PRF", "competência delegada", o inquérito do PAD e o art. 144 são conteúdo do curso.
+const PRF_ADM = { curso: "prf-adm", prefixo: "cmp-adm", selo: "Do curso PRF ADM", barraPoliciaCivil: false } as const;
+const PCPR = { curso: "pcpr2026", prefixo: "cmp-pcpr", selo: "Do curso PCPR 2026", barraPoliciaCivil: true } as const;
 
 interface MateriaBanco {
   /** Id da matéria na PRF Policial. */
@@ -128,38 +142,43 @@ const MATERIAS_POL: MateriaBanco[] = [
       { ...PCPR, questoes: () => CON_PCPR, tema: temaPor(TEMA_QUESTAO_PCPR_CON, TEMA_TOPICO_PCPR_CON) },
     ],
   },
+  {
+    // Só no Curso A: o Curso B repete os assuntos.
+    materia: "adm-a",
+    temas: TEMAS_ADM,
+    aula: AULA_POL_DO_TEMA_ADM,
+    fontes: [
+      { ...PRF_ADM, questoes: () => QUESTOES_PRF_POR_MATERIA.adm, tema: temaPor(TEMA_QUESTAO_ADM_ADM, TEMA_TOPICO_ADM_ADM) },
+      // Na PRF ADM, o regime disciplinar, a LAI e o conflito de interesses estão em Ética.
+      { ...PRF_ADM, questoes: () => QUESTOES_PRF_POR_MATERIA.etica, tema: temaPor(TEMA_QUESTAO_ADM_ETICA_ADM, TEMA_TOPICO_ADM_ETICA_ADM) },
+      { ...PCPR, questoes: () => ADM_PCPR, tema: temaPor(TEMA_QUESTAO_PCPR_ADM, TEMA_TOPICO_PCPR_ADM) },
+    ],
+  },
 ];
 
 /**
- * Fora dos outros cursos: Paraná, Polícia Civil (delegado, escrivão, delegacia, inquérito) e facções. O teste olha
- * o enunciado, as alternativas e as explicações; a fonte da prova (atribuição) não conta.
+ * Fora dos outros cursos: Paraná e facções; da PCPR, também Polícia Civil (delegado, escrivão, delegacia, inquérito).
+ * O teste olha o enunciado, as alternativas e as explicações; a fonte da prova (atribuição) não conta.
  */
-const FORA = new RegExp(
-  [
-    "Paran[aá]",
-    "Curitiba",
-    "Londrina",
-    "Maring[aá]",
-    "Cascavel",
-    "Foz do Igua",
-    "PCPR",
-    "Pol[ií]cia Civil",
-    "Pol[ií]cia Montada",
-    "delegad",
-    "delegaci",
-    "escriv[aã]",
-    "investigador",
-    "inqu[eé]rito",
-    "BR-277",
-    "BR-369",
-    "BR-376",
-    "Itaipu",
-    "Paranagu",
-    "PCC",
-    "Comando Vermelho",
-  ].join("|"),
-  "i",
-);
+const TERMOS_PARANA = [
+  "Paran[aá]",
+  "Curitiba",
+  "Londrina",
+  "Maring[aá]",
+  "Cascavel",
+  "Foz do Igua",
+  "PCPR",
+  "BR-277",
+  "BR-369",
+  "BR-376",
+  "Itaipu",
+  "Paranagu",
+  "PCC",
+  "Comando Vermelho",
+];
+const TERMOS_POLICIA_CIVIL = ["Pol[ií]cia Civil", "Pol[ií]cia Montada", "delegad", "delegaci", "escriv[aã]", "investigador", "inqu[eé]rito"];
+const FORA_PARANA = new RegExp(TERMOS_PARANA.join("|"), "i");
+const FORA_PCPR = new RegExp([...TERMOS_PARANA, ...TERMOS_POLICIA_CIVIL].join("|"), "i");
 
 function textoDa(q: Question<string>) {
   return [q.enunciado, ...q.alternativas, q.explicacao, q.explicacaoErradas ?? "", q.pegadinha ?? "", q.conhecimento ?? ""].join(" ");
@@ -170,7 +189,7 @@ const normalizar = (s: string) => s.toLowerCase().replace(/\W+/g, " ").trim();
 /**
  * Questões das outras fontes para a PRF Policial, já na aula certa, com o tema como tópico e selo de origem.
  * Ficam fora: as do mesmo enunciado que uma questão do curso, as inéditas (o selo delas fala de outra prova),
- * as com Paraná ou Polícia Civil e as de tema que a PRF Policial não tem.
+ * as com Paraná (ou, da PCPR, Polícia Civil) e as de tema que a PRF Policial não tem.
  */
 export function compartilhadasPol(proprias: QuestaoCurso[]): QuestaoCurso[] {
   const vistos = new Set(proprias.map((q) => normalizar(q.enunciado)));
@@ -180,7 +199,7 @@ export function compartilhadasPol(proprias: QuestaoCurso[]): QuestaoCurso[] {
     for (const f of m.fontes) {
       for (const q of f.questoes()) {
         const tema = f.tema(q);
-        if (!tema || !(tema in m.aula) || q.origem === "inedita" || FORA.test(textoDa(q))) continue;
+        if (!tema || !(tema in m.aula) || q.origem === "inedita" || (f.barraPoliciaCivil ? FORA_PCPR : FORA_PARANA).test(textoDa(q))) continue;
         const chave = normalizar(q.enunciado);
         if (vistos.has(chave)) continue;
         vistos.add(chave);

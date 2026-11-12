@@ -32,7 +32,7 @@ function semEscondidas(banco: BancoCurso): BancoCurso {
 }
 
 /**
- * Banco por tema (12/11/26): as questões da PRF ADM e da PCPR do mesmo assunto (Português, RLM, Informática, Ética e Constitucional) entram na aula certa,
+ * Banco por tema (12/11/26): as questões da PRF ADM e da PCPR do mesmo assunto (Português, RLM, Informática, Ética, Constitucional e Administrativo, no Curso A) entram na aula certa,
  * com selo de origem. Questão nova numa fonte entra aqui sozinha (src/banco/compartilhado.ts).
  */
 function comCompartilhadas(banco: BancoCurso): BancoCurso {
