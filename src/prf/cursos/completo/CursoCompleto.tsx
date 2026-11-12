@@ -24,7 +24,7 @@ import {
   ultimaResposta,
   type FiltrosCurso,
 } from "./sessoes";
-import type { DadosCursoCompleto, PropsRedacao, TentativaCurso } from "./tipos";
+import type { DadosCursoCompleto, PropsMapas, PropsRedacao, TentativaCurso } from "./tipos";
 
 const AulasCurso = lazy(() => import("../../aulas/AulasCurso"));
 const SemanaCurso = lazy(() => import("../SemanaCurso"));
@@ -79,7 +79,17 @@ export default function CursoCompleto({ curso, nome, brasao, brasaoAlt, dados, o
   const [telaRedacao, setTelaRedacao] = useState<PropsRedacao["tela"]>({ tipo: "inicio" });
   // A aba de redação só existe no curso que traz uma; o código dela carrega quando a aba abre.
   const Redacao = useMemo(() => (dados.redacao ? lazy(dados.redacao) : null), [dados.redacao]);
-  const abas = useMemo(() => (Redacao ? [...ABAS, { id: "redacao" as const, rotulo: "✍️ Redação" }] : ABAS), [Redacao]);
+  const [telaMapas, setTelaMapas] = useState<PropsMapas["tela"]>({ tipo: "inicio" });
+  // Os mapas mentais seguem a mesma regra: só no curso que traz, e só carregam ao abrir a aba.
+  const Mapas = useMemo(() => (dados.mapas ? lazy(dados.mapas) : null), [dados.mapas]);
+  const abas = useMemo(
+    () => [
+      ...ABAS,
+      ...(Mapas ? [{ id: "mapas" as const, rotulo: "🧠 Mapas Mentais" }] : []),
+      ...(Redacao ? [{ id: "redacao" as const, rotulo: "✍️ Redação" }] : []),
+    ],
+    [Mapas, Redacao],
+  );
 
   const grupos = gruposAtuais();
   const materias = useMemo(
@@ -165,6 +175,7 @@ export default function CursoCompleto({ curso, nome, brasao, brasaoAlt, dados, o
     if (aba === "aulas" && view === "aulas") setTelaAulas({});
     if (aba === "semana" && view === "semana") setSemanaAberta(null);
     if (aba === "redacao" && view === "redacao") setTelaRedacao({ tipo: "inicio" });
+    if (aba === "mapas" && view === "mapas") setTelaMapas({ tipo: "inicio" });
     setView(aba);
   }
 
@@ -254,6 +265,11 @@ export default function CursoCompleto({ curso, nome, brasao, brasaoAlt, dados, o
       {view === "resumos" && (
         <Suspense fallback={<div className="vazio">Carregando os resumos…</div>}>
           <ResumosCurso materias={materias} resumos={banco.resumos} onAbrirAula={abrirAula} />
+        </Suspense>
+      )}
+      {view === "mapas" && Mapas && (
+        <Suspense fallback={<div className="vazio">Carregando os mapas…</div>}>
+          <Mapas tela={telaMapas} onTela={setTelaMapas} grupos={grupos} onAbrirAula={abrirAula} />
         </Suspense>
       )}
       {view === "redacao" && Redacao && (

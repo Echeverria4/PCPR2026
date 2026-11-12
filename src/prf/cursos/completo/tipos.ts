@@ -1,6 +1,9 @@
 import type { AttemptRecord, Question } from "../../../lib/types";
 import type { ComponentType } from "react";
+import type { TelaAulas } from "../../aulas/AulasCurso";
 import type { ResumoAula } from "../../aulas/resumos/tipos";
+import type { GrupoCurso } from "../../aulas/tipos";
+import type { TelaMapas } from "./prf-policial/mapas/tipos";
 import type { TelaRedacaoPrf } from "./prf-policial/redacao/tipos";
 
 /**
@@ -32,11 +35,21 @@ export interface DadosCursoCompleto {
   faixa: { forte: string; texto: string }[];
   /** Aba de redação do curso, carregada só quando aberta; sem ela, o curso não mostra a aba. */
   redacao?: () => Promise<{ default: ComponentType<PropsRedacao> }>;
+  /** Aba de mapas mentais, carregada só quando aberta; sem ela, o curso não mostra a aba. */
+  mapas?: () => Promise<{ default: ComponentType<PropsMapas> }>;
 }
 
 export interface PropsRedacao {
   tela: TelaRedacaoPrf;
   onTela: (t: TelaRedacaoPrf) => void;
+}
+
+export interface PropsMapas {
+  tela: TelaMapas;
+  onTela: (t: TelaMapas) => void;
+  /** Os grupos de aulas do curso, na ordem do catálogo: a aba mostra só os que têm mapa. */
+  grupos: GrupoCurso[];
+  onAbrirAula: (tela: TelaAulas) => void;
 }
 
 export type TentativaCurso = AttemptRecord<string>;
