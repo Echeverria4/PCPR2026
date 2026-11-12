@@ -19,10 +19,20 @@ import { AULAS_INFO } from "./info";
 import { AULAS_RLM } from "./rlm";
 import { AULAS_PT } from "./pt";
 
+/**
+ * Aulas com questões escondidas a pedido (12/11/26): as 9 de Redação Oficial (pt-15) saem do treino e da aula.
+ * O resumo da aula e o guia da aba Redação continuam. Para voltar, basta tirar a aula daqui e de semQuestoes.
+ */
+const AULAS_ESCONDIDAS = new Set(["pt-15"]);
+
+function semEscondidas(banco: ReturnType<typeof montarBanco>) {
+  return { ...banco, questoes: banco.questoes.filter((q) => !AULAS_ESCONDIDAS.has(q.aula ?? "")) };
+}
+
 /** Cada matéria entra aqui quando o lote dela fica pronto. */
 export const DADOS: DadosCursoCompleto = {
-  banco: montarBanco("pol", { pt: AULAS_PT, rlm: AULAS_RLM, info: AULAS_INFO, fisica: AULAS_FISICA, etica: AULAS_ETICA, geopolitica: AULAS_GEOPOLITICA, ingles: AULAS_INGLES, espanhol: AULAS_ESPANHOL, transito: AULAS_TRANSITO, "adm-a": AULAS_ADM_A, "adm-b": AULAS_ADM_B, con: AULAS_CON, penal: AULAS_PENAL, proc: AULAS_PROC, especial: AULAS_ESPECIAL, dh: AULAS_DH, eca: AULAS_ECA, carreira: AULAS_CARREIRA, discursivas: AULAS_DISCURSIVAS }),
-  semQuestoes: ["carreira", "bizus", "trilha", "ebooks", "mentoria"],
+  banco: semEscondidas(montarBanco("pol", { pt: AULAS_PT, rlm: AULAS_RLM, info: AULAS_INFO, fisica: AULAS_FISICA, etica: AULAS_ETICA, geopolitica: AULAS_GEOPOLITICA, ingles: AULAS_INGLES, espanhol: AULAS_ESPANHOL, transito: AULAS_TRANSITO, "adm-a": AULAS_ADM_A, "adm-b": AULAS_ADM_B, con: AULAS_CON, penal: AULAS_PENAL, proc: AULAS_PROC, especial: AULAS_ESPECIAL, dh: AULAS_DH, eca: AULAS_ECA, carreira: AULAS_CARREIRA, discursivas: AULAS_DISCURSIVAS })),
+  semQuestoes: ["carreira", "bizus", "trilha", "ebooks", "mentoria", ...AULAS_ESCONDIDAS],
   faixa: [
     { forte: "Sem edital", texto: "Novo concurso ainda sem edital nem banca definida" },
     { forte: "Nível 4 e 5", texto: "Questões difíceis, no nível da prova de nível superior" },

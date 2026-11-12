@@ -41,11 +41,35 @@ export interface RespostaProposta {
   desde: number;
 }
 
-export interface EstadoMeta {
-  respostas: RespostaProposta[];
+/** Meta escolhida pelo próprio estudante na aba Semana. */
+export interface DefinicaoMeta {
+  /** Quando escolheu. */
+  em: number;
+  tipo: TipoDia;
+  minutos: number;
+  /** Meia-noite do primeiro dia em que vale (o dia em que escolheu). */
+  desde: number;
 }
 
-const VAZIO: EstadoMeta = { respostas: [] };
+export interface EstadoMeta {
+  respostas: RespostaProposta[];
+  /** Metas escolhidas pelo estudante; entre essas e os aumentos aceitos, vale a mais recente. */
+  definidas: DefinicaoMeta[];
+}
+
+const VAZIO: EstadoMeta = { respostas: [], definidas: [] };
+
+const definicaoValida = (d: unknown): d is DefinicaoMeta => {
+  const x = d as Partial<DefinicaoMeta> | null;
+  return (
+    !!x &&
+    (x.tipo === "semana" || x.tipo === "fimDeSemana") &&
+    typeof x.em === "number" &&
+    typeof x.desde === "number" &&
+    typeof x.minutos === "number" &&
+    x.minutos > 0
+  );
+};
 
 /** Curso aberto: cada curso tem a própria meta. Nos cursos novos ela começa no primeiro dia de estudo. */
 let chave = CHAVE_PRF;
@@ -56,7 +80,10 @@ function ler(): EstadoMeta {
     const raw = localStorage.getItem(chave);
     if (!raw) return VAZIO;
     const p = JSON.parse(raw) as Partial<EstadoMeta>;
-    return { respostas: Array.isArray(p.respostas) ? p.respostas : [] };
+    return {
+      respostas: Array.isArray(p.respostas) ? p.respostas : [],
+      definidas: Array.isArray(p.definidas) ? p.definidas.filter(definicaoValida) : [],
+    };
   } catch {
     return VAZIO;
   }
@@ -130,11 +157,38 @@ export function primeiroDiaDoTipo(tipo: TipoDia, desde: number): number {
   return d;
 }
 
+/** A mudança mais recente da meta do tipo de dia que já vale no dia dado: aumento aceito ou meta escolhida. */
+function mudancaQueVale(m: EstadoMeta, tipo: TipoDia, dia: number) {
+  let achada: { em: number; minutos: number; aumento: number | null } | null = null;
+  for (const r of m.respostas)
+    if (r.aumento > 0 && r.tipo === tipo && r.desde <= dia && (!achada || r.em >= achada.em))
+      achada = { em: r.em, minutos: r.minutos, aumento: r.aumento };
+  for (const d of m.definidas)
+    if (d.tipo === tipo && d.desde <= dia && (!achada || d.em >= achada.em))
+      achada = { em: d.em, minutos: d.minutos, aumento: null };
+  return achada;
+}
+
 /** Meta (minutos) do tipo de dia que vale no dia dado (meia-noite). */
 export function metaDoTipo(m: EstadoMeta, tipo: TipoDia, dia: number): number {
-  let minutos = META_INICIAL[tipo];
-  for (const r of m.respostas) if (r.aumento > 0 && r.tipo === tipo && r.desde <= dia) minutos = r.minutos;
-  return minutos;
+  return mudancaQueVale(m, tipo, dia)?.minutos ?? META_INICIAL[tipo];
+}
+
+/** De onde vem a meta do tipo de dia no dia dado: aumento aceito (com o %), escolha do estudante ou meta inicial. */
+export function origemDaMeta(m: EstadoMeta, tipo: TipoDia, dia: number) {
+  return mudancaQueVale(m, tipo, dia);
+}
+
+/**
+ * O estudante escolhe a meta de um tipo de dia: vale a partir de hoje. Trocar de novo no mesmo dia só corrige a
+ * escolha de hoje. Os dias que já passaram ficam com a meta que valia neles.
+ */
+export function definirMeta(tipo: TipoDia, minutos: number) {
+  if (!(minutos > 0)) return;
+  const agora = Date.now();
+  const hoje = meiaNoite(agora);
+  const definidas = estado.definidas.filter((d) => !(d.tipo === tipo && d.desde === hoje));
+  salvar({ ...estado, definidas: [...definidas, { em: agora, tipo, minutos: Math.round(minutos), desde: hoje }] });
 }
 
 /** Meta do dia em ms; 0 antes de a meta começar a valer. */
@@ -219,7 +273,11 @@ export interface Proposta {
  */
 export function propostaDeAumento(e: EstadoEstudo, m: EstadoMeta, agora: number): Proposta | null {
   const hoje = meiaNoite(agora);
-  const respondido = m.respostas.reduce((maior, r) => Math.max(maior, r.dia), -Infinity);
+  // Escolher a meta também responde o dia: sem proposta de aumento logo depois.
+  const respondido = Math.max(
+    m.respostas.reduce((maior, r) => Math.max(maior, r.dia), -Infinity),
+    m.definidas.reduce((maior, d) => Math.max(maior, d.desde), -Infinity),
+  );
   const lista = diasDaMeta(e, agora);
   for (let i = lista.length - 1; i >= 0 && i >= lista.length - DIAS_DA_PROPOSTA; i--) {
     const { dia, ms } = lista[i];
@@ -253,7 +311,7 @@ export function aceitarAumento(p: Proposta, aumento: number) {
     minutos: comAumento(p.base, aumento),
     desde: amanha(agora),
   };
-  salvar({ respostas: [...estado.respostas, resposta] });
+  salvar({ ...estado, respostas: [...estado.respostas, resposta] });
 }
 
 /** "Agora não": a meta continua a mesma e a proposta desse dia não volta. */
@@ -268,5 +326,5 @@ export function recusarAumento(p: Proposta) {
     minutos: p.base,
     desde: amanha(agora),
   };
-  salvar({ respostas: [...estado.respostas, resposta] });
+  salvar({ ...estado, respostas: [...estado.respostas, resposta] });
 }

@@ -1,4 +1,4 @@
-import { useMemo, useState, type CSSProperties } from "react";
+import { useMemo, useState } from "react";
 import type { TelaAulas } from "../aulas/AulasCurso";
 import { curto, diaMes, diasComEstudo, totaisEstudo, useAgora, useEstudo } from "../aulas/estudo";
 import GraficoDias from "../aulas/GraficoDias";
@@ -13,6 +13,7 @@ import {
   maisDias,
   type NotasSemana,
 } from "../semana/base";
+import MetaSemanal from "../semana/MetaSemanal";
 import { Numero, Seta } from "../semana/partes";
 import type { BancoCurso, TentativaCurso } from "./completo/tipos";
 import { blocosDoCurso, primeiraSemanaCurso, questoesDaSemana, resumoSemanaCurso } from "./resumoSemana";
@@ -36,7 +37,6 @@ const ACERTO_BOM = 0.7;
 const MAX_DIFICULDADES = 4;
 
 const pct = (parte: number, todo: number) => (todo > 0 ? Math.round((parte / todo) * 100) : 0);
-const largura = (p: number): CSSProperties => ({ width: `${Math.min(100, p)}%` });
 const plural = (n: number, um: string, varios: string) => `${n} ${n === 1 ? um : varios}`;
 const milhar = (n: number) => n.toLocaleString("pt-BR");
 const emLista = (itens: string[]) =>
@@ -77,7 +77,9 @@ export default function SemanaCurso({ inicio, onInicio, onAbrirAula, questoes }:
   const minhas = notas[chave] ?? {};
   // O plano desta semana foi escrito no acompanhamento da semana anterior.
   const combinado = notas[chaveSemana(anterior)] ?? {};
-  const meta = combinado.metaHoras;
+  // Meta da semana = soma das metas de cada dia (escolhidas no bloco da meta). Antes delas, a meta anotada em horas.
+  const metasDias = r.dias.map((d) => metaDoDia(metaDiaria, d.dia));
+  const metaSemana = metasDias.reduce((a, b) => a + b, 0) || (combinado.metaHoras ?? 0) * HORA;
 
   function anota(parte: Partial<NotasSemana>) {
     const todas = { ...notas, [chave]: { ...minhas, ...parte } };
@@ -91,16 +93,6 @@ export default function SemanaCurso({ inicio, onInicio, onAbrirAula, questoes }:
   const semNada = r.ms === 0 && r.blocos === 0 && !qs?.questoes;
 
   const sugestoes: Sugestao[] = [];
-  if (meta) {
-    const falta = meta * HORA - r.ms;
-    sugestoes.push({
-      chave: "meta",
-      texto:
-        falta <= 0
-          ? `Meta de ${meta}h batida: ${curto(r.ms)} de estudo líquido.`
-          : `${eAtual ? "Faltam" : "Faltaram"} ${curto(falta)} para a meta de ${meta}h.`,
-    });
-  }
   if (qs && questoes) {
     // As matérias mais fracas da semana. Sem edital não há peso: vale só o desempenho.
     const fracas = r.materias
@@ -174,27 +166,21 @@ export default function SemanaCurso({ inicio, onInicio, onAbrirAula, questoes }:
         </p>
       )}
 
+      <MetaSemanal
+        meta={metaDiaria}
+        dias={r.dias}
+        metas={metasDias}
+        total={metaSemana}
+        ms={r.ms}
+        agora={agora}
+        editavel={eAtual}
+      />
+
       <div className={`prf-acomp-numeros${qs ? "" : " prf-acomp-numeros-dois"}`}>
         <Numero n={1} titulo="Horas líquidas" valor={curto(r.ms)} antes={`Semana anterior: ${curto(antes.ms)}`}>
-          {meta ? (
-            <>
-              <div
-                className="prf-acomp-barra"
-                role="progressbar"
-                aria-label={`Meta de ${meta}h`}
-                aria-valuemin={0}
-                aria-valuemax={100}
-                aria-valuenow={Math.min(100, pct(r.ms, meta * HORA))}
-              >
-                <span style={largura(pct(r.ms, meta * HORA))} />
-              </div>
-              <p className="prf-acomp-detalhe">
-                {pct(r.ms, meta * HORA)}% da meta de {meta}h
-              </p>
-            </>
-          ) : (
-            <p className="prf-acomp-detalhe">Tempo do cronômetro, sem as pausas</p>
-          )}
+          <p className="prf-acomp-detalhe">
+            {metaSemana > 0 ? `${pct(r.ms, metaSemana)}% da meta da semana` : "Tempo do cronômetro, sem as pausas"}
+          </p>
         </Numero>
         <Numero n={2} titulo="Blocos concluídos" valor={String(r.blocos)} antes={`Semana anterior: ${antes.blocos}`}>
           <p className="prf-acomp-detalhe">
@@ -243,7 +229,7 @@ export default function SemanaCurso({ inicio, onInicio, onAbrirAula, questoes }:
               titulo="De segunda a domingo"
               vazio={eAtual ? "O tempo de cada dia aparece aqui." : "Nenhum estudo nesta semana."}
               hoje={hoje}
-              metas={r.dias.map((d) => metaDoDia(metaDiaria, d.dia))}
+              metas={metasDias}
             />
           </section>
 
@@ -391,25 +377,6 @@ export default function SemanaCurso({ inicio, onInicio, onAbrirAula, questoes }:
             ) : (
               <p className="prf-acomp-vazio">As sugestões aparecem quando houver estudo na semana.</p>
             )}
-            <div className="prf-acomp-meta">
-              <label htmlFor="prf-acomp-meta">Meta de horas líquidas</label>
-              <div className="prf-acomp-meta-campo">
-                <input
-                  id="prf-acomp-meta"
-                  type="number"
-                  inputMode="numeric"
-                  min={1}
-                  max={99}
-                  step={1}
-                  value={minhas.metaHoras ?? ""}
-                  onChange={(ev) => {
-                    const n = Math.round(Number(ev.target.value));
-                    anota({ metaHoras: ev.target.value === "" || !(n > 0) ? undefined : Math.min(n, 99) });
-                  }}
-                />
-                <span>horas na semana</span>
-              </div>
-            </div>
             <label className="prf-acomp-nota">
               <span>O que vai mudar</span>
               <textarea
@@ -419,7 +386,7 @@ export default function SemanaCurso({ inicio, onInicio, onAbrirAula, questoes }:
                 placeholder="Ex.: reler os PDFs na terça e na quinta; terminar uma matéria até domingo."
               />
             </label>
-            <p className="prf-acomp-salvo">As anotações e a meta ficam salvas neste aparelho.</p>
+            <p className="prf-acomp-salvo">As anotações e a meta ficam salvas neste aparelho. A meta muda no bloco 🎯 lá em cima.</p>
           </section>
         </div>
       </div>

@@ -373,7 +373,7 @@ export function Redacoes({ onAbrir }: HubProps) {
         >
           <Progresso feitos={feitasP} total={TEMAS_POL} rotulo="temas feitos" />
           <p className="cx-hub-nota">
-            {pol.oficialLido ? "Redação Oficial: guia lido ✓" : "Redação Oficial: guia e questões do Manual ainda por ver."}
+            {pol.oficialLido ? "Redação Oficial: guia lido ✓" : "Redação Oficial: guia do Manual ainda por ver."}
           </p>
         </CartaoCurso>
 

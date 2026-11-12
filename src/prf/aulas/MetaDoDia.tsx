@@ -10,6 +10,7 @@ import {
   comAumento,
   metaDeHoje,
   metaDoTipo,
+  origemDaMeta,
   primeiroDiaDoTipo,
   propostaDeAumento,
   recusarAumento,
@@ -96,7 +97,7 @@ export function MetaDoDia({ estudo, meta, agora }: MetaProps) {
           </dd>
         </div>
         {TIPOS.map((t) => {
-          const u = ultimoAumento(meta, t);
+          const u = origemDaMeta(meta, t, depois);
           return (
             <div key={t}>
               <dt>{NOME_TIPO[t]}</dt>
@@ -104,7 +105,7 @@ export function MetaDoDia({ estudo, meta, agora }: MetaProps) {
               <dd className="prf-meta-sub">
                 {u ? (
                   <span className="prf-meta-selo">
-                    atualizada em {diaMes(u.em)} · +{u.aumento}%
+                    {u.aumento === null ? `escolhida em ${diaMes(u.em)}` : `atualizada em ${diaMes(u.em)} · +${u.aumento}%`}
                   </span>
                 ) : (
                   "meta inicial"

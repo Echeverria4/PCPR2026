@@ -11055,3 +11055,183 @@ button.prf-mapa-ramo-topo:hover { background: color-mix(in srgb, var(--cor-ramo)
   }
   .prf-mapa-notas { grid-template-columns: 1fr 1fr; }
 }
+
+/* Aba Semana: meta da semana escolhida pelo estudante (seg a sex e sáb e dom) */
+.prf-msem {
+  gap: 10px;
+}
+
+.prf-msem-batida {
+  border-color: var(--ouro);
+}
+
+.prf-msem-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.prf-msem-mudar {
+  min-height: 36px;
+  padding: 4px 12px;
+  font-size: 0.85rem;
+}
+
+.prf-msem-tipos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--texto-fraco);
+}
+
+.prf-msem-tipos b {
+  color: var(--texto);
+}
+
+.prf-msem-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid var(--borda-forte);
+  border-radius: 10px;
+  background: var(--bg);
+}
+
+.prf-msem-campo {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.prf-msem-tipo {
+  min-width: 78px;
+  font-weight: 700;
+  color: var(--texto);
+}
+
+.prf-msem-por {
+  color: var(--texto-fraco);
+}
+
+/* 1rem: o iPhone não dá zoom ao tocar */
+.prf-msem-campo select {
+  min-height: 40px;
+  padding: 6px 10px;
+  border: 1px solid var(--borda-forte);
+  border-radius: 10px;
+  background: var(--bg-card);
+  color: var(--texto);
+  color-scheme: dark;
+  font-family: var(--fonte-corpo);
+  font-size: 1rem;
+}
+
+.prf-msem-campo select:focus-visible {
+  border-color: var(--ouro-forte);
+  outline: 2px solid var(--ouro-forte);
+  outline-offset: 1px;
+}
+
+.prf-msem-nota {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--texto-fraco);
+}
+
+.prf-msem-nota b {
+  color: var(--ouro-forte);
+}
+
+.prf-msem-valor {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 0.95rem;
+  color: var(--texto-fraco);
+}
+
+.prf-msem-valor b {
+  font-family: var(--fonte-cond);
+  font-size: 1.5rem;
+  color: var(--texto);
+}
+
+.prf-msem-valor span {
+  margin-left: auto;
+  font-weight: 700;
+  color: var(--ouro-forte);
+}
+
+.prf-msem-barra {
+  height: 8px;
+}
+
+.prf-msem-ritmo {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--texto);
+}
+
+.prf-msem-dias {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.prf-msem-dia {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
+  padding: 6px 2px;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  background: var(--bg);
+  font-size: 0.72rem;
+  color: var(--texto-fraco);
+}
+
+.prf-msem-dia-nome {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.prf-msem-dia-marca {
+  overflow: hidden;
+  max-width: 100%;
+  font-size: 0.78rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.prf-msem-dia-hoje {
+  border-color: var(--ouro-forte);
+}
+
+.prf-msem-d-batida {
+  border-color: var(--ouro);
+  background: rgba(202, 160, 58, 0.16);
+  color: var(--ouro-forte);
+}
+
+.prf-msem-d-batida .prf-msem-dia-marca {
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.prf-msem-d-futuro {
+  opacity: 0.55;
+}

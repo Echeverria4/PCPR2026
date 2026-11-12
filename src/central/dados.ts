@@ -189,15 +189,24 @@ export function metaDoDia(info: InfoCurso, dia: number): number {
   const fds = [0, 6].includes(new Date(dia).getDay());
   const tipo = fds ? "fimDeSemana" : "semana";
   let minutos = fds ? 120 : 60;
+  // Vale a mudança mais recente que já começou: aumento aceito ou meta escolhida na aba Semana.
+  let maisRecente = -Infinity;
   const m = objeto(lerJson(info.chaveMeta));
-  if (m && Array.isArray(m.respostas)) {
-    for (const bruto of m.respostas) {
+  const listas: [unknown, boolean][] = [
+    [m?.respostas, true],
+    [m?.definidas, false],
+  ];
+  for (const [lista, eAumento] of listas) {
+    if (!Array.isArray(lista)) continue;
+    for (const bruto of lista) {
       const r = objeto(bruto);
       const desde = numero(r?.desde);
       const novos = numero(r?.minutos);
-      if (r && (numero(r.aumento) ?? 0) > 0 && r.tipo === tipo && desde !== null && desde <= dia && novos) {
-        minutos = novos;
-      }
+      const em = numero(r?.em) ?? 0;
+      if (!r || r.tipo !== tipo || desde === null || desde > dia || !novos || em < maisRecente) continue;
+      if (eAumento && !((numero(r.aumento) ?? 0) > 0)) continue;
+      minutos = novos;
+      maisRecente = em;
     }
   }
   return minutos;
