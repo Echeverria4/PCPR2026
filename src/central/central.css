@@ -1131,3 +1131,47 @@
     transition: none;
   }
 }
+
+/* "Para memorizar hoje": a etiqueta da matéria é o próprio seletor (select invisível por cima) */
+.cx-etiqueta-seletor {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.cx-etiqueta-seletor:hover {
+  color: var(--texto);
+  border-color: var(--ouro);
+}
+
+.cx-etiqueta-seletor:focus-within {
+  outline: 2px solid var(--ouro);
+  outline-offset: 2px;
+}
+
+.cx-etiqueta-seletor.cx-fixa {
+  color: var(--ouro-forte);
+  border-color: var(--ouro);
+}
+
+.cx-seta {
+  font-size: 0.62rem;
+  opacity: 0.75;
+}
+
+.cx-etiqueta-seletor select {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  border: 0;
+  background: var(--bg-elevado);
+  color: var(--texto);
+  color-scheme: dark;
+  font-size: 16px;
+}

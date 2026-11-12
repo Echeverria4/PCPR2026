@@ -18,7 +18,7 @@ import {
   TOTAL_TEMAS as TEMAS_PMPR,
 } from "../prf/portugues/redacao/progressoRedacao";
 import type { AbrirCurso } from "./Central";
-import { Barras, CartaoMapa, escolherMapas, useMapas, type LinhaBarra } from "./comum";
+import { Barras, CartaoMapa, escolherMapas, lerMateriaMemorizar, useMapas, type LinhaBarra } from "./comum";
 import {
   INFO_CURSO,
   aulaDaQuestao,
@@ -288,7 +288,8 @@ export function Mapas({ onAbrir }: HubProps) {
     return [...m.values()];
   }, [mapas, revisados]);
 
-  const { doDia } = useMemo(() => escolherMapas(mapas, painel), [mapas, painel]);
+  // Mesma escolha de matéria do "Para memorizar hoje" do Início.
+  const { doDia } = useMemo(() => escolherMapas(mapas, painel, lerMateriaMemorizar()), [mapas, painel]);
   const totalRevisados = materias.reduce((s, m) => s + m.revisados, 0);
 
   return (

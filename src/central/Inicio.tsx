@@ -3,7 +3,15 @@ import { BRASOES } from "../components/Cursos";
 import { BANCO } from "../data/questions";
 import { TOTAIS_BANCO } from "../prf/cursos/completo/totaisBanco";
 import type { AbrirCurso, Secao } from "./Central";
-import { Barras, CartaoMapa, escolherMapas, useMapas } from "./comum";
+import {
+  Barras,
+  CartaoMapa,
+  escolherMapas,
+  gravarMateriaMemorizar,
+  lerMateriaMemorizar,
+  materiasDosMapas,
+  useMapas,
+} from "./comum";
 import {
   INFO_CURSO,
   duracao,
@@ -190,7 +198,47 @@ export default function Inicio({ onAbrir, onIr }: InicioProps) {
   const acertoTotal = pct(painel.questoesTotal.a, painel.questoesTotal.n);
   const acertoSemana = pct(painel.questoesSemana.a, painel.questoesSemana.n);
 
-  const { doDia: mapaDoDia, mapaFraco, fraco } = useMemo(() => escolherMapas(mapas, painel), [mapas, painel]);
+  // Matéria fixada no "Para memorizar hoje"; sem escolha, segue o automático.
+  const [materiaMemo, setMateriaMemo] = useState(lerMateriaMemorizar);
+  const materiasMapas = useMemo(() => materiasDosMapas(mapas), [mapas]);
+  const materiaFixa = materiasMapas.find((m) => m.grupo === materiaMemo) ?? null;
+  const { doDia: mapaDoDia, mapaFraco, fraco } = useMemo(
+    () => escolherMapas(mapas, painel, materiaFixa?.grupo ?? null),
+    [mapas, painel, materiaFixa],
+  );
+  function trocarMateria(valor: string) {
+    const grupo = valor || null;
+    gravarMateriaMemorizar(grupo);
+    setMateriaMemo(grupo);
+  }
+  /** A própria etiqueta da matéria abre a escolha: nada a mais na tela. */
+  const etiquetaMemorizar = (texto: string) => (
+    <span
+      className={`cx-etiqueta cx-etiqueta-seletor${materiaFixa ? " cx-fixa" : ""}`}
+      title={
+        materiaFixa
+          ? `Só mapas de ${materiaFixa.nome}. Escolha "Automático" para voltar ao normal.`
+          : "Automático: muda à meia-noite, pelas aulas que você já estudou. Toque para escolher uma matéria."
+      }
+    >
+      {texto}
+      <span className="cx-seta" aria-hidden="true">
+        ▾
+      </span>
+      <select
+        aria-label="Matéria do mapa para memorizar"
+        value={materiaFixa?.grupo ?? ""}
+        onChange={(e) => trocarMateria(e.target.value)}
+      >
+        <option value="">Automático (aulas que você já estudou)</option>
+        {materiasMapas.map((m) => (
+          <option key={m.grupo} value={m.grupo}>
+            {m.nome}
+          </option>
+        ))}
+      </select>
+    </span>
+  );
 
   const materiasSemana = painel.porMateriaSemana.slice(0, 8);
   const variosCursos = new Set(materiasSemana.map((m) => m.curso)).size > 1;
@@ -353,15 +401,23 @@ export default function Inicio({ onAbrir, onIr }: InicioProps) {
               mapa={mapaDoDia}
               materia={nomeMateriaPol(grupoDaAula(mapaDoDia.aula))}
               rotulo="🧠 Para memorizar hoje"
+              etiqueta={etiquetaMemorizar(nomeMateriaPol(grupoDaAula(mapaDoDia.aula)))}
               onAbrir={() => onAbrir("prf-policial", { aba: "mapas", mapa: mapaDoDia.aula })}
             />
           ) : (
-            !mapas && (
-              <section className="cx-card">
+            <section className="cx-card">
+              <div className="cx-card-topo">
                 <h2 className="cx-card-titulo">🧠 Para memorizar hoje</h2>
-                <p className="cx-vazio">Carregando o mapa do dia…</p>
-              </section>
-            )
+                {mapas && materiasMapas.length > 0 && etiquetaMemorizar("Escolher matéria")}
+              </div>
+              <p className="cx-vazio">
+                {!mapas
+                  ? "Carregando o mapa do dia…"
+                  : mapaFraco
+                    ? "Hoje o mapa é o mesmo do reforço no ponto fraco."
+                    : "Nenhum mapa disponível."}
+              </p>
+            </section>
           )}
 
           <section className="cx-card cx-dica">
