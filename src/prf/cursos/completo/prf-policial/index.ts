@@ -20,10 +20,11 @@ import { AULAS_RLM } from "./rlm";
 import { AULAS_PT } from "./pt";
 
 /**
- * Aulas com questões escondidas a pedido (12/11/26): as 9 de Redação Oficial (pt-15) saem do treino e da aula.
- * O resumo da aula e o guia da aba Redação continuam. Para voltar, basta tirar a aula daqui e de semQuestoes.
+ * Aulas com questões escondidas a pedido (12/11/26): as 9 de Redação Oficial (pt-15) e as 41 de Discursivas
+ * (técnica da prova escrita) saem do treino e da aula. Os resumos, os mapas e a aba Redação continuam.
+ * Para voltar, basta tirar a aula daqui (ela some do treino pelo id da aula, sem tirar o grupo dos Resumos).
  */
-const AULAS_ESCONDIDAS = new Set(["pt-15"]);
+const AULAS_ESCONDIDAS = new Set(["pt-15", ...AULAS_DISCURSIVAS.map((a) => a.aula)]);
 
 function semEscondidas(banco: ReturnType<typeof montarBanco>) {
   return { ...banco, questoes: banco.questoes.filter((q) => !AULAS_ESCONDIDAS.has(q.aula ?? "")) };

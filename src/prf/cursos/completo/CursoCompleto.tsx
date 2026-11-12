@@ -138,6 +138,17 @@ export default function CursoCompleto({
       ]),
     [grupos, dados.semQuestoes],
   );
+  /**
+   * No Treino, some a matéria que ficou sem nenhuma questão porque as aulas dela foram escondidas (ex.: Discursivas).
+   * Os Resumos e os Mapas continuam com ela. Matéria sem questão e sem aula escondida segue como "em preparação".
+   */
+  const materiasTreino = useMemo(
+    () =>
+      materias.filter(
+        (g) => banco.questoes.some((q) => q.materia === g.id) || !g.aulas.some((a) => aulasSemQuestoes.has(a.id)),
+      ),
+    [materias, aulasSemQuestoes, banco],
+  );
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
@@ -270,7 +281,7 @@ export default function CursoCompleto({
       {view === "treino" && (
         <InicioCurso
           dados={dados}
-          materias={materias}
+          materias={materiasTreino}
           stats={stats}
           tentativas={tentativas}
           erradas={erradas}
