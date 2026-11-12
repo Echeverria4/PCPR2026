@@ -23,8 +23,16 @@ const GRAVACAO_PCPR: GravacaoQuiz<SubjectId> = { registrar: recordAttempt, atual
  * Selo das questões de prova real no curso da PRF: o último concurso (FUNCAB, 2014), o de 2012 (Cespe/UnB),
  * a prova da PF 2025 (Cebraspe), o CNU 2025 (FGV) e as originais da FGV. Aparece antes da resposta e só diz de onde a questão veio.
  */
-function seloProvaPrf(q: Pick<Question<string>, "origem" | "prova">) {
+function seloProvaPrf(q: Pick<Question<string>, "origem" | "prova" | "compartilhada">) {
   const p = q.origem === "prova" ? q.prova : undefined;
+  if (p?.banca === "FUNCAB" && q.compartilhada) {
+    // Em outro curso, "último concurso" engana: diz qual foi.
+    return {
+      classe: "questao-selo-prf2014",
+      titulo: "Concurso PRF ADM 2014 (FUNCAB)",
+      detalhe: `Agente Administrativo · ${p.caderno}, questão ${p.numero}`,
+    };
+  }
   if (p?.banca === "Cebraspe") {
     return {
       classe: "questao-selo-pf2025",
@@ -147,7 +155,7 @@ export default function Quiz<M extends string = SubjectId>({
     );
   }
 
-  const selo = curso === "prf-adm" ? seloProvaPrf(questao) : null;
+  const selo = curso === "prf-adm" || questao.compartilhada ? seloProvaPrf(questao) : null;
   const certoErrado = questao.alternativas.length === 2;
   const letras = certoErrado ? LETRAS_CE : LETRAS;
 
@@ -273,7 +281,12 @@ export default function Quiz<M extends string = SubjectId>({
         )}
         <div className="questao-tags">
           <span className="questao-tag">{questao.topico}</span>
-          {questao.fonte && !selo && <span className="questao-tag questao-tag-fonte">{questao.fonte}</span>}
+          {questao.compartilhada && (
+            <span className="questao-tag questao-tag-fonte" title="Questão do banco de outro curso, no mesmo assunto desta aula.">
+              📚 {questao.compartilhada}
+            </span>
+          )}
+          {questao.fonte && !selo &&<span className="questao-tag questao-tag-fonte">{questao.fonte}</span>}
           {questao.origem === "inedita" && (
             <span
               className="questao-tag questao-tag-fonte"

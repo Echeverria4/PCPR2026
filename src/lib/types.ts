@@ -76,6 +76,8 @@ export interface Question<M extends string = SubjectId> {
   /** Alternativas na ordem do caderno, sem embaralhar: a explicação cita as letras originais. */
   ordemFixa?: boolean;
   prova?: OrigemProva;
+  /** Veio do banco de outro curso (banco por tema): o selo de origem, ex.: "Do curso PRF ADM". */
+  compartilhada?: string;
 }
 
 export interface ConteudoTopico<M extends string = SubjectId> {

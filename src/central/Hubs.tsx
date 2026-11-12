@@ -6,6 +6,8 @@ import type { CursoId } from "../data/cursos";
 import { getLocalAttempts, getWrongQueue } from "../lib/storage";
 import type { AttemptRecord } from "../lib/types";
 import { TOTAIS_BANCO } from "../prf/cursos/completo/totaisBanco";
+import { AULA_POL_DO_TEMA, TEMAS_PT } from "../banco/temasPt";
+import { TOTAIS_TEMAS_PT_POL } from "../banco/totaisTemas";
 import { lerProgresso as lerProgressoMapas } from "../prf/cursos/completo/prf-policial/mapas/progresso";
 import {
   contaFeitas as feitasPol,
@@ -38,6 +40,14 @@ interface HubProps {
 }
 
 const n = (v: number) => v.toLocaleString("pt-BR");
+
+/** "1.811 questões em 18 matérias + 156 de outros cursos". */
+function subPol() {
+  const t = TOTAIS_BANCO["prf-policial"];
+  if (!t) return "";
+  const outras = t.compartilhadas ? ` + ${n(t.compartilhadas)} de outros cursos` : "";
+  return `${n(t.questoes)} questões em ${t.materias} matérias${outras}`;
+}
 const treinoDe = (c: CursoEstudo): EntradaCurso => ({ aba: c === "prf-adm" ? "home" : "treino" });
 
 function Brasao({ curso }: { curso: CursoId }) {
@@ -161,7 +171,7 @@ export function Questoes({ onAbrir }: HubProps) {
         <CartaoCurso
           curso="prf-policial"
           titulo="PRF Policial"
-          sub={`${n(TOTAIS_BANCO["prf-policial"]?.questoes ?? 0)} questões em 19 matérias`}
+          sub={subPol()}
           acoes={
             <>
               <button type="button" className="botao botao-ouro" onClick={() => onAbrir("prf-policial", treinoDe("prf-policial"))}>
@@ -257,13 +267,36 @@ export function Questoes({ onAbrir }: HubProps) {
         </section>
       ))}
 
-      <section className="cx-card cx-aviso">
-        <h2 className="cx-card-titulo">Em construção: banco por tema</h2>
-        <p>
-          As questões vão ganhar um tema comum a todos os cursos. Assim, o que já existe na PRF ADM entra no treino da PRF
-          Policial, e as questões que chegarem para PF, PMPR e Banco do Brasil aparecem sozinhas nos cursos com o mesmo
-          conteúdo.
+      <section className="cx-card">
+        <div className="cx-card-topo">
+          <h2 className="cx-card-titulo">📚 Português por tema · PRF Policial</h2>
+        </div>
+        <p className="cx-card-nota">
+          As questões da PRF ADM e da PCPR do mesmo assunto entram sozinhas na aula certa, com o selo de onde vieram.
+          Questões com exemplos regionais ou da Polícia Civil ficam de fora.
         </p>
+        <ul className="cx-recs">
+          {TEMAS_PT.map((t) => {
+            const c = TOTAIS_TEMAS_PT_POL[t.id];
+            if (!c) return null;
+            const partes = [c["prf-adm"] && `PRF ADM ${c["prf-adm"]}`, c.pcpr2026 && `PCPR ${c.pcpr2026}`].filter(Boolean);
+            return (
+              <li key={t.id}>
+                <span className="cx-rec-texto">
+                  <strong>{c.proprias + c["prf-adm"] + c.pcpr2026}</strong> em {t.nome} · {c.proprias} do curso
+                  {partes.length > 0 && ` + ${partes.join(", ")}`}
+                </span>
+                <button
+                  type="button"
+                  className="botao cx-botao-peq"
+                  onClick={() => onAbrir("prf-policial", { aba: "aulas", grupo: "pt", aula: AULA_POL_DO_TEMA[t.id] })}
+                >
+                  Abrir a aula
+                </button>
+              </li>
+            );
+          })}
+        </ul>
       </section>
     </div>
   );

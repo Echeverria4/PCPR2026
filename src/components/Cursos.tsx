@@ -320,7 +320,7 @@ export default function Cursos({ onAbrir }: CursosProps) {
           imagem={BRASAO_CURSO[curso.id]}
           selos={[
             { texto: "Pré-edital", tom: "neutro" },
-            { texto: banco ? `${banco.questoes.toLocaleString("pt-BR")} questões` : "Aulas e PDFs", tom: "neutro" },
+            { texto: banco ? `${(banco.questoes + (banco.compartilhadas ?? 0)).toLocaleString("pt-BR")} questões` : "Aulas e PDFs", tom: "neutro" },
           ]}
           onAbrir={() => onAbrir(curso.id)}
           detalhes={
@@ -335,8 +335,9 @@ export default function Cursos({ onAbrir }: CursosProps) {
                   <>
                     <dt>Treino</dt>
                     <dd>
-                      {banco.questoes.toLocaleString("pt-BR")} questões e {banco.resumos} resumos, as duas partes
-                      crescendo por matéria
+                      {banco.questoes.toLocaleString("pt-BR")} questões
+                      {banco.compartilhadas ? ` + ${banco.compartilhadas.toLocaleString("pt-BR")} de outros cursos` : ""} e{" "}
+                      {banco.resumos} resumos, as duas partes crescendo por matéria
                     </dd>
                   </>
                 )}

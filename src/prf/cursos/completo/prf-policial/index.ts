@@ -1,4 +1,5 @@
-import { montarBanco, type DadosCursoCompleto } from "../tipos";
+import { montarBanco, type BancoCurso, type DadosCursoCompleto } from "../tipos";
+import { compartilhadasPtPol } from "../../../../banco/compartilhado";
 import { AULAS_DISCURSIVAS } from "./discursivas";
 import { AULAS_CARREIRA } from "./carreira";
 import { AULAS_ECA } from "./eca";
@@ -26,13 +27,21 @@ import { AULAS_PT } from "./pt";
  */
 const AULAS_ESCONDIDAS = new Set(["pt-15", ...AULAS_DISCURSIVAS.map((a) => a.aula)]);
 
-function semEscondidas(banco: ReturnType<typeof montarBanco>) {
+function semEscondidas(banco: BancoCurso): BancoCurso {
   return { ...banco, questoes: banco.questoes.filter((q) => !AULAS_ESCONDIDAS.has(q.aula ?? "")) };
+}
+
+/**
+ * Banco por tema (12/11/26): as questões de Português da PRF ADM e da PCPR do mesmo assunto entram na aula certa,
+ * com selo de origem. Questão nova numa fonte entra aqui sozinha (src/banco/compartilhado.ts).
+ */
+function comCompartilhadas(banco: BancoCurso): BancoCurso {
+  return { ...banco, questoes: [...banco.questoes, ...compartilhadasPtPol(banco.questoes)] };
 }
 
 /** Cada matéria entra aqui quando o lote dela fica pronto. */
 export const DADOS: DadosCursoCompleto = {
-  banco: semEscondidas(montarBanco("pol", { pt: AULAS_PT, rlm: AULAS_RLM, info: AULAS_INFO, fisica: AULAS_FISICA, etica: AULAS_ETICA, geopolitica: AULAS_GEOPOLITICA, ingles: AULAS_INGLES, espanhol: AULAS_ESPANHOL, transito: AULAS_TRANSITO, "adm-a": AULAS_ADM_A, "adm-b": AULAS_ADM_B, con: AULAS_CON, penal: AULAS_PENAL, proc: AULAS_PROC, especial: AULAS_ESPECIAL, dh: AULAS_DH, eca: AULAS_ECA, carreira: AULAS_CARREIRA, discursivas: AULAS_DISCURSIVAS })),
+  banco: semEscondidas(comCompartilhadas(montarBanco("pol", { pt: AULAS_PT, rlm: AULAS_RLM, info: AULAS_INFO, fisica: AULAS_FISICA, etica: AULAS_ETICA, geopolitica: AULAS_GEOPOLITICA, ingles: AULAS_INGLES, espanhol: AULAS_ESPANHOL, transito: AULAS_TRANSITO, "adm-a": AULAS_ADM_A, "adm-b": AULAS_ADM_B, con: AULAS_CON, penal: AULAS_PENAL, proc: AULAS_PROC, especial: AULAS_ESPECIAL, dh: AULAS_DH, eca: AULAS_ECA, carreira: AULAS_CARREIRA, discursivas: AULAS_DISCURSIVAS }))),
   semQuestoes: ["carreira", "bizus", "trilha", "ebooks", "mentoria", ...AULAS_ESCONDIDAS],
   faixa: [
     { forte: "Sem edital", texto: "Novo concurso ainda sem edital nem banca definida" },
