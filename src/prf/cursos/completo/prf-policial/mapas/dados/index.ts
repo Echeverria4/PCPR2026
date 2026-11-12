@@ -2,6 +2,7 @@ import type { MapaAula } from "../tipos";
 import { MAPAS_ADM_A } from "./adm-a";
 import { MAPAS_ADM_B } from "./adm-b";
 import { MAPAS_CARREIRA } from "./carreira";
+import { MAPAS_COMPLEMENTO } from "./complemento";
 import { MAPAS_CONSTITUCIONAL } from "./constitucional";
 import { MAPAS_DH } from "./dh";
 import { MAPAS_DISCURSIVAS } from "./discursivas";
@@ -23,4 +24,4 @@ import { MAPAS_TRANSITO } from "./transito";
  * Cada matéria entra aqui quando o arquivo dela fica pronto. A ordem na tela é a do catálogo do curso,
  * não a desta lista, e a matéria só aparece na aba quando tem pelo menos um mapa.
  */
-export const MAPAS: MapaAula[] = [...MAPAS_PT, ...MAPAS_RLM, ...MAPAS_INFO, ...MAPAS_FISICA, ...MAPAS_ETICA, ...MAPAS_GEOPOLITICA, ...MAPAS_INGLES, ...MAPAS_ESPANHOL, ...MAPAS_TRANSITO, ...MAPAS_ADM_A, ...MAPAS_ADM_B, ...MAPAS_CONSTITUCIONAL, ...MAPAS_PENAL, ...MAPAS_PROC, ...MAPAS_ESPECIAL, ...MAPAS_DH, ...MAPAS_ECA, ...MAPAS_CARREIRA, ...MAPAS_DISCURSIVAS];
+export const MAPAS: MapaAula[] = [...MAPAS_PT, ...MAPAS_RLM, ...MAPAS_INFO, ...MAPAS_FISICA, ...MAPAS_ETICA, ...MAPAS_GEOPOLITICA, ...MAPAS_INGLES, ...MAPAS_ESPANHOL, ...MAPAS_TRANSITO, ...MAPAS_ADM_A, ...MAPAS_ADM_B, ...MAPAS_CONSTITUCIONAL, ...MAPAS_PENAL, ...MAPAS_PROC, ...MAPAS_ESPECIAL, ...MAPAS_DH, ...MAPAS_ECA, ...MAPAS_CARREIRA, ...MAPAS_DISCURSIVAS, ...MAPAS_COMPLEMENTO];

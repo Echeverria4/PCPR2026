@@ -9,6 +9,12 @@ import type { MapaAula, RamoMapa } from "./tipos";
 
 const MAPA_DA_AULA = new Map(MAPAS.map((m) => [m.aula, m]));
 
+/** Os ➕ Complemento não têm aula no curso: ganham uma só com id e nome, para seguir o mesmo caminho na tela. */
+const COMPLEMENTOS = MAPAS.filter((m) => m.complemento);
+const aulaDoComplemento = (m: MapaAula): AulaCurso => ({ id: m.aula, n: "", nome: m.complemento?.nome ?? "", blocos: [], pdfs: [] });
+const rotuloAula = (aula: AulaCurso, mapa: MapaAula) =>
+  mapa.complemento ? `➕ Complemento · ${mapa.complemento.nome}` : nomeAula(aula);
+
 /** A partir daqui o mapa abre para os dois lados, com as linhas curvas; abaixo, vira árvore de cima para baixo. */
 const TELA_LARGA = "(min-width: 900px)";
 
@@ -63,10 +69,16 @@ export default function MapasPrf({ tela, onTela, grupos, onAbrirAula }: PropsMap
       grupos
         .map((grupo) => ({
           grupo,
-          itens: grupo.aulas.flatMap((aula) => {
-            const mapa = MAPA_DA_AULA.get(aula.id);
-            return mapa ? [{ aula, mapa }] : [];
-          }),
+          itens: [
+            ...grupo.aulas.flatMap((aula) => {
+              const mapa = MAPA_DA_AULA.get(aula.id);
+              return mapa ? [{ aula, mapa }] : [];
+            }),
+            ...COMPLEMENTOS.filter((m) => m.complemento?.grupo === grupo.id).map((mapa) => ({
+              aula: aulaDoComplemento(mapa),
+              mapa,
+            })),
+          ],
         }))
         .filter((m) => m.itens.length > 0),
     [grupos],
@@ -132,7 +144,7 @@ export default function MapasPrf({ tela, onTela, grupos, onAbrirAula }: PropsMap
                     </span>
                     <span className="prf-mapa-item-corpo">
                       <span className="prf-mapa-item-titulo">{mapa.centro.titulo}</span>
-                      <span className="prf-mapa-item-aula">{nomeAula(aula)}</span>
+                      <span className="prf-mapa-item-aula">{rotuloAula(aula, mapa)}</span>
                       <span className="prf-mapa-item-meta">
                         <span className={`prf-mapa-selo ${quando ? "prf-mapa-selo-ok" : ""}`}>
                           {quando ? `✓ Revisado em ${diaCurto(quando)}` : "Novo"}
@@ -207,7 +219,8 @@ export default function MapasPrf({ tela, onTela, grupos, onAbrirAula }: PropsMap
         })}
       </div>
       <p className="prf-mapa-aviso">
-        Mapas escritos para este app, a partir dos resumos das aulas. O que você marca como revisado fica guardado só
+        Mapas escritos para este app, a partir dos resumos das aulas; os ➕ Complemento trazem assuntos que outros
+        materiais cobram e as aulas não. O que você marca como revisado fica guardado só
         neste navegador.
       </p>
     </>
@@ -274,7 +287,7 @@ function TelaMapa({ materia, posicao, memoria, revisadoEm, onMemoria, onRevisado
         </span>
       </div>
       <p className="prf-mapa-aula-nome">
-        <span aria-hidden="true">{grupo.icone ?? "🧠"}</span> {grupo.nome} · {nomeAula(aula)}
+        <span aria-hidden="true">{grupo.icone ?? "🧠"}</span> {grupo.nome} · {rotuloAula(aula, mapa)}
       </p>
 
       <div className="prf-mapa-modos" role="group" aria-label="Como ver o mapa">
@@ -327,9 +340,11 @@ function TelaMapa({ materia, posicao, memoria, revisadoEm, onMemoria, onRevisado
         >
           {revisado ? "✓ Revisado · desmarcar" : "✓ Revisei este mapa"}
         </button>
-        <button className="botao prf-mapa-botao" onClick={onAbrirAula}>
-          🎬 Abrir a aula
-        </button>
+        {!mapa.complemento && (
+          <button className="botao prf-mapa-botao" onClick={onAbrirAula}>
+            🎬 Abrir a aula
+          </button>
+        )}
       </div>
 
       <nav className="prf-mapa-nav" aria-label="Outros mapas da matéria">

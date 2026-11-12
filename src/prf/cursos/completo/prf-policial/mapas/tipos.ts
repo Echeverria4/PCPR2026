@@ -3,6 +3,8 @@
  *
  * Regras para preencher (o script de conferência cobra as que dão para medir):
  *  - `aula` é o id da aula no catálogo do curso (etica-01, pt-03…); a matéria sai dele, não se escreve.
+ *  - Mapa ➕ Complemento (assunto que outros materiais trazem e as aulas não): `aula` = `<grupo>-extra-<n>`
+ *    e `complemento` com a matéria e um nome curto; entra no fim da matéria, sem botão de abrir aula.
  *  - Centro: título de até 4 palavras; `sub` (opcional) é a norma ou o recorte, até 6 palavras.
  *  - De 3 a 6 ramos. Rótulo de até 3 palavras e 1 emoji simples (sem bandeira nem emoji composto).
  *  - Cor do ramo: uma da paleta, sem repetir no mesmo mapa. Vermelho não existe: é só da pegadinha.
@@ -51,6 +53,7 @@ export interface MapaAula {
   ramos: RamoMapa[];
   macete: string;
   cuidado: string;
+  complemento?: { grupo: string; nome: string };
 }
 
 /** Tela aberta na aba; fica guardada no curso para não se perder ao trocar de aba. */
