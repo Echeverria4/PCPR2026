@@ -11235,3 +11235,137 @@ button.prf-mapa-ramo-topo:hover { background: color-mix(in srgb, var(--cor-ramo)
 .prf-msem-d-futuro {
   opacity: 0.55;
 }
+
+/* Resumo: exemplos resolvidos das fórmulas (exatas), com passos abertos um de cada vez */
+.prf-exemplos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.prf-exemplos-titulo {
+  margin: 4px 0 0;
+  font-size: 1rem;
+  color: var(--texto);
+}
+
+.prf-exemplos-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.prf-exemplo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 14px;
+  border: 1px solid var(--aulas-linha);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.prf-exemplo-nome {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--azul);
+}
+
+.prf-exemplo-formula {
+  margin: 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: rgba(79, 163, 227, 0.12);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--texto);
+  overflow-wrap: anywhere;
+}
+
+.prf-exemplo-legenda,
+.prf-exemplo-dica {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--texto-fraco);
+}
+
+.prf-exemplo-dica {
+  font-style: italic;
+}
+
+.prf-exemplo-problema {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--texto);
+}
+
+.prf-exemplo-passos {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding-left: 1.5em;
+}
+
+.prf-exemplo-passo {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--texto);
+}
+
+.prf-exemplo-passo::marker {
+  font-weight: 700;
+  color: var(--azul);
+}
+
+.prf-exemplo-conta {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 4px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.07);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.prf-exemplo-resposta {
+  margin: 0;
+  padding: 8px 12px;
+  border-left: 3px solid var(--verde);
+  border-radius: 6px;
+  background: rgba(53, 212, 136, 0.1);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--texto);
+}
+
+.prf-exemplo-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+}
+
+.prf-exemplo-botao {
+  font-size: 0.9rem;
+}
+
+.prf-exemplo-link {
+  padding: 6px 2px;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 0.85rem;
+  color: var(--texto-fraco);
+  text-decoration: underline;
+  cursor: pointer;
+}
