@@ -29,6 +29,7 @@ import {
   TEMA_TOPICO_PCPR_INFO,
   TEMAS_INFO,
 } from "./temasInfo";
+import { AULA_POL_DO_TEMA_ETICA, TEMA_QUESTAO_ADM_ETICA, TEMA_TOPICO_ADM_ETICA, TEMAS_ETICA } from "./temasEtica";
 
 /**
  * Banco por tema: cada curso que tem questões entra aqui como fonte, e cada questão ganha um tema. Um curso que
@@ -97,6 +98,13 @@ const MATERIAS_POL: MateriaBanco[] = [
         tema: temaPor(TEMA_QUESTAO_PCPR_INFO, TEMA_TOPICO_PCPR_INFO),
       },
     ],
+  },
+  {
+    materia: "etica",
+    temas: TEMAS_ETICA,
+    aula: AULA_POL_DO_TEMA_ETICA,
+    // A PCPR não tem Ética.
+    fontes: [{ ...PRF_ADM, questoes: () => QUESTOES_PRF_POR_MATERIA.etica, tema: temaPor(TEMA_QUESTAO_ADM_ETICA, TEMA_TOPICO_ADM_ETICA) }],
   },
 ];
 

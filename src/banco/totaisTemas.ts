@@ -85,4 +85,15 @@ export const TOTAIS_TEMAS_POL: { materia: string; nome: string; temas: TotalTema
       { nome: "Windows 11", aula: "info-15", proprias: 6, "prf-adm": 0, pcpr2026: 3 },
     ],
   },
+  {
+    materia: "etica",
+    nome: "Ética",
+    temas: [
+      { nome: "Fundamentos da ética", aula: "etica-01", proprias: 8, "prf-adm": 13, pcpr2026: 0 },
+      { nome: "Decreto 1.171/1994", aula: "etica-02", proprias: 8, "prf-adm": 10, pcpr2026: 0 },
+      { nome: "Decreto 6.029/2007", aula: "etica-03", proprias: 8, "prf-adm": 5, pcpr2026: 0 },
+      { nome: "Código da Alta Administração", aula: "etica-04", proprias: 8, "prf-adm": 0, pcpr2026: 0 },
+      { nome: "Decreto 9.203/2017", aula: "etica-05", proprias: 8, "prf-adm": 0, pcpr2026: 0 },
+    ],
+  },
 ];
