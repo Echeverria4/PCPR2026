@@ -23,6 +23,17 @@ interface CursosProps {
   onAbrir: (id: CursoId) => void;
 }
 
+/** Brasão de cada curso, para a Central usar nos cartões e no "continuar". */
+export const BRASOES: Partial<Record<CursoId, string>> = {
+  pcpr2026: pcprBrasao,
+  "prf-adm": prfBrasao,
+  "prf-policial": prfBrasao,
+  "pf-agente": pfBrasao,
+  "detran-pr": paranaBrasao,
+  pmpr: pmprBrasao,
+  "banco-brasil": bbLogo,
+};
+
 type Tom = "ouro" | "alerta" | "neutro";
 
 interface Selo {
@@ -195,8 +206,8 @@ function CartaoCurso({ curso, imagem, selos, onAbrir, children, detalhes }: Cart
         </div>
         <div className="curso-acoes">
           {abrir ? (
-            <button type="button" className="botao botao-ouro" onClick={abrir}>
-              Abrir curso →
+            <button type="button" className={curso.finalizado ? "botao" : "botao botao-ouro"} onClick={abrir}>
+              {curso.finalizado ? "Consultar →" : "Abrir curso →"}
             </button>
           ) : (
             <button type="button" className="botao" disabled>
@@ -214,14 +225,16 @@ function CartaoCurso({ curso, imagem, selos, onAbrir, children, detalhes }: Cart
   );
 }
 
+/** A lista dos cursos da Central: em andamento, em breve e finalizados. A moldura (menu e topo) é da Central. */
 export default function Cursos({ onAbrir }: CursosProps) {
   const [agora] = useState(() => Date.now());
   const pcpr = useMemo(() => resumoPcpr(), []);
   const pct = pcpr.total > 0 ? Math.round((pcpr.vistas / pcpr.total) * 100) : 0;
   const prf = useMemo(() => resumoPrf(), []);
   const naCentral = CURSOS.filter((c) => !c.oculto);
-  const abertos = naCentral.filter((c) => c.disponivel);
+  const abertos = naCentral.filter((c) => c.disponivel && !c.finalizado);
   const emBreve = naCentral.filter((c) => !c.disponivel);
+  const finalizados = naCentral.filter((c) => c.finalizado);
 
   function cartao(curso: Curso) {
     if (!curso.disponivel) {
@@ -232,7 +245,7 @@ export default function Cursos({ onAbrir }: CursosProps) {
         <CartaoCurso
           curso={curso}
           imagem={pcprBrasao}
-          selos={[seloProvaPcpr(agora)]}
+          selos={[{ texto: "✓ Curso finalizado", tom: "ouro" }, seloProvaPcpr(agora)]}
           onAbrir={() => onAbrir(curso.id)}
           detalhes={
             <>
@@ -461,51 +474,40 @@ export default function Cursos({ onAbrir }: CursosProps) {
   }
 
   return (
-    <div className="app-shell">
-      <div className="topo-fixo">
-        <header className="topbar cursos-topbar">
-          <div className="topbar-titulo">
-            <span className="cursos-marca" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <rect x="3" y="3" width="8" height="8" rx="1.5" />
-                <rect x="13" y="3" width="8" height="8" rx="1.5" />
-                <rect x="3" y="13" width="8" height="8" rx="1.5" />
-                <rect x="13" y="13" width="8" height="8" rx="1.5" />
-              </svg>
-            </span>
-            <div>
-              <h1>Central de Estudos</h1>
-              <div className="topbar-sub">Concursos · escolha o curso</div>
-            </div>
-          </div>
-        </header>
-      </div>
-      <main className="conteudo">
-        <p className="cursos-lema">
-          Você é <span>responsável</span> pelo seu próprio sucesso.
-        </p>
-        <h2 className="secao-titulo cursos-titulo">Cursos</h2>
-        <p className="cursos-intro">
-          Cada concurso tem o seu próprio espaço: aulas, anotações e progresso ficam separados.
-        </p>
-        <ul className="cursos-lista">
-          {abertos.map((curso) => (
-            <li key={curso.id}>{cartao(curso)}</li>
-          ))}
-        </ul>
-        {emBreve.length > 0 && (
-          <>
-            <h2 className="secao-titulo cursos-breve-titulo">Em breve</h2>
-            <p className="cursos-intro">Abre aqui assim que o material do curso chegar.</p>
-            <ul className="cursos-lista">
-              {emBreve.map((curso) => (
-                <li key={curso.id}>{cartao(curso)}</li>
-              ))}
-            </ul>
-          </>
-        )}
-      </main>
-      <footer className="rodape">Material de estudo não oficial, para fins de treino.</footer>
-    </div>
+    <>
+      <h2 className="secao-titulo cursos-titulo">Em andamento</h2>
+      <p className="cursos-intro">
+        Cada concurso tem o seu próprio espaço: aulas, anotações e progresso ficam separados.
+      </p>
+      <ul className="cursos-lista">
+        {abertos.map((curso) => (
+          <li key={curso.id}>{cartao(curso)}</li>
+        ))}
+      </ul>
+      {emBreve.length > 0 && (
+        <>
+          <h2 className="secao-titulo cursos-breve-titulo">Em breve</h2>
+          <p className="cursos-intro">Abre aqui assim que o material do curso chegar.</p>
+          <ul className="cursos-lista">
+            {emBreve.map((curso) => (
+              <li key={curso.id}>{cartao(curso)}</li>
+            ))}
+          </ul>
+        </>
+      )}
+      {finalizados.length > 0 && (
+        <>
+          <h2 className="secao-titulo cursos-breve-titulo">Cursos finalizados</h2>
+          <p className="cursos-intro">
+            A prova já foi feita. O curso continua aqui para consulta, com o progresso guardado.
+          </p>
+          <ul className="cursos-lista">
+            {finalizados.map((curso) => (
+              <li key={curso.id}>{cartao(curso)}</li>
+            ))}
+          </ul>
+        </>
+      )}
+    </>
   );
 }

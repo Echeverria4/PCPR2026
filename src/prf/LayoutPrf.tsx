@@ -89,8 +89,8 @@ export default function LayoutPrf({
               </button>
             ) : (
               onTrocarCurso && (
-                <button className="botao" onClick={onTrocarCurso} title="Voltar para a central de cursos">
-                  ⇄ Cursos
+                <button className="botao" onClick={onTrocarCurso} title="Voltar para a Central de Estudos">
+                  ⌂ Central
                 </button>
               )
             )}

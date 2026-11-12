@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import App from "./App";
-import Cursos from "./components/Cursos";
+import Central from "./central/Central";
+import type { EntradaCurso } from "./central/entrada";
 import { CURSOS, cursoAbrivel, type CursoId } from "./data/cursos";
 
 // O curso da PRF só baixa quando é aberto: quem estuda para a PCPR não carrega o banco dele.
@@ -21,44 +22,45 @@ function gravarNaUrl(curso: CursoId | null) {
 }
 
 export default function Raiz() {
-  const [curso, setCurso] = useState<CursoId | null>(cursoDaUrl);
+  // A entrada (aba, aula, mapa) só vale para o curso aberto pela Central; recarregar abre o curso no início.
+  const [{ curso, entrada }, setAberto] = useState<{ curso: CursoId | null; entrada?: EntradaCurso }>(() => ({
+    curso: cursoDaUrl(),
+  }));
 
   useEffect(() => {
-    const aoNavegar = () => setCurso(cursoDaUrl());
+    const aoNavegar = () => setAberto({ curso: cursoDaUrl() });
     window.addEventListener("popstate", aoNavegar);
     return () => window.removeEventListener("popstate", aoNavegar);
   }, []);
 
+  // Sem curso aberto, o título é da Central (muda com a seção).
   useEffect(() => {
-    document.title =
-      curso === "pcpr2026"
-        ? "Operação PCPR 2026"
-        : (CURSOS.find((c) => c.id === curso)?.nome ?? "Central de Estudos");
-    if (!curso) window.scrollTo({ top: 0 });
+    if (!curso) return;
+    document.title = curso === "pcpr2026" ? "Operação PCPR 2026" : (CURSOS.find((c) => c.id === curso)?.nome ?? "Central de Estudos");
   }, [curso]);
 
-  function abrir(id: CursoId) {
+  function abrir(id: CursoId, novaEntrada?: EntradaCurso) {
     gravarNaUrl(id);
-    setCurso(id);
+    setAberto({ curso: id, entrada: novaEntrada });
   }
 
   function voltarParaCursos() {
     gravarNaUrl(null);
-    setCurso(null);
+    setAberto({ curso: null });
   }
 
   if (curso === "pcpr2026") return <App onTrocarCurso={voltarParaCursos} />;
   if (curso === "prf-adm")
     return (
       <Suspense fallback={<div className="vazio">Carregando o curso…</div>}>
-        <AppPrf onTrocarCurso={voltarParaCursos} />
+        <AppPrf onTrocarCurso={voltarParaCursos} entrada={entrada} />
       </Suspense>
     );
   if (curso)
     return (
       <Suspense fallback={<div className="vazio">Carregando o curso…</div>}>
-        <AppCurso key={curso} curso={curso} onTrocarCurso={voltarParaCursos} />
+        <AppCurso key={curso} curso={curso} onTrocarCurso={voltarParaCursos} entrada={entrada} />
       </Suspense>
     );
-  return <Cursos onAbrir={abrir} />;
+  return <Central onAbrir={abrir} />;
 }

@@ -25,6 +25,7 @@ import {
   type FiltrosCurso,
 } from "./sessoes";
 import type { DadosCursoCompleto, PropsMapas, PropsRedacao, TentativaCurso } from "./tipos";
+import { abaDaEntrada, type EntradaCurso } from "../../../central/entrada";
 
 const AulasCurso = lazy(() => import("../../aulas/AulasCurso"));
 const SemanaCurso = lazy(() => import("../SemanaCurso"));
@@ -55,6 +56,15 @@ interface CursoCompletoProps {
   brasaoAlt: string;
   dados: DadosCursoCompleto;
   onTrocarCurso?: () => void;
+  /** Aba (e aula ou mapa) em que o curso abre quando vem da Central. */
+  entrada?: EntradaCurso;
+}
+
+/** Mapa aberto direto, ou a matéria dos mapas, quando o curso vem da Central. */
+function mapasDaEntrada(entrada: EntradaCurso | undefined): PropsMapas["tela"] {
+  if (entrada?.mapa) return { tipo: "mapa", aula: entrada.mapa };
+  if (entrada?.aba === "mapas" && entrada.grupo) return { tipo: "materia", grupo: entrada.grupo };
+  return { tipo: "inicio" };
 }
 
 /** Caneta por cima do enunciado e das alternativas, como na PRF ADM. */
@@ -63,23 +73,46 @@ function comCaneta(questaoId: string, conteudo: ReactNode) {
 }
 
 /** Curso com aulas, banco de questões e resumos: a estrutura da PRF ADM para os dados de qualquer curso. */
-export default function CursoCompleto({ curso, nome, brasao, brasaoAlt, dados, onTrocarCurso }: CursoCompletoProps) {
+export default function CursoCompleto({
+  curso,
+  nome,
+  brasao,
+  brasaoAlt,
+  dados,
+  onTrocarCurso,
+  entrada,
+}: CursoCompletoProps) {
   const { banco } = dados;
   const progresso = useMemo(() => progressoDoCurso(curso), [curso]);
-  const [view, setView] = useState<View>("treino");
+  const [view, setView] = useState<View>(() =>
+    abaDaEntrada<AbaCurso>(
+      entrada,
+      [
+        "treino",
+        "aulas",
+        "semana",
+        "resumos",
+        ...(dados.mapas ? (["mapas"] as const) : []),
+        ...(dados.redacao ? (["redacao"] as const) : []),
+      ],
+      "treino",
+    ),
+  );
   const [tentativas, setTentativas] = useState<TentativaCurso[]>(() => progresso.tentativas());
   const [erradas, setErradas] = useState<string[]>(() => progresso.erradas());
   const [sessao, setSessao] = useState<SessaoAtiva | null>(null);
   const [resultado, setResultado] = useState<QuizSessionResult<string> | null>(null);
   // Aba para onde o quiz volta; a tela aberta nas aulas não se perde durante o quiz.
   const [origem, setOrigem] = useState<AbaCurso>("treino");
-  const [telaAulas, setTelaAulas] = useState<TelaAulas>({});
+  const [telaAulas, setTelaAulas] = useState<TelaAulas>(() =>
+    entrada?.aba === "aulas" ? { grupo: entrada.grupo, aula: entrada.aula } : {},
+  );
   // Semana aberta no acompanhamento (segunda-feira 0h); null = a semana atual.
   const [semanaAberta, setSemanaAberta] = useState<number | null>(null);
   const [telaRedacao, setTelaRedacao] = useState<PropsRedacao["tela"]>({ tipo: "inicio" });
   // A aba de redação só existe no curso que traz uma; o código dela carrega quando a aba abre.
   const Redacao = useMemo(() => (dados.redacao ? lazy(dados.redacao) : null), [dados.redacao]);
-  const [telaMapas, setTelaMapas] = useState<PropsMapas["tela"]>({ tipo: "inicio" });
+  const [telaMapas, setTelaMapas] = useState<PropsMapas["tela"]>(() => mapasDaEntrada(entrada));
   // Os mapas mentais seguem a mesma regra: só no curso que traz, e só carregam ao abrir a aba.
   const Mapas = useMemo(() => (dados.mapas ? lazy(dados.mapas) : null), [dados.mapas]);
   const abas = useMemo(

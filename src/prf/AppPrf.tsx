@@ -19,6 +19,7 @@ import { sessaoFixacao } from "./aulas/fixacao";
 import { COMECO_META } from "./aulas/meta";
 import { ROTULO_CADERNO_PRF } from "./caderno/dados";
 import CanetaPrf from "./caneta/CanetaPrf";
+import { abaDaEntrada, type EntradaCurso } from "../central/entrada";
 import {
   FILTROS_PRF_PADRAO,
   sessaoFocoPrf,
@@ -61,7 +62,11 @@ const PONTOS_POR_MATERIA = Object.fromEntries(PRF_MATERIAS.map((m) => [m.id, m.q
 interface AppPrfProps {
   /** Volta para a central de cursos. */
   onTrocarCurso?: () => void;
+  /** Aba (e tela) em que o curso abre quando vem da Central. */
+  entrada?: EntradaCurso;
 }
+
+const ABAS_PRF: readonly AbaPrf[] = ["home", "aulas", "semana", "conteudo", "portugues"];
 
 /** Caneta por cima do enunciado e das alternativas, só no curso da PRF. */
 function comCaneta(questaoId: string, conteudo: ReactNode) {
@@ -86,17 +91,19 @@ export default function AppPrf(props: AppPrfProps) {
   );
 }
 
-function CursoPrf({ onTrocarCurso }: AppPrfProps) {
-  const [view, setView] = useState<View>("home");
+function CursoPrf({ onTrocarCurso, entrada }: AppPrfProps) {
+  const [view, setView] = useState<View>(() => abaDaEntrada(entrada, ABAS_PRF, "home"));
   const [tentativas, setTentativas] = useState<TentativaPrf[]>(() => getTentativasPrf());
   const [erradas, setErradas] = useState(() => getErradasPrf().length);
   const [sessao, setSessao] = useState<SessaoAtiva | null>(null);
   const [resultado, setResultado] = useState<QuizSessionResult<MateriaPrfId> | null>(null);
   // Aba para onde o quiz volta, e a tela aberta no Português Inteligente (não se perde durante o quiz).
   const [origem, setOrigem] = useState<AbaPrf>("home");
-  const [telaPt, setTelaPt] = useState<TelaPt>({ tipo: "geral" });
+  const [telaPt, setTelaPt] = useState<TelaPt>(() =>
+    entrada?.tela === "redacao" ? { tipo: "redacao" } : { tipo: "geral" },
+  );
   const [materiaConteudo, setMateriaConteudo] = useState<MateriaPrfId | undefined>();
-  const [telaAulas, setTelaAulas] = useState<TelaAulas>({});
+  const [telaAulas, setTelaAulas] = useState<TelaAulas>(() => ({ grupo: entrada?.grupo, aula: entrada?.aula }));
   // Semana aberta no acompanhamento (segunda-feira 0h); null = a semana atual.
   const [semanaAberta, setSemanaAberta] = useState<number | null>(null);
 

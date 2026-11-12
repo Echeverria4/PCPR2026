@@ -10,6 +10,8 @@ export interface Curso {
   disponivel: boolean;
   /** Fora da lista da central; se estiver disponível, ainda abre pelo link (?curso=…). */
   oculto?: boolean;
+  /** Prova já feita: o curso fica no bloco dos finalizados, ainda aberto para consulta. */
+  finalizado?: boolean;
 }
 
 export const CURSOS: Curso[] = [
@@ -19,7 +21,7 @@ export const CURSOS: Curso[] = [
     nome: "PCPR 2026 — Agente de Polícia Judiciária",
     orgao: "Polícia Civil do Paraná · Banca FGV",
     disponivel: true,
-    oculto: true,
+    finalizado: true,
   },
   {
     id: "prf-adm",

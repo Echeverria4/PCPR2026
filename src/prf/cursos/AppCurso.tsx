@@ -9,6 +9,7 @@ import { ComCatalogo, type Catalogo } from "../aulas/catalogo";
 import type { GrupoCurso } from "../aulas/tipos";
 import type { DadosCursoCompleto } from "./completo/tipos";
 import LayoutCurso, { type AbaCurso } from "./LayoutCurso";
+import { abaDaEntrada, type EntradaCurso } from "../../central/entrada";
 
 // Telas e lista das aulas só baixam ao abrir o curso, e cada curso só baixa as aulas dele.
 const AulasCurso = lazy(() => import("../aulas/AulasCurso"));
@@ -77,10 +78,12 @@ function catalogoDe(id: CursoId, curto: string, grupos: GrupoCurso[]): Catalogo 
 interface AppCursoProps {
   curso: CursoId;
   onTrocarCurso?: () => void;
+  /** Aba (e aula ou mapa) em que o curso abre quando vem da Central. */
+  entrada?: EntradaCurso;
 }
 
 /** Os cursos além da PRF ADM: vídeos, PDFs, cronômetro, meta, caderno e semana; o curso completo soma questões e resumos. */
-export default function AppCurso({ curso, onTrocarCurso }: AppCursoProps) {
+export default function AppCurso({ curso, onTrocarCurso, entrada }: AppCursoProps) {
   const dados = CURSOS_SO_AULAS[curso];
   const [catalogo, setCatalogo] = useState<Catalogo | null>(null);
   const [completo, setCompleto] = useState<DadosCursoCompleto | null>(null);
@@ -116,10 +119,11 @@ export default function AppCurso({ curso, onTrocarCurso }: AppCursoProps) {
             brasaoAlt={dados.brasaoAlt}
             dados={completo}
             onTrocarCurso={onTrocarCurso}
+            entrada={entrada}
           />
         </Suspense>
       ) : (
-        <TelasCurso nome={catalogo.nome} dados={dados} onTrocarCurso={onTrocarCurso} />
+        <TelasCurso nome={catalogo.nome} dados={dados} onTrocarCurso={onTrocarCurso} entrada={entrada} />
       )}
     </ComCatalogo>
   );
@@ -129,11 +133,14 @@ interface TelasCursoProps {
   nome: string;
   dados: CursoSoAulas;
   onTrocarCurso?: () => void;
+  entrada?: EntradaCurso;
 }
 
-function TelasCurso({ nome, dados, onTrocarCurso }: TelasCursoProps) {
-  const [aba, setAba] = useState<AbaCurso>("aulas");
-  const [telaAulas, setTelaAulas] = useState<TelaAulas>({});
+const ABAS_SO_AULAS: readonly AbaCurso[] = ["aulas", "semana"];
+
+function TelasCurso({ nome, dados, onTrocarCurso, entrada }: TelasCursoProps) {
+  const [aba, setAba] = useState<AbaCurso>(() => abaDaEntrada(entrada, ABAS_SO_AULAS, "aulas"));
+  const [telaAulas, setTelaAulas] = useState<TelaAulas>(() => ({ grupo: entrada?.grupo, aula: entrada?.aula }));
   /** Segunda-feira da semana aberta; null = esta semana. */
   const [semanaAberta, setSemanaAberta] = useState<number | null>(null);
 
