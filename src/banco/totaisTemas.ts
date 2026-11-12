@@ -96,4 +96,22 @@ export const TOTAIS_TEMAS_POL: { materia: string; nome: string; temas: TotalTema
       { nome: "Decreto 9.203/2017", aula: "etica-05", proprias: 8, "prf-adm": 0, pcpr2026: 0 },
     ],
   },
+  {
+    materia: "con",
+    nome: "Constitucional",
+    temas: [
+      { nome: "Normas e poder constituinte", aula: "con-01", proprias: 10, "prf-adm": 0, pcpr2026: 0 },
+      { nome: "Teoria dos direitos fundamentais", aula: "con-02", proprias: 10, "prf-adm": 1, pcpr2026: 0 },
+      { nome: "Art. 5º: vida, igualdade e liberdades", aula: "con-03", proprias: 12, "prf-adm": 9, pcpr2026: 3 },
+      { nome: "Art. 5º: garantias e remédios", aula: "con-04", proprias: 15, "prf-adm": 4, pcpr2026: 3 },
+      { nome: "Direitos sociais", aula: "con-05", proprias: 10, "prf-adm": 7, pcpr2026: 1 },
+      { nome: "Nacionalidade", aula: "con-06", proprias: 8, "prf-adm": 3, pcpr2026: 0 },
+      { nome: "Direitos políticos", aula: "con-07", proprias: 10, "prf-adm": 4, pcpr2026: 0 },
+      { nome: "Organização do Estado", aula: "con-08", proprias: 14, "prf-adm": 13, pcpr2026: 2 },
+      { nome: "Reforma constitucional", aula: "con-09", proprias: 9, "prf-adm": 1, pcpr2026: 0 },
+      { nome: "Poder Executivo", aula: "con-10", proprias: 12, "prf-adm": 4, pcpr2026: 0 },
+      { nome: "Defesa do Estado", aula: "con-11", proprias: 13, "prf-adm": 11, pcpr2026: 3 },
+      { nome: "Ordem social", aula: "con-12", proprias: 11, "prf-adm": 0, pcpr2026: 0 },
+    ],
+  },
 ];

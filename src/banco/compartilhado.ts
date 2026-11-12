@@ -1,6 +1,7 @@
 import type { Question } from "../lib/types";
 import { QUESTOES_PT as PT_PCPR } from "../data/questions/pt";
 import { QUESTOES_RLM as RLM_PCPR } from "../data/questions/rlm";
+import { QUESTOES_CON as CON_PCPR } from "../data/questions/constitucional";
 import { QUESTOES_TI } from "../data/questions/ti";
 import { QUESTOES_TI_SEGURANCA } from "../data/questions/ti-seguranca";
 import { QUESTOES_PRF_POR_MATERIA } from "../prf/questoes";
@@ -29,6 +30,16 @@ import {
   TEMA_TOPICO_PCPR_INFO,
   TEMAS_INFO,
 } from "./temasInfo";
+import {
+  AULA_POL_DO_TEMA_CON,
+  TEMA_QUESTAO_ADM_CON,
+  TEMA_QUESTAO_ADM_LEG_CON,
+  TEMA_QUESTAO_PCPR_CON,
+  TEMA_TOPICO_ADM_CON,
+  TEMA_TOPICO_ADM_LEG_CON,
+  TEMA_TOPICO_PCPR_CON,
+  TEMAS_CON,
+} from "./temasCon";
 import { AULA_POL_DO_TEMA_ETICA, TEMA_QUESTAO_ADM_ETICA, TEMA_TOPICO_ADM_ETICA, TEMAS_ETICA } from "./temasEtica";
 
 /**
@@ -105,6 +116,17 @@ const MATERIAS_POL: MateriaBanco[] = [
     aula: AULA_POL_DO_TEMA_ETICA,
     // A PCPR não tem Ética.
     fontes: [{ ...PRF_ADM, questoes: () => QUESTOES_PRF_POR_MATERIA.etica, tema: temaPor(TEMA_QUESTAO_ADM_ETICA, TEMA_TOPICO_ADM_ETICA) }],
+  },
+  {
+    materia: "con",
+    temas: TEMAS_CON,
+    aula: AULA_POL_DO_TEMA_CON,
+    fontes: [
+      { ...PRF_ADM, questoes: () => QUESTOES_PRF_POR_MATERIA.con, tema: temaPor(TEMA_QUESTAO_ADM_CON, TEMA_TOPICO_ADM_CON) },
+      // O art. 144 está em Legislação na PRF ADM.
+      { ...PRF_ADM, questoes: () => QUESTOES_PRF_POR_MATERIA.leg, tema: temaPor(TEMA_QUESTAO_ADM_LEG_CON, TEMA_TOPICO_ADM_LEG_CON) },
+      { ...PCPR, questoes: () => CON_PCPR, tema: temaPor(TEMA_QUESTAO_PCPR_CON, TEMA_TOPICO_PCPR_CON) },
+    ],
   },
 ];
 
