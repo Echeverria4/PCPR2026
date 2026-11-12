@@ -188,4 +188,16 @@ export const TOTAIS_TEMAS_POL: { materia: string; nome: string; temas: TotalTema
       { nome: "Crimes de trânsito", aula: "transito-10", proprias: 13, "prf-adm": 0, pcpr2026: 2 },
     ],
   },
+  {
+    materia: "dh",
+    nome: "Direitos Humanos",
+    temas: [
+      { nome: "Teoria Geral", aula: "dh-01", proprias: 13, "prf-adm": 0, pcpr2026: 1 },
+      { nome: "Direitos Humanos na CF", aula: "dh-02", proprias: 15, "prf-adm": 0, pcpr2026: 9 },
+      { nome: "Tratados Internacionais", aula: "dh-03", proprias: 13, "prf-adm": 0, pcpr2026: 1 },
+      { nome: "Declaração Universal", aula: "dh-04", proprias: 15, "prf-adm": 0, pcpr2026: 1 },
+      { nome: "Sistema Interamericano", aula: "dh-05", proprias: 18, "prf-adm": 0, pcpr2026: 1 },
+      { nome: "Pactos Internacionais", aula: "dh-08", proprias: 16, "prf-adm": 0, pcpr2026: 1 },
+    ],
+  },
 ];

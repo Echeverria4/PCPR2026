@@ -78,6 +78,7 @@ import {
   TEMA_TOPICO_PCPR_ESPECIAL,
   TEMAS_ESPECIAL,
 } from "./temasEspecial";
+import { AULA_POL_DO_TEMA_DH, TEMA_QUESTAO_PCPR_DH, TEMA_TOPICO_PCPR_DH, TEMAS_DH } from "./temasDh";
 import { AULA_POL_DO_TEMA_TRANSITO, TEMA_QUESTAO_PCPR_TRANSITO, TEMA_TOPICO_PCPR_TRANSITO, TEMAS_TRANSITO } from "./temasTransito";
 
 /**
@@ -222,6 +223,13 @@ const MATERIAS_POL: MateriaBanco[] = [
     temas: TEMAS_TRANSITO,
     aula: AULA_POL_DO_TEMA_TRANSITO,
     fontes: [{ ...PCPR, questoes: () => PENAL_PCPR, tema: temaPor(TEMA_QUESTAO_PCPR_TRANSITO, TEMA_TOPICO_PCPR_TRANSITO) }],
+  },
+  {
+    // A PRF ADM não tem Direitos Humanos.
+    materia: "dh",
+    temas: TEMAS_DH,
+    aula: AULA_POL_DO_TEMA_DH,
+    fontes: [{ ...PCPR, questoes: () => DH_PCPR, tema: temaPor(TEMA_QUESTAO_PCPR_DH, TEMA_TOPICO_PCPR_DH) }],
   },
 ];
 
