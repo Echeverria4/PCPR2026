@@ -8,6 +8,8 @@ import type { AttemptRecord, Question } from "../lib/types";
  * marcar, trocar ou deixar em branco, andar entre as questões e ver o cartão-resposta. O andamento fica salvo no
  * aparelho (sai e continua depois). Ao entregar, as respondidas gravam no progresso; as em branco contam como erro
  * só na nota da prova. Nota por item (Certo/Errado com desconto) fica para perto do concurso, a pedido.
+ * Também serve às Provas anteriores (modo cebraspe): itens reais de Certo/Errado com nota líquida, sem gravar no
+ * progresso (sem registrar).
  */
 
 export interface BlocoProva {
@@ -32,9 +34,9 @@ const CHAVE = "cx:prova:andamento:v1";
 const LETRAS = ["A", "B", "C", "D", "E"];
 const LETRAS_CE = ["C", "E"];
 
-export function lerProvaSalva(): ProvaSalva | null {
+export function lerProvaSalva(chave = CHAVE): ProvaSalva | null {
   try {
-    const bruto = localStorage.getItem(CHAVE);
+    const bruto = localStorage.getItem(chave);
     if (!bruto) return null;
     const p = JSON.parse(bruto) as ProvaSalva;
     const n = p?.itens?.length ?? 0;
@@ -45,17 +47,38 @@ export function lerProvaSalva(): ProvaSalva | null {
   }
 }
 
-function gravarProva(p: ProvaSalva | null) {
+function gravarProva(p: ProvaSalva | null, chave = CHAVE) {
   try {
-    if (p) localStorage.setItem(CHAVE, JSON.stringify(p));
-    else localStorage.removeItem(CHAVE);
+    if (p) localStorage.setItem(chave, JSON.stringify(p));
+    else localStorage.removeItem(chave);
   } catch {
     /* sem armazenamento: a prova vale só enquanto a tela estiver aberta */
   }
 }
 
-export function descartarProvaSalva() {
-  gravarProva(null);
+export function descartarProvaSalva(chave = CHAVE) {
+  gravarProva(null, chave);
+}
+
+/** Resultado de uma prova entregue (no modo Cebraspe, a nota líquida é certas − erradas). */
+export interface ResultadoEntrega {
+  certas: number;
+  erradas: number;
+  branco: number;
+  liquida: number;
+  total: number;
+  decorridoMs: number;
+}
+
+function contar(prova: ProvaSalva, questoes: Question<string>[]) {
+  const situacao = questoes.map((q, k) => {
+    const r = prova.respostas[k];
+    return r === null ? "branco" : r === q.correta ? "certa" : "errada";
+  });
+  const certas = situacao.filter((s) => s === "certa").length;
+  const branco = situacao.filter((s) => s === "branco").length;
+  const erradas = questoes.length - certas - branco;
+  return { situacao, certas, erradas, branco };
 }
 
 /** Prova nova: cada questão com o bloco e a ordem sorteada das alternativas (as de caderno ficam como estão). */
@@ -102,6 +125,12 @@ export function relogio(ms: number): string {
 
 const letrasDe = (q: Question<string>) => (q.alternativas.length === 2 ? LETRAS_CE : LETRAS);
 
+/** Rótulo da questão: no modo Cebraspe, o número do item no caderno. */
+const rotuloDe = (q: Question<string>, k: number, cebraspe?: boolean) =>
+  cebraspe && q.prova ? `Item ${q.prova.numero}` : `Questão ${k + 1}`;
+const numeroDe = (q: Question<string>, k: number, cebraspe?: boolean) =>
+  cebraspe && q.prova ? q.prova.numero : k + 1;
+
 function paraOTopo() {
   window.scrollTo(0, 0);
   document.querySelector(".cx-conteudo")?.scrollTo?.(0, 0);
@@ -112,13 +141,22 @@ interface Props {
   questoes: Question<string>[];
   blocos: BlocoProva[];
   nomes: Record<string, string>;
-  registrar: (r: AttemptRecord<string>) => void | Promise<void>;
+  /** Sem ele, as respostas não entram no progresso do curso. */
+  registrar?: (r: AttemptRecord<string>) => void | Promise<void>;
   envolver?: (questaoId: string, conteudo: ReactNode) => ReactNode;
   /** Sai sem entregar: a prova continua salva. */
   onPausar: () => void;
   /** Depois de entregar. */
   onVoltar: () => void;
-  onRefazer: (ids: string[]) => void;
+  onRefazer?: (ids: string[]) => void;
+  /** Onde o andamento fica salvo (padrão: o do Simulado PRF). */
+  chave?: string;
+  titulo?: string;
+  tituloResultado?: string;
+  notaResultado?: ReactNode;
+  /** Prova real de Certo/Errado: item pelo número do caderno e nota líquida (certas − erradas). */
+  cebraspe?: boolean;
+  onEntregue?: (r: ResultadoEntrega) => void;
 }
 
 export default function ProvaCentral(props: Props) {
@@ -131,7 +169,9 @@ export default function ProvaCentral(props: Props) {
   const provaRef = useRef(prova);
   provaRef.current = prova;
 
-  const { questoes, blocos, nomes } = props;
+  const { questoes, blocos, nomes, cebraspe } = props;
+  const chave = props.chave ?? CHAVE;
+  const gravar = (p: ProvaSalva | null) => gravarProva(p, chave);
   const total = questoes.length;
   const i = prova.atual;
   const q = questoes[i];
@@ -154,12 +194,12 @@ export default function ProvaCentral(props: Props) {
     const nova = f(fecharTempo(provaRef.current));
     provaRef.current = nova;
     setProva(nova);
-    gravarProva(nova);
+    gravar(nova);
   }
 
   // Grava já ao abrir, para "continuar depois" valer mesmo sem marcar nada.
   useEffect(() => {
-    gravarProva(provaRef.current);
+    gravar(provaRef.current);
   }, []);
 
   // Relógio da prova; com a aba escondida o tempo para e o andamento fica gravado.
@@ -171,7 +211,7 @@ export default function ProvaCentral(props: Props) {
         const p = fecharTempo(provaRef.current);
         provaRef.current = p;
         setProva(p);
-        gravarProva(p);
+        gravar(p);
       } else {
         desde.current = Date.now();
       }
@@ -210,16 +250,17 @@ export default function ProvaCentral(props: Props) {
   }
 
   function pausar() {
-    gravarProva(fecharTempo(provaRef.current));
+    gravar(fecharTempo(provaRef.current));
     props.onPausar();
   }
 
   function entregar() {
     const p = fecharTempo(provaRef.current);
+    const registrar = props.registrar;
     p.itens.forEach((it, k) => {
       const r = p.respostas[k];
-      if (r === null) return;
-      void props.registrar({
+      if (r === null || !registrar) return;
+      void registrar({
         questionId: it.id,
         materia: questoes[k].materia,
         acertou: r === questoes[k].correta,
@@ -228,7 +269,16 @@ export default function ProvaCentral(props: Props) {
         modo: "simulado",
       });
     });
-    gravarProva(null);
+    gravar(null);
+    const c = contar(p, questoes);
+    props.onEntregue?.({
+      certas: c.certas,
+      erradas: c.erradas,
+      branco: c.branco,
+      liquida: c.certas - c.erradas,
+      total,
+      decorridoMs: p.decorridoMs,
+    });
     provaRef.current = p;
     setProva(p);
     setEntregue({ fimMs: p.decorridoMs });
@@ -245,6 +295,12 @@ export default function ProvaCentral(props: Props) {
         nomes={nomes}
         onVoltar={props.onVoltar}
         onRefazer={props.onRefazer}
+        titulo={props.tituloResultado ?? "Simulado PRF entregue"}
+        nota={
+          props.notaResultado ??
+          "As respondidas entraram no seu progresso da PRF Policial (as erradas vão para a revisão). As em branco contam como erro só nesta nota."
+        }
+        cebraspe={cebraspe}
       />
     );
   }
@@ -257,12 +313,12 @@ export default function ProvaCentral(props: Props) {
   return (
     <div className="cx-prova">
       <div className="quiz-header">
-        <span>Simulado PRF · modo prova</span>
+        <span>{props.titulo ?? "Simulado PRF · modo prova"}</span>
         <span className="quiz-cronometro" aria-label="Tempo de prova">
           ⏱ {relogio(decorrido)}
         </span>
         <span>
-          Questão {i + 1} de {total}
+          {cebraspe ? `${rotuloDe(q, i, true)} · ${i + 1} de ${total}` : `Questão ${i + 1} de ${total}`}
         </span>
       </div>
       <div className="progresso-barra" aria-hidden="true">
@@ -298,8 +354,10 @@ export default function ProvaCentral(props: Props) {
         )}
         <p className="cx-prova-dica">
           {marcada === null
-            ? "Toque numa alternativa para marcar. Pode trocar depois ou deixar em branco."
-            : `Marcada: ${letras[marcada]}. Toque nela de novo para apagar.`}
+            ? cebraspe
+              ? "Toque em Certo ou Errado. Em branco não ganha nem perde ponto."
+              : "Toque numa alternativa para marcar. Pode trocar depois ou deixar em branco."
+            : `Marcada: ${cebraspe ? q.alternativas[marcada] : letras[marcada]}. Toque nela de novo para apagar.`}
         </p>
 
         <div className="cx-prova-nav">
@@ -338,10 +396,10 @@ export default function ProvaCentral(props: Props) {
                         type="button"
                         className={`${prova.respostas[k] !== null ? "cx-feita" : ""} ${k === i ? "cx-atual" : ""}`}
                         aria-current={k === i ? "true" : undefined}
-                        aria-label={`Questão ${k + 1}${prova.respostas[k] !== null ? ", marcada" : ", em branco"}`}
+                        aria-label={`${rotuloDe(questoes[k], k, cebraspe)}${prova.respostas[k] !== null ? ", marcada" : ", em branco"}`}
                         onClick={() => irPara(k)}
                       >
-                        <span>{k + 1}</span>
+                        <span>{numeroDe(questoes[k], k, cebraspe)}</span>
                         <small>{prova.respostas[k] !== null ? letrasDe(questoes[k])[prova.respostas[k]!] : " "}</small>
                       </button>
                     </li>
@@ -357,7 +415,9 @@ export default function ProvaCentral(props: Props) {
         <section className="cx-card cx-prova-confirma" role="alertdialog" aria-label="Entregar a prova">
           <p>
             {emBranco > 0
-              ? `Você deixou ${emBranco} ${emBranco === 1 ? "questão" : "questões"} em branco. Elas contam como erro. Entregar mesmo assim?`
+              ? cebraspe
+                ? `Você deixou ${emBranco} ${emBranco === 1 ? "item" : "itens"} em branco. Em branco não ganha nem perde ponto. Entregar?`
+                : `Você deixou ${emBranco} ${emBranco === 1 ? "questão" : "questões"} em branco. Elas contam como erro. Entregar mesmo assim?`
               : "Entregar a prova? Depois de entregar não dá para mudar as respostas."}
           </p>
           <div className="cx-card-acoes">
@@ -394,48 +454,52 @@ function ResultadoProva({
   nomes,
   onVoltar,
   onRefazer,
+  titulo,
+  nota,
+  cebraspe,
 }: {
   prova: ProvaSalva;
   questoes: Question<string>[];
   blocos: BlocoProva[];
   nomes: Record<string, string>;
   onVoltar: () => void;
-  onRefazer: (ids: string[]) => void;
+  onRefazer?: (ids: string[]) => void;
+  titulo: string;
+  nota: ReactNode;
+  cebraspe?: boolean;
 }) {
   const total = questoes.length;
-  const situacao = questoes.map((q, k) => {
-    const r = prova.respostas[k];
-    return r === null ? "branco" : r === q.correta ? "certa" : "errada";
-  });
-  const acertos = situacao.filter((s) => s === "certa").length;
-  const branco = situacao.filter((s) => s === "branco").length;
-  const erradas = total - acertos - branco;
+  const { situacao, certas: acertos, erradas, branco } = contar(prova, questoes);
   const pct = total > 0 ? Math.round((acertos / total) * 100) : 0;
+  const liquida = acertos - erradas;
 
   const porBloco = blocos.map((b, bi) => {
     let certas = 0;
+    let erros = 0;
     let n = 0;
     prova.itens.forEach((it, k) => {
       if (it.bloco !== bi) return;
       n++;
       if (situacao[k] === "certa") certas++;
+      if (situacao[k] === "errada") erros++;
     });
-    return { nome: b.nome, certas, n };
+    return { nome: b.nome, certas, erros, n };
   });
 
-  const contagem = new Map<string, { certas: number; n: number }>();
+  const contagem = new Map<string, { certas: number; erros: number; n: number }>();
   questoes.forEach((q, k) => {
     const nome = nomes[q.materia] ?? q.materia;
-    const v = contagem.get(nome) ?? { certas: 0, n: 0 };
+    const v = contagem.get(nome) ?? { certas: 0, erros: 0, n: 0 };
     v.n++;
     if (situacao[k] === "certa") v.certas++;
+    if (situacao[k] === "errada") v.erros++;
     contagem.set(nome, v);
   });
   const porMateria = [...contagem.entries()];
 
   const [filtro, setFiltro] = useState<Filtro>(erradas > 0 ? "erradas" : branco > 0 ? "branco" : "todas");
   const [verCorrecao, setVerCorrecao] = useState(false);
-  const paraRefazer = prova.itens.filter((_, k) => situacao[k] === "errada").map((it) => it.id);
+  const paraRefazer = onRefazer ? prova.itens.filter((_, k) => situacao[k] === "errada").map((it) => it.id) : [];
   const lista = questoes
     .map((q, k) => ({ q, k }))
     .filter(({ k }) =>
@@ -445,10 +509,19 @@ function ResultadoProva({
   return (
     <div className="cx-prova">
       <section className="cx-card cx-prova-nota" aria-label="Resultado do simulado">
-        <h2 className="cx-card-titulo">Simulado PRF entregue</h2>
-        <p className="cx-prova-placar">
-          <strong>{acertos}</strong> de {total} · {pct}%
-        </p>
+        <h2 className="cx-card-titulo">{titulo}</h2>
+        {cebraspe ? (
+          <p className="cx-prova-placar">
+            <strong>{liquida}</strong> {Math.abs(liquida) === 1 ? "ponto" : "pontos"} de {total}
+            <small className="cx-prova-conta">
+              nota líquida: {acertos} certas − {erradas} erradas
+            </small>
+          </p>
+        ) : (
+          <p className="cx-prova-placar">
+            <strong>{acertos}</strong> de {total} · {pct}%
+          </p>
+        )}
         <ul className="cx-prova-resumo">
           <li>✓ {acertos} certas</li>
           <li>✗ {erradas} erradas</li>
@@ -462,7 +535,7 @@ function ResultadoProva({
               <h3 className="cx-dist-titulo">
                 <span>{b.nome}</span>
                 <span>
-                  {b.certas}/{b.n}
+                  {cebraspe ? `${b.certas - b.erros} pts (${b.certas}✓ ${b.erros}✗ de ${b.n})` : `${b.certas}/${b.n}`}
                 </span>
               </h3>
             </div>
@@ -474,9 +547,7 @@ function ResultadoProva({
           {porMateria.map(([nome, v]) => (
             <li key={nome}>
               <span>{nome}</span>
-              <span className="cx-chip-n">
-                {v.certas}/{v.n}
-              </span>
+              <span className="cx-chip-n">{cebraspe ? `${v.certas}✓ ${v.erros}✗ /${v.n}` : `${v.certas}/${v.n}`}</span>
             </li>
           ))}
         </ul>
@@ -485,7 +556,7 @@ function ResultadoProva({
           <button type="button" className="botao botao-ouro" onClick={() => setVerCorrecao((v) => !v)} aria-expanded={verCorrecao}>
             {verCorrecao ? "Esconder a correção" : "Ver correção"}
           </button>
-          {paraRefazer.length > 0 && (
+          {onRefazer && paraRefazer.length > 0 && (
             <button type="button" className="botao" onClick={() => onRefazer(paraRefazer)}>
               Treinar as {paraRefazer.length === 1 ? "1 errada" : `${paraRefazer.length} erradas`}
             </button>
@@ -494,9 +565,7 @@ function ResultadoProva({
             Voltar
           </button>
         </div>
-        <p className="cx-card-nota">
-          As respondidas entraram no seu progresso da PRF Policial (as erradas vão para a revisão). As em branco contam como erro só nesta nota.
-        </p>
+        <p className="cx-card-nota">{nota}</p>
       </section>
 
       {verCorrecao && (
@@ -521,7 +590,15 @@ function ResultadoProva({
 
           <ol className="cx-prova-lista">
             {lista.map(({ q, k }) => (
-              <ItemCorrecao key={q.id} q={q} k={k} resposta={prova.respostas[k]} situacao={situacao[k]} nomes={nomes} />
+              <ItemCorrecao
+                key={q.id}
+                q={q}
+                k={k}
+                resposta={prova.respostas[k]}
+                situacao={situacao[k]}
+                nomes={nomes}
+                cebraspe={cebraspe}
+              />
             ))}
           </ol>
         </section>
@@ -536,12 +613,14 @@ function ItemCorrecao({
   resposta,
   situacao,
   nomes,
+  cebraspe,
 }: {
   q: Question<string>;
   k: number;
   resposta: number | null;
   situacao: string;
   nomes: Record<string, string>;
+  cebraspe?: boolean;
 }) {
   const letras = letrasDe(q);
   const icone = situacao === "certa" ? "✓" : situacao === "errada" ? "✗" : "○";
@@ -553,7 +632,7 @@ function ItemCorrecao({
             {icone}
           </span>
           <span>
-            Questão {k + 1} · {nomes[q.materia] ?? q.materia}
+            {rotuloDe(q, k, cebraspe)} · {nomes[q.materia] ?? q.materia}
           </span>
           <span className="cx-prova-gab">
             {resposta === null ? "em branco" : `você: ${letras[resposta]}`} · gabarito: {letras[q.correta]}
@@ -590,6 +669,13 @@ function ItemCorrecao({
             <div className="explicacao-extra">
               <p>
                 <strong>Armadilha:</strong> {q.pegadinha}
+              </p>
+            </div>
+          )}
+          {(q.prova?.observacao || q.prova?.pendencia) && (
+            <div className="explicacao-extra">
+              <p>
+                <strong>Aviso:</strong> {[q.prova.observacao, q.prova.pendencia].filter(Boolean).join(" ")}
               </p>
             </div>
           )}

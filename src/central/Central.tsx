@@ -11,13 +11,15 @@ const Questoes = lazy(() => import("./Hubs").then((m) => ({ default: m.Questoes 
 const Mapas = lazy(() => import("./Hubs").then((m) => ({ default: m.Mapas })));
 const Redacoes = lazy(() => import("./Hubs").then((m) => ({ default: m.Redacoes })));
 const Tempo = lazy(() => import("./Tempo"));
+const Provas = lazy(() => import("./ProvasAnteriores"));
 
-export type Secao = "inicio" | "cursos" | "questoes" | "mapas" | "redacoes" | "tempo";
+export type Secao = "inicio" | "cursos" | "questoes" | "provas" | "mapas" | "redacoes" | "tempo";
 
 const SECOES: { id: Secao; rotulo: string; titulo: string }[] = [
   { id: "inicio", rotulo: "Início", titulo: "Início" },
   { id: "cursos", rotulo: "Meus Cursos", titulo: "Meus Cursos" },
   { id: "questoes", rotulo: "Questões", titulo: "Questões" },
+  { id: "provas", rotulo: "Provas anteriores", titulo: "Provas anteriores" },
   { id: "mapas", rotulo: "Mapas Mentais", titulo: "Mapas Mentais" },
   { id: "redacoes", rotulo: "Redações", titulo: "Redações" },
   { id: "tempo", rotulo: "Tempo semanal", titulo: "Tempo semanal" },
@@ -144,6 +146,7 @@ export default function Central({ onAbrir }: { onAbrir: AbrirCurso }) {
           )}
           <Suspense fallback={<p className="cx-vazio">Carregando…</p>}>
             {secao === "questoes" && <Questoes onAbrir={onAbrir} />}
+            {secao === "provas" && <Provas />}
             {secao === "mapas" && <Mapas onAbrir={onAbrir} />}
             {secao === "redacoes" && <Redacoes onAbrir={onAbrir} />}
             {secao === "tempo" && <Tempo onAbrir={onAbrir} />}

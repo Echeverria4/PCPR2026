@@ -249,6 +249,12 @@ const caminhos: Record<string, ReactNode> = {
       <path d="M12 7.5V12l3 2" />
     </>
   ),
+  provas: (
+    <>
+      <rect x="5" y="3.5" width="14" height="17" rx="2" />
+      <path d="M8.5 8h7M8.5 12h7M8.5 16h4" />
+    </>
+  ),
   menu: <path d="M4 7h16M4 12h16M4 17h16" />,
   fechar: <path d="M6 6l12 12M18 6 6 18" />,
 };
