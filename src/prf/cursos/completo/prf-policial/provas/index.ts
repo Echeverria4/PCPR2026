@@ -1,4 +1,4 @@
-import { montarItens, montarMultipla, type ProvaAnterior } from "./tipos";
+import { montarItens, type ProvaAnterior } from "./tipos";
 
 export type { ItemProva, ProvaAnterior, Idioma } from "./tipos";
 
@@ -254,25 +254,6 @@ export const PROVAS_ANTERIORES: ProvaAnterior[] = [
             aplicadaEm: "06/05/2012",
             fonte: "Cebraspe — 2012 — PF — Agente de Polícia Federal — prova de 6/5/2012",
             cadernos: { comum: "DPF12_AG_001_01" },
-          },
-          m.TEXTOS,
-          m.BRUTO,
-        ),
-      ),
-  },
-  {
-    id: "prf2008", titulo: "PRF 2008", subtitulo: "Policial Rodoviário Federal · prova de 14/9/2008",
-    banca: "Cespe/UnB", formato: "multipla",
-    blocos: [{ nome: "Prova objetiva", total: 65 }], nomes: NOMES, linguas: false,
-    anulados: "A banca anulou 4 questões, que ficaram fora: 17, 41, 42 e 59. As questões 5, 18, 31, 32, 34, 35, 37, 38, 39, 50 e 51 dependem de figuras e também ficaram fora.",
-    pagina: "https://web.archive.org/web/20080920171838/http://www.cespe.unb.br:80/CONCURSOS/DPRF2008/",
-    carregar: () =>
-      import("./prf2008").then((m) =>
-        montarMultipla(
-          {
-            prefixo: "pol-prova-prf08", prova: "PRF 2008 — Policial Rodoviário Federal", banca: "Cespe/UnB",
-            aplicadaEm: "14/09/2008", fonte: "Cespe/UnB — 2008 — PRF — Policial Rodoviário Federal — prova de 14/9/2008",
-            cadernos: { comum: "PRF08_001_1" },
           },
           m.TEXTOS,
           m.BRUTO,
