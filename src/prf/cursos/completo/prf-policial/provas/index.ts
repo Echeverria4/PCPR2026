@@ -19,6 +19,8 @@ const NOMES: Record<string, string> = {
   proc: "Processo Penal",
   especial: "Legislação Especial",
   dh: "Direitos Humanos",
+  estat: "Estatística",
+  contab: "Contabilidade",
 };
 
 /** Cada prova carrega só quando aberta (arquivo próprio, fora do pacote inicial). */
@@ -77,6 +79,36 @@ export const PROVAS_ANTERIORES: ProvaAnterior[] = [
             aplicadaEm: "03/02/2019",
             fonte: "Cebraspe — 2019 — PRF — Policial Rodoviário Federal — prova de 3/2/2019",
             cadernos: { comum: "440_PRF_001_00" },
+          },
+          m.TEXTOS,
+          m.BRUTO,
+        ),
+      ),
+  },
+  {
+    id: "pf2025",
+    titulo: "PF 2025",
+    subtitulo: "Agente de Polícia Federal · prova de 27/7/2025",
+    banca: "Cebraspe",
+    blocos: [
+      { nome: "Bloco I", total: 58 },
+      { nome: "Bloco II", total: 31 },
+      { nome: "Bloco III", total: 21 },
+    ],
+    nomes: NOMES,
+    linguas: false,
+    anulados: "A banca anulou 10 itens, que ficaram fora: 37, 52, 62, 69, 85, 91, 94, 111, 112 e 117. O item 12 mudou de Certo para Errado depois dos recursos.",
+    pagina: "https://www.cebraspe.org.br/concursos/pf_25",
+    carregar: () =>
+      import("./pf2025").then((m) =>
+        montarItens(
+          {
+            prefixo: "pol-prova-pf25",
+            prova: "PF 2025 — Agente de Polícia Federal",
+            banca: "Cebraspe",
+            aplicadaEm: "27/07/2025",
+            fonte: "Cebraspe — 2025 — PF — Agente de Polícia Federal — prova de 27/7/2025",
+            cadernos: { comum: "106_PF_CB2_01", porBloco: { 2: "106_PF_CG1_01", 3: "106_PF_016_01" } },
           },
           m.TEXTOS,
           m.BRUTO,

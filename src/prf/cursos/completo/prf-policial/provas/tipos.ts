@@ -39,7 +39,8 @@ export interface Caderno {
   aplicadaEm: string;
   /** Início da fonte, ex.: "Cebraspe — 2021 — PRF — Policial Rodoviário Federal — prova de 9/5/2021". */
   fonte: string;
-  cadernos: { comum: string; ingles?: string; espanhol?: string };
+  /** `porBloco`: quando cada bloco vem de um caderno diferente (ex.: PF 2025). */
+  cadernos: { comum: string; ingles?: string; espanhol?: string; porBloco?: Record<number, string> };
 }
 
 const NOME_IDIOMA: Record<Idioma, string> = { ingles: "Inglês", espanhol: "Espanhol" };
@@ -62,7 +63,7 @@ export function montarItens(c: Caderno, textos: string[], bruto: Bruto[]): ItemP
         prova: c.prova,
         banca: c.banca,
         aplicadaEm: c.aplicadaEm,
-        caderno: idioma ? (c.cadernos[idioma] ?? c.cadernos.comum) : c.cadernos.comum,
+        caderno: idioma ? (c.cadernos[idioma] ?? c.cadernos.comum) : (c.cadernos.porBloco?.[bloco] ?? c.cadernos.comum),
         numero,
         equivalentes: [],
         gabaritoOficial: gab,
