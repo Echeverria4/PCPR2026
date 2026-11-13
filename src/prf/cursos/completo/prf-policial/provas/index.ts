@@ -145,4 +145,34 @@ export const PROVAS_ANTERIORES: ProvaAnterior[] = [
         ),
       ),
   },
+  {
+    id: "pf2018",
+    titulo: "PF 2018",
+    subtitulo: "Agente de Polícia Federal · prova de 16/9/2018",
+    banca: "Cebraspe",
+    blocos: [
+      { nome: "Bloco I", total: 57 },
+      { nome: "Bloco II", total: 34 },
+      { nome: "Bloco III", total: 23 },
+    ],
+    nomes: NOMES,
+    linguas: false,
+    anulados: "A banca anulou 6 itens, que ficaram fora: 29, 30, 51, 78, 91 e 117. Os itens 39 e 60 mudaram de Certo para Errado depois dos recursos.",
+    pagina: "https://www.cebraspe.org.br/concursos/pf_18",
+    carregar: () =>
+      import("./pf2018").then((m) =>
+        montarItens(
+          {
+            prefixo: "pol-prova-pf18",
+            prova: "PF 2018 — Agente de Polícia Federal",
+            banca: "Cebraspe",
+            aplicadaEm: "16/09/2018",
+            fonte: "Cebraspe — 2018 — PF — Agente de Polícia Federal — prova de 16/9/2018",
+            cadernos: { comum: "408_DGPPF012" },
+          },
+          m.TEXTOS,
+          m.BRUTO,
+        ),
+      ),
+  },
 ];
