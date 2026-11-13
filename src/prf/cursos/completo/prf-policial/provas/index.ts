@@ -175,4 +175,33 @@ export const PROVAS_ANTERIORES: ProvaAnterior[] = [
         ),
       ),
   },
+  {
+    id: "prf2013",
+    titulo: "PRF 2013",
+    subtitulo: "Policial Rodoviário Federal · prova de 11/8/2013",
+    banca: "Cebraspe",
+    blocos: [
+      { nome: "Conhecimentos básicos", total: 46 },
+      { nome: "Conhecimentos específicos", total: 70 },
+    ],
+    nomes: NOMES,
+    linguas: false,
+    anulados: "A banca anulou 2 itens, que ficaram fora: 47 e 50. Os itens 46 e 48 dependem de ícones da figura e também ficaram fora. Os itens 58 e 85 mudaram de Certo para Errado, e o 66 de Errado para Certo, depois dos recursos.",
+    pagina: "https://cdn.cebraspe.org.br/concursos/DPRF_13/",
+    carregar: () =>
+      import("./prf2013").then((m) =>
+        montarItens(
+          {
+            prefixo: "pol-prova-prf13",
+            prova: "PRF 2013 — Policial Rodoviário Federal",
+            banca: "Cebraspe",
+            aplicadaEm: "11/08/2013",
+            fonte: "Cebraspe — 2013 — PRF — Policial Rodoviário Federal — prova de 11/8/2013",
+            cadernos: { comum: "DPRF13_001_01" },
+          },
+          m.TEXTOS,
+          m.BRUTO,
+        ),
+      ),
+  },
 ];
