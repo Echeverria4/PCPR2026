@@ -233,4 +233,30 @@ export const PROVAS_ANTERIORES: ProvaAnterior[] = [
         ),
       ),
   },
+  {
+    id: "pf2012",
+    titulo: "PF 2012",
+    subtitulo: "Agente de Polícia Federal · prova de 6/5/2012",
+    banca: "Cebraspe",
+    blocos: [{ nome: "Prova objetiva", total: 112 }],
+    nomes: NOMES,
+    linguas: false,
+    anulados: "A banca anulou 8 itens, que ficaram fora: 35, 60, 83, 86, 89, 100, 107 e 118.",
+    pagina: "https://cdn.cebraspe.org.br/concursos/DPF_12_AGENTE/",
+    carregar: () =>
+      import("./pf2012").then((m) =>
+        montarItens(
+          {
+            prefixo: "pol-prova-pf12",
+            prova: "PF 2012 — Agente de Polícia Federal",
+            banca: "Cebraspe",
+            aplicadaEm: "06/05/2012",
+            fonte: "Cebraspe — 2012 — PF — Agente de Polícia Federal — prova de 6/5/2012",
+            cadernos: { comum: "DPF12_AG_001_01" },
+          },
+          m.TEXTOS,
+          m.BRUTO,
+        ),
+      ),
+  },
 ];
