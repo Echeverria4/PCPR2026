@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { createClient } from "@supabase/supabase-js";
-import { getAnthropicClient } from "./_anthropic";
-import { SUBJECT_MAP } from "../src/data/subjects";
+import { getAnthropicClient } from "./_anthropic.js";
+import { SUBJECT_MAP } from "../src/data/subjects.js";
 import type { SubjectId, Question } from "../src/lib/types";
 
 const MAX_QUANTIDADE = 8;

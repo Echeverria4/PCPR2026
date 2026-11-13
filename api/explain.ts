@@ -1,8 +1,8 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { getAnthropicClient } from "./_anthropic";
-import { SUBJECT_MAP } from "../src/data/subjects";
-import { PRF_MATERIAS } from "../src/data/prf";
-import { MATERIAS_PRF_POLICIAL } from "../src/prf/cursos/completo/prf-policial/materias";
+import { getAnthropicClient } from "./_anthropic.js";
+import { SUBJECT_MAP } from "../src/data/subjects.js";
+import { PRF_MATERIAS } from "../src/data/prf.js";
+import { MATERIAS_PRF_POLICIAL } from "../src/prf/cursos/completo/prf-policial/materias.js";
 import type { SubjectId } from "../src/lib/types";
 
 /** Para quem a IA explica, por curso. Sem curso no pedido, vale a PCPR. */
@@ -49,7 +49,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     (alternativas.length !== 5 && alternativas.length !== 2) ||
     typeof correta !== "number" ||
     correta < 0 ||
-    correta >= alternativas.length
+    correta >= alternativas.length ||
+    typeof pergunta !== "string" ||
+    !pergunta.trim() ||
+    pergunta.length > 600
   ) {
     res.status(400).json({ erro: "Corpo da requisição inválido." });
     return;
@@ -70,9 +73,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     ? "Julgue o item como Certo ou Errado."
     : alternativas.map((alt, i) => `${letras[i]}) ${alt}`).join("\n");
   const gabarito = certoErrado ? `Gabarito: ${correta === 0 ? "Certo" : "Errado"}.` : `Gabarito: alternativa ${letras[correta]}.`;
-  const pedidoPadrao = certoErrado
-    ? "Explique em profundidade por que o item está certo ou errado, apontando o trecho que decide o julgamento e citando a base legal, súmula ou conceito técnico aplicável sempre que existir."
-    : "Explique em profundidade por que o gabarito está correto e por que cada uma das outras alternativas está errada, citando a base legal, súmula ou conceito técnico aplicável sempre que existir.";
 
   const prompt = `Você é um professor especialista em "${nomeMateria}", preparando um candidato para ${policial ? CONTEXTO_PRF_POLICIAL : prf ? CONTEXTO_PRF : CONTEXTO_PCPR}.
 
@@ -83,11 +83,7 @@ ${listaAlternativas}
 
 ${gabarito}
 
-${
-  typeof pergunta === "string" && pergunta.trim()
-    ? `O candidato tem esta dúvida específica sobre a questão: "${pergunta.trim()}". Responda diretamente a ela.`
-    : pedidoPadrao
-}
+O candidato tem esta dúvida específica sobre a questão: "${pergunta.trim()}". Responda diretamente a ela, em poucos parágrafos curtos.
 
 Seja rigoroso, cite fontes reais (nunca invente lei ou súmula) e escreva em português do Brasil, de forma didática e direta.`;
 
@@ -96,10 +92,14 @@ Seja rigoroso, cite fontes reais (nunca invente lei ou súmula) e escreva em por
   res.setHeader("X-Accel-Buffering", "no");
 
   try {
-    const stream = client.messages.stream({
-      model: "claude-opus-5",
-      max_tokens: 4000,
-      thinking: { type: "adaptive" },
+    // Sonnet, com esforço baixo (resposta de dúvida, não ensaio) e reserva automática
+    // de outro modelo no servidor se o Sonnet estiver indisponível.
+    const stream = client.beta.messages.stream({
+      model: "claude-sonnet-5-5",
+      max_tokens: 2000,
+      output_config: { effort: "low" },
+      betas: ["server-side-fallback-2026-07-01"],
+      fallbacks: "default",
       messages: [{ role: "user", content: prompt }],
     });
 

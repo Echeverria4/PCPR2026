@@ -10,6 +10,15 @@ import { DADOS } from "../prf/cursos/completo/prf-policial/index";
 import { ultimaResposta } from "../prf/cursos/completo/sessoes";
 import type { QuestaoCurso, TentativaCurso } from "../prf/cursos/completo/tipos";
 import { GRUPOS } from "../prf/cursos/dados/prf-policial";
+import ProvaCentral, {
+  descartarProvaSalva,
+  lerProvaSalva,
+  novaProva,
+  questoesDaProva,
+  relogio,
+  type BlocoProva,
+  type ProvaSalva,
+} from "./ProvaCentral";
 
 /**
  * Treino da Central (12/11/26): sem escolher curso. O banco é o da PRF Policial, que já junta as questões da PRF ADM e
@@ -144,6 +153,8 @@ const TOTAL_2021 = PROVA_2021.reduce((s, b) => s + b.itens.reduce((t, [, q]) => 
 
 const idDaProva = (id: string, lingua: Lingua) => (id === LINGUA ? lingua : id);
 
+const BLOCOS: BlocoProva[] = PROVA_2021.map((b) => ({ nome: b.bloco, total: b.itens.reduce((s, [, q]) => s + q, 0) }));
+
 // ---------- Tela ----------
 
 type Modo = "materia" | "simulado" | "aleatorio" | "montar";
@@ -153,7 +164,7 @@ const MODOS: { id: Modo; rotulo: string; dica: string }[] = [
   {
     id: "simulado",
     rotulo: "🎯 Simulado PRF",
-    dica: `${TOTAL_2021} questões, na mesma quantidade por matéria da última prova (2021, Cebraspe).`,
+    dica: `${TOTAL_2021} questões, na mesma quantidade por matéria da última prova (2021, Cebraspe). Modo prova: o gabarito só aparece quando você entregar.`,
   },
   { id: "aleatorio", rotulo: "🎲 Aleatório", dica: "Questões sorteadas de todas as matérias, misturadas." },
   { id: "montar", rotulo: "🧩 Monte o seu", dica: "Você escolhe quantas questões quer de cada matéria." },
@@ -245,6 +256,9 @@ export default function TreinoUnido() {
     null,
   );
   const [resultado, setResultado] = useState<QuizSessionResult<string> | null>(null);
+  const [prova, setProva] = useState<{ salva: ProvaSalva; questoes: Question<string>[] } | null>(null);
+  const [provaPendente, setProvaPendente] = useState<ProvaSalva | null>(lerProvaSalva);
+  const [avisoProva, setAvisoProva] = useState("");
   // Muda a cada treino que termina, para o placar ler o progresso de novo.
   const [rodada, setRodada] = useState(0);
 
@@ -286,11 +300,47 @@ export default function TreinoUnido() {
     iniciar(paraSessao(escolher(escolhidas, qtdMateria, ultima)));
   }
 
+  function abrirProva(salva: ProvaSalva) {
+    const questoes = questoesDaProva(salva, POR_ID);
+    if (!questoes) {
+      descartarProvaSalva();
+      setProvaPendente(null);
+      setAvisoProva("O banco mudou desde que você começou, então aquela prova não pôde continuar. Comece outra.");
+      return;
+    }
+    setAvisoProva("");
+    setResultado(null);
+    setProva({ salva, questoes });
+    paraOTopo();
+  }
+
   function iniciarSimulado() {
-    const lista = PROVA_2021.flatMap((b) =>
-      b.itens.flatMap(([id, q]) => escolher(porMateria.get(idDaProva(id, lingua))?.questoes ?? [], q, ultima)),
+    const lista = PROVA_2021.flatMap((b, bloco) =>
+      b.itens.flatMap(([id, q]) =>
+        escolher(porMateria.get(idDaProva(id, lingua))?.questoes ?? [], q, ultima).map((questao) => ({ q: questao, bloco })),
+      ),
     );
-    iniciar(paraSessao(lista), "simulado");
+    if (lista.length > 0) abrirProva(novaProva(lista));
+  }
+
+  function descartarProva() {
+    descartarProvaSalva();
+    setProvaPendente(null);
+  }
+
+  function sairDaProva() {
+    setProva(null);
+    setProvaPendente(lerProvaSalva());
+    setRodada((r) => r + 1);
+    paraOTopo();
+  }
+
+  function refazerDaProva(ids: string[]) {
+    setProva(null);
+    setProvaPendente(lerProvaSalva());
+    setRodada((r) => r + 1);
+    const qs = ids.map((id) => POR_ID.get(id)).filter((q): q is QuestaoCurso => Boolean(q));
+    iniciar(paraSessao(shuffle(qs)));
   }
 
   function iniciarAleatorio() {
@@ -345,6 +395,25 @@ export default function TreinoUnido() {
       .map((r) => POR_ID.get(r.questionId))
       .filter((q): q is QuestaoCurso => Boolean(q));
     iniciar(paraSessao(shuffle(erradas)));
+  }
+
+  if (prova) {
+    return (
+      <div className="cx-treino-quiz">
+        <ProvaCentral
+          salva={prova.salva}
+          questoes={prova.questoes}
+          blocos={BLOCOS}
+          nomes={NOMES}
+          registrar={progresso.gravacao.registrar}
+          envolver={comCaneta}
+          onPausar={sairDaProva}
+          onVoltar={sairDaProva}
+          onRefazer={refazerDaProva}
+        />
+        <div className="prf-caneta-espaco" aria-hidden="true" />
+      </div>
+    );
   }
 
   if (sessao) {
@@ -484,12 +553,34 @@ export default function TreinoUnido() {
             </div>
 
             <p className="cx-treino-resumo">
-              <strong>{TOTAL_2021}</strong> questões · na ordem da prova, bloco por bloco
+              <strong>{TOTAL_2021}</strong> questões · na ordem da prova, bloco por bloco · gabarito só no fim
             </p>
 
-            <button type="button" className="botao botao-ouro cx-treino-iniciar" onClick={iniciarSimulado}>
-              Iniciar simulado →
-            </button>
+            {avisoProva && <p className="cx-prova-aviso">{avisoProva}</p>}
+
+            {provaPendente ? (
+              <div className="cx-prova-pendente">
+                <p>
+                  Você tem uma prova em andamento:{" "}
+                  <strong>
+                    {provaPendente.respostas.filter((r) => r !== null).length} de {provaPendente.itens.length}
+                  </strong>{" "}
+                  marcadas · ⏱ {relogio(provaPendente.decorridoMs)}
+                </p>
+                <div className="cx-card-acoes">
+                  <button type="button" className="botao botao-ouro" onClick={() => abrirProva(provaPendente)}>
+                    Continuar prova →
+                  </button>
+                  <button type="button" className="botao" onClick={descartarProva}>
+                    Descartar
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <button type="button" className="botao botao-ouro cx-treino-iniciar" onClick={iniciarSimulado}>
+                Iniciar simulado →
+              </button>
+            )}
           </>
         )}
 
@@ -582,7 +673,7 @@ export default function TreinoUnido() {
 
         <p className="cx-card-nota">
           {modo === "simulado"
-            ? "Na prova de verdade os itens são de Certo ou Errado; aqui vêm as questões do banco, na mesma quantidade por matéria. Primeiro as que você nunca respondeu."
+            ? "Na prova de verdade os itens são de Certo ou Errado; aqui vêm as questões do banco, na mesma quantidade por matéria. Primeiro as que você nunca respondeu. Dá para sair e continuar depois."
             : "Primeiro vêm as que você nunca respondeu, depois as que errou. Pode sair quando quiser."}
         </p>
       </section>

@@ -1426,3 +1426,224 @@
 .cx-mapas-curso > h2.secao-titulo:first-child {
   display: none;
 }
+
+/* ---------- Simulado PRF em modo prova (13/11/26) ---------- */
+
+.cx-prova {
+  min-width: 0;
+}
+
+.cx-prova-status {
+  margin: 6px 0 12px;
+  font-size: 0.82rem;
+  color: var(--texto-fraco);
+}
+
+.cx-prova .alternativa.cx-marcada {
+  border-color: var(--ouro);
+  background: rgba(202, 160, 58, 0.16);
+}
+
+.cx-prova .alternativa.cx-marcada .letra {
+  color: var(--ouro-forte);
+}
+
+.cx-prova-dica {
+  margin: 10px 0 0;
+  font-size: 0.82rem;
+  color: var(--texto-fraco);
+}
+
+.cx-prova-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: space-between;
+  margin-top: 14px;
+}
+
+.cx-prova-nav .botao {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.cx-prova-cartao-bloco + .cx-prova-cartao-bloco {
+  margin-top: 14px;
+}
+
+.cx-prova-grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(42px, 1fr));
+  gap: 6px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cx-prova-grade button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 44px;
+  padding: 2px;
+  border: 1px solid var(--borda-forte);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--texto-fraco);
+  font: inherit;
+  font-size: 0.78rem;
+  line-height: 1.1;
+  cursor: pointer;
+}
+
+.cx-prova-grade button small {
+  font-size: 0.72rem;
+}
+
+.cx-prova-grade button.cx-feita {
+  border-color: var(--ouro);
+  background: rgba(202, 160, 58, 0.14);
+  color: var(--texto);
+}
+
+.cx-prova-grade button.cx-atual {
+  outline: 2px solid var(--ouro-forte);
+  outline-offset: 1px;
+}
+
+.cx-prova-grade button:focus-visible {
+  outline: 2px solid var(--ouro-forte);
+  outline-offset: 2px;
+}
+
+.cx-prova-fim,
+.cx-prova-confirma .cx-card-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.cx-prova-confirma {
+  margin-top: 16px;
+  border-color: var(--ouro);
+}
+
+.cx-prova-pendente {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--ouro);
+  border-radius: var(--cx-raio);
+}
+
+.cx-prova-pendente p {
+  margin: 0 0 10px;
+}
+
+.cx-prova-aviso {
+  margin: 10px 0 0;
+  font-size: 0.85rem;
+  color: var(--vermelho);
+}
+
+.cx-prova-placar {
+  margin: 8px 0 4px;
+  font-size: 1.1rem;
+}
+
+.cx-prova-placar strong {
+  font-family: var(--fonte-titulo);
+  font-size: 2.2rem;
+  color: var(--ouro-forte);
+}
+
+.cx-prova-resumo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  margin: 0 0 14px;
+  padding: 0;
+  list-style: none;
+  font-size: 0.88rem;
+  color: var(--texto-fraco);
+}
+
+.cx-prova-sub {
+  margin: 16px 0 6px;
+  font-family: var(--fonte-cond);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.cx-prova-materias {
+  margin: 0 0 14px;
+  padding: 0;
+  list-style: none;
+}
+
+.cx-prova-materias li {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--borda);
+  font-size: 0.88rem;
+}
+
+.cx-prova-lista {
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cx-prova-item {
+  margin-bottom: 8px;
+  border: 1px solid var(--borda);
+  border-left: 3px solid var(--borda-forte);
+  border-radius: 8px;
+  padding: 0 12px;
+}
+
+.cx-prova-item[open] {
+  padding-bottom: 12px;
+}
+
+.cx-prova-item.cx-prova-certa {
+  border-left-color: var(--verde);
+}
+
+.cx-prova-item.cx-prova-errada {
+  border-left-color: var(--vermelho);
+}
+
+.cx-prova-item summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+  min-height: 44px;
+  padding: 8px 0;
+  cursor: pointer;
+  font-size: 0.88rem;
+}
+
+.cx-prova-icone {
+  font-weight: 900;
+}
+
+.cx-prova-certa .cx-prova-icone {
+  color: var(--verde);
+}
+
+.cx-prova-errada .cx-prova-icone {
+  color: var(--vermelho);
+}
+
+.cx-prova-gab {
+  margin-left: auto;
+  color: var(--texto-fraco);
+  font-size: 0.82rem;
+}

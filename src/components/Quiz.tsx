@@ -104,7 +104,6 @@ export default function Quiz<M extends string = SubjectId>({
   const [indice, setIndice] = useState(() => respostasIniciais?.length ?? 0);
   const [selecionada, setSelecionada] = useState<number | null>(null);
   const [respostas, setRespostas] = useState<AttemptRecord<M>[]>(() => respostasIniciais ?? []);
-  const [iaAberto, setIaAberto] = useState(false);
   const [iaCarregando, setIaCarregando] = useState(false);
   const [iaTexto, setIaTexto] = useState("");
   const [iaErro, setIaErro] = useState<string | null>(null);
@@ -208,14 +207,12 @@ export default function Quiz<M extends string = SubjectId>({
     setConfianca(undefined);
     setEliminadas([]);
     registroRef.current = null;
-    setIaAberto(false);
     setIaTexto("");
     setIaErro(null);
     setIaPergunta("");
   }
 
-  async function pedirIA(perguntaCustom?: string) {
-    setIaAberto(true);
+  async function pedirIA(perguntaCustom: string) {
     setIaCarregando(true);
     setIaErro(null);
     setIaTexto("");
@@ -408,15 +405,9 @@ export default function Quiz<M extends string = SubjectId>({
           </div>
         )}
 
-        {selecionada !== null && !iaAberto && (
-          <button className="botao botao-ia" onClick={() => void pedirIA()}>
-            Aprofundar com IA
-          </button>
-        )}
-
-        {selecionada !== null && iaAberto && (
+        {selecionada !== null && (
           <div className="ia-painel">
-            <div className="ia-painel-header">Explicação aprofundada (IA)</div>
+            <div className="ia-painel-header">Dúvida? Pergunte à IA</div>
             {iaCarregando && iaTexto === "" && <p className="ia-carregando">Consultando a IA…</p>}
             {iaErro && <p className="auth-erro">{iaErro}</p>}
             {iaTexto && <p className="ia-texto">{iaTexto}</p>}
@@ -431,7 +422,8 @@ export default function Quiz<M extends string = SubjectId>({
             >
               <input
                 className="ia-input"
-                placeholder="Tem uma dúvida específica? Pergunte à IA..."
+                maxLength={600}
+                placeholder="Ex.: por que a letra B está errada?"
                 value={iaPergunta}
                 onChange={(e) => setIaPergunta(e.target.value)}
                 disabled={iaCarregando}
