@@ -78,6 +78,9 @@ function dataCurta(iso: string) {
   }
 }
 
+/** Prova de múltipla escolha (A a E): nota sem desconto por erro. */
+const multipla = (p: ProvaAnterior) => p.formato === "multipla";
+
 export default function ProvasAnteriores() {
   const [abertaId, setAbertaId] = useState<string | null>(null);
   const [itens, setItens] = useState<Map<string, ItemProva[]>>(new Map());
@@ -165,11 +168,14 @@ export default function ProvasAnteriores() {
           chave={chaveDe(aberta.id)}
           titulo={`${aberta.titulo} · ${aberta.banca}`}
           tituloResultado={`${aberta.titulo} entregue`}
-          cebraspe
+          cebraspe={!multipla(aberta)}
+          numeroOriginal
           notaResultado={
             <>
-              Nota no padrão Cebraspe: certa vale +1, errada −1 e em branco 0. Esta prova fica à parte: não entra no
-              seu progresso nem no treino. {aberta.anulados}
+              {multipla(aberta)
+                ? "Prova de múltipla escolha: certa vale 1 ponto; errada e em branco, 0."
+                : "Nota no padrão Cebraspe: certa vale +1, errada −1 e em branco 0."}{" "}
+              Esta prova fica à parte: não entra no seu progresso nem no treino. {aberta.anulados}
             </>
           }
           onEntregue={(r) =>
@@ -195,8 +201,11 @@ export default function ProvasAnteriores() {
         <section className="cx-card cx-treino" aria-label={aberta.titulo}>
           <h2 className="cx-card-titulo">{aberta.titulo}</h2>
           <p className="cx-treino-dica">
-            {aberta.banca} · {aberta.subtitulo}. Itens originais de Certo ou Errado, com o gabarito definitivo, na
-            ordem do caderno. O gabarito e as explicações saem só quando você entregar.
+            {aberta.banca} · {aberta.subtitulo}.{" "}
+            {multipla(aberta)
+              ? "Questões originais de múltipla escolha (A a E), com o gabarito definitivo, na ordem do caderno."
+              : "Itens originais de Certo ou Errado, com o gabarito definitivo, na ordem do caderno."}{" "}
+            O gabarito e as explicações saem só quando você entregar.
           </p>
 
           {erro && <p className="cx-prova-aviso">{erro}</p>}
@@ -241,7 +250,10 @@ export default function ProvasAnteriores() {
               </div>
 
               <p className="cx-treino-resumo">
-                <strong>{lista.length}</strong> itens · nota líquida (certa +1, errada −1, em branco 0)
+                <strong>{lista.length}</strong>{" "}
+                {multipla(aberta)
+                  ? "questões · certa vale 1 ponto (errada e em branco, 0)"
+                  : "itens · nota líquida (certa +1, errada −1, em branco 0)"}
               </p>
               <p className="cx-card-nota">{aberta.anulados}</p>
 
@@ -293,7 +305,8 @@ export default function ProvasAnteriores() {
                     {h.idioma ? ` · ${NOME_IDIOMA[h.idioma]}` : ""} · ⏱ {relogio(h.decorridoMs)}
                   </span>
                   <span className="cx-chip-n">
-                    {h.liquida} pts ({h.certas}✓ {h.erradas}✗ {h.branco}○)
+                    {multipla(aberta) ? `${h.certas} de ${h.total}` : `${h.liquida} pts`} ({h.certas}✓ {h.erradas}✗{" "}
+                    {h.branco}○)
                   </span>
                 </li>
               ))}
@@ -325,7 +338,9 @@ export default function ProvasAnteriores() {
                   {andamento
                     ? "Em andamento"
                     : ultima
-                      ? `Última nota: ${ultima.liquida} pts de ${ultima.total}`
+                      ? multipla(p)
+                        ? `Última nota: ${ultima.certas} de ${ultima.total}`
+                        : `Última nota: ${ultima.liquida} pts de ${ultima.total}`
                       : "Ainda não feita"}
                 </span>
               </button>

@@ -25,6 +25,8 @@ export interface ProvaAnterior {
   nomes: Record<string, string>;
   /** Tem itens de língua estrangeira à escolha (Inglês ou Espanhol). */
   linguas: boolean;
+  /** "multipla" = questões de A a E (ex.: PRF 2008); sem o campo, itens de Certo ou Errado. */
+  formato?: "ce" | "multipla";
   anulados: string;
   pagina: string;
   carregar: () => Promise<ItemProva[]>;
@@ -77,4 +79,37 @@ export function montarItens(c: Caderno, textos: string[], bruto: Bruto[]): ItemP
       ...(idioma ? { idioma } : {}),
     };
   });
+}
+
+/** Linha gerada de prova de múltipla escolha: número, bloco, matéria, tópico, textos de apoio, enunciado, alternativas A a E, gabarito, explicação, aviso. */
+export type BrutoM = [number, number, string, string, number[], string, [string, string, string, string, string], "A" | "B" | "C" | "D" | "E", string, string];
+
+export function montarMultipla(c: Caderno, textos: string[], bruto: BrutoM[]): ItemProva[] {
+  return bruto.map(([numero, bloco, materia, topico, partes, enunciado, alternativas, gab, explicacao, aviso]) => ({
+    id: `${c.prefixo}-q${String(numero).padStart(3, "0")}`,
+    materia,
+    topico,
+    enunciado: [...partes.map((p) => textos[p]), enunciado].join("\n\n"),
+    alternativas,
+    correta: "ABCDE".indexOf(gab) as 0 | 1 | 2 | 3 | 4,
+    explicacao,
+    origem: "prova",
+    ordemFixa: true,
+    fonte: `${c.fonte}, questão ${numero}`,
+    prova: {
+      prova: c.prova,
+      banca: c.banca,
+      aplicadaEm: c.aplicadaEm,
+      caderno: c.cadernos.porBloco?.[bloco] ?? c.cadernos.comum,
+      numero,
+      equivalentes: [],
+      gabaritoOficial: gab,
+      gabaritoStatus: "definitivo",
+      compatibilidade: "A",
+      motivoCompat: "",
+      adaptada: false,
+      ...(aviso ? { observacao: aviso } : {}),
+    },
+    bloco: bloco - 1,
+  }));
 }

@@ -125,11 +125,14 @@ export function relogio(ms: number): string {
 
 const letrasDe = (q: Question<string>) => (q.alternativas.length === 2 ? LETRAS_CE : LETRAS);
 
-/** Rótulo da questão: no modo Cebraspe, o número do item no caderno. */
-const rotuloDe = (q: Question<string>, k: number, cebraspe?: boolean) =>
-  cebraspe && q.prova ? `Item ${q.prova.numero}` : `Questão ${k + 1}`;
-const numeroDe = (q: Question<string>, k: number, cebraspe?: boolean) =>
-  cebraspe && q.prova ? q.prova.numero : k + 1;
+/** Numeração pelo caderno: "item" (Certo/Errado) ou "questao" (múltipla escolha de prova real). */
+type Numeracao = "item" | "questao";
+
+/** Rótulo da questão: em prova real, o número do item ou da questão no caderno. */
+const rotuloDe = (q: Question<string>, k: number, numeracao?: Numeracao) =>
+  numeracao && q.prova ? `${numeracao === "item" ? "Item" : "Questão"} ${q.prova.numero}` : `Questão ${k + 1}`;
+const numeroDe = (q: Question<string>, k: number, numeracao?: Numeracao) =>
+  numeracao && q.prova ? q.prova.numero : k + 1;
 
 function paraOTopo() {
   window.scrollTo(0, 0);
@@ -156,6 +159,8 @@ interface Props {
   notaResultado?: ReactNode;
   /** Prova real de Certo/Errado: item pelo número do caderno e nota líquida (certas − erradas). */
   cebraspe?: boolean;
+  /** Prova real de múltipla escolha: questão pelo número do caderno (a nota segue a comum). */
+  numeroOriginal?: boolean;
   onEntregue?: (r: ResultadoEntrega) => void;
 }
 
@@ -170,6 +175,7 @@ export default function ProvaCentral(props: Props) {
   provaRef.current = prova;
 
   const { questoes, blocos, nomes, cebraspe } = props;
+  const numeracao: Numeracao | undefined = cebraspe ? "item" : props.numeroOriginal ? "questao" : undefined;
   const chave = props.chave ?? CHAVE;
   const gravar = (p: ProvaSalva | null) => gravarProva(p, chave);
   const total = questoes.length;
@@ -301,6 +307,7 @@ export default function ProvaCentral(props: Props) {
           "As respondidas entraram no seu progresso da PRF Policial (as erradas vão para a revisão). As em branco contam como erro só nesta nota."
         }
         cebraspe={cebraspe}
+        numeracao={numeracao}
       />
     );
   }
@@ -318,7 +325,7 @@ export default function ProvaCentral(props: Props) {
           ⏱ {relogio(decorrido)}
         </span>
         <span>
-          {cebraspe ? `${rotuloDe(q, i, true)} · ${i + 1} de ${total}` : `Questão ${i + 1} de ${total}`}
+          {numeracao ? `${rotuloDe(q, i, numeracao)} · ${i + 1} de ${total}` : `Questão ${i + 1} de ${total}`}
         </span>
       </div>
       <div className="progresso-barra" aria-hidden="true">
@@ -396,10 +403,10 @@ export default function ProvaCentral(props: Props) {
                         type="button"
                         className={`${prova.respostas[k] !== null ? "cx-feita" : ""} ${k === i ? "cx-atual" : ""}`}
                         aria-current={k === i ? "true" : undefined}
-                        aria-label={`${rotuloDe(questoes[k], k, cebraspe)}${prova.respostas[k] !== null ? ", marcada" : ", em branco"}`}
+                        aria-label={`${rotuloDe(questoes[k], k, numeracao)}${prova.respostas[k] !== null ? ", marcada" : ", em branco"}`}
                         onClick={() => irPara(k)}
                       >
-                        <span>{numeroDe(questoes[k], k, cebraspe)}</span>
+                        <span>{numeroDe(questoes[k], k, numeracao)}</span>
                         <small>{prova.respostas[k] !== null ? letrasDe(questoes[k])[prova.respostas[k]!] : " "}</small>
                       </button>
                     </li>
@@ -457,6 +464,7 @@ function ResultadoProva({
   titulo,
   nota,
   cebraspe,
+  numeracao,
 }: {
   prova: ProvaSalva;
   questoes: Question<string>[];
@@ -467,6 +475,7 @@ function ResultadoProva({
   titulo: string;
   nota: ReactNode;
   cebraspe?: boolean;
+  numeracao?: Numeracao;
 }) {
   const total = questoes.length;
   const { situacao, certas: acertos, erradas, branco } = contar(prova, questoes);
@@ -597,7 +606,7 @@ function ResultadoProva({
                 resposta={prova.respostas[k]}
                 situacao={situacao[k]}
                 nomes={nomes}
-                cebraspe={cebraspe}
+                numeracao={numeracao}
               />
             ))}
           </ol>
@@ -613,14 +622,14 @@ function ItemCorrecao({
   resposta,
   situacao,
   nomes,
-  cebraspe,
+  numeracao,
 }: {
   q: Question<string>;
   k: number;
   resposta: number | null;
   situacao: string;
   nomes: Record<string, string>;
-  cebraspe?: boolean;
+  numeracao?: Numeracao;
 }) {
   const letras = letrasDe(q);
   const icone = situacao === "certa" ? "✓" : situacao === "errada" ? "✗" : "○";
@@ -632,7 +641,7 @@ function ItemCorrecao({
             {icone}
           </span>
           <span>
-            {rotuloDe(q, k, cebraspe)} · {nomes[q.materia] ?? q.materia}
+            {rotuloDe(q, k, numeracao)} · {nomes[q.materia] ?? q.materia}
           </span>
           <span className="cx-prova-gab">
             {resposta === null ? "em branco" : `você: ${letras[resposta]}`} · gabarito: {letras[q.correta]}
