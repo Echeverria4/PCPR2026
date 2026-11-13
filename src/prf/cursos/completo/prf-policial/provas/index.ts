@@ -53,4 +53,34 @@ export const PROVAS_ANTERIORES: ProvaAnterior[] = [
         ),
       ),
   },
+  {
+    id: "prf2019",
+    titulo: "PRF 2019",
+    subtitulo: "Policial Rodoviário Federal · prova de 3/2/2019",
+    banca: "Cebraspe",
+    blocos: [
+      { nome: "Bloco I", total: 44 },
+      { nome: "Bloco II", total: 33 },
+      { nome: "Bloco III", total: 27 },
+    ],
+    nomes: NOMES,
+    linguas: false,
+    anulados: "A banca anulou 12 itens, que ficaram fora: 3, 31, 33, 61, 62, 72, 73, 75, 83, 91, 109 e 113. Os itens 24 a 26 e 85 dependem de figuras e também ficaram fora.",
+    pagina: "https://www.cebraspe.org.br/concursos/prf_18",
+    carregar: () =>
+      import("./prf2019").then((m) =>
+        montarItens(
+          {
+            prefixo: "pol-prova-prf19",
+            prova: "PRF 2019 — Policial Rodoviário Federal",
+            banca: "Cebraspe",
+            aplicadaEm: "03/02/2019",
+            fonte: "Cebraspe — 2019 — PRF — Policial Rodoviário Federal — prova de 3/2/2019",
+            cadernos: { comum: "440_PRF_001_00" },
+          },
+          m.TEXTOS,
+          m.BRUTO,
+        ),
+      ),
+  },
 ];
