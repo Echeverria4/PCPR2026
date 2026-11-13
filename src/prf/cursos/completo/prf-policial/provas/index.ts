@@ -21,6 +21,9 @@ const NOMES: Record<string, string> = {
   dh: "Direitos Humanos",
   estat: "Estatística",
   contab: "Contabilidade",
+  atualidades: "Atualidades",
+  admgeral: "Administração",
+  economia: "Economia",
 };
 
 /** Cada prova carrega só quando aberta (arquivo próprio, fora do pacote inicial). */
@@ -198,6 +201,32 @@ export const PROVAS_ANTERIORES: ProvaAnterior[] = [
             aplicadaEm: "11/08/2013",
             fonte: "Cebraspe — 2013 — PRF — Policial Rodoviário Federal — prova de 11/8/2013",
             cadernos: { comum: "DPRF13_001_01" },
+          },
+          m.TEXTOS,
+          m.BRUTO,
+        ),
+      ),
+  },
+  {
+    id: "pf2014",
+    titulo: "PF 2014",
+    subtitulo: "Agente de Polícia Federal · prova de 21/12/2014",
+    banca: "Cebraspe",
+    blocos: [{ nome: "Prova objetiva", total: 113 }],
+    nomes: NOMES,
+    linguas: false,
+    anulados: "A banca anulou 7 itens, que ficaram fora: 21, 46, 57, 61, 77, 84 e 111. O item 15 mudou de Certo para Errado depois dos recursos.",
+    pagina: "https://cdn.cebraspe.org.br/concursos/DPF_14_AGENTE/",
+    carregar: () =>
+      import("./pf2014").then((m) =>
+        montarItens(
+          {
+            prefixo: "pol-prova-pf14",
+            prova: "PF 2014 — Agente de Polícia Federal",
+            banca: "Cebraspe",
+            aplicadaEm: "21/12/2014",
+            fonte: "Cebraspe — 2014 — PF — Agente de Polícia Federal — prova de 21/12/2014",
+            cadernos: { comum: "120DPFAGENTE14_001_01" },
           },
           m.TEXTOS,
           m.BRUTO,
