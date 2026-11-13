@@ -115,4 +115,34 @@ export const PROVAS_ANTERIORES: ProvaAnterior[] = [
         ),
       ),
   },
+  {
+    id: "pf2021",
+    titulo: "PF 2021",
+    subtitulo: "Agente de Polícia Federal · prova de 23/5/2021",
+    banca: "Cebraspe",
+    blocos: [
+      { nome: "Bloco I", total: 59 },
+      { nome: "Bloco II", total: 35 },
+      { nome: "Bloco III", total: 21 },
+    ],
+    nomes: NOMES,
+    linguas: false,
+    anulados: "A banca anulou 5 itens, que ficaram fora: 28, 92, 106, 108 e 119. Os itens 11, 42, 84 e 85 mudaram de Certo para Errado depois dos recursos.",
+    pagina: "https://www.cebraspe.org.br/concursos/pf_21",
+    carregar: () =>
+      import("./pf2021").then((m) =>
+        montarItens(
+          {
+            prefixo: "pol-prova-pf21",
+            prova: "PF 2021 — Agente de Polícia Federal",
+            banca: "Cebraspe",
+            aplicadaEm: "23/05/2021",
+            fonte: "Cebraspe — 2021 — PF — Agente de Polícia Federal — prova de 23/5/2021",
+            cadernos: { comum: "577_PF_002" },
+          },
+          m.TEXTOS,
+          m.BRUTO,
+        ),
+      ),
+  },
 ];
