@@ -32,7 +32,8 @@ export const QUESTOES_PRF_ADM = 699;
 
 interface InicioProps {
   onAbrir: AbrirCurso;
-  onIr: (s: Secao) => void;
+  /** `extra` vai para a URL da seção (ex.: o mapa que abre na seção Mapas). */
+  onIr: (s: Secao, extra?: Record<string, string>) => void;
 }
 
 function saudacao(agora: number): string {
@@ -390,7 +391,7 @@ export default function Inicio({ onAbrir, onIr }: InicioProps) {
                   {fraco.feitas}). Releia o macete e a pegadinha antes de voltar às questões.
                 </p>
               }
-              onAbrir={() => onAbrir("prf-policial", { aba: "mapas", mapa: mapaFraco.aula })}
+              onAbrir={() => onIr("mapas", { mapa: mapaFraco.aula })}
             />
           )}
         </div>
@@ -402,7 +403,7 @@ export default function Inicio({ onAbrir, onIr }: InicioProps) {
               materia={nomeMateriaPol(grupoDaAula(mapaDoDia.aula))}
               rotulo="🧠 Para memorizar hoje"
               etiqueta={etiquetaMemorizar(nomeMateriaPol(grupoDaAula(mapaDoDia.aula)))}
-              onAbrir={() => onAbrir("prf-policial", { aba: "mapas", mapa: mapaDoDia.aula })}
+              onAbrir={() => onIr("mapas", { mapa: mapaDoDia.aula })}
             />
           ) : (
             <section className="cx-card">

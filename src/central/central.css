@@ -1417,3 +1417,12 @@
   outline: 2px solid var(--ouro);
   outline-offset: 2px;
 }
+
+/* Mapas mentais abertos na própria Central (12/11/26): o título da seção já está no topo. */
+.cx-mapas-curso {
+  min-width: 0;
+}
+
+.cx-mapas-curso > h2.secao-titulo:first-child {
+  display: none;
+}

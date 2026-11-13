@@ -31,10 +31,14 @@ function secaoDaUrl(): Secao {
 }
 
 /** A seção fica na URL (?secao=…): o voltar do navegador passa pelas seções e o curso volta para a que estava. */
-function gravarSecao(secao: Secao) {
+function gravarSecao(secao: Secao, extra?: Record<string, string>) {
   const url = new URL(window.location.href);
   if (secao === "inicio") url.searchParams.delete("secao");
   else url.searchParams.set("secao", secao);
+  // Parâmetros de tela interna (o mapa aberto na seção Mapas) não passam para outra seção.
+  url.searchParams.delete("mapa");
+  url.searchParams.delete("materia");
+  for (const [k, v] of Object.entries(extra ?? {})) url.searchParams.set(k, v);
   window.history.pushState(null, "", url);
 }
 
@@ -61,10 +65,10 @@ export default function Central({ onAbrir }: { onAbrir: AbrirCurso }) {
     return () => window.removeEventListener("keydown", aoTeclar);
   }, [menuAberto]);
 
-  function ir(nova: Secao) {
+  function ir(nova: Secao, extra?: Record<string, string>) {
     setMenuAberto(false);
-    if (nova === secao) return;
-    gravarSecao(nova);
+    if (nova === secao && !extra) return;
+    gravarSecao(nova, extra);
     setSecao(nova);
   }
 

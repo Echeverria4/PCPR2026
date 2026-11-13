@@ -1,7 +1,6 @@
 import { lazy, Suspense, useMemo, type ReactNode } from "react";
 import { BRASOES } from "../components/Cursos";
 import type { CursoId } from "../data/cursos";
-import { lerProgresso as lerProgressoMapas } from "../prf/cursos/completo/prf-policial/mapas/progresso";
 import {
   contaFeitas as feitasPol,
   lerProgresso as lerRedacaoPol,
@@ -13,8 +12,6 @@ import {
   TOTAL_TEMAS as TEMAS_PMPR,
 } from "../prf/portugues/redacao/progressoRedacao";
 import type { AbrirCurso } from "./Central";
-import { CartaoMapa, escolherMapas, lerMateriaMemorizar, useMapas } from "./comum";
-import { grupoDaAula, montarPainel, nomeMateriaPol } from "./dados";
 
 interface HubProps {
   onAbrir: AbrirCurso;
@@ -93,78 +90,14 @@ export function Questoes(_props: HubProps) {
 
 // ---------- Mapas Mentais ----------
 
+/** Matéria → mapa → o mapa aberto ali mesmo, sem entrar no curso (os mapas vêm à parte, só nesta seção). */
+const MapasCentral = lazy(() => import("./MapasCentral"));
+
 export function Mapas({ onAbrir }: HubProps) {
-  const mapas = useMapas();
-  const painel = useMemo(() => montarPainel(Date.now()), []);
-  const revisados = useMemo(() => lerProgressoMapas().revisados, []);
-
-  const materias = useMemo(() => {
-    const m = new Map<string, { grupo: string; nome: string; total: number; revisados: number }>();
-    for (const mapa of mapas ?? []) {
-      const grupo = grupoDaAula(mapa.aula);
-      const atual = m.get(grupo) ?? { grupo, nome: nomeMateriaPol(grupo), total: 0, revisados: 0 };
-      atual.total++;
-      if (revisados[mapa.aula]) atual.revisados++;
-      m.set(grupo, atual);
-    }
-    return [...m.values()];
-  }, [mapas, revisados]);
-
-  // Mesma escolha de matéria do "Para memorizar hoje" do Início.
-  const { doDia } = useMemo(() => escolherMapas(mapas, painel, lerMateriaMemorizar()), [mapas, painel]);
-  const totalRevisados = materias.reduce((s, m) => s + m.revisados, 0);
-
   return (
-    <div className="cx-hubs">
-      <p className="cx-intro">
-        Um mapa por aula, com o essencial em ramos, um macete e a pegadinha mais comum. Marque como revisado dentro do
-        curso para acompanhar aqui.
-      </p>
-
-      <CartaoCurso
-        curso="prf-policial"
-        titulo="PRF Policial"
-        sub={mapas ? `${n(mapas.length)} mapas em ${materias.length} matérias` : "Carregando os mapas…"}
-        acoes={
-          <button type="button" className="botao botao-ouro" onClick={() => onAbrir("prf-policial", { aba: "mapas" })}>
-            Abrir os mapas →
-          </button>
-        }
-      >
-        {mapas && <Progresso feitos={totalRevisados} total={mapas.length} rotulo="revisados" />}
-        {materias.length > 0 && (
-          <ul className="cx-chips" aria-label="Matérias com mapas">
-            {materias.map((m) => (
-              <li key={m.grupo}>
-                <button type="button" onClick={() => onAbrir("prf-policial", { aba: "mapas", grupo: m.grupo })}>
-                  <span>{m.nome}</span>
-                  <span className="cx-chip-n">
-                    {m.revisados > 0 ? `${m.revisados}/${m.total}` : m.total}
-                  </span>
-                </button>
-              </li>
-            ))}
-          </ul>
-        )}
-      </CartaoCurso>
-
-      {doDia && (
-        <CartaoMapa
-          mapa={doDia}
-          materia={nomeMateriaPol(grupoDaAula(doDia.aula))}
-          rotulo="🧠 Mapa do dia"
-          onAbrir={() => onAbrir("prf-policial", { aba: "mapas", mapa: doDia.aula })}
-        />
-      )}
-
-      <section className="cx-card cx-aviso">
-        <h2 className="cx-card-titulo">Outros cursos</h2>
-        <p>
-          PRF ADM, PF, PMPR e Banco do Brasil vão usar os mesmos mapas quando o assunto for igual, junto com o banco por
-          tema.
-        </p>
-      </section>
-    </div>
+    <Suspense fallback={<p className="cx-vazio">Carregando os mapas…</p>}>
+      <MapasCentral onAbrir={onAbrir} />
+    </Suspense>
   );
 }
 
