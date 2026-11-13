@@ -78,7 +78,7 @@ interface QuizProps<M extends string> {
   onSair: () => void;
   /** Sem isso, grava no armazenamento da PCPR. */
   gravacao?: GravacaoQuiz<M>;
-  /** Curso das questões, para a IA explicar no contexto certo (sem isso, PCPR). */
+  /** Curso das questões (decide o selo de prova; sem isso, PCPR). */
   curso?: CursoId;
   /** Treino retomado: respostas já dadas, na ordem de questions; o quiz segue da próxima. */
   respostasIniciais?: AttemptRecord<M>[];
@@ -104,10 +104,6 @@ export default function Quiz<M extends string = SubjectId>({
   const [indice, setIndice] = useState(() => respostasIniciais?.length ?? 0);
   const [selecionada, setSelecionada] = useState<number | null>(null);
   const [respostas, setRespostas] = useState<AttemptRecord<M>[]>(() => respostasIniciais ?? []);
-  const [iaCarregando, setIaCarregando] = useState(false);
-  const [iaTexto, setIaTexto] = useState("");
-  const [iaErro, setIaErro] = useState<string | null>(null);
-  const [iaPergunta, setIaPergunta] = useState("");
   const [segundosQuestao, setSegundosQuestao] = useState(0);
   const inicioQuestaoRef = useRef(Date.now());
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -207,48 +203,6 @@ export default function Quiz<M extends string = SubjectId>({
     setConfianca(undefined);
     setEliminadas([]);
     registroRef.current = null;
-    setIaTexto("");
-    setIaErro(null);
-    setIaPergunta("");
-  }
-
-  async function pedirIA(perguntaCustom: string) {
-    setIaCarregando(true);
-    setIaErro(null);
-    setIaTexto("");
-    try {
-      const resp = await fetch("/api/explain", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          curso,
-          materia: questao.materia,
-          topico: questao.topico,
-          enunciado: questao.enunciado,
-          alternativas: questao.alternativas,
-          correta: questao.correta,
-          pergunta: perguntaCustom,
-        }),
-      });
-
-      if (!resp.ok || !resp.body) {
-        const dados = await resp.json().catch(() => null);
-        throw new Error(dados?.erro ?? "Falha ao consultar a IA.");
-      }
-
-      const reader = resp.body.getReader();
-      const decoder = new TextDecoder();
-      for (;;) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        const pedaco = decoder.decode(value, { stream: true });
-        setIaTexto((prev) => prev + pedaco);
-      }
-    } catch (e) {
-      setIaErro(e instanceof Error ? e.message : "Falha ao consultar a IA.");
-    } finally {
-      setIaCarregando(false);
-    }
   }
 
   return (
@@ -402,36 +356,6 @@ export default function Quiz<M extends string = SubjectId>({
                 ⏱ Respondida em {formatarSegundos(tempoRespostaMs / 1000)}
               </div>
             )}
-          </div>
-        )}
-
-        {selecionada !== null && (
-          <div className="ia-painel">
-            <div className="ia-painel-header">Dúvida? Pergunte à IA</div>
-            {iaCarregando && iaTexto === "" && <p className="ia-carregando">Consultando a IA…</p>}
-            {iaErro && <p className="auth-erro">{iaErro}</p>}
-            {iaTexto && <p className="ia-texto">{iaTexto}</p>}
-            <form
-              className="ia-pergunta-form"
-              onSubmit={(e) => {
-                e.preventDefault();
-                const pergunta = iaPergunta.trim();
-                if (!pergunta || iaCarregando) return;
-                void pedirIA(pergunta);
-              }}
-            >
-              <input
-                className="ia-input"
-                maxLength={600}
-                placeholder="Ex.: por que a letra B está errada?"
-                value={iaPergunta}
-                onChange={(e) => setIaPergunta(e.target.value)}
-                disabled={iaCarregando}
-              />
-              <button className="botao" type="submit" disabled={iaCarregando}>
-                Perguntar
-              </button>
-            </form>
           </div>
         )}
 

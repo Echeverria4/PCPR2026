@@ -1,7 +1,7 @@
 import type { TemaPrf } from "./tipos";
 
 const NOTA_PEC =
-  "Até a promulgação, vale o texto atual do art. 144 da Constituição. Antes da prova, confira se a PEC foi promulgada, com que número de emenda e qual é o texto final.";
+  "Situação em 13/11/2026: aprovada pelo Senado em 3/11/2026, por 75 votos a 0, a PEC aguarda a sessão solene de promulgação do Congresso, anunciada para o fim de novembro de 2026. Até a promulgação, vale o texto atual do art. 144 da Constituição. Antes da prova, confira se a PEC foi promulgada, com que número de emenda e qual é o texto final.";
 
 /** Bloco 4: a nova PRF da PEC 18/2025, nas ferrovias e hidrovias federais. */
 export const TEMAS_6: TemaPrf[] = [

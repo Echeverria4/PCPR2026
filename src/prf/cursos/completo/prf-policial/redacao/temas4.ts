@@ -62,14 +62,14 @@ export const TEMAS_4: TemaPrf[] = [
     bloco: 4,
     recorte: "A PRF em ferrovias e hidrovias (PEC 18/2025)",
     contexto:
-      "Em 3/11/2026, o Senado aprovou em dois turnos a PEC 18/2025, a PEC da Segurança Pública, que, entre outros pontos, estende a atuação da PRF às ferrovias e hidrovias federais; o texto seguiu para promulgação. No texto em vigor, o art. 144, § 2º, da Constituição destina a PRF ao patrulhamento ostensivo das rodovias federais.",
+      "Em 3/11/2026, o Senado aprovou em dois turnos, por 75 votos a 0, a PEC 18/2025, a PEC da Segurança Pública, que, entre outros pontos, estende a atuação da PRF às ferrovias e hidrovias federais; o texto seguiu para promulgação. No texto em vigor, o art. 144, § 2º, da Constituição destina a PRF ao patrulhamento ostensivo das rodovias federais.",
     tema: "A ampliação da atuação da Polícia Rodoviária Federal para ferrovias e hidrovias federais.",
     aspectos: [
       "os motivos pelos quais o crime pode migrar para outros meios de transporte;",
       "os desafios de efetivo, treinamento e equipamentos para a nova atuação;",
       "a divisão de tarefas com outros órgãos, como a Polícia Federal, a Marinha e a Receita Federal.",
     ],
-    nota: "Até a promulgação, vale o texto atual do art. 144, § 2º. Antes da prova, confira se a PEC foi promulgada, com que número de emenda e qual é o texto final.",
+    nota: "Situação em 13/11/2026: aprovada pelo Senado em 3/11/2026, por 75 votos a 0, a PEC aguarda a sessão solene de promulgação do Congresso, anunciada para o fim de novembro de 2026. Até a promulgação, vale o texto atual do art. 144, § 2º. Antes da prova, confira se a PEC foi promulgada, com que número de emenda e qual é o texto final.",
     paragrafos: [
       "O transporte de pessoas e de mercadorias no Brasil depende das rodovias, **mas** ferrovias e hidrovias ganham cada vez mais importância. A PEC 18/2025, aprovada pelo Senado, estende a atuação da Polícia Rodoviária Federal a esses meios de transporte. **Diante disso**, a proposta deve ser analisada a partir dos motivos que a justificam, dos desafios que impõe e da cooperação entre os órgãos.",
       "**Em primeiro lugar**, o crime organizado se adapta à fiscalização. Quando o controle nas rodovias se intensifica, drogas, armas e contrabando tendem a buscar caminhos menos vigiados, como rios e ferrovias de carga. **Assim**, a falta de patrulhamento ostensivo regular nesses meios cria espaços que os criminosos exploram, **o que** justifica ampliar a presença do Estado.",
