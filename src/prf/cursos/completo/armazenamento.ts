@@ -40,6 +40,36 @@ function somaNoDia(porDia: QuestoesPorDia, t: TentativaCurso) {
 
 const marca = (questionId: string, respondidaEm: string) => `${questionId}|${new Date(respondidaEm).getTime()}`;
 
+/**
+ * Limpeza única, pedida em 14/11/26: zera as respostas da PRF Policial dadas até 14h desse dia (eram só duas).
+ * Roda uma vez em cada aparelho; respostas depois do corte ficam. Tempo de estudo e blocos vistos não mudam.
+ */
+export function limpezasUnicas(): void {
+  const curso = "prf-policial";
+  const feito = `curso:${curso}:zerado:2026-11-14`;
+  const corte = Date.parse("2026-11-14T14:00:00-03:00");
+  try {
+    if (localStorage.getItem(feito)) return;
+    const lsTentativas = `curso:${curso}:attempts:v1`;
+    const lsErradas = `curso:${curso}:wrong:v1`;
+    const lsPorDia = `curso:${curso}:questoesPorDia:v1`;
+    const todas = ler<TentativaCurso[]>(lsTentativas, []);
+    const lista = Array.isArray(todas) ? todas : [];
+    const antes = (t: TentativaCurso) => !(Date.parse(t.respondidaEm) >= corte);
+    const ficam = lista.filter((t) => !antes(t));
+    const porDia: QuestoesPorDia = {};
+    for (const t of ficam) somaNoDia(porDia, t);
+    const ids = new Set(ficam.map((t) => t.questionId));
+    const fila = ler<string[]>(lsErradas, []);
+    gravar(lsTentativas, ficam);
+    gravar(lsPorDia, porDia);
+    gravar(lsErradas, Array.isArray(fila) ? fila.filter((id) => ids.has(id)) : []);
+    localStorage.setItem(feito, "1");
+  } catch {
+    // sem localStorage não há o que zerar
+  }
+}
+
 export interface ProgressoCurso {
   tentativas: () => TentativaCurso[];
   erradas: () => string[];
