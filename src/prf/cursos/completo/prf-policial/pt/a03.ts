@@ -21,28 +21,19 @@ export const AULA: AulaEscrita = {
         pista: "“Pois” depois do verbo, entre vírgulas, conclui: “Estudou; passará, pois, na prova”. Antes do verbo, explica: “Reduza a marcha, pois a pista está molhada”.",
       },
       {
-        termo: "Causa e concessão",
-        faz: "Causais: porque, visto que, já que, uma vez que, porquanto, haja vista, como (no início). Concessivas: embora, conquanto, ainda que, mesmo que, se bem que, posto que, em que pese.",
-        pista: "Concessão traz um obstáculo que não impede o fato. Pede subjuntivo: “Embora tenha chovido”. “Posto que” é concessivo, não causal.",
+        termo: "Subordinativas: causa, comparação, concessão, condição",
+        faz: "Causais: porque, que, pois, porquanto, visto que, uma vez que, já que, haja vista, como (no início). Comparativas: como, que nem, tal qual, que ou do que (depois de mais, menos, melhor, pior, maior). Concessivas: embora, conquanto, ainda que, mesmo que, se bem que, posto que, em que pese. Condicionais: se, caso, contanto que, a menos que, somente se, desde que (com subjuntivo).",
+        pista: "Concessão traz um obstáculo que não impede o fato e pede subjuntivo: “Embora tenha chovido”. “Posto que” é concessivo, não causal.",
       },
       {
-        termo: "Condição e conformidade",
-        faz: "Condicionais: se, caso, contanto que, a menos que, desde que (com subjuntivo). Conformativas: conforme, segundo, consoante, como (= conforme).",
+        termo: "Subordinativas: conformidade, consequência, finalidade, proporção",
+        faz: "Conformativas: conforme, segundo, consoante, como (= conforme). Consecutivas: que (depois de tal, tanto, tão), de modo que, de forma que, de sorte que. Finais: para que, a fim de que. Proporcionais: à medida que, à proporção que, quanto mais... mais, quanto menos... menos.",
+        pista: "“Que” depois de mais ou menos compara; depois de tão, tanto ou tal, mostra a consequência. “À medida que” é proporção; “na medida em que” é causa. “De acordo com” tem sentido de conformidade, mas vem antes de substantivo: é locução prepositiva.",
       },
       {
-        termo: "Comparação e consequência",
-        faz: "Comparativas: como, que nem, tal qual, mais (do) que, menos (do) que. Consecutivas: tão... que, tanto... que, tal... que, de modo que, de sorte que.",
-        pista: "“Que” depois de mais ou menos compara. Depois de tão, tanto ou tal, mostra a consequência.",
-      },
-      {
-        termo: "Proporção, tempo e finalidade",
-        faz: "Proporcionais: à medida que, à proporção que, quanto mais... mais. Temporais: quando, enquanto, assim que, logo que, mal, até que, desde que (com indicativo). Finais: para que, a fim de que.",
-        pista: "“À medida que” é proporção; “na medida em que” é causa.",
-      },
-      {
-        termo: "Integrantes",
-        faz: "“Que” e “se” abrem oração que completa outro termo: “Informou que a pista cedeu”.",
-        pista: "Se a oração troca por “isso”, é integrante.",
+        termo: "Subordinativas: tempo e integrantes",
+        faz: "Temporais: quando, enquanto, assim que, logo que, mal, até que, desde que (com indicativo). Integrantes: “que” e “se” abrem oração que completa outro termo: “Informou que a pista cedeu”; “Perguntou se a pista cedeu”.",
+        pista: "Se a oração troca por “isso”, é integrante. “Desde que” com indicativo é tempo; com subjuntivo, condição.",
       },
       {
         termo: "Mas × embora",
