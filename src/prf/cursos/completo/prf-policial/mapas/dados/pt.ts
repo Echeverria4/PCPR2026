@@ -10,13 +10,13 @@ export const MAPAS_PT: MapaAula[] = [
       { rotulo: "Sons", emoji: "🔊", cor: "azul", folhas: ["**Letra** se vê; **fonema** se ouve", "**Dígrafo**: duas letras, um som só (ch, lh, nh)", "**Ditongo** na mesma sílaba; **hiato** separa as vogais"] },
       { rotulo: "Regras gerais", emoji: "✍️", cor: "verde", folhas: ["**Proparoxítona**: todas levam acento", "**Oxítona**: a, e, o, em, ens", "**Paroxítona**: l, n, r, x, i, us, um, ão"] },
       { rotulo: "Regra do hiato", emoji: "🎯", cor: "ouro", folhas: ["I e U tônicos sozinhos: **saída**, **baú**", "Sem acento antes de **nh**: rainha", "Sem acento após ditongo em paroxítona: **feiura**"] },
-      { rotulo: "Caiu ou ficou", emoji: "📜", cor: "roxo", folhas: ["Ficaram: **pôde**, pôr, têm, vêm", "Caíram: **ideia**, heroico, voo, leem, para", "Ditongo aberto só acentua em oxítona: **herói**"] },
+      { rotulo: "Caiu ou ficou", emoji: "📜", cor: "roxo", folhas: ["Ficaram: **pôde**, pôr, têm, vêm", "Caíram: **ideia**, heroico, voo, leem, para", "Ditongo aberto ficou só em **oxítona e monossílabo**: herói, céu"] },
       { rotulo: "Hífen", emoji: "➖", cor: "laranja", folhas: ["Letras **iguais** separam: micro-ondas", "Letras **diferentes** juntam: autoestrada", "Antes de **h**, hífen: super-homem", "Vogal + r ou s: **dobra** (antissocial)"] },
       { rotulo: "Expressões", emoji: "❓", cor: "rosa", folhas: ["**Por que**: pergunta; **porque**: explicação", "**Por quê**: fim de frase; **porquê**: substantivo", "**Há**: passado; a: futuro ou distância", "**Aonde**: com movimento; onde: lugar parado"] },
     ],
     macete: "Primeiro conte os sons e ache a sílaba forte; só depois aplique a regra do acento ou do hífen.",
     cuidado:
-      "Terminar igual não basta: “anéis” é oxítona e “imóveis” é paroxítona. Só o hiato junta tonicidades diferentes: “juízes” e “açaí”.",
+      "Terminar igual não basta: “anéis” (oxítona) e “imóveis” (paroxítona) levam acento por regras diferentes. Já a regra do hiato vale nas duas: “juízes” e “açaí”.",
   },
   {
     aula: "pt-02",
@@ -38,11 +38,11 @@ export const MAPAS_PT: MapaAula[] = [
     centro: { titulo: "Preposição e conjunção", emoji: "🔗", sub: "Que relação a ligação cria?" },
     ramos: [
       { rotulo: "Preposição", emoji: "📌", cor: "azul", folhas: ["**Relacional**: exigida pela palavra (precisar de)", "**Nocional**: traz sentido (porta de madeira)", "“Para” indica finalidade, direção, tempo ou **ponto de vista**"] },
-      { rotulo: "Coordenativas", emoji: "⚖️", cor: "verde", folhas: ["**Adversativas**: mas, porém, contudo, todavia, entretanto", "**Conclusivas**: logo, portanto; explicativas: pois, porque", "“Pois” após o verbo, entre vírgulas: **conclui**"] },
-      { rotulo: "Causa e concessão", emoji: "🧱", cor: "ouro", folhas: ["**Causa**: porque, visto que, já que, como (início)", "**Concessão**: embora, ainda que, conquanto, mesmo que", "Concessão pede **subjuntivo**: embora tenha chovido"] },
-      { rotulo: "Outras relações", emoji: "🧭", cor: "roxo", folhas: ["**Condição**: se, caso, desde que + subjuntivo", "**Tempo**: quando, assim que, desde que + indicativo", "**À medida que**: proporção; **na medida em que**: causa", "**Finalidade**: para que, a fim de que"] },
-      { rotulo: "Integrantes", emoji: "🧲", cor: "laranja", folhas: ["**Que** e **se** abrem oração que completa", "Troca por “isso”: é **integrante**"] },
-      { rotulo: "Mas × embora", emoji: "🔄", cor: "rosa", folhas: ["“Mas” abre o argumento **mais forte**", "“Embora” vai para o argumento **mais fraco**"] },
+      { rotulo: "Coordenativas", emoji: "⚖️", cor: "verde", folhas: ["**Aditivas**: e, nem, não só… mas também", "**Adversativas**: mas, porém, contudo, todavia, no entanto", "**Alternativas**: ou… ou, ora… ora, quer… quer", "“Mas” abre o argumento mais **forte**"] },
+      { rotulo: "Conclusiva ou explicativa", emoji: "💡", cor: "ouro", folhas: ["**Conclusivas**: logo, portanto, por isso, por conseguinte", "**Explicativas**: que, porque, porquanto, pois antes do verbo", "“Pois” depois do verbo, entre vírgulas: **conclui**"] },
+      { rotulo: "Causa e concessão", emoji: "🧱", cor: "roxo", folhas: ["**Causa**: porque, visto que, já que, como (início)", "**Concessão**: embora, conquanto, posto que, em que pese", "Concessão pede **subjuntivo**: embora tenha chovido", "“Embora” fica com o argumento mais **fraco**"] },
+      { rotulo: "Outras relações", emoji: "🧭", cor: "laranja", folhas: ["**Condição**: se, caso, contanto que, desde que + subjuntivo", "**Tempo**: quando, assim que, mal, desde que + indicativo", "**À medida que**: proporção; **na medida em que**: causa", "**Finalidade**: para que, a fim de que"] },
+      { rotulo: "Que, como, se", emoji: "🃏", cor: "rosa", folhas: ["**Comparativas**: como, que nem, mais (do) que", "**Consecutivas**: tão… que, tanto… que, de modo que", "**Conformativas**: conforme, segundo, consoante, como", "**Integrantes**: que e se; trocam por “isso”"] },
     ],
     macete: "Antes da lista decorada, faça a pergunta: que relação de sentido essa ligação cria?",
     cuidado:
@@ -54,7 +54,7 @@ export const MAPAS_PT: MapaAula[] = [
     ramos: [
       { rotulo: "Demonstrativos", emoji: "👆", cor: "azul", folhas: ["No texto, **este** anuncia e **esse** retoma", "Em pares: este, o mais **próximo**; aquele, o distante", "“O” valendo “aquilo” também é **demonstrativo**"] },
       { rotulo: "Relativos", emoji: "🔁", cor: "verde", folhas: ["Preposição do verbo vem **antes**: de que gostamos", "**Cujo**: posse, sem artigo depois, concorda com o possuído", "**Onde** = em que, só para lugar"] },
-      { rotulo: "Pessoais", emoji: "🙋", cor: "ouro", folhas: ["**O, a**: objeto direto; **lhe**: objeto indireto", "Entre mim e ti, em **reciprocidade**", "Final r, s, z: **lo**; som nasal: **no**"] },
+      { rotulo: "Pessoais", emoji: "🙋", cor: "ouro", folhas: ["**O, a**: objeto direto; **lhe**: objeto indireto", "Depois de preposição: **mim**, ti (entre mim e ti)", "Sujeito de infinitivo: para **eu** fazer", "Final r, s, z: **lo**; som nasal: **no**"] },
       { rotulo: "Tratamento", emoji: "🎩", cor: "roxo", folhas: ["**Vossa** fala com a autoridade; **Sua** fala dela", "Verbo e possessivo na **3ª pessoa**", "Adjetivo concorda com o **sexo** da pessoa"] },
       { rotulo: "Colocação", emoji: "🧲", cor: "laranja", folhas: ["Negativa, relativo e subordinativa **atraem** o pronome", "**Proibido** começar período com pronome átono", "Nunca depois de **futuro** ou particípio"] },
       { rotulo: "Indefinidos", emoji: "❔", cor: "rosa", folhas: ["Bastantes provas: **muitas**; provas bastantes: suficientes", "Junto de verbo ou adjetivo, “bastante” **não varia**"] },
@@ -97,7 +97,7 @@ export const MAPAS_PT: MapaAula[] = [
     ramos: [
       { rotulo: "Sujeito", emoji: "👤", cor: "azul", folhas: ["Ponha em **ordem direta** antes de analisar", "Depois do verbo, ainda é **sujeito**: ocorreram acidentes", "**Indeterminado**: 3ª do plural ou verbo + se"] },
       { rotulo: "Sem sujeito", emoji: "🌧️", cor: "verde", folhas: ["**Fenômenos da natureza**: choveu", "**Haver** de existir; fazer de tempo", "Há vagas: **objeto**; existem vagas: sujeito"] },
-      { rotulo: "Complementos", emoji: "🎯", cor: "ouro", folhas: ["**Objeto direto**: sem preposição exigida", "**Objeto indireto**: com preposição do verbo", "Preposicionado: com **quem** ou pronome tônico"] },
+      { rotulo: "Complementos", emoji: "🎯", cor: "ouro", folhas: ["**Objeto direto**: sem preposição exigida", "**Objeto indireto**: com preposição do verbo", "**Objeto direto preposicionado**: a quem admiro; amo a ti"] },
       { rotulo: "Termos do nome", emoji: "🏷️", cor: "roxo", folhas: ["**Complemento nominal**: alvo (fiscalização da carga)", "**Adjunto adnominal**: agente ou posse (da equipe)", "Nome **concreto**: sempre adjunto adnominal"] },
       { rotulo: "Predicado", emoji: "🧩", cor: "laranja", folhas: ["**Verbal**: o núcleo é o verbo", "**Nominal**: ligação + predicativo", "**Verbo-nominal**: ação + predicativo (saiu cansado)"] },
       { rotulo: "Aposto e vocativo", emoji: "📣", cor: "rosa", folhas: ["**Aposto** explica o termo: Ana, a perita", "**Vocativo** chama o ouvinte, entre vírgulas", "Cidade de Belém: aposto; clima de Belém: **adjunto**"] },
@@ -123,7 +123,7 @@ export const MAPAS_PT: MapaAula[] = [
   },
   {
     aula: "pt-09",
-    centro: { titulo: "Vírgula e pontuação", emoji: "✒️", sub: "Ordem direta não tem vírgula" },
+    centro: { titulo: "Vírgula e pontuação", emoji: "✒️", sub: "Sujeito, verbo, complemento: sem vírgula" },
     ramos: [
       { rotulo: "Nunca separe", emoji: "🚫", cor: "azul", folhas: ["**Sujeito** do verbo, mesmo se longo", "**Verbo** do complemento", "Nome do seu **complemento**"] },
       { rotulo: "Termo deslocado", emoji: "↪️", cor: "verde", folhas: ["Adjunto **longo** no início: vírgula obrigatória", "Adjunto **curto**, até duas palavras: facultativa", "Isolou no meio? Vírgula **em par**"] },
@@ -131,7 +131,7 @@ export const MAPAS_PT: MapaAula[] = [
       { rotulo: "Termos isolados", emoji: "🧷", cor: "roxo", folhas: ["**Aposto** explicativo e vocativo", "**Adjetiva explicativa** e oração intercalada", "Verbo omitido: a outra, **no trevo**"] },
       { rotulo: "Outros sinais", emoji: "⁉️", cor: "laranja", folhas: ["**Ponto e vírgula**: itens com vírgula, incisos de lei", "**Dois-pontos**: explicação, citação, enumeração", "**Aspas**: citação, ironia, estrangeirismo", "**Parênteses**: dado acessório; travessão: ênfase"] },
     ],
-    macete: "Na ordem direta não há vírgula; ela só aparece quando um termo sai do lugar ou se intercala.",
+    macete: "Entre sujeito, verbo e complemento não há vírgula; ela aparece numa lista de itens ou quando um termo sai do lugar.",
     cuidado:
       "Trocar um sinal por outro só preserva a frase se a relação de sentido continuar a mesma. Faça a troca na cabeça antes de responder.",
   },
@@ -145,7 +145,7 @@ export const MAPAS_PT: MapaAula[] = [
       { rotulo: "Que e quem", emoji: "👥", cor: "ouro", folhas: ["Fui eu **que assinei**", "Fui eu **quem assinou** ou quem assinei"] },
       { rotulo: "Verbo ser", emoji: "🕐", cor: "roxo", folhas: ["Hora e distância: segue o **número**", "Pouco, muito, suficiente: **singular**", "Data: hoje **é** 10 ou hoje **são** 10"] },
       { rotulo: "Concordância nominal", emoji: "🏷️", cor: "laranja", folhas: ["Adjetivo depois: o **mais próximo** ou todos", "Nunca só com o **mais distante**", "Proibido entrada; proibida **a** entrada"] },
-      { rotulo: "Variam ou não", emoji: "🔁", cor: "rosa", folhas: ["Variam: **anexo**, quite, obrigado, mesmo, próprio", "Fixos: **em anexo**, menos, azul-marinho", "Meio e bastante variam só **antes de nome**"] },
+      { rotulo: "Variam ou não", emoji: "🔁", cor: "rosa", folhas: ["Variam: **anexo**, quite, obrigado, mesmo, próprio", "Fixos: **em anexo**, menos, azul-marinho", "Meio e bastante variam junto de **nome**, não de adjetivo"] },
     ],
     macete: "Primeiro ache o núcleo; depois confira se a frase cai num caso especial.",
     cuidado:
@@ -156,7 +156,7 @@ export const MAPAS_PT: MapaAula[] = [
     centro: { titulo: "Regência e crase", emoji: "🧲", sub: "A preposição que se pede" },
     ramos: [
       { rotulo: "Tipos de verbo", emoji: "🔧", cor: "azul", folhas: ["**Direto**: sem preposição; **indireto**: com", "Regências diferentes: entrei **em** casa e **dela** saí", "Preferir uma coisa **a** outra, sem “do que”"] },
-      { rotulo: "Dois sentidos", emoji: "🔀", cor: "verde", folhas: ["**Assistir**: ajudar (direto) ou ver (a)", "**Aspirar**: inalar ou desejar (a)", "**Visar**: mirar, rubricar ou ter como objetivo (a)"] },
+      { rotulo: "Dois sentidos", emoji: "🔀", cor: "verde", folhas: ["**Assistir**: ajudar (direto) ou ver (a)", "**Aspirar**: inalar (direto) ou desejar (a)", "**Visar**: mirar, rubricar ou ter como objetivo (a)"] },
       { rotulo: "Com relativo", emoji: "🔁", cor: "ouro", folhas: ["Preposição **antes** do relativo: a que aspira", "Informar **alguém de** algo, ou algo a alguém", "Nomes: apto **a**, passível **de**, compatível com"] },
       { rotulo: "Crase", emoji: "➰", cor: "roxo", folhas: ["**Preposição a + artigo a**", "Troque por masculino: deu **ao**? Tem crase", "Volta **da**, vai à; volta de, vai a"] },
       { rotulo: "Crase proibida", emoji: "🚫", cor: "laranja", folhas: ["Antes de **masculino**, verbo, pronome pessoal", "Antes de **uma**, salvo hora exata", "Casa e terra **sem especificação**"] },
@@ -185,8 +185,8 @@ export const MAPAS_PT: MapaAula[] = [
     ramos: [
       { rotulo: "Denotação e conotação", emoji: "📖", cor: "azul", folhas: ["**Denotação**: sentido do dicionário", "**Conotação**: figurado (uma chuva de críticas)", "**Campo semântico**: radar, multa, placa, pedágio"] },
       { rotulo: "Sinônimos e antônimos", emoji: "🔄", cor: "verde", folhas: ["Sinônimo vale **em certo contexto**", "Antônimo pode nascer na frase: **não grite, respire**", "**Hiperônimo**: veículo; hipônimo: carreta"] },
-      { rotulo: "Homônimos", emoji: "🪞", cor: "ouro", folhas: ["**Homógrafos**: mesma grafia (acordo, acordo)", "**Homófonos**: mesmo som (sessão, seção)", "**Perfeitos**: grafia e som iguais (cedo)"] },
-      { rotulo: "Parônimos", emoji: "⚠️", cor: "roxo", folhas: ["**Eminente**: elevado; **iminente**: prestes a ocorrer", "**Mandado**: ordem; mandato: procuração"] },
+      { rotulo: "Homônimos", emoji: "🪞", cor: "ouro", folhas: ["**Homógrafos**: mesma grafia, som diferente (o acordo, eu acordo)", "**Homófonos**: mesmo som, grafia diferente (sessão, seção)", "**Perfeitos**: grafia e som iguais (cedo)"] },
+      { rotulo: "Parônimos", emoji: "⚠️", cor: "roxo", folhas: ["**Eminente**: elevado; **iminente**: prestes a ocorrer", "**Mandado**: ordem; mandato: poder delegado, cargo eletivo"] },
       { rotulo: "Pares de prova", emoji: "🎯", cor: "laranja", folhas: ["**Deferir**: conceder; diferir: adiar", "**Ratificar** confirma; retificar corrige", "**Infligir** pena; infringir a lei", "**Tráfego**: fluxo; tráfico: comércio ilegal"] },
       { rotulo: "Duplo sentido", emoji: "🌀", cor: "rosa", folhas: ["**Polissemia**: vários sentidos de uma palavra", "**Ambiguidade**: dupla leitura da palavra ou da frase", "“Seu” e gerúndio são **causas comuns**"] },
     ],
@@ -215,7 +215,7 @@ export const MAPAS_PT: MapaAula[] = [
     desenho: "documento",
     ramos: [
       { rotulo: "Atributos", emoji: "✨", cor: "azul", folhas: ["**Clareza**, precisão, objetividade e concisão", "**Impessoalidade**: fala o serviço público", "Formalidade, padronização e **norma padrão**"] },
-      { rotulo: "Tratamento", emoji: "🎩", cor: "verde", folhas: ["Verbo e possessivo na **3ª pessoa**: seu", "**Vossa** com a pessoa; **Sua** sobre ela", "Abolidos: **Digníssimo** e Ilustríssimo; doutor é título"] },
+      { rotulo: "Tratamento", emoji: "🎩", cor: "verde", folhas: ["Verbo e possessivo na **3ª pessoa**: seu", "**Vossa** com a pessoa; **Sua** sobre ela", "Abolido **Digníssimo**; Ilustríssimo dispensado; doutor é título"] },
       { rotulo: "Decreto 9.758/2019", emoji: "⚖️", cor: "ouro", folhas: ["Agente público federal: só **senhor**", "Proíbe Vossa Excelência, Vossa Senhoria e **doutor**", "Não vale para autoridade **estrangeira**"] },
       { rotulo: "Vocativo e fecho", emoji: "✉️", cor: "roxo", folhas: ["**Excelentíssimo** só para chefes de Poder", "Demais: **Senhor** + cargo (Senhor Senador)", "**Respeitosamente**: hierarquia superior", "**Atenciosamente**: mesma hierarquia ou inferior"] },
       { rotulo: "Padrão ofício", emoji: "📑", cor: "laranja", folhas: ["Aviso e memorando **viraram ofício**", "Brasília, 5 de março de 2026 com **ponto-final**", "Parágrafos numerados só com **3 ou mais**", "Margens: esquerda **3 cm**, direita 1,5 cm"] },

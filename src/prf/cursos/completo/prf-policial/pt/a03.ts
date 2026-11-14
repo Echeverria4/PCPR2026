@@ -17,21 +17,26 @@ export const AULA: AulaEscrita = {
       },
       {
         termo: "Coordenativas",
-        faz: "Aditivas: e, nem, não só... mas também. Adversativas: mas, porém, contudo, todavia, entretanto. Alternativas: ou, ora... ora. Conclusivas: logo, portanto, destarte. Explicativas: pois, porque, que.",
-        pista: "“Pois” depois do verbo, entre vírgulas, conclui. Antes do verbo, explica.",
+        faz: "Aditivas: e, nem, não só... mas também, bem como. Adversativas: mas, porém, contudo, todavia, entretanto, no entanto, não obstante. Alternativas: ou... ou, ora... ora, quer... quer, seja... seja. Conclusivas: logo, portanto, por isso, por conseguinte, assim, destarte. Explicativas: que, porque, porquanto, pois.",
+        pista: "“Pois” depois do verbo, entre vírgulas, conclui: “Estudou; passará, pois, na prova”. Antes do verbo, explica: “Reduza a marcha, pois a pista está molhada”.",
       },
       {
         termo: "Causa e concessão",
-        faz: "Causais: porque, visto que, já que, uma vez que, porquanto, como (no início). Concessivas: embora, conquanto, ainda que, mesmo que, se bem que.",
-        pista: "Concessão traz um obstáculo que não impede o fato. Pede subjuntivo: “Embora tenha chovido”.",
+        faz: "Causais: porque, visto que, já que, uma vez que, porquanto, haja vista, como (no início). Concessivas: embora, conquanto, ainda que, mesmo que, se bem que, posto que, em que pese.",
+        pista: "Concessão traz um obstáculo que não impede o fato. Pede subjuntivo: “Embora tenha chovido”. “Posto que” é concessivo, não causal.",
       },
       {
-        termo: "Condição, conformidade e consequência",
-        faz: "Condicionais: se, caso, desde que (com subjuntivo). Conformativas: conforme, segundo, como. Consecutivas: tão... que, tanto... que.",
+        termo: "Condição e conformidade",
+        faz: "Condicionais: se, caso, contanto que, a menos que, desde que (com subjuntivo). Conformativas: conforme, segundo, consoante, como (= conforme).",
+      },
+      {
+        termo: "Comparação e consequência",
+        faz: "Comparativas: como, que nem, tal qual, mais (do) que, menos (do) que. Consecutivas: tão... que, tanto... que, tal... que, de modo que, de sorte que.",
+        pista: "“Que” depois de mais ou menos compara. Depois de tão, tanto ou tal, mostra a consequência.",
       },
       {
         termo: "Proporção, tempo e finalidade",
-        faz: "Proporcionais: à medida que, à proporção que. Temporais: quando, enquanto, assim que, desde que (com indicativo). Finais: para que, a fim de que.",
+        faz: "Proporcionais: à medida que, à proporção que, quanto mais... mais. Temporais: quando, enquanto, assim que, logo que, mal, até que, desde que (com indicativo). Finais: para que, a fim de que.",
         pista: "“À medida que” é proporção; “na medida em que” é causa.",
       },
       {
@@ -112,7 +117,7 @@ export const AULA: AulaEscrita = {
       ],
       correta: 4,
       explicacao:
-        "“Conquanto” é concessivo, como “embora”. “Porquanto” é causal, como “visto que”. “Destarte” é conclusivo, como “assim”.",
+        "“Conquanto” é concessivo, como “embora”. “Porquanto” traz o motivo (causa ou explicação), como “visto que”. “Destarte” é conclusivo, como “assim”.",
       explicacaoErradas:
         "“Visto que” e “porque” são causais e não cabem no lugar de “conquanto”. “Portanto” é conclusivo e não substitui “porquanto”. “Desde que”, com subjuntivo, é condição. “Contudo” e “entretanto” são adversativos e não substituem “destarte”.",
       pegadinha:
