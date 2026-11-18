@@ -267,6 +267,7 @@
   color: var(--texto-fraco);
 }
 
+.cx-agora,
 .cx-colunas {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
@@ -472,6 +473,165 @@
   background: var(--ouro-forte);
 }
 
+/* Ao lado do plano de hoje, os quatro números ficam em 2 × 2. */
+.cx-agora .cx-kpis {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* ---------- hoje no cronograma ---------- */
+
+.cx-hoje-dia {
+  margin: 0 0 10px;
+  font-size: 0.95rem;
+  color: var(--texto-fraco);
+}
+
+.cx-hoje-dia strong {
+  color: var(--texto);
+  font-weight: 800;
+}
+
+.cx-hoje-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.cx-hoje-meta .cx-kpi-barra {
+  flex: 1;
+  margin-top: 0;
+}
+
+.cx-hoje-meta-texto {
+  flex: none;
+  font-size: 0.82rem;
+  color: var(--texto-fraco);
+  font-variant-numeric: tabular-nums;
+}
+
+.cx-hoje-meta-texto strong {
+  color: var(--texto);
+}
+
+.cx-hoje-feita {
+  margin: 0 0 10px;
+  font-size: 0.85rem;
+  color: var(--verde);
+}
+
+.cx-hoje-aula {
+  display: grid;
+  gap: 2px;
+  margin-bottom: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--borda);
+  border-left: 3px solid var(--ouro-forte);
+  border-radius: 10px;
+  background: var(--bg-elevado);
+}
+
+.cx-hoje-aula-rotulo {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ouro);
+}
+
+.cx-hoje-aula-nome {
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.cx-hoje-aula-tam {
+  font-size: 0.8rem;
+  color: var(--texto-fraco);
+}
+
+.cx-hoje-nota,
+.cx-hoje-convite {
+  margin: 0 0 12px;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--texto-fraco);
+}
+
+.cx-hoje-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cx-hoje-lista li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 0;
+  border-top: 1px solid var(--cx-linha);
+}
+
+.cx-hoje-lista li:first-child {
+  border-top: 0;
+  padding-top: 2px;
+}
+
+.cx-hoje-check {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.cx-hoje-check input {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  align-self: center;
+  accent-color: var(--ouro-forte);
+  cursor: pointer;
+}
+
+.cx-hoje-min {
+  flex: none;
+  min-width: 3.4em;
+  font-size: 0.85rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: var(--ouro-forte);
+}
+
+.cx-hoje-texto {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.cx-hoje-feito .cx-hoje-min,
+.cx-hoje-feito .cx-hoje-texto {
+  color: var(--texto-fraco);
+}
+
+.cx-hoje-feito .cx-hoje-texto {
+  text-decoration: line-through;
+}
+
+.cx-hoje-pe {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--cx-linha);
+  font-size: 0.85rem;
+  color: var(--texto-fraco);
+}
+
 /* ---------- recomendações ---------- */
 
 .cx-recs {
@@ -502,12 +662,6 @@
   background: rgba(255, 255, 255, 0.06);
   flex: none;
   font-size: 0.95rem;
-}
-
-.cx-rec-bom .cx-rec-icone {
-  background: rgba(53, 212, 136, 0.15);
-  color: var(--verde);
-  font-weight: 900;
 }
 
 .cx-rec-texto {
@@ -1077,6 +1231,7 @@
     display: none;
   }
 
+  .cx-agora,
   .cx-colunas {
     grid-template-columns: minmax(0, 1fr);
     gap: 0;
@@ -1119,6 +1274,28 @@
 
   .cx-recs li .cx-botao-peq {
     margin-left: 44px;
+  }
+
+  .cx-hoje-meta {
+    flex-wrap: wrap;
+    gap: 6px 12px;
+  }
+
+  .cx-hoje-meta .cx-kpi-barra {
+    flex: 1 1 100%;
+  }
+
+  .cx-hoje-lista li {
+    flex-wrap: wrap;
+  }
+
+  .cx-hoje-check {
+    flex-basis: 100%;
+  }
+
+  /* O botão desce para baixo do texto, alinhado depois do quadradinho. */
+  .cx-hoje-lista li .cx-botao-peq {
+    margin-left: 28px;
   }
 
   .cx-dias {

@@ -1,6 +1,6 @@
-import { useMemo, useState } from "react";
-import { useAgora, useEstudo } from "../../aulas/estudo";
-import { definirMeta, metaDoTipo, useMeta } from "../../aulas/meta";
+import { useEffect, useMemo, useState } from "react";
+import { tempoAtivo, useAgora, useEstudo, type EstadoEstudo } from "../../aulas/estudo";
+import { definirMeta, metaDoTipo, tipoDoDia, useMeta, type EstadoMeta } from "../../aulas/meta";
 import { progresso } from "../../aulas/progresso";
 import { corDoGrupo, iconeGrupo, nomeAula } from "../../aulas/rotulos";
 import type { AulaCurso, GrupoCurso } from "../../aulas/tipos";
@@ -12,6 +12,7 @@ import {
   NOME_DESTINO,
   NOME_DIA,
   ajustarMinutos,
+  avisoSemDestino,
   chaveDia,
   diaUsado,
   estudaveis,
@@ -22,11 +23,10 @@ import {
   lerPlano,
   meiaNoite,
   minutosDasAtividades,
-  minutosDaSemana,
   novoId,
   pesoDaMateria,
   prever,
-  tempoDoDia,
+  tituloDoDia,
   trocarMateria,
   type DiaPlano,
   type Destino,
@@ -43,6 +43,24 @@ interface Props {
   destinos: Destino[];
   /** Abre o destino; false = não havia o que abrir (ex.: nenhuma questão errada na matéria). */
   onIr: (destino: Destino, grupo: string | null, aula?: AulaCurso) => boolean | void;
+  /** Aviso ao abrir: um botão do cronograma tocado na Central não tinha o que abrir. */
+  avisoInicial?: string | null;
+}
+
+/** Minutos de estudo disponíveis no dia (meia-noite): a meta de seg a sex ou a de sáb e dom. */
+const tempoDoDia = (meta: EstadoMeta, dia: number) => metaDoTipo(meta, tipoDoDia(dia), dia);
+
+/** Minutos cronometrados em cada dia de segunda a domingo da semana de `agora`. */
+function minutosDaSemana(e: EstadoEstudo, agora: number): number[] {
+  const inicio = inicioSemana(agora);
+  const fim = maisDias(inicio, 7);
+  const ms = Array<number>(7).fill(0);
+  const conta = (quando: number, duracao: number) => {
+    if (quando >= inicio && quando < fim) ms[indiceDia(quando)] += duracao;
+  };
+  for (const s of e.sessoes) conta(s.inicio, s.ms);
+  if (e.ativo) conta(e.ativo.inicio, tempoAtivo(e.ativo, agora));
+  return ms.map((x) => Math.round(x / 60000));
 }
 
 const dataCurta = (ms: number) => new Date(ms).toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" });
@@ -52,14 +70,17 @@ const DESTINOS_COM_MATERIA: Destino[] = ["questoes", "erros", "mapas", "resumos"
  * A aba Cronograma: o plano da semana montado pelo estudante. O tempo de cada dia é a meta diária (lida ao vivo:
  * mudou a meta, mudam os minutos); a matéria que acaba segue em revisão e a da lista de espera entra no lugar.
  */
-export default function CronogramaCurso({ curso, grupos, destinos, onIr }: Props) {
+export default function CronogramaCurso({ curso, grupos, destinos, onIr, avisoInicial = null }: Props) {
   const estudo = useEstudo();
   const meta = useMeta();
   const agora = useAgora(estudo.ativo !== null && estudo.ativo.desde !== null);
   const [plano, setPlanoBruto] = useState<Plano>(() => lerPlano(curso));
   const [editando, setEditando] = useState(false);
   const [montando, setMontando] = useState(false);
-  const [aviso, setAviso] = useState<string | null>(null);
+  const [aviso, setAviso] = useState<string | null>(avisoInicial);
+  useEffect(() => {
+    if (avisoInicial) setAviso(avisoInicial);
+  }, [avisoInicial]);
 
   function setPlano(novo: Plano) {
     setPlanoBruto(novo);
@@ -82,12 +103,7 @@ export default function CronogramaCurso({ curso, grupos, destinos, onIr }: Props
 
   function ir(destino: Destino, grupo: string | null, aula?: AulaCurso) {
     setAviso(null);
-    if (onIr(destino, grupo, aula) === false)
-      setAviso(
-        destino === "erros"
-          ? `Nenhuma questão errada${grupo ? ` em ${nome(grupo)}` : ""} por enquanto. Bom sinal!`
-          : "Ainda não há o que abrir aqui.",
-      );
+    if (onIr(destino, grupo, aula) === false) setAviso(avisoSemDestino(destino, grupo ? nome(grupo) : null));
   }
 
   function alternarFeito(dia: number, id: string) {
@@ -308,16 +324,6 @@ function ChipMateria({ grupo }: { grupo: GrupoCurso }) {
       <span aria-hidden="true">{grupo.icone ?? iconeGrupo(grupo.id)}</span> {grupo.nome}
     </span>
   );
-}
-
-/** Nome do dia: o título dado, a matéria com aula, a matéria em revisão ou "livre". */
-function tituloDoDia(dia: DiaPlano, enc: Encaixe | undefined, nome: (id: string) => string) {
-  if (dia.titulo) return dia.titulo;
-  if (enc?.grupo) return nome(enc.grupo);
-  if (enc?.revisao) return `${nome(enc.revisao)} · revisão`;
-  // Dia que já passou (sem previsão): o nome da primeira matéria da fila.
-  if (dia.fila[0]) return `${nome(dia.fila[0])}${dia.aulasPorDia === 0 ? " · revisão" : ""}`;
-  return diaUsado(dia) ? "Revisão" : "Dia livre";
 }
 
 // ---------- Hoje ----------

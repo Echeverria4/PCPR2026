@@ -1,3 +1,5 @@
+import type { Destino } from "../prf/cursos/cronograma/plano";
+
 /**
  * Onde o curso abre quando vem da Central: a aba e, se houver, a aula, a matéria ou o mapa.
  * Vale só na abertura; depois o curso segue com a navegação dele.
@@ -9,6 +11,8 @@ export interface EntradaCurso {
   aula?: string;
   /** Aula do mapa mental que abre direto. */
   mapa?: string;
+  /** Botão do cronograma tocado na Central (questões, erradas, mapas…): o curso abre direto nele. */
+  ir?: Destino;
   /** Tela interna da aba: "redacao" abre a Redação PMPR no Português Inteligente da PRF ADM. */
   tela?: "redacao";
 }

@@ -1,9 +1,11 @@
-import { progresso } from "../../aulas/progresso";
 import type { EstadoEstudo } from "../../aulas/estudo";
-import { tempoAtivo } from "../../aulas/estudo";
-import { metaDoTipo, tipoDoDia, type EstadoMeta } from "../../aulas/meta";
 import type { AulaCurso, GrupoCurso } from "../../aulas/tipos";
 import { inicioSemana, maisDias } from "../../semana/base";
+
+/*
+ * Só tipos e funções puras: a Central de Estudos usa este arquivo sem carregar o cronômetro dos cursos.
+ * O que lê a meta e o tempo ao vivo fica em CronogramaCurso.tsx.
+ */
 
 /*
  * Cronograma semanal de um curso, numa chave por curso.
@@ -92,8 +94,9 @@ export function horas(min: number) {
   return m === 0 ? `${h}h` : `${h}h${String(m).padStart(2, "0")}`;
 }
 
-/** Minutos de estudo disponíveis no dia (meia-noite): a meta de seg a sex ou a de sáb e dom. */
-export const tempoDoDia = (meta: EstadoMeta, dia: number) => metaDoTipo(meta, tipoDoDia(dia), dia);
+/** Todos os vídeos da aula marcados (o mesmo que `progresso(a, vistos).completa`). */
+export const aulaCompleta = (a: AulaCurso, vistos: Set<string>) =>
+  a.blocos.length > 0 && a.blocos.every((b) => vistos.has(b.id));
 
 /** O dia tem algo planejado (matéria ou atividade). */
 export const diaUsado = (d: DiaPlano) => d.fila.length > 0 || d.atividades.length > 0;
@@ -162,7 +165,7 @@ export const estudaveis = (grupos: GrupoCurso[]) => grupos.filter((g) => g.aulas
 /** Todas as aulas (com vídeo) da matéria já marcadas. */
 export function materiaConcluida(g: GrupoCurso, vistos: Set<string>) {
   const aulas = g.aulas.filter((a) => a.blocos.length > 0);
-  return aulas.length > 0 && aulas.every((a) => progresso(a, vistos).completa);
+  return aulas.length > 0 && aulas.every((a) => aulaCompleta(a, vistos));
 }
 
 /** Matérias na ordem da dica: maior peso na prova primeiro; empate (ou curso sem prova) fica na ordem do curso. */
@@ -384,21 +387,6 @@ export function gravarPlano(curso: string, p: Plano) {
   }
 }
 
-// ---------- Tempo estudado ----------
-
-/** Minutos cronometrados em cada dia de segunda a domingo da semana de `agora`. */
-export function minutosDaSemana(e: EstadoEstudo, agora: number): number[] {
-  const inicio = inicioSemana(agora);
-  const fim = maisDias(inicio, 7);
-  const ms = Array<number>(7).fill(0);
-  const conta = (quando: number, duracao: number) => {
-    if (quando >= inicio && quando < fim) ms[indiceDia(quando)] += duracao;
-  };
-  for (const s of e.sessoes) conta(s.inicio, s.ms);
-  if (e.ativo) conta(e.ativo.inicio, tempoAtivo(e.ativo, agora));
-  return ms.map((x) => Math.round(x / 60000));
-}
-
 // ---------- As aulas de cada dia até acabar ----------
 
 export interface Encaixe {
@@ -432,13 +420,18 @@ const SEMANA_MS = 7 * 24 * 3600 * 1000;
 /** Aulas da matéria concluídas hoje (o último vídeo marcado hoje). */
 function concluidasHoje(g: GrupoCurso, vistos: Set<string>, vistosEm: Record<string, number>, hoje: number) {
   return g.aulas.filter((a) => {
-    if (a.blocos.length === 0 || !progresso(a, vistos).completa) return false;
+    if (!aulaCompleta(a, vistos)) return false;
     return Math.max(...a.blocos.map((b) => vistosEm[b.id] ?? 0)) >= hoje;
   });
 }
 
 /** Distribui as aulas que faltam pelos dias, de hoje em diante, até as matérias acabarem (ou 2 anos). */
-export function prever(plano: Plano, grupos: GrupoCurso[], e: EstadoEstudo, agora: number): Previsao {
+export function prever(
+  plano: Plano,
+  grupos: GrupoCurso[],
+  e: Pick<EstadoEstudo, "vistos" | "vistosEm">,
+  agora: number,
+): Previsao {
   const vistos = new Set(e.vistos);
   const porId = new Map(grupos.map((g) => [g.id, g]));
   const filas = plano.dias.map((d) => d.fila.filter((g) => porId.has(g)));
@@ -448,7 +441,7 @@ export function prever(plano: Plano, grupos: GrupoCurso[], e: EstadoEstudo, agor
   for (const id of [...noPlano, ...espera])
     restantes.set(
       id,
-      porId.get(id)!.aulas.filter((a) => a.blocos.length > 0 && !progresso(a, vistos).completa),
+      porId.get(id)!.aulas.filter((a) => a.blocos.length > 0 && !aulaCompleta(a, vistos)),
     );
   const faltam = new Map([...restantes].map(([id, aulas]) => [id, aulas.length]));
   const pendente = (g: string) => (restantes.get(g)?.length ?? 0) > 0;
@@ -506,6 +499,22 @@ export function prever(plano: Plano, grupos: GrupoCurso[], e: EstadoEstudo, agor
   }
   return { semanas, termino, faltam, trocas, completa: !algumaPendente() };
 }
+
+/** Nome do dia: o título dado, a matéria com aula, a matéria em revisão ou "livre". */
+export function tituloDoDia(dia: DiaPlano, enc: Encaixe | undefined, nome: (id: string) => string) {
+  if (dia.titulo) return dia.titulo;
+  if (enc?.grupo) return nome(enc.grupo);
+  if (enc?.revisao) return `${nome(enc.revisao)} · revisão`;
+  // Dia que já passou (sem previsão): o nome da primeira matéria da fila.
+  if (dia.fila[0]) return `${nome(dia.fila[0])}${dia.aulasPorDia === 0 ? " · revisão" : ""}`;
+  return diaUsado(dia) ? "Revisão" : "Dia livre";
+}
+
+/** Aviso quando o botão de uma atividade não tinha o que abrir. */
+export const avisoSemDestino = (destino: Destino, materia: string | null) =>
+  destino === "erros"
+    ? `Nenhuma questão errada${materia ? ` em ${materia}` : ""} por enquanto. Bom sinal!`
+    : "Ainda não há o que abrir aqui.";
 
 // ---------- O tempo de cada atividade no dia ----------
 

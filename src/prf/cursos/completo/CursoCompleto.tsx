@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useMemo, useState, type ReactNode } from "react";
+import { lazy, Suspense, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import Quiz from "../../../components/Quiz";
 import Result from "../../../components/Result";
 import type { CursoId } from "../../../data/cursos";
@@ -8,7 +8,7 @@ import type { ExtrasAula, TelaAulas } from "../../aulas/AulasCurso";
 import { gruposAtuais } from "../../aulas/catalogo";
 import { abrirCaderno } from "../../caderno/painel";
 import CanetaPrf from "../../caneta/CanetaPrf";
-import type { Destino } from "../cronograma/plano";
+import { avisoSemDestino, type Destino } from "../cronograma/plano";
 import LayoutCurso, { type AbaCurso } from "../LayoutCurso";
 import { progressoDoCurso } from "./armazenamento";
 import InicioCurso from "./InicioCurso";
@@ -264,6 +264,23 @@ export default function CursoCompleto({
     }
   }
 
+  // Botão do cronograma tocado na Central: o curso abre direto no destino, uma vez só (o ref segura o modo estrito).
+  const entradaFeita = useRef(false);
+  const [avisoEntrada, setAvisoEntrada] = useState<string | null>(null);
+  useEffect(() => {
+    if (entradaFeita.current || !entrada?.ir) return;
+    entradaFeita.current = true;
+    const grupo = entrada.grupo ?? null;
+    // Ao terminar o quiz, volta para a aba em que o curso abriu (o treino, no "Refazer" da Central).
+    if (irDoCronograma(entrada.ir, grupo)) {
+      if (view !== "quiz" && view !== "result") setOrigem(view);
+    } else setAvisoEntrada(avisoSemDestino(entrada.ir, grupo ? (nomes[grupo] ?? grupo) : null));
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- só na abertura do curso
+  }, []);
+  useEffect(() => {
+    if (view !== "cronograma") setAvisoEntrada(null);
+  }, [view]);
+
   function finalizarQuiz(respostas: TentativaCurso[]) {
     if (!sessao) return;
     setResultado({
@@ -379,7 +396,13 @@ export default function CursoCompleto({
       )}
       {view === "cronograma" && (
         <Suspense fallback={<div className="vazio">Carregando o cronograma…</div>}>
-          <CronogramaCurso curso={curso} grupos={grupos} destinos={destinosCronograma} onIr={irDoCronograma} />
+          <CronogramaCurso
+            curso={curso}
+            grupos={grupos}
+            destinos={destinosCronograma}
+            onIr={irDoCronograma}
+            avisoInicial={avisoEntrada}
+          />
         </Suspense>
       )}
       {view === "resumos" && (

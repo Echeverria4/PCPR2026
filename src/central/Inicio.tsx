@@ -12,10 +12,13 @@ import {
   materiasDosMapas,
   useMapas,
 } from "./comum";
+import HojeCronograma from "./HojeCronograma";
 import {
   INFO_CURSO,
+  chaveDia,
   duracao,
   grupoDaAula,
+  maisDias,
   montarPainel,
   nomeMateriaPol,
   pct,
@@ -63,51 +66,20 @@ interface Recomendacao {
   texto: ReactNode;
   acao: string;
   onClick: () => void;
-  tom?: "bom";
 }
 
-function recomendacoes(p: Painel, onAbrir: AbrirCurso): Recomendacao[] {
+/** O que está pendente no curso que está sendo estudado: acerto baixo, erradas e matéria parada. */
+function paraRevisar(p: Painel, onAbrir: AbrirCurso): Recomendacao[] {
   const lista: Recomendacao[] = [];
-  const meta = p.metaMin * 60_000;
-  if (p.principal && p.continuar) {
-    const em = p.principal.em;
-    const alvo = p.continuar;
-    if (p.hojePrincipalMs < meta) {
-      lista.push({
-        chave: "meta",
-        icone: "⏱",
-        texto: (
-          <>
-            Faltam <strong>{duracao(meta - p.hojePrincipalMs)}</strong> para a meta de hoje {em} (
-            {duracao(meta)}).
-          </>
-        ),
-        acao: "Estudar agora",
-        onClick: () => onAbrir(alvo.curso, entradaDe(alvo)),
-      });
-    } else {
-      lista.push({
-        chave: "meta",
-        icone: "✓",
-        tom: "bom",
-        texto: (
-          <>
-            Meta de hoje batida {em}: <strong>{duracao(p.hojePrincipalMs)}</strong> de {duracao(meta)}.
-          </>
-        ),
-        acao: "Ver a semana",
-        onClick: () => onAbrir(alvo.curso, { aba: "semana" }),
-      });
-    }
-  }
-  for (const f of p.fracos.slice(0, 2)) {
-    const curto = INFO_CURSO[f.curso].curto;
+  const atual = p.principal?.id;
+  const doCurso = <T extends { curso: CursoEstudo }>(xs: T[]) => (atual ? xs.filter((x) => x.curso === atual) : xs);
+  for (const f of doCurso(p.fracos).slice(0, 2)) {
     lista.push({
       chave: `fraco-${f.curso}-${f.chave}`,
       icone: "🎯",
       texto: (
         <>
-          Acerto de <strong>{f.pct}%</strong> em {f.nome} ({f.feitas} questões, {curto}).
+          Acerto de <strong>{f.pct}%</strong> em {f.nome} ({f.feitas} questões{atual ? "" : `, ${INFO_CURSO[f.curso].curto}`}).
         </>
       ),
       acao: f.aula ? "Rever a aula" : "Treinar",
@@ -115,7 +87,7 @@ function recomendacoes(p: Painel, onAbrir: AbrirCurso): Recomendacao[] {
         onAbrir(f.curso, f.aula ? { aba: "aulas", grupo: f.grupo, aula: f.aula } : abaTreino(f.curso)),
     });
   }
-  for (const e of p.erradas.slice(0, 1)) {
+  for (const e of doCurso(p.erradas).slice(0, 1)) {
     lista.push({
       chave: `erradas-${e.curso}`,
       icone: "↺",
@@ -126,7 +98,9 @@ function recomendacoes(p: Painel, onAbrir: AbrirCurso): Recomendacao[] {
         </>
       ),
       acao: "Refazer",
-      onClick: () => onAbrir(e.curso, abaTreino(e.curso)),
+      // Na PRF Policial, o botão já abre a revisão das erradas (e o quiz volta para o treino).
+      onClick: () =>
+        onAbrir(e.curso, e.curso === "prf-policial" ? { aba: "treino", ir: "erros" } : abaTreino(e.curso)),
     });
   }
   for (const e of p.esquecidas.slice(0, 1)) {
@@ -142,40 +116,14 @@ function recomendacoes(p: Painel, onAbrir: AbrirCurso): Recomendacao[] {
       onClick: () => onAbrir(e.curso, { aba: "aulas", grupo: e.grupo }),
     });
   }
-  if (lista.length === 0) {
-    lista.push({
-      chave: "comecar",
-      icone: "▶",
-      texto: (
-        <>
-          Comece pela aba <strong>Aulas</strong> da PRF Policial: PDF primeiro, depois os vídeos, o resumo e as
-          questões da aula.
-        </>
-      ),
-      acao: "Abrir as aulas",
-      onClick: () => onAbrir("prf-policial", { aba: "aulas" }),
-    });
-  }
   return lista;
 }
 
-function Kpi({ rotulo, valor, sub, barra }: { rotulo: string; valor: string; sub?: ReactNode; barra?: number }) {
+function Kpi({ rotulo, valor, sub }: { rotulo: string; valor: string; sub?: ReactNode }) {
   return (
     <div className="cx-kpi">
       <div className="cx-kpi-rotulo">{rotulo}</div>
       <div className="cx-kpi-valor">{valor}</div>
-      {barra !== undefined && (
-        <div
-          className="cx-kpi-barra"
-          role="progressbar"
-          aria-label={rotulo}
-          aria-valuemin={0}
-          aria-valuemax={100}
-          aria-valuenow={Math.round(barra)}
-        >
-          <span style={{ width: `${Math.min(100, barra)}%` }} />
-        </div>
-      )}
       {sub && <div className="cx-kpi-sub">{sub}</div>}
     </div>
   );
@@ -193,9 +141,9 @@ export default function Inicio({ onAbrir, onIr }: InicioProps) {
   }, []);
 
   const { continuar } = painel;
-  const recs = useMemo(() => recomendacoes(painel, onAbrir), [painel, onAbrir]);
+  const recs = useMemo(() => paraRevisar(painel, onAbrir), [painel, onAbrir]);
   const dica = dicaDoDia(painel.hoje);
-  const metaMs = painel.metaMin * 60_000;
+  const ontemMs = painel.msPorDia.get(chaveDia(maisDias(painel.hoje, -1))) ?? 0;
   const acertoTotal = pct(painel.questoesTotal.a, painel.questoesTotal.n);
   const acertoSemana = pct(painel.questoesSemana.a, painel.questoesSemana.n);
 
@@ -311,91 +259,66 @@ export default function Inicio({ onAbrir, onIr }: InicioProps) {
         </section>
       )}
 
-      <section className="cx-kpis" aria-label="Resumo do estudo">
-        <Kpi
-          rotulo="Hoje"
-          valor={duracao(painel.hojeMs)}
-          barra={painel.principal ? (painel.hojePrincipalMs / metaMs) * 100 : undefined}
-          sub={
-            painel.principal
-              ? `meta ${painel.principal.em}: ${duracao(painel.hojePrincipalMs)} de ${duracao(metaMs)}`
-              : "nenhum estudo ainda"
-          }
-        />
-        <Kpi
-          rotulo="Esta semana"
-          valor={duracao(painel.semanaMs)}
-          sub={`semana passada: ${duracao(painel.semanaPassadaMs)}`}
-        />
-        <Kpi
-          rotulo="Questões na semana"
-          valor={painel.questoesSemana.n.toLocaleString("pt-BR")}
-          sub={`${painel.questoesHoje.toLocaleString("pt-BR")} hoje · ${painel.questoesTotal.n.toLocaleString("pt-BR")} no total`}
-        />
-        <Kpi
-          rotulo="Acerto geral"
-          valor={acertoTotal === null ? "—" : `${acertoTotal}%`}
-          sub={acertoSemana === null ? "sem questões na semana" : `nesta semana: ${acertoSemana}%`}
-        />
-      </section>
-
-      <div className="cx-colunas">
+      {/* Agora: o plano de hoje à esquerda; os números e o que está pendente à direita. */}
+      <div className="cx-agora">
         <div className="cx-coluna">
-          <section className="cx-card">
-            <div className="cx-card-topo">
-              <h2 className="cx-card-titulo">Recomendações para hoje</h2>
-            </div>
-            <ul className="cx-recs">
-              {recs.map((r) => (
-                <li key={r.chave} className={r.tom === "bom" ? "cx-rec-bom" : undefined}>
-                  <span className="cx-rec-icone" aria-hidden="true">
-                    {r.icone}
-                  </span>
-                  <span className="cx-rec-texto">{r.texto}</span>
-                  <button type="button" className="botao cx-botao-peq" onClick={r.onClick}>
-                    {r.acao}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <section className="cx-card">
-            <div className="cx-card-topo">
-              <h2 className="cx-card-titulo">Tempo por matéria nesta semana</h2>
-              <button type="button" className="cx-link" onClick={() => onIr("tempo")}>
-                Ver tudo →
-              </button>
-            </div>
-            <Barras
-              vazio="Nenhuma aula estudada nesta semana ainda. O tempo aparece aqui quando o cronômetro da aula roda."
-              linhas={materiasSemana.map((m) => ({
-                chave: m.chave,
-                rotulo: m.materia,
-                etiqueta: variosCursos ? INFO_CURSO[m.curso].curto : undefined,
-                valor: m.ms,
-                texto: duracao(m.ms),
-              }))}
-            />
-          </section>
-
-          {mapaFraco && fraco && (
-            <CartaoMapa
-              mapa={mapaFraco}
-              materia={nomeMateriaPol(grupoDaAula(mapaFraco.aula))}
-              rotulo="🎯 Reforço no ponto fraco"
-              completo={false}
-              extra={
-                <p className="cx-fraco-nota">
-                  Seu acerto em <strong>{fraco.nome}</strong> está em <strong>{fraco.pct}%</strong> ({fraco.certas} de{" "}
-                  {fraco.feitas}). Releia o macete e a pegadinha antes de voltar às questões.
-                </p>
-              }
-              onAbrir={() => onIr("mapas", { mapa: mapaFraco.aula })}
-            />
-          )}
+          <HojeCronograma painel={painel} onAbrir={onAbrir} />
         </div>
 
+        <div className="cx-coluna">
+          <section className="cx-kpis" aria-label="Resumo do estudo">
+            <Kpi
+              rotulo="Hoje"
+              valor={duracao(painel.hojeMs)}
+              sub={painel.hojeMs > 0 || ontemMs > 0 ? `ontem: ${duracao(ontemMs)}` : "nenhum estudo ainda"}
+            />
+            <Kpi
+              rotulo="Esta semana"
+              valor={duracao(painel.semanaMs)}
+              sub={`semana passada: ${duracao(painel.semanaPassadaMs)}`}
+            />
+            <Kpi
+              rotulo="Questões na semana"
+              valor={painel.questoesSemana.n.toLocaleString("pt-BR")}
+              sub={`${painel.questoesHoje.toLocaleString("pt-BR")} hoje · ${painel.questoesTotal.n.toLocaleString("pt-BR")} no total`}
+            />
+            <Kpi
+              rotulo="Acerto geral"
+              valor={acertoTotal === null ? "—" : `${acertoTotal}%`}
+              sub={acertoSemana === null ? "sem questões na semana" : `nesta semana: ${acertoSemana}%`}
+            />
+          </section>
+
+          <section className="cx-card">
+            <div className="cx-card-topo">
+              <h2 className="cx-card-titulo">🔁 Para revisar</h2>
+              {painel.principal && <span className="cx-etiqueta">{painel.principal.curto}</span>}
+            </div>
+            {recs.length > 0 ? (
+              <ul className="cx-recs">
+                {recs.map((r) => (
+                  <li key={r.chave}>
+                    <span className="cx-rec-icone" aria-hidden="true">
+                      {r.icone}
+                    </span>
+                    <span className="cx-rec-texto">{r.texto}</span>
+                    <button type="button" className="botao cx-botao-peq" onClick={r.onClick}>
+                      {r.acao}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="cx-vazio">
+                Nada pendente agora. Acerto baixo, questões erradas e matérias paradas aparecem aqui.
+              </p>
+            )}
+          </section>
+        </div>
+      </div>
+
+      {/* Memorizar e acompanhar. */}
+      <div className="cx-colunas">
         <div className="cx-coluna">
           {mapaDoDia ? (
             <CartaoMapa
@@ -421,17 +344,46 @@ export default function Inicio({ onAbrir, onIr }: InicioProps) {
             </section>
           )}
 
-          <section className="cx-card cx-dica">
+          <section className="cx-card">
             <div className="cx-card-topo">
-              <h2 className="cx-card-titulo">💬 Dica de estudo</h2>
+              <h2 className="cx-card-titulo">⏱ Tempo por matéria nesta semana</h2>
+              <button type="button" className="cx-link" onClick={() => onIr("tempo")}>
+                Ver tudo →
+              </button>
             </div>
-            <div className="cx-dica-titulo">{dica.titulo}</div>
-            <p>{dica.texto}</p>
+            <Barras
+              vazio="Nenhuma aula estudada nesta semana ainda. O tempo aparece aqui quando o cronômetro da aula roda."
+              linhas={materiasSemana.map((m) => ({
+                chave: m.chave,
+                rotulo: m.materia,
+                etiqueta: variosCursos ? INFO_CURSO[m.curso].curto : undefined,
+                valor: m.ms,
+                texto: duracao(m.ms),
+              }))}
+            />
           </section>
+        </div>
+
+        <div className="cx-coluna">
+          {mapaFraco && fraco && (
+            <CartaoMapa
+              mapa={mapaFraco}
+              materia={nomeMateriaPol(grupoDaAula(mapaFraco.aula))}
+              rotulo="🎯 Reforço no ponto fraco"
+              completo={false}
+              extra={
+                <p className="cx-fraco-nota">
+                  Seu acerto em <strong>{fraco.nome}</strong> está em <strong>{fraco.pct}%</strong> ({fraco.certas} de{" "}
+                  {fraco.feitas}). Releia o macete e a pegadinha antes de voltar às questões.
+                </p>
+              }
+              onAbrir={() => onIr("mapas", { mapa: mapaFraco.aula })}
+            />
+          )}
 
           <section className="cx-card">
             <div className="cx-card-topo">
-              <h2 className="cx-card-titulo">Banco de questões</h2>
+              <h2 className="cx-card-titulo">📚 Banco de questões</h2>
               <button type="button" className="cx-link" onClick={() => onIr("questoes")}>
                 Abrir →
               </button>
@@ -457,6 +409,14 @@ export default function Inicio({ onAbrir, onIr }: InicioProps) {
                 <span>{BANCO.length.toLocaleString("pt-BR")}</span>
               </li>
             </ul>
+          </section>
+
+          <section className="cx-card cx-dica">
+            <div className="cx-card-topo">
+              <h2 className="cx-card-titulo">💬 Dica de estudo</h2>
+            </div>
+            <div className="cx-dica-titulo">{dica.titulo}</div>
+            <p>{dica.texto}</p>
           </section>
         </div>
       </div>

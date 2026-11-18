@@ -184,6 +184,18 @@ export function lerEstudo(info: InfoCurso, agora: number): EstudoCurso {
   return { info, trechos, ativo };
 }
 
+/** Vídeos marcados no curso e quando: o cronograma da Central usa para achar a aula do dia. */
+export function lerVistos(info: InfoCurso): { vistos: string[]; vistosEm: Record<string, number> } {
+  const e = objeto(lerJson(info.chaveEstudo));
+  const vistos = Array.isArray(e?.vistos) ? e.vistos.filter((x): x is string => typeof x === "string") : [];
+  const vistosEm: Record<string, number> = {};
+  for (const [id, quando] of Object.entries(objeto(e?.vistosEm) ?? {})) {
+    const ms = numero(quando);
+    if (ms !== null) vistosEm[id] = ms;
+  }
+  return { vistos, vistosEm };
+}
+
 /** Minutos da meta do dia no curso (60 de segunda a sexta, 120 no fim de semana, com os aumentos aceitos). */
 export function metaDoDia(info: InfoCurso, dia: number): number {
   const fds = [0, 6].includes(new Date(dia).getDay());
