@@ -5,6 +5,7 @@ import { TOTAIS_TEMAS_POL } from "../banco/totaisTemas";
 import { embaralharAlternativas, shuffle } from "../lib/quizEngine";
 import type { Question, QuizMode, QuizSessionResult } from "../lib/types";
 import CanetaPrf from "../prf/caneta/CanetaPrf";
+import PainelConfianca, { ConfiancaDaRodada } from "./PainelConfianca";
 import { progressoDoCurso } from "../prf/cursos/completo/armazenamento";
 import { DADOS } from "../prf/cursos/completo/prf-policial/index";
 import { ultimaResposta } from "../prf/cursos/completo/sessoes";
@@ -95,6 +96,12 @@ function montarMaterias(): MateriaTreino[] {
 }
 
 const POR_ID = new Map(DADOS.banco.questoes.map((q) => [q.id, q]));
+
+/** Chance de acertar a questão ao acaso (1 em 5, na maioria); null se ela saiu do banco. */
+function acasoDe(id: string): number | null {
+  const q = POR_ID.get(id);
+  return q && q.alternativas.length > 0 ? 1 / q.alternativas.length : null;
+}
 
 /** Primeiro as nunca respondidas, depois as erradas na última vez, por fim as acertadas (cada grupo embaralhado). */
 function porPrioridade(questoes: QuestaoCurso[], ultima: Map<string, boolean>): QuestaoCurso[] {
@@ -262,7 +269,8 @@ export default function TreinoUnido() {
   // Muda a cada treino que termina, para o placar ler o progresso de novo.
   const [rodada, setRodada] = useState(0);
 
-  const ultima = useMemo(() => ultimaResposta(progresso.tentativas()), [rodada]);
+  const tentativas = useMemo(() => progresso.tentativas(), [rodada]);
+  const ultima = useMemo(() => ultimaResposta(tentativas), [tentativas]);
   const porMateria = useMemo(() => new Map(materias.map((m) => [m.id, m])), [materias]);
   const todas = DADOS.banco.questoes;
 
@@ -388,6 +396,12 @@ export default function TreinoUnido() {
     paraOTopo();
   }
 
+  /** Do quadro de confiança: treina uma lista de questões (erros com certeza, acertos no chute). */
+  function treinarLista(ids: string[]) {
+    const qs = ids.map((id) => POR_ID.get(id)).filter((q): q is QuestaoCurso => Boolean(q));
+    iniciar(paraSessao(shuffle(qs)));
+  }
+
   function revisarErros() {
     if (!resultado) return;
     const erradas = resultado.respostas
@@ -438,6 +452,7 @@ export default function TreinoUnido() {
     return (
       <div className="cx-treino-quiz">
         <Result resultado={resultado} onVoltarHome={voltar} onRevisarErros={revisarErros} nomes={NOMES} />
+        <ConfiancaDaRodada tentativas={resultado.respostas} acasoDe={acasoDe} />
       </div>
     );
   }
@@ -677,6 +692,8 @@ export default function TreinoUnido() {
             : "Primeiro vêm as que você nunca respondeu, depois as que errou. Pode sair quando quiser."}
         </p>
       </section>
+
+      <PainelConfianca tentativas={tentativas} nomes={NOMES} acasoDe={acasoDe} onTreinar={treinarLista} />
     </div>
   );
 }

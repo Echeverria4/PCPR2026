@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import Alternativa from "../components/Alternativa";
 import { shuffle } from "../lib/quizEngine";
-import type { AttemptRecord, Question } from "../lib/types";
+import { ROTULO_CONFIANCA } from "../data/retaFinal";
+import type { AttemptRecord, Confianca, Question } from "../lib/types";
 
 /**
  * Simulado PRF em modo prova (13/11/26): como no dia da prova, o gabarito só aparece depois de entregar. Dá para
@@ -26,9 +27,13 @@ export interface ProvaSalva {
   respondidaEm: (string | null)[];
   tempoMs: number[];
   riscadas: number[][];
+  /** Certeza, Dúvida ou Chute marcado em cada questão (provas salvas antes de 18/11/26 não têm). */
+  confiancas?: (Confianca | null)[];
   atual: number;
   decorridoMs: number;
 }
+
+const NIVEIS = Object.keys(ROTULO_CONFIANCA) as Confianca[];
 
 const CHAVE = "cx:prova:andamento:v1";
 const LETRAS = ["A", "B", "C", "D", "E"];
@@ -239,6 +244,14 @@ export default function ProvaCentral(props: Props) {
     });
   }
 
+  function confiar(c: Confianca) {
+    atualizar((p) => {
+      const confiancas = p.confiancas ? [...p.confiancas] : Array<Confianca | null>(p.itens.length).fill(null);
+      confiancas[p.atual] = confiancas[p.atual] === c ? null : c;
+      return { ...p, confiancas };
+    });
+  }
+
   function riscar(idx: number) {
     atualizar((p) => {
       const riscadas = p.riscadas.map((r) => [...r]);
@@ -273,6 +286,7 @@ export default function ProvaCentral(props: Props) {
         respondidaEm: p.respondidaEm[k] ?? new Date().toISOString(),
         tempoMs: p.tempoMs[k],
         modo: "simulado",
+        confianca: p.confiancas?.[k] ?? undefined,
       });
     });
     gravar(null);
@@ -366,6 +380,20 @@ export default function ProvaCentral(props: Props) {
               : "Toque numa alternativa para marcar. Pode trocar depois ou deixar em branco."
             : `Marcada: ${cebraspe ? q.alternativas[marcada] : letras[marcada]}. Toque nela de novo para apagar.`}
         </p>
+        <div className="confianca-linha">
+          <span className="confianca-rotulo">Confiança:</span>
+          {NIVEIS.map((c) => (
+            <button
+              key={c}
+              type="button"
+              aria-pressed={prova.confiancas?.[i] === c}
+              className={`confianca-chip confianca-${c} ${prova.confiancas?.[i] === c ? "confianca-ativa" : ""}`}
+              onClick={() => confiar(c)}
+            >
+              {ROTULO_CONFIANCA[c]}
+            </button>
+          ))}
+        </div>
 
         <div className="cx-prova-nav">
           <button type="button" className="botao" onClick={() => irPara(i - 1)} disabled={i === 0}>
@@ -506,6 +534,18 @@ function ResultadoProva({
   });
   const porMateria = [...contagem.entries()];
 
+  // Só as respondidas: em branco não tem acerto nem erro para comparar com a confiança marcada.
+  const porConfianca = NIVEIS.map((c) => {
+    let certas = 0;
+    let erros = 0;
+    prova.itens.forEach((_, k) => {
+      if (prova.confiancas?.[k] !== c) return;
+      if (situacao[k] === "certa") certas++;
+      if (situacao[k] === "errada") erros++;
+    });
+    return { c, certas, erros };
+  }).filter((v) => v.certas + v.erros > 0);
+
   const [filtro, setFiltro] = useState<Filtro>(erradas > 0 ? "erradas" : branco > 0 ? "branco" : "todas");
   const [verCorrecao, setVerCorrecao] = useState(false);
   const paraRefazer = onRefazer ? prova.itens.filter((_, k) => situacao[k] === "errada").map((it) => it.id) : [];
@@ -560,6 +600,26 @@ function ResultadoProva({
             </li>
           ))}
         </ul>
+
+        {porConfianca.length > 0 && (
+          <>
+            <h3 className="cx-prova-sub">Por confiança</h3>
+            <ul className="cx-prova-materias">
+              {porConfianca.map((v) => (
+                <li key={v.c}>
+                  <span>
+                    {ROTULO_CONFIANCA[v.c]} · {Math.round((v.certas / (v.certas + v.erros)) * 100)}% de acerto
+                  </span>
+                  <span className="cx-chip-n">
+                    {cebraspe
+                      ? `${v.certas}✓ ${v.erros}✗ = ${v.certas - v.erros > 0 ? "+" : ""}${v.certas - v.erros} pts`
+                      : `${v.certas}/${v.certas + v.erros}`}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
 
         <div className="cx-card-acoes">
           <button type="button" className="botao botao-ouro" onClick={() => setVerCorrecao((v) => !v)} aria-expanded={verCorrecao}>
