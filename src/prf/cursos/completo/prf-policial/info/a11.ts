@@ -47,6 +47,11 @@ export const AULA: AulaEscrita = {
         termo: "Substituição e transposição",
         faz: "Substituição troca os símbolos. Transposição muda a ordem deles.",
       },
+      {
+        termo: "Hash",
+        faz: "Resume qualquer arquivo num código de tamanho fixo (MD5, SHA-1, SHA-256). Se um só caractere mudar, o hash muda todo: serve para conferir a integridade.",
+        pista: "É de mão única: não dá para voltar ao original. Por isso hash não garante sigilo.",
+      },
     ],
     cuidado:
       "Assinatura digital não dá sigilo. A mensagem assinada continua legível, se não for cifrada.",

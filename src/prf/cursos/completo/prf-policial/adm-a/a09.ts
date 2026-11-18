@@ -49,6 +49,10 @@ export const AULA: AulaEscrita = {
         faz: "Mandado de segurança, ação popular, ação civil pública, habeas data e mandado de injunção.",
         pista: "Só o cidadão propõe ação popular (Súmula 365 do STF).",
       },
+      {
+        termo: "Prescrição e decadência",
+        faz: "A Administração tem 5 anos para anular ato que favorece alguém, contados da prática do ato, salvo má-fé comprovada (Lei 9.784, art. 54). As ações contra a Fazenda Pública também prescrevem em 5 anos (Decreto 20.910/1932).",
+      },
     ],
     cuidado: "A Súmula Vinculante 21 proíbe exigir depósito ou arrolamento prévios para recurso administrativo.",
   },

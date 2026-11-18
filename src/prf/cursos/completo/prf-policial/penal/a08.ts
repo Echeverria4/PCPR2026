@@ -55,6 +55,32 @@ export const AULA: AulaEscrita = {
         termo: "Art. 234-B",
         faz: "Processo em segredo de justiça. Desde 2024, a condenação em primeira instância abre nome, CPF e tipificação do réu em certos crimes.",
       },
+      {
+        termo: "Lascívia e ultraje",
+        faz: "Praticar ato sexual na presença de menor de 14 anos, ou levá-lo a assistir, é o art. 218-A. Induzir alguém a satisfazer a lascívia de outra pessoa é mediação (art. 227). Ato obsceno em lugar público é ultraje ao pudor (art. 233).",
+      },
+      {
+        termo: "Migração ilegal (art. 232-A)",
+        faz: "Promover, para obter vantagem econômica, a entrada ilegal de estrangeiro no Brasil ou de brasileiro em outro país. Pena de 2 a 5 anos.",
+        pista: "Sem o fim de lucro, não há este crime.",
+      },
+      {
+        termo: "Perigo comum",
+        faz: "Incêndio (art. 250) e explosão (art. 251) que expõem a perigo um número indeterminado de pessoas. No crime doloso, lesão grave aumenta a pena de metade, e morte a dobra (art. 258).",
+      },
+      {
+        termo: "Segurança dos transportes",
+        faz: "Expor a perigo embarcação ou aeronave (art. 261) ou outro meio de transporte público (art. 262). Arremessar projétil contra veículo em movimento de transporte público é o art. 264.",
+        pista: "Pedra contra carro particular não é o art. 264: pode ser dano, lesão ou tentativa de homicídio.",
+      },
+      {
+        termo: "Saúde pública",
+        faz: "Infração de medida sanitária preventiva (art. 268), envenenamento de água ou alimento (art. 270) e falsificação de remédio ou produto terapêutico (art. 273), que é hediondo.",
+      },
+      {
+        termo: "Interrupção de serviço (art. 266)",
+        faz: "Interromper ou perturbar serviço telefônico, telegráfico, telemático ou de informação de utilidade pública, ou dificultar a volta dele. A pena dobra se for em calamidade pública.",
+      },
     ],
     cuidado:
       "O PDF traz o art. 217-A com 8 a 15 anos e o art. 218-C com 1 a 5 anos. As penas atuais são maiores.",

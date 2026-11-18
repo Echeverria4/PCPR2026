@@ -42,6 +42,16 @@ export const AULA: AulaEscrita = {
         termo: "Vocabulário policial",
         faz: "Abduction é sequestro, blackmail é chantagem, clue é pista, e cold case é caso arquivado.",
       },
+      {
+        termo: "Much e many",
+        faz: "Much e little vão com incontáveis (much water, little time). Many e few vão com contáveis (many cars, few people). A lot of e lots of servem para os dois.",
+        pista: "Na pergunta: how much para incontável, how many para contável.",
+      },
+      {
+        termo: "Pronomes relativos",
+        faz: "Ligam orações no período composto: who (pessoa), which (coisa), that (pessoa ou coisa), whose (posse) e where (lugar).",
+        pista: "That não vem depois de vírgula: na oração explicativa, use who ou which.",
+      },
     ],
     cuidado: "12,500 em inglês é doze mil e quinhentos. 0.34 é zero vírgula trinta e quatro.",
   },

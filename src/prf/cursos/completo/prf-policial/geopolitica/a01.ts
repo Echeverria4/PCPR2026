@@ -44,6 +44,11 @@ export const AULA: AulaEscrita = {
         termo: "Limites marítimos",
         faz: "Mar territorial de 12 milhas, zona contígua até 24 e zona econômica exclusiva até 200.",
       },
+      {
+        termo: "Geopolítica",
+        faz: "Estuda a relação entre o espaço geográfico (território, posição, recursos, fronteiras) e o poder dos Estados.",
+        pista: "O termo foi criado pelo sueco Rudolf Kjellén no fim do século XIX.",
+      },
     ],
     cuidado:
       "Não troque as datas do mapa: Acre estado em 1962, Mato Grosso do Sul em 1977 e Tocantins em 1988.",

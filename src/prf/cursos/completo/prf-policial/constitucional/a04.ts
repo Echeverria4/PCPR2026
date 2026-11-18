@@ -47,6 +47,20 @@ export const AULA: AulaEscrita = {
         termo: "MS e MI",
         faz: "MS: direito líquido e certo, em 120 dias. MI: falta de norma que impede o exercício de um direito.",
       },
+      {
+        termo: "Devido processo e defesa",
+        faz: "Ninguém perde a liberdade ou os bens sem o devido processo legal (LIV). No processo judicial ou administrativo, há contraditório e ampla defesa (LV).",
+        pista: "Súmula Vinculante 5: a falta de advogado no processo administrativo disciplinar não ofende a Constituição.",
+      },
+      {
+        termo: "Presunção de inocência",
+        faz: "Ninguém é considerado culpado antes do trânsito em julgado da sentença penal condenatória (LVII). Por isso, o STF decidiu em 2019 (ADCs 43, 44 e 54) que a pena só começa a ser cumprida depois do trânsito; antes disso, só cabe prisão cautelar.",
+        pista: "Exceção firmada pelo STF em 2024: a condenação pelo Tribunal do Júri pode ser executada de imediato.",
+      },
+      {
+        termo: "Assistência gratuita",
+        faz: "O Estado presta assistência jurídica integral e gratuita a quem comprovar falta de recursos (LXXIV). Registro de nascimento e certidão de óbito são gratuitos para os reconhecidamente pobres (LXXVI).",
+      },
     ],
     cuidado:
       "Só o racismo e a ação de grupos armados são imprescritíveis. Tortura, tráfico, terrorismo e hediondos prescrevem.",

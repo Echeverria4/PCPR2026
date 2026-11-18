@@ -44,6 +44,27 @@ export const AULA: AulaEscrita = {
         termo: "Topologias",
         faz: "Barramento: um cabo comum. Anel: círculo. Estrela: nó central. Malha: ligações diretas entre as estações.",
       },
+      {
+        termo: "Padrões IEEE",
+        faz: "Ethernet (rede com cabo) é o 802.3. Wi-Fi é o 802.11. Bluetooth é o 802.15, de curto alcance, usado em PAN (rede pessoal).",
+      },
+      {
+        termo: "Comutação",
+        faz: "Por circuitos: reserva um caminho só para a conversa do começo ao fim (telefonia antiga). Por pacotes: divide os dados em pedaços que seguem caminhos diferentes e se juntam no destino (a internet).",
+      },
+      {
+        termo: "Acesso à internet",
+        faz: "O provedor (ISP) liga o usuário à internet. Meios de acesso: ADSL (linha telefônica), cabo, fibra óptica, rede móvel (4G e 5G), rádio e satélite.",
+      },
+      {
+        termo: "Deep Web e Dark Web",
+        faz: "Deep Web é tudo que os buscadores não indexam (e-mail, banco, sistemas com senha). Dark Web é uma pequena parte dela, oculta de propósito, acessada com programas próprios como o Tor.",
+        pista: "Deep Web não é sinônimo de crime: a maior parte é conteúdo comum protegido por login.",
+      },
+      {
+        termo: "Internet das Coisas (IoT)",
+        faz: "Objetos do dia a dia ligados à rede, que coletam e trocam dados: câmeras, sensores, relógios, carros.",
+      },
     ],
     cuidado:
       "Topologia física é o desenho dos cabos. Topologia lógica é o caminho dos dados. Elas podem ser diferentes na mesma rede.",

@@ -55,6 +55,19 @@ export const AULA: AulaEscrita = {
         termo: "Inversa",
         faz: "Troque x por y e isole y.",
       },
+      {
+        termo: "Valor numérico",
+        faz: "Troque o x pelo número: em f(x) = 2x − 1, f(3) = 2·3 − 1 = 5.",
+      },
+      {
+        termo: "Crescente e decrescente",
+        faz: "Crescente: x aumenta e f(x) aumenta. Decrescente: x aumenta e f(x) diminui. Na função f(x) = ax + b, quem decide é o a: positivo sobe, negativo desce.",
+      },
+      {
+        termo: "Par e ímpar",
+        faz: "Par: f(−x) = f(x), o gráfico é simétrico em relação ao eixo y (como x²). Ímpar: f(−x) = −f(x), simétrico em relação à origem (como x³).",
+        pista: "Muita função não é nem par nem ímpar: f(x) = x + 1 dá f(−x) = −x + 1.",
+      },
     ],
     cuidado:
       "O contradomínio muda a classificação: x² é sobrejetora em [0, +∞), mas não em ℝ.",

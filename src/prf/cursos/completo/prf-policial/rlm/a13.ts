@@ -42,6 +42,15 @@ export const AULA: AulaEscrita = {
         termo: "Função logarítmica",
         faz: "É a inversa da exponencial. O gráfico corta o eixo x em (1, 0).",
       },
+      {
+        termo: "Logaritmo natural",
+        faz: "É o logaritmo na base e (≈ 2,718), escrito ln. Vale ln 1 = 0 e ln e = 1.",
+      },
+      {
+        termo: "Juros compostos",
+        faz: "O tempo fica no expoente: M = C·(1 + i)ᵗ. Para achar t, use log: t = log(M/C) ÷ log(1 + i).",
+        pista: "Dobrar o capital a 10% por período: log 2 ÷ log 1,1 ≈ 0,301 ÷ 0,041 ≈ 7,3 períodos.",
+      },
     ],
     cuidado: "log (a + b) não é log a + log b. A soma de logs vem do produto.",
   },

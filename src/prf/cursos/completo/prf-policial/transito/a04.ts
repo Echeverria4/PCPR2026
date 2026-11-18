@@ -42,6 +42,15 @@ export const AULA: AulaEscrita = {
         termo: "Descanso",
         faz: "11 horas em cada 24 horas. O STF derrubou o trecho que permitia fracionar.",
       },
+      {
+        termo: "Cidadão (arts. 72 e 73)",
+        faz: "Qualquer cidadão ou entidade pode pedir, por escrito, sinalização, fiscalização e equipamentos de segurança, e sugerir mudanças nas normas. O órgão do Sistema Nacional de Trânsito tem o dever de analisar e responder por escrito, dizendo se vai atender e quando.",
+      },
+      {
+        termo: "Pedestres (arts. 68 a 71)",
+        faz: "O pedestre usa calçadas e passeios. Sem eles, na cidade anda pelo bordo da pista em fila única; na rodovia, pelo acostamento ou, sem ele, pelo bordo da pista em fila única, no sentido contrário ao dos veículos. Para atravessar, usa a faixa ou a passagem que estiver a até 50 metros.",
+        pista: "Ciclista desmontado, empurrando a bicicleta, tem os mesmos direitos e deveres do pedestre.",
+      },
     ],
     cuidado: "Cassação da CNH não aparece nas competências da PRF no art. 20.",
   },

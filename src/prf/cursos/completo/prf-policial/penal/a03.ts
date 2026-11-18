@@ -51,6 +51,16 @@ export const AULA: AulaEscrita = {
         termo: "Legítima defesa",
         faz: "Repelir agressão injusta, atual ou iminente, com meios necessários e moderação. Inclui o agente de segurança que protege refém (art. 25, parágrafo único).",
       },
+      {
+        termo: "Iter criminis",
+        faz: "O caminho do crime: cogitação, preparação, execução e consumação. Cogitar nunca é punido; preparar, em regra, também não. A punição começa na execução.",
+        pista: "Exceção: quando o próprio ato preparatório é crime, como a associação criminosa (art. 288).",
+      },
+      {
+        termo: "Crime × contravenção",
+        faz: "Crime tem pena de reclusão ou detenção; contravenção, de prisão simples ou multa (Lei de Introdução ao CP, art. 1º).",
+        pista: "A tentativa de contravenção não é punida (LCP, art. 4º).",
+      },
     ],
     cuidado:
       "O excesso é punível em todas as excludentes de ilicitude, seja doloso, seja culposo (art. 23, parágrafo único).",

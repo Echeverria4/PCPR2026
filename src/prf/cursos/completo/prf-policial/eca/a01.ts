@@ -60,6 +60,11 @@ export const AULA: AulaEscrita = {
         faz: "Dirigentes do ensino fundamental comunicam ao Conselho Tutelar maus-tratos, faltas reiteradas e evasão (esgotados os recursos da escola) e repetência elevada (art. 56). Instituições com recursos públicos atualizam as certidões de antecedentes dos colaboradores a cada 6 meses; escolas mantêm certidões mesmo sem verba pública (art. 59-A). Trabalho: proibido abaixo de 16 anos, salvo aprendiz a partir de 14 (CF, art. 7º, XXXIII); ao adolescente é vedado trabalho noturno (22h às 5h), perigoso, insalubre ou penoso.",
         pista: "O art. 60 do ECA ainda diz 14 anos, mas vale a Constituição.",
       },
+      {
+        termo: "Apadrinhamento (art. 19-B)",
+        faz: "Criança ou adolescente acolhido ganha vínculos fora do abrigo: o padrinho convive e ajuda no desenvolvimento, inclusive com dinheiro. Pode ser pessoa maior de 18 anos fora do cadastro de adoção, ou pessoa jurídica.",
+        pista: "Apadrinhar não é adotar nem ter a guarda. A prioridade são os que têm pouca chance de voltar à família ou de ser adotados.",
+      },
     ],
     cuidado:
       "Material antigo não traz a natureza no art. 4º (Lei 15.512/2026) nem o abandono afetivo como ilícito no art. 5º (Lei 15.240/2025). Na prova, siga a redação atual.",

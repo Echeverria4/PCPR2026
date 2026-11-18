@@ -93,7 +93,7 @@ export const MAPAS_INGLES: MapaAula[] = [
     ramos: [
       { rotulo: "Discurso indireto", emoji: "🗣️", cor: "azul", folhas: ["Tempo **recua** um passo", "Tomorrow vira **the next day**"] },
       { rotulo: "Números", emoji: "🔢", cor: "verde", folhas: ["**Vírgula** separa milhares", "**Ponto** separa decimais"] },
-      { rotulo: "Quantidade", emoji: "⚖️", cor: "ouro", folhas: ["**Few**: quase nenhum; **a few**: alguns", "Little e a little: **incontáveis**"] },
+      { rotulo: "Quantidade", emoji: "⚖️", cor: "ouro", folhas: ["**Few**: quase nenhum; **a few**: alguns", "Little e a little: **incontáveis**", "**Much** com incontável; many com contável"] },
       { rotulo: "Marcadores", emoji: "🧭", cor: "roxo", folhas: ["**Moreover**: soma ideias", "**By the way**: muda de assunto", "Tag: frase positiva pede **negativa**"] },
       { rotulo: "Condicionais", emoji: "❔", cor: "laranja", folhas: ["If + **had** + particípio", "**Would have** + particípio", "Hipótese passada que **não aconteceu**"] },
       { rotulo: "Vocabulário policial", emoji: "🚓", cor: "rosa", folhas: ["**Abduction**: sequestro; **blackmail**: chantagem", "**Clue**: pista; **cold case**: caso arquivado", "**Off the hook**: livre de culpa"] },

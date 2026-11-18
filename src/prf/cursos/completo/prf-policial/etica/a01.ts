@@ -44,6 +44,19 @@ export const AULA: AulaEscrita = {
         termo: "Cidadania",
         faz: "Direitos e deveres de quem participa da vida da comunidade.",
       },
+      {
+        termo: "Dilema ético",
+        faz: "Situação em que dois valores ou deveres entram em choque e qualquer escolha sacrifica um deles. Não há resposta pronta: é preciso pesar princípios e consequências.",
+      },
+      {
+        termo: "Convicção × responsabilidade",
+        faz: "Ideia de Max Weber. A ética da convicção age pelo princípio, seja qual for o resultado. A ética da responsabilidade responde pelas consequências previsíveis do que faz.",
+        pista: "Para Weber, quem tem poder público precisa unir as duas, não escolher uma só.",
+      },
+      {
+        termo: "Ética e sustentabilidade",
+        faz: "A partir da segunda metade do século XX, a ética passa a olhar o consumo e a natureza. Hans Jonas propôs agir de modo que a vida humana continue possível na Terra: a responsabilidade vale também para as gerações futuras.",
+      },
     ],
     cuidado:
       "Não troque os papéis: a moral dita a regra, e a ética pensa sobre a regra. Por isso uma conduta aceita em um grupo ainda pode ser questionada pela ética.",

@@ -59,6 +59,19 @@ export const AULA: AulaEscrita = {
         termo: "Finanças públicas",
         faz: "Arts. 359-A a 359-H. Exemplos: despesa sem lei (359-D), obrigação no fim do mandato (359-C), pessoal nos 180 dias finais (359-G).",
       },
+      {
+        termo: "Exploração de prestígio (art. 357)",
+        faz: "Pedir ou receber dinheiro ou vantagem com o pretexto de influir em juiz, jurado, promotor, funcionário de justiça, perito, tradutor, intérprete ou testemunha. A pena aumenta de 1/3 se disser que parte vai para essas pessoas.",
+        pista: "Se o alvo é outro funcionário público, o crime é tráfico de influência (art. 332).",
+      },
+      {
+        termo: "Patrocínio infiel (art. 355)",
+        faz: "O advogado ou procurador trai o dever profissional e prejudica o cliente na causa. Defender as duas partes contrárias na mesma causa, ao mesmo tempo ou uma depois da outra, é o patrocínio simultâneo ou tergiversação.",
+      },
+      {
+        termo: "Sonegação de papel ou objeto (art. 356)",
+        faz: "O advogado ou procurador inutiliza ou deixa de devolver autos, documento ou objeto de valor como prova que recebeu nessa condição.",
+      },
     ],
     cuidado:
       "Fugir sem violência não é crime do preso. O art. 352 exige violência contra a pessoa.",

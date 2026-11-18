@@ -48,6 +48,11 @@ export const AULA: AulaEscrita = {
         termo: "Revisão",
         faz: "Art. 3º do ADCT: uma única vez, após 5 anos, por maioria absoluta, em sessão unicameral. Já foi feita.",
       },
+      {
+        termo: "Poder decorrente",
+        faz: "É o poder dos Estados de fazer e reformar as próprias constituições, respeitando os princípios da Constituição Federal (art. 25). É limitado e condicionado, como o poder de emenda.",
+        pista: "Município tem lei orgânica; para a maior parte da doutrina, isso não é poder decorrente.",
+      },
     ],
     cuidado:
       "O voto obrigatório não é cláusula pétrea, e a CF de 1988 não tem limite temporal para emendas.",

@@ -48,6 +48,15 @@ export const AULA: AulaEscrita = {
         termo: "Propriedade",
         faz: "Atende à função social. Desapropriação indeniza antes, requisição indeniza depois se houver dano, e a expropriação do art. 243 não indeniza.",
       },
+      {
+        termo: "Religião e Estado laico",
+        faz: "É livre a crença e o exercício dos cultos, com proteção aos locais de culto (art. 5º, VI). O Estado não cria nem financia igreja, não atrapalha o funcionamento dela nem faz aliança com ela, ressalvada a colaboração de interesse público (art. 19, I).",
+      },
+      {
+        termo: "Herança, autor e marca",
+        faz: "É garantido o direito de herança (XXX). O autor tem o direito exclusivo de usar e reproduzir a obra, que passa aos herdeiros pelo tempo que a lei fixar (XXVII). Inventos têm privilégio temporário; marcas e nomes de empresas são protegidos (XXIX).",
+        pista: "A pequena propriedade rural trabalhada pela família não pode ser penhorada por dívidas da própria atividade produtiva (XXVI).",
+      },
     ],
     cuidado:
       "Mandado judicial na casa só se cumpre de dia. Flagrante, desastre e socorro valem a qualquer hora.",

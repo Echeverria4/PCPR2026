@@ -40,6 +40,15 @@ export const AULA: AulaEscrita = {
         termo: "Fatoração",
         faz: "É o caminho inverso: escrever a expressão como produto, para simplificar.",
       },
+      {
+        termo: "Decimais",
+        faz: "Na soma e na subtração, alinhe as vírgulas. Na multiplicação, as casas se somam: 0,2 × 0,03 = 0,006. Na divisão, iguale as casas e tire a vírgula: 1,2 ÷ 0,04 = 120 ÷ 4 = 30.",
+        pista: "Decimal vira fração: 0,25 = 25/100 = 1/4.",
+      },
+      {
+        termo: "Racionalização",
+        faz: "Tira a raiz do denominador. Raiz sozinha: multiplique em cima e embaixo por ela (1/√2 = √2/2). Soma com raiz: use o conjugado, 2/(√3 + 1) = 2(√3 − 1)/(3 − 1) = √3 − 1.",
+      },
     ],
     cuidado:
       "Ao elevar (x + 1/x) ao quadrado, o termo do meio vale 2, e não some. Esquecer dele é o erro que a prova costuma oferecer como alternativa.",

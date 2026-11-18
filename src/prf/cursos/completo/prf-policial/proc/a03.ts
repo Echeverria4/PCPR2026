@@ -70,6 +70,11 @@ export const AULA: AulaEscrita = {
         faz: "Pessoal sem mandado se houver fundada suspeita ou prisão (art. 244). Domiciliar de dia, com mandado, salvo flagrante, desastre ou socorro (CF, art. 5º, XI).",
         pista: "Busca em mulher por outra mulher, se isso não atrasar nem prejudicar a diligência (art. 249).",
       },
+      {
+        termo: "Acareação (arts. 229 e 230)",
+        faz: "Coloca frente a frente acusados, testemunhas ou ofendidos que divergiram sobre fato relevante, para explicarem a divergência; tudo vai a termo. Testemunha ausente pode ser ouvida por carta precatória.",
+        pista: "O delegado também pode fazer acareação no inquérito (CPP, art. 6º, VI).",
+      },
     ],
     cuidado:
       "A testemunha parente só é obrigada a depor quando não há outro modo de provar o fato, e mesmo assim não presta compromisso.",

@@ -46,6 +46,11 @@ export const AULA: AulaEscrita = {
         faz: "Casamento civil, união estável, família de um só dos pais e união homoafetiva recebem proteção.",
         pista: "Filhos têm os mesmos direitos, qualquer que seja a origem.",
       },
+      {
+        termo: "Criança, adolescente e jovem",
+        faz: "Família, sociedade e Estado devem garantir com prioridade absoluta os direitos da criança, do adolescente e do jovem (art. 227); o jovem entrou pela EC 65/2010.",
+        pista: "Menores de 18 anos são penalmente inimputáveis e seguem a lei especial, o ECA (art. 228).",
+      },
     ],
     cuidado:
       "O benefício de um salário mínimo do art. 203, V, é assistência, e não previdência.",

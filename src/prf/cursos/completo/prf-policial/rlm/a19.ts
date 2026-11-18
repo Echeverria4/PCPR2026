@@ -50,6 +50,10 @@ export const AULA: AulaEscrita = {
         termo: "Gráfico de setores",
         faz: "Cada fatia é parte de 360°. Ângulo ÷ 360° dá a fração do total.",
       },
+      {
+        termo: "Método experimental × estatístico",
+        faz: "Experimental: mantém fixos todos os fatores e muda um só, para ver o efeito dele (comum na física e na química). Estatístico: quando não dá para controlar os fatores, registra todos e usa os cálculos para medir a influência de cada um (comum nas ciências sociais).",
+      },
     ],
     cuidado:
       "Número nem sempre é variável quantitativa. Um código, como o de uma rodovia, é só um rótulo.",

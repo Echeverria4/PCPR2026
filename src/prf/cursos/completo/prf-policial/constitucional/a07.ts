@@ -48,6 +48,15 @@ export const AULA: AulaEscrita = {
         termo: "Anterioridade eleitoral",
         faz: "Lei que muda o processo eleitoral vale na publicação, mas não se aplica à eleição que ocorra até um ano depois.",
       },
+      {
+        termo: "Plebiscito, referendo e iniciativa",
+        faz: "Plebiscito consulta o povo antes do ato; referendo, depois, para aprovar ou rejeitar. Os dois são convocados pelo Congresso. A iniciativa popular de lei federal pede 1% do eleitorado, em pelo menos 5 Estados, com 0,3% dos eleitores de cada um (art. 61, § 2º).",
+      },
+      {
+        termo: "Partidos políticos",
+        faz: "Criação livre, com caráter nacional, sem dinheiro de entidade ou governo estrangeiro e com prestação de contas à Justiça Eleitoral. Ganham personalidade jurídica pela lei civil e registram o estatuto no TSE (art. 17).",
+        pista: "Partido não pode usar organização paramilitar.",
+      },
     ],
     cuidado:
       "O analfabeto vota, mas não pode ser votado. O prazo da impugnação corre da diplomação, e não da posse.",

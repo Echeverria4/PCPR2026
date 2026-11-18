@@ -42,6 +42,10 @@ export const AULA: AulaEscrita = {
         termo: "Pendular e sazonal",
         faz: "Pendular é ir e voltar todo dia. Sazonal acompanha safras e estações.",
       },
+      {
+        termo: "Pirâmide etária",
+        faz: "Gráfico da população por idade e sexo. Base larga mostra muitos jovens e natalidade alta. Base estreitando e topo alargando mostram envelhecimento: é o caso do Brasil hoje.",
+      },
     ],
     cuidado:
       "Populoso é número total de pessoas. Povoado é pessoas por km². O Brasil é populoso e pouco povoado.",

@@ -46,6 +46,11 @@ export const AULA: AulaEscrita = {
         faz: "Por que: pergunta ou “pelo qual”. Por quê: fim de frase. Porque: explicação. Porquê: substantivo. Mal × mau: bem × bom. Há: tempo passado. A: futuro ou distância. Onde: lugar parado. Aonde: movimento.",
         pista: "Acerca de = sobre. Há cerca de = faz aproximadamente.",
       },
+      {
+        termo: "Hífen nos compostos",
+        faz: "Composto sem palavra de ligação mantém o hífen: guarda-chuva, segunda-feira, arco-íris. Com palavra de ligação, perde: pé de moleque, dia a dia, fim de semana. Os que perderam a ideia de composição se escrevem juntos: mandachuva, paraquedas, girassol, pontapé.",
+        pista: "Com ligação, o hífen fica só nos nomes de plantas e animais (bem-te-vi, erva-doce) e em poucos consagrados: cor-de-rosa, água-de-colônia, mais-que-perfeito, pé-de-meia.",
+      },
     ],
     cuidado:
       "Palavras de tonicidade diferente só dividem a mesma regra no caso do hiato: “juízes” (paroxítona) e “açaí” (oxítona). Terminar igual não basta: “anéis” é oxítona e “imóveis” é paroxítona.",

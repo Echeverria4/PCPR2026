@@ -52,6 +52,11 @@ export const AULA: AulaEscrita = {
         termo: "Competência",
         faz: "Súmula 151 do STJ: prevenção do juízo federal do lugar da apreensão dos bens.",
       },
+      {
+        termo: "Usurpação de função pública (art. 328)",
+        faz: "Exercer função pública sem ter o cargo. A pena sobe (2 a 5 anos) se o agente tira vantagem.",
+        pista: "Quem só finge ser funcionário, sem praticar ato da função, comete a contravenção do art. 45 da LCP.",
+      },
     ],
     cuidado:
       "Quem só paga o que o agente pediu não comete corrupção ativa, porque o art. 333 fala em oferecer ou prometer.",

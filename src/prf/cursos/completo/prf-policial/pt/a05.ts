@@ -55,6 +55,11 @@ export const AULA: AulaEscrita = {
         termo: "Vicário",
         faz: "“Fazer” ou “ser” substitui outro verbo para evitar repetição: “Podia ter multado, mas não o fez”.",
       },
+      {
+        termo: "Desinências",
+        faz: "O verbo = radical + vogal temática + desinências. Em cant-á-va-mos: cant é o radical, a é a vogal temática, va marca o tempo e o modo (pretérito imperfeito do indicativo) e mos marca a pessoa e o número (1ª do plural).",
+        pista: "Vogal temática -a- é da 1ª conjugação, -e- da 2ª e -i- da 3ª. Pôr é da 2ª (vem da forma antiga poer).",
+      },
     ],
     cuidado:
       "“Requerer” não deriva de “querer”: requeri, requereu, requeresse. Só o presente muda: requeiro, requeira.",

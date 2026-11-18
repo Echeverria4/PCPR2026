@@ -60,6 +60,28 @@ export const AULA: AulaEscrita = {
         termo: "Sigilo funcional",
         faz: "Art. 325: revelar segredo do cargo ou emprestar senha. Detenção de 6 meses a 2 anos, ou multa. Com dano: 2 a 6 anos e multa.",
       },
+      {
+        termo: "Extravio de documento (art. 314)",
+        faz: "Extraviar, esconder ou inutilizar livro oficial ou documento que guarda por causa do cargo. Pena de 1 a 4 anos, se não for crime mais grave.",
+      },
+      {
+        termo: "Emprego irregular de verbas (art. 315)",
+        faz: "Dar a verba pública destino diferente do que a lei manda. O dinheiro continua no serviço público.",
+        pista: "Se o funcionário fica com o dinheiro ou o desvia para alguém, é peculato.",
+      },
+      {
+        termo: "Facilitação de contrabando ou descaminho (art. 318)",
+        faz: "Facilitar o contrabando ou o descaminho, violando o dever do cargo. Pena de 3 a 8 anos; é crime da Justiça Federal.",
+      },
+      {
+        termo: "Advocacia administrativa (art. 321)",
+        faz: "Defender interesse privado perante a Administração, usando a condição de funcionário.",
+        pista: "O interesse pode ser legítimo; se for ilegítimo, a pena aumenta.",
+      },
+      {
+        termo: "Exercício antecipado ou prolongado (art. 324)",
+        faz: "Começar a exercer a função antes de cumprir as exigências legais, ou continuar depois de saber oficialmente que foi exonerado, removido, substituído ou suspenso.",
+      },
     ],
     cuidado:
       "Reparar o dano só extingue a punibilidade no peculato culposo. No doloso, cabe no máximo redução ou atenuante.",

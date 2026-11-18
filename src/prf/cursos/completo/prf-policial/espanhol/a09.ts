@@ -42,6 +42,25 @@ export const AULA: AulaEscrita = {
         termo: "Neutros",
         faz: "Esto, eso e aquello não acompanham substantivo.",
       },
+      {
+        termo: "Reflexivos",
+        faz: "Me, te, se, nos, os, se: a ação volta para quem a pratica. Yo me levanto; ellos se visten.",
+        pista: "Com infinitivo, gerúndio e imperativo afirmativo, o pronome vem depois e junto: levantarse, levantándose, ¡levántate!",
+      },
+      {
+        termo: "Interrogativos e exclamativos",
+        faz: "Qué, quién, cuál, cuándo, cuánto, dónde e cómo levam acento (tilde) na pergunta e na exclamação, também na indireta: No sé dónde vive. Sem acento, são relativos ou conjunções.",
+      },
+      {
+        termo: "Indefinidos",
+        faz: "Alguien e nadie (pessoa), algo e nada (coisa), alguno e ninguno, que viram algún e ningún antes de substantivo masculino singular: algún día, ningún problema.",
+        pista: "Depois do verbo, a negação é dupla: No veo a nadie.",
+      },
+      {
+        termo: "Relativos",
+        faz: "Que (o mais usado), quien e quienes (só pessoas), el cual e la cual, donde (lugar) e cuyo, que indica posse e concorda com a coisa possuída: el hombre cuya casa vi.",
+        pista: "Cuyo nunca leva artigo depois dele.",
+      },
     ],
     cuidado: "Su pode ser dele, dela, seu ou deles. O contexto decide quem é o dono.",
   },

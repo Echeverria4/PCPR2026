@@ -47,6 +47,11 @@ export const AULA: AulaEscrita = {
         termo: "Titulares",
         faz: "Pessoas físicas, pessoas jurídicas e o próprio Estado. Estrangeiros também, residentes ou não.",
       },
+      {
+        termo: "Tratados de direitos humanos",
+        faz: "Aprovados em cada Casa do Congresso, em 2 turnos, por 3/5 dos votos, equivalem a emenda constitucional (art. 5º, § 3º). Os demais tratados de direitos humanos ficam acima das leis e abaixo da Constituição: são supralegais (STF, 2008). Os outros tratados valem como lei ordinária.",
+        pista: "Por isso não cabe mais prisão do depositário infiel (Súmula Vinculante 25).",
+      },
     ],
     cuidado:
       "Direito de 1ª geração não significa só abstenção: proteger a propriedade, por exemplo, também pede atuação do Estado.",

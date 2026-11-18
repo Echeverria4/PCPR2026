@@ -42,7 +42,7 @@ export const AULA: AulaEscrita = {
       },
       {
         termo: "Equipamentos",
-        faz: "Hub repete o sinal para todas as portas. Switch envia só à porta de destino.",
+        faz: "Hub repete o sinal para todas as portas. Switch envia só à porta de destino, pelo endereço MAC. Roteador liga redes diferentes e escolhe o caminho pelo endereço IP.",
       },
     ],
     cuidado:

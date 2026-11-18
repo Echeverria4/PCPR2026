@@ -115,7 +115,7 @@ export const MAPAS_RLM: MapaAula[] = [
       { rotulo: "Produto cartesiano", emoji: "✖️", cor: "verde", folhas: ["A × B: pares com o 1º em A", "Número de pares: **n(A) · n(B)**", "**Relação**: qualquer subconjunto de A × B"] },
       { rotulo: "Função", emoji: "➡️", cor: "ouro", folhas: ["Todo x tem **exatamente uma** imagem", "Sobrou x ou duas imagens? **Não é** função", "Domínio: sem **zero** no denominador"] },
       { rotulo: "Domínio e imagem", emoji: "🗂️", cor: "roxo", folhas: ["**Domínio**: de onde x sai", "**Contradomínio**: conjunto de chegada", "**Imagem**: o que f atinge de fato"] },
-      { rotulo: "Classificação", emoji: "🏷️", cor: "laranja", folhas: ["**Injetora**: x diferentes, imagens diferentes", "**Sobrejetora**: imagem = contradomínio", "**Bijetora**: as duas; só ela tem inversa"] },
+      { rotulo: "Classificação", emoji: "🏷️", cor: "laranja", folhas: ["**Injetora**: x diferentes, imagens diferentes", "**Sobrejetora**: imagem = contradomínio", "**Bijetora**: as duas; só ela tem inversa", "**Par**: f(−x) = f(x); ímpar: f(−x) = −f(x)"] },
       { rotulo: "Composta e inversa", emoji: "🔄", cor: "rosa", folhas: ["f(g(x)): aplica **g primeiro**", "Inversa: troque x por y e **isole y**"] },
     ],
     macete: "Função é fiel: cada x tem uma imagem só, e nenhum x fica sem imagem.",
@@ -163,7 +163,7 @@ export const MAPAS_RLM: MapaAula[] = [
     aula: "rlm-13",
     centro: { titulo: "Logaritmos", emoji: "🔍", sub: "Qual expoente leva ao número?" },
     ramos: [
-      { rotulo: "Definição", emoji: "📌", cor: "azul", folhas: ["log₂ 8 = 3 porque **2³ = 8**", "Sem base escrita, a base é **10**"] },
+      { rotulo: "Definição", emoji: "📌", cor: "azul", folhas: ["log₂ 8 = 3 porque **2³ = 8**", "Sem base escrita, a base é **10**", "**ln** é o log na base e ≈ 2,718"] },
       { rotulo: "Condições", emoji: "✅", cor: "verde", folhas: ["Número **positivo**", "Base positiva e **diferente de 1**", "Confira cada resultado da equação"] },
       { rotulo: "Propriedades", emoji: "🧰", cor: "ouro", folhas: ["Produto vira **soma** de logs", "Divisão vira **diferença**", "Potência: log aⁿ = **n · log a**"] },
       { rotulo: "Mudança de base", emoji: "🔄", cor: "roxo", folhas: ["log de a na base b = **log a ÷ log b**", "Use a base mais **fácil**"] },
@@ -303,7 +303,7 @@ export const MAPAS_RLM: MapaAula[] = [
     aula: "rlm-24",
     centro: { titulo: "Análise combinatória", emoji: "🎲", sub: "A ordem muda o resultado?" },
     ramos: [
-      { rotulo: "Princípios", emoji: "🧭", cor: "azul", folhas: ["**E**: multiplique; **OU**: some", "Casa dos pombos: **pior caso + 1**"] },
+      { rotulo: "Princípios", emoji: "🧭", cor: "azul", folhas: ["**E**: multiplique; **OU**: some", "Casa dos pombos: **pior caso + 1**", "**Juntos**: vira bloco × trocas internas"] },
       { rotulo: "Permutação", emoji: "🔀", cor: "verde", folhas: ["Todos em fila: **n!**", "Repetição: divida pelo **fatorial** de cada uma", "Mesa redonda: **(n − 1)!**"] },
       { rotulo: "Arranjo", emoji: "🥇", cor: "ouro", folhas: ["Parte dos elementos, **ordem importa**", "n! ÷ (n − p)!"] },
       { rotulo: "Combinação", emoji: "🤝", cor: "roxo", folhas: ["Parte dos elementos, ordem **não importa**", "n! ÷ [p! · (n − p)!]"] },
@@ -316,7 +316,7 @@ export const MAPAS_RLM: MapaAula[] = [
     aula: "rlm-25",
     centro: { titulo: "Probabilidade", emoji: "🎲", sub: "Favoráveis ÷ possíveis" },
     ramos: [
-      { rotulo: "Faixa", emoji: "📏", cor: "azul", folhas: ["De **0** (impossível) a **1** (certo)", "Complementar: **1 − P(A)**"] },
+      { rotulo: "Faixa", emoji: "📏", cor: "azul", folhas: ["De **0** (impossível) a **1** (certo)", "Complementar: **1 − P(A)**", "**Frequência relativa**: ocorrências ÷ repetições"] },
       { rotulo: "União", emoji: "➕", cor: "verde", folhas: ["P(A ou B) = soma **− P(A e B)**", "Excludentes: **P(A e B) = 0**"] },
       { rotulo: "Condicional", emoji: "🔍", cor: "ouro", folhas: ["“Dado que” **reduz o universo**", "P(B|A) = P(A e B) ÷ **P(A)**"] },
       { rotulo: "Independência", emoji: "🔓", cor: "roxo", folhas: ["Um **não muda** a chance do outro", "P(A e B) = **P(A) · P(B)**", "Não confunda com **excludentes**"] },

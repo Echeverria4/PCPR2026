@@ -9,7 +9,7 @@ export const MAPAS_ECA: MapaAula[] = [
       { rotulo: "Quem é quem", emoji: "🎂", cor: "azul", folhas: ["Criança: até **12 incompletos**", "Adolescente: **12 a 18**", "Critério: só a **idade**"] },
       { rotulo: "Prioridade absoluta", emoji: "⭐", cor: "verde", folhas: ["Socorro **primeiro**", "Precedência nos **serviços públicos**", "Inclui a **natureza** desde 2026"] },
       { rotulo: "Saúde", emoji: "💉", cor: "ouro", folhas: ["Prontuário por **18 anos**", "Maus-tratos: avisar **Conselho Tutelar**", "Castigo físico: medidas do **Conselho**"] },
-      { rotulo: "Família", emoji: "👪", cor: "roxo", folhas: ["Pobreza **não tira** poder familiar", "Abandono afetivo: **ilícito**", "Acolhimento: até **18 meses**"] },
+      { rotulo: "Família", emoji: "👪", cor: "roxo", folhas: ["Pobreza **não tira** poder familiar", "Abandono afetivo: **ilícito**", "Acolhimento: até **18 meses**", "**Apadrinhamento**: vínculo fora do abrigo, não é adoção"] },
       { rotulo: "Adoção", emoji: "🏡", cor: "laranja", folhas: ["**Irrevogável**, sem procuração", "**16 anos** mais velho", "Avós e irmãos **não adotam**"] },
       { rotulo: "Trabalho", emoji: "🔧", cor: "rosa", folhas: ["Abaixo de **16**: proibido", "Aprendiz a partir de **14**", "Noturno: **22h às 5h** vedado"] },
     ],

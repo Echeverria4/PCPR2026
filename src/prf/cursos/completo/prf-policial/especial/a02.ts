@@ -62,6 +62,11 @@ export const AULA: AulaEscrita = {
         termo: "Embarcação e aeronave",
         faz: "Conduzi-las após consumir droga é o crime do art. 39. Carro e moto ficam com o Código de Trânsito.",
       },
+      {
+        termo: "Conceito de droga",
+        faz: "Droga é a substância capaz de causar dependência que está na lei ou nas listas do Poder Executivo da União, hoje a Portaria SVS/MS 344/1998 (art. 1º e art. 66). Por isso a lei é norma penal em branco heterogênea. O Sisnad organiza a prevenção, a atenção ao usuário e a repressão ao tráfico.",
+        pista: "A União pode autorizar o plantio para fins medicinais ou científicos.",
+      },
     ],
     cuidado:
       "Quem diz que o STF “descriminalizou o porte de drogas” erra: a decisão vale só para a maconha. Para as outras drogas, o art. 28 continua sendo crime.",

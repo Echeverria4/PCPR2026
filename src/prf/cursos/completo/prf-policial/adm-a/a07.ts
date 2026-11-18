@@ -50,6 +50,10 @@ export const AULA: AulaEscrita = {
         termo: "Diálogo competitivo",
         faz: "Para inovação ou objeto que a Administração não sabe especificar. Dá ao menos 25 dias úteis para manifestar interesse.",
       },
+      {
+        termo: "Vigência e transição",
+        faz: "A Lei 14.133 vale desde 1º/4/2021. As Leis 8.666 e 10.520 e o RDC (arts. 1º a 47-A da Lei 12.462) deixaram de valer em 30/12/2023; até lá, cada contratação seguia uma lei só, sem misturar. Os crimes da 8.666 foram revogados na hora e hoje estão no Código Penal (arts. 337-E a 337-P).",
+      },
     ],
     cuidado: "No art. 7º a escolha de servidor efetivo é preferencial. No agente de contratação (art. 8º) ela é obrigatória.",
   },

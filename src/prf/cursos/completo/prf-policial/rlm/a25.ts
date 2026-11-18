@@ -41,6 +41,23 @@ export const AULA: AulaEscrita = {
         faz: "Inverte a condição: parte do resultado e volta à causa.",
         pista: "Calcule cada caminho. Depois, divida o caminho pedido pela soma de todos.",
       },
+      {
+        termo: "Definição clássica",
+        faz: "Probabilidade = casos favoráveis ÷ casos possíveis, quando todos os resultados têm a mesma chance. Vai de 0 (impossível) a 1 (certo).",
+      },
+      {
+        termo: "Com análise combinatória",
+        faz: "Conte favoráveis e possíveis com combinação. Tirar 2 bolas azuis de uma urna com 5 azuis e 3 vermelhas: C(5,2) ÷ C(8,2) = 10 ÷ 28 = 5/14.",
+      },
+      {
+        termo: "Frequência relativa",
+        faz: "Quando não dá para contar casos, a probabilidade é estimada pelo que aconteceu: vezes em que o evento ocorreu ÷ total de repetições. Quanto mais repetições, mais perto da probabilidade real.",
+      },
+      {
+        termo: "União de três eventos",
+        faz: "P(A ∪ B ∪ C) = P(A) + P(B) + P(C) − P(A ∩ B) − P(A ∩ C) − P(B ∩ C) + P(A ∩ B ∩ C).",
+        pista: "Complementar da união = interseção dos complementares; complementar da interseção = união dos complementares.",
+      },
     ],
     cuidado:
       "P(A dado B) e P(B dado A) são diferentes. Veja qual informação a questão já deu como certa.",

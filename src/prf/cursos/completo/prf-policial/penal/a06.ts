@@ -54,6 +54,16 @@ export const AULA: AulaEscrita = {
         termo: "Liberdade",
         faz: "Art. 147-A perseguição, art. 147-B violência psicológica (aumenta de metade com IA), art. 149 condição análoga à de escravo, art. 149-A tráfico de pessoas.",
       },
+      {
+        termo: "Omissão de socorro (art. 135)",
+        faz: "Deixar de ajudar, quando pode fazer isso sem risco pessoal, criança abandonada ou perdida, pessoa ferida, inválida ou em grave perigo, ou não chamar a autoridade. A pena aumenta de metade com lesão grave e triplica com morte.",
+        pista: "Condutor envolvido em sinistro responde pelo CTB: art. 304 se não teve culpa; se causou o sinistro, a omissão aumenta a pena dos arts. 302 e 303.",
+      },
+      {
+        termo: "Perigo de contágio e de vida (arts. 130 a 132)",
+        faz: "Expor alguém a doença venérea por relação sexual, sabendo ou devendo saber que está contaminado (art. 130); praticar ato para transmitir doença grave (art. 131); expor a vida ou a saúde de alguém a perigo direto e iminente (art. 132).",
+        pista: "No art. 130, a ação depende de representação da vítima.",
+      },
     ],
     cuidado:
       "Material antigo trata o feminicídio como qualificadora do art. 121: desde a Lei 14.994/2024 ele é o art. 121-A.",

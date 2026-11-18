@@ -61,6 +61,10 @@ export const AULA: AulaEscrita = {
         termo: "Trânsito e Juizado",
         faz: "Condutor que presta pronto e integral socorro à vítima não é preso em flagrante nem paga fiança (CTB, art. 301). Autor de menor potencial que vai ou se compromete a ir ao Juizado também não (Lei 9.099, art. 69).",
       },
+      {
+        termo: "Perfil genético",
+        faz: "Na identificação criminal, a coleta de material biológico para o perfil genético depende de decisão judicial (Lei 12.037/2009). Condenados por certos crimes graves passam pela coleta obrigatória (LEP, art. 9º-A), e a recusa é falta grave.",
+      },
     ],
     cuidado:
       "Muitos materiais ainda descrevem a audiência de custódia presencial. Desde a Lei 15.358/2026, o CPP manda fazê-la por videoconferência em tempo real.",

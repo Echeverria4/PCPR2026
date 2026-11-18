@@ -7,7 +7,7 @@ export const MAPAS_GEOPOLITICA: MapaAula[] = [
     centro: { titulo: "Formação territorial", emoji: "🗺️", sub: "Nação, Estado, território e fronteiras" },
     desenho: "bussola",
     ramos: [
-      { rotulo: "Conceitos", emoji: "🏛️", cor: "azul", folhas: ["**Nação**: identidade, não governo", "**Território**: espaço apropriado pelo poder", "**Estado**: soberania sobre povo e território"] },
+      { rotulo: "Conceitos", emoji: "🏛️", cor: "azul", folhas: ["**Nação**: identidade, não governo", "**Território**: espaço apropriado pelo poder", "**Estado**: soberania sobre povo e território", "**Geopolítica**: espaço geográfico e poder dos Estados"] },
       { rotulo: "Tratados", emoji: "📜", cor: "verde", folhas: ["**Madri (1750)**: vale a ocupação efetiva", "Substituiu a linha de **Tordesilhas**"] },
       { rotulo: "Federação", emoji: "⭐", cor: "ouro", folhas: ["Veio com a **República** (1889)", "Províncias viram **estados**, mesmas fronteiras", "União, estados, DF e municípios **autônomos**"] },
       { rotulo: "Mapa atual", emoji: "📅", cor: "roxo", folhas: ["Acre estado: **1962**", "Mato Grosso do Sul: **1977**", "CF/1988: **Tocantins**; Amapá e Roraima estados", "Fernando de Noronha anexado a **Pernambuco**"] },
@@ -61,7 +61,7 @@ export const MAPAS_GEOPOLITICA: MapaAula[] = [
     centro: { titulo: "População brasileira", emoji: "👥", sub: "Crescimento, transição e migrações" },
     desenho: "pessoas",
     ramos: [
-      { rotulo: "Crescimento", emoji: "➕", cor: "azul", folhas: ["**Vegetativo**: nascimentos menos mortes", "**Migratório**: entradas menos saídas"] },
+      { rotulo: "Crescimento", emoji: "➕", cor: "azul", folhas: ["**Vegetativo**: nascimentos menos mortes", "**Migratório**: entradas menos saídas", "**Pirâmide** de base estreita: população envelhecendo"] },
       { rotulo: "Transição", emoji: "⏳", cor: "verde", folhas: ["Caem as **mortes**, depois os nascimentos", "Fecundidade cai: **educação** e trabalho feminino", "**Bônus demográfico**: muitos em idade ativa"] },
       { rotulo: "Censo 2022", emoji: "📋", cor: "ouro", folhas: ["Cerca de **203 milhões**", "Sudeste: **41,8%**", "Centro-Oeste: maior **crescimento**"] },
       { rotulo: "Cor e povos", emoji: "🎨", cor: "roxo", folhas: ["Pardos, pretos e indígenas **aumentaram**", "**Quilombolas** contados pela primeira vez"] },

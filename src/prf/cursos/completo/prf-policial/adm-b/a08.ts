@@ -51,6 +51,25 @@ export const AULA: AulaEscrita = {
         termo: "Prescrição de requerer",
         faz: "5 anos para demissão, cassação e interesse patrimonial. 120 dias nos demais casos.",
       },
+      {
+        termo: "Estágio probatório",
+        faz: "Avalia assiduidade, disciplina, capacidade de iniciativa, produtividade e responsabilidade (Lei 8.112, art. 20).",
+        pista: "A lei ainda fala em 24 meses, mas vale o prazo de 3 anos da estabilidade (CF, art. 41).",
+      },
+      {
+        termo: "Posse e exercício",
+        faz: "A posse ocorre em até 30 dias da publicação da nomeação e pode ser por procuração específica; sem posse no prazo, a nomeação fica sem efeito. Depois da posse, o servidor tem 15 dias para entrar em exercício; se não entrar, é exonerado (arts. 13 e 15).",
+        pista: "Só há posse no provimento por nomeação.",
+      },
+      {
+        termo: "Remoção e redistribuição",
+        faz: "Remoção desloca o servidor dentro do mesmo quadro, de ofício ou a pedido. Independe do interesse da Administração quando é para acompanhar cônjuge servidor deslocado de ofício, por saúde (com junta médica) ou por processo seletivo (art. 36). Redistribuição desloca o cargo efetivo para outro órgão do mesmo Poder (art. 37).",
+        pista: "Remoção move o servidor; redistribuição move o cargo.",
+      },
+      {
+        termo: "Indenizações",
+        faz: "Ajuda de custo, diárias, transporte e auxílio-moradia (art. 51). Não se incorporam ao vencimento nem ao provento.",
+      },
     ],
     cuidado:
       "Nenhum desconto incide sobre a remuneração sem lei ou mandado judicial, e a reposição do mês anterior à folha é imediata e em parcela única.",

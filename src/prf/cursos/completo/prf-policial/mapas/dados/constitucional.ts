@@ -37,7 +37,7 @@ export const MAPAS_CONSTITUCIONAL: MapaAula[] = [
     desenho: "balanca",
     ramos: [
       { rotulo: "Igualdade", emoji: "⚖️", cor: "azul", folhas: ["Formal: **na lei**", "Material: **ações afirmativas**", "Idade só se o **cargo** justificar"] },
-      { rotulo: "Expressão", emoji: "📣", cor: "verde", folhas: ["Livre, **sem anonimato**", "Resposta **proporcional** e indenização"] },
+      { rotulo: "Expressão", emoji: "📣", cor: "verde", folhas: ["Livre, **sem anonimato**", "Resposta **proporcional** e indenização", "**Crença** livre; Estado laico não financia igreja"] },
       { rotulo: "Casa", emoji: "🏠", cor: "ouro", folhas: ["Flagrante, desastre, socorro: **qualquer hora**", "Ordem judicial: **só de dia**", "Sem mandado: **fundadas razões**"] },
       { rotulo: "Sigilo", emoji: "📞", cor: "roxo", folhas: ["Interceptação: **ordem judicial**", "Só para fim **penal**"] },
       { rotulo: "Reunião e associação", emoji: "🤝", cor: "laranja", folhas: ["Reunião: **sem armas**, só aviso", "Suspender associação: **decisão judicial**", "Dissolver: **trânsito em julgado**"] },
@@ -51,7 +51,7 @@ export const MAPAS_CONSTITUCIONAL: MapaAula[] = [
     centro: { titulo: "Art. 5º: garantias", emoji: "🔐", sub: "Justiça, pena e remédios" },
     desenho: "algema",
     ramos: [
-      { rotulo: "Acesso à Justiça", emoji: "🚪", cor: "azul", folhas: ["Lei **não exclui** do Judiciário", "Respeita direito **adquirido** e coisa julgada", "Júri: **dolosos** contra a vida"] },
+      { rotulo: "Acesso à Justiça", emoji: "🚪", cor: "azul", folhas: ["Lei **não exclui** do Judiciário", "Respeita direito **adquirido** e coisa julgada", "Júri: **dolosos** contra a vida", "**Culpado** só após o trânsito em julgado"] },
       { rotulo: "Crimes na CF", emoji: "🚨", cor: "verde", folhas: ["Racismo e grupos armados: **imprescritíveis**", "Tortura, tráfico, terrorismo, hediondos: **sem graça**", "Todos **inafiançáveis**"] },
       { rotulo: "Penas proibidas", emoji: "🚫", cor: "ouro", folhas: ["Morte, salvo **guerra declarada**", "Perpétua, forçados, **banimento**, cruéis"] },
       { rotulo: "Extradição", emoji: "🌐", cor: "roxo", folhas: ["Nato: **nunca**", "Naturalizado: crime **anterior** ou tráfico", "Crime político: **ninguém**"] },
@@ -110,7 +110,7 @@ export const MAPAS_CONSTITUCIONAL: MapaAula[] = [
     desenho: "globo",
     ramos: [
       { rotulo: "Federação", emoji: "🔗", cor: "azul", folhas: ["União **indissolúvel**", "Sem direito de **sair**", "Soberania: **República** Federativa"] },
-      { rotulo: "Autonomia", emoji: "🧩", cor: "verde", folhas: ["Auto-organização e **autolegislação**", "Autoadministração e **autogoverno**"] },
+      { rotulo: "Autonomia", emoji: "🧩", cor: "verde", folhas: ["Auto-organização e **autolegislação**", "Autoadministração e **autogoverno**", "**Intervenção** é exceção: casos do art. 34"] },
       { rotulo: "Novos entes", emoji: "🆕", cor: "ouro", folhas: ["Estado: plebiscito + **lei complementar**", "Município: **lei estadual** e plebiscito"] },
       { rotulo: "DF e territórios", emoji: "🏙️", cor: "roxo", folhas: ["DF: **sem** Municípios", "Território: **integra** a União", "Território: **4** deputados, sem Senador"] },
       { rotulo: "Bens da União", emoji: "🌊", cor: "laranja", folhas: ["Rios **interestaduais**", "Praias e **terras indígenas**", "Fronteira: até **150 km**"] },
@@ -173,7 +173,7 @@ export const MAPAS_CONSTITUCIONAL: MapaAula[] = [
       { rotulo: "SUS", emoji: "🩺", cor: "ouro", folhas: ["**Regionalizado** e hierarquizado", "Privada: **complementar**", "Agentes de saúde: **permanentes** (EC 140/2026)"] },
       { rotulo: "Previdência", emoji: "👵", cor: "roxo", folhas: ["**65** homem; **62** mulher", "Rural: **60 e 55**", "Filiação **obrigatória**"] },
       { rotulo: "Meio ambiente", emoji: "🌳", cor: "laranja", folhas: ["Bem de **uso comum**", "Penal, administrativa e **reparação**", "Suprimir área protegida: só **lei**"] },
-      { rotulo: "Família", emoji: "👪", cor: "rosa", folhas: ["Casamento, união estável, **monoparental**", "União **homoafetiva** protegida", "Filhos com **iguais** direitos"] },
+      { rotulo: "Família", emoji: "👪", cor: "rosa", folhas: ["Casamento, união estável, **monoparental**", "União **homoafetiva** protegida", "Filhos com **iguais** direitos", "**Jovem** entrou no art. 227 pela EC 65/2010"] },
     ],
     macete: "Saúde é para todos, assistência para quem precisa e previdência para quem paga.",
     cuidado: "O salário mínimo do art. 203, V, para idoso ou pessoa com deficiência é assistência, e não previdência.",

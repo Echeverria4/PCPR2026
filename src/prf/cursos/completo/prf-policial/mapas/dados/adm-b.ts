@@ -95,12 +95,12 @@ export const MAPAS_ADM_B: MapaAula[] = [
     centro: { titulo: "Agentes públicos", emoji: "👔", sub: "Concurso, subsídio e teto" },
     desenho: "escudo",
     ramos: [
-      { rotulo: "Classificação", emoji: "🗂️", cor: "azul", folhas: ["Políticos, administrativos e **honoríficos**", "Delegado: **nome próprio**", "Credenciado: **representa** em ato certo"] },
+      { rotulo: "Classificação", emoji: "🗂️", cor: "azul", folhas: ["Políticos, administrativos e **honoríficos**", "Delegado: **nome próprio**", "Credenciado: **representa** em ato certo", "**Cotas**: 30% para pretos, pardos, indígenas e quilombolas"] },
       { rotulo: "Subsídio", emoji: "💵", cor: "verde", folhas: ["**Parcela única**", "Policiais do **art. 144**", "Mantém **13º** e terço de férias"] },
       { rotulo: "Revisão anual", emoji: "📅", cor: "ouro", folhas: ["Lei **específica**, mesma data", "Omissão: **sem** indenização"] },
       { rotulo: "Teto", emoji: "📏", cor: "roxo", folhas: ["Acumulação: **cada** vínculo", "Estatal só com **recurso público**"] },
       { rotulo: "Previdência", emoji: "🏦", cor: "laranja", folhas: ["Regime próprio: **efetivo**", "Comissionado puro: **regime geral**", "Abono até a **contribuição**"] },
-      { rotulo: "Temporário", emoji: "⏳", cor: "rosa", folhas: ["Caso **previsto** em lei", "Prazo **certo**", "Interesse **excepcional**"] },
+      { rotulo: "Temporário", emoji: "⏳", cor: "rosa", folhas: ["Caso **previsto** em lei", "Prazo **certo**", "Interesse **excepcional**", "**Greve**: proibida para quem atua na segurança pública"] },
     ],
     macete: "Subsídio é parcela única: nada de gratificação ou adicional por cima, mas 13º e férias continuam.",
     cuidado: "A compulsória aos 75 anos é regra do cargo efetivo: não alcança quem ocupa só cargo em comissão.",
@@ -110,7 +110,7 @@ export const MAPAS_ADM_B: MapaAula[] = [
     centro: { titulo: "Lei 8.112: prazos", emoji: "🗓️", sub: "Vantagens, licenças e petição" },
     desenho: "relogio",
     ramos: [
-      { rotulo: "Duas listas", emoji: "🔁", cor: "azul", folhas: ["**Promoção** e readaptação", "Provimento **e** vacância"] },
+      { rotulo: "Duas listas", emoji: "🔁", cor: "azul", folhas: ["**Promoção** e readaptação", "Provimento **e** vacância", "**Remoção** move o servidor; redistribuição move o cargo"] },
       { rotulo: "Substituição", emoji: "🔄", cor: "verde", folhas: ["**Automática** e cumulativa", "Paga acima de **30 dias**"] },
       { rotulo: "Extra e noturno", emoji: "🌙", cor: "ouro", folhas: ["Extra: **50%**, até 2 h", "Noturno: **22h–5h**, 25%", "Hora de **52min30s**"] },
       { rotulo: "Natalina", emoji: "🎄", cor: "roxo", folhas: ["**1/12** por mês", "**15 dias** contam o mês"] },

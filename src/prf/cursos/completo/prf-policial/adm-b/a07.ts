@@ -44,6 +44,24 @@ export const AULA: AulaEscrita = {
         termo: "Temporário",
         faz: "Exige caso previsto em lei, prazo certo, necessidade temporária e interesse público excepcional.",
       },
+      {
+        termo: "Cotas raciais (Lei 15.142/2025)",
+        faz: "Reserva 30% das vagas a pessoas pretas e pardas, indígenas e quilombolas nos concursos para cargos e empregos federais (administração direta, autarquias, fundações, empresas públicas e sociedades de economia mista controladas pela União) e na seleção de temporários. Vale quando houver 2 vagas ou mais. Quem opta passa por um procedimento de confirmação, que complementa a autodeclaração.",
+        pista: "Revogou a Lei 12.990/2014, que reservava 20% e só com 3 vagas ou mais. O programa será revisto em 10 anos.",
+      },
+      {
+        termo: "Estabilidade",
+        faz: "O servidor nomeado por concurso para cargo efetivo fica estável após 3 anos de exercício e aprovação em avaliação especial de desempenho. Estável só perde o cargo por sentença transitada em julgado, processo administrativo com ampla defesa ou avaliação periódica de desempenho (CF, art. 41).",
+      },
+      {
+        termo: "Direito à nomeação",
+        faz: "Aprovado dentro do número de vagas do edital tem direito à nomeação durante a validade do concurso (STF). Fora das vagas, há só expectativa, salvo preterição arbitrária.",
+      },
+      {
+        termo: "Sindicato e greve",
+        faz: "O servidor civil pode se associar a sindicato (CF, art. 37, VI). A greve depende de lei específica; enquanto ela não vem, o STF manda aplicar a lei de greve do setor privado (Lei 7.783/1989).",
+        pista: "Policiais e quem atua direto na segurança pública não podem fazer greve (STF, 2017). Militar não pode ter sindicato nem fazer greve.",
+      },
     ],
     cuidado:
       "A compulsória aos 75 anos é regra do cargo efetivo: não alcança quem ocupa só cargo em comissão.",

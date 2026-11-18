@@ -49,6 +49,20 @@ export const AULA: AulaEscrita = {
         termo: "Revisão",
         faz: "A qualquer tempo, com fatos novos, a pedido ou de ofício. Não pode agravar a pena.",
       },
+      {
+        termo: "Rito sumário",
+        faz: "Serve para acumulação ilegal de cargos, abandono de cargo e inassiduidade habitual. Comissão de 2 servidores estáveis; o processo termina em 30 dias, prorrogáveis por até 15 (Lei 8.112, arts. 133 e 140).",
+        pista: "Abandono: mais de 30 dias seguidos de falta intencional. Inassiduidade: 60 dias de falta sem justificativa, intercalados, em 12 meses.",
+      },
+      {
+        termo: "Quem aplica a pena (art. 141)",
+        faz: "Demissão e cassação: Presidente da República, Presidentes das Casas do Congresso e dos tribunais federais e Procurador-Geral da República. Suspensão acima de 30 dias: a autoridade logo abaixo. Advertência e suspensão até 30 dias: o chefe da repartição. Destituição de cargo em comissão: quem nomeou.",
+        pista: "No Executivo, o Presidente delegou aos Ministros a demissão e a cassação (Decreto 3.035/1999).",
+      },
+      {
+        termo: "Cassação e destituição",
+        faz: "Cassa-se a aposentadoria ou a disponibilidade de quem, na ativa, cometeu falta punível com demissão (art. 134). O ocupante só de cargo em comissão é destituído nos casos de suspensão e de demissão (art. 135).",
+      },
     ],
     cuidado: "O STF declarou inconstitucional a proibição perpétua de retorno do art. 137, parágrafo único.",
   },

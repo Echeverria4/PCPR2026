@@ -54,6 +54,11 @@ export const AULA: AulaEscrita = {
         faz: "Art. 21 exclusiva, art. 22 privativa, art. 23 comum, art. 24 concorrente, art. 30 dos Municípios.",
         pista: "Só a privativa pode ser delegada, por lei complementar.",
       },
+      {
+        termo: "Intervenção (arts. 34 a 36)",
+        faz: "A regra é a autonomia; a intervenção é exceção, só nos casos da lista do art. 34 (integridade nacional, invasão, grave desordem, finanças, ordem judicial, princípios sensíveis). É decretada pelo Presidente, e o decreto vai ao Congresso em 24 horas.",
+        pista: "A União intervém nos Estados e no DF. Nos Municípios, quem intervém é o Estado (art. 35).",
+      },
     ],
     cuidado:
       "Comum é para agir, e concorrente é para legislar. Legislar sobre trânsito é privativo da União, mas a educação para o trânsito é comum.",

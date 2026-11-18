@@ -61,6 +61,11 @@ export const AULA: AulaEscrita = {
         termo: "Protocolo de San Salvador",
         faz: "Protocolo de 1988 sobre direitos econômicos, sociais e culturais (Decreto 3.321/1999). Os Estados mandam relatórios ao Secretário-Geral da OEA. Petição individual só cabe por violação dos direitos sindicais (art. 8º, a) e do direito à educação (art. 13).",
       },
+      {
+        termo: "Cláusula federal (art. 28)",
+        faz: "Num Estado federal, o governo nacional cumpre a Convenção no que é da sua competência e toma as medidas para que estados e municípios cumpram no que é deles.",
+        pista: "Perante a Corte, quem responde é o Brasil, mesmo que a violação seja de um estado ou município.",
+      },
     ],
     cuidado:
       "A vítima não leva o caso direto à Corte: peticiona à Comissão, e só a Comissão ou um Estado-Parte submetem o caso à Corte. O caso Maria da Penha ficou na Comissão (relatório de 2001), não na Corte.",

@@ -47,6 +47,11 @@ export const AULA: AulaEscrita = {
         termo: "Lema de Kaplansky",
         faz: "Escolher p entre n em linha, sem vizinhos: C(n − p + 1, p).",
       },
+      {
+        termo: "Restrições",
+        faz: "Juntos: trate o grupo como um bloco e multiplique pelas trocas dentro dele. Separados: total − juntos. Posição fixa: preencha primeiro a casa com restrição.",
+        pista: "Anagramas de AMOR com A e M juntos: bloco AM + O + R = 3! = 6, vezes 2! do bloco = 12.",
+      },
     ],
     cuidado:
       "“Pelo menos um” costuma sair mais fácil pelo total menos o caso com nenhum.",

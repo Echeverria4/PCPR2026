@@ -43,6 +43,15 @@ export const AULA: AulaEscrita = {
         termo: "Pena",
         faz: "Só censura, em parecer assinado por todos os integrantes e com ciência do faltoso.",
       },
+      {
+        termo: "Principais deveres (XIV)",
+        faz: "Desempenhar a tempo as suas atribuições; agir com rapidez, perfeição e rendimento; ser probo, reto, leal e justo; tratar com cuidado os usuários; respeitar a hierarquia, sem medo de representar contra o que comprometa indevidamente o serviço.",
+      },
+      {
+        termo: "Principais vedações (XV)",
+        faz: "Receber ajuda financeira, gratificação, prêmio, comissão ou doação para cumprir a função ou influenciar outro servidor; retirar documento da repartição sem autorização; usar informação privilegiada do serviço em benefício próprio ou de outros; apresentar-se embriagado no serviço.",
+        pista: "Fora do serviço, a embriaguez só é vedada quando é habitual.",
+      },
     ],
     cuidado:
       "A finalidade conta: agir com fim estranho ao interesse público é vedado mesmo que todas as formalidades legais tenham sido cumpridas.",

@@ -56,6 +56,19 @@ export const AULA: AulaEscrita = {
         termo: "Prazo penal",
         faz: "O dia do começo entra na conta, e o calendário é o comum (art. 10). Frações de dia são desprezadas (art. 11).",
       },
+      {
+        termo: "Sujeito ativo e passivo",
+        faz: "Ativo é quem pratica o crime. Passivo é o dono do bem atingido: o Estado é sempre passivo constante, e a vítima é o passivo eventual.",
+        pista: "Pessoa jurídica pode ser sujeito ativo de crime ambiental (CF, art. 225, § 3º).",
+      },
+      {
+        termo: "Pena cumprida no estrangeiro (art. 8º)",
+        faz: "Pelo mesmo crime, a pena cumprida fora atenua a pena imposta no Brasil, quando são diferentes, ou é descontada dela, quando são iguais.",
+      },
+      {
+        termo: "Sentença estrangeira (art. 9º)",
+        faz: "Pode ser homologada pelo STJ para obrigar o condenado a reparar o dano e a outros efeitos civis, ou para aplicar medida de segurança.",
+      },
     ],
     cuidado:
       "A abolitio apaga os efeitos penais, inclusive a reincidência, mas a obrigação de indenizar continua.",

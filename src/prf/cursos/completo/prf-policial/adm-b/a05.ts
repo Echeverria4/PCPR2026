@@ -43,6 +43,11 @@ export const AULA: AulaEscrita = {
         termo: "Anulação com efeitos já produzidos",
         faz: "Exige processo com contraditório antes do desfazimento. Recurso depois não supre a falha.",
       },
+      {
+        termo: "Convalidação",
+        faz: "A própria Administração corrige o ato com defeito sanável, desde que não haja lesão ao interesse público nem prejuízo a terceiros (Lei 9.784, art. 55). O efeito volta à data do ato. Dá para convalidar vício de competência (se não for exclusiva) e de forma (se não for essencial).",
+        pista: "Vício de motivo, objeto ou finalidade não se convalida: o ato é anulado.",
+      },
     ],
     cuidado:
       "Não se revoga ato vinculado, ato consumado, ato que gerou direito adquirido nem ato enunciativo, como certidão e atestado.",

@@ -59,6 +59,10 @@ export const AULA: AulaEscrita = {
         termo: "Fraude em certame",
         faz: "Art. 311-A: reclusão de 1 a 4 anos e multa. Com dano à administração, 2 a 6 anos. Funcionário público: mais 1/3.",
       },
+      {
+        termo: "Sinal de metal e de alfândega (art. 306)",
+        faz: "Falsificar, ou usar falsificada, a marca do poder público que atesta metal precioso ou a fiscalização alfandegária. Pena de 2 a 6 anos.",
+      },
     ],
     cuidado:
       "Documento verdadeiro de outra pessoa é art. 308. Documento falso é art. 304. Sem documento nenhum, é art. 307.",

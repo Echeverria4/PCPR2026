@@ -48,6 +48,10 @@ export const AULA: AulaEscrita = {
         termo: "Analogia e interpretação analógica",
         faz: "Analogia para piorar a situação do réu é proibida; para beneficiar, é aceita. A interpretação analógica segue uma fórmula aberta da própria lei e é válida.",
       },
+      {
+        termo: "Individualização da pena",
+        faz: "A pena se ajusta a cada caso em três momentos: o legislador fixa os limites (cominação), o juiz calcula a pena (dosimetria) e a execução se adapta ao condenado (CF, art. 5º, XLVI).",
+      },
     ],
     cuidado:
       "Costume não revoga lei penal, e o desuso não apaga a infração: a norma vale até outra lei a modificar ou revogar.",

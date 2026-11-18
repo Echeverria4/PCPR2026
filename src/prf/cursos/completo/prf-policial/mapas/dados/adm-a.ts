@@ -94,7 +94,7 @@ export const MAPAS_ADM_A: MapaAula[] = [
     centro: { titulo: "Licitações: Lei 14.133", emoji: "📋", sub: "Modalidades e critérios" },
     desenho: "balanca",
     ramos: [
-      { rotulo: "Alcance", emoji: "🌐", cor: "azul", folhas: ["Direta, autarquias e **fundações**", "Legislativo e Judiciário **administrando**", "Estatais: Lei **13.303**"] },
+      { rotulo: "Alcance", emoji: "🌐", cor: "azul", folhas: ["Direta, autarquias e **fundações**", "Legislativo e Judiciário **administrando**", "Estatais: Lei **13.303**", "**Vigente** desde 1º/4/2021; 8.666 caiu em 30/12/2023"] },
       { rotulo: "Condução", emoji: "👤", cor: "verde", folhas: ["Agente de contratação: **efetivo**", "Comissão: **3** membros, solidária", "Divergiu em ata: **fica de fora**"] },
       { rotulo: "Pregão", emoji: "🛒", cor: "ouro", folhas: ["Bens e serviços **comuns**", "Menor preço ou **maior desconto**", "**Nunca** para obra"] },
       { rotulo: "Concorrência", emoji: "🏗️", cor: "roxo", folhas: ["Bens e serviços **especiais**", "Obras e **engenharia**", "Rito do **pregão**"] },
@@ -122,7 +122,7 @@ export const MAPAS_ADM_A: MapaAula[] = [
     aula: "adm-a-09",
     centro: { titulo: "Controle da Administração", emoji: "🔍", sub: "Interno, legislativo e judicial" },
     ramos: [
-      { rotulo: "Administrativo", emoji: "🔄", cor: "azul", folhas: ["Autotutela: **Súmula 473**", "Legalidade e **mérito**", "De ofício ou **provocado**"] },
+      { rotulo: "Administrativo", emoji: "🔄", cor: "azul", folhas: ["Autotutela: **Súmula 473**", "Legalidade e **mérito**", "De ofício ou **provocado**", "**Anular** ato favorável: 5 anos, salvo má-fé"] },
       { rotulo: "Recursos", emoji: "📨", cor: "verde", folhas: ["Próprio: **sem** lei expressa", "Impróprio: **só** com lei", "Revisão: **não agrava**"] },
       { rotulo: "Parlamentar", emoji: "📢", cor: "ouro", folhas: ["Contas **presidenciais**", "**CPI** e sustação de normas"] },
       { rotulo: "Tribunal de contas", emoji: "🧮", cor: "roxo", folhas: ["Contas do chefe: **parecer prévio**", "Demais: **julga**", "Susta **ato**; contrato, o Congresso"] },
@@ -201,7 +201,7 @@ export const MAPAS_ADM_A: MapaAula[] = [
       { rotulo: "Suspensão", emoji: "🕒", cor: "verde", folhas: ["Até **90 dias**", "Reincidência em **advertência**", "Vira multa de **50%**"] },
       { rotulo: "Demissão", emoji: "🚪", cor: "ouro", folhas: ["Art. 132: **sem** pena menor", "Abandono: **30 dias** seguidos", "Inassiduidade: **60** intercalados"] },
       { rotulo: "Prescrição", emoji: "⏳", cor: "roxo", folhas: ["Demissão **5 anos**; suspensão **2**", "Advertência **180 dias**", "Recomeça após **140 dias**"] },
-      { rotulo: "Sindicância e PAD", emoji: "🔎", cor: "laranja", folhas: ["Sindicância: **30 + 30** dias", "PAD: **3** estáveis, 60 + 60", "Afastamento preventivo: **60 + 60**"] },
+      { rotulo: "Sindicância e PAD", emoji: "🔎", cor: "laranja", folhas: ["Sindicância: **30 + 30** dias", "PAD: **3** estáveis, 60 + 60", "Afastamento preventivo: **60 + 60**", "**Rito sumário**: acumulação, abandono e inassiduidade"] },
       { rotulo: "Três esferas", emoji: "🧱", cor: "rosa", folhas: ["Civil, penal e **administrativa**", "Absolvição penal só pesa se nega **fato ou autoria**"] },
     ],
     macete: "Prescrição 5-2-180: demissão, suspensão e advertência, contadas da ciência da autoridade.",

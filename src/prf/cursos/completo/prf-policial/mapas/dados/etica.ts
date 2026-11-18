@@ -55,6 +55,7 @@ export const MAPAS_ETICA: MapaAula[] = [
         folhas: [
           "**Cidadania**: direitos e deveres de quem vive em comunidade",
           "**Pós-verdade**: emoção e crença pesam mais que os fatos",
+          "**Weber**: ética da convicção × da responsabilidade",
         ],
       },
     ],
@@ -91,7 +92,7 @@ export const MAPAS_ETICA: MapaAula[] = [
         rotulo: "Moralidade",
         emoji: "🤝",
         cor: "ouro",
-        folhas: ["O fim é sempre o **bem comum**", "Equilíbrio entre **legalidade e finalidade**"],
+        folhas: ["O fim é sempre o **bem comum**", "Equilíbrio entre **legalidade e finalidade**", "**Vedado**: presente, embriaguez habitual, informação privilegiada"],
       },
       {
         rotulo: "Publicidade",

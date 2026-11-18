@@ -39,6 +39,11 @@ export const AULA: AulaEscrita = {
         termo: "Agência executiva",
         faz: "É título dado a autarquia ou fundação já existente, com plano de reestruturação e contrato de gestão.",
       },
+      {
+        termo: "Estatais",
+        faz: "Empresa pública tem capital todo público e qualquer forma de sociedade. Sociedade de economia mista é sempre S.A., com a maioria das ações com voto nas mãos do poder público. A lei específica só autoriza a criação (CF, art. 37, XIX); o regime é privado, mas com concurso, licitação e controle do Tribunal de Contas (Lei 13.303/2016).",
+        pista: "Empresa pública federal é julgada na Justiça Federal; sociedade de economia mista, na Justiça Estadual.",
+      },
     ],
     cuidado:
       "CNPJ não dá personalidade jurídica ao órgão: é só um registro para fins fiscais.",
