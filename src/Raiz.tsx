@@ -3,6 +3,7 @@ import App from "./App";
 import Central from "./central/Central";
 import type { EntradaCurso } from "./central/entrada";
 import { CURSOS, cursoAbrivel, type CursoId } from "./data/cursos";
+import JanelaPdf, { pdfDaUrl } from "./prf/aulas/JanelaPdf";
 
 // O curso da PRF só baixa quando é aberto: quem estuda para a PCPR não carrega o banco dele.
 const AppPrf = lazy(() => import("./prf/AppPrf"));
@@ -21,7 +22,15 @@ function gravarNaUrl(curso: CursoId | null) {
   window.history.pushState(null, "", url);
 }
 
+/** A janela à parte que mostra só um PDF da aula (para a segunda tela). */
+const PDF_SOZINHO = pdfDaUrl();
+
 export default function Raiz() {
+  if (PDF_SOZINHO) return <JanelaPdf id={PDF_SOZINHO.id} nome={PDF_SOZINHO.nome} />;
+  return <RaizCursos />;
+}
+
+function RaizCursos() {
   // A entrada (aba, aula, mapa) só vale para o curso aberto pela Central; recarregar abre o curso no início.
   const [{ curso, entrada }, setAberto] = useState<{ curso: CursoId | null; entrada?: EntradaCurso }>(() => ({
     curso: cursoDaUrl(),

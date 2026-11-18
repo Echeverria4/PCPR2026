@@ -7908,6 +7908,53 @@ button.prf-bloco-link {
   text-underline-offset: 3px;
 }
 
+/* Na aula: o PDF numa janela à parte, para a segunda tela (fora do player) */
+.prf-outra-tela {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  margin: 0 0 10px;
+  padding: 8px 10px;
+  border: 1px dashed var(--borda-forte);
+  border-radius: 10px;
+}
+
+.prf-outra-tela-texto {
+  flex: 1 1 200px;
+  font-size: 0.9rem;
+  color: var(--texto-fraco);
+}
+
+.prf-outra-tela-aviso {
+  flex: 1 1 100%;
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--vermelho);
+}
+
+/* Celular e tablet não têm segunda tela */
+@media (hover: none) and (pointer: coarse) {
+  .prf-outra-tela {
+    display: none;
+  }
+}
+
+/* A janela à parte: só o PDF, ocupando tudo */
+.prf-janela-pdf .prf-leitor-quadro {
+  min-height: 0;
+}
+
+.prf-janela-pdf-aviso,
+.prf-janela-pdf-dica {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.prf-janela-pdf-dica {
+  opacity: 0.75;
+}
+
 /* Leitor do PDF: tela cheia dentro do app, por cima da aula */
 .prf-leitor {
   position: fixed;

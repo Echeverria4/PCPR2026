@@ -30,6 +30,7 @@ import {
   type EstadoEstudo,
   type TotaisEstudo,
 } from "./estudo";
+import { abrirPdfEmOutraJanela } from "./JanelaPdf";
 import GraficoDias, { type Dia } from "./GraficoDias";
 import { aulaParaRetomar, pendente, progresso, videosDoGrupo, type Motivo } from "./progresso";
 import { metaDoDia, useMeta } from "./meta";
@@ -745,6 +746,35 @@ function LeitorPdf({
   );
 }
 
+/** Fora do player: abre o PDF numa janela à parte, para a segunda tela, e o vídeo segue aqui. */
+function PdfOutraTela({ pdfs, onAbrir }: { pdfs: ArquivoCurso[]; onAbrir: () => void }) {
+  const [bloqueada, setBloqueada] = useState(false);
+
+  async function abre(p: ArquivoCurso) {
+    const ok = await abrirPdfEmOutraJanela(p.id, p.nome);
+    setBloqueada(!ok);
+    if (ok) onAbrir();
+  }
+
+  return (
+    <div className="prf-outra-tela">
+      <span className="prf-outra-tela-texto">
+        Duas telas? Abra o {pdfs.length > 1 ? "PDF que quiser" : "PDF"} numa janela à parte e deixe o vídeo aqui.
+      </span>
+      {pdfs.map((p) => (
+        <button key={p.id} type="button" className="botao" onClick={() => void abre(p)}>
+          🖥️ {pdfs.length > 1 ? p.nome : "PDF em outra janela"}
+        </button>
+      ))}
+      {bloqueada && (
+        <p className="prf-outra-tela-aviso" role="alert">
+          O navegador bloqueou a janela. Permita pop-ups deste site (ícone na barra de endereço) e toque de novo.
+        </p>
+      )}
+    </div>
+  );
+}
+
 /** Reserva para quando o player do Drive não carrega aqui (sem login, iPhone, janela anônima). */
 function AjudaDrive({ id, coisa, onAbrir }: { id: string; coisa: string; onAbrir: () => void }) {
   return (
@@ -1106,6 +1136,15 @@ function TelaAula({ grupo, aula, estudo, onTela, extras }: TelaAulaProps) {
               {feitos}/{total} vistos
             </span>
           </h3>
+          {temPdf && (
+            <PdfOutraTela
+              pdfs={aula.pdfs}
+              onAbrir={() => {
+                setLiberado(true);
+                aoAbrir();
+              }}
+            />
+          )}
           {travado ? (
             <div className="prf-passo-trava">
               <p className="prf-passo-trava-texto">
