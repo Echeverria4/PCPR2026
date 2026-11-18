@@ -10,10 +10,12 @@ import type { GrupoCurso } from "../aulas/tipos";
 import type { DadosCursoCompleto } from "./completo/tipos";
 import LayoutCurso, { type AbaCurso } from "./LayoutCurso";
 import { abaDaEntrada, type EntradaCurso } from "../../central/entrada";
+import { alternarCaderno } from "../caderno/painel";
 
 // Telas e lista das aulas só baixam ao abrir o curso, e cada curso só baixa as aulas dele.
 const AulasCurso = lazy(() => import("../aulas/AulasCurso"));
 const SemanaCurso = lazy(() => import("./SemanaCurso"));
+const CronogramaCurso = lazy(() => import("./cronograma/CronogramaCurso"));
 const CursoCompleto = lazy(() => import("./completo/CursoCompleto"));
 
 interface CursoSoAulas {
@@ -123,22 +125,31 @@ export default function AppCurso({ curso, onTrocarCurso, entrada }: AppCursoProp
           />
         </Suspense>
       ) : (
-        <TelasCurso nome={catalogo.nome} dados={dados} onTrocarCurso={onTrocarCurso} entrada={entrada} />
+        <TelasCurso
+          curso={curso}
+          nome={catalogo.nome}
+          grupos={catalogo.grupos}
+          dados={dados}
+          onTrocarCurso={onTrocarCurso}
+          entrada={entrada}
+        />
       )}
     </ComCatalogo>
   );
 }
 
 interface TelasCursoProps {
+  curso: CursoId;
   nome: string;
+  grupos: GrupoCurso[];
   dados: CursoSoAulas;
   onTrocarCurso?: () => void;
   entrada?: EntradaCurso;
 }
 
-const ABAS_SO_AULAS: readonly AbaCurso[] = ["aulas", "semana"];
+const ABAS_SO_AULAS: readonly AbaCurso[] = ["aulas", "semana", "cronograma"];
 
-function TelasCurso({ nome, dados, onTrocarCurso, entrada }: TelasCursoProps) {
+function TelasCurso({ curso, nome, grupos, dados, onTrocarCurso, entrada }: TelasCursoProps) {
   const [aba, setAba] = useState<AbaCurso>(() => abaDaEntrada(entrada, ABAS_SO_AULAS, "aulas"));
   const [telaAulas, setTelaAulas] = useState<TelaAulas>(() => ({ grupo: entrada?.grupo, aula: entrada?.aula }));
   /** Segunda-feira da semana aberta; null = esta semana. */
@@ -177,6 +188,19 @@ function TelasCurso({ nome, dados, onTrocarCurso, entrada }: TelasCursoProps) {
       {aba === "semana" && (
         <Suspense fallback={<div className="vazio">Carregando o acompanhamento…</div>}>
           <SemanaCurso inicio={semanaAberta} onInicio={setSemanaAberta} onAbrirAula={abrirAula} />
+        </Suspense>
+      )}
+      {aba === "cronograma" && (
+        <Suspense fallback={<div className="vazio">Carregando o cronograma…</div>}>
+          <CronogramaCurso
+            curso={curso}
+            grupos={grupos}
+            destinos={["aula", "caderno"]}
+            onIr={(destino, grupo, aula) => {
+              if (destino === "caderno") alternarCaderno();
+              else if (destino === "aula") abrirAula(grupo ? { grupo, aula: aula?.id } : {});
+            }}
+          />
         </Suspense>
       )}
     </LayoutCurso>

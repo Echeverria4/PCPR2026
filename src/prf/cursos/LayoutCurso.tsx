@@ -4,11 +4,12 @@ import { ChipCronometro } from "../LayoutPrf";
 
 const CadernoPrf = lazy(() => import("../caderno/CadernoPrf"));
 
-export type AbaCurso = "treino" | "aulas" | "semana" | "resumos" | "redacao" | "mapas";
+export type AbaCurso = "treino" | "aulas" | "semana" | "cronograma" | "resumos" | "redacao" | "mapas";
 
 const ABAS_PADRAO: { id: AbaCurso; rotulo: string }[] = [
   { id: "aulas", rotulo: "🎬 Aulas" },
   { id: "semana", rotulo: "📈 Semana" },
+  { id: "cronograma", rotulo: "📅 Cronograma" },
 ];
 
 interface LayoutCursoProps {

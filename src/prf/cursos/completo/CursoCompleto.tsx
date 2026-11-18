@@ -6,7 +6,9 @@ import { computeStats, focoRecomendado } from "../../../lib/storage";
 import type { Question, QuizMode, QuizSessionResult } from "../../../lib/types";
 import type { ExtrasAula, TelaAulas } from "../../aulas/AulasCurso";
 import { gruposAtuais } from "../../aulas/catalogo";
+import { abrirCaderno } from "../../caderno/painel";
 import CanetaPrf from "../../caneta/CanetaPrf";
+import type { Destino } from "../cronograma/plano";
 import LayoutCurso, { type AbaCurso } from "../LayoutCurso";
 import { progressoDoCurso } from "./armazenamento";
 import InicioCurso from "./InicioCurso";
@@ -30,6 +32,7 @@ import { abaDaEntrada, type EntradaCurso } from "../../../central/entrada";
 const AulasCurso = lazy(() => import("../../aulas/AulasCurso"));
 const SemanaCurso = lazy(() => import("../SemanaCurso"));
 const ResumosCurso = lazy(() => import("./ResumosCurso"));
+const CronogramaCurso = lazy(() => import("../cronograma/CronogramaCurso"));
 
 type View = AbaCurso | "quiz" | "result";
 
@@ -37,6 +40,7 @@ const ABAS: { id: AbaCurso; rotulo: string }[] = [
   { id: "treino", rotulo: "Treino" },
   { id: "aulas", rotulo: "🎬 Aulas" },
   { id: "semana", rotulo: "📈 Semana" },
+  { id: "cronograma", rotulo: "📅 Cronograma" },
   { id: "resumos", rotulo: "📚 Resumos" },
 ];
 
@@ -91,6 +95,7 @@ export default function CursoCompleto({
         "treino",
         "aulas",
         "semana",
+        "cronograma",
         "resumos",
         ...(dados.mapas ? (["mapas"] as const) : []),
         ...(dados.redacao ? (["redacao"] as const) : []),
@@ -125,6 +130,16 @@ export default function CursoCompleto({
   );
 
   const grupos = gruposAtuais();
+  const destinosCronograma: Destino[] = [
+    "aula",
+    "questoes",
+    "erros",
+    "simulado",
+    "resumos",
+    ...(Mapas ? (["mapas"] as const) : []),
+    ...(Redacao ? (["redacao"] as const) : []),
+    "caderno",
+  ];
   const materias = useMemo(
     () => grupos.filter((g) => !dados.semQuestoes.includes(g.id)),
     [grupos, dados.semQuestoes],
@@ -191,6 +206,62 @@ export default function CursoCompleto({
       topicos: topico ? [chaveAssunto(materia, topico)] : [],
     };
     if (abrirSessao("personalizado", sessaoPersonalizada(banco, filtros, tentativas, erradas))) setOrigem("semana");
+  }
+
+  /** Botões das atividades do cronograma; false = não havia o que abrir. Ao terminar o quiz, volta para o cronograma. */
+  function irDoCronograma(destino: Destino, grupo: string | null, aula?: { id: string }): boolean {
+    const doCronograma = (ok: boolean) => {
+      if (ok) setOrigem("cronograma");
+      return ok;
+    };
+    switch (destino) {
+      case "aula":
+        abrirAula(grupo ? { grupo, aula: aula?.id } : {});
+        return true;
+      case "questoes":
+        if (!grupo) {
+          setView("treino");
+          return true;
+        }
+        return doCronograma(
+          abrirSessao("personalizado", sessaoPersonalizada(banco, { ...FILTROS_PADRAO, materias: [grupo] }, tentativas, erradas)),
+        );
+      case "erros":
+        return doCronograma(
+          grupo
+            ? abrirSessao(
+                "personalizado",
+                sessaoPersonalizada(
+                  banco,
+                  { ...FILTROS_PADRAO, materias: [grupo], situacao: "revisao", quantidade: "todas" },
+                  tentativas,
+                  erradas,
+                ),
+              )
+            : abrirSessao("revisao", sessaoRevisao(banco, progresso.erradas())),
+        );
+      case "simulado":
+        setView("treino");
+        return true;
+      case "mapas":
+        if (!Mapas) return false;
+        setTelaMapas(grupo ? { tipo: "materia", grupo } : { tipo: "inicio" });
+        setView("mapas");
+        return true;
+      case "resumos":
+        setView("resumos");
+        return true;
+      case "redacao":
+        if (!Redacao) return false;
+        setTelaRedacao({ tipo: "inicio" });
+        setView("redacao");
+        return true;
+      case "caderno":
+        abrirCaderno();
+        return true;
+      default:
+        return false;
+    }
   }
 
   function finalizarQuiz(respostas: TentativaCurso[]) {
@@ -304,6 +375,11 @@ export default function CursoCompleto({
             onAbrirAula={abrirAula}
             questoes={{ tentativas, banco, total: progresso.total(), onTreinar: treinarDaSemana }}
           />
+        </Suspense>
+      )}
+      {view === "cronograma" && (
+        <Suspense fallback={<div className="vazio">Carregando o cronograma…</div>}>
+          <CronogramaCurso curso={curso} grupos={grupos} destinos={destinosCronograma} onIr={irDoCronograma} />
         </Suspense>
       )}
       {view === "resumos" && (

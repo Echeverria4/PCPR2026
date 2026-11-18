@@ -11492,3 +11492,681 @@ button.prf-mapa-ramo-topo:hover { background: color-mix(in srgb, var(--cor-ramo)
   font-size: 0.76rem;
   color: var(--texto-fraco);
 }
+
+/* ---------- Cronograma semanal dos cursos (prf-cronog-*; prf-crono-* é o cronômetro) ---------- */
+.prf-cronog {
+  --cronog-raio: 14px;
+  --cronog-linha: rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: prf-aulas-entra 0.25s ease-out;
+}
+.prf-cronog select,
+.prf-cronog input[type="text"] {
+  min-height: 40px;
+  max-width: 100%;
+  padding: 7px 10px;
+  border: 1px solid var(--borda-forte);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--texto);
+  font: inherit;
+  font-size: 0.92rem;
+}
+.prf-cronog input[type="checkbox"] {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  accent-color: var(--ouro-forte);
+}
+.prf-cronog-cabeca {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px 16px;
+}
+.prf-cronog-cabeca-acoes,
+.prf-cronog-botoes,
+.prf-cronog-ritmo,
+.prf-cronog-editar-fim {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.prf-cronog-olho {
+  margin: 0 0 4px;
+  font-family: var(--fonte-cond);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ouro-forte);
+}
+.prf-cronog-titulo {
+  margin: 0;
+  font-family: var(--fonte-titulo);
+  font-size: 1.45rem;
+  line-height: 1.2;
+  color: var(--texto);
+}
+.prf-cronog-sub,
+.prf-cronog-nota,
+.prf-cronog-linha,
+.prf-cronog-progresso,
+.prf-cronog-total {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--texto-fraco);
+}
+.prf-cronog-sub strong,
+.prf-cronog-total strong {
+  color: var(--texto);
+}
+.prf-cronog-nota {
+  font-size: 0.84rem;
+}
+.prf-cronog-aviso {
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--verde);
+  border-radius: 10px;
+  background: rgba(53, 212, 136, 0.08);
+  font-size: 0.9rem;
+  color: var(--texto);
+}
+.prf-cronog-bloco,
+.prf-cronog-montar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid var(--borda);
+  border-radius: var(--cronog-raio);
+  background: var(--bg-card);
+}
+.prf-cronog-bloco-titulo {
+  margin: 0;
+  font-family: var(--fonte-cond);
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--texto);
+}
+.prf-cronog-tempos {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+}
+.prf-cronog-tempo-campo,
+.prf-cronog-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.prf-cronog-tempo-campo > span,
+.prf-cronog-campo > span {
+  font-family: var(--fonte-cond);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+}
+
+/* Hoje */
+.prf-cronog-hoje {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px;
+  border: 1px solid var(--ouro);
+  border-radius: var(--cronog-raio);
+  background: linear-gradient(180deg, rgba(242, 193, 78, 0.1), rgba(242, 193, 78, 0.02)), var(--bg-card);
+}
+.prf-cronog-hoje-topo,
+.prf-cronog-dia-topo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px 10px;
+}
+.prf-cronog-hoje-topo .prf-cronog-olho {
+  margin: 0;
+}
+.prf-cronog-hoje-titulo {
+  margin: 0;
+  font-family: var(--fonte-titulo);
+  font-size: 1.35rem;
+  line-height: 1.25;
+  color: var(--texto);
+}
+.prf-cronog-tempo {
+  padding: 3px 10px;
+  border: 1px solid var(--borda-forte);
+  border-radius: 999px;
+  font-family: var(--fonte-mono);
+  font-size: 0.82rem;
+  color: var(--texto);
+  white-space: nowrap;
+}
+.prf-cronog-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  font-size: 0.88rem;
+  color: var(--texto-fraco);
+}
+.prf-cronog-cor {
+  display: inline-block;
+  flex: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.prf-cronog-cor-linha {
+  display: block;
+  height: 3px;
+  border-radius: 2px;
+}
+.prf-cronog-feita,
+.prf-cronog-dia-feito {
+  margin: 0;
+  font-size: 0.86rem;
+  color: var(--verde);
+}
+.prf-cronog-aula {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px;
+  border-left: 3px solid var(--ouro-forte);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.04);
+}
+.prf-cronog-aula-rotulo {
+  font-family: var(--fonte-cond);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ouro-forte);
+}
+.prf-cronog-aula-nome {
+  font-weight: 700;
+  color: var(--texto);
+}
+.prf-cronog-aula-tam {
+  font-size: 0.84rem;
+  color: var(--texto-fraco);
+}
+.prf-cronog-lista,
+.prf-cronog-dia-ativ,
+.prf-cronog-fila,
+.prf-cronog-materias,
+.prf-cronog-espera ol,
+.prf-cronog-sem ul,
+.prf-cronog-escolha,
+.prf-cronog-extras,
+.prf-cronog-previa ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.prf-cronog-lista > li {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 0;
+  border-top: 1px solid var(--cronog-linha);
+}
+.prf-cronog-lista > li.prf-cronog-auto {
+  padding-left: 10px;
+  border-left: 2px dashed var(--borda-forte);
+}
+.prf-cronog-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+}
+.prf-cronog-min {
+  flex: none;
+  min-width: 48px;
+  font-family: var(--fonte-mono);
+  font-size: 0.85rem;
+  color: var(--ouro-forte);
+}
+.prf-cronog-texto {
+  line-height: 1.45;
+  color: var(--texto);
+}
+.prf-cronog-feito .prf-cronog-texto {
+  color: var(--texto-fraco);
+  text-decoration: line-through;
+}
+.prf-cronog-lista .prf-cronog-botoes {
+  padding-left: 30px;
+}
+.prf-cronog-ir {
+  min-height: 40px;
+  padding: 7px 12px;
+  font-size: 0.88rem;
+}
+.prf-cronog-progresso {
+  margin: 0;
+  font-weight: 700;
+}
+
+/* A semana */
+.prf-cronog-semana {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 10px;
+}
+.prf-cronog-dia {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+}
+.prf-cronog-dia-hoje {
+  border-color: var(--ouro);
+}
+.prf-cronog-dia-passou {
+  opacity: 0.72;
+}
+.prf-cronog-dia-nome {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--fonte-cond);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--texto);
+}
+.prf-cronog-selo {
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--ouro-forte);
+  font-size: 0.7rem;
+  color: #241a03;
+}
+.prf-cronog-dia-titulo {
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--texto);
+}
+.prf-cronog-dia-aula,
+.prf-cronog-depois {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.4;
+  color: var(--texto-fraco);
+}
+.prf-cronog-dia-ativ > li {
+  display: flex;
+  gap: 6px;
+  padding: 3px 0;
+  font-size: 0.86rem;
+  line-height: 1.4;
+  color: var(--texto-fraco);
+}
+.prf-cronog-dia-ativ .prf-cronog-min {
+  min-width: 40px;
+  font-size: 0.8rem;
+}
+
+/* Editar */
+.prf-cronog-dia-editar {
+  gap: 14px;
+}
+.prf-cronog-fila > li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+}
+.prf-cronog-fila-nome {
+  flex: 1;
+  min-width: 0;
+  color: var(--texto);
+}
+.prf-cronog-mini {
+  min-width: 40px;
+  min-height: 40px;
+  padding: 4px 10px;
+}
+.prf-cronog-ritmo-botao,
+.prf-cronog-ja {
+  min-height: 40px;
+  padding: 6px 14px;
+  border: 1px solid var(--borda-forte);
+  border-radius: 999px;
+  background: var(--bg-elevado);
+  color: var(--texto);
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.prf-cronog-ritmo-botao[aria-pressed="true"] {
+  border-color: var(--ouro-forte);
+  background: var(--ouro-forte);
+  font-weight: 800;
+  color: #241a03;
+}
+.prf-cronog-ja[aria-pressed="true"] {
+  border-color: var(--verde);
+  background: rgba(53, 212, 136, 0.12);
+  color: var(--verde);
+}
+.prf-cronog-ativ-editar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px 0;
+  border-top: 1px solid var(--cronog-linha);
+}
+.prf-cronog-ativ-editar input[type="text"] {
+  flex: 1 1 100%;
+  order: -1;
+}
+.prf-cronog-ativ-editar select {
+  flex: 1 1 120px;
+  min-width: 0;
+}
+.prf-cronog-mais {
+  align-self: flex-start;
+}
+.prf-cronog-editar-fim {
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+.prf-cronog-editar-fim .prf-cronog-nota {
+  flex: 1 1 260px;
+  margin: 0;
+}
+
+/* Matérias e lista de espera */
+.prf-cronog-materias > li,
+.prf-cronog-espera li {
+  display: grid;
+  grid-template-columns: 10px minmax(0, 1fr);
+  align-items: center;
+  gap: 4px 10px;
+  padding: 10px 0;
+  border-top: 1px solid var(--cronog-linha);
+}
+.prf-cronog-materia-nome,
+.prf-cronog-materia-info,
+.prf-cronog-trocar {
+  grid-column: 2;
+}
+.prf-cronog-materia-nome {
+  font-weight: 700;
+  color: var(--texto);
+}
+.prf-cronog-materia-info {
+  font-size: 0.86rem;
+  color: var(--texto-fraco);
+}
+.prf-cronog-trocar {
+  justify-self: start;
+}
+.prf-cronog-peso {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 1px 8px;
+  border: 1px solid var(--borda-forte);
+  border-radius: 999px;
+  font-family: var(--fonte-mono);
+  font-size: 0.74rem;
+  font-weight: 400;
+  color: var(--texto-fraco);
+  white-space: nowrap;
+}
+.prf-cronog-espera summary,
+.prf-cronog-sem summary {
+  min-height: 40px;
+  padding: 8px 0;
+  font-weight: 700;
+  color: var(--texto);
+  cursor: pointer;
+}
+
+/* Semana a semana */
+.prf-cronog-troca {
+  margin: 0;
+  padding: 8px 12px;
+  border-left: 3px solid var(--azul);
+  border-radius: 6px;
+  background: rgba(79, 163, 227, 0.08);
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--texto);
+}
+.prf-cronog-semanas {
+  display: flex;
+  flex-direction: column;
+}
+.prf-cronog-sem {
+  border-top: 1px solid var(--cronog-linha);
+}
+.prf-cronog-sem summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.prf-cronog-sem-conta {
+  font-weight: 400;
+  font-size: 0.86rem;
+  color: var(--texto-fraco);
+}
+.prf-cronog-sem li {
+  display: grid;
+  grid-template-columns: 34px 10px minmax(0, 1fr);
+  align-items: center;
+  gap: 2px 8px;
+  padding: 6px 0;
+  font-size: 0.88rem;
+}
+.prf-cronog-sem-dia {
+  font-family: var(--fonte-cond);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+}
+.prf-cronog-sem-mat {
+  font-weight: 700;
+  color: var(--texto);
+}
+.prf-cronog-sem-aula {
+  grid-column: 3;
+  color: var(--texto-fraco);
+}
+
+/* Montar (passo a passo) */
+.prf-cronog-montar-topo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.prf-cronog-montar-topo .prf-cronog-olho {
+  margin: 0;
+}
+.prf-cronog-passos {
+  display: flex;
+  gap: 6px;
+}
+.prf-cronog-passos span {
+  width: 32px;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--borda);
+}
+.prf-cronog-passos .prf-cronog-passo-feito {
+  background: var(--ouro-forte);
+}
+.prf-cronog-montar-corpo {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.prf-cronog-dica {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px dashed var(--ouro);
+  border-radius: 10px;
+  background: rgba(242, 193, 78, 0.07);
+}
+.prf-cronog-dica p {
+  flex: 1 1 260px;
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--texto);
+}
+.prf-cronog-escolha,
+.prf-cronog-extras {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.prf-cronog-escolha > li,
+.prf-cronog-extras > li {
+  padding: 10px 12px;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+}
+.prf-cronog-escolha > li.prf-cronog-escolha-marcada {
+  border-color: var(--ouro);
+  background: rgba(242, 193, 78, 0.06);
+}
+.prf-cronog-escolha-linha {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  min-height: 40px;
+  cursor: pointer;
+}
+.prf-cronog-escolha-nome {
+  flex: 1 1 150px;
+  min-width: 0;
+  font-weight: 700;
+  color: var(--texto);
+}
+.prf-cronog-escolha-nome small {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.84rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--texto-fraco);
+}
+.prf-cronog-escolha-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.84rem;
+  color: var(--texto-fraco);
+}
+.prf-cronog-ja {
+  margin: 8px 0 0 30px;
+  font-size: 0.84rem;
+}
+.prf-cronog-previa {
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+}
+.prf-cronog-previa li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  border-top: 1px solid var(--cronog-linha);
+  font-size: 0.9rem;
+  color: var(--texto);
+}
+.prf-cronog-previa .prf-cronog-sem-dia {
+  flex: none;
+  width: 34px;
+}
+.prf-cronog-previa .prf-cronog-min {
+  min-width: 0;
+  margin-left: auto;
+}
+.prf-cronog-montar-fim {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 1px solid var(--cronog-linha);
+}
+.prf-cronog-montar-fim > :last-child {
+  margin-left: auto;
+}
+
+@media (min-width: 560px) {
+  .prf-cronog-tempos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 760px) {
+  .prf-cronog-semana {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+  .prf-cronog-dia-editar {
+    grid-column: 1 / -1;
+  }
+  .prf-cronog-ativ-editar {
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  .prf-cronog-ativ-editar input[type="text"] {
+    flex: 1 1 auto;
+    order: 0;
+  }
+  .prf-cronog-ativ-editar select {
+    flex: 0 1 170px;
+  }
+  .prf-cronog-ativ-editar select:first-child {
+    flex: 0 0 96px;
+  }
+  .prf-cronog-materias > li {
+    grid-template-columns: 10px minmax(0, 1fr) minmax(0, 1.3fr) auto;
+  }
+  .prf-cronog-materias .prf-cronog-materia-nome,
+  .prf-cronog-materias .prf-cronog-materia-info,
+  .prf-cronog-materias .prf-cronog-trocar {
+    grid-column: auto;
+  }
+  .prf-cronog-sem li {
+    grid-template-columns: 34px 10px minmax(120px, 0.6fr) minmax(0, 1.4fr);
+  }
+  .prf-cronog-sem-aula {
+    grid-column: auto;
+  }
+}
