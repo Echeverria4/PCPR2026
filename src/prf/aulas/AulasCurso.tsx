@@ -1,3 +1,4 @@
+import { Emoji, TextoEmoji } from "../../icones/Emoji";
 import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { createPortal } from "react-dom";
 import BotaoCaderno from "../caderno/BotaoCaderno";
@@ -206,7 +207,7 @@ function Retomar({ estudo, vistos, tot, onTela, extras }: RetomarProps) {
       <section className="prf-retomar prf-retomar-fim" aria-label="Curso concluído">
         <span className="prf-retomar-olho">Curso concluído</span>
         <h3 className="prf-retomar-titulo">
-          {extras ? "Você viu todos os vídeos do curso 🏆" : "Você concluiu todas as aulas do curso 🏆"}
+          <TextoEmoji texto={extras ? "Você viu todos os vídeos do curso 🏆" : "Você concluiu todas as aulas do curso 🏆"} />
         </h3>
         <p className="prf-retomar-meta">
           {extras ? "Refaça as fixações e o treino para não esquecer." : "Releia os PDFs para não esquecer."}
@@ -237,12 +238,12 @@ function Retomar({ estudo, vistos, tot, onTela, extras }: RetomarProps) {
   return (
     <section className={`prf-retomar prf-retomar-${r.motivo}`} style={corGrupo(r.grupo)} aria-label="Continuar estudando">
       <span className="prf-retomar-marca" aria-hidden="true">
-        {r.aula.n || icone(r.grupo)}
+        {r.aula.n || <Emoji e={icone(r.grupo)} />}
       </span>
       <span className="prf-retomar-olho">{texto.olho}</span>
       <span className="prf-retomar-grupo">
         <span className="prf-grupo-icone prf-icone-mini" aria-hidden="true">
-          {icone(r.grupo)}
+          <Emoji e={icone(r.grupo)} />
         </span>
         {r.grupo.nome}
         {numeroAula(r.aula) && ` · ${numeroAula(r.aula)}`}
@@ -309,7 +310,9 @@ function AvisoVirada({ estudo }: { estudo: EstadoEstudo }) {
   return (
     <div className="prf-virada" role="status">
       <p className="prf-virada-texto">
-        <span aria-hidden="true">🌙 </span>
+        <span aria-hidden="true">
+          <Emoji e="🌙" />{" "}
+        </span>
         {v.contando ? (
           <>
             Virou o dia. O cronômetro parou à meia-noite e guardou <b>{curto(v.ms)}</b> {dia}.
@@ -384,7 +387,7 @@ function PainelCronometro({ estudo }: { estudo: EstadoEstudo }) {
       <AvisoVirada estudo={estudo} />
       {ms > LIMITE_AVISO && (
         <p className="prf-crono-aviso">
-          ⚠ Ligado há mais de 4 horas. Se esqueceu ligado, descarte; se estudou mesmo, encerre e salve.
+          <Emoji e="⚠" /> Ligado há mais de 4 horas. Se esqueceu ligado, descarte; se estudou mesmo, encerre e salve.
         </p>
       )}
       <MetaDoDia estudo={estudo} meta={meta} agora={agora} />
@@ -471,7 +474,7 @@ function CartaoGrupo({ grupo, vistos, tempo, onAbrir }: CartaoGrupoProps) {
   return (
     <button className={classes.filter(Boolean).join(" ")} style={corGrupo(grupo)} onClick={onAbrir}>
       <span className="prf-grupo-icone" aria-hidden="true">
-        {icone(grupo)}
+        <Emoji e={icone(grupo)} />
       </span>
       <span className="prf-grupo-texto">
         <span className="prf-grupo-nome">{grupo.nome}</span>
@@ -508,7 +511,7 @@ function ListaAulas({ grupo, estudo, onTela, extras }: ListaProps & { grupo: Gru
 
       <header className="prf-materia-cabeca">
         <span className="prf-grupo-icone prf-icone-grande" aria-hidden="true">
-          {icone(grupo)}
+          <Emoji e={icone(grupo)} />
         </span>
         <div className="prf-materia-texto">
           <h2 className="prf-materia-titulo">{grupo.nome}</h2>
@@ -721,7 +724,7 @@ function LeitorPdf({
         <span className="prf-leitor-nome">{nome}</span>
         <ChipCronometro />
         <button type="button" className="botao" onClick={onAnotar}>
-          📝 Anotar
+          <Emoji e="📝" /> Anotar
         </button>
         {lido ? (
           <span className="prf-leitor-lido">✓ {textoLido}</span>
@@ -763,7 +766,7 @@ function PdfOutraTela({ pdfs, onAbrir }: { pdfs: ArquivoCurso[]; onAbrir: () => 
       </span>
       {pdfs.map((p) => (
         <button key={p.id} type="button" className="botao" onClick={() => void abre(p)}>
-          🖥️ {pdfs.length > 1 ? p.nome : "PDF em outra janela"}
+          <Emoji e="🖥️" /> {pdfs.length > 1 ? p.nome : "PDF em outra janela"}
         </button>
       ))}
       {bloqueada && (
@@ -828,7 +831,10 @@ function Anexos({ anexos, onAbrir }: { anexos?: ArquivoCurso[]; onAbrir: (a: Arq
       {anexos.map((a) => (
         <li key={a.id}>
           <button type="button" className="prf-anexo" aria-haspopup="dialog" onClick={() => onAbrir(a)}>
-            <span aria-hidden="true">📄</span> {a.nome}
+            <span aria-hidden="true">
+              <Emoji e="📄" />
+            </span>{" "}
+            {a.nome}
           </button>
         </li>
       ))}
@@ -986,7 +992,7 @@ function TelaAula({ grupo, aula, estudo, onTela, extras }: TelaAulaProps) {
         )}
         <span className="prf-aula-sobre">
           <span className="prf-grupo-icone prf-icone-mini" aria-hidden="true">
-            {icone(grupo)}
+            <Emoji e={icone(grupo)} />
           </span>
           {grupo.nome}
           {numeroAula(aula) && ` · ${numeroAula(aula)}`}
@@ -1021,7 +1027,7 @@ function TelaAula({ grupo, aula, estudo, onTela, extras }: TelaAulaProps) {
             {aula.pdfs.map((p) => (
               <li key={p.id} className="prf-bloco prf-bloco-pdf">
                 <span className="prf-bloco-icone" aria-hidden="true">
-                  📄
+                  <Emoji e="📄" />
                 </span>
                 <button
                   type="button"

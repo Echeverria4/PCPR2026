@@ -5,7 +5,6 @@ export const MAPAS_TRANSITO: MapaAula[] = [
   {
     aula: "transito-01",
     centro: { titulo: "Trânsito e velocidades", emoji: "🛣️", sub: "Vias e limites sem placa" },
-    desenho: "rodovia",
     ramos: [
       { rotulo: "Trânsito", emoji: "🚗", cor: "azul", folhas: ["**Circular**, parar, estacionar, carga e descarga", "Trânsito seguro: **direito** de todos", "Órgão responde **sem culpa**: objetiva"] },
       { rotulo: "Vias equiparadas", emoji: "🏖️", cor: "verde", folhas: ["**Praias** abertas à circulação", "Vias internas de **condomínio**", "Estacionamento privado de **uso coletivo**"] },
@@ -20,7 +19,6 @@ export const MAPAS_TRANSITO: MapaAula[] = [
   {
     aula: "transito-02",
     centro: { titulo: "Normas de circulação", emoji: "🚦", sub: "Preferência, ultrapassagem, luzes e parada" },
-    desenho: "semaforo",
     ramos: [
       { rotulo: "Preferência", emoji: "🔀", cor: "azul", folhas: ["1º quem vem da **rodovia**", "2º quem está na **rotatória**", "Demais casos: quem vem pela **direita**"] },
       { rotulo: "Emergência", emoji: "🚨", cor: "verde", folhas: ["Circular e parar: **som + luz**", "Livre estacionamento: **só a luz**"] },
@@ -48,7 +46,6 @@ export const MAPAS_TRANSITO: MapaAula[] = [
   {
     aula: "transito-04",
     centro: { titulo: "Sistema Nacional de Trânsito", emoji: "🏛️", sub: "Órgãos, competências e jornada" },
-    desenho: "viatura",
     ramos: [
       { rotulo: "Contran", emoji: "🧭", cor: "azul", folhas: ["**Coordenador** do sistema", "Máximo **normativo** e consultivo"] },
       { rotulo: "Cetran e Contrandife", emoji: "📜", cor: "verde", folhas: ["Normativos e **consultivos**", "Julgam recursos contra a **Jari**"] },
@@ -63,7 +60,6 @@ export const MAPAS_TRANSITO: MapaAula[] = [
   {
     aula: "transito-05",
     centro: { titulo: "Sinalização", emoji: "🚸", sub: "Tipos, ordem de força e responsabilidade" },
-    desenho: "placa",
     ramos: [
       { rotulo: "Tipos", emoji: "📋", cor: "azul", folhas: ["**Verticais**, horizontais, luminosos e sonoros", "Dispositivos **auxiliares** e gestos"] },
       { rotulo: "Prevalência", emoji: "🥇", cor: "verde", folhas: ["**Agente de trânsito** vence tudo", "Depois o **semáforo**", "Depois a placa; por fim, a **regra geral**"] },
@@ -92,7 +88,6 @@ export const MAPAS_TRANSITO: MapaAula[] = [
   {
     aula: "transito-07",
     centro: { titulo: "Registro e habilitação", emoji: "📄", sub: "CRV, licenciamento, escolares e categorias" },
-    desenho: "documento",
     ramos: [
       { rotulo: "Novo CRV", emoji: "📄", cor: "azul", folhas: ["**Transferência**: 30 dias", "Mudança de **município**, característica ou categoria", "Vendedor comunica em **60 dias**"] },
       { rotulo: "Licenciamento", emoji: "🗓️", cor: "verde", folhas: ["Renovação **anual**", "Débitos quitados e **recall** atendido", "Débito **não** impede baixa"] },
@@ -107,7 +102,6 @@ export const MAPAS_TRANSITO: MapaAula[] = [
   {
     aula: "transito-08",
     centro: { titulo: "Penalidades e processo", emoji: "⚖️", sub: "Pontos, suspensão, cassação e prazos" },
-    desenho: "balanca",
     ramos: [
       { rotulo: "Pontos", emoji: "🎯", cor: "azul", folhas: ["Gravíssima **7**; grave **5**", "Média **4**; leve **3**", "Gravíssima: **R$ 293,47**"] },
       { rotulo: "Suspensão", emoji: "⏸️", cor: "verde", folhas: ["**20** pontos com 2+ gravíssimas", "**30** com uma; **40** sem nenhuma", "Atividade remunerada: sempre **40**"] },
@@ -122,7 +116,6 @@ export const MAPAS_TRANSITO: MapaAula[] = [
   {
     aula: "transito-09",
     centro: { titulo: "Infrações em espécie", emoji: "🚨", sub: "Fatores, suspensão e artigos parecidos" },
-    desenho: "alerta",
     ramos: [
       { rotulo: "Habilitação", emoji: "📇", cor: "azul", folhas: ["**Sem** CNH ou suspensa: 3 vezes", "Categoria **diferente**: 2 vezes", "Entregar a direção: **163 e 164**"] },
       { rotulo: "Álcool e recusa", emoji: "🍺", cor: "verde", folhas: ["**165 e 165-A**: gravíssima, 10 vezes", "Suspensão por **12 meses**", "Reincidência em 12 meses: **dobro**"] },
@@ -137,7 +130,6 @@ export const MAPAS_TRANSITO: MapaAula[] = [
   {
     aula: "transito-10",
     centro: { titulo: "Crimes de trânsito", emoji: "🚔", sub: "Arts. 291 a 312-B do CTB" },
-    desenho: "algema",
     ramos: [
       { rotulo: "Lesão culposa", emoji: "🤕", cor: "azul", folhas: ["Admite **composição** e transação", "**Não** com álcool, racha ou +50 km/h", "Nessas três: **inquérito**"] },
       { rotulo: "Suspensão", emoji: "📵", cor: "verde", folhas: ["**2 meses a 5 anos**", "Entrega em **48 h** após o trânsito em julgado", "Cautelar **de ofício** ou a pedido"] },
@@ -166,7 +158,6 @@ export const MAPAS_TRANSITO: MapaAula[] = [
   {
     aula: "transito-12",
     centro: { titulo: "Calendário do licenciamento", emoji: "🗓️", sub: "Resolução Contran 110/2000" },
-    desenho: "relogio",
     ramos: [
       { rotulo: "Tabela", emoji: "📅", cor: "azul", folhas: ["Finais 1 e 2: **setembro**", "Finais 3, 4 e 5: **outubro**", "Finais 6, 7 e 8: **novembro**", "Finais 9 e 0: **dezembro**"] },
       { rotulo: "Estado", emoji: "🏢", cor: "verde", folhas: ["Órgão do Estado ou DF **fixa**", "Pode **antecipar**, nunca adiar"] },
@@ -236,7 +227,6 @@ export const MAPAS_TRANSITO: MapaAula[] = [
   {
     aula: "transito-17",
     centro: { titulo: "Luzes especiais", emoji: "🚨", sub: "Resoluções 970/2022 e 909/2022" },
-    desenho: "viatura",
     ramos: [
       { rotulo: "Azul e vermelha", emoji: "🔵", cor: "azul", folhas: ["Incêndio, salvamento e **polícia**", "Fiscalização de trânsito e **ambulância**"] },
       { rotulo: "Quando acionar", emoji: "🚨", cor: "verde", folhas: ["Só em **urgência** ou policiamento ostensivo", "Circular e parar: **som** junto", "Estacionar: **só a luz**"] },
@@ -251,7 +241,6 @@ export const MAPAS_TRANSITO: MapaAula[] = [
   {
     aula: "transito-18",
     centro: { titulo: "Suspensão e cassação", emoji: "⏸️", sub: "Resolução Contran 723/2018" },
-    desenho: "escudo",
     ramos: [
       { rotulo: "Por pontos", emoji: "🎯", cor: "azul", folhas: ["**20, 30 ou 40** em 12 meses", "Remunerada: **40** sempre", "Infração que suspende **não soma** pontos"] },
       { rotulo: "Quem aplica", emoji: "🏢", cor: "verde", folhas: ["Pontos: órgão da **habilitação**", "Infração específica: quem aplica a **multa**"] },
@@ -294,7 +283,6 @@ export const MAPAS_TRANSITO: MapaAula[] = [
   {
     aula: "transito-21",
     centro: { titulo: "Identificação do veículo", emoji: "🔢", sub: "Resolução Contran 968/2022" },
-    desenho: "documento",
     ramos: [
       { rotulo: "VIN", emoji: "🔤", cor: "azul", folhas: ["**17** caracteres", "**WMI 3**, VDS 6, VIS 8", "10º caractere: **ano-modelo**"] },
       { rotulo: "ETA", emoji: "🏷️", cor: "verde", folhas: ["Etiqueta que se **destrói** ao remover", "Traz pelo menos o **VIS**"] },

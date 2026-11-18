@@ -4,7 +4,6 @@ export const MAPAS_PENAL: MapaAula[] = [
   {
     aula: "penal-01",
     centro: { titulo: "Princípios penais", emoji: "⚖️", sub: "Legalidade, limites e fontes" },
-    desenho: "balanca",
     ramos: [
       { rotulo: "Legalidade", emoji: "📜", cor: "azul", folhas: ["Lei **anterior** ao fato", "Escrita, estrita e **certa**", "Medida provisória **não cria** crime"] },
       { rotulo: "Intervenção mínima", emoji: "🎯", cor: "verde", folhas: ["**Último** recurso", "Fragmentária: só bens **importantes**"] },
@@ -19,7 +18,6 @@ export const MAPAS_PENAL: MapaAula[] = [
   {
     aula: "penal-02",
     centro: { titulo: "Lei penal aplicada", emoji: "⏳", sub: "Tempo, lugar e prazos" },
-    desenho: "bussola",
     ramos: [
       { rotulo: "Retroatividade", emoji: "⏪", cor: "azul", folhas: ["Só retroage para **beneficiar**", "Mesmo após o **trânsito**", "Não se **combinam** duas leis"] },
       { rotulo: "Abolitio criminis", emoji: "❎", cor: "verde", folhas: ["Fato deixa de ser **crime**", "Apaga efeitos **penais**", "Efeito civil **fica**"] },
@@ -34,7 +32,6 @@ export const MAPAS_PENAL: MapaAula[] = [
   {
     aula: "penal-03",
     centro: { titulo: "Fato típico e ilicitude", emoji: "🧩", sub: "Conduta, dolo e excludentes" },
-    desenho: "alerta",
     ramos: [
       { rotulo: "Nexo causal", emoji: "🔗", cor: "azul", folhas: ["Superveniente que **sozinha** causa: corta", "Responde pelos **atos anteriores**", "Infecção do ferimento **não corta**"] },
       { rotulo: "Omissão imprópria", emoji: "🙅", cor: "verde", folhas: ["Devia e **podia** agir", "Dever legal, **encargo** ou risco"] },
@@ -49,7 +46,6 @@ export const MAPAS_PENAL: MapaAula[] = [
   {
     aula: "penal-04",
     centro: { titulo: "Culpabilidade e erro", emoji: "🧠", sub: "Imputável, consciente, exigível" },
-    desenho: "cerebro",
     ramos: [
       { rotulo: "Imputabilidade", emoji: "🧒", cor: "azul", folhas: ["Menor de 18: **biológico**", "Doença mental: **biopsicológico**", "Semi-imputável: pena **reduzida**"] },
       { rotulo: "Embriaguez", emoji: "🍺", cor: "verde", folhas: ["Voluntária ou culposa: **não isenta**", "Fortuita completa: **isenta**", "Fortuita incompleta: **reduz**"] },
@@ -64,7 +60,6 @@ export const MAPAS_PENAL: MapaAula[] = [
   {
     aula: "penal-05",
     centro: { titulo: "Extinção da punibilidade", emoji: "🧾", sub: "Art. 107 e prescrição" },
-    desenho: "relogio",
     ramos: [
       { rotulo: "Morte", emoji: "🕯️", cor: "azul", folhas: ["Não se **comunica**", "Extingue a **multa**"] },
       { rotulo: "Clemência", emoji: "🤲", cor: "verde", folhas: ["Anistia: **lei**, sobre fatos", "Graça: **individual**", "Indulto: **coletivo**"] },
@@ -79,7 +74,6 @@ export const MAPAS_PENAL: MapaAula[] = [
   {
     aula: "penal-06",
     centro: { titulo: "Crimes contra a pessoa", emoji: "👤", sub: "Vida, corpo, honra, liberdade" },
-    desenho: "pessoas",
     ramos: [
       { rotulo: "Homicídio", emoji: "☠️", cor: "azul", folhas: ["Simples: **6 a 20**", "Qualificado: **12 a 30**", "Privilégio afasta **hediondez**"] },
       { rotulo: "Feminicídio", emoji: "🚺", cor: "verde", folhas: ["Art. **121-A**: crime próprio", "Pena: **20 a 40**", "Vicaricídio: **art. 121-B**"] },
@@ -94,7 +88,6 @@ export const MAPAS_PENAL: MapaAula[] = [
   {
     aula: "penal-07",
     centro: { titulo: "Crimes patrimoniais", emoji: "💰", sub: "Como o bem saiu?" },
-    desenho: "algema",
     ramos: [
       { rotulo: "Furto", emoji: "👜", cor: "azul", folhas: ["**1 a 6** anos (2026)", "Noturno: **+ metade**", "Privilégio: **pequeno valor**"] },
       { rotulo: "Roubo", emoji: "🔪", cor: "verde", folhas: ["**6 a 10** anos", "Impróprio: violência **depois**", "Arma de fogo: **+2/3**"] },
@@ -109,7 +102,6 @@ export const MAPAS_PENAL: MapaAula[] = [
   {
     aula: "penal-08",
     centro: { titulo: "Dignidade sexual", emoji: "✋", sub: "Liberdade de escolha" },
-    desenho: "escudo",
     ramos: [
       { rotulo: "Estupro", emoji: "⛔", cor: "azul", folhas: ["Violência ou **grave ameaça**", "**6 a 10** anos", "Dispensa **contato físico**"] },
       { rotulo: "Vulnerável", emoji: "🧸", cor: "verde", folhas: ["Menor de **14** anos", "**10 a 18** anos", "Presunção **absoluta**"] },
@@ -124,7 +116,6 @@ export const MAPAS_PENAL: MapaAula[] = [
   {
     aula: "penal-09",
     centro: { titulo: "Fé pública", emoji: "🔍", sub: "Moeda, documento, identidade" },
-    desenho: "documento",
     ramos: [
       { rotulo: "Moeda falsa", emoji: "💵", cor: "azul", folhas: ["**3 a 12** anos", "Guardar ou circular: **mesma pena**", "Grosseira: **estelionato**"] },
       { rotulo: "Recebeu de boa-fé", emoji: "🙏", cor: "verde", folhas: ["Repassou após **saber**", "Pena **menor**: detenção"] },
@@ -139,7 +130,6 @@ export const MAPAS_PENAL: MapaAula[] = [
   {
     aula: "penal-10",
     centro: { titulo: "Crimes funcionais", emoji: "🏛️", sub: "Contra a administração pública" },
-    desenho: "balanca",
     ramos: [
       { rotulo: "Quem é funcionário", emoji: "💼", cor: "azul", folhas: ["Conceito **amplo**", "Mesmo **sem** remuneração", "Comissão: **+1/3**"] },
       { rotulo: "Peculato", emoji: "💰", cor: "verde", folhas: ["Apropriar ou **desviar**: 2 a 12", "Furto: usa a **facilidade**", "Por erro: erro **espontâneo**"] },
@@ -154,7 +144,6 @@ export const MAPAS_PENAL: MapaAula[] = [
   {
     aula: "penal-11",
     centro: { titulo: "Particular contra a administração", emoji: "🚧", sub: "Rotina da fiscalização" },
-    desenho: "viatura",
     ramos: [
       { rotulo: "Resistência", emoji: "✋", cor: "azul", folhas: ["Ato legal com **violência**", "Não executado: **reclusão**", "Pena da violência **somada**"] },
       { rotulo: "Desobediência", emoji: "🙉", cor: "verde", folhas: ["Ordem **legal**", "**Sem** violência", "**15 dias** a 6 meses"] },
@@ -169,7 +158,6 @@ export const MAPAS_PENAL: MapaAula[] = [
   {
     aula: "penal-12",
     centro: { titulo: "Administração da justiça", emoji: "⚖️", sub: "Justiça, finanças e exterior" },
-    desenho: "livro",
     ramos: [
       { rotulo: "Falsas acusações", emoji: "📢", cor: "azul", folhas: ["339: acusa **inocente**", "340: crime **inexistente**", "341: acusa **a si**"] },
       { rotulo: "Testemunha", emoji: "🎤", cor: "verde", folhas: ["Falso testemunho: **2 a 4**", "Retratação **antes** da sentença", "Suborno: **3 a 4**"] },
@@ -184,7 +172,6 @@ export const MAPAS_PENAL: MapaAula[] = [
   {
     aula: "penal-13",
     centro: { titulo: "Crimes em licitações", emoji: "📑", sub: "Arts. 337-E a 337-P" },
-    desenho: "alerta",
     ramos: [
       { rotulo: "Contratação direta", emoji: "📝", cor: "azul", folhas: ["337-E: fora da **lei**", "**4 a 8** anos", "Crime **material**"] },
       { rotulo: "Competição frustrada", emoji: "🏁", cor: "verde", folhas: ["337-F: **4 a 8**", "Fim de **vantagem**", "Crime **formal**"] },

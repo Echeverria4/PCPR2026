@@ -1,5 +1,6 @@
 import { Fragment, useEffect, useState, type ReactNode } from "react";
 import type { MapaAula } from "../prf/cursos/completo/prf-policial/mapas/tipos";
+import { Emoji, TextoEmoji } from "../icones/Emoji";
 import { aulaDaQuestao, grupoDaAula, nomeMateriaPol, type Painel, type PontoFraco } from "./dados";
 
 // ---------- mapas mentais (só baixam quando a tela pede) ----------
@@ -125,14 +126,16 @@ export function CartaoMapa({ mapa, materia, rotulo, onAbrir, completo = true, ex
   return (
     <section className="cx-card cx-mapa" aria-label={rotulo}>
       <div className="cx-card-topo">
-        <h2 className="cx-card-titulo">{rotulo}</h2>
+        <h2 className="cx-card-titulo">
+          <TextoEmoji texto={rotulo} />
+        </h2>
         {etiqueta ?? <span className="cx-etiqueta">{materia}</span>}
       </div>
       {extra}
       <div className="cx-poster">
         <div className="cx-poster-topo">
           <span className="cx-poster-icone" aria-hidden="true">
-            {mapa.centro.emoji}
+            <Emoji e={mapa.centro.emoji} />
           </span>
           <div className="cx-poster-texto">
             <div className="cx-mapa-titulo">{mapa.centro.titulo}</div>
@@ -145,7 +148,7 @@ export function CartaoMapa({ mapa, materia, rotulo, onAbrir, completo = true, ex
               <li key={r.rotulo} className={`cx-ramo cx-ramo-${r.cor}`}>
                 <div className="cx-ramo-rotulo">
                   <span className="cx-ramo-emoji" aria-hidden="true">
-                    {r.emoji}
+                    <Emoji e={r.emoji} />
                   </span>
                   <span>{r.rotulo}</span>
                 </div>
@@ -162,13 +165,17 @@ export function CartaoMapa({ mapa, materia, rotulo, onAbrir, completo = true, ex
         )}
         <div className="cx-poster-notas">
           <p className="cx-macete">
-            <span aria-hidden="true">💡</span>
+            <span aria-hidden="true">
+              <Emoji e="💡" />
+            </span>
             <span>
               <strong className="cx-nota-rotulo">Macete:</strong> <Negrito texto={mapa.macete} />
             </span>
           </p>
           <p className="cx-cuidado">
-            <span aria-hidden="true">⚠️</span>
+            <span aria-hidden="true">
+              <Emoji e="⚠️" />
+            </span>
             <span>
               <strong className="cx-nota-rotulo">Cuidado:</strong> <Negrito texto={mapa.cuidado} />
             </span>
@@ -216,52 +223,9 @@ export function Barras({ linhas, vazio, teto }: { linhas: LinhaBarra[]; vazio: s
   );
 }
 
-// ---------- ícones do menu (traço simples, cor do texto) ----------
+// ---------- ícones de traço (abrir e fechar o menu, cor do texto) ----------
 
 const caminhos: Record<string, ReactNode> = {
-  inicio: <path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" />,
-  cursos: (
-    <>
-      <rect x="3" y="3" width="7.5" height="7.5" rx="1.5" />
-      <rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5" />
-      <rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5" />
-      <rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5" />
-    </>
-  ),
-  questoes: (
-    <>
-      <rect x="3.5" y="3.5" width="17" height="17" rx="2.5" />
-      <path d="m8 12 3 3 5-6" />
-    </>
-  ),
-  mapas: (
-    <>
-      <circle cx="12" cy="12" r="2.6" />
-      <circle cx="4.5" cy="5.5" r="1.8" />
-      <circle cx="19.5" cy="5.5" r="1.8" />
-      <circle cx="4.5" cy="18.5" r="1.8" />
-      <circle cx="19.5" cy="18.5" r="1.8" />
-      <path d="M6 6.8 10 10.3M18 6.8l-4 3.5M6 17.2l4-3.5M18 17.2l-4-3.5" />
-    </>
-  ),
-  redacoes: (
-    <>
-      <path d="M4 20h4L19.5 8.5a2.1 2.1 0 0 0-3-3L5 17v3z" />
-      <path d="m14.5 7.5 3 3" />
-    </>
-  ),
-  tempo: (
-    <>
-      <circle cx="12" cy="12" r="8.5" />
-      <path d="M12 7.5V12l3 2" />
-    </>
-  ),
-  provas: (
-    <>
-      <rect x="5" y="3.5" width="14" height="17" rx="2" />
-      <path d="M8.5 8h7M8.5 12h7M8.5 16h4" />
-    </>
-  ),
   menu: <path d="M4 7h16M4 12h16M4 17h16" />,
   fechar: <path d="M6 6l12 12M18 6 6 18" />,
 };

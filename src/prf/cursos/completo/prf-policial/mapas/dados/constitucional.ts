@@ -4,7 +4,6 @@ export const MAPAS_CONSTITUCIONAL: MapaAula[] = [
   {
     aula: "con-01",
     centro: { titulo: "Normas e poder constituinte", emoji: "📜", sub: "Eficácia, pirâmide e reforma" },
-    desenho: "livro",
     ramos: [
       { rotulo: "Plena", emoji: "💯", cor: "azul", folhas: ["Funciona **sozinha**", "Lei **não reduz**", "Art. 2º: **três Poderes**"] },
       { rotulo: "Contida", emoji: "🔽", cor: "verde", folhas: ["Funciona sozinha, mas **restringível**", "Art. 5º, XIII: **profissão**"] },
@@ -19,7 +18,6 @@ export const MAPAS_CONSTITUCIONAL: MapaAula[] = [
   {
     aula: "con-02",
     centro: { titulo: "Direitos fundamentais", emoji: "🛡️", sub: "Gerações e características" },
-    desenho: "escudo",
     ramos: [
       { rotulo: "1ª geração", emoji: "🗽", cor: "azul", folhas: ["Civis e **políticos**", "Valor: **liberdade**"] },
       { rotulo: "2ª geração", emoji: "🤝", cor: "verde", folhas: ["Sociais, econômicos e **culturais**", "Valor: **igualdade**"] },
@@ -34,7 +32,6 @@ export const MAPAS_CONSTITUCIONAL: MapaAula[] = [
   {
     aula: "con-03",
     centro: { titulo: "Art. 5º: liberdades", emoji: "🗽", sub: "Da vida à propriedade" },
-    desenho: "balanca",
     ramos: [
       { rotulo: "Igualdade", emoji: "⚖️", cor: "azul", folhas: ["Formal: **na lei**", "Material: **ações afirmativas**", "Idade só se o **cargo** justificar"] },
       { rotulo: "Expressão", emoji: "📣", cor: "verde", folhas: ["Livre, **sem anonimato**", "Resposta **proporcional** e indenização", "**Crença** livre; Estado laico não financia igreja"] },
@@ -49,7 +46,6 @@ export const MAPAS_CONSTITUCIONAL: MapaAula[] = [
   {
     aula: "con-04",
     centro: { titulo: "Art. 5º: garantias", emoji: "🔐", sub: "Justiça, pena e remédios" },
-    desenho: "algema",
     ramos: [
       { rotulo: "Acesso à Justiça", emoji: "🚪", cor: "azul", folhas: ["Lei **não exclui** do Judiciário", "Respeita direito **adquirido** e coisa julgada", "Júri: **dolosos** contra a vida", "**Culpado** só após o trânsito em julgado"] },
       { rotulo: "Crimes na CF", emoji: "🚨", cor: "verde", folhas: ["Racismo e grupos armados: **imprescritíveis**", "Tortura, tráfico, terrorismo, hediondos: **sem graça**", "Todos **inafiançáveis**"] },
@@ -78,7 +74,6 @@ export const MAPAS_CONSTITUCIONAL: MapaAula[] = [
   {
     aula: "con-06",
     centro: { titulo: "Nacionalidade", emoji: "🌐", sub: "Art. 12 da Constituição" },
-    desenho: "globo",
     ramos: [
       { rotulo: "Nato pelo solo", emoji: "🌱", cor: "azul", folhas: ["Nasceu **no Brasil**", "Exceção: pais estrangeiros **a serviço**"] },
       { rotulo: "Nato pelo sangue", emoji: "🩸", cor: "verde", folhas: ["Pai ou mãe **a serviço** do Brasil", "Ou **registro** em repartição", "Ou mora aqui e **opta** após 18"] },
@@ -107,7 +102,6 @@ export const MAPAS_CONSTITUCIONAL: MapaAula[] = [
   {
     aula: "con-08",
     centro: { titulo: "Federação brasileira", emoji: "🗺️", sub: "Entes, bens e competências" },
-    desenho: "globo",
     ramos: [
       { rotulo: "Federação", emoji: "🔗", cor: "azul", folhas: ["União **indissolúvel**", "Sem direito de **sair**", "Soberania: **República** Federativa"] },
       { rotulo: "Autonomia", emoji: "🧩", cor: "verde", folhas: ["Auto-organização e **autolegislação**", "Autoadministração e **autogoverno**", "**Intervenção** é exceção: casos do art. 34"] },
@@ -122,7 +116,6 @@ export const MAPAS_CONSTITUCIONAL: MapaAula[] = [
   {
     aula: "con-09",
     centro: { titulo: "Emenda constitucional", emoji: "✏️", sub: "Art. 60 da Constituição" },
-    desenho: "documento",
     ramos: [
       { rotulo: "Quem propõe", emoji: "🙋", cor: "azul", folhas: ["**1/3** da Câmara ou Senado", "Presidente da **República**", "Mais da metade das **Assembleias**"] },
       { rotulo: "Votação", emoji: "🗳️", cor: "verde", folhas: ["**2 turnos** em cada Casa", "**3/5** de cada Casa", "Sem sanção nem **veto**"] },
@@ -151,7 +144,6 @@ export const MAPAS_CONSTITUCIONAL: MapaAula[] = [
   {
     aula: "con-11",
     centro: { titulo: "Defesa do Estado", emoji: "🛡️", sub: "Exceção, Forças e art. 144" },
-    desenho: "viatura",
     ramos: [
       { rotulo: "Estado de defesa", emoji: "🚧", cor: "azul", folhas: ["Presidente **decreta**; Congresso aprova depois", "**30 dias**, uma prorrogação", "Locais **restritos**"] },
       { rotulo: "Estado de sítio", emoji: "🚨", cor: "verde", folhas: ["Congresso autoriza **antes**", "Comoção: **30 dias** por vez", "Guerra: **enquanto durar**"] },
@@ -166,7 +158,6 @@ export const MAPAS_CONSTITUCIONAL: MapaAula[] = [
   {
     aula: "con-12",
     centro: { titulo: "Ordem social", emoji: "🏥", sub: "Seguridade, ambiente e família" },
-    desenho: "pessoas",
     ramos: [
       { rotulo: "Seguridade", emoji: "🧺", cor: "azul", folhas: ["Saúde: **todos**", "Assistência: **quem precisa**", "Previdência: **quem contribui**"] },
       { rotulo: "Custeio", emoji: "💰", cor: "verde", folhas: ["Toda a **sociedade**", "Benefício novo: **fonte** de custeio", "Contribuição: **90 dias**"] },

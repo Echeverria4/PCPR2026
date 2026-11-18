@@ -4,7 +4,6 @@ export const MAPAS_DISCURSIVAS: MapaAula[] = [
   {
     aula: "discursivas-01",
     centro: { titulo: "Ler e treinar", emoji: "📖", sub: "Leitura crítica e escrita à mão" },
-    desenho: "livro",
     ramos: [
       { rotulo: "Compreender", emoji: "🔍", cor: "azul", folhas: ["Sentido **literal**", "Assunto e **tese**"] },
       { rotulo: "Analisar e sintetizar", emoji: "🧩", cor: "verde", folhas: ["Análise: partes e **ligações**", "Síntese: só o **essencial**"] },
@@ -19,7 +18,6 @@ export const MAPAS_DISCURSIVAS: MapaAula[] = [
   {
     aula: "discursivas-02",
     centro: { titulo: "Estrutura do texto", emoji: "📐", sub: "5 Cs, argumentos e parágrafos" },
-    desenho: "documento",
     ramos: [
       { rotulo: "Os 5 Cs", emoji: "✅", cor: "azul", folhas: ["Clareza e **concisão**", "**Correção**: norma culta", "Coerência e **coesão**"] },
       { rotulo: "Coerência", emoji: "🧭", cor: "verde", folhas: ["Sintática: **ordem** certa", "Semântica: **sem contradição**", "Temática: falhar **zera**"] },
@@ -34,7 +32,6 @@ export const MAPAS_DISCURSIVAS: MapaAula[] = [
   {
     aula: "discursivas-03",
     centro: { titulo: "Folha definitiva", emoji: "📄", sub: "Forma que evita descontos" },
-    desenho: "alerta",
     ramos: [
       { rotulo: "Letra", emoji: "🔤", cor: "azul", folhas: ["Cursiva ou **de forma**", "Avalia-se a **legibilidade**", "Tamanho **médio**"] },
       { rotulo: "Parágrafos", emoji: "📏", cor: "verde", folhas: ["**5 a 10** linhas", "Recuo de **1,5 a 2,5 cm**", "Sem pular **linhas**"] },
@@ -49,7 +46,6 @@ export const MAPAS_DISCURSIVAS: MapaAula[] = [
   {
     aula: "discursivas-05",
     centro: { titulo: "Treino como prova", emoji: "🏁", sub: "30 linhas, à mão, com tempo" },
-    desenho: "relogio",
     ramos: [
       { rotulo: "Tempo", emoji: "⏰", cor: "azul", folhas: ["Anotar no **canto superior**", "Acompanhar a **velocidade**"] },
       { rotulo: "Volume", emoji: "📚", cor: "verde", folhas: ["Escrever **todos os temas**", "Mesmo **sem correção**"] },
@@ -63,7 +59,6 @@ export const MAPAS_DISCURSIVAS: MapaAula[] = [
   {
     aula: "discursivas-06",
     centro: { titulo: "Temas de segurança", emoji: "🛡️", sub: "Primeira rodada de propostas" },
-    desenho: "escudo",
     ramos: [
       { rotulo: "Texto motivador", emoji: "📰", cor: "azul", folhas: ["Só para **dar ideias**", "Nunca **copiar**"] },
       { rotulo: "Aspectos", emoji: "📊", cor: "verde", folhas: ["Cada um vale **pontos**", "Omitido: **não pontua**", "Um bloco por **aspecto**"] },
@@ -78,7 +73,6 @@ export const MAPAS_DISCURSIVAS: MapaAula[] = [
   {
     aula: "discursivas-07",
     centro: { titulo: "Padrões de resposta", emoji: "📋", sub: "Crime organizado, drogas e mulher" },
-    desenho: "pessoas",
     ramos: [
       { rotulo: "Molde", emoji: "📐", cor: "azul", folhas: ["Introdução: **dado** ou norma", "Um parágrafo por **aspecto**", "Conclusão **reforça** ou avança"] },
       { rotulo: "Crime organizado", emoji: "🕸️", cor: "verde", folhas: ["Modo de **operação**", "Encarceramento e **facções**", "Papel do **Estado**"] },
@@ -93,7 +87,6 @@ export const MAPAS_DISCURSIVAS: MapaAula[] = [
   {
     aula: "discursivas-08",
     centro: { titulo: "Fronteira, ódio e ambiente", emoji: "🧭", sub: "Temas ligados à PRF" },
-    desenho: "globo",
     ramos: [
       { rotulo: "Faixa de fronteira", emoji: "🗺️", cor: "azul", folhas: ["Até **150 km**", "Rota de **contrabando**", "PRF fiscaliza as **rodovias**"] },
       { rotulo: "Mercadorias", emoji: "📦", cor: "verde", folhas: ["Contrabando: **proibida**", "Descaminho: **ilude o imposto**"] },
@@ -108,7 +101,6 @@ export const MAPAS_DISCURSIVAS: MapaAula[] = [
   {
     aula: "discursivas-09",
     centro: { titulo: "Trânsito e informação", emoji: "🚦", sub: "Lei Seca e notícias falsas" },
-    desenho: "semaforo",
     ramos: [
       { rotulo: "Lei Seca", emoji: "🍺", cor: "azul", folhas: ["Lei **11.705/2008**", "Tolerância zero: **12.760/2012**", "Infração **gravíssima** (art. 165)"] },
       { rotulo: "Crime", emoji: "🚔", cor: "verde", folhas: ["Capacidade psicomotora **alterada**", "Provada pelos meios do **art. 306**"] },
@@ -123,7 +115,6 @@ export const MAPAS_DISCURSIVAS: MapaAula[] = [
   {
     aula: "discursivas-10",
     centro: { titulo: "A PRF no texto", emoji: "🚓", sub: "Padrões da última rodada" },
-    desenho: "viatura",
     ramos: [
       { rotulo: "Relevância social", emoji: "💚", cor: "azul", folhas: ["Protege **vidas**", "Garante **circulação**", "Atinge a **logística** do crime"] },
       { rotulo: "Modal rodoviário", emoji: "🚛", cor: "verde", folhas: ["Maioria das **cargas**", "Rodovia segura: **economia** funciona"] },

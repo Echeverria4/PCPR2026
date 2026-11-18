@@ -10680,7 +10680,6 @@ body.prf-cad-aberto .prf-cad-flutua.prf-cad-movido {
 .prf-red-numero input:focus { outline: none; border-color: var(--ouro); box-shadow: 0 0 0 1px var(--ouro); }
 
 /* ---------- PRF Policial: Mapas Mentais ---------- */
-.prf-mapa-desenho { display: block; flex-shrink: 0; }
 .prf-mapa-d-acento { stroke: var(--ouro-forte); }
 .prf-mapa-d-cheio { fill: currentColor; stroke: none; }
 .prf-mapa-d-luz-para { fill: var(--vermelho); stroke: none; }
@@ -12293,4 +12292,14 @@ button.prf-mapa-ramo-topo:hover { background: var(--poster-marinho-2); }
   .prf-cronog-sem-aula {
     grid-column: auto;
   }
+}
+
+/* Ícones 3D no lugar dos emojis (src/icones/Emoji.tsx): seguem o tamanho da letra do lugar. */
+img.emoji {
+  display: inline-block;
+  width: 1.25em;
+  height: 1.25em;
+  vertical-align: -0.25em;
+  object-fit: contain;
+  user-select: none;
 }

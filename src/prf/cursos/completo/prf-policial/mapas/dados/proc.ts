@@ -4,7 +4,6 @@ export const MAPAS_PROC: MapaAula[] = [
   {
     aula: "proc-01",
     centro: { titulo: "Ação penal", emoji: "📣", sub: "Quem acusa e como" },
-    desenho: "balanca",
     ramos: [
       { rotulo: "Incondicionada", emoji: "🏛️", cor: "azul", folhas: ["Regra **geral**", "Só o **MP** denuncia", "MP **não desiste**"] },
       { rotulo: "Condicionada", emoji: "📝", cor: "verde", folhas: ["**Representação** da vítima", "Ou requisição do **Ministério da Justiça**", "Irretratável **após a denúncia**"] },
@@ -19,7 +18,6 @@ export const MAPAS_PROC: MapaAula[] = [
   {
     aula: "proc-02",
     centro: { titulo: "Teoria da prova", emoji: "🔎", sub: "Contraditório e provas ilícitas" },
-    desenho: "documento",
     ramos: [
       { rotulo: "Prova ou informação", emoji: "🧪", cor: "azul", folhas: ["Prova: nasce **em juízo**", "Inquérito: elemento **informativo**", "Só inquérito **não condena**"] },
       { rotulo: "Exceções do 155", emoji: "📌", cor: "verde", folhas: ["Cautelares e **não repetíveis**", "Provas **antecipadas**", "Contraditório **diferido**"] },
@@ -34,7 +32,6 @@ export const MAPAS_PROC: MapaAula[] = [
   {
     aula: "proc-03",
     centro: { titulo: "Meios de prova", emoji: "🧪", sub: "Perícia, custódia e testemunhas" },
-    desenho: "rodovia",
     ramos: [
       { rotulo: "Corpo de delito", emoji: "🔬", cor: "azul", folhas: ["Vestígio: exame **indispensável**", "Confissão **não supre**", "Sumiu o vestígio: **testemunha** supre"] },
       { rotulo: "Perito", emoji: "🥼", cor: "verde", folhas: ["**Um** oficial, curso superior", "Sem oficial: **dois** idôneos", "Laudo em **10 dias**"] },
@@ -49,7 +46,6 @@ export const MAPAS_PROC: MapaAula[] = [
   {
     aula: "proc-04",
     centro: { titulo: "Inquérito e prisão", emoji: "🚔", sub: "Flagrante e custódia" },
-    desenho: "algema",
     ramos: [
       { rotulo: "Inquérito", emoji: "📂", cor: "azul", folhas: ["Escrito, sigiloso, **dispensável**", "Delegado **não arquiva**", "Defesa vê o **documentado**"] },
       { rotulo: "Prazos", emoji: "⏰", cor: "verde", folhas: ["Preso: **10 dias**", "Solto: **30 dias**", "Leis especiais: **prazo próprio**"] },

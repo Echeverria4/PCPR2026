@@ -5,7 +5,6 @@ export const MAPAS_RLM: MapaAula[] = [
   {
     aula: "rlm-01",
     centro: { titulo: "Conjuntos", emoji: "⭕", sub: "Elemento, subconjunto e diagrama" },
-    desenho: "cerebro",
     ramos: [
       { rotulo: "Símbolos", emoji: "🔣", cor: "azul", folhas: ["**Pertence** (∈): elemento e conjunto", "**Contido** (⊂): conjunto e conjunto", "Vazio e o próprio conjunto: **subconjuntos** de todos"] },
       { rotulo: "Operações", emoji: "➕", cor: "verde", folhas: ["**União**: em A, em B ou nos dois", "**Interseção**: nos dois ao mesmo tempo", "**Diferença** A − B: a ordem importa", "**Complementar**: o que falta até o universo"] },
@@ -96,7 +95,6 @@ export const MAPAS_RLM: MapaAula[] = [
   {
     aula: "rlm-08",
     centro: { titulo: "Equações e sistemas", emoji: "⚖️", sub: "Achar o valor sem quebrar" },
-    desenho: "balanca",
     ramos: [
       { rotulo: "1º grau", emoji: "📏", cor: "azul", folhas: ["Maior expoente da incógnita: **1**", "O que faz de um lado, faz **do outro**", "Dê **nome** ao desconhecido e traduza"] },
       { rotulo: "Sistemas", emoji: "🔀", cor: "verde", folhas: ["Duas incógnitas pedem **duas equações**", "**Substituição**: isole e leve à outra", "Uma solução: retas **se cruzam**", "Nenhuma: **paralelas**; infinitas: equações múltiplas"] },
@@ -227,7 +225,6 @@ export const MAPAS_RLM: MapaAula[] = [
   {
     aula: "rlm-18",
     centro: { titulo: "Orientação espacial", emoji: "🧭", sub: "Cardeais, giros e vistas" },
-    desenho: "bussola",
     ramos: [
       { rotulo: "Cardeais", emoji: "⬆️", cor: "azul", folhas: ["Norte em cima, **leste à direita**", "Colaterais: **nordeste**, sudeste, sudoeste, noroeste", "Cardeais vizinhos: **90°**; cardeal e colateral: 45°"] },
       { rotulo: "Deslocamento", emoji: "🚶", cor: "verde", folhas: ["Norte **menos** sul; leste menos oeste", "Linha reta: **Pitágoras** com os saldos"] },

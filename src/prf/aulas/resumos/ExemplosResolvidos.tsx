@@ -1,3 +1,4 @@
+import { Emoji } from "../../../icones/Emoji";
 import { useState } from "react";
 import type { ExemploResolvido } from "./tipos";
 
@@ -59,7 +60,10 @@ export default function ExemplosResolvidos({ exemplos }: { exemplos: ExemploReso
   return (
     <section className="prf-exemplos" aria-label="Como usar a fórmula">
       <h4 className="prf-exemplos-titulo">
-        <span aria-hidden="true">✍️</span> Como usar {exemplos.length === 1 ? "a fórmula" : "as fórmulas"}
+        <span aria-hidden="true">
+          <Emoji e="✍️" />
+        </span>{" "}
+        Como usar {exemplos.length === 1 ? "a fórmula" : "as fórmulas"}
       </h4>
       <ol className="prf-exemplos-lista">
         {exemplos.map((e) => (

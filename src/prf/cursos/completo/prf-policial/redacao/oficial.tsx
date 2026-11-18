@@ -1,3 +1,4 @@
+import { Emoji } from "../../../../../icones/Emoji";
 import type { SecaoGuiada } from "../../../../portugues/EstudoGuiado";
 import "./oficial.css";
 
@@ -32,7 +33,8 @@ function Tag({ n }: { n: number }) {
 function ModeloOficio() {
   return (
     <div className="prf-of">
-      <p className="prf-of-intro">📄 Um ofício de exemplo. Os números marcam as 9 partes; a legenda vem na próxima tela.</p>
+      <p className="prf-of-intro">
+        <Emoji e="📄" /> Um ofício de exemplo. Os números marcam as 9 partes; a legenda vem na próxima tela.</p>
       <div className="prf-of-folha">
         <div className="prf-of-cab">
           <Tag n={1} />
@@ -91,7 +93,8 @@ function ModeloOficio() {
 function LegendaOficio() {
   return (
     <div className="prf-of">
-      <p className="prf-of-intro">🔎 Cada número do desenho, com a regra que a prova cobra:</p>
+      <p className="prf-of-intro">
+        <Emoji e="🔎" /> Cada número do desenho, com a regra que a prova cobra:</p>
       <ol className="prf-of-legenda">
         {PARTES.map((p) => (
           <li key={p.n}>

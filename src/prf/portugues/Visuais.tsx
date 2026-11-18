@@ -1,3 +1,4 @@
+import { TextoEmoji } from "../../icones/Emoji";
 import { createContext, Fragment, useContext, useEffect, useId, useRef, useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { GLOSSARIO, type TermoGlossario } from "./glossario";
@@ -64,7 +65,12 @@ export function Rico({ texto, termos = true }: { texto: string; termos?: boolean
     donos?.set(t, id);
     return true;
   };
-  const conteudo = (p: string) => (abrir && termos ? comTermos(p, pega, abrir) : p);
+  // Emojis viram os ícones 3D nos cursos novos (fora deles, o texto sai igual).
+  const comEmoji = (n: string | ReactNode[]) =>
+    typeof n === "string"
+      ? <TextoEmoji texto={n} />
+      : n.map((x, i) => (typeof x === "string" ? <TextoEmoji key={`t${i}`} texto={x} /> : x));
+  const conteudo = (p: string) => comEmoji(abrir && termos ? comTermos(p, pega, abrir) : p);
   const partes = texto.split("**");
   // Um span só: num pai flex (pergunta do fluxo), cada pedaço viraria um item e a linha não quebraria.
   return (
@@ -231,7 +237,11 @@ export function BlocoPt({ bloco }: { bloco: Bloco }) {
     case "perguntas":
       return (
         <div className={bloco.tipo === "perguntas" ? "pi-perguntas" : "pi-lista"}>
-          {bloco.titulo && <h4 className="pi-mini-titulo">{bloco.titulo}</h4>}
+          {bloco.titulo && (
+            <h4 className="pi-mini-titulo">
+              <TextoEmoji texto={bloco.titulo} />
+            </h4>
+          )}
           <ul>
             {bloco.itens.map((it, i) => (
               <li key={i}>
@@ -244,11 +254,15 @@ export function BlocoPt({ bloco }: { bloco: Bloco }) {
     case "chaves":
       return (
         <div className="pi-chaves">
-          <div className="pi-chaves-centro">{bloco.titulo}</div>
+          <div className="pi-chaves-centro">
+            <TextoEmoji texto={bloco.titulo} />
+          </div>
           <div className="pi-chaves-ramos">
             {bloco.ramos.map((r, i) => (
               <div key={i} className={`pi-ramo ${r.classe ? `pi-c-${r.classe}` : ""}`}>
-                <div className="pi-ramo-rotulo">{r.rotulo}</div>
+                <div className="pi-ramo-rotulo">
+                  <TextoEmoji texto={r.rotulo} />
+                </div>
                 {r.texto && (
                   <div className="pi-ramo-texto">
                     <Rico texto={r.texto} />
@@ -267,7 +281,11 @@ export function BlocoPt({ bloco }: { bloco: Bloco }) {
     case "fluxo":
       return (
         <div className="pi-fluxo">
-          {bloco.titulo && <h4 className="pi-mini-titulo">{bloco.titulo}</h4>}
+          {bloco.titulo && (
+            <h4 className="pi-mini-titulo">
+              <TextoEmoji texto={bloco.titulo} />
+            </h4>
+          )}
           <ol className="pi-fluxo-passos">
             {bloco.passos.map((p, i) => (
               <li key={i} className="pi-fluxo-passo">
@@ -294,11 +312,17 @@ export function BlocoPt({ bloco }: { bloco: Bloco }) {
     case "comparativo":
       return (
         <div className="pi-comparativo">
-          {bloco.titulo && <h4 className="pi-mini-titulo">{bloco.titulo}</h4>}
+          {bloco.titulo && (
+            <h4 className="pi-mini-titulo">
+              <TextoEmoji texto={bloco.titulo} />
+            </h4>
+          )}
           <div className="pi-comparativo-colunas" style={{ ["--pi-colunas" as string]: bloco.colunas.length }}>
             {bloco.colunas.map((c, i) => (
               <div key={i} className={`pi-coluna ${c.classe ? `pi-c-${c.classe}` : ""}`}>
-                <div className="pi-coluna-titulo">{c.titulo}</div>
+                <div className="pi-coluna-titulo">
+                  <TextoEmoji texto={c.titulo} />
+                </div>
                 <ul>
                   {c.itens.map((it, j) => (
                     <li key={j}>
@@ -319,7 +343,11 @@ export function BlocoPt({ bloco }: { bloco: Bloco }) {
     case "grade":
       return (
         <div className="pi-grade">
-          {bloco.titulo && <h4 className="pi-mini-titulo">{bloco.titulo}</h4>}
+          {bloco.titulo && (
+            <h4 className="pi-mini-titulo">
+              <TextoEmoji texto={bloco.titulo} />
+            </h4>
+          )}
           <table>
             <thead>
               <tr>

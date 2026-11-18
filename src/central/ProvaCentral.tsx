@@ -3,6 +3,7 @@ import Alternativa from "../components/Alternativa";
 import { shuffle } from "../lib/quizEngine";
 import { ROTULO_CONFIANCA } from "../data/retaFinal";
 import type { AttemptRecord, Confianca, Question } from "../lib/types";
+import { Emoji } from "../icones/Emoji";
 
 /**
  * Simulado PRF em modo prova (13/11/26): como no dia da prova, o gabarito só aparece depois de entregar. Dá para
@@ -336,7 +337,7 @@ export default function ProvaCentral(props: Props) {
       <div className="quiz-header">
         <span>{props.titulo ?? "Simulado PRF · modo prova"}</span>
         <span className="quiz-cronometro" aria-label="Tempo de prova">
-          ⏱ {relogio(decorrido)}
+          <Emoji e="⏱" /> {relogio(decorrido)}
         </span>
         <span>
           {numeracao ? `${rotuloDe(q, i, numeracao)} · ${i + 1} de ${total}` : `Questão ${i + 1} de ${total}`}
@@ -575,7 +576,7 @@ function ResultadoProva({
           <li>✓ {acertos} certas</li>
           <li>✗ {erradas} erradas</li>
           <li>○ {branco} em branco</li>
-          <li>⏱ {relogio(prova.decorridoMs)}</li>
+          <li><Emoji e="⏱" /> {relogio(prova.decorridoMs)}</li>
         </ul>
 
         <div className="cx-dist">
@@ -710,7 +711,7 @@ function ItemCorrecao({
         <div className="questao-tags">
           <span className="questao-tag">{q.topico}</span>
           {q.fonte && <span className="questao-tag questao-tag-fonte">{q.fonte}</span>}
-          {q.compartilhada && <span className="questao-tag questao-tag-fonte">📚 {q.compartilhada}</span>}
+          {q.compartilhada && <span className="questao-tag questao-tag-fonte"><Emoji e="📚" /> {q.compartilhada}</span>}
         </div>
         <p className="questao-enunciado">{q.enunciado}</p>
         <div className="alternativas">

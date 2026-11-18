@@ -5,7 +5,6 @@ export const MAPAS_ESPANHOL: MapaAula[] = [
   {
     aula: "espanhol-01",
     centro: { titulo: "Primeiros passos", emoji: "📖", sub: "Alfabeto, sinais e falsos amigos" },
-    desenho: "livro",
     ramos: [
       { rotulo: "Alfabeto", emoji: "🔤", cor: "azul", folhas: ["**27 letras**; a ñ é própria", "**Ch** e **ll**: dígrafos, sem posto de letra desde 2010", "Nome de letra é **feminino**: la eñe"] },
       { rotulo: "Sinais", emoji: "❓", cor: "verde", folhas: ["**¿** e **¡** abrem a pergunta e a exclamação", "Ficam só na parte que **pergunta**", "**Raya**: travessão que abre a fala"] },
@@ -32,7 +31,6 @@ export const MAPAS_ESPANHOL: MapaAula[] = [
   {
     aula: "espanhol-03",
     centro: { titulo: "Preposições", emoji: "🔗", sub: "Por, para, hacia e hasta" },
-    desenho: "bussola",
     ramos: [
       { rotulo: "Preposição a", emoji: "➡️", cor: "azul", folhas: ["**Direção**: voy a casa", "Antes de pessoa: **vi a mi hermano**"] },
       { rotulo: "Por", emoji: "🔄", cor: "verde", folhas: ["**Causa**, meio e lugar de passagem", "Agente da **passiva**: por la patrulla"] },
@@ -75,7 +73,6 @@ export const MAPAS_ESPANHOL: MapaAula[] = [
   {
     aula: "espanhol-06",
     centro: { titulo: "Advérbios", emoji: "📍", sub: "Lugar, tempo, modo e quantidade" },
-    desenho: "relogio",
     ramos: [
       { rotulo: "Muy e mucho", emoji: "📏", cor: "azul", folhas: ["**Muy** + adjetivo ou advérbio", "**Mucho** + verbo ou substantivo", "Mucho antes de **mejor**, peor, más"] },
       { rotulo: "Lugar", emoji: "🗺️", cor: "verde", folhas: ["Aquí, ahí, **allí**", "**Allá**: lá, acolá", "Cerca e **lejos**"] },
@@ -118,7 +115,6 @@ export const MAPAS_ESPANHOL: MapaAula[] = [
   {
     aula: "espanhol-09",
     centro: { titulo: "Pronomes", emoji: "👥", sub: "Tratamento, objeto e colocação" },
-    desenho: "pessoas",
     ramos: [
       { rotulo: "Tratamento", emoji: "🤝", cor: "azul", folhas: ["**Tú**: informal; **usted**: formal", "Usted leva verbo na **3ª pessoa**", "**Vosotros**: Espanha; **ustedes**: América"] },
       { rotulo: "Objeto direto", emoji: "🎯", cor: "verde", folhas: ["**Lo, la, los, las**", "Lo vi: **eu o vi**"] },
@@ -161,7 +157,6 @@ export const MAPAS_ESPANHOL: MapaAula[] = [
   {
     aula: "espanhol-12",
     centro: { titulo: "Interpretação de texto", emoji: "🔎", sub: "Tipos, estilos e coesão" },
-    desenho: "documento",
     ramos: [
       { rotulo: "Tipos de frase", emoji: "💬", cor: "azul", folhas: ["**Declarativa**, interrogativa, imperativa, exclamativa", "**Optativa**: desejo, ojalá", "**Imprecativa**: maldição"] },
       { rotulo: "Tipos de texto", emoji: "📄", cor: "verde", folhas: ["**Narração** conta; **descrição** mostra", "**Dissertação** defende; **injunção** orienta"] },
@@ -218,7 +213,6 @@ export const MAPAS_ESPANHOL: MapaAula[] = [
   {
     aula: "espanhol-16",
     centro: { titulo: "Leitura de prova", emoji: "🔍", sub: "Possibilidade não é certeza" },
-    desenho: "alerta",
     ramos: [
       { rotulo: "Certeza", emoji: "📢", cor: "azul", folhas: ["**Siempre**, nunca, todos, solo", "Pedem **conferência** no texto"] },
       { rotulo: "Dúvida", emoji: "🤔", cor: "verde", folhas: ["**Podría**, quizá, tal vez", "**Parece** não afirma o fato"] },
@@ -233,7 +227,6 @@ export const MAPAS_ESPANHOL: MapaAula[] = [
   {
     aula: "espanhol-17",
     centro: { titulo: "Treino de leitura", emoji: "🏋️", sub: "Palavras que enganam no texto" },
-    desenho: "cerebro",
     ramos: [
       { rotulo: "Pronto e listo", emoji: "⏰", cor: "azul", folhas: ["**Pronto**: logo, em breve", "O nosso pronto é **listo**", "**Ser listo**: ser esperto"] },
       { rotulo: "Retomada", emoji: "👈", cor: "verde", folhas: ["**Estos**: o mais próximo", "**Aquellos**: o mais distante"] },

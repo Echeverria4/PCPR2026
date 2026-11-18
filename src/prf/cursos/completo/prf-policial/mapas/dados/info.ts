@@ -5,7 +5,6 @@ export const MAPAS_INFO: MapaAula[] = [
   {
     aula: "info-01",
     centro: { titulo: "Redes de computadores", emoji: "🌐", sub: "Sinal, meio, alcance e desenho" },
-    desenho: "globo",
     ramos: [
       { rotulo: "Sentido do sinal", emoji: "📶", cor: "azul", folhas: ["**Simplex**: um sentido só", "**Half-duplex**: os dois, um de cada vez", "**Full-duplex**: os dois ao mesmo tempo"] },
       { rotulo: "Destino", emoji: "🎯", cor: "verde", folhas: ["**Unicast**: para um", "**Multicast**: para um grupo", "**Broadcast**: para todos"] },
@@ -84,7 +83,6 @@ export const MAPAS_INFO: MapaAula[] = [
   {
     aula: "info-07",
     centro: { titulo: "Redes sociais", emoji: "🫂", sub: "Pessoas ligadas por interesses" },
-    desenho: "pessoas",
     ramos: [
       { rotulo: "Conceito", emoji: "🔗", cor: "azul", folhas: ["Pessoas ou empresas ligadas por **laços** e interesses", "A internet deu **escala**, não criou a ideia"] },
       { rotulo: "Corporativa", emoji: "🏢", cor: "verde", folhas: ["Rede **privada** da empresa", "Colaboradores, fornecedores, clientes e parceiros"] },
@@ -124,7 +122,6 @@ export const MAPAS_INFO: MapaAula[] = [
   {
     aula: "info-10",
     centro: { titulo: "Correio eletrônico", emoji: "📧", sub: "Um protocolo envia, dois leem" },
-    desenho: "documento",
     ramos: [
       { rotulo: "SMTP", emoji: "📤", cor: "azul", folhas: ["**Só envia**: portas 25 ou 587", "Também leva entre **servidores** de e-mail"] },
       { rotulo: "POP3", emoji: "📥", cor: "verde", folhas: ["**Baixa** as mensagens; porta 110", "Por padrão, **apaga** a cópia remota"] },
@@ -139,7 +136,6 @@ export const MAPAS_INFO: MapaAula[] = [
   {
     aula: "info-11",
     centro: { titulo: "Segurança da informação", emoji: "🔐", sub: "Princípios, autenticação e criptografia" },
-    desenho: "escudo",
     ramos: [
       { rotulo: "Tríade", emoji: "🔺", cor: "azul", folhas: ["**Confidencialidade**: só quem tem permissão", "**Integridade**: sem alteração indevida", "**Disponibilidade**: acessível quando precisa"] },
       { rotulo: "Mais princípios", emoji: "✍️", cor: "verde", folhas: ["**Autenticidade**: confirma autor ou origem", "**Não repúdio**: o autor não pode negar", "**Hash**: código fixo que confere a integridade"] },
@@ -154,7 +150,6 @@ export const MAPAS_INFO: MapaAula[] = [
   {
     aula: "info-12",
     centro: { titulo: "Malwares", emoji: "🦠", sub: "Hospeda, espalha, espia ou abre?" },
-    desenho: "alerta",
     ramos: [
       { rotulo: "Vírus", emoji: "🧫", cor: "azul", folhas: ["Precisa de **hospedeiro** executado", "Tipos: **boot**, macro, polimórfico, time bomb", "Polimórfico **muda** de forma"] },
       { rotulo: "Worm", emoji: "🪱", cor: "verde", folhas: ["Replica-se **sozinho**, sem hospedeiro", "Explora **falhas** para se espalhar"] },

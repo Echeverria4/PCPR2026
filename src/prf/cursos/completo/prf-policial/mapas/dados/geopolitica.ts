@@ -5,7 +5,6 @@ export const MAPAS_GEOPOLITICA: MapaAula[] = [
   {
     aula: "geopolitica-01",
     centro: { titulo: "Formação territorial", emoji: "🗺️", sub: "Nação, Estado, território e fronteiras" },
-    desenho: "bussola",
     ramos: [
       { rotulo: "Conceitos", emoji: "🏛️", cor: "azul", folhas: ["**Nação**: identidade, não governo", "**Território**: espaço apropriado pelo poder", "**Estado**: soberania sobre povo e território", "**Geopolítica**: espaço geográfico e poder dos Estados"] },
       { rotulo: "Tratados", emoji: "📜", cor: "verde", folhas: ["**Madri (1750)**: vale a ocupação efetiva", "Substituiu a linha de **Tordesilhas**"] },
@@ -45,7 +44,6 @@ export const MAPAS_GEOPOLITICA: MapaAula[] = [
   {
     aula: "geopolitica-04",
     centro: { titulo: "Agropecuária e transportes", emoji: "🚜", sub: "Do campo ao porto" },
-    desenho: "placa",
     ramos: [
       { rotulo: "Agronegócio", emoji: "🌾", cor: "azul", folhas: ["**Agroindústria**: lavoura, indústria e serviços", "Centro-Oeste: líder em **grãos**", "Mato Grosso: maior **rebanho** bovino"] },
       { rotulo: "Fronteira agrícola", emoji: "🧭", cor: "verde", folhas: ["Avança ao **Norte** e ao Nordeste", "**Matopiba**: MA, TO, PI e BA"] },
@@ -59,7 +57,6 @@ export const MAPAS_GEOPOLITICA: MapaAula[] = [
   {
     aula: "geopolitica-05",
     centro: { titulo: "População brasileira", emoji: "👥", sub: "Crescimento, transição e migrações" },
-    desenho: "pessoas",
     ramos: [
       { rotulo: "Crescimento", emoji: "➕", cor: "azul", folhas: ["**Vegetativo**: nascimentos menos mortes", "**Migratório**: entradas menos saídas", "**Pirâmide** de base estreita: população envelhecendo"] },
       { rotulo: "Transição", emoji: "⏳", cor: "verde", folhas: ["Caem as **mortes**, depois os nascimentos", "Fecundidade cai: **educação** e trabalho feminino", "**Bônus demográfico**: muitos em idade ativa"] },
@@ -73,7 +70,6 @@ export const MAPAS_GEOPOLITICA: MapaAula[] = [
   {
     aula: "geopolitica-06",
     centro: { titulo: "Biomas brasileiros", emoji: "🌳", sub: "Seis biomas e três conceitos" },
-    desenho: "globo",
     ramos: [
       { rotulo: "Conceitos", emoji: "🔬", cor: "azul", folhas: ["**Bioma**: vegetação contígua, escala regional", "**Ecossistema**: seres vivos e ambiente", "**Domínio morfoclimático**: relevo, clima, solo e vegetação"] },
       { rotulo: "Amazônia", emoji: "🌧️", cor: "verde", folhas: ["Floresta **equatorial**", "Terra firme **nunca** inunda", "Várzea inunda **por períodos**; igapó fica alagado"] },

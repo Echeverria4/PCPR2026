@@ -1,3 +1,4 @@
+import { Emoji } from "../../icones/Emoji";
 import { useEffect, useLayoutEffect, useState, type ChangeEvent, type CSSProperties } from "react";
 import { createPortal } from "react-dom";
 import { gruposAtuais } from "../aulas/catalogo";
@@ -75,10 +76,10 @@ function CopiaSeguranca({ folhas }: { folhas: FolhaCaderno[] }) {
       </p>
       <div className="prf-cad-copia-acoes">
         <button type="button" className="botao" onClick={baixar} disabled={folhas.length === 0}>
-          ⬇ Baixar cópia
+          <Emoji e="⬇" /> Baixar cópia
         </button>
         <label className="botao prf-cad-copia-arquivo">
-          ⬆ Restaurar de um arquivo
+          <Emoji e="⬆" /> Restaurar de um arquivo
           <input type="file" accept=".html,.json,text/html,application/json" onChange={restaurar} />
         </label>
       </div>
@@ -109,7 +110,9 @@ function TelaMaterias({ folhas }: { folhas: FolhaCaderno[] }) {
           style={corDe(grupoAgora.id)}
           onClick={() => irNoCaderno(telaDaAula(grupoAgora.id, { id: aulaAgora.id, nome: nomeAula(aulaAgora) }))}
         >
-          <span aria-hidden="true">⏱</span>
+          <span aria-hidden="true">
+            <Emoji e="⏱" />
+          </span>
           <span className="prf-cad-item-texto">
             <span className="prf-cad-item-sub">Aula de agora</span>
             <span className="prf-cad-item-nome">{nomeAula(aulaAgora)}</span>
@@ -127,7 +130,9 @@ function TelaMaterias({ folhas }: { folhas: FolhaCaderno[] }) {
                 style={corDe(g.id)}
                 onClick={() => irNoCaderno({ tipo: "materia", grupo: g.id })}
               >
-                <span aria-hidden="true">{iconeGrupo(g.id)}</span>
+                <span aria-hidden="true">
+          <Emoji e={iconeGrupo(g.id)} />
+        </span>
                 <span className="prf-cad-item-texto">
                   <span className="prf-cad-item-nome">{g.nome}</span>
                 </span>
@@ -183,7 +188,9 @@ function TelaMateria({ grupo, folhas }: { grupo: GrupoCurso; folhas: FolhaCadern
         ← Matérias
       </button>
       <h2 className="prf-cad-pergunta">
-        <span aria-hidden="true">{iconeGrupo(grupo.id)}</span> {grupo.nome}
+        <span aria-hidden="true">
+          <Emoji e={iconeGrupo(grupo.id)} />
+        </span> {grupo.nome}
       </h2>
       <p className="prf-cad-dica">Escolha a aula ou comece uma anotação livre.</p>
       <button type="button" className="botao botao-ouro prf-cad-nova" onClick={novaLivre}>
@@ -211,7 +218,9 @@ function TelaMateria({ grupo, folhas }: { grupo: GrupoCurso; folhas: FolhaCadern
               <span className="prf-cad-item-texto">
                 <span className="prf-cad-item-nome">{nomeAula(a)}</span>
               </span>
-              {daAula(a) && <span className="prf-cad-item-marca">📝 anotada</span>}
+              {daAula(a) && <span className="prf-cad-item-marca">
+              <Emoji e="📝" /> anotada
+            </span>}
             </button>
           </li>
         ))}
@@ -286,7 +295,9 @@ export default function CadernoPrf() {
       }}
     >
       <div className="prf-cad-topo">
-        <span className="prf-cad-nome">📝 Caderno</span>
+        <span className="prf-cad-nome">
+            <Emoji e="📝" /> Caderno
+          </span>
         <button type="button" className="prf-cad-topo-botao" onClick={() => cadernoEmTelaCheia(!cheia)}>
           {cheia ? "⤡ Diminuir" : "⤢ Tela cheia"}
         </button>

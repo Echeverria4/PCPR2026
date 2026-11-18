@@ -5,7 +5,6 @@ export const MAPAS_FISICA: MapaAula[] = [
   {
     aula: "fisica-01",
     centro: { titulo: "Cinemática: conceitos", emoji: "🚓", sub: "Referencial, deslocamento e velocidade média" },
-    desenho: "viatura",
     ramos: [
       { rotulo: "Referencial", emoji: "👀", cor: "azul", folhas: ["Ponto de **comparação**", "Movimento e repouso **dependem** dele"] },
       { rotulo: "Tamanho", emoji: "📏", cor: "verde", folhas: ["**Ponto material**: tamanho não importa", "**Corpo extenso**: tamanho importa", "Cruzar ponte: some **ponte e veículo**"] },
@@ -19,7 +18,6 @@ export const MAPAS_FISICA: MapaAula[] = [
   {
     aula: "fisica-02",
     centro: { titulo: "Movimento uniforme", emoji: "➡️", sub: "Velocidade constante, linha reta" },
-    desenho: "rodovia",
     ramos: [
       { rotulo: "Equação", emoji: "📝", cor: "azul", folhas: ["**S = S₀ + v·t**", "S₀: posição inicial; v: velocidade", "Distâncias iguais em **tempos iguais**"] },
       { rotulo: "Sentido", emoji: "↔️", cor: "verde", folhas: ["**Progressivo**: v > 0, posição cresce", "**Retrógrado**: v < 0, posição diminui"] },
@@ -33,7 +31,6 @@ export const MAPAS_FISICA: MapaAula[] = [
   {
     aula: "fisica-03",
     centro: { titulo: "Movimento uniformemente variado", emoji: "⏩", sub: "Aceleração constante" },
-    desenho: "semaforo",
     ramos: [
       { rotulo: "Equações", emoji: "📝", cor: "azul", folhas: ["**v = v₀ + a·t**", "**S = S₀ + v₀·t + a·t²/2**", "Na frente de t²: **metade** da aceleração"] },
       { rotulo: "Torricelli", emoji: "⏱️", cor: "verde", folhas: ["**v² = v₀² + 2·a·ΔS**", "Use quando o **tempo** não aparece"] },

@@ -1,3 +1,4 @@
+import { Emoji } from "../../icones/Emoji";
 import { useState } from "react";
 import { curto, diaMes } from "../aulas/estudo";
 import { NOME_TIPO, amanha, definirMeta, metaDoTipo, type EstadoMeta, type TipoDia } from "../aulas/meta";
@@ -56,7 +57,10 @@ export default function MetaSemanal({ meta, dias, metas, total, ms, agora, edita
     <section className={`prf-acomp-bloco prf-msem${falta <= 0 && total > 0 ? " prf-msem-batida" : ""}`} aria-label="Meta da semana">
       <div className="prf-msem-topo">
         <h3 className="prf-acomp-bloco-titulo">
-          <span aria-hidden="true">🎯</span> Meta da semana
+          <span aria-hidden="true">
+          <Emoji e="🎯" />
+        </span>{" "}
+        Meta da semana
         </h3>
         {editavel && (
           <button

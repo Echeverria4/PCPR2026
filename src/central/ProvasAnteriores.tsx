@@ -1,3 +1,4 @@
+import { Emoji } from "../icones/Emoji";
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import CanetaPrf from "../prf/caneta/CanetaPrf";
 import {
@@ -266,7 +267,7 @@ export default function ProvasAnteriores() {
                     <strong>
                       {pendente.respostas.filter((r) => r !== null).length} de {pendente.itens.length}
                     </strong>{" "}
-                    marcados · ⏱ {relogio(pendente.decorridoMs)}
+                    marcados · <Emoji e="⏱" /> {relogio(pendente.decorridoMs)}
                   </p>
                   <div className="cx-card-acoes">
                     <button type="button" className="botao botao-ouro" onClick={() => abrir(pendente)}>
@@ -302,7 +303,7 @@ export default function ProvasAnteriores() {
                 <li key={`${h.em}-${k}`}>
                   <span>
                     {dataCurta(h.em)}
-                    {h.idioma ? ` · ${NOME_IDIOMA[h.idioma]}` : ""} · ⏱ {relogio(h.decorridoMs)}
+                    {h.idioma ? ` · ${NOME_IDIOMA[h.idioma]}` : ""} · <Emoji e="⏱" /> {relogio(h.decorridoMs)}
                   </span>
                   <span className="cx-chip-n">
                     {multipla(aberta) ? `${h.certas} de ${h.total}` : `${h.liquida} pts`} ({h.certas}✓ {h.erradas}✗{" "}

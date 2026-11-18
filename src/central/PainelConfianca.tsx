@@ -1,5 +1,6 @@
 import type { Confianca } from "../lib/types";
 import type { TentativaCurso } from "../prf/cursos/completo/tipos";
+import { Emoji } from "../icones/Emoji";
 
 /**
  * Quanto se acerta quando a resposta foi marcada com Certeza, Dúvida ou Chute. Mostra onde a certeza engana (erro
@@ -107,7 +108,9 @@ export default function PainelConfianca({ tentativas, nomes, acasoDe, onTreinar 
   return (
     <section className="cx-card cx-conf" aria-labelledby="cx-conf-titulo">
       <h2 className="cx-conf-titulo" id="cx-conf-titulo">
-        <span aria-hidden="true">🎯</span> Grau de confiança
+        <span aria-hidden="true">
+          <Emoji e="🎯" />
+        </span> Grau de confiança
       </h2>
       <p className="cx-conf-intro">
         Quanto você acerta quando marca <b>Certeza</b>, <b>Dúvida</b> ou <b>Chute</b> antes de responder.
@@ -228,7 +231,9 @@ export function ConfiancaDaRodada({
   return (
     <section className="cx-card cx-conf cx-conf-rodada" aria-labelledby="cx-conf-rodada-titulo">
       <h2 className="cx-conf-titulo" id="cx-conf-rodada-titulo">
-        <span aria-hidden="true">🎯</span> Confiança nesta rodada
+        <span aria-hidden="true">
+          <Emoji e="🎯" />
+        </span> Confiança nesta rodada
       </h2>
       <Linhas tentativas={marcadas} acaso={acaso} />
       {sem > 0 && <p className="cx-conf-sem">{respostasTxt(sem)} sem marcar.</p>}

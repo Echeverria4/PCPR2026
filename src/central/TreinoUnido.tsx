@@ -1,3 +1,4 @@
+import { Emoji, TextoEmoji } from "../icones/Emoji";
 import { useMemo, useState, type ReactNode } from "react";
 import Quiz from "../components/Quiz";
 import Result from "../components/Result";
@@ -472,7 +473,7 @@ export default function TreinoUnido() {
         {MODOS.map((m) => (
           <li key={m.id}>
             <button type="button" aria-pressed={modo === m.id} onClick={() => trocarModo(m.id)}>
-              {m.rotulo}
+              <TextoEmoji texto={m.rotulo} />
             </button>
           </li>
         ))}
@@ -580,7 +581,7 @@ export default function TreinoUnido() {
                   <strong>
                     {provaPendente.respostas.filter((r) => r !== null).length} de {provaPendente.itens.length}
                   </strong>{" "}
-                  marcadas · ⏱ {relogio(provaPendente.decorridoMs)}
+                  marcadas · <Emoji e="⏱" /> {relogio(provaPendente.decorridoMs)}
                 </p>
                 <div className="cx-card-acoes">
                   <button type="button" className="botao botao-ouro" onClick={() => abrirProva(provaPendente)}>

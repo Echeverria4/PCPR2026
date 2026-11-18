@@ -1,3 +1,4 @@
+import { Emoji } from "../../icones/Emoji";
 import { useState } from "react";
 import { curto, diaCurto, diaLongo, diaMes, type EstadoEstudo } from "./estudo";
 import {
@@ -127,7 +128,10 @@ function PropostaAumento({ p, agora }: { p: Proposta; agora: number }) {
   return (
     <div className="prf-meta-proposta" role="group" aria-label="Proposta de aumento da meta">
       <p className="prf-meta-proposta-titulo">
-        <span aria-hidden="true">🎯</span> Proposta: aumentar a meta
+        <span aria-hidden="true">
+          <Emoji e="🎯" />
+        </span>{" "}
+        Proposta: aumentar a meta
       </p>
       <p className="prf-meta-proposta-texto">
         {p.hoje ? "Hoje você estudou" : `${diaLongo(p.dia)}: você estudou`} <b>{curto(p.ms)}</b>,{" "}

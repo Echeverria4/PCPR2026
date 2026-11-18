@@ -1,3 +1,4 @@
+import { Emoji, TextoEmoji } from "../../icones/Emoji";
 import {
   useCallback,
   useEffect,
@@ -293,7 +294,7 @@ export default function Folha({ folha, nova, nomeGrupo, onVoltar }: FolhaProps) 
         <button type="button" className="prf-voltar" onClick={onVoltar}>
           ← {nomeGrupo}
         </button>
-        <span className={`prf-cad-situacao prf-cad-situacao-${situacao}`}>{SITUACAO[situacao]}</span>
+        <span className={`prf-cad-situacao prf-cad-situacao-${situacao}`}><TextoEmoji texto={SITUACAO[situacao]} /></span>
         {situacao !== "nova" && (
           <button
             type="button"
@@ -303,7 +304,7 @@ export default function Folha({ folha, nova, nomeGrupo, onVoltar }: FolhaProps) 
             aria-expanded={confirmando}
             onClick={() => setConfirmando(!confirmando)}
           >
-            🗑
+            <Emoji e="🗑" />
           </button>
         )}
       </div>
@@ -442,7 +443,9 @@ export default function Folha({ folha, nova, nomeGrupo, onVoltar }: FolhaProps) 
         <header className="prf-cad-cabecalho">
           <p className="prf-cad-cabecalho-materia">
             <span className="prf-cad-ponto" aria-hidden="true" />
-            <span aria-hidden="true">{iconeGrupo(base.grupo)}</span> {nomeGrupo}
+            <span aria-hidden="true">
+          <Emoji e={iconeGrupo(base.grupo)} />
+        </span> {nomeGrupo}
           </p>
           <p className="prf-cad-cabecalho-aula">{base.nomeAula ?? "Anotação livre"}</p>
           <p className="prf-cad-cabecalho-data">{data}</p>

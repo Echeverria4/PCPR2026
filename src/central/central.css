@@ -2180,3 +2180,10 @@
   color: var(--texto-fraco);
   font-size: 0.78rem;
 }
+
+/* Ícones 3D do menu lateral (src/icones/Emoji.tsx) */
+.cx-nav img.cx-nav-icone {
+  width: 22px;
+  height: 22px;
+  flex: none;
+}

@@ -4,7 +4,6 @@ export const MAPAS_DH: MapaAula[] = [
   {
     aula: "dh-01",
     centro: { titulo: "Teoria geral", emoji: "🧠", sub: "Conceitos, status e fundamentos" },
-    desenho: "cerebro",
     ramos: [
       { rotulo: "Dois planos", emoji: "🌍", cor: "azul", folhas: ["Mesmo conteúdo: **dignidade**", "Humanos: ordem **internacional**", "Fundamentais: ordem **interna**"] },
       { rotulo: "Teoria dos status", emoji: "📶", cor: "verde", folhas: ["Passivo: **sujeição**", "Negativo: exigir **abstenção**", "Positivo: exigir **prestação**", "Ativo: **participar**"] },
@@ -19,7 +18,6 @@ export const MAPAS_DH: MapaAula[] = [
   {
     aula: "dh-02",
     centro: { titulo: "Constituição de 1988", emoji: "📜", sub: "Dignidade no centro" },
-    desenho: "livro",
     ramos: [
       { rotulo: "Fundamentos", emoji: "🏛️", cor: "azul", folhas: ["Sigla **SO-CI-DI-VA-PLU**", "Dignidade é **fundamento**", "Objetivo começa com **verbo**"] },
       { rotulo: "Eficácia", emoji: "🔁", cor: "verde", folhas: ["Vertical: **Estado** e pessoa", "Horizontal: entre **particulares**", "Diagonal: particulares **desiguais**"] },
@@ -34,7 +32,6 @@ export const MAPAS_DH: MapaAula[] = [
   {
     aula: "dh-03",
     centro: { titulo: "Tratados de direitos humanos", emoji: "🤝", sub: "Incorporação e hierarquia" },
-    desenho: "globo",
     ramos: [
       { rotulo: "Incorporação", emoji: "📝", cor: "azul", folhas: ["Assina: **Presidente**", "Aprova: **Congresso**", "Ratifica e **deposita**", "Promulga por **decreto**"] },
       { rotulo: "Hierarquia", emoji: "📊", cor: "verde", folhas: ["Rito do § 3º: **emenda**", "Rito comum: **supralegal**", "Outros tratados: **lei ordinária**"] },
@@ -49,7 +46,6 @@ export const MAPAS_DH: MapaAula[] = [
   {
     aula: "dh-04",
     centro: { titulo: "Declaração Universal", emoji: "🌍", sub: "ONU, 10/12/1948" },
-    desenho: "pessoas",
     ramos: [
       { rotulo: "Origem", emoji: "📅", cor: "azul", folhas: ["Assembleia Geral da **ONU**", "**Sem votos** contrários", "Houve **abstenções**"] },
       { rotulo: "Natureza", emoji: "⚖️", cor: "verde", folhas: ["Adotada como **resolução**", "Prevalece: **vinculante**", "Virou **costume** internacional"] },
@@ -64,7 +60,6 @@ export const MAPAS_DH: MapaAula[] = [
   {
     aula: "dh-05",
     centro: { titulo: "Pacto de São José", emoji: "🌎", sub: "Convenção Americana, 1969" },
-    desenho: "balanca",
     ramos: [
       { rotulo: "No Brasil", emoji: "📜", cor: "azul", folhas: ["Decreto **678/1992**", "Status **supralegal**", "Corte: fatos **após 1998**"] },
       { rotulo: "Vida e prisão", emoji: "💓", cor: "verde", folhas: ["Pena de morte: **não volta**", "Prisão por dívida: só **alimentos**", "Preso vai **sem demora** ao juiz"] },
@@ -79,7 +74,6 @@ export const MAPAS_DH: MapaAula[] = [
   {
     aula: "dh-06",
     centro: { titulo: "Revisão geral", emoji: "🔁", sub: "Dimensões e proteção" },
-    desenho: "bussola",
     ramos: [
       { rotulo: "1ª dimensão", emoji: "🗽", cor: "azul", folhas: ["**Liberdade**: civis e políticos", "Revoluções **liberais**", "Declaração francesa de **1789**"] },
       { rotulo: "2ª dimensão", emoji: "🏭", cor: "verde", folhas: ["**Igualdade**: direitos sociais", "México **1917**, Weimar **1919**"] },
@@ -94,7 +88,6 @@ export const MAPAS_DH: MapaAula[] = [
   {
     aula: "dh-08",
     centro: { titulo: "Pactos de 1966", emoji: "🌐", sub: "Sistema global da ONU" },
-    desenho: "documento",
     ramos: [
       { rotulo: "Civis e políticos", emoji: "🗣️", cor: "azul", folhas: ["Decreto **592/1992**", "Respeitar e garantir **já**", "Recurso **efetivo**"] },
       { rotulo: "Suspensão", emoji: "⏸️", cor: "verde", folhas: ["Ameaça à **nação**", "Aviso ao **Secretário-Geral** da ONU", "Trabalho forçado: **pode** suspender"] },

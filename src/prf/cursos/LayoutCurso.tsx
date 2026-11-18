@@ -1,6 +1,7 @@
 import { lazy, Suspense, type ReactNode } from "react";
 import { alternarCaderno, usePainelCaderno } from "../caderno/painel";
 import { ChipCronometro } from "../LayoutPrf";
+import { Emoji, TextoEmoji } from "../../icones/Emoji";
 
 const CadernoPrf = lazy(() => import("../caderno/CadernoPrf"));
 
@@ -59,7 +60,7 @@ export default function LayoutCurso({
           <div className="topbar-acoes">
             <ChipCronometro />
             <button className="botao" onClick={alternarCaderno} aria-expanded={caderno.aberto}>
-              📝 Caderno
+              <Emoji e="📝" /> Caderno
             </button>
             {mostrarVoltar ? (
               <button className="botao" onClick={onVoltar}>
@@ -68,7 +69,7 @@ export default function LayoutCurso({
             ) : (
               onTrocarCurso && (
                 <button className="botao" onClick={onTrocarCurso} title="Voltar para a Central de Estudos">
-                  ⌂ Central
+                  <Emoji e="🏠" /> Central
                 </button>
               )
             )}
@@ -85,7 +86,7 @@ export default function LayoutCurso({
                 className={`tab ${abaAtiva === a.id ? "tab-ativa" : ""}`}
                 onClick={() => onTrocarAba(a.id)}
               >
-                {a.rotulo}
+                <TextoEmoji texto={a.rotulo} />
               </button>
             ))}
           </nav>

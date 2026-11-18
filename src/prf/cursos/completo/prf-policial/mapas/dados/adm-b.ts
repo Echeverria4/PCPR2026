@@ -4,7 +4,6 @@ export const MAPAS_ADM_B: MapaAula[] = [
   {
     aula: "adm-b-01",
     centro: { titulo: "Princípios da Administração", emoji: "🧭", sub: "Expressos e implícitos" },
-    desenho: "balanca",
     ramos: [
       { rotulo: "Supremacia", emoji: "👑", cor: "azul", folhas: ["Base das **prerrogativas**", "Direta no **império**; indireta na gestão", "Toda prerrogativa pede **lei**"] },
       { rotulo: "Indisponibilidade", emoji: "🔒", cor: "verde", folhas: ["Administra **bem alheio**", "Sem lei: **não abre mão**"] },
@@ -19,7 +18,6 @@ export const MAPAS_ADM_B: MapaAula[] = [
   {
     aula: "adm-b-02",
     centro: { titulo: "Estado e funções", emoji: "🏢", sub: "Funções típicas e atípicas" },
-    desenho: "globo",
     ramos: [
       { rotulo: "Estado", emoji: "🌎", cor: "azul", folhas: ["Pessoa **jurídica**", "Povo, território e **governo soberano**"] },
       { rotulo: "Separação de Poderes", emoji: "🔀", cor: "verde", folhas: ["Poder **uno** e indivisível", "Reparte as **funções**", "Divisão **flexível**"] },
@@ -34,7 +32,6 @@ export const MAPAS_ADM_B: MapaAula[] = [
   {
     aula: "adm-b-03",
     centro: { titulo: "Poder de polícia", emoji: "🚓", sub: "Administrativa e judiciária" },
-    desenho: "viatura",
     ramos: [
       { rotulo: "Natureza", emoji: "🧰", cor: "azul", folhas: ["Administrativos: **instrumentais**", "Políticos: **estruturais**"] },
       { rotulo: "Polícia administrativa", emoji: "📋", cor: "verde", folhas: ["Bens, atividades e **direitos**", "Infração **administrativa**", "Preventiva ou **repressiva**"] },
@@ -49,7 +46,6 @@ export const MAPAS_ADM_B: MapaAula[] = [
   {
     aula: "adm-b-04",
     centro: { titulo: "Ato administrativo", emoji: "📄", sub: "Elementos, atributos e fases" },
-    desenho: "documento",
     ramos: [
       { rotulo: "Elementos", emoji: "🧩", cor: "azul", folhas: ["Competência, finalidade, **forma**", "Motivo e **objeto**", "Mérito: **motivo e objeto**"] },
       { rotulo: "Imperatividade", emoji: "📢", cor: "verde", folhas: ["Obriga **sem** concordância", "Falta em **certidão** e licença"] },
@@ -78,7 +74,6 @@ export const MAPAS_ADM_B: MapaAula[] = [
   {
     aula: "adm-b-06",
     centro: { titulo: "Órgãos e entidades", emoji: "🗂️", sub: "Organização administrativa" },
-    desenho: "pessoas",
     ramos: [
       { rotulo: "Órgão e entidade", emoji: "🧠", cor: "azul", folhas: ["Órgão: **sem** personalidade", "Entidade: personalidade **própria**", "Existe na direta e na **indireta**"] },
       { rotulo: "Posição", emoji: "🔝", cor: "verde", folhas: ["Independentes: **Congresso** e tribunais", "Autônomos, superiores e **subalternos**"] },
@@ -93,7 +88,6 @@ export const MAPAS_ADM_B: MapaAula[] = [
   {
     aula: "adm-b-07",
     centro: { titulo: "Agentes públicos", emoji: "👔", sub: "Concurso, subsídio e teto" },
-    desenho: "escudo",
     ramos: [
       { rotulo: "Classificação", emoji: "🗂️", cor: "azul", folhas: ["Políticos, administrativos e **honoríficos**", "Delegado: **nome próprio**", "Credenciado: **representa** em ato certo", "**Cotas**: 30% para pretos, pardos, indígenas e quilombolas"] },
       { rotulo: "Subsídio", emoji: "💵", cor: "verde", folhas: ["**Parcela única**", "Policiais do **art. 144**", "Mantém **13º** e terço de férias"] },
@@ -108,7 +102,6 @@ export const MAPAS_ADM_B: MapaAula[] = [
   {
     aula: "adm-b-08",
     centro: { titulo: "Lei 8.112: prazos", emoji: "🗓️", sub: "Vantagens, licenças e petição" },
-    desenho: "relogio",
     ramos: [
       { rotulo: "Duas listas", emoji: "🔁", cor: "azul", folhas: ["**Promoção** e readaptação", "Provimento **e** vacância", "**Remoção** move o servidor; redistribuição move o cargo"] },
       { rotulo: "Substituição", emoji: "🔄", cor: "verde", folhas: ["**Automática** e cumulativa", "Paga acima de **30 dias**"] },
@@ -151,7 +144,6 @@ export const MAPAS_ADM_B: MapaAula[] = [
   {
     aula: "adm-b-11",
     centro: { titulo: "Estado indeniza", emoji: "💥", sub: "Casos de fronteira" },
-    desenho: "alerta",
     ramos: [
       { rotulo: "Evolução", emoji: "📈", cor: "azul", folhas: ["**Irresponsabilidade** e civilistas", "Culpa **administrativa**", "Risco administrativo: **regra**"] },
       { rotulo: "Ato lícito", emoji: "✅", cor: "verde", folhas: ["Dano **anormal**", "Atinge pessoa **específica**"] },
@@ -180,7 +172,6 @@ export const MAPAS_ADM_B: MapaAula[] = [
   {
     aula: "adm-b-13",
     centro: { titulo: "Transparência fiscal", emoji: "🔓", sub: "LAI e LC 131/2009" },
-    desenho: "escudo",
     ramos: [
       { rotulo: "Ativa e passiva", emoji: "📢", cor: "azul", folhas: ["Ativa: **sem** pedido", "Passiva: **responde** a pedido"] },
       { rotulo: "Entidades privadas", emoji: "🏢", cor: "verde", folhas: ["Recebe verba: LAI na **parcela**", "E no **destino** dela"] },
@@ -195,7 +186,6 @@ export const MAPAS_ADM_B: MapaAula[] = [
   {
     aula: "adm-b-14",
     centro: { titulo: "Revisão geral", emoji: "🔁", sub: "Pares que se confundem" },
-    desenho: "cerebro",
     ramos: [
       { rotulo: "Princípios", emoji: "🔤", cor: "azul", folhas: ["**LIMPE** no art. 37", "Implícitos **completam**"] },
       { rotulo: "Autonomia", emoji: "🌎", cor: "verde", folhas: ["Entes: autonomia **política**", "Autarquias: **autoadministração**"] },

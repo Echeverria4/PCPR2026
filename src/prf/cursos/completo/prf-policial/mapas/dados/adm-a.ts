@@ -4,7 +4,6 @@ export const MAPAS_ADM_A: MapaAula[] = [
   {
     aula: "adm-a-01",
     centro: { titulo: "Regime jurídico-administrativo", emoji: "🧭", sub: "Princípios da Administração" },
-    desenho: "balanca",
     ramos: [
       { rotulo: "Pilares", emoji: "🧱", cor: "azul", folhas: ["**Supremacia**: dá as prerrogativas", "**Indisponibilidade**: impõe as sujeições", "Desapropriar × **licitar**"] },
       { rotulo: "LIMPE", emoji: "🔤", cor: "verde", folhas: ["**Legalidade**: só o que a lei autoriza", "**Impessoalidade**: sem promoção pessoal", "**Moralidade**: imoral é inválido", "**Publicidade** e **eficiência** (EC 19/1998)"] },
@@ -18,7 +17,6 @@ export const MAPAS_ADM_A: MapaAula[] = [
   {
     aula: "adm-a-02",
     centro: { titulo: "Estado, governo e Administração", emoji: "🏢", sub: "Conceito, fontes e sistemas" },
-    desenho: "livro",
     ramos: [
       { rotulo: "Fontes", emoji: "📚", cor: "azul", folhas: ["**Lei**: fonte principal", "Doutrina, jurisprudência e **costumes**", "Súmula vinculante **obriga**"] },
       { rotulo: "Jurisdição única", emoji: "🥇", cor: "verde", folhas: ["Judiciário dá a **palavra final**", "CF, art. 5º, **XXXV**", "França: **contencioso** administrativo"] },
@@ -33,7 +31,6 @@ export const MAPAS_ADM_A: MapaAula[] = [
   {
     aula: "adm-a-03",
     centro: { titulo: "Organização administrativa", emoji: "🗂️", sub: "Órgãos, entidades e autarquias" },
-    desenho: "pessoas",
     ramos: [
       { rotulo: "Desconcentração", emoji: "🏠", cor: "azul", folhas: ["**Mesma** pessoa jurídica", "Cria órgãos, com **hierarquia**"] },
       { rotulo: "Descentralização", emoji: "🔀", cor: "verde", folhas: ["**Outra** pessoa", "Sem hierarquia: controle **finalístico**", "Outorga por lei; **delegação** por contrato"] },
@@ -62,7 +59,6 @@ export const MAPAS_ADM_A: MapaAula[] = [
   {
     aula: "adm-a-05",
     centro: { titulo: "Poderes administrativos", emoji: "💪", sub: "Poder-dever da Administração" },
-    desenho: "escudo",
     ramos: [
       { rotulo: "Poder-dever", emoji: "🔒", cor: "azul", folhas: ["Competência **irrenunciável**", "Omissão gera **responsabilidade**"] },
       { rotulo: "Hierárquico", emoji: "🔝", cor: "verde", folhas: ["Ordenar, fiscalizar e **rever**", "**Delegar** e avocar"] },
@@ -77,7 +73,6 @@ export const MAPAS_ADM_A: MapaAula[] = [
   {
     aula: "adm-a-06",
     centro: { titulo: "Ato administrativo", emoji: "📄", sub: "Elementos, atributos e extinção" },
-    desenho: "documento",
     ramos: [
       { rotulo: "Elementos", emoji: "🧩", cor: "azul", folhas: ["**Competência**, finalidade e forma", "**Motivo** e objeto", "Mérito: motivo e **objeto**"] },
       { rotulo: "Atributos", emoji: "✨", cor: "verde", folhas: ["Presunção de **legitimidade**", "**Imperatividade** e autoexecutoriedade", "**Tipicidade**: tipo previsto em lei"] },
@@ -92,7 +87,6 @@ export const MAPAS_ADM_A: MapaAula[] = [
   {
     aula: "adm-a-07",
     centro: { titulo: "Licitações: Lei 14.133", emoji: "📋", sub: "Modalidades e critérios" },
-    desenho: "balanca",
     ramos: [
       { rotulo: "Alcance", emoji: "🌐", cor: "azul", folhas: ["Direta, autarquias e **fundações**", "Legislativo e Judiciário **administrando**", "Estatais: Lei **13.303**", "**Vigente** desde 1º/4/2021; 8.666 caiu em 30/12/2023"] },
       { rotulo: "Condução", emoji: "👤", cor: "verde", folhas: ["Agente de contratação: **efetivo**", "Comissão: **3** membros, solidária", "Divergiu em ata: **fica de fora**"] },
@@ -135,7 +129,6 @@ export const MAPAS_ADM_A: MapaAula[] = [
   {
     aula: "adm-a-10",
     centro: { titulo: "Dano e indenização", emoji: "💥", sub: "Responsabilidade civil do Estado" },
-    desenho: "alerta",
     ramos: [
       { rotulo: "Risco administrativo", emoji: "🎯", cor: "azul", folhas: ["**Objetiva**: sem provar culpa", "Conduta, dano e **nexo**", "Admite **excludentes**"] },
       { rotulo: "Excludentes", emoji: "🛑", cor: "verde", folhas: ["Culpa **exclusiva** da vítima", "Caso fortuito e **força maior**", "Concorrente: só **reduz**"] },
@@ -150,7 +143,6 @@ export const MAPAS_ADM_A: MapaAula[] = [
   {
     aula: "adm-a-11",
     centro: { titulo: "Agentes públicos", emoji: "👔", sub: "Regras da Constituição" },
-    desenho: "pessoas",
     ramos: [
       { rotulo: "Tipos", emoji: "🗂️", cor: "azul", folhas: ["Políticos e **administrativos**", "Honoríficos: **jurado**, mesário", "**Delegados** e credenciados"] },
       { rotulo: "Cargo, emprego, função", emoji: "💼", cor: "verde", folhas: ["Cargo: **estatutário**", "Emprego: **CLT**", "Função de confiança: só **efetivo**"] },
@@ -165,7 +157,6 @@ export const MAPAS_ADM_A: MapaAula[] = [
   {
     aula: "adm-a-12",
     centro: { titulo: "Lei 8.112: provimento", emoji: "📥", sub: "Entrar, voltar e sair" },
-    desenho: "documento",
     ramos: [
       { rotulo: "Posse e exercício", emoji: "⏳", cor: "azul", folhas: ["Posse em **30 dias**", "Exercício em **15 dias**", "Sem exercício: **exoneração**"] },
       { rotulo: "Volta ao cargo", emoji: "🔙", cor: "verde", folhas: ["**Reintegração**: demissão inválida", "**Recondução**: cargo anterior", "**Aproveitamento**: saída da disponibilidade"] },
@@ -180,7 +171,6 @@ export const MAPAS_ADM_A: MapaAula[] = [
   {
     aula: "adm-a-13",
     centro: { titulo: "Vantagens e afastamentos", emoji: "💰", sub: "Lei 8.112: direitos" },
-    desenho: "relogio",
     ramos: [
       { rotulo: "Remuneração", emoji: "💵", cor: "azul", folhas: ["Vencimento: **base** do cargo", "Remuneração: + vantagens **permanentes**"] },
       { rotulo: "Indenizações", emoji: "🧳", cor: "verde", folhas: ["Ajuda de custo: **mudança** permanente", "Diária: metade **sem pernoite**", "**Não** incorporam"] },
@@ -195,7 +185,6 @@ export const MAPAS_ADM_A: MapaAula[] = [
   {
     aula: "adm-a-14",
     centro: { titulo: "Regime disciplinar", emoji: "🔨", sub: "Penas, prescrição e PAD" },
-    desenho: "balanca",
     ramos: [
       { rotulo: "Advertência", emoji: "📝", cor: "azul", folhas: ["Art. 117, **I a VIII** e XIX", "Registro **por escrito**"] },
       { rotulo: "Suspensão", emoji: "🕒", cor: "verde", folhas: ["Até **90 dias**", "Reincidência em **advertência**", "Vira multa de **50%**"] },
@@ -210,7 +199,6 @@ export const MAPAS_ADM_A: MapaAula[] = [
   {
     aula: "adm-a-15",
     centro: { titulo: "Transparência e integridade", emoji: "🔓", sub: "LAI, conflito e nepotismo" },
-    desenho: "escudo",
     ramos: [
       { rotulo: "LAI", emoji: "📢", cor: "azul", folhas: ["Acesso **regra**; sigilo exceção", "**Sem** exigir motivos", "Todos os **Poderes**"] },
       { rotulo: "Prazos", emoji: "📆", cor: "verde", folhas: ["Resposta: **20 + 10** dias", "Recurso: **10 dias**", "Superior decide em **5**"] },

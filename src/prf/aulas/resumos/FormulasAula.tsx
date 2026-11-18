@@ -1,3 +1,4 @@
+import { Emoji } from "../../../icones/Emoji";
 import type { Formula } from "./tipos";
 
 interface Props {
@@ -17,7 +18,8 @@ export default function FormulasAula({ formulas, nivel = 4, memoria = false, abe
   const vistas = formulas.filter((_, i) => abertos?.has(`f${i}`)).length;
   return (
     <section className="prf-formulas" data-formulas>
-      <Titulo className="prf-formulas-titulo">📐 {formulas.length === 1 ? "Fórmula da aula" : "Fórmulas da aula"}</Titulo>
+      <Titulo className="prf-formulas-titulo">
+        <Emoji e="📐" /> {formulas.length === 1 ? "Fórmula da aula" : "Fórmulas da aula"}</Titulo>
       {memoria && (
         <p className="prf-formulas-dica" aria-live="polite">
           Tente lembrar cada fórmula pelo nome. Depois toque para conferir. Vistas: {vistas} de {formulas.length}

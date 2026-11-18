@@ -5,7 +5,6 @@ export const MAPAS_PT: MapaAula[] = [
   {
     aula: "pt-01",
     centro: { titulo: "Som, acento e hífen", emoji: "🔤", sub: "Fonética e ortografia" },
-    desenho: "livro",
     ramos: [
       { rotulo: "Sons", emoji: "🔊", cor: "azul", folhas: ["**Letra** se vê; **fonema** se ouve", "**Dígrafo**: duas letras, um som só (ch, lh, nh)", "**Ditongo** na mesma sílaba; **hiato** separa as vogais"] },
       { rotulo: "Regras gerais", emoji: "✍️", cor: "verde", folhas: ["**Proparoxítona**: todas levam acento", "**Oxítona**: a, e, o, em, ens", "**Paroxítona**: l, n, r, x, i, us, um, ão"] },
@@ -66,7 +65,6 @@ export const MAPAS_PT: MapaAula[] = [
   {
     aula: "pt-05",
     centro: { titulo: "Tempos e modos", emoji: "⏳", sub: "Quando e como o fato ocorre" },
-    desenho: "relogio",
     ramos: [
       { rotulo: "Modos", emoji: "🎭", cor: "azul", folhas: ["**Indicativo**: fato certo", "**Subjuntivo**: dúvida, hipótese, desejo", "**Imperativo**: ordem, pedido, conselho"] },
       { rotulo: "Pretéritos", emoji: "⏪", cor: "verde", folhas: ["**Perfeito**: fato concluído", "**Imperfeito**: hábito ou ação em curso", "**Mais-que-perfeito**: anterior a outro passado (tombara)"] },
@@ -138,7 +136,6 @@ export const MAPAS_PT: MapaAula[] = [
   {
     aula: "pt-10",
     centro: { titulo: "Concordância", emoji: "🤝", sub: "Ache o núcleo primeiro" },
-    desenho: "balanca",
     ramos: [
       { rotulo: "Regra geral", emoji: "🎯", cor: "azul", folhas: ["Verbo segue o **núcleo**: o ruído dos caminhões perturba", "Mais de **um** fiscal assinou", "Composto antes do verbo: **plural**"] },
       { rotulo: "Haver e fazer", emoji: "🔒", cor: "verde", folhas: ["Existir ou tempo: **singular** (deve haver)", "**Existir** tem sujeito: devem existir barreiras", "Auxiliar concorda: haviam sido **instaladas**"] },
@@ -168,7 +165,6 @@ export const MAPAS_PT: MapaAula[] = [
   {
     aula: "pt-12",
     centro: { titulo: "Coesão e coerência", emoji: "🧵", sub: "Ligação × lógica" },
-    desenho: "documento",
     ramos: [
       { rotulo: "Retomar e anunciar", emoji: "⏮️", cor: "azul", folhas: ["**Anáfora** retoma o que veio: isso", "**Catáfora** anuncia o que vem: isto", "**Dêitico**: aqui e amanhã apontam a situação"] },
       { rotulo: "Este, esse, aquele", emoji: "👉", cor: "verde", folhas: ["**Este** anuncia; **esse** retoma", "Em pares: este é o **último** citado", "**Aquele** é o primeiro, o mais distante"] },
@@ -196,7 +192,6 @@ export const MAPAS_PT: MapaAula[] = [
   {
     aula: "pt-14",
     centro: { titulo: "Tipos de texto", emoji: "📚", sub: "Qual tipo predomina?" },
-    desenho: "livro",
     ramos: [
       { rotulo: "Narrar e descrever", emoji: "🎞️", cor: "azul", folhas: ["**Narrativo**: fatos em sequência, como um filme", "**Descritivo**: retrato sem tempo, como uma foto", "Narração: pretérito perfeito; descrição: **imperfeito**"] },
       { rotulo: "Injuntivo", emoji: "📋", cor: "verde", folhas: ["Instrui ou ordena: **imperativo** ou infinitivo", "Leis, contratos, manuais e **receitas**"] },
@@ -212,7 +207,6 @@ export const MAPAS_PT: MapaAula[] = [
   {
     aula: "pt-15",
     centro: { titulo: "Redação oficial", emoji: "📄", sub: "Manual da Presidência, 3ª edição" },
-    desenho: "documento",
     ramos: [
       { rotulo: "Atributos", emoji: "✨", cor: "azul", folhas: ["**Clareza**, precisão, objetividade e concisão", "**Impessoalidade**: fala o serviço público", "Formalidade, padronização e **norma padrão**"] },
       { rotulo: "Tratamento", emoji: "🎩", cor: "verde", folhas: ["Verbo e possessivo na **3ª pessoa**: seu", "**Vossa** com a pessoa; **Sua** sobre ela", "Abolido **Digníssimo**; Ilustríssimo dispensado; doutor é título"] },
@@ -228,7 +222,6 @@ export const MAPAS_PT: MapaAula[] = [
   {
     aula: "pt-16",
     centro: { titulo: "Compreender e interpretar", emoji: "🔎", sub: "Vale o que o texto permite" },
-    desenho: "cerebro",
     ramos: [
       { rotulo: "Como ler", emoji: "👓", cor: "azul", folhas: ["Leia **inteiro**; depois marque a ideia de cada parágrafo", "Ideia central: **introdução** e conclusão"] },
       { rotulo: "Compreender", emoji: "📌", cor: "verde", folhas: ["**Recorrência**: está escrito, com outras palavras", "Procure a **paráfrase**, a frase equivalente"] },

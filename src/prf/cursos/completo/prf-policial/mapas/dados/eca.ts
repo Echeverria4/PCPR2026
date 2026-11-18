@@ -4,7 +4,6 @@ export const MAPAS_ECA: MapaAula[] = [
   {
     aula: "eca-01",
     centro: { titulo: "ECA: parte geral", emoji: "🧒", sub: "Proteção integral" },
-    desenho: "escudo",
     ramos: [
       { rotulo: "Quem é quem", emoji: "🎂", cor: "azul", folhas: ["Criança: até **12 incompletos**", "Adolescente: **12 a 18**", "Critério: só a **idade**"] },
       { rotulo: "Prioridade absoluta", emoji: "⭐", cor: "verde", folhas: ["Socorro **primeiro**", "Precedência nos **serviços públicos**", "Inclui a **natureza** desde 2026"] },
@@ -19,7 +18,6 @@ export const MAPAS_ECA: MapaAula[] = [
   {
     aula: "eca-02",
     centro: { titulo: "Ato infracional", emoji: "🚸", sub: "Prevenção, medidas e Conselho" },
-    desenho: "rodovia",
     ramos: [
       { rotulo: "Viagem no Brasil", emoji: "🚌", cor: "azul", folhas: ["Menor de **16**: precisa autorização", "Dispensa: parente até **3º grau**", "Primo: **4º grau**, não serve"] },
       { rotulo: "Viagem ao exterior", emoji: "🛫", cor: "verde", folhas: ["Vale até os **18**", "Com um dos pais: **firma reconhecida**", "Com estrangeiro: **sempre juiz**"] },
@@ -34,7 +32,6 @@ export const MAPAS_ECA: MapaAula[] = [
   {
     aula: "eca-03",
     centro: { titulo: "Justiça da Infância", emoji: "⚖️", sub: "Abordagem, sigilo e crimes" },
-    desenho: "viatura",
     ramos: [
       { rotulo: "Sigilo", emoji: "🤐", cor: "azul", folhas: ["Sem **foto** nem nome", "Nem as **iniciais**", "Divulgar: infração **administrativa**"] },
       { rotulo: "Na apreensão", emoji: "🚓", cor: "verde", folhas: ["Flagrante: vai à **delegacia**", "Violência: **auto** de apreensão", "Pais vêm: **liberado** sob termo"] },

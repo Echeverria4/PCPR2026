@@ -9,7 +9,6 @@ export const MAPAS_COMPLEMENTO: MapaAula[] = [
     aula: "pt-extra-1",
     complemento: { grupo: "pt", nome: "Formação de palavras" },
     centro: { titulo: "Formação de palavras", emoji: "🧱", sub: "Derivação e composição" },
-    desenho: "livro",
     ramos: [
       { rotulo: "Prefixo ou sufixo", emoji: "🧩", cor: "azul", folhas: ["Prefixal: **in**feliz", "Sufixal: feliz**mente**", "Tira um, sobra palavra: **infelizmente**"] },
       { rotulo: "Parassintética", emoji: "🔗", cor: "verde", folhas: ["Prefixo e sufixo **ao mesmo tempo**", "Sem um deles, **não existe**: entardecer"] },
@@ -25,7 +24,6 @@ export const MAPAS_COMPLEMENTO: MapaAula[] = [
     aula: "info-extra-1",
     complemento: { grupo: "info", nome: "Transformação digital" },
     centro: { titulo: "Transformação digital", emoji: "🤖", sub: "IoT, big data e IA" },
-    desenho: "cerebro",
     ramos: [
       { rotulo: "Internet das Coisas", emoji: "📶", cor: "azul", folhas: ["Objetos **conectados** à rede", "Sensores trocam **dados** sozinhos", "Ex.: câmera de **leitura de placa**"] },
       { rotulo: "Big data", emoji: "📊", cor: "verde", folhas: ["Volume, **velocidade** e variedade", "Também **veracidade** e valor", "Cruza bases para achar **padrões**"] },
@@ -41,7 +39,6 @@ export const MAPAS_COMPLEMENTO: MapaAula[] = [
     aula: "info-extra-2",
     complemento: { grupo: "info", nome: "Engenharia social" },
     centro: { titulo: "Engenharia social", emoji: "🎭", sub: "Golpe na pessoa, não na máquina" },
-    desenho: "alerta",
     ramos: [
       { rotulo: "O que é", emoji: "🎭", cor: "azul", folhas: ["Manipula a **confiança** da pessoa", "Explora pressa, medo e **curiosidade**"] },
       { rotulo: "Phishing", emoji: "🎣", cor: "verde", folhas: ["Mensagem falsa com **link**", "Imita banco ou **órgão público**", "Spear phishing: **alvo escolhido**"] },
@@ -57,7 +54,6 @@ export const MAPAS_COMPLEMENTO: MapaAula[] = [
     aula: "transito-extra-1",
     complemento: { grupo: "transito", nome: "Novidades do trânsito" },
     centro: { titulo: "Novidades do trânsito", emoji: "🚦", sub: "Free flow, motofrete, película e telas" },
-    desenho: "rodovia",
     ramos: [
       { rotulo: "Free flow", emoji: "📡", cor: "azul", folhas: ["Pedágio **sem cancela**", "Placa lida por **câmera**", "Pagar em até **30 dias**"] },
       { rotulo: "Não pagar", emoji: "💸", cor: "verde", folhas: ["Evasão: **art. 209-A**", "Infração **grave**", "Incluído pela Lei **14.157/2021**"] },
@@ -73,7 +69,6 @@ export const MAPAS_COMPLEMENTO: MapaAula[] = [
     aula: "penal-extra-1",
     complemento: { grupo: "penal", nome: "Conflito aparente de normas" },
     centro: { titulo: "Conflito aparente", emoji: "🧭", sub: "Um fato, várias normas" },
-    desenho: "balanca",
     ramos: [
       { rotulo: "Quando surge", emoji: "❓", cor: "azul", folhas: ["Um **só fato**", "Várias normas **parecem** cabíveis", "Só uma se **aplica**"] },
       { rotulo: "Especialidade", emoji: "🎯", cor: "verde", folhas: ["Especial **afasta** a geral", "Infanticídio afasta **homicídio**"] },
@@ -89,7 +84,6 @@ export const MAPAS_COMPLEMENTO: MapaAula[] = [
     aula: "proc-extra-1",
     complemento: { grupo: "proc", nome: "Lei processual no tempo" },
     centro: { titulo: "Lei processual no tempo", emoji: "⏰", sub: "CPP, arts. 1º a 3º" },
-    desenho: "relogio",
     ramos: [
       { rotulo: "Território", emoji: "🗺️", cor: "azul", folhas: ["CPP vale em **todo o país**", "Ressalvas: **tratados** e Justiça Militar"] },
       { rotulo: "Aplicação imediata", emoji: "⏩", cor: "verde", folhas: ["Vale **desde logo**", "O tempo rege o **ato**"] },
@@ -104,7 +98,6 @@ export const MAPAS_COMPLEMENTO: MapaAula[] = [
     aula: "proc-extra-2",
     complemento: { grupo: "proc", nome: "Indiciamento" },
     centro: { titulo: "Indiciamento", emoji: "👉", sub: "Lei 12.830/2013" },
-    desenho: "documento",
     ramos: [
       { rotulo: "Funções do delegado", emoji: "🏛️", cor: "azul", folhas: ["Natureza **jurídica**", "Essenciais e **exclusivas** de Estado"] },
       { rotulo: "Indiciar", emoji: "👉", cor: "verde", folhas: ["**Privativo** do delegado", "Ato **fundamentado**", "Análise **técnico-jurídica** do fato"] },
@@ -120,7 +113,6 @@ export const MAPAS_COMPLEMENTO: MapaAula[] = [
     aula: "dh-extra-1",
     complemento: { grupo: "dh", nome: "Combate ao racismo" },
     centro: { titulo: "Combate ao racismo", emoji: "✊", sub: "CF, Lei 7.716 e tratados" },
-    desenho: "pessoas",
     ramos: [
       { rotulo: "Constituição", emoji: "📜", cor: "azul", folhas: ["Crime **inafiançável**", "E **imprescritível**", "Pena de **reclusão**"] },
       { rotulo: "Injúria racial", emoji: "🚫", cor: "verde", folhas: ["Desde 2023: **é racismo**", "Pena: **2 a 5 anos**", "Duas ou mais pessoas: **mais metade**"] },

@@ -31,6 +31,7 @@ import {
   type ProgressoRedacao,
 } from "./progresso";
 import type { Avaliacao, CampoPlano, CriterioId, TelaRedacaoPrf, TemaPrf } from "./tipos";
+import { Emoji } from "../../../../../icones/Emoji";
 
 type Plano = EstadoTema["plano"];
 type IrPara = (t: TelaRedacaoPrf) => void;
@@ -229,7 +230,9 @@ function InicioRedacao({ progresso, onTela }: { progresso: ProgressoRedacao; onT
       </p>
       <div className="modos-grid">
         <button className="modo-card prf-of-card" onClick={() => onTela({ tipo: "oficial" })}>
-          <h3>📄 Redação Oficial</h3>
+          <h3>
+            <Emoji e="📄" /> Redação Oficial
+          </h3>
           <p>Atributos, pronomes de tratamento, Manual × Decreto, fechos, o ofício desenhado parte por parte e as pegadinhas.</p>
           <span className="pi-card-meta">
             <span className={`pi-status ${oficial.classe}`}>{oficial.rotulo}</span>
@@ -941,7 +944,7 @@ function OficialRedacao({
         onPaginaInteira={(a) => setInteira(a ?? "")}
         abertura={
           <div className="pi-gancho">
-            📄 Na prova, a Redação Oficial vem em questões de Português. São regras fixas: vale decorar a forma certa.
+            <Emoji e="📄" /> Na prova, a Redação Oficial vem em questões de Português. São regras fixas: vale decorar a forma certa.
           </div>
         }
         fim={

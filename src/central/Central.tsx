@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import Cursos from "../components/Cursos";
 import type { CursoId } from "../data/cursos";
+import { Emoji } from "../icones/Emoji";
 import { Icone } from "./comum";
 import type { EntradaCurso } from "./entrada";
 import Inicio from "./Inicio";
@@ -15,14 +16,14 @@ const Provas = lazy(() => import("./ProvasAnteriores"));
 
 export type Secao = "inicio" | "cursos" | "questoes" | "provas" | "mapas" | "redacoes" | "tempo";
 
-const SECOES: { id: Secao; rotulo: string; titulo: string }[] = [
-  { id: "inicio", rotulo: "Início", titulo: "Início" },
-  { id: "cursos", rotulo: "Meus Cursos", titulo: "Meus Cursos" },
-  { id: "questoes", rotulo: "Questões", titulo: "Questões" },
-  { id: "provas", rotulo: "Provas anteriores", titulo: "Provas anteriores" },
-  { id: "mapas", rotulo: "Mapas Mentais", titulo: "Mapas Mentais" },
-  { id: "redacoes", rotulo: "Redações", titulo: "Redações" },
-  { id: "tempo", rotulo: "Tempo semanal", titulo: "Tempo semanal" },
+const SECOES: { id: Secao; rotulo: string; titulo: string; icone: string }[] = [
+  { id: "inicio", rotulo: "Início", titulo: "Início", icone: "🏠" },
+  { id: "cursos", rotulo: "Meus Cursos", titulo: "Meus Cursos", icone: "📚" },
+  { id: "questoes", rotulo: "Questões", titulo: "Questões", icone: "✅" },
+  { id: "provas", rotulo: "Provas anteriores", titulo: "Provas anteriores", icone: "📄" },
+  { id: "mapas", rotulo: "Mapas Mentais", titulo: "Mapas Mentais", icone: "🧠" },
+  { id: "redacoes", rotulo: "Redações", titulo: "Redações", icone: "✍️" },
+  { id: "tempo", rotulo: "Tempo semanal", titulo: "Tempo semanal", icone: "⏱️" },
 ];
 
 export type AbrirCurso = (id: CursoId, entrada?: EntradaCurso) => void;
@@ -109,7 +110,7 @@ export default function Central({ onAbrir }: { onAbrir: AbrirCurso }) {
               aria-current={s.id === secao ? "page" : undefined}
               onClick={() => ir(s.id)}
             >
-              <Icone nome={s.id} />
+              <Emoji e={s.icone} className="cx-nav-icone" />
               {s.rotulo}
             </button>
           ))}

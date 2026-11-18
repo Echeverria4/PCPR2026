@@ -1,3 +1,4 @@
+import { Emoji, TextoEmoji } from "../../../icones/Emoji";
 import { useEffect, useMemo, useState } from "react";
 import { tempoAtivo, useAgora, useEstudo, type EstadoEstudo } from "../../aulas/estudo";
 import { definirMeta, metaDoTipo, tipoDoDia, useMeta, type EstadoMeta } from "../../aulas/meta";
@@ -153,11 +154,11 @@ export default function CronogramaCurso({ curso, grupos, destinos, onIr, avisoIn
             aria-pressed={editando}
             onClick={() => setEditando(!editando)}
           >
-            {editando ? "✓ Pronto" : "✏️ Editar"}
+            <TextoEmoji texto={editando ? "✓ Pronto" : "✏️ Editar"} />
           </button>
           {!editando && (
             <button type="button" className="botao" onClick={() => setMontando(true)}>
-              🧩 Montar de novo
+              <Emoji e="🧩" /> Montar de novo
             </button>
           )}
         </div>
@@ -171,7 +172,9 @@ export default function CronogramaCurso({ curso, grupos, destinos, onIr, avisoIn
 
       {editando && (
         <section className="prf-cronog-bloco" aria-label="Tempo disponível">
-          <h3 className="prf-cronog-bloco-titulo">⏱️ Tempo disponível</h3>
+          <h3 className="prf-cronog-bloco-titulo">
+            <Emoji e="⏱️" /> Tempo disponível
+          </h3>
           <div className="prf-cronog-tempos">
             <EscolhaTempo tipo="semana" valor={metaDoTipo(meta, "semana", hoje)} onMudar={(m) => definirMeta("semana", m)} />
             <EscolhaTempo
@@ -305,7 +308,7 @@ function ListaFatias({ fatias, feitos, destinos = [], aula, aulaFeita, onFeito, 
                     className={`botao prf-cronog-ir${b === "aula" ? " botao-ouro" : ""}`}
                     onClick={() => onIr(b, f.grupo, b === "aula" ? aula : undefined)}
                   >
-                    {b === "aula" ? "🎬 Abrir a aula" : NOME_DESTINO[b]}
+                    <TextoEmoji texto={b === "aula" ? "🎬 Abrir a aula" : NOME_DESTINO[b]} />
                   </button>
                 ))}
               </div>
@@ -321,7 +324,9 @@ function ChipMateria({ grupo }: { grupo: GrupoCurso }) {
   return (
     <span className="prf-cronog-chip">
       <span className="prf-cronog-cor" style={{ background: corDoGrupo(grupo.id) }} aria-hidden="true" />
-      <span aria-hidden="true">{grupo.icone ?? iconeGrupo(grupo.id)}</span> {grupo.nome}
+      <span aria-hidden="true">
+        <Emoji e={grupo.icone ?? iconeGrupo(grupo.id)} />
+      </span> {grupo.nome}
     </span>
   );
 }
@@ -398,7 +403,7 @@ function CartaoHoje({ dia, d, data, tempo, encaixe, estudado, feitos, destinos, 
           </p>
         </>
       ) : (
-        <p className="prf-cronog-linha">Nada marcado para hoje. Use ✏️ Editar para planejar o dia.</p>
+        <p className="prf-cronog-linha">Nada marcado para hoje. Use <Emoji e="✏️" /> Editar para planejar o dia.</p>
       )}
     </section>
   );
@@ -440,7 +445,10 @@ function CartaoDia({ d, dia, tempo, hoje, passou, encaixe, estudado, feitos, por
 
       {encaixe && encaixe.aulas.length > 0 && (
         <p className="prf-cronog-dia-aula">
-          <span aria-hidden="true">🎬</span> {encaixe.aulas.map(nomeAula).join(" + ")}
+          <span aria-hidden="true">
+            <Emoji e="🎬" />
+          </span>{" "}
+          {encaixe.aulas.map(nomeAula).join(" + ")}
         </p>
       )}
       {fatias.length > 0 && <ListaFatias fatias={fatias} />}
@@ -692,7 +700,9 @@ function Materias({ curso, plano, previsao, grupos, vistos, editando, nome, onPl
           <li key={id}>
             <span className="prf-cronog-cor" style={{ background: corDoGrupo(id) }} aria-hidden="true" />
             <span className="prf-cronog-materia-nome">
-              <span aria-hidden="true">{porId.get(id)?.icone ?? iconeGrupo(id)}</span> {nome(id)} {peso(id)}
+              <span aria-hidden="true">
+        <Emoji e={porId.get(id)?.icone ?? iconeGrupo(id)} />
+      </span> {nome(id)} {peso(id)}
             </span>
             <span className="prf-cronog-materia-info">{info(id)}</span>
             <select
@@ -716,7 +726,7 @@ function Materias({ curso, plano, previsao, grupos, vistos, editando, nome, onPl
           </li>
         ))}
       </ul>
-      {emEstudo.length === 0 && <p className="prf-cronog-nota">Nenhuma matéria nos dias. Use 🧩 Montar de novo ou ✏️ Editar.</p>}
+      {emEstudo.length === 0 && <p className="prf-cronog-nota">Nenhuma matéria nos dias. Use <Emoji e="🧩" /> Montar de novo ou <Emoji e="✏️" /> Editar.</p>}
 
       {editando ? (
         <EditorFila
@@ -773,7 +783,7 @@ function Semanas({ previsao, plano, nome }: { previsao: Previsao; plano: Plano; 
       <h3 className="prf-cronog-bloco-titulo">Semana a semana, até acabar</h3>
       {trocas.map((t) => (
         <p key={`${t.d}-${t.desde}`} className="prf-cronog-troca">
-          🔄 A partir de {dataCurta(t.desde)}, a {NOME_DIA[t.d].toLowerCase()} passa{t.de ? ` de ${nome(t.de)}` : ""} para{" "}
+          <Emoji e="🔄" /> A partir de {dataCurta(t.desde)}, a {NOME_DIA[t.d].toLowerCase()} passa{t.de ? ` de ${nome(t.de)}` : ""} para{" "}
           <strong>{nome(t.para)}</strong>
           {t.de ? `; ${nome(t.de)} segue em revisão.` : "."}
         </p>

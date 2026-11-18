@@ -13,6 +13,7 @@ import {
   useMapas,
 } from "./comum";
 import HojeCronograma from "./HojeCronograma";
+import { Emoji, TextoEmoji } from "../icones/Emoji";
 import {
   INFO_CURSO,
   chaveDia,
@@ -90,7 +91,7 @@ function paraRevisar(p: Painel, onAbrir: AbrirCurso): Recomendacao[] {
   for (const e of doCurso(p.erradas).slice(0, 1)) {
     lista.push({
       chave: `erradas-${e.curso}`,
-      icone: "↺",
+      icone: "🔄",
       texto: (
         <>
           <strong>{e.n}</strong> {e.n === 1 ? "questão errada espera" : "questões erradas esperam"} revisão{" "}
@@ -209,7 +210,7 @@ export default function Inicio({ onAbrir, onIr }: InicioProps) {
         {painel.sequencia > 0 && (
           <div className="cx-hero-sequencia" title="Dias seguidos com estudo">
             <span className="cx-hero-fogo" aria-hidden="true">
-              🔥
+              <Emoji e="🔥" />
             </span>
             <strong>{painel.sequencia}</strong>
             <span>{painel.sequencia === 1 ? "dia seguido" : "dias seguidos"}</span>
@@ -224,11 +225,15 @@ export default function Inicio({ onAbrir, onIr }: InicioProps) {
           )}
           <div className="cx-continuar-texto">
             <div className="cx-continuar-rotulo">
-              {continuar.cronometro
-                ? continuar.cronometro.rodando
-                  ? "⏱ Cronômetro ligado"
-                  : "⏸ Cronômetro pausado"
-                : "Continuar de onde parou"}
+              <TextoEmoji
+                texto={
+                  continuar.cronometro
+                    ? continuar.cronometro.rodando
+                      ? "⏱ Cronômetro ligado"
+                      : "⏸ Cronômetro pausado"
+                    : "Continuar de onde parou"
+                }
+              />
             </div>
             <div className="cx-continuar-titulo">{continuar.titulo}</div>
             <div className="cx-continuar-sub">
@@ -291,7 +296,9 @@ export default function Inicio({ onAbrir, onIr }: InicioProps) {
 
           <section className="cx-card">
             <div className="cx-card-topo">
-              <h2 className="cx-card-titulo">🔁 Para revisar</h2>
+              <h2 className="cx-card-titulo">
+                <Emoji e="🔁" />{" "}
+                Para revisar</h2>
               {painel.principal && <span className="cx-etiqueta">{painel.principal.curto}</span>}
             </div>
             {recs.length > 0 ? (
@@ -299,7 +306,7 @@ export default function Inicio({ onAbrir, onIr }: InicioProps) {
                 {recs.map((r) => (
                   <li key={r.chave}>
                     <span className="cx-rec-icone" aria-hidden="true">
-                      {r.icone}
+                      <Emoji e={r.icone} />
                     </span>
                     <span className="cx-rec-texto">{r.texto}</span>
                     <button type="button" className="botao cx-botao-peq" onClick={r.onClick}>
@@ -331,7 +338,9 @@ export default function Inicio({ onAbrir, onIr }: InicioProps) {
           ) : (
             <section className="cx-card">
               <div className="cx-card-topo">
-                <h2 className="cx-card-titulo">🧠 Para memorizar hoje</h2>
+                <h2 className="cx-card-titulo">
+                <Emoji e="🧠" />{" "}
+                Para memorizar hoje</h2>
                 {mapas && materiasMapas.length > 0 && etiquetaMemorizar("Escolher matéria")}
               </div>
               <p className="cx-vazio">
@@ -346,7 +355,9 @@ export default function Inicio({ onAbrir, onIr }: InicioProps) {
 
           <section className="cx-card">
             <div className="cx-card-topo">
-              <h2 className="cx-card-titulo">⏱ Tempo por matéria nesta semana</h2>
+              <h2 className="cx-card-titulo">
+                <Emoji e="⏱" />{" "}
+                Tempo por matéria nesta semana</h2>
               <button type="button" className="cx-link" onClick={() => onIr("tempo")}>
                 Ver tudo →
               </button>
@@ -383,7 +394,9 @@ export default function Inicio({ onAbrir, onIr }: InicioProps) {
 
           <section className="cx-card">
             <div className="cx-card-topo">
-              <h2 className="cx-card-titulo">📚 Banco de questões</h2>
+              <h2 className="cx-card-titulo">
+                <Emoji e="✅" />{" "}
+                Banco de questões</h2>
               <button type="button" className="cx-link" onClick={() => onIr("questoes")}>
                 Abrir →
               </button>
@@ -413,7 +426,9 @@ export default function Inicio({ onAbrir, onIr }: InicioProps) {
 
           <section className="cx-card cx-dica">
             <div className="cx-card-topo">
-              <h2 className="cx-card-titulo">💬 Dica de estudo</h2>
+              <h2 className="cx-card-titulo">
+                <Emoji e="💬" />{" "}
+                Dica de estudo</h2>
             </div>
             <div className="cx-dica-titulo">{dica.titulo}</div>
             <p>{dica.texto}</p>

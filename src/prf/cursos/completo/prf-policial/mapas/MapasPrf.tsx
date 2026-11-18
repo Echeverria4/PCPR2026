@@ -6,7 +6,7 @@ import FormulasAula from "../../../../aulas/resumos/FormulasAula";
 import { FORMULAS_FISICA } from "../fisica/formulas";
 import { FORMULAS_RLM } from "../rlm/formulas";
 import { MAPAS } from "./dados";
-import { Desenho } from "./desenhos";
+import { Emoji, TextoEmoji } from "../../../../../icones/Emoji";
 import { alternarRevisado, lerProgresso, salvarModoMemoria, type ProgressoMapas } from "./progresso";
 import type { Formula } from "../../../../aulas/resumos/tipos";
 import type { MapaAula, RamoMapa } from "./tipos";
@@ -131,7 +131,10 @@ export default function MapasPrf({ tela, onTela, grupos, onAbrirAula }: PropsMap
             ← Matérias
           </button>
           <h2 className="secao-titulo conteudo-materia-titulo" style={corMateria(materia.grupo)}>
-            <span aria-hidden="true">{materia.grupo.icone ?? "🧠"}</span> {materia.grupo.nome}
+            <span aria-hidden="true">
+              <Emoji e={materia.grupo.icone ?? "🧠"} />
+            </span>{" "}
+            {materia.grupo.nome}
           </h2>
           <p className="prf-mapa-conta">
             <strong>{feitos}</strong> de {plural(materia.itens.length, "mapa revisado", "mapas revisados")}
@@ -148,11 +151,13 @@ export default function MapasPrf({ tela, onTela, grupos, onAbrirAula }: PropsMap
                     onClick={() => onTela({ tipo: "mapa", aula: aula.id })}
                   >
                     <span className="prf-mapa-item-icone" aria-hidden="true">
-                      {mapa.desenho ? <Desenho id={mapa.desenho} tamanho={34} /> : mapa.centro.emoji}
+                      <Emoji e={mapa.centro.emoji} />
                     </span>
                     <span className="prf-mapa-item-corpo">
                       <span className="prf-mapa-item-titulo">{mapa.centro.titulo}</span>
-                      <span className="prf-mapa-item-aula">{rotuloAula(aula, mapa)}</span>
+                      <span className="prf-mapa-item-aula">
+                        <TextoEmoji texto={rotuloAula(aula, mapa)} />
+                      </span>
                       <span className="prf-mapa-item-meta">
                         <span className={`prf-mapa-selo ${quando ? "prf-mapa-selo-ok" : ""}`}>
                           {quando ? `✓ Revisado em ${diaCurto(quando)}` : "Novo"}
@@ -195,7 +200,8 @@ export default function MapasPrf({ tela, onTela, grupos, onAbrirAula }: PropsMap
           data-mapa-continuar
           onClick={() => onTela({ tipo: "mapa", aula: seguinte.aula.id })}
         >
-          {tudoVisto ? "🔁 Rever o mais antigo" : feitos > 0 ? "▶ Continuar" : "▶ Começar"}: {seguinte.mapa.centro.titulo}
+          <TextoEmoji texto={tudoVisto ? "🔁 Rever o mais antigo" : feitos > 0 ? "▶ Continuar" : "▶ Começar"} />:{" "}
+          {seguinte.mapa.centro.titulo}
         </button>
       </section>
       <div className="materias-grid">
@@ -211,7 +217,7 @@ export default function MapasPrf({ tela, onTela, grupos, onAbrirAula }: PropsMap
             >
               <span className="prf-mapa-materia-topo">
                 <span className="prf-mapa-materia-emoji" aria-hidden="true">
-                  {m.grupo.icone ?? "🧠"}
+                  <Emoji e={m.grupo.icone ?? "🧠"} />
                 </span>
                 <span className="prf-mapa-materia-nome">{m.grupo.nome}</span>
               </span>
@@ -227,7 +233,7 @@ export default function MapasPrf({ tela, onTela, grupos, onAbrirAula }: PropsMap
         })}
       </div>
       <p className="prf-mapa-aviso">
-        Mapas escritos para este app, a partir dos resumos das aulas; os ➕ Complemento trazem assuntos que outros
+        Mapas escritos para este app, a partir dos resumos das aulas; os <Emoji e="➕" /> Complemento trazem assuntos que outros
         materiais cobram e as aulas não. O que você marca como revisado fica guardado só
         neste navegador.
       </p>
@@ -300,10 +306,10 @@ function TelaMapa({ materia, posicao, memoria, revisadoEm, onMemoria, onRevisado
       </div>
       <div className="prf-mapa-modos" role="group" aria-label="Como ver o mapa">
         <button className="prf-mapa-modo" aria-pressed={!memoria} onClick={() => trocarModo(false)}>
-          👀 Ver tudo
+          <Emoji e="👀" /> Ver tudo
         </button>
         <button className="prf-mapa-modo" aria-pressed={memoria} onClick={() => trocarModo(true)}>
-          🧠 Modo memória
+          <Emoji e="🧠" /> Modo memória
         </button>
       </div>
       {memoria && (
@@ -314,7 +320,7 @@ function TelaMapa({ materia, posicao, memoria, revisadoEm, onMemoria, onRevisado
           </span>
           {abertos.size > 0 && (
             <button className="botao prf-mapa-botao" onClick={() => setAbertos(new Set())}>
-              🔁 Esconder de novo
+              <Emoji e="🔁" /> Esconder de novo
             </button>
           )}
         </div>
@@ -324,13 +330,16 @@ function TelaMapa({ materia, posicao, memoria, revisadoEm, onMemoria, onRevisado
         <header className="prf-mapa-faixa">
           <div className="prf-mapa-faixa-texto">
             <p className="prf-mapa-faixa-kicker" title={rotuloAula(aula, mapa)}>
-              <span aria-hidden="true">{grupo.icone ?? "🧠"}</span> {grupo.nome} · {numeroAula(aula, mapa)}
+              <span aria-hidden="true">
+                <Emoji e={grupo.icone ?? "🧠"} />
+              </span>{" "}
+              {grupo.nome} · <TextoEmoji texto={numeroAula(aula, mapa)} />
             </p>
             <h2 className="prf-mapa-faixa-titulo">{mapa.centro.titulo}</h2>
             {mapa.centro.sub && <p className="prf-mapa-faixa-sub">{mapa.centro.sub}</p>}
           </div>
           <span className="prf-mapa-faixa-icone" aria-hidden="true">
-            {mapa.desenho ? <Desenho id={mapa.desenho} tamanho={44} /> : mapa.centro.emoji}
+            <Emoji e={mapa.centro.emoji} />
           </span>
         </header>
 
@@ -371,7 +380,7 @@ function TelaMapa({ materia, posicao, memoria, revisadoEm, onMemoria, onRevisado
         </button>
         {!mapa.complemento && (
           <button className="botao prf-mapa-botao" onClick={onAbrirAula}>
-            🎬 Abrir a aula
+            <Emoji e="🎬" /> Abrir a aula
           </button>
         )}
       </div>
@@ -411,11 +420,13 @@ function Nota({ tipo, titulo, texto, escondida, onAlternar }: NotaProps) {
       <h3>
         {onAlternar ? (
           <button className="prf-mapa-nota-botao" aria-expanded={!escondida} onClick={onAlternar}>
-            <span>{titulo}</span>
+            <span>
+              <TextoEmoji texto={titulo} />
+            </span>
             <span className="prf-mapa-pista">{escondida ? "toque para ver" : "toque para esconder"}</span>
           </button>
         ) : (
-          titulo
+          <TextoEmoji texto={titulo} />
         )}
       </h3>
       {!escondida && <p>{comDestaque(texto)}</p>}
@@ -520,13 +531,11 @@ function Arvore({ mapa, memoria, abertos, onAlternar }: ArvoreProps) {
           <path key={i} d={d} />
         ))}
       </svg>
-      {/* O título fica na faixa do pôster; aqui no meio vai só o desenho, sobre o asfalto. */}
+      {/* O título fica na faixa do pôster; aqui no meio vai só o ícone, sobre o asfalto. */}
       <div className="prf-mapa-centro" data-mapa-centro aria-hidden="true">
-        {mapa.desenho ? (
-          <Desenho id={mapa.desenho} tamanho={72} />
-        ) : (
-          <span className="prf-mapa-centro-emoji">{mapa.centro.emoji}</span>
-        )}
+        <span className="prf-mapa-centro-emoji">
+          <Emoji e={mapa.centro.emoji} />
+        </span>
         <span className="prf-mapa-centro-faixa" />
       </div>
       {lados.map(({ lado, ramos, inicio }) => (
@@ -562,7 +571,7 @@ function Ramo({ ramo, ultimo, memoria, aberto, onAlternar }: RamoProps) {
   const cabeca = (
     <>
       <span className="prf-mapa-ramo-emoji" aria-hidden="true">
-        {ramo.emoji}
+        <Emoji e={ramo.emoji} />
       </span>
       <span className="prf-mapa-ramo-nome">
         <span className="prf-mapa-ramo-rotulo">{ramo.rotulo}</span>

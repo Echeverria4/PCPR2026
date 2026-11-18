@@ -17,6 +17,7 @@ import MetaSemanal from "../semana/MetaSemanal";
 import { Numero, Seta } from "../semana/partes";
 import type { BancoCurso, TentativaCurso } from "./completo/tipos";
 import { blocosDoCurso, primeiraSemanaCurso, questoesDaSemana, resumoSemanaCurso } from "./resumoSemana";
+import { Emoji } from "../../icones/Emoji";
 
 interface SemanaCursoProps {
   /** Segunda-feira da semana aberta; null = esta semana. */
@@ -189,7 +190,7 @@ export default function SemanaCurso({ inicio, onInicio, onAbrirAula, questoes }:
           </p>
           {r.materiasConcluidas.length > 0 && (
             <p className="prf-acomp-detalhe prf-acomp-destaque">
-              🏁 {emLista(r.materiasConcluidas.map((g) => g.nome))}{" "}
+              <Emoji e="🏁" /> {emLista(r.materiasConcluidas.map((g) => g.nome))}{" "}
               {r.materiasConcluidas.length === 1 ? "concluída" : "concluídas"}
             </p>
           )}
@@ -386,7 +387,7 @@ export default function SemanaCurso({ inicio, onInicio, onAbrirAula, questoes }:
                 placeholder="Ex.: reler os PDFs na terça e na quinta; terminar uma matéria até domingo."
               />
             </label>
-            <p className="prf-acomp-salvo">As anotações e a meta ficam salvas neste aparelho. A meta muda no bloco 🎯 lá em cima.</p>
+            <p className="prf-acomp-salvo">As anotações e a meta ficam salvas neste aparelho. A meta muda no bloco <Emoji e="🎯" /> lá em cima.</p>
           </section>
         </div>
       </div>

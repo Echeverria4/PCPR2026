@@ -1,3 +1,4 @@
+import { Emoji } from "../../icones/Emoji";
 import { useRef, useState, type CSSProperties, type PointerEvent } from "react";
 import { createPortal } from "react-dom";
 
@@ -118,7 +119,9 @@ export default function BotaoCaderno({ onAbrir }: { onAbrir: () => void }) {
       aria-label="Anotar no caderno"
       title="Clique para anotar. Segure e arraste para mudar de lugar."
     >
-      <span aria-hidden="true">📝</span>
+      <span aria-hidden="true">
+        <Emoji e="📝" />
+      </span>
       <span className="prf-cad-flutua-texto">Anotar</span>
     </button>,
     document.body,

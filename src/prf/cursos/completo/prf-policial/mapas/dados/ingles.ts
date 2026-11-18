@@ -5,7 +5,6 @@ export const MAPAS_INGLES: MapaAula[] = [
   {
     aula: "ingles-01",
     centro: { titulo: "Estratégias de leitura", emoji: "📖", sub: "Cognatos, contexto e objetivo" },
-    desenho: "livro",
     ramos: [
       { rotulo: "Cognatos", emoji: "✅", cor: "azul", folhas: ["**Verdadeiro**: necessity = necessidade", "Parecem e **significam** o mesmo"] },
       { rotulo: "Falsos cognatos", emoji: "⚠️", cor: "verde", folhas: ["**Pretend**: fingir; **fabric**: tecido", "**Library**: biblioteca; livraria é bookstore", "**Actually**: na verdade; atualmente é currently"] },
@@ -62,7 +61,6 @@ export const MAPAS_INGLES: MapaAula[] = [
   {
     aula: "ingles-05",
     centro: { titulo: "Tempos simples", emoji: "⏰", sub: "Presente, passado e futuro" },
-    desenho: "relogio",
     ramos: [
       { rotulo: "Simple Present", emoji: "🔁", cor: "azul", folhas: ["Fatos, **hábitos**, rotinas e horários", "3ª pessoa: **-s**, -es, -ies", "**Do/does** na pergunta e na negativa"] },
       { rotulo: "Simple Past", emoji: "⏪", cor: "verde", folhas: ["Ação **concluída**", "Marcas: yesterday, last week, **ago**", "**Did**: todas as pessoas, verbo na base"] },
@@ -89,7 +87,6 @@ export const MAPAS_INGLES: MapaAula[] = [
   {
     aula: "ingles-07",
     centro: { titulo: "Gramática final e vocabulário", emoji: "🗂️", sub: "Falas, números, condicionais e polícia" },
-    desenho: "viatura",
     ramos: [
       { rotulo: "Discurso indireto", emoji: "🗣️", cor: "azul", folhas: ["Tempo **recua** um passo", "Tomorrow vira **the next day**"] },
       { rotulo: "Números", emoji: "🔢", cor: "verde", folhas: ["**Vírgula** separa milhares", "**Ponto** separa decimais"] },
@@ -104,7 +101,6 @@ export const MAPAS_INGLES: MapaAula[] = [
   {
     aula: "ingles-08",
     centro: { titulo: "Treino de leitura I", emoji: "🎯", sub: "Julgar sem acrescentar" },
-    desenho: "cerebro",
     ramos: [
       { rotulo: "No texto", emoji: "📄", cor: "azul", folhas: ["A resposta vem do **escrito**", "Não do que você **já sabe**"] },
       { rotulo: "Absolutas", emoji: "🚨", cor: "verde", folhas: ["**Only**, always, never, all", "Compare com o que o texto **afirma**"] },

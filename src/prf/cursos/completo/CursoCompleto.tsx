@@ -37,7 +37,7 @@ const CronogramaCurso = lazy(() => import("../cronograma/CronogramaCurso"));
 type View = AbaCurso | "quiz" | "result";
 
 const ABAS: { id: AbaCurso; rotulo: string }[] = [
-  { id: "treino", rotulo: "Treino" },
+  { id: "treino", rotulo: "🎯 Treino" },
   { id: "aulas", rotulo: "🎬 Aulas" },
   { id: "semana", rotulo: "📈 Semana" },
   { id: "cronograma", rotulo: "📅 Cronograma" },

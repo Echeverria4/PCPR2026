@@ -3,6 +3,7 @@ import App from "./App";
 import Central from "./central/Central";
 import type { EntradaCurso } from "./central/entrada";
 import { CURSOS, cursoAbrivel, type CursoId } from "./data/cursos";
+import { IconesNovos } from "./icones/Emoji";
 import JanelaPdf, { pdfDaUrl } from "./prf/aulas/JanelaPdf";
 
 // O curso da PRF só baixa quando é aberto: quem estuda para a PCPR não carrega o banco dele.
@@ -65,11 +66,18 @@ function RaizCursos() {
         <AppPrf onTrocarCurso={voltarParaCursos} entrada={entrada} />
       </Suspense>
     );
+  // Ícones 3D só nos cursos novos e na Central (a PRF ADM e a PCPR ficam como estão).
   if (curso)
     return (
-      <Suspense fallback={<div className="vazio">Carregando o curso…</div>}>
-        <AppCurso key={curso} curso={curso} onTrocarCurso={voltarParaCursos} entrada={entrada} />
-      </Suspense>
+      <IconesNovos>
+        <Suspense fallback={<div className="vazio">Carregando o curso…</div>}>
+          <AppCurso key={curso} curso={curso} onTrocarCurso={voltarParaCursos} entrada={entrada} />
+        </Suspense>
+      </IconesNovos>
     );
-  return <Central onAbrir={abrir} />;
+  return (
+    <IconesNovos>
+      <Central onAbrir={abrir} />
+    </IconesNovos>
+  );
 }

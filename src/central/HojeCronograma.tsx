@@ -14,6 +14,7 @@ import {
 } from "../prf/cursos/cronograma/plano";
 import type { AbrirCurso } from "./Central";
 import { INFO_CURSO, duracao, lerVistos, maisDias, metaDoDia, somaPeriodo, type CursoEstudo, type Painel } from "./dados";
+import { Emoji, TextoEmoji } from "../icones/Emoji";
 
 /*
  * O dia de hoje do cronograma do curso, na Início da Central: a aula, as atividades com os minutos e o check.
@@ -119,7 +120,9 @@ export default function HojeCronograma({ painel, onAbrir }: Props) {
     return (
       <section className="cx-card cx-hoje" aria-label="Hoje no cronograma">
         <div className="cx-card-topo">
-          <h2 className="cx-card-titulo">📅 Hoje no cronograma</h2>
+          <h2 className="cx-card-titulo">
+          <Emoji e="📅" /> Hoje no cronograma
+        </h2>
         </div>
         {painel.principal && (
           <BarraMeta estudado={painel.hojePrincipalMs} meta={meta} rotulo={`Meta de hoje ${painel.principal.em}`} />
@@ -145,7 +148,9 @@ export default function HojeCronograma({ painel, onAbrir }: Props) {
 
   const topo = (
     <div className="cx-card-topo">
-      <h2 className="cx-card-titulo">📅 Hoje no cronograma</h2>
+      <h2 className="cx-card-titulo">
+          <Emoji e="📅" /> Hoje no cronograma
+        </h2>
       <span className="cx-etiqueta">{info.curto}</span>
     </div>
   );
@@ -238,7 +243,7 @@ export default function HojeCronograma({ painel, onAbrir }: Props) {
                     className={`botao cx-botao-peq${botao === "aula" ? " botao-ouro" : ""}`}
                     onClick={() => ir(botao, f.grupo)}
                   >
-                    {botao === "aula" ? "🎬 Abrir a aula" : NOME_DESTINO[botao]}
+                    <TextoEmoji texto={botao === "aula" ? "🎬 Abrir a aula" : NOME_DESTINO[botao]} />
                   </button>
                 )}
               </li>

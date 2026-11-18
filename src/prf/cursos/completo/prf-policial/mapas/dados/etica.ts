@@ -5,7 +5,6 @@ export const MAPAS_ETICA: MapaAula[] = [
   {
     aula: "etica-01",
     centro: { titulo: "Ética e moral", emoji: "🧭" },
-    desenho: "cerebro",
     ramos: [
       {
         rotulo: "Ética",
@@ -66,7 +65,6 @@ export const MAPAS_ETICA: MapaAula[] = [
   {
     aula: "etica-02",
     centro: { titulo: "Código de Ética", emoji: "📜", sub: "Decreto 1.171/1994" },
-    desenho: "documento",
     ramos: [
       {
         rotulo: "Alcance",
@@ -129,7 +127,6 @@ export const MAPAS_ETICA: MapaAula[] = [
   {
     aula: "etica-03",
     centro: { titulo: "Gestão da Ética", emoji: "🧩", sub: "Decreto 6.029/2007" },
-    desenho: "pessoas",
     ramos: [
       {
         rotulo: "Quem integra",
@@ -200,7 +197,6 @@ export const MAPAS_ETICA: MapaAula[] = [
   {
     aula: "etica-04",
     centro: { titulo: "Alta Administração", emoji: "🏛️", sub: "Código de Conduta (2000)" },
-    desenho: "balanca",
     ramos: [
       {
         rotulo: "Quem segue",
@@ -262,7 +258,6 @@ export const MAPAS_ETICA: MapaAula[] = [
   {
     aula: "etica-05",
     centro: { titulo: "Governança pública", emoji: "🧭", sub: "Decreto 9.203/2017" },
-    desenho: "bussola",
     ramos: [
       {
         rotulo: "Alcance",

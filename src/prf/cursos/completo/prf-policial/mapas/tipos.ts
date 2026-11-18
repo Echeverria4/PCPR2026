@@ -11,7 +11,7 @@
  *  - De 2 a 4 folhas por ramo, até 10 palavras cada. Folha é lembrete, não frase de resumo.
  *  - `**negrito**` só na palavra que a prova cobra: 1 trecho por folha (2 quando for sigla).
  *  - `macete`: 1 frase para lembrar do mapa inteiro. `cuidado`: a pegadinha mais comum, 1 ou 2 frases.
- *  - `desenho` (opcional): pictograma do centro; sem ele, aparece o emoji do centro.
+ *  - O emoji do centro é o ícone do mapa (lista, faixa e meio do pôster).
  *  - Texto próprio, só com exemplos nacionais ou da PRF, sem nome de pessoa viva nem de empresa,
  *    e com linguagem neutra ("quem dirige", "a pessoa", "integrante").
  */
@@ -20,24 +20,6 @@
 export type CorRamo = "azul" | "verde" | "ouro" | "roxo" | "laranja" | "rosa";
 
 export const CORES_RAMO: CorRamo[] = ["azul", "verde", "ouro", "roxo", "laranja", "rosa"];
-
-/** Pictogramas de `desenhos.tsx`. */
-export type DesenhoId =
-  | "viatura"
-  | "rodovia"
-  | "balanca"
-  | "escudo"
-  | "documento"
-  | "relogio"
-  | "algema"
-  | "semaforo"
-  | "placa"
-  | "cerebro"
-  | "alerta"
-  | "pessoas"
-  | "globo"
-  | "livro"
-  | "bussola";
 
 export interface RamoMapa {
   rotulo: string;
@@ -49,7 +31,6 @@ export interface RamoMapa {
 export interface MapaAula {
   aula: string;
   centro: { titulo: string; emoji: string; sub?: string };
-  desenho?: DesenhoId;
   ramos: RamoMapa[];
   macete: string;
   cuidado: string;

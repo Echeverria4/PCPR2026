@@ -4,7 +4,6 @@ export const MAPAS_CARREIRA: MapaAula[] = [
   {
     aula: "carreira-01",
     centro: { titulo: "Carreira na PRF", emoji: "🚓", sub: "Leis 9.654 e 12.855" },
-    desenho: "placa",
     ramos: [
       { rotulo: "História", emoji: "📅", cor: "azul", folhas: ["**1928**: Polícia de Estradas", "24 de julho: **Dia da PRF**", "**1988**: entra no art. 144"] },
       { rotulo: "Constituição", emoji: "📜", cor: "verde", folhas: ["Órgão **permanente** da União", "Patrulhamento **ostensivo**", "Remuneração por **subsídio**"] },
@@ -19,7 +18,6 @@ export const MAPAS_CARREIRA: MapaAula[] = [
   {
     aula: "carreira-02",
     centro: { titulo: "Indenizações e progressão", emoji: "💰", sub: "Lei 13.712 e Decreto 8.282" },
-    desenho: "relogio",
     ramos: [
       { rotulo: "Lei 13.712", emoji: "⏰", cor: "azul", folhas: ["Abre mão do **repouso**", "Sempre **voluntário**", "Ações **complexas** ou emergenciais"] },
       { rotulo: "Valores", emoji: "💵", cor: "verde", folhas: ["6 horas: **R$ 420**", "12 horas: **R$ 900**", "Com diária: paga a **maior**"] },

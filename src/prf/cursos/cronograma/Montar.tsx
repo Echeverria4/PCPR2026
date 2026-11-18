@@ -1,3 +1,4 @@
+import { Emoji, TextoEmoji } from "../../../icones/Emoji";
 import { useMemo, useState } from "react";
 import { definirMeta, metaDoTipo, type EstadoMeta, type TipoDia } from "../../aulas/meta";
 import { progresso } from "../../aulas/progresso";
@@ -146,7 +147,9 @@ export default function Montar({ curso, grupos, destinos, vistos, meta, trocando
           </div>
           <div className="prf-cronog-dica">
             <p>
-              <strong>💡 Dica:</strong>{" "}
+              <strong>
+            <Emoji e="💡" /> Dica:
+          </strong>{" "}
               {fonte ? (
                 <>
                   pelo peso na prova ({fonte}), comece por <strong>{sugestao.map(nome).join(", ")}</strong>
@@ -180,7 +183,9 @@ export default function Montar({ curso, grupos, destinos, vistos, meta, trocando
                     />
                     <span className="prf-cronog-cor" style={{ background: corDoGrupo(g.id) }} aria-hidden="true" />
                     <span className="prf-cronog-escolha-nome">
-                      <span aria-hidden="true">{g.icone ?? iconeGrupo(g.id)}</span> {g.nome}
+                      <span aria-hidden="true">
+        <Emoji e={g.icone ?? iconeGrupo(g.id)} />
+      </span> {g.nome}
                     </span>
                     <span className="prf-cronog-escolha-info">
                       {peso !== null && <span className="prf-cronog-peso">≈{peso} itens</span>}
@@ -223,7 +228,7 @@ export default function Montar({ curso, grupos, destinos, vistos, meta, trocando
                     onChange={() => setExtras(extras.includes(x) ? extras.filter((y) => y !== x) : [...extras, x])}
                   />
                   <span className="prf-cronog-escolha-nome">
-                    {NOME_EXTRA[x].titulo}
+                    <TextoEmoji texto={NOME_EXTRA[x].titulo} />
                     <small>{NOME_EXTRA[x].texto}</small>
                   </span>
                 </label>

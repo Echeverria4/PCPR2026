@@ -12,6 +12,7 @@ import {
   useEstudo,
 } from "./aulas/estudo";
 import { alternarCaderno, usePainelCaderno } from "./caderno/painel";
+import { Emoji } from "../icones/Emoji";
 
 const CadernoPrf = lazy(() => import("./caderno/CadernoPrf"));
 
@@ -37,7 +38,9 @@ export function ChipCronometro() {
   const pausado = ativo.desde === null;
   return (
     <span className={`prf-crono-chip${pausado ? " prf-crono-chip-pausado" : ""}`} title={ativo.rotulo}>
-      <span aria-label="Tempo de estudo">⏱ {relogio(tempoAtivo(ativo, agora))}</span>
+      <span aria-label="Tempo de estudo">
+        <Emoji e="⏱" /> {relogio(tempoAtivo(ativo, agora))}
+      </span>
       <button
         type="button"
         onClick={pausado ? continuarEstudo : pausarEstudo}

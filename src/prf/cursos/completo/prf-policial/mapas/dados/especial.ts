@@ -4,7 +4,6 @@ export const MAPAS_ESPECIAL: MapaAula[] = [
   {
     aula: "especial-01",
     centro: { titulo: "Crimes ambientais", emoji: "🌳", sub: "Lei 9.605/1998 na rodovia" },
-    desenho: "rodovia",
     ramos: [
       { rotulo: "Fauna", emoji: "🐒", cor: "azul", folhas: ["Matar ou caçar **sem autorização**", "Transportar ou vender: **mesma pena**", "Doméstico não ameaçado: juiz pode **perdoar**"] },
       { rotulo: "Maus-tratos", emoji: "🐕", cor: "verde", folhas: ["Regra: **3 meses** a 1 ano", "Cão ou gato: **2 a 5**", "Morte do animal: **+1/6 a 1/3**"] },
@@ -19,7 +18,6 @@ export const MAPAS_ESPECIAL: MapaAula[] = [
   {
     aula: "especial-02",
     centro: { titulo: "Lei de Drogas", emoji: "💊", sub: "Uso, tráfico e aumentos" },
-    desenho: "viatura",
     ramos: [
       { rotulo: "Uso pessoal", emoji: "🚬", cor: "azul", folhas: ["Termo **circunstanciado**", "**Sem** prisão em flagrante", "Juiz avalia **quantidade** e contexto"] },
       { rotulo: "Maconha", emoji: "🌿", cor: "verde", folhas: ["Até **40 g** ou 6 plantas", "Não é crime, mas **proibido**", "Presunção **relativa**"] },
@@ -34,7 +32,6 @@ export const MAPAS_ESPECIAL: MapaAula[] = [
   {
     aula: "especial-03",
     centro: { titulo: "Abuso e tortura", emoji: "🚷", sub: "Leis 13.869 e 9.455" },
-    desenho: "alerta",
     ramos: [
       { rotulo: "Intenção especial", emoji: "🎯", cor: "azul", folhas: ["Prejudicar ou **beneficiar**", "Ou **capricho** pessoal", "Divergência de interpretação: **não é**"] },
       { rotulo: "Perda do cargo", emoji: "📛", cor: "verde", folhas: ["Abuso: só com **reincidência**", "Abuso: **motivada** na sentença", "Tortura: **automática**"] },
@@ -49,7 +46,6 @@ export const MAPAS_ESPECIAL: MapaAula[] = [
   {
     aula: "especial-04",
     centro: { titulo: "Estatuto do Desarmamento", emoji: "🔫", sub: "Posse, porte e perigo abstrato" },
-    desenho: "escudo",
     ramos: [
       { rotulo: "Posse", emoji: "🏠", cor: "azul", folhas: ["Em casa ou **trabalho**", "**1 a 3** anos", "Caminhão ou táxi: é **porte**"] },
       { rotulo: "Porte", emoji: "🚶", cor: "verde", folhas: ["Leva **consigo**", "Permitido: **2 a 4**", "Disparo em via: **2 a 4**"] },
@@ -64,7 +60,6 @@ export const MAPAS_ESPECIAL: MapaAula[] = [
   {
     aula: "especial-05",
     centro: { titulo: "Crimes do ECA", emoji: "🧒", sub: "Ação pública, sem Lei 9.099" },
-    desenho: "pessoas",
     ramos: [
       { rotulo: "Regras gerais", emoji: "📋", cor: "azul", folhas: ["Ação **incondicionada**", "Lei 9.099: **nunca**", "Doméstica: sem **cesta básica**"] },
       { rotulo: "Apreensão ilegal", emoji: "🚓", cor: "verde", folhas: ["Sem flagrante nem **ordem escrita**", "Comunicar **juiz** e família", "Ilegal: liberar **na hora**"] },
@@ -79,7 +74,6 @@ export const MAPAS_ESPECIAL: MapaAula[] = [
   {
     aula: "especial-06",
     centro: { titulo: "Identificação e crime organizado", emoji: "🧬", sub: "Leis 12.037 e 12.850" },
-    desenho: "documento",
     ramos: [
       { rotulo: "Identificação", emoji: "🆔", cor: "azul", folhas: ["Com documento civil: **não** identifica", "Rasura ou **conflito**: identifica", "Essencial à investigação: **juiz**"] },
       { rotulo: "Perfil genético", emoji: "🔬", cor: "verde", folhas: ["Crimes **graves** desde 2025", "Absolvição: **sai** do banco"] },
@@ -94,7 +88,6 @@ export const MAPAS_ESPECIAL: MapaAula[] = [
   {
     aula: "especial-07",
     centro: { titulo: "Crimes hediondos", emoji: "🛑", sub: "Lei 8.072/1990" },
-    desenho: "balanca",
     ramos: [
       { rotulo: "Rol", emoji: "📜", cor: "azul", folhas: ["Consumado **ou tentado**", "Homicídio qualificado, **latrocínio**", "Estupro e **feminicídio**"] },
       { rotulo: "Roubo hediondo", emoji: "🔫", cor: "verde", folhas: ["Restrição da **liberdade**", "Arma **de fogo**", "Lesão grave ou **morte**"] },
@@ -109,7 +102,6 @@ export const MAPAS_ESPECIAL: MapaAula[] = [
   {
     aula: "especial-08",
     centro: { titulo: "Sistema Único de Segurança", emoji: "🤝", sub: "Lei 13.675/2018, parte 1" },
-    desenho: "escudo",
     ramos: [
       { rotulo: "Finalidade", emoji: "🎯", cor: "azul", folhas: ["Ordem pública e **incolumidade**", "Atuação **integrada**"] },
       { rotulo: "Dever de todos", emoji: "🙌", cor: "verde", folhas: ["Dever do **Estado**", "Responsabilidade de **todos**", "União faz a política **nacional**"] },
@@ -124,7 +116,6 @@ export const MAPAS_ESPECIAL: MapaAula[] = [
   {
     aula: "especial-09",
     centro: { titulo: "Plano e valorização", emoji: "📈", sub: "Lei 13.675/2018, parte 2" },
-    desenho: "livro",
     ramos: [
       { rotulo: "Plano Nacional", emoji: "🗺️", cor: "azul", folhas: ["Dura **10 anos**", "Foco na **prevenção**", "Planos locais: **2 anos**"] },
       { rotulo: "Avaliação", emoji: "📊", cor: "verde", folhas: ["**Anual**, pela União", "Sinaped: dados **públicos**", "Comissão: mínimo **3**"] },
@@ -139,7 +130,6 @@ export const MAPAS_ESPECIAL: MapaAula[] = [
   {
     aula: "especial-10",
     centro: { titulo: "Competências da PRF", emoji: "🚓", sub: "CF, CTB e decretos" },
-    desenho: "viatura",
     ramos: [
       { rotulo: "Constituição", emoji: "📜", cor: "azul", folhas: ["Órgão **permanente**", "Mantido pela **União**", "Patrulhamento **ostensivo**"] },
       { rotulo: "Decreto 11.348", emoji: "📑", cor: "verde", folhas: ["Soma, **não revoga**", "Autoridade de **trânsito**", "Lavra **termo circunstanciado**"] },
@@ -154,7 +144,6 @@ export const MAPAS_ESPECIAL: MapaAula[] = [
   {
     aula: "especial-11",
     centro: { titulo: "Juizados especiais criminais", emoji: "⚡", sub: "Lei 9.099/1995" },
-    desenho: "documento",
     ramos: [
       { rotulo: "Menor potencial", emoji: "🔹", cor: "azul", folhas: ["Pena máxima **até 2 anos**", "Toda **contravenção**", "Conta a **máxima**"] },
       { rotulo: "Termo circunstanciado", emoji: "📝", cor: "verde", folhas: ["**Sem** inquérito", "Vai ao Juizado: **sem flagrante**", "PRF também **lavra**"] },
