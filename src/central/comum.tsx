@@ -128,46 +128,53 @@ export function CartaoMapa({ mapa, materia, rotulo, onAbrir, completo = true, ex
         <h2 className="cx-card-titulo">{rotulo}</h2>
         {etiqueta ?? <span className="cx-etiqueta">{materia}</span>}
       </div>
-      <div className="cx-mapa-centro">
-        <span className="cx-mapa-emoji" aria-hidden="true">
-          {mapa.centro.emoji}
-        </span>
-        <div>
-          <div className="cx-mapa-titulo">{mapa.centro.titulo}</div>
-          {mapa.centro.sub && <div className="cx-mapa-sub">{mapa.centro.sub}</div>}
+      {extra}
+      <div className="cx-poster">
+        <div className="cx-poster-topo">
+          <span className="cx-poster-icone" aria-hidden="true">
+            {mapa.centro.emoji}
+          </span>
+          <div className="cx-poster-texto">
+            <div className="cx-mapa-titulo">{mapa.centro.titulo}</div>
+            {mapa.centro.sub && <div className="cx-mapa-sub">{mapa.centro.sub}</div>}
+          </div>
+        </div>
+        {completo && (
+          <ul className="cx-ramos">
+            {mapa.ramos.map((r) => (
+              <li key={r.rotulo} className={`cx-ramo cx-ramo-${r.cor}`}>
+                <div className="cx-ramo-rotulo">
+                  <span className="cx-ramo-emoji" aria-hidden="true">
+                    {r.emoji}
+                  </span>
+                  <span>{r.rotulo}</span>
+                </div>
+                <ul>
+                  {r.folhas.slice(0, 3).map((f) => (
+                    <li key={f}>
+                      <Negrito texto={f} />
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
+        )}
+        <div className="cx-poster-notas">
+          <p className="cx-macete">
+            <span aria-hidden="true">💡</span>
+            <span>
+              <strong className="cx-nota-rotulo">Macete:</strong> <Negrito texto={mapa.macete} />
+            </span>
+          </p>
+          <p className="cx-cuidado">
+            <span aria-hidden="true">⚠️</span>
+            <span>
+              <strong className="cx-nota-rotulo">Cuidado:</strong> <Negrito texto={mapa.cuidado} />
+            </span>
+          </p>
         </div>
       </div>
-      {extra}
-      {completo && (
-        <ul className="cx-ramos">
-          {mapa.ramos.map((r) => (
-            <li key={r.rotulo} className={`cx-ramo cx-ramo-${r.cor}`}>
-              <div className="cx-ramo-rotulo">
-                <span aria-hidden="true">{r.emoji}</span> {r.rotulo}
-              </div>
-              <ul>
-                {r.folhas.slice(0, 3).map((f) => (
-                  <li key={f}>
-                    <Negrito texto={f} />
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ))}
-        </ul>
-      )}
-      <p className="cx-macete">
-        <span aria-hidden="true">💡</span>
-        <span>
-          <strong>Macete:</strong> {mapa.macete}
-        </span>
-      </p>
-      <p className="cx-cuidado">
-        <span aria-hidden="true">⚠️</span>
-        <span>
-          <strong>Cuidado:</strong> {mapa.cuidado}
-        </span>
-      </p>
       <div className="cx-card-acoes">
         <button type="button" className="botao" onClick={onAbrir}>
           Abrir o mapa completo →

@@ -19,6 +19,10 @@ const aulaDoComplemento = (m: MapaAula): AulaCurso => ({ id: m.aula, n: "", nome
 const rotuloAula = (aula: AulaCurso, mapa: MapaAula) =>
   mapa.complemento ? `➕ Complemento · ${mapa.complemento.nome}` : nomeAula(aula);
 
+/** "Aula 02" (ou "Tópico 01") para a faixa do pôster; nos ➕ Complemento, a palavra Complemento. */
+const numeroAula = (aula: AulaCurso, mapa: MapaAula) =>
+  mapa.complemento ? "➕ Complemento" : aula.n ? `${aula.tipo ?? "Aula"} ${aula.n}` : nomeAula(aula);
+
 /** A partir daqui o mapa abre para os dois lados, com as linhas curvas; abaixo, vira árvore de cima para baixo. */
 const TELA_LARGA = "(min-width: 900px)";
 
@@ -294,10 +298,6 @@ function TelaMapa({ materia, posicao, memoria, revisadoEm, onMemoria, onRevisado
           Mapa {posicao + 1} de {itens.length}
         </span>
       </div>
-      <p className="prf-mapa-aula-nome">
-        <span aria-hidden="true">{grupo.icone ?? "🧠"}</span> {grupo.nome} · {rotuloAula(aula, mapa)}
-      </p>
-
       <div className="prf-mapa-modos" role="group" aria-label="Como ver o mapa">
         <button className="prf-mapa-modo" aria-pressed={!memoria} onClick={() => trocarModo(false)}>
           👀 Ver tudo
@@ -320,13 +320,27 @@ function TelaMapa({ materia, posicao, memoria, revisadoEm, onMemoria, onRevisado
         </div>
       )}
 
-      <Arvore mapa={mapa} memoria={memoria} abertos={abertos} onAlternar={alternar} />
+      <div className="prf-mapa-poster">
+        <header className="prf-mapa-faixa">
+          <div className="prf-mapa-faixa-texto">
+            <p className="prf-mapa-faixa-kicker" title={rotuloAula(aula, mapa)}>
+              <span aria-hidden="true">{grupo.icone ?? "🧠"}</span> {grupo.nome} · {numeroAula(aula, mapa)}
+            </p>
+            <h2 className="prf-mapa-faixa-titulo">{mapa.centro.titulo}</h2>
+            {mapa.centro.sub && <p className="prf-mapa-faixa-sub">{mapa.centro.sub}</p>}
+          </div>
+          <span className="prf-mapa-faixa-icone" aria-hidden="true">
+            {mapa.desenho ? <Desenho id={mapa.desenho} tamanho={44} /> : mapa.centro.emoji}
+          </span>
+        </header>
 
-      {formulas && (
-        <FormulasAula formulas={formulas} nivel={3} memoria={memoria} abertos={abertos} onAlternar={alternar} />
-      )}
+        <Arvore mapa={mapa} memoria={memoria} abertos={abertos} onAlternar={alternar} />
 
-      <div className="prf-mapa-notas">
+        {formulas && (
+          <FormulasAula formulas={formulas} nivel={3} memoria={memoria} abertos={abertos} onAlternar={alternar} />
+        )}
+
+        <div className="prf-mapa-notas">
         <Nota
           tipo="macete"
           titulo="💡 Macete"
@@ -341,6 +355,9 @@ function TelaMapa({ materia, posicao, memoria, revisadoEm, onMemoria, onRevisado
           escondida={memoria && !abertos.has("cuidado")}
           onAlternar={memoria ? () => alternar("cuidado") : undefined}
         />
+        </div>
+
+        <Estrada />
       </div>
 
       <div className="prf-mapa-acoes">
@@ -406,9 +423,36 @@ function Nota({ tipo, titulo, texto, escondida, onAlternar }: NotaProps) {
   );
 }
 
-interface Linha {
-  cor: string;
-  d: string;
+/** Pé do pôster: um trecho de asfalto com a faixa amarela e um cone, só de enfeite. */
+function Estrada() {
+  return (
+    <div className="prf-mapa-estrada" aria-hidden="true">
+      <svg className="prf-mapa-cone" viewBox="0 0 32 32" focusable="false">
+        <path d="M13 4h6l7.5 22h-21Z" fill="#f47b20" />
+        <path d="M10.95 10H21.05L22.41 14H9.59Z M8.23 18H23.77L25.14 22H6.86Z" fill="#fff" />
+        <rect x="3" y="26" width="26" height="3.5" rx="1.2" fill="#e8650f" />
+      </svg>
+    </div>
+  );
+}
+
+/**
+ * Ligação em ângulo reto, com as quinas arredondadas: sai do centro na horizontal, desce (ou sobe) no meio do caminho
+ * e chega no ramo na horizontal. Como todos os ramos de um lado dividem o mesmo meio, as linhas formam um tronco só.
+ */
+function cotovelo(x1: number, y1: number, x2: number, y2: number): string {
+  const n = (v: number) => Math.round(v * 10) / 10;
+  const dx = x2 - x1;
+  const dy = y2 - y1;
+  if (Math.abs(dy) < 2) return `M${n(x1)} ${n(y1)}H${n(x2)}`;
+  const sx = Math.sign(dx);
+  const sy = Math.sign(dy);
+  const xm = x1 + dx / 2;
+  const r = Math.min(12, Math.abs(dy) / 2, Math.abs(dx) / 4);
+  return (
+    `M${n(x1)} ${n(y1)}H${n(xm - sx * r)}Q${n(xm)} ${n(y1)} ${n(xm)} ${n(y1 + sy * r)}` +
+    `V${n(y2 - sy * r)}Q${n(xm)} ${n(y2)} ${n(xm + sx * r)} ${n(y2)}H${n(x2)}`
+  );
 }
 
 interface ArvoreProps {
@@ -419,12 +463,13 @@ interface ArvoreProps {
 }
 
 /**
- * O mapa em si. No celular é uma árvore de cima para baixo, com o tronco desenhado em CSS. Na tela larga, o centro
- * fica no meio e os ramos dos dois lados, ligados por curvas medidas na página depois de montada.
+ * O mapa em si. No celular é uma árvore de cima para baixo, com o tronco desenhado em CSS saindo da faixa do título.
+ * Na tela larga, um quadro de asfalto fica no meio e os ramos dos dois lados, ligados por linhas medidas na página
+ * depois de montada.
  */
 function Arvore({ mapa, memoria, abertos, onAlternar }: ArvoreProps) {
   const raiz = useRef<HTMLDivElement>(null);
-  const [linhas, setLinhas] = useState<Linha[]>([]);
+  const [linhas, setLinhas] = useState<string[]>([]);
   const metade = Math.ceil(mapa.ramos.length / 2);
   const lados = [
     { lado: "esq", ramos: mapa.ramos.slice(0, metade), inicio: 0 },
@@ -437,33 +482,26 @@ function Arvore({ mapa, memoria, abertos, onAlternar }: ArvoreProps) {
 
     function medir() {
       if (!el) return;
-      const novas: Linha[] = [];
+      const novas: string[] = [];
       const centro = el.querySelector<HTMLElement>("[data-mapa-centro]");
       if (centro && window.matchMedia(TELA_LARGA).matches) {
         const base = el.getBoundingClientRect();
         const c = centro.getBoundingClientRect();
         for (const lado of ["esq", "dir"]) {
           const topos = el.querySelectorAll<HTMLElement>(`[data-mapa-lado="${lado}"] [data-mapa-topo]`);
-          topos.forEach((topo, i) => {
+          topos.forEach((topo) => {
             const r = topo.getBoundingClientRect();
-            // Sai da lateral do centro, em pontos espalhados, e chega na altura do nome do ramo.
+            // Sai do meio da lateral do centro e chega na altura da aba do ramo.
             const x1 = (lado === "esq" ? c.left : c.right) - base.left;
-            const y1 = c.top - base.top + (c.height * (i + 1)) / (topos.length + 1);
+            const y1 = c.top - base.top + c.height / 2;
             const x2 = (lado === "esq" ? r.right : r.left) - base.left;
             const y2 = r.top - base.top + r.height / 2;
-            const xm = (x1 + x2) / 2;
-            const n = (v: number) => Math.round(v * 10) / 10;
-            novas.push({
-              cor: topo.dataset.mapaCor ?? "azul",
-              d: `M${n(x1)} ${n(y1)}C${n(xm)} ${n(y1)} ${n(xm)} ${n(y2)} ${n(x2)} ${n(y2)}`,
-            });
+            novas.push(cotovelo(x1, y1, x2, y2));
           });
         }
       }
       setLinhas((antes) =>
-        antes.length === novas.length && antes.every((l, i) => l.d === novas[i].d && l.cor === novas[i].cor)
-          ? antes
-          : novas,
+        antes.length === novas.length && antes.every((d, i) => d === novas[i]) ? antes : novas,
       );
     }
 
@@ -478,22 +516,18 @@ function Arvore({ mapa, memoria, abertos, onAlternar }: ArvoreProps) {
   return (
     <div className="prf-mapa-arvore" ref={raiz} role="group" aria-label={`Mapa mental: ${mapa.centro.titulo}`}>
       <svg className="prf-mapa-ligacoes" aria-hidden="true" focusable="false">
-        {linhas.map((l, i) => (
-          <path key={i} className={`prf-mapa-cor-${l.cor}`} d={l.d} />
+        {linhas.map((d, i) => (
+          <path key={i} d={d} />
         ))}
       </svg>
-      <div className="prf-mapa-centro" data-mapa-centro>
+      {/* O título fica na faixa do pôster; aqui no meio vai só o desenho, sobre o asfalto. */}
+      <div className="prf-mapa-centro" data-mapa-centro aria-hidden="true">
         {mapa.desenho ? (
-          <Desenho id={mapa.desenho} tamanho={60} />
+          <Desenho id={mapa.desenho} tamanho={72} />
         ) : (
-          <span className="prf-mapa-centro-emoji" aria-hidden="true">
-            {mapa.centro.emoji}
-          </span>
+          <span className="prf-mapa-centro-emoji">{mapa.centro.emoji}</span>
         )}
-        <div className="prf-mapa-centro-texto">
-          <h2>{mapa.centro.titulo}</h2>
-          {mapa.centro.sub && <span className="prf-mapa-centro-sub">{mapa.centro.sub}</span>}
-        </div>
+        <span className="prf-mapa-centro-faixa" />
       </div>
       {lados.map(({ lado, ramos, inicio }) => (
         <ul key={lado} className={`prf-mapa-lado prf-mapa-lado-${lado}`} data-mapa-lado={lado}>
@@ -552,14 +586,13 @@ function Ramo({ ramo, ultimo, memoria, aberto, onAlternar }: RamoProps) {
             <button
               className="prf-mapa-ramo-topo"
               data-mapa-topo
-              data-mapa-cor={ramo.cor}
               aria-expanded={aberto}
               onClick={onAlternar}
             >
               {cabeca}
             </button>
           ) : (
-            <span className="prf-mapa-ramo-topo" data-mapa-topo data-mapa-cor={ramo.cor}>
+            <span className="prf-mapa-ramo-topo" data-mapa-topo>
               {cabeca}
             </span>
           )}
