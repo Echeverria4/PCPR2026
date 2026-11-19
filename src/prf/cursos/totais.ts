@@ -129,12 +129,6 @@ export const TOTAIS_CURSOS: Record<string, TotaisCurso> = {
         "pdfs": 15
       },
       {
-        "nome": "Inglês",
-        "cor": "#7C8CF8",
-        "videos": 88,
-        "pdfs": 30
-      },
-      {
         "nome": "Espanhol",
         "cor": "#F2C14E",
         "videos": 60,
@@ -231,10 +225,10 @@ export const TOTAIS_CURSOS: Record<string, TotaisCurso> = {
         "pdfs": 0
       }
     ],
-    "aulas": 221,
-    "videos": 2233,
-    "pdfs": 911,
-    "blocos": 2312
+    "aulas": 212,
+    "videos": 2145,
+    "pdfs": 881,
+    "blocos": 2224
   },
   "pf-agente": {
     "materias": [

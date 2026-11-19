@@ -8,6 +8,7 @@ import {
   type ProvaAnterior,
 } from "../prf/cursos/completo/prf-policial/provas";
 import type { Question } from "../lib/types";
+import { LINGUA } from "../prf/cursos/completo/prf-policial/lingua";
 import ProvaCentral, {
   descartarProvaSalva,
   lerProvaSalva,
@@ -25,7 +26,6 @@ import ProvaCentral, {
 
 const chaveDe = (id: string) => `cx:provas:${id}:andamento:v1`;
 const HISTORICO = "cx:provas:historico:v1";
-const IDIOMA = "cx:provas:idioma:v1";
 
 interface Registro extends ResultadoEntrega {
   prova: string;
@@ -47,14 +47,6 @@ function gravarHistorico(r: Registro) {
     localStorage.setItem(HISTORICO, JSON.stringify([r, ...lerHistorico()].slice(0, 40)));
   } catch {
     /* sem armazenamento: o resultado aparece só agora */
-  }
-}
-
-function lerIdioma(): Idioma {
-  try {
-    return localStorage.getItem(IDIOMA) === "espanhol" ? "espanhol" : "ingles";
-  } catch {
-    return "ingles";
   }
 }
 
@@ -86,7 +78,7 @@ export default function ProvasAnteriores() {
   const [abertaId, setAbertaId] = useState<string | null>(null);
   const [itens, setItens] = useState<Map<string, ItemProva[]>>(new Map());
   const [erro, setErro] = useState("");
-  const [idioma, setIdioma] = useState<Idioma>(lerIdioma);
+  const idioma: Idioma = LINGUA;
   const [emProva, setEmProva] = useState<{ salva: ProvaSalva; questoes: Question<string>[] } | null>(null);
   const [aviso, setAviso] = useState("");
   const [historico, setHistorico] = useState<Registro[]>(lerHistorico);
@@ -114,15 +106,6 @@ export default function ProvasAnteriores() {
 
   const porId = useMemo(() => new Map((carregados ?? []).map((q) => [q.id, q as Question<string>])), [carregados]);
   const pendente = aberta ? lerProvaSalva(chaveDe(aberta.id)) : null;
-
-  function escolherIdioma(l: Idioma) {
-    setIdioma(l);
-    try {
-      localStorage.setItem(IDIOMA, l);
-    } catch {
-      /* só nesta visita */
-    }
-  }
 
   function abrir(salva: ProvaSalva) {
     if (!aberta) return;
@@ -214,23 +197,6 @@ export default function ProvasAnteriores() {
 
           {carregados && (
             <>
-              {aberta.linguas && (
-                <div className="cx-campo">
-                  <span className="cx-campo-rotulo" id="cx-provas-lingua">
-                    Língua estrangeira
-                  </span>
-                  <ul className="cx-chips cx-qtd" aria-labelledby="cx-provas-lingua">
-                    {(["ingles", "espanhol"] as const).map((l) => (
-                      <li key={l}>
-                        <button type="button" aria-pressed={idioma === l} onClick={() => escolherIdioma(l)}>
-                          {NOME_IDIOMA[l]}
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
               <div className="cx-dist">
                 {blocos.map((b, bi) => (
                   <div key={b.nome} className="cx-dist-bloco">

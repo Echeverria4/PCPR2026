@@ -1,6 +1,7 @@
 import type { EstadoEstudo } from "../../aulas/estudo";
 import type { AulaCurso, GrupoCurso } from "../../aulas/tipos";
 import { inicioSemana, maisDias } from "../../semana/base";
+import { LINGUA, LINGUA_FORA } from "../completo/prf-policial/lingua";
 
 /*
  * Só tipos e funções puras: a Central de Estudos usa este arquivo sem carregar o cronômetro dos cursos.
@@ -358,6 +359,20 @@ function limparDia(x: unknown): DiaPlano | null {
   };
 }
 
+/** Plano salvo antes da escolha da língua (19/11/26): a que saiu do curso vira a escolhida, sem repetir matéria. */
+function comLinguaDoCurso(curso: string, p: Plano): Plano {
+  if (curso !== "prf-policial") return p;
+  const troca = (x: string) => (x === LINGUA_FORA ? LINGUA : x);
+  const unico = (xs: string[]) => xs.filter((x, i) => xs.indexOf(x) === i);
+  const dias = p.dias.map((d) => ({
+    ...d,
+    fila: unico(d.fila.map(troca)),
+    atividades: d.atividades.map((a) => (a.grupo === LINGUA_FORA ? { ...a, grupo: LINGUA } : a)),
+  }));
+  const nosDias = new Set(dias.flatMap((d) => d.fila));
+  return { ...p, dias, espera: unico(p.espera.map(troca)).filter((x) => !nosDias.has(x)) };
+}
+
 export function lerPlano(curso: string): Plano {
   try {
     const bruto = localStorage.getItem(chave(curso));
@@ -367,7 +382,7 @@ export function lerPlano(curso: string): Plano {
       if (dias.length === 7 && dias.every((d) => d !== null)) {
         const feitos = p.feitos && typeof p.feitos === "object" ? p.feitos : {};
         const espera = Array.isArray(p.espera) ? p.espera.filter(ehTexto) : [];
-        return { dias: dias as DiaPlano[], espera, feitos, montado: p.montado !== false };
+        return comLinguaDoCurso(curso, { dias: dias as DiaPlano[], espera, feitos, montado: p.montado !== false });
       }
     }
   } catch {

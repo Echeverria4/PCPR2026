@@ -39,7 +39,7 @@ const CURSOS_SO_AULAS: Partial<Record<CursoId, CursoSoAulas>> = {
     curto: "PRF Policial",
     brasao: prfBrasao,
     brasaoAlt: "Brasão da Polícia Rodoviária Federal",
-    aulas: () => import("./dados/prf-policial"),
+    aulas: () => import("./completo/prf-policial/grupos"),
     completo: () => import("./completo/prf-policial"),
   },
   "pf-agente": {

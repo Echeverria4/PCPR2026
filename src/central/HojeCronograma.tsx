@@ -27,7 +27,7 @@ const CURSOS: CursoCronograma[] = ["prf-policial", "pf-agente", "pmpr", "banco-b
 const temCronograma = (c: CursoEstudo | undefined): c is CursoCronograma => CURSOS.includes(c as CursoCronograma);
 
 const AULAS: Record<CursoCronograma, () => Promise<{ GRUPOS: GrupoCurso[] }>> = {
-  "prf-policial": () => import("../prf/cursos/dados/prf-policial"),
+  "prf-policial": () => import("../prf/cursos/completo/prf-policial/grupos"),
   "pf-agente": () => import("../prf/cursos/dados/pf-agente"),
   pmpr: () => import("../prf/cursos/dados/pmpr"),
   "banco-brasil": () => import("../prf/cursos/dados/banco-brasil"),

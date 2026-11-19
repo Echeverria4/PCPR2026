@@ -11,7 +11,8 @@ import { progressoDoCurso } from "../prf/cursos/completo/armazenamento";
 import { DADOS } from "../prf/cursos/completo/prf-policial/index";
 import { ultimaResposta } from "../prf/cursos/completo/sessoes";
 import type { QuestaoCurso, TentativaCurso } from "../prf/cursos/completo/tipos";
-import { GRUPOS } from "../prf/cursos/dados/prf-policial";
+import { GRUPOS } from "../prf/cursos/completo/prf-policial/grupos";
+import { LINGUA as LINGUA_CURSO, NOME_LINGUA, type Lingua } from "../prf/cursos/completo/prf-policial/lingua";
 import ProvaCentral, {
   descartarProvaSalva,
   lerProvaSalva,
@@ -126,10 +127,9 @@ const paraSessao = (questoes: QuestaoCurso[]): Question<string>[] => questoes.ma
 
 // ---------- Prova de 2021 ----------
 
-type Lingua = "ingles" | "espanhol";
 const LINGUA = "lingua";
 
-/** Itens por matéria na prova de 2021 (Cebraspe, 120 itens): a língua estrangeira é inglês ou espanhol, à escolha. */
+/** Itens por matéria na prova de 2021 (Cebraspe, 120 itens): a língua estrangeira é a do curso (lingua.ts). */
 const PROVA_2021: { bloco: string; itens: [string, number][] }[] = [
   {
     bloco: "Bloco I · Conhecimentos básicos",
@@ -258,7 +258,7 @@ export default function TreinoUnido() {
   const [aula, setAula] = useState("");
   const [qtdMateria, setQtdMateria] = useState<number | "todas">(20);
   const [qtdAleatorio, setQtdAleatorio] = useState<number>(20);
-  const [lingua, setLingua] = useState<Lingua>("ingles");
+  const lingua: Lingua = LINGUA_CURSO;
   const [cotas, setCotas] = useState<Record<string, number>>({});
   const [sessao, setSessao] = useState<{ questions: Question<string>[]; iniciadoEm: string; modo: QuizMode } | null>(
     null,
@@ -462,7 +462,7 @@ export default function TreinoUnido() {
 
   const pctAcerto = placar.feitas > 0 ? Math.round((placar.certas / placar.feitas) * 100) : null;
   const dica = MODOS.find((m) => m.id === modo)?.dica;
-  const nomeLingua = lingua === "ingles" ? "Inglês" : "Espanhol";
+  const nomeLingua = NOME_LINGUA[lingua];
   const nuncaNoBanco = todas.reduce((s, q) => s + (ultima.has(q.id) ? 0 : 1), 0);
 
   return (
@@ -534,21 +534,6 @@ export default function TreinoUnido() {
 
         {modo === "simulado" && (
           <>
-            <div className="cx-campo">
-              <span className="cx-campo-rotulo" id="cx-lingua-rotulo">
-                Língua estrangeira
-              </span>
-              <ul className="cx-chips cx-qtd" aria-labelledby="cx-lingua-rotulo">
-                {(["ingles", "espanhol"] as const).map((l) => (
-                  <li key={l}>
-                    <button type="button" aria-pressed={lingua === l} onClick={() => setLingua(l)}>
-                      {l === "ingles" ? "Inglês" : "Espanhol"}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
             <div className="cx-dist">
               {PROVA_2021.map((b) => (
                 <div key={b.bloco} className="cx-dist-bloco">

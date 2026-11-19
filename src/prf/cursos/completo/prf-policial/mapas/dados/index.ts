@@ -1,3 +1,4 @@
+import { LINGUA } from "../../lingua";
 import type { MapaAula } from "../tipos";
 import { MAPAS_ADM_A } from "./adm-a";
 import { MAPAS_ADM_B } from "./adm-b";
@@ -24,4 +25,4 @@ import { MAPAS_TRANSITO } from "./transito";
  * Cada matéria entra aqui quando o arquivo dela fica pronto. A ordem na tela é a do catálogo do curso,
  * não a desta lista, e a matéria só aparece na aba quando tem pelo menos um mapa.
  */
-export const MAPAS: MapaAula[] = [...MAPAS_PT, ...MAPAS_RLM, ...MAPAS_INFO, ...MAPAS_FISICA, ...MAPAS_ETICA, ...MAPAS_GEOPOLITICA, ...MAPAS_INGLES, ...MAPAS_ESPANHOL, ...MAPAS_TRANSITO, ...MAPAS_ADM_A, ...MAPAS_ADM_B, ...MAPAS_CONSTITUCIONAL, ...MAPAS_PENAL, ...MAPAS_PROC, ...MAPAS_ESPECIAL, ...MAPAS_DH, ...MAPAS_ECA, ...MAPAS_CARREIRA, ...MAPAS_DISCURSIVAS, ...MAPAS_COMPLEMENTO];
+export const MAPAS: MapaAula[] = [...MAPAS_PT, ...MAPAS_RLM, ...MAPAS_INFO, ...MAPAS_FISICA, ...MAPAS_ETICA, ...MAPAS_GEOPOLITICA, ...(LINGUA === "ingles" ? MAPAS_INGLES : MAPAS_ESPANHOL), ...MAPAS_TRANSITO, ...MAPAS_ADM_A, ...MAPAS_ADM_B, ...MAPAS_CONSTITUCIONAL, ...MAPAS_PENAL, ...MAPAS_PROC, ...MAPAS_ESPECIAL, ...MAPAS_DH, ...MAPAS_ECA, ...MAPAS_CARREIRA, ...MAPAS_DISCURSIVAS, ...MAPAS_COMPLEMENTO];

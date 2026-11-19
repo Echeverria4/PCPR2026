@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import MapasPrf from "../prf/cursos/completo/prf-policial/mapas/MapasPrf";
 import type { TelaMapas } from "../prf/cursos/completo/prf-policial/mapas/tipos";
-import { GRUPOS } from "../prf/cursos/dados/prf-policial";
+import { GRUPOS } from "../prf/cursos/completo/prf-policial/grupos";
 import type { AbrirCurso } from "./Central";
 import { CartaoMapa, escolherMapas, lerMateriaMemorizar, useMapas } from "./comum";
 import { grupoDaAula, montarPainel, nomeMateriaPol } from "./dados";
