@@ -5,7 +5,7 @@ import { Emoji, TextoEmoji } from "../../icones/Emoji";
 
 const CadernoPrf = lazy(() => import("../caderno/CadernoPrf"));
 
-export type AbaCurso = "treino" | "aulas" | "semana" | "cronograma" | "resumos" | "redacao" | "mapas";
+export type AbaCurso = "treino" | "aulas" | "semana" | "cronograma" | "resumos" | "redacao" | "mapas" | "livro";
 
 const ABAS_PADRAO: { id: AbaCurso; rotulo: string }[] = [
   { id: "aulas", rotulo: "🎬 Aulas" },

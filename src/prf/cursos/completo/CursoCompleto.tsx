@@ -26,7 +26,7 @@ import {
   ultimaResposta,
   type FiltrosCurso,
 } from "./sessoes";
-import type { DadosCursoCompleto, PropsMapas, PropsRedacao, TentativaCurso } from "./tipos";
+import type { DadosCursoCompleto, PropsLivro, PropsMapas, PropsRedacao, TentativaCurso } from "./tipos";
 import { abaDaEntrada, type EntradaCurso } from "../../../central/entrada";
 
 const AulasCurso = lazy(() => import("../../aulas/AulasCurso"));
@@ -98,6 +98,7 @@ export default function CursoCompleto({
         "cronograma",
         "resumos",
         ...(dados.mapas ? (["mapas"] as const) : []),
+        ...(dados.livro ? (["livro"] as const) : []),
         ...(dados.redacao ? (["redacao"] as const) : []),
       ],
       "treino",
@@ -120,13 +121,17 @@ export default function CursoCompleto({
   const [telaMapas, setTelaMapas] = useState<PropsMapas["tela"]>(() => mapasDaEntrada(entrada));
   // Os mapas mentais seguem a mesma regra: só no curso que traz, e só carregam ao abrir a aba.
   const Mapas = useMemo(() => (dados.mapas ? lazy(dados.mapas) : null), [dados.mapas]);
+  const [telaLivro, setTelaLivro] = useState<PropsLivro["tela"]>({ tipo: "inicio" });
+  // O Livro do CTB também: só no curso que traz, e o texto da lei (uns 400 KB) só baixa ao abrir a aba.
+  const Livro = useMemo(() => (dados.livro ? lazy(dados.livro) : null), [dados.livro]);
   const abas = useMemo(
     () => [
       ...ABAS,
       ...(Mapas ? [{ id: "mapas" as const, rotulo: "🧠 Mapas Mentais" }] : []),
+      ...(Livro ? [{ id: "livro" as const, rotulo: "📖 Livro do CTB" }] : []),
       ...(Redacao ? [{ id: "redacao" as const, rotulo: "✍️ Redação" }] : []),
     ],
-    [Mapas, Redacao],
+    [Mapas, Livro, Redacao],
   );
 
   const grupos = gruposAtuais();
@@ -193,9 +198,11 @@ export default function CursoCompleto({
     abrirSessao("personalizado", sessaoPersonalizada(banco, filtros, tentativas, erradas));
   }
 
-  /** Fixação no fim da aula: ao terminar, o quiz volta para a mesma aula. */
-  function fixarAula(aula: string, quantidade: number) {
-    if (abrirSessao("personalizado", sessaoFixacao(banco, aula, quantidade, tentativas))) setOrigem("aulas");
+  /** Fixação da aula: ao terminar, o quiz volta para a mesma aula (ou para a aba de onde veio, como o Livro do CTB). */
+  function fixarAula(aula: string, quantidade: number, volta: AbaCurso = "aulas"): boolean {
+    const ok = abrirSessao("personalizado", sessaoFixacao(banco, aula, quantidade, tentativas));
+    if (ok) setOrigem(volta);
+    return ok;
   }
 
   /** Treino de um assunto difícil da semana: ao terminar, o quiz volta para o acompanhamento. */
@@ -268,8 +275,14 @@ export default function CursoCompleto({
   const entradaFeita = useRef(false);
   const [avisoEntrada, setAvisoEntrada] = useState<string | null>(null);
   useEffect(() => {
-    if (entradaFeita.current || !entrada?.ir) return;
+    if (entradaFeita.current || !(entrada?.ir || entrada?.fixar)) return;
     entradaFeita.current = true;
+    // "Questões da aula" tocado no Livro do CTB da Central: abre a fixação e, no fim, volta para a aba da entrada.
+    if (entrada.fixar) {
+      fixarAula(entrada.fixar, QUESTOES_POR_AULA, view === "quiz" || view === "result" ? "treino" : view);
+      return;
+    }
+    if (!entrada.ir) return;
     const grupo = entrada.grupo ?? null;
     // Ao terminar o quiz, volta para a aba em que o curso abriu (o treino, no "Refazer" da Central).
     if (irDoCronograma(entrada.ir, grupo)) {
@@ -308,6 +321,7 @@ export default function CursoCompleto({
     if (aba === "semana" && view === "semana") setSemanaAberta(null);
     if (aba === "redacao" && view === "redacao") setTelaRedacao({ tipo: "inicio" });
     if (aba === "mapas" && view === "mapas") setTelaMapas({ tipo: "inicio" });
+    if (aba === "livro" && view === "livro") setTelaLivro({ tipo: "inicio" });
     setView(aba);
   }
 
@@ -413,6 +427,21 @@ export default function CursoCompleto({
       {view === "mapas" && Mapas && (
         <Suspense fallback={<div className="vazio">Carregando os mapas…</div>}>
           <Mapas tela={telaMapas} onTela={setTelaMapas} grupos={grupos} onAbrirAula={abrirAula} />
+        </Suspense>
+      )}
+      {view === "livro" && Livro && (
+        <Suspense fallback={<div className="vazio">Carregando o Livro do CTB…</div>}>
+          <Livro
+            tela={telaLivro}
+            onTela={setTelaLivro}
+            onAbrirMapa={(aula) => {
+              setTelaMapas({ tipo: "mapa", aula });
+              setView("mapas");
+            }}
+            onAbrirAula={(aula) => abrirAula({ grupo: "transito", aula })}
+            onQuestoes={(aula) => fixarAula(aula, QUESTOES_POR_AULA, "livro")}
+            questoesDaAula={(aula) => questoesDaAula(banco, aula).length}
+          />
         </Suspense>
       )}
       {view === "redacao" && Redacao && (

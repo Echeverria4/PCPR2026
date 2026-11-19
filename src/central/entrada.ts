@@ -15,6 +15,8 @@ export interface EntradaCurso {
   ir?: Destino;
   /** Tela interna da aba: "redacao" abre a Redação PMPR no Português Inteligente da PRF ADM. */
   tela?: "redacao";
+  /** Aula cujas questões de fixação abrem direto (o "Questões da aula" do Livro do CTB). */
+  fixar?: string;
 }
 
 /** A aba pedida, se for uma das que o curso tem; senão, a padrão. */

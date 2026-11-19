@@ -13,8 +13,9 @@ const Mapas = lazy(() => import("./Hubs").then((m) => ({ default: m.Mapas })));
 const Redacoes = lazy(() => import("./Hubs").then((m) => ({ default: m.Redacoes })));
 const Tempo = lazy(() => import("./Tempo"));
 const Provas = lazy(() => import("./ProvasAnteriores"));
+const Livro = lazy(() => import("./LivroCentral"));
 
-export type Secao = "inicio" | "cursos" | "questoes" | "provas" | "mapas" | "redacoes" | "tempo";
+export type Secao = "inicio" | "cursos" | "questoes" | "provas" | "mapas" | "livro" | "redacoes" | "tempo";
 
 const SECOES: { id: Secao; rotulo: string; titulo: string; icone: string }[] = [
   { id: "inicio", rotulo: "Início", titulo: "Início", icone: "🏠" },
@@ -22,6 +23,7 @@ const SECOES: { id: Secao; rotulo: string; titulo: string; icone: string }[] = [
   { id: "questoes", rotulo: "Questões", titulo: "Questões", icone: "✅" },
   { id: "provas", rotulo: "Provas anteriores", titulo: "Provas anteriores", icone: "📄" },
   { id: "mapas", rotulo: "Mapas Mentais", titulo: "Mapas Mentais", icone: "🧠" },
+  { id: "livro", rotulo: "Livro do CTB", titulo: "Livro do CTB", icone: "📖" },
   { id: "redacoes", rotulo: "Redações", titulo: "Redações", icone: "✍️" },
   { id: "tempo", rotulo: "Tempo semanal", titulo: "Tempo semanal", icone: "⏱️" },
 ];
@@ -38,9 +40,8 @@ function gravarSecao(secao: Secao, extra?: Record<string, string>) {
   const url = new URL(window.location.href);
   if (secao === "inicio") url.searchParams.delete("secao");
   else url.searchParams.set("secao", secao);
-  // Parâmetros de tela interna (o mapa aberto na seção Mapas) não passam para outra seção.
-  url.searchParams.delete("mapa");
-  url.searchParams.delete("materia");
+  // Parâmetros de tela interna (o mapa aberto na seção Mapas, o capítulo do Livro) não passam para outra seção.
+  for (const p of ["mapa", "materia", "cap", "art"]) url.searchParams.delete(p);
   for (const [k, v] of Object.entries(extra ?? {})) url.searchParams.set(k, v);
   window.history.pushState(null, "", url);
 }
@@ -149,6 +150,7 @@ export default function Central({ onAbrir }: { onAbrir: AbrirCurso }) {
             {secao === "questoes" && <Questoes onAbrir={onAbrir} />}
             {secao === "provas" && <Provas />}
             {secao === "mapas" && <Mapas onAbrir={onAbrir} />}
+            {secao === "livro" && <Livro onAbrir={onAbrir} onIr={ir} />}
             {secao === "redacoes" && <Redacoes onAbrir={onAbrir} />}
             {secao === "tempo" && <Tempo onAbrir={onAbrir} />}
           </Suspense>

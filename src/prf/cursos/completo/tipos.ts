@@ -3,6 +3,7 @@ import type { ComponentType } from "react";
 import type { TelaAulas } from "../../aulas/AulasCurso";
 import type { ExemploResolvido, Formula, ResumoAula } from "../../aulas/resumos/tipos";
 import type { GrupoCurso } from "../../aulas/tipos";
+import type { TelaLivro } from "./prf-policial/livro/tipos";
 import type { TelaMapas } from "./prf-policial/mapas/tipos";
 import type { TelaRedacaoPrf } from "./prf-policial/redacao/tipos";
 
@@ -37,6 +38,8 @@ export interface DadosCursoCompleto {
   redacao?: () => Promise<{ default: ComponentType<PropsRedacao> }>;
   /** Aba de mapas mentais, carregada só quando aberta; sem ela, o curso não mostra a aba. */
   mapas?: () => Promise<{ default: ComponentType<PropsMapas> }>;
+  /** Aba do Livro do CTB (lei inteira com mapa por capítulo), carregada só quando aberta. */
+  livro?: () => Promise<{ default: ComponentType<PropsLivro> }>;
 }
 
 export interface PropsRedacao {
@@ -50,6 +53,18 @@ export interface PropsMapas {
   /** Os grupos de aulas do curso, na ordem do catálogo: a aba mostra só os que têm mapa. */
   grupos: GrupoCurso[];
   onAbrirAula: (tela: TelaAulas) => void;
+}
+
+export interface PropsLivro {
+  tela: TelaLivro;
+  onTela: (t: TelaLivro) => void;
+  /** Abre o mapa mental da aula de Legislação de Trânsito que trata do capítulo. */
+  onAbrirMapa: (aula: string) => void;
+  onAbrirAula: (aula: string) => void;
+  /** Abre as questões de fixação da aula. */
+  onQuestoes: (aula: string) => void;
+  /** Quantas questões a aula tem; com 0 o botão some. Sem a função, o botão aparece sempre. */
+  questoesDaAula?: (aula: string) => number;
 }
 
 export type TentativaCurso = AttemptRecord<string>;

@@ -50,4 +50,5 @@ export const DADOS: DadosCursoCompleto = {
   ],
   redacao: () => import("./redacao/RedacaoPrf"),
   mapas: () => import("./mapas/MapasPrf"),
+  livro: () => import("./livro/LivroCtb"),
 };

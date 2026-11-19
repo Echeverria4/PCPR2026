@@ -12303,3 +12303,181 @@ img.emoji {
   object-fit: contain;
   user-select: none;
 }
+
+/* ---------- Livro do CTB (19/11/26): lista de capítulos com busca, mapa no começo e o texto da lei ---------- */
+.prf-livro-fonte { margin: -4px 0 18px; font-size: 0.84rem; line-height: 1.5; color: var(--texto-fraco); }
+.prf-livro-fonte a { color: var(--ouro-forte); font-weight: 700; white-space: nowrap; }
+
+.prf-livro-buscar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  margin: 0 0 16px;
+}
+.prf-livro-buscar-rotulo { flex: 1 1 100%; font-family: var(--fonte-cond); font-weight: 900; font-size: 0.9rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--texto); }
+.prf-livro-busca {
+  flex: 1 1 240px;
+  min-width: 0;
+  min-height: 46px;
+  padding: 0 14px;
+  border: 1px solid var(--borda-forte);
+  border-radius: var(--raio);
+  background: var(--bg-card);
+  color: var(--texto);
+  font: inherit;
+  font-size: 1rem;
+}
+.prf-livro-busca::placeholder { color: var(--texto-fraco); }
+.prf-livro-busca:focus-visible { outline: 2px solid var(--ouro-forte); outline-offset: 1px; }
+.prf-livro-novos-botao,
+.prf-livro-notas-botao { border: 1px solid var(--borda-forte); }
+
+.prf-livro-resultados { display: flex; flex-direction: column; gap: 10px; margin: 0 0 18px; }
+.prf-livro-resultados > .prf-mapa-botao { align-self: flex-start; }
+.prf-livro-conta { margin: 0; font-size: 0.9rem; line-height: 1.45; color: var(--texto-fraco); }
+.prf-livro-pedido {
+  min-height: 52px;
+  padding: 10px 14px;
+  border: 2px solid var(--ouro-forte);
+  border-radius: var(--raio);
+  background: var(--bg-elevado);
+  color: var(--texto);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.prf-livro-lista { display: flex; flex-direction: column; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.prf-livro-resultado {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 14px;
+  border: 1px solid var(--borda-forte);
+  border-radius: var(--raio);
+  background: var(--bg-card);
+  color: var(--texto);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.prf-livro-resultado:hover,
+.prf-livro-pedido:hover { border-color: var(--ouro-forte); }
+.prf-livro-resultado:focus-visible,
+.prf-livro-pedido:focus-visible { outline: 2px solid var(--ouro-forte); outline-offset: 2px; }
+.prf-livro-resultado-topo { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; font-size: 0.84rem; color: var(--texto-fraco); }
+.prf-livro-resultado-topo strong { color: var(--ouro-forte); font-size: 0.95rem; }
+.prf-livro-resultado-texto { font-size: 0.9rem; line-height: 1.5; overflow-wrap: anywhere; }
+.prf-livro-resultado mark { padding: 0 2px; border-radius: 2px; background: var(--ouro-forte); color: #241a03; }
+
+.prf-livro-novo {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 0 6px;
+  border: 1px solid var(--azul);
+  border-radius: 999px;
+  color: var(--azul);
+  font-family: var(--fonte-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  line-height: 1.6;
+  white-space: nowrap;
+  vertical-align: 0.08em;
+}
+
+/* Capítulo: ligações com a aula e o texto da lei */
+.prf-livro-ligacoes { align-items: center; }
+.prf-livro-aula { flex: 1 1 100%; margin: 0; font-size: 0.84rem; color: var(--texto-fraco); }
+
+.prf-livro-lei {
+  margin: 26px 0 0;
+  border: 1px solid var(--borda-forte);
+  border-radius: var(--raio);
+  background: var(--bg-card);
+}
+.prf-livro-lei-topo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 16px 14px;
+  border-bottom: 1px solid var(--borda);
+}
+.prf-livro-lei-titulo { display: flex; flex-direction: column; gap: 2px; margin: 0; font-family: var(--fonte-titulo); font-size: 1.3rem; line-height: 1.25; color: var(--texto); }
+.prf-livro-lei-numero { font-family: var(--fonte-cond); font-size: 0.82rem; font-weight: 900; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ouro-forte); }
+.prf-livro-lei-ferramentas { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.prf-livro-pular { display: flex; align-items: center; gap: 8px; font-size: 0.88rem; color: var(--texto-fraco); }
+.prf-livro-pular select {
+  min-height: 44px;
+  max-width: 62vw;
+  padding: 0 10px;
+  border: 1px solid var(--borda-forte);
+  border-radius: var(--raio-peq);
+  background: var(--bg-elevado);
+  color: var(--texto);
+  font: inherit;
+}
+.prf-livro-legenda { margin: 0; font-size: 0.8rem; line-height: 1.5; color: var(--texto-fraco); }
+
+.prf-livro-texto { padding: 6px 16px 18px; font-size: 1rem; line-height: 1.65; color: var(--texto); }
+.prf-livro-secao {
+  margin: 22px 0 6px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--borda-forte);
+  font-family: var(--fonte-cond);
+  font-size: 0.95rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ouro-forte);
+}
+.prf-livro-intro { margin: 12px 0 4px; font-style: italic; color: var(--texto-fraco); }
+.prf-livro-art,
+.prf-livro-termo {
+  margin: 0;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--borda);
+  scroll-margin-top: 130px;
+  overflow-wrap: anywhere;
+}
+.prf-livro-art:last-child,
+.prf-livro-termo:last-child { border-bottom: none; }
+.prf-livro-parte { margin: 0 0 6px; }
+.prf-livro-parte:last-child { margin-bottom: 0; }
+.prf-livro-rotulo-art { color: var(--ouro-forte); font-size: 1.05rem; }
+.prf-livro-rotulo { color: var(--texto); }
+.prf-livro-inc { padding-left: 16px; }
+.prf-livro-ali { padding-left: 32px; }
+.prf-livro-item { padding-left: 48px; }
+.prf-livro-penas {
+  margin: 8px 0;
+  padding: 8px 12px;
+  border-left: 4px solid var(--vermelho);
+  border-radius: 0 var(--raio-peq) var(--raio-peq) 0;
+  background: rgba(240, 85, 92, 0.1);
+}
+.prf-livro-penas .prf-livro-parte { margin-bottom: 2px; }
+.prf-livro-penas .prf-livro-rotulo { color: #ffb3b6; font-family: var(--fonte-cond); letter-spacing: 0.03em; text-transform: uppercase; font-size: 0.86rem; }
+.prf-livro-fora { color: var(--texto-fraco); }
+.prf-livro-fora .prf-livro-rotulo,
+.prf-livro-art-fora .prf-livro-rotulo-art { color: var(--texto-fraco); }
+.prf-livro-nota { font-size: 0.8rem; font-style: italic; color: var(--texto-fraco); }
+.prf-livro-destaque { border-radius: var(--raio-peq); box-shadow: 0 0 0 2px var(--ouro-forte); background: rgba(242, 193, 78, 0.12); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .prf-livro-destaque { transition: background 0.4s ease, box-shadow 0.4s ease; }
+}
+
+@media (max-width: 640px) {
+  .prf-livro-texto { padding: 4px 12px 14px; font-size: 0.98rem; }
+  .prf-livro-lei-topo { padding: 14px 12px 12px; }
+  .prf-livro-inc { padding-left: 10px; }
+  .prf-livro-ali { padding-left: 20px; }
+  .prf-livro-item { padding-left: 30px; }
+  .prf-livro-art,
+  .prf-livro-termo { scroll-margin-top: 110px; }
+}
+
+/* Na Central o título da seção já está no topo. */
+.cx-livro-curso .prf-livro > h2.secao-titulo:first-child { display: none; }
