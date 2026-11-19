@@ -2,8 +2,10 @@ import { Fragment, useEffect, useMemo, useState, type ReactNode } from "react";
 import texto from "./ctb.json?raw";
 import { MAPA_DO_CAPITULO } from "./mapas";
 import { alternarLido, lerProgresso, salvarModoMemoria, salvarNotas, type ProgressoLivro } from "./progresso";
+import { RESOLUCOES, type ResolucaoContran } from "./resolucoes";
 import type { CapituloCtb, ItemCapitulo, ParteArtigo, TelaLivro } from "./tipos";
 import { Arvore, Barra, Estrada, Nota, diaCurto, plural } from "../mapas/Poster";
+import type { MapaAula } from "../mapas/tipos";
 import { GRUPOS } from "../grupos";
 import { nomeAula } from "../../../../aulas/rotulos";
 import { Emoji, TextoEmoji } from "../../../../../icones/Emoji";
@@ -166,6 +168,25 @@ export default function LivroCtb({ tela, onTela, onAbrirMapa, onAbrirAula, onQue
   const [soNovos, setSoNovos] = useState(false);
 
   const capitulo = tela.tipo === "capitulo" ? CAPITULOS.find((c) => c.id === tela.id) : undefined;
+  const posRes = tela.tipo === "resolucao" ? RESOLUCOES.findIndex((r) => r.id === tela.id) : -1;
+
+  if (posRes >= 0) {
+    const res = RESOLUCOES[posRes];
+    return (
+      <TelaResolucao
+        key={res.id}
+        res={res}
+        posicao={posRes}
+        progresso={progresso}
+        onProgresso={setProgresso}
+        onTela={onTela}
+        onAbrirMapa={onAbrirMapa}
+        onAbrirAula={onAbrirAula}
+        onQuestoes={onQuestoes}
+        questoesDaAula={questoesDaAula}
+      />
+    );
+  }
 
   if (capitulo && tela.tipo === "capitulo") {
     const posicao = CAPITULOS.indexOf(capitulo);
@@ -188,6 +209,7 @@ export default function LivroCtb({ tela, onTela, onAbrirMapa, onAbrirAula, onQue
 
   return (
     <TelaInicio
+      secao={tela.tipo === "inicio" ? tela.secao : undefined}
       progresso={progresso}
       busca={busca}
       onBusca={setBusca}
@@ -199,6 +221,7 @@ export default function LivroCtb({ tela, onTela, onAbrirMapa, onAbrirAula, onQue
 }
 
 interface TelaInicioProps {
+  secao?: "resolucoes";
   progresso: ProgressoLivro;
   busca: string;
   onBusca: (b: string) => void;
@@ -207,16 +230,20 @@ interface TelaInicioProps {
   onTela: (t: TelaLivro) => void;
 }
 
-function TelaInicio({ progresso, busca, onBusca, soNovos, onSoNovos, onTela }: TelaInicioProps) {
+function TelaInicio({ secao, progresso, busca, onBusca, soNovos, onSoNovos, onTela }: TelaInicioProps) {
   const indice = useMemo(montarIndice, []);
   const novos = useMemo(() => indice.filter((e) => e.novo), [indice]);
   const pedido = useMemo(() => (busca.trim() ? artigoPedido(busca, indice) : null), [busca, indice]);
   const resultado = useMemo(() => buscar(busca, indice), [busca, indice]);
 
+  // Voltando de uma resolução, a lista abre nas resoluções; senão, do alto.
   useEffect(() => {
-    window.scrollTo({ top: 0 });
-  }, []);
+    const alvo = secao === "resolucoes" ? document.getElementById("prf-livro-resolucoes") : null;
+    if (alvo) alvo.scrollIntoView({ block: "start" });
+    else window.scrollTo({ top: 0 });
+  }, [secao]);
 
+  const resLidas = RESOLUCOES.filter((r) => progresso.lidos[r.id]).length;
   const lidos = CAPITULOS.filter((c) => progresso.lidos[c.id]).length;
   const tudoLido = lidos === CAPITULOS.length;
   // O próximo capítulo não lido; com tudo lido, o que foi lido há mais tempo.
@@ -357,9 +384,47 @@ function TelaInicio({ progresso, busca, onBusca, soNovos, onSoNovos, onTela }: T
         </ol>
       )}
 
+      {!buscando && !soNovos && (
+        <section id="prf-livro-resolucoes" className="prf-livro-resolucoes" aria-labelledby="prf-livro-res-titulo">
+          <h2 id="prf-livro-res-titulo" className="prf-livro-res-titulo">
+            <Emoji e="⚖️" /> Resoluções do CONTRAN
+          </h2>
+          <p className="prf-livro-res-intro">
+            As resoluções que completam o CTB nas aulas de Legislação de Trânsito, cada uma com um mapa mental, os trechos
+            principais do texto oficial e o link para lê-la inteira. <strong>{resLidas}</strong> de{" "}
+            {plural(RESOLUCOES.length, "lida", "lidas")}.
+          </p>
+          <ol className="prf-mapa-lista prf-livro-capitulos">
+            {RESOLUCOES.map((r) => {
+              const quando = progresso.lidos[r.id];
+              return (
+                <li key={r.id}>
+                  <button className="prf-mapa-item" data-livro-resolucao={r.id} onClick={() => onTela({ tipo: "resolucao", id: r.id })}>
+                    <span className="prf-mapa-item-icone" aria-hidden="true">
+                      <Emoji e={r.emoji} />
+                    </span>
+                    <span className="prf-mapa-item-corpo">
+                      <span className="prf-mapa-item-aula">Resolução {r.numero}</span>
+                      <span className="prf-mapa-item-titulo">{r.tema}</span>
+                      <span className="prf-mapa-item-meta">
+                        <span className={`prf-mapa-selo ${quando ? "prf-mapa-selo-ok" : ""}`}>
+                          {quando ? `✓ Lida em ${diaCurto(quando)}` : "Nova"}
+                        </span>
+                        <span>de {r.data}</span>
+                      </span>
+                    </span>
+                  </button>
+                </li>
+              );
+            })}
+          </ol>
+        </section>
+      )}
+
       <p className="prf-mapa-aviso">
-        O texto da lei é o oficial, sem cortes; o que foi revogado ou vetado aparece marcado. Os mapas foram escritos para
-        este app. O que você marca como lido fica guardado só neste navegador.
+        O texto da lei é o oficial, sem cortes; o que foi revogado ou vetado aparece marcado. Nas resoluções, os trechos
+        são cópia do texto oficial e o texto inteiro fica no gov.br. Os mapas foram escritos para este app. O que você
+        marca como lido fica guardado só neste navegador.
       </p>
     </div>
   );
@@ -410,25 +475,8 @@ function TelaCapitulo(props: TelaCapituloProps) {
   const mapa = MAPA_DO_CAPITULO[capitulo.id];
   const anterior = CAPITULOS[posicao - 1];
   const proximo = CAPITULOS[posicao + 1];
-  const memoria = progresso.memoria;
   const lidoEm = progresso.lidos[capitulo.id];
-  // No modo memória, o que a pessoa já abriu: "r0", "r1"… para os ramos, "macete" e "cuidado" para as notas.
-  const [abertos, setAbertos] = useState<Set<string>>(() => new Set());
   const [destaque, setDestaque] = useState<string | null>(null);
-
-  function alternar(chave: string) {
-    setAbertos((atual) => {
-      const novo = new Set(atual);
-      if (novo.has(chave)) novo.delete(chave);
-      else novo.add(chave);
-      return novo;
-    });
-  }
-
-  function trocarModo(ligado: boolean) {
-    setAbertos(new Set());
-    onProgresso(salvarModoMemoria(ligado));
-  }
 
   function rolarPara(alvo: string, suave: boolean) {
     const el = document.getElementById(`ctb-${alvo}`);
@@ -449,22 +497,8 @@ function TelaCapitulo(props: TelaCapituloProps) {
     return () => window.clearTimeout(t);
   }, [destaque]);
 
-  // Setas do teclado passam os capítulos, como os botões do fim da tela.
-  useEffect(() => {
-    function tecla(e: KeyboardEvent) {
-      if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
-      const alvo = e.target as HTMLElement | null;
-      if (alvo && /^(INPUT|TEXTAREA|SELECT)$/.test(alvo.tagName)) return;
-      if (e.key === "ArrowLeft" && anterior) onTela({ tipo: "capitulo", id: anterior.id });
-      if (e.key === "ArrowRight" && proximo) onTela({ tipo: "capitulo", id: proximo.id });
-    }
-    window.addEventListener("keydown", tecla);
-    return () => window.removeEventListener("keydown", tecla);
-  }, [anterior, proximo, onTela]);
+  useSetas(anterior?.id, proximo?.id, "capitulo", onTela);
 
-  const aula = capitulo.aula ? AULAS_TRANSITO.get(capitulo.aula) : undefined;
-  const questoes = capitulo.aula ? (props.questoesDaAula ? props.questoesDaAula(capitulo.aula) : 1) : 0;
-  const ramosAbertos = mapa ? mapa.ramos.filter((_, i) => abertos.has(`r${i}`)).length : 0;
   const pontos = capitulo.itens.flatMap((i): { valor: string; rotulo: string }[] =>
     i.k === "art"
       ? [{ valor: i.id, rotulo: rotuloDoArtigo(i.r) }]
@@ -485,89 +519,23 @@ function TelaCapitulo(props: TelaCapituloProps) {
       </div>
 
       {mapa && (
-        <>
-          <div className="prf-mapa-modos" role="group" aria-label="Como ver o mapa">
-            <button className="prf-mapa-modo" aria-pressed={!memoria} onClick={() => trocarModo(false)}>
-              <Emoji e="👀" /> Ver tudo
-            </button>
-            <button className="prf-mapa-modo" aria-pressed={memoria} onClick={() => trocarModo(true)}>
-              <Emoji e="🧠" /> Modo memória
-            </button>
-          </div>
-          {memoria && (
-            <div className="prf-mapa-dica">
-              <p>Tente lembrar o que tem em cada ramo. Depois toque nele para conferir.</p>
-              <span className="prf-mapa-abertos" aria-live="polite">
-                Ramos abertos: {ramosAbertos} de {mapa.ramos.length}
-              </span>
-              {abertos.size > 0 && (
-                <button className="botao prf-mapa-botao" onClick={() => setAbertos(new Set())}>
-                  <Emoji e="🔁" /> Esconder de novo
-                </button>
-              )}
-            </div>
-          )}
-
-          <div className="prf-mapa-poster">
-            <header className="prf-mapa-faixa">
-              <div className="prf-mapa-faixa-texto">
-                <p className="prf-mapa-faixa-kicker">
-                  <span aria-hidden="true">
-                    <Emoji e="📖" />
-                  </span>{" "}
-                  Livro do CTB · {nomeCapitulo(capitulo)}
-                </p>
-                <h2 className="prf-mapa-faixa-titulo">{mapa.centro.titulo}</h2>
-                {mapa.centro.sub && <p className="prf-mapa-faixa-sub">{mapa.centro.sub}</p>}
-              </div>
-              <span className="prf-mapa-faixa-icone" aria-hidden="true">
-                <Emoji e={mapa.centro.emoji} />
-              </span>
-            </header>
-
-            <Arvore mapa={mapa} memoria={memoria} abertos={abertos} onAlternar={alternar} />
-
-            <div className="prf-mapa-notas">
-              <Nota
-                tipo="macete"
-                titulo="💡 Macete"
-                texto={mapa.macete}
-                escondida={memoria && !abertos.has("macete")}
-                onAlternar={memoria ? () => alternar("macete") : undefined}
-              />
-              <Nota
-                tipo="cuidado"
-                titulo="⚠️ Pegadinha"
-                texto={mapa.cuidado}
-                escondida={memoria && !abertos.has("cuidado")}
-                onAlternar={memoria ? () => alternar("cuidado") : undefined}
-              />
-            </div>
-
-            <Estrada />
-          </div>
-        </>
+        <PosterLivro
+          mapa={mapa}
+          kickerEmoji="📖"
+          kicker={`Livro do CTB · ${nomeCapitulo(capitulo)}`}
+          memoria={progresso.memoria}
+          onModo={(ligado) => onProgresso(salvarModoMemoria(ligado))}
+        />
       )}
 
       {capitulo.aula && (
-        <div className="prf-mapa-acoes prf-livro-ligacoes">
-          <button className="botao prf-mapa-botao" data-livro-mapa onClick={() => props.onAbrirMapa(capitulo.aula ?? "")}>
-            <Emoji e="🧠" /> Mapa da aula
-          </button>
-          {questoes > 0 && (
-            <button className="botao prf-mapa-botao" data-livro-questoes onClick={() => props.onQuestoes(capitulo.aula ?? "")}>
-              <Emoji e="🎯" /> {props.questoesDaAula ? `Questões da aula · ${questoes}` : "Questões da aula"}
-            </button>
-          )}
-          <button className="botao prf-mapa-botao" data-livro-aula onClick={() => props.onAbrirAula(capitulo.aula ?? "")}>
-            <Emoji e="🎬" /> Abrir a aula
-          </button>
-          {aula && (
-            <p className="prf-livro-aula">
-              Aula do curso: <TextoEmoji texto={nomeAula(aula)} />
-            </p>
-          )}
-        </div>
+        <Ligacoes
+          aula={capitulo.aula}
+          onAbrirMapa={props.onAbrirMapa}
+          onAbrirAula={props.onAbrirAula}
+          onQuestoes={props.onQuestoes}
+          questoesDaAula={props.questoesDaAula}
+        />
       )}
 
       <section className="prf-livro-lei" aria-labelledby="prf-livro-lei-titulo">
@@ -639,6 +607,288 @@ function TelaCapitulo(props: TelaCapituloProps) {
           onClick={() => proximo && onTela({ tipo: "capitulo", id: proximo.id })}
         >
           Próximo →
+        </button>
+      </nav>
+    </article>
+  );
+}
+
+/** Setas do teclado passam de capítulo (ou de resolução), como os botões do fim da tela. */
+function useSetas(
+  anterior: string | undefined,
+  proximo: string | undefined,
+  tipo: "capitulo" | "resolucao",
+  onTela: (t: TelaLivro) => void,
+) {
+  useEffect(() => {
+    function tecla(e: KeyboardEvent) {
+      if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
+      const alvo = e.target as HTMLElement | null;
+      if (alvo && /^(INPUT|TEXTAREA|SELECT)$/.test(alvo.tagName)) return;
+      if (e.key === "ArrowLeft" && anterior) onTela({ tipo, id: anterior });
+      if (e.key === "ArrowRight" && proximo) onTela({ tipo, id: proximo });
+    }
+    window.addEventListener("keydown", tecla);
+    return () => window.removeEventListener("keydown", tecla);
+  }, [anterior, proximo, tipo, onTela]);
+}
+
+interface PosterLivroProps {
+  mapa: MapaAula;
+  kicker: string;
+  kickerEmoji: string;
+  memoria: boolean;
+  onModo: (ligado: boolean) => void;
+}
+
+/** O mapa no alto do capítulo ou da resolução, com Ver tudo / Modo memória, como na aba Mapas. */
+function PosterLivro({ mapa, kicker, kickerEmoji, memoria, onModo }: PosterLivroProps) {
+  // No modo memória, o que a pessoa já abriu: "r0", "r1"… para os ramos, "macete" e "cuidado" para as notas.
+  const [abertos, setAbertos] = useState<Set<string>>(() => new Set());
+
+  function alternar(chave: string) {
+    setAbertos((atual) => {
+      const novo = new Set(atual);
+      if (novo.has(chave)) novo.delete(chave);
+      else novo.add(chave);
+      return novo;
+    });
+  }
+
+  function trocarModo(ligado: boolean) {
+    setAbertos(new Set());
+    onModo(ligado);
+  }
+
+  const ramosAbertos = mapa.ramos.filter((_, i) => abertos.has(`r${i}`)).length;
+
+  return (
+    <>
+      <div className="prf-mapa-modos" role="group" aria-label="Como ver o mapa">
+        <button className="prf-mapa-modo" aria-pressed={!memoria} onClick={() => trocarModo(false)}>
+          <Emoji e="👀" /> Ver tudo
+        </button>
+        <button className="prf-mapa-modo" aria-pressed={memoria} onClick={() => trocarModo(true)}>
+          <Emoji e="🧠" /> Modo memória
+        </button>
+      </div>
+      {memoria && (
+        <div className="prf-mapa-dica">
+          <p>Tente lembrar o que tem em cada ramo. Depois toque nele para conferir.</p>
+          <span className="prf-mapa-abertos" aria-live="polite">
+            Ramos abertos: {ramosAbertos} de {mapa.ramos.length}
+          </span>
+          {abertos.size > 0 && (
+            <button className="botao prf-mapa-botao" onClick={() => setAbertos(new Set())}>
+              <Emoji e="🔁" /> Esconder de novo
+            </button>
+          )}
+        </div>
+      )}
+
+      <div className="prf-mapa-poster">
+        <header className="prf-mapa-faixa">
+          <div className="prf-mapa-faixa-texto">
+            <p className="prf-mapa-faixa-kicker">
+              <span aria-hidden="true">
+                <Emoji e={kickerEmoji} />
+              </span>{" "}
+              {kicker}
+            </p>
+            <h2 className="prf-mapa-faixa-titulo">{mapa.centro.titulo}</h2>
+            {mapa.centro.sub && <p className="prf-mapa-faixa-sub">{mapa.centro.sub}</p>}
+          </div>
+          <span className="prf-mapa-faixa-icone" aria-hidden="true">
+            <Emoji e={mapa.centro.emoji} />
+          </span>
+        </header>
+
+        <Arvore mapa={mapa} memoria={memoria} abertos={abertos} onAlternar={alternar} />
+
+        <div className="prf-mapa-notas">
+          <Nota
+            tipo="macete"
+            titulo="💡 Macete"
+            texto={mapa.macete}
+            escondida={memoria && !abertos.has("macete")}
+            onAlternar={memoria ? () => alternar("macete") : undefined}
+          />
+          <Nota
+            tipo="cuidado"
+            titulo="⚠️ Pegadinha"
+            texto={mapa.cuidado}
+            escondida={memoria && !abertos.has("cuidado")}
+            onAlternar={memoria ? () => alternar("cuidado") : undefined}
+          />
+        </div>
+
+        <Estrada />
+      </div>
+    </>
+  );
+}
+
+interface LigacoesProps {
+  aula: string;
+  onAbrirMapa: (aula: string) => void;
+  onAbrirAula: (aula: string) => void;
+  onQuestoes: (aula: string) => void;
+  questoesDaAula?: (aula: string) => number;
+}
+
+/** Botões para o mapa, as questões e a aula do curso que tratam do mesmo assunto. */
+function Ligacoes({ aula, onAbrirMapa, onAbrirAula, onQuestoes, questoesDaAula }: LigacoesProps) {
+  const info = AULAS_TRANSITO.get(aula);
+  const questoes = questoesDaAula ? questoesDaAula(aula) : 1;
+  return (
+    <div className="prf-mapa-acoes prf-livro-ligacoes">
+      <button className="botao prf-mapa-botao" data-livro-mapa onClick={() => onAbrirMapa(aula)}>
+        <Emoji e="🧠" /> Mapa da aula
+      </button>
+      {questoes > 0 && (
+        <button className="botao prf-mapa-botao" data-livro-questoes onClick={() => onQuestoes(aula)}>
+          <Emoji e="🎯" /> {questoesDaAula ? `Questões da aula · ${questoes}` : "Questões da aula"}
+        </button>
+      )}
+      <button className="botao prf-mapa-botao" data-livro-aula onClick={() => onAbrirAula(aula)}>
+        <Emoji e="🎬" /> Abrir a aula
+      </button>
+      {info && (
+        <p className="prf-livro-aula">
+          Aula do curso: <TextoEmoji texto={nomeAula(info)} />
+        </p>
+      )}
+    </div>
+  );
+}
+
+interface TelaResolucaoProps {
+  res: ResolucaoContran;
+  posicao: number;
+  progresso: ProgressoLivro;
+  onProgresso: (p: ProgressoLivro) => void;
+  onTela: (t: TelaLivro) => void;
+  onAbrirMapa: (aula: string) => void;
+  onAbrirAula: (aula: string) => void;
+  onQuestoes: (aula: string) => void;
+  questoesDaAula?: (aula: string) => number;
+}
+
+/** Uma resolução do CONTRAN: mapa, do que ela trata, os trechos principais (texto oficial) e o link do gov.br. */
+function TelaResolucao(props: TelaResolucaoProps) {
+  const { res, posicao, progresso, onProgresso, onTela } = props;
+  const anterior = RESOLUCOES[posicao - 1];
+  const proximo = RESOLUCOES[posicao + 1];
+  const lidoEm = progresso.lidos[res.id];
+
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, []);
+
+  useSetas(anterior?.id, proximo?.id, "resolucao", onTela);
+
+  return (
+    <article className="prf-mapa-tela prf-livro-tela" data-livro-tela={res.id}>
+      <div className="prf-mapa-topo">
+        <button className="botao prf-mapa-botao" onClick={() => onTela({ tipo: "inicio", secao: "resolucoes" })}>
+          ← Resoluções
+        </button>
+        <span className="prf-mapa-posicao">
+          {posicao + 1} de {RESOLUCOES.length}
+        </span>
+      </div>
+
+      <PosterLivro
+        mapa={res.mapa}
+        kickerEmoji="⚖️"
+        kicker="Livro do CTB · Resoluções do CONTRAN"
+        memoria={progresso.memoria}
+        onModo={(ligado) => onProgresso(salvarModoMemoria(ligado))}
+      />
+
+      <Ligacoes
+        aula={res.aula}
+        onAbrirMapa={props.onAbrirMapa}
+        onAbrirAula={props.onAbrirAula}
+        onQuestoes={props.onQuestoes}
+        questoesDaAula={props.questoesDaAula}
+      />
+
+      <section className="prf-livro-lei prf-livro-sobre" aria-labelledby="prf-livro-sobre-titulo" data-livro-sobre>
+        <header className="prf-livro-lei-topo">
+          <h2 id="prf-livro-sobre-titulo" className="prf-livro-lei-titulo">
+            <span className="prf-livro-lei-numero">Resolução Contran nº {res.numero}</span>
+            {res.tema}
+          </h2>
+          <p className="prf-livro-sobre-resumo">{res.resumo}</p>
+          <dl className="prf-livro-fatos">
+            <div>
+              <dt>Data</dt>
+              <dd>{res.data}</dd>
+            </div>
+            {res.revogou && (
+              <div>
+                <dt>Revogou</dt>
+                <dd>{res.revogou}</dd>
+              </div>
+            )}
+            {res.alteracoes && (
+              <div>
+                <dt>Mudanças</dt>
+                <dd>{res.alteracoes}</dd>
+              </div>
+            )}
+          </dl>
+          {res.mapaDaAula && (
+            <p className="prf-livro-legenda">
+              Esta resolução já é o assunto de uma aula do curso: o mapa acima é o mesmo da aba Mapas.
+            </p>
+          )}
+          <a className="botao prf-mapa-botao prf-livro-govbr" href={res.link} target="_blank" rel="noopener noreferrer" data-livro-govbr>
+            Ler a resolução inteira no gov.br ↗
+          </a>
+        </header>
+
+        {res.pontos.length > 0 && (
+          <div className="prf-livro-texto" data-livro-trechos>
+            <h3 className="prf-livro-secao">Trechos principais do texto oficial</h3>
+            <p className="prf-livro-legenda">Cópia do texto da resolução; […] marca um corte.</p>
+            {res.pontos.map((p) => (
+              <section key={p.r} className="prf-livro-art">
+                <p className="prf-livro-parte prf-livro-caput">
+                  <strong className="prf-livro-rotulo-art">{p.r}</strong> {p.t}
+                </p>
+              </section>
+            ))}
+          </div>
+        )}
+      </section>
+
+      <div className="prf-mapa-acoes">
+        <button
+          className={`botao prf-mapa-botao ${lidoEm ? "prf-mapa-feito" : "botao-ouro"}`}
+          aria-pressed={Boolean(lidoEm)}
+          data-livro-lido
+          onClick={() => onProgresso(alternarLido(res.id))}
+        >
+          {lidoEm ? "✓ Lida · desmarcar" : "✓ Li esta resolução"}
+        </button>
+      </div>
+
+      <nav className="prf-mapa-nav" aria-label="Outras resoluções">
+        <button
+          className="botao prf-mapa-botao"
+          disabled={!anterior}
+          onClick={() => anterior && onTela({ tipo: "resolucao", id: anterior.id })}
+        >
+          ← Anterior
+        </button>
+        <button
+          className={`botao prf-mapa-botao ${lidoEm && proximo ? "botao-ouro" : ""}`}
+          disabled={!proximo}
+          onClick={() => proximo && onTela({ tipo: "resolucao", id: proximo.id })}
+        >
+          Próxima →
         </button>
       </nav>
     </article>

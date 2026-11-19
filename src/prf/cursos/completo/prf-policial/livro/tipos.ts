@@ -32,5 +32,11 @@ export interface CapituloCtb {
   itens: ItemCapitulo[];
 }
 
-/** Tela aberta no livro. `art` é a âncora para rolar: o id do artigo (art-165) ou do termo (termo-acostamento). */
-export type TelaLivro = { tipo: "inicio" } | { tipo: "capitulo"; id: string; art?: string };
+/**
+ * Tela aberta no livro. `art` é a âncora para rolar: o id do artigo (art-165) ou do termo (termo-acostamento).
+ * `secao: "resolucoes"` abre o início já na lista das resoluções do CONTRAN (o voltar de uma resolução).
+ */
+export type TelaLivro =
+  | { tipo: "inicio"; secao?: "resolucoes" }
+  | { tipo: "capitulo"; id: string; art?: string }
+  | { tipo: "resolucao"; id: string };

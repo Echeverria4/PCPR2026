@@ -12481,3 +12481,21 @@ img.emoji {
 
 /* Na Central o título da seção já está no topo. */
 .cx-livro-curso .prf-livro > h2.secao-titulo:first-child { display: none; }
+
+/* Resoluções do CONTRAN: lista no fim do início e a tela de cada uma */
+.prf-livro-resolucoes { margin-top: 30px; padding-top: 22px; border-top: 1px solid var(--borda-forte); scroll-margin-top: 90px; }
+.prf-livro-res-titulo { margin: 0 0 6px; font-family: var(--fonte-titulo); font-size: 1.35rem; line-height: 1.25; color: var(--texto); }
+.prf-livro-res-intro { margin: 0 0 14px; font-size: 0.95rem; line-height: 1.55; color: var(--texto-fraco); }
+.prf-livro-res-intro strong { color: var(--texto); }
+.prf-livro-sobre-resumo { margin: 0; font-size: 1rem; line-height: 1.55; color: var(--texto); }
+.prf-livro-fatos { display: grid; gap: 6px; margin: 0; font-size: 0.9rem; line-height: 1.5; }
+.prf-livro-fatos > div { display: grid; grid-template-columns: 6.5em 1fr; gap: 8px; }
+.prf-livro-fatos dt { font-family: var(--fonte-cond); font-weight: 900; letter-spacing: 0.04em; text-transform: uppercase; font-size: 0.78rem; color: var(--ouro-forte); padding-top: 2px; }
+.prf-livro-fatos dd { margin: 0; color: var(--texto); }
+.prf-livro-govbr { align-self: flex-start; text-decoration: none; }
+.prf-livro-sobre .prf-livro-texto > .prf-livro-secao:first-child { margin-top: 10px; padding-top: 0; border-top: 0; }
+.prf-livro-sobre .prf-livro-texto > .prf-livro-legenda { margin: 0 0 12px; }
+
+@media (max-width: 640px) {
+  .prf-livro-fatos > div { grid-template-columns: 1fr; gap: 0; }
+}

@@ -41,7 +41,7 @@ function gravarSecao(secao: Secao, extra?: Record<string, string>) {
   if (secao === "inicio") url.searchParams.delete("secao");
   else url.searchParams.set("secao", secao);
   // Parâmetros de tela interna (o mapa aberto na seção Mapas, o capítulo do Livro) não passam para outra seção.
-  for (const p of ["mapa", "materia", "cap", "art"]) url.searchParams.delete(p);
+  for (const p of ["mapa", "materia", "cap", "art", "res"]) url.searchParams.delete(p);
   for (const [k, v] of Object.entries(extra ?? {})) url.searchParams.set(k, v);
   window.history.pushState(null, "", url);
 }

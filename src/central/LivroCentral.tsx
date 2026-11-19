@@ -10,6 +10,8 @@ import type { AbrirCurso, Secao } from "./Central";
  */
 function telaDaUrl(): TelaLivro {
   const p = new URLSearchParams(window.location.search);
+  const res = p.get("res");
+  if (res) return { tipo: "resolucao", id: res };
   const cap = p.get("cap");
   if (!cap) return { tipo: "inicio" };
   const art = p.get("art");
@@ -18,12 +20,12 @@ function telaDaUrl(): TelaLivro {
 
 function gravarTela(t: TelaLivro) {
   const url = new URL(window.location.href);
-  url.searchParams.delete("cap");
-  url.searchParams.delete("art");
+  for (const p of ["cap", "art", "res"]) url.searchParams.delete(p);
   if (t.tipo === "capitulo") {
     url.searchParams.set("cap", t.id);
     if (t.art) url.searchParams.set("art", t.art);
   }
+  if (t.tipo === "resolucao") url.searchParams.set("res", t.id);
   window.history.pushState(null, "", url);
 }
 
