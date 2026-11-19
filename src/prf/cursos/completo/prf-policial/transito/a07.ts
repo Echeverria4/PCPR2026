@@ -258,5 +258,234 @@ export const AULA: AulaEscrita = {
       pegadinha: "Exigir documento quando o sistema já responde.",
       conhecimento: "Pelo inciso III, a CNH tem fé pública e equivale a documento de identidade em todo o país.",
     },
+    {
+      topico: "Habilitação",
+      subassunto: "Nota do exame de direção",
+      dificuldade: 5,
+      raciocinio: "Some os pesos das infrações e compare com o limite de dez pontos.",
+      enunciado:
+        "No exame de direção veicular, um candidato comete uma infração gravíssima e uma grave, e nenhuma outra. Pelos arts. 45 e 47 da Resolução Contran 1.020/2025, ele",
+      alternativas: [
+        "é reprovado de imediato, pois a infração gravíssima elimina o candidato sem contar a nota",
+        "é aprovado, pois soma dez pontos, e a aprovação exige nota não superior a dez pontos",
+        "é reprovado, pois soma onze pontos, já que a infração gravíssima tem peso sete no exame",
+        "é aprovado, pois o exame só soma as infrações leves e médias, e as outras ficam com a comissão",
+        "é reprovado, pois soma dez pontos, e a aprovação exige nota inferior a dez pontos",
+      ],
+      correta: 1,
+      explicacao:
+        "O candidato começa com zero, e cada infração vale um ponto multiplicado pelo peso: seis na gravíssima e quatro na grave (art. 45, § 1º). A soma dá dez, e o art. 47 aprova quem tem nota não superior a dez pontos.",
+      explicacaoErradas:
+        "“elimina o candidato” não existe na resolução: a gravíssima só pesa seis. “peso sete” troca o peso da gravíssima. “só soma as infrações leves e médias” ignora os pesos quatro e seis. “nota inferior a dez” troca a regra do art. 47, que pede nota não superior a dez: dez pontos ainda aprovam.",
+      pegadinha: "Achar que uma gravíssima reprova sozinha ou que dez pontos já reprovam.",
+      conhecimento:
+        "Os pesos são um (leve), dois (média), quatro (grave) e seis (gravíssima). A decisão final sobre o resultado, inclusive a interrupção do exame, é só da comissão de exame (art. 45, § 2º).",
+    },
+    {
+      topico: "Habilitação",
+      subassunto: "Nova tentativa",
+      dificuldade: 4,
+      raciocinio: "O prazo de espera do CTB foi revogado; a resolução fala em tentativas sem limite.",
+      enunciado:
+        "Reprovado no exame de direção veicular pela manhã, um candidato quer tentar de novo. Pelo art. 47 da Resolução Contran 1.020/2025, ele",
+      alternativas: [
+        "só pode repetir depois de quinze dias da divulgação do resultado, pagando nova taxa",
+        "pode repetir até três vezes e, se for reprovado em todas, tem de reiniciar todo o processo de habilitação",
+        "pode repetir sem limite de tentativas, mas nunca no mesmo dia, e cada tentativa paga nova taxa",
+        "pode tentar no mesmo dia, se houver disponibilidade, e a segunda tentativa sai sem taxa adicional",
+        "pode repetir uma vez sem taxa, mas a terceira tentativa exige refazer o curso teórico",
+      ],
+      correta: 3,
+      explicacao:
+        "O § 2º do art. 47 permite novas avaliações sem limite de tentativas, com a segunda agendada sem cobrança de taxas adicionais, e o § 3º dá direito a nova tentativa no mesmo dia, se houver disponibilidade operacional.",
+      explicacaoErradas:
+        "“quinze dias” era a regra do art. 151 do CTB, revogado pela Lei 14.071/2020. “até três vezes” e “reiniciar todo o processo” criam um limite que não existe. “nunca no mesmo dia” contraria o § 3º. “refazer o curso teórico” não tem base na resolução.",
+      pegadinha: "Aplicar o prazo de quinze dias do antigo art. 151 do CTB.",
+      conhecimento:
+        "No exame teórico vale o mesmo: tentativas sem limite, e a segunda sem taxas adicionais (art. 34, § 1º).",
+    },
+    {
+      topico: "Habilitação",
+      subassunto: "Etapas do processo",
+      dificuldade: 5,
+      raciocinio: "Lembre a ordem: requerimento, curso teórico e só então o Renach.",
+      enunciado:
+        "Na lista de etapas do art. 12 da Resolução Contran 1.020/2025, a abertura do formulário Renach, com a coleta dos dados biométricos, vem",
+      alternativas: [
+        "depois do curso teórico e antes da avaliação psicológica",
+        "logo depois do requerimento e antes do curso teórico",
+        "depois dos exames de aptidão física e mental e antes do exame teórico",
+        "depois do exame teórico, junto com a expedição da Licença de Aprendizagem",
+        "depois do exame de direção e antes da expedição da Permissão para Dirigir",
+      ],
+      correta: 0,
+      explicacao:
+        "A ordem do art. 12 é: requerimento, curso teórico, abertura do Renach com biometria, avaliação psicológica, exames de aptidão física e mental, exame teórico, aulas práticas, exame de direção, Permissão para Dirigir e, por fim, CNH ou ACC.",
+      explicacaoErradas:
+        "“antes do curso teórico” inverte as etapas II e III. “depois dos exames de aptidão” põe o Renach depois das etapas IV e V. “depois do exame teórico” e “depois do exame de direção” levam a abertura do Renach para o fim do processo.",
+      pegadinha: "Pôr a abertura do Renach antes do curso teórico.",
+      conhecimento:
+        "É na abertura do Renach que o Detran confere os requisitos do art. 17: ser penalmente imputável, saber ler e escrever, ter documento de identificação e estar inscrito no CPF.",
+    },
+    {
+      topico: "Habilitação",
+      subassunto: "Carga horária",
+      dificuldade: 4,
+      raciocinio: "Um dos cursos ficou sem mínimo; o outro tem um mínimo pequeno.",
+      enunciado:
+        "Sobre a carga horária da formação do condutor, os arts. 21 e 38 da Resolução Contran 1.020/2025 preveem que",
+      alternativas: [
+        "o curso teórico tem 45 horas-aula, e as aulas práticas, no mínimo 20 horas-aula",
+        "o curso teórico não tem carga mínima, e as aulas práticas também não têm mínimo algum",
+        "o curso teórico tem no mínimo duas horas, e as aulas práticas não têm carga mínima definida",
+        "as aulas práticas têm no mínimo duas horas, mas só podem ser cumpridas de forma contínua",
+        "o curso teórico não tem carga mínima definida, e as aulas práticas têm no mínimo duas horas",
+      ],
+      correta: 4,
+      explicacao:
+        "O art. 21 diz que os cursos teóricos não estão sujeitos a carga horária mínima pré-definida, e o art. 38 exige no mínimo duas horas de aulas práticas, contínuas ou fracionadas.",
+      explicacaoErradas:
+        "“45 horas-aula” e “20 horas-aula” não estão na Resolução 1.020/2025. “também não têm mínimo” ignora as duas horas do art. 38. “o curso teórico tem no mínimo duas horas” inverte os artigos. “só podem ser cumpridas de forma contínua” contraria o art. 38, que aceita aulas fracionadas.",
+      pegadinha: "Inverter qual dos dois cursos tem o mínimo de duas horas.",
+      conhecimento:
+        "Cumprida a carga mínima de aulas práticas e registrada no Renach, o candidato às categorias A ou B pode fazer o exame de direção (arts. 40 e 41, I).",
+    },
+    {
+      topico: "Habilitação",
+      subassunto: "Requisitos do candidato",
+      dificuldade: 5,
+      raciocinio: "Há um requisito que o CTB não lista e uma etapa certa para conferir tudo.",
+      enunciado:
+        "Pelo art. 17 da Resolução Contran 1.020/2025, além de ser penalmente imputável e saber ler e escrever, o candidato deve ter documento de identificação reconhecido por lei e",
+      alternativas: [
+        "ter concluído o ensino fundamental, requisitos conferidos no próprio exame teórico",
+        "comprovar residência no estado, requisitos conferidos pelo instrutor na primeira aula prática",
+        "estar inscrito no CPF, requisitos conferidos na abertura do Renach, com a coleta biométrica",
+        "estar inscrito no CPF, requisitos conferidos só na expedição da Permissão para Dirigir",
+        "apresentar certidão criminal negativa, requisitos conferidos na avaliação psicológica",
+      ],
+      correta: 2,
+      explicacao:
+        "O art. 17 exige ser penalmente imputável, saber ler e escrever, ter documento de identificação reconhecido por lei e estar inscrito no CPF, e o parágrafo único manda o Detran conferir tudo na abertura do Renach, com a coleta dos dados biométricos.",
+      explicacaoErradas:
+        "“ensino fundamental”, “residência no estado” e “certidão criminal negativa” não estão entre os requisitos. “só na expedição da Permissão” erra a etapa: a conferência é feita na abertura do Renach.",
+      pegadinha: "Acertar o CPF e errar a etapa em que os requisitos são conferidos.",
+      conhecimento:
+        "O CTB, no art. 140, traz três requisitos: ser penalmente imputável, saber ler e escrever e ter carteira de identidade ou equivalente. O CPF entra pela resolução.",
+    },
+    {
+      topico: "Habilitação",
+      subassunto: "Exame teórico",
+      dificuldade: 5,
+      raciocinio: "Confira três números: questões, alternativas e acertos mínimos.",
+      enunciado:
+        "Pelos arts. 31, 33 e 34 da Resolução Contran 1.020/2025, o exame teórico tem",
+      alternativas: [
+        "trinta questões de cinco alternativas, e aprova quem acerta pelo menos vinte e uma",
+        "trinta questões de quatro alternativas, e aprova quem acerta pelo menos vinte",
+        "trinta questões de quatro alternativas, e aprova quem acerta pelo menos vinte e uma",
+        "quarenta questões de quatro alternativas, e aprova quem acerta pelo menos vinte e oito",
+        "trinta questões de certo ou errado, e aprova quem acerta pelo menos vinte",
+      ],
+      correta: 1,
+      explicacao:
+        "O art. 31 prevê múltipla escolha com quatro alternativas e só uma correta, o art. 33, § 1º, fixa trinta questões, e o art. 34 aprova com no mínimo vinte acertos.",
+      explicacaoErradas:
+        "“cinco alternativas” e “certo ou errado” contrariam o art. 31. “vinte e uma” não é o mínimo do art. 34, que pede vinte acertos. “quarenta questões” contraria o art. 33, § 1º.",
+      pegadinha: "Exigir vinte e um acertos, como se a nota mínima fosse 70%.",
+      conhecimento:
+        "A prova dura no mínimo uma hora, tempo obrigatoriamente dobrado para candidatos com dislexia, TDAH ou TEA (art. 33, § 2º), e é individual, sem consulta (art. 31, § 2º).",
+    },
+    {
+      topico: "Habilitação",
+      subassunto: "Aulas práticas",
+      dificuldade: 4,
+      raciocinio: "Veja quem pode dar a aula e de quem pode ser o carro.",
+      enunciado:
+        "Aprovado no exame teórico, um candidato quer fazer as aulas práticas no próprio carro, com um instrutor de trânsito autônomo. Pelos arts. 36 e 39 da Resolução Contran 1.020/2025, isso",
+      alternativas: [
+        "é possível, pois o instrutor pode ser autônomo e o veículo pode ser do próprio candidato",
+        "é vedado, pois as aulas práticas só podem ser dadas por instrutor vinculado a autoescola",
+        "é possível com o instrutor autônomo, mas o carro tem de ser do instrutor ou de autoescola",
+        "é possível no próprio carro, mas só com instrutor de Escola Pública de Trânsito ou do SNT",
+        "é vedado, pois a Licença de Aprendizagem só vale em veículo registrado em nome do instrutor",
+      ],
+      correta: 0,
+      explicacao:
+        "O art. 36 admite instrutores autônomos, de autoescolas, de Escolas Públicas de Trânsito ou de órgãos do SNT, e o art. 39 permite que o veículo seja do instrutor ou do próprio candidato, observados os requisitos da resolução.",
+      explicacaoErradas:
+        "“só podem ser dadas por instrutor vinculado a autoescola” ignora o instrutor autônomo do art. 36, I. “tem de ser do instrutor ou de autoescola” e “registrado em nome do instrutor” contrariam o art. 39. “só com instrutor de Escola Pública de Trânsito ou do SNT” deixa de fora o autônomo e o de autoescola.",
+      pegadinha: "Achar que a aula prática ainda depende de autoescola.",
+      conhecimento:
+        "No exame de direção, o veículo pode ser do órgão de trânsito ou do candidato, e até de terceiros (art. 44).",
+    },
+    {
+      topico: "Habilitação",
+      subassunto: "Interrupção do exame",
+      dificuldade: 4,
+      raciocinio: "Exame interrompido não recebe nota.",
+      enunciado:
+        "No exame de direção, o candidato mostra imperícia reiterada, que impede os comandos básicos de direção, e a comissão interrompe o exame. Pelo art. 46 da Resolução Contran 1.020/2025, o exame",
+      alternativas: [
+        "conta como reprovação, com a nota das infrações cometidas até a hora da interrupção",
+        "conta como reprovação com nota máxima, e a nova tentativa só pode ser feita no dia seguinte",
+        "não pode ser interrompido pela comissão, que só avalia o trajeto completo, depois do fim",
+        "é considerado não concluído, sem nota, e o motivo da interrupção é registrado pela comissão",
+        "é anulado, e o candidato tem de refazer as duas horas de aulas práticas antes de outro exame",
+      ],
+      correta: 3,
+      explicacao:
+        "O art. 46 permite à comissão interromper o exame por incapacidade técnica, com imperícia reiterada, ou por instabilidade emocional ou comportamento incompatível. O parágrafo único manda considerar o exame não concluído, sem nota, e registrar o motivo.",
+      explicacaoErradas:
+        "“conta como reprovação” e “nota máxima” dão nota a um exame que o parágrafo único deixa sem nota. “não pode ser interrompido” contraria o caput do art. 46 e o art. 45, § 2º. “refazer as duas horas” não está na resolução.",
+      pegadinha: "Tratar a interrupção como reprovação com nota.",
+      conhecimento:
+        "A avaliação cabe só à comissão de exame, formada por três membros, um deles pelo menos com habilitação igual ou superior à pretendida (art. 43, § 1º).",
+    },
+    {
+      topico: "Habilitação",
+      subassunto: "Licença de Aprendizagem",
+      dificuldade: 4,
+      raciocinio: "Quem expede, em que meio e até quando vale.",
+      enunciado: "Pelo art. 35 da Resolução Contran 1.020/2025, a Licença de Aprendizagem",
+      alternativas: [
+        "é expedida pelo Detran em papel, antes do exame teórico, para o candidato treinar",
+        "é expedida depois do exame teórico e vale por um ano, prorrogável por mais um ano",
+        "é expedida pelo órgão máximo da União, só em meio digital, e vale até o fim da formação",
+        "permite treinar sozinho, sem instrutor, desde que em via de pouco movimento",
+        "é expedida depois do exame de direção e substitui a Permissão para Dirigir nos primeiros meses",
+      ],
+      correta: 2,
+      explicacao:
+        "O registro da aprovação no exame teórico gera a Licença de Aprendizagem, expedida pelo órgão máximo executivo de trânsito da União, só em meio digital (§ 2º), com validade até o término do processo de formação, podendo ser cassada (§ 3º). Ela permite aulas práticas com supervisão direta do instrutor.",
+      explicacaoErradas:
+        "“pelo Detran em papel, antes do exame teórico” erra o órgão, o meio e o momento. “vale por um ano” confunde com a Permissão para Dirigir. “sem instrutor” contraria a supervisão direta exigida no caput. “depois do exame de direção” põe a licença no lugar da Permissão.",
+      pegadinha: "Confundir a validade da Licença com a da Permissão para Dirigir.",
+      conhecimento:
+        "A Licença de Aprendizagem não é documento de habilitação: pelo art. 4º, os documentos de habilitação são a Permissão para Dirigir, a ACC e a CNH.",
+    },
+    {
+      topico: "Habilitação",
+      subassunto: "Expedição da Permissão",
+      dificuldade: 5,
+      raciocinio: "A Permissão sai sozinha, depois do registro da aprovação.",
+      enunciado:
+        "Um candidato acaba de ser aprovado no exame de direção para a categoria B. Pelos arts. 4º e 48 da Resolução Contran 1.020/2025,",
+      alternativas: [
+        "ele recebe a Permissão para Dirigir só depois de pedir ao Detran, pois a expedição depende de requerimento",
+        "a Licença de Aprendizagem vale como documento de habilitação até ele pedir a Permissão para Dirigir",
+        "a Permissão para Dirigir só existe em versão física, produzida e impressa pelo Detran do estado",
+        "ele recebe direto a CNH, pois a Permissão para Dirigir deixou de ser documento de habilitação",
+        "a Permissão para Dirigir é expedida sem pedido, a partir do registro da aprovação no Renach",
+      ],
+      correta: 4,
+      explicacao:
+        "O art. 48 manda expedir a Permissão para Dirigir a partir do registro da aprovação no exame de direção no Renach, sem necessidade de pedido, com versão digital pela União e física pelo Detran. Pelo art. 4º, os documentos de habilitação são a Permissão, a ACC e a CNH.",
+      explicacaoErradas:
+        "“depende de requerimento” contraria o art. 48. “Licença de Aprendizagem vale como documento de habilitação” contraria o art. 4º, que não a inclui. “só existe em versão física” ignora a versão digital do § 1º. “recebe direto a CNH” ignora a Permissão, documento provisório do art. 4º, § 1º.",
+      pegadinha: "Pôr a Licença de Aprendizagem entre os documentos de habilitação.",
+      conhecimento:
+        "A Permissão vale um ano, e nesse período o condutor não pode cometer infração grave ou gravíssima nem ser reincidente em média (art. 49).",
+    },
   ],
 };

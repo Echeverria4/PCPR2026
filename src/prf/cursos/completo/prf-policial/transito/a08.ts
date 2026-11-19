@@ -284,5 +284,235 @@ export const AULA: AulaEscrita = {
       pegadinha: "Achar que o leilão se repete sem fim.",
       conhecimento: "O prazo para reclamar é de 60 dias do recolhimento, e a preparação do leilão pode começar depois de 30 dias.",
     },
+    {
+      topico: "Processo administrativo",
+      subassunto: "AIT como notificação",
+      dificuldade: 5,
+      raciocinio: "Não basta assinar: importa quem assina e o que o auto traz.",
+      enunciado:
+        "Em duas abordagens, o agente lavra o AIT com a data do fim do prazo para a defesa. No primeiro, assina o principal condutor previamente identificado do veículo. No segundo, assina um amigo do proprietário, que pegou o carro emprestado. Pelo art. 3º, § 5º, da Resolução Contran 918/2022, vale como notificação da autuação",
+      alternativas: [
+        "o AIT dos dois casos, pois a assinatura de quem dirigia sempre vale como notificação da autuação",
+        "só o AIT do segundo caso, pois o principal condutor deve receber a notificação pelo correio",
+        "só o AIT do primeiro caso, e no segundo a notificação vai ao proprietário em até 30 dias",
+        "nenhum dos dois, pois só a assinatura do próprio proprietário transforma o AIT em notificação",
+        "o AIT dos dois casos, desde que o proprietário confirme as assinaturas até o fim do prazo de defesa",
+      ],
+      correta: 2,
+      explicacao:
+        "O § 5º faz o AIT valer como NA quando assinado pelo condutor que é o proprietário ou o principal condutor previamente identificado, desde que traga a data do fim do prazo da defesa. No segundo caso isso não ocorre, e o art. 4º manda expedir a NA ao proprietário em até 30 dias da infração.",
+      explicacaoErradas:
+        "“sempre vale como notificação” ignora a condição de ser proprietário ou principal condutor. “o principal condutor deve receber a notificação pelo correio” contraria o § 5º. “só a assinatura do próprio proprietário” esquece o principal condutor previamente identificado. “confirme as assinaturas” não existe na resolução.",
+      pegadinha: "Achar que qualquer assinatura de quem dirigia transforma o AIT em notificação.",
+      conhecimento:
+        "Para indicar o condutor infrator, o principal condutor se equipara ao proprietário (art. 5º, § 8º). Sem a NA no prazo de 30 dias, o AIT é arquivado (art. 4º, § 1º).",
+    },
+    {
+      topico: "Processo administrativo",
+      subassunto: "Prazo da defesa",
+      dificuldade: 4,
+      raciocinio: "Conte os dias a partir da expedição da NA.",
+      enunciado:
+        "Uma NA foi expedida em 2 de maio e marcou o fim do prazo da defesa da autuação para 20 de maio. Pelo art. 4º, § 2º, da Resolução Contran 918/2022, esse prazo",
+      alternativas: [
+        "é irregular, pois a defesa não pode ter prazo inferior a 30 dias, contados da expedição da NA",
+        "é regular, pois o prazo mínimo da defesa da autuação é de 15 dias, contados da expedição",
+        "é regular, pois cada órgão autuador fixa o prazo livremente, desde que a data conste na própria NA",
+        "é irregular, pois a defesa não pode ter prazo inferior a 60 dias, contados da infração",
+        "é regular, pois os 30 dias de prazo contam da data da infração, e não da expedição da NA",
+      ],
+      correta: 0,
+      explicacao:
+        "O § 2º do art. 4º exige que a NA traga a data do fim do prazo da defesa, que não será inferior a 30 dias, contados da expedição da NA ou da publicação por edital. De 2 a 20 de maio são só 18 dias.",
+      explicacaoErradas:
+        "“15 dias” vale só para as NA expedidas antes de 12 de abril de 2021 (§ 6º). “fixa o prazo livremente” ignora o mínimo de 30 dias. “60 dias” e “contam da data da infração” erram o prazo e o marco inicial, que é a expedição da NA.",
+      pegadinha: "Aplicar o prazo antigo de 15 dias.",
+      conhecimento:
+        "A NA tem de ser expedida em até 30 dias da infração (art. 4º, caput), e o prazo da defesa conta da expedição, e não da infração.",
+    },
+    {
+      topico: "Responsabilidade",
+      subassunto: "Indicação de não habilitado",
+      dificuldade: 5,
+      raciocinio: "Quem entrega o carro a quem não pode dirigir também responde.",
+      enunciado:
+        "Uma empresa recebe a NA de uma infração de velocidade e indica como condutor um empregado que não tem habilitação. Pelo art. 5º, §§ 2º e 3º, da Resolução Contran 918/2022,",
+      alternativas: [
+        "a indicação é recusada, e a empresa responde sozinha pela infração de velocidade, sem outro auto",
+        "lavra-se só o auto do art. 162 contra o empregado, pois a empresa não pode ser autuada pelo art. 163",
+        "lavra-se o auto do art. 163 contra a empresa, mas o prazo dessa nova NA conta da infração de velocidade",
+        "a empresa recebe a multa do art. 257, § 8º, por indicar mal, e o empregado não sofre nenhuma autuação",
+        "a empresa é autuada pelo art. 163 e o empregado pelo art. 162, com prazo da NA contado do protocolo",
+      ],
+      correta: 4,
+      explicacao:
+        "Se o condutor indicado se enquadra no art. 162, o § 2º manda lavrar auto do art. 163 contra o proprietário, salvo se ele mesmo for o condutor, e auto do art. 162 contra o condutor indicado. Pelo § 3º, o prazo de 30 dias para expedir essas NA conta do protocolo do formulário de indicação.",
+      explicacaoErradas:
+        "“a indicação é recusada” e “responde sozinha” ignoram o § 2º, que aceita a indicação e gera novos autos. “a empresa não pode ser autuada pelo art. 163” contraria o inciso I. “conta da infração de velocidade” erra o marco do § 3º. “multa do art. 257, § 8º” é para quem não indica o condutor.",
+      pegadinha: "Esquecer que o proprietário também é autuado por entregar o veículo.",
+      conhecimento:
+        "O art. 163 do CTB pune quem entrega a direção do veículo a pessoa nas condições do art. 162, como quem não tem habilitação. A exceção do § 2º, I, é o condutor ser o próprio proprietário.",
+    },
+    {
+      topico: "Responsabilidade",
+      subassunto: "Possuidor do veículo",
+      dificuldade: 5,
+      raciocinio: "O possuidor se equipara ao dono, mas a notificação depende da duração do contrato.",
+      enunciado:
+        "Uma locadora aluga um carro por contrato de 90 dias, e o locatário consta no Detran como possuidor regularmente registrado. Ele comete uma infração. Pelo art. 8º da Resolução Contran 918/2022, as notificações",
+      alternativas: [
+        "vão ao locatário, pois o possuidor registrado se equipara ao proprietário em qualquer contrato",
+        "vão à locadora, pois só seguem ao possuidor em contrato com vigência de 180 dias ou mais",
+        "vão ao locatário e à locadora ao mesmo tempo, que respondem juntos por toda a multa",
+        "vão à locadora, pois só seguem ao possuidor em contrato com vigência de um ano ou mais",
+        "vão ao locatário, pois basta que o contrato de aluguel tenha vigência de 60 dias ou mais",
+      ],
+      correta: 1,
+      explicacao:
+        "O art. 8º equipara ao proprietário o possuidor registrado em penhor, arrendamento mercantil, comodato, aluguel ou arrendamento não vinculado a financiamento. Mas o parágrafo único só manda as notificações ao possuidor quando o contrato tem vigência igual ou superior a 180 dias. Com 90 dias, elas vão à locadora.",
+      explicacaoErradas:
+        "“em qualquer contrato” ignora o parágrafo único. “ao mesmo tempo” e “respondem juntos” criam uma regra que não existe. “um ano ou mais” e “60 dias ou mais” trocam o prazo de 180 dias.",
+      pegadinha: "Esquecer o prazo mínimo do contrato para notificar o possuidor.",
+      conhecimento:
+        "Abaixo de 180 dias, quem recebe a NA é o proprietário, que pode indicar o locatário como condutor infrator até o prazo fixado na NA (art. 5º).",
+    },
+    {
+      topico: "Processo administrativo",
+      subassunto: "Prazo da penalidade",
+      dificuldade: 5,
+      raciocinio: "A defesa prévia dobra o prazo, mas o marco continua o mesmo.",
+      enunciado:
+        "Um condutor foi autuado em flagrante, na abordagem, em 10 de janeiro. O proprietário apresentou a defesa prévia no prazo, e ela foi indeferida em julho. Pelo art. 9º da Resolução Contran 918/2022, a notificação da penalidade deve ser expedida em até",
+      alternativas: [
+        "180 dias, contados da data em que a defesa prévia foi indeferida",
+        "360 dias, contados da data em que a defesa prévia foi apresentada",
+        "180 dias, contados da infração, pois a defesa prévia não muda esse prazo",
+        "360 dias, contados da data em que a infração foi cometida",
+        "30 dias, contados do indeferimento, como ocorre com a notificação da autuação",
+      ],
+      correta: 3,
+      explicacao:
+        "O § 2º dá 180 dias, contados da infração, para expedir a notificação da penalidade quando a defesa não é apresentada ou é indeferida. Se a defesa prévia foi apresentada em tempo hábil, o § 3º aumenta o prazo para 360 dias, com o mesmo marco: a data da infração.",
+      explicacaoErradas:
+        "“contados da data em que a defesa prévia foi indeferida” e “contados do indeferimento” erram o marco inicial. “foi apresentada” também erra o marco. “não muda esse prazo” ignora o § 3º. “30 dias” é o prazo da notificação da autuação, e não o da penalidade.",
+      pegadinha: "Contar o prazo da decisão da defesa, e não da infração.",
+      conhecimento:
+        "A regra repete o art. 282, § 6º, do CTB. Perdido o prazo, decai o direito de aplicar a penalidade (§ 7º), e, na autuação sem flagrante, o prazo conta do conhecimento da infração pelo órgão (§ 6º-A).",
+    },
+    {
+      topico: "Processo administrativo",
+      subassunto: "Restrição no registro",
+      dificuldade: 4,
+      raciocinio: "Antes do vencimento, a multa não trava o registro do carro.",
+      enunciado:
+        "Um proprietário recebe a NP de multa e, antes da data de vencimento nela indicada, quer transferir o carro. Pelo art. 13 da Resolução Contran 918/2022, essa multa",
+      alternativas: [
+        "não gera restrição no registro até o vencimento, inclusive para transferência",
+        "impede a transferência desde a expedição da NP, até que seja paga com ou sem desconto",
+        "impede o licenciamento desde a lavratura do AIT, mesmo antes de qualquer notificação",
+        "impede a transferência, mas não o licenciamento, até a data de vencimento indicada na NP",
+        "só deixa de impedir a transferência se o proprietário pagar com o desconto de 20%",
+      ],
+      correta: 0,
+      explicacao:
+        "O art. 13 proíbe qualquer restrição nos arquivos do órgão de trânsito responsável pelo registro do veículo, inclusive para licenciamento e transferência, até a data de vencimento da NP de multa ou enquanto durar o efeito suspensivo sobre o AIT.",
+      explicacaoErradas:
+        "“desde a expedição da NP” e “desde a lavratura do AIT” antecipam uma restrição que o art. 13 proíbe até o vencimento. “mas não o licenciamento” separa o que o art. 13 trata junto. “desconto de 20%” não é condição para transferir.",
+      pegadinha: "Achar que a multa trava o carro assim que chega a notificação.",
+      conhecimento:
+        "O CTB também proíbe restrição e cobrança de mora enquanto não se encerra a instância administrativa de julgamento (art. 284, § 3º). A data para recorrer é a mesma do pagamento indicada na NP (art. 12, IV).",
+    },
+    {
+      topico: "Processo administrativo",
+      subassunto: "Multa paga com atraso",
+      dificuldade: 5,
+      raciocinio: "Até o fim do mês seguinte ao vencimento, só 1% de juros.",
+      enunciado:
+        "O proprietário não recorreu, e a multa grave, de R$ 195,23, venceu em 10 de março. Ele pagou em 20 de abril do mesmo ano. Pelos arts. 22 e 23 da Resolução Contran 918/2022, o valor pago foi de",
+      alternativas: [
+        "R$ 156,18, pois quem paga até o fim do mês seguinte ao vencimento ainda tem os 80%",
+        "R$ 214,75, pois o atraso gera multa de mora de 10% sobre o valor original",
+        "R$ 199,13, pois há juros de 1% pelo mês do vencimento e mais 1% pelo mês do pagamento",
+        "R$ 197,18, pois há só juros de 1% sobre o valor original, pelo mês do pagamento",
+        "R$ 195,23 mais a Selic acumulada desde o vencimento, sem outros juros",
+      ],
+      correta: 3,
+      explicacao:
+        "Pago entre o dia seguinte ao vencimento e o último dia do mês seguinte, o art. 22 cobra o valor original mais 1% de juros do mês do pagamento: 195,23 × 1,01 = R$ 197,18. A Selic só entra depois disso (art. 23).",
+      explicacaoErradas:
+        "“ainda tem os 80%” erra: o pagamento por 80% vale só até o vencimento (art. 20). “multa de mora de 10%” não existe na resolução. “1% pelo mês do vencimento” cobra um juro a mais. “Selic acumulada desde o vencimento” é a regra do art. 23, para quem paga depois do mês seguinte, e ainda soma 1%.",
+      pegadinha: "Manter o desconto depois do vencimento.",
+      conhecimento:
+        "Depois do mês seguinte ao vencimento, o valor original recebe a Selic do mês seguinte ao vencimento até o mês anterior ao pagamento, mais 1% do mês do pagamento (art. 23). Esse regime vale para autos lavrados a partir de 1º de novembro de 2016 (art. 19).",
+    },
+    {
+      topico: "Processo administrativo",
+      subassunto: "Registro no Renach",
+      dificuldade: 4,
+      raciocinio: "O registro espera o fim de todos os recursos.",
+      enunciado:
+        "A PRF aplicou multa por infração gravíssima. A JARI negou o recurso, e o condutor ainda está no prazo para recorrer em segunda instância. Pelo art. 18 da Resolução Contran 918/2022, a penalidade",
+      alternativas: [
+        "já pode ser cadastrada no Renach, pois a decisão da JARI encerra a discussão sobre a pontuação",
+        "é cadastrada no Renach desde a lavratura do AIT e sai de lá se algum recurso for provido",
+        "só é cadastrada no Renach depois do pagamento da multa, haja ou não recurso pendente",
+        "é cadastrada no Renach quando a JARI julga, e a segunda instância só pode mudar o valor",
+        "ainda não pode ser cadastrada no Renach, o que só ocorre depois de esgotados os recursos",
+      ],
+      correta: 4,
+      explicacao:
+        "O art. 18 só permite cadastrar as penalidades no Renach depois de esgotados os recursos dos arts. 15 (JARI) e 16 (segunda instância). Enquanto houver prazo para a segunda instância, não há cadastro.",
+      explicacaoErradas:
+        "“a decisão da JARI encerra a discussão” ignora a segunda instância do art. 16. “desde a lavratura do AIT” antecipa o registro. “depois do pagamento da multa” cria uma condição que não existe. “só pode mudar o valor” limita sem base o recurso de segunda instância.",
+      pegadinha: "Registrar a penalidade logo depois da decisão da JARI.",
+      conhecimento:
+        "O CTB traz a mesma regra no art. 290, parágrafo único. A advertência por escrito também só vai ao prontuário depois de encerrada a instância administrativa (art. 10, § 1º).",
+    },
+    {
+      topico: "Processo administrativo",
+      subassunto: "Arrecadação da multa",
+      dificuldade: 4,
+      raciocinio: "A PRF é órgão da União, e a União arrecada pelo Tesouro.",
+      enunciado:
+        "A PRF arrecada as multas de trânsito da sua competência. Pelo art. 25 da Resolução Contran 918/2022, com a redação dada pela Resolução 991/2023, ela deve usar",
+      alternativas: [
+        "o documento de arrecadação dos órgãos estaduais, com repasse automático ao Funset",
+        "a Guia de Recolhimento da União do tipo Cobrança ou a plataforma digital PagTesouro",
+        "boleto de banco privado escolhido pelo próprio órgão, com repasse mensal ao Tesouro",
+        "só o pagamento em dinheiro na rede bancária, vedado o uso de cartão em qualquer caso",
+        "a guia do Detran do estado onde a infração ocorreu, que depois repassa o valor à União",
+      ],
+      correta: 1,
+      explicacao:
+        "Pelo art. 25, os órgãos autuadores da União, como a PRF, arrecadam as multas da sua competência por GRU do tipo Cobrança ou pela plataforma PagTesouro. O documento próprio definido pelo órgão máximo executivo de trânsito da União, com repasse automático ao Funset, é a regra do art. 24 para os órgãos dos Estados, do DF e dos Municípios.",
+      explicacaoErradas:
+        "“documento de arrecadação dos órgãos estaduais” lembra o art. 24, que vale para os órgãos dos Estados, do DF e dos Municípios, e não para a PRF. “boleto de banco privado” e “guia do Detran do estado” não têm base. “vedado o uso de cartão” contraria o art. 27, que admite cartão de débito ou crédito, à vista ou em parcelas.",
+      pegadinha: "Aplicar à PRF a regra dos órgãos estaduais e municipais.",
+      conhecimento:
+        "Para aceitar cartão, o órgão arrecadador precisa de autorização do órgão máximo executivo de trânsito da União (art. 27, § 1º). Do valor das multas arrecadadas, 5% vão ao fundo nacional de segurança e educação de trânsito (CTB, art. 320, § 1º).",
+    },
+    {
+      topico: "Responsabilidade",
+      subassunto: "Indicação sem assinatura",
+      dificuldade: 5,
+      raciocinio: "Há um caminho para indicar sem a assinatura do condutor.",
+      enunciado:
+        "Uma locadora recebe a NA e não consegue a assinatura do cliente que dirigia o carro alugado. Pelo art. 5º, § 1º, da Resolução Contran 918/2022, a indicação do condutor",
+      alternativas: [
+        "é recusada, pois sem a assinatura original do condutor ela nunca produz efeito",
+        "só é aceita com ofício do representante legal da locadora, com cópia da CNH do cliente",
+        "pode ser aceita com cópia do contrato com cláusula de responsabilidade e prova da posse",
+        "pode ser aceita só com boletim de ocorrência que narre a recusa do cliente em assinar",
+        "é aceita sem nenhum documento, pois a locadora é pessoa jurídica e responde pela informação",
+      ],
+      correta: 2,
+      explicacao:
+        "Na impossibilidade de colher a assinatura, o § 1º, II, aceita, para veículo das demais pessoas jurídicas, fora da administração pública, cópia de documento com cláusula de responsabilidade por infrações que comprove a posse na hora da infração, com identificação do veículo, do proprietário e do condutor e o período da posse.",
+      explicacaoErradas:
+        "“nunca produz efeito” ignora a exceção do § 1º. “ofício do representante legal” é a regra do inciso I, para veículo de órgão ou entidade da administração pública. “boletim de ocorrência” não está na resolução. “sem nenhum documento” contraria o § 1º, que exige o contrato.",
+      pegadinha: "Achar que a falta da assinatura do condutor sempre derruba a indicação.",
+      conhecimento:
+        "Sem indicação válida no prazo da NA, o proprietário responde pela infração (art. 6º), e a pessoa jurídica ainda recebe a multa do art. 257, § 8º, do CTB (art. 7º).",
+    },
   ],
 };
