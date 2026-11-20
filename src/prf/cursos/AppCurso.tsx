@@ -9,6 +9,7 @@ import { ComCatalogo, type Catalogo } from "../aulas/catalogo";
 import type { GrupoCurso } from "../aulas/tipos";
 import type { DadosCursoCompleto } from "./completo/tipos";
 import LayoutCurso, { type AbaCurso } from "./LayoutCurso";
+import ComemoracaoMeta from "./ComemoracaoMeta";
 import { abaDaEntrada, type EntradaCurso } from "../../central/entrada";
 import { alternarCaderno } from "../caderno/painel";
 
@@ -112,6 +113,7 @@ export default function AppCurso({ curso, onTrocarCurso, entrada }: AppCursoProp
   if (!catalogo) return <div className="vazio">Carregando o curso…</div>;
   return (
     <ComCatalogo catalogo={catalogo}>
+      <ComemoracaoMeta />
       {completo ? (
         <Suspense fallback={<div className="vazio">Carregando o curso…</div>}>
           <CursoCompleto

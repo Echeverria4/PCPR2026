@@ -14,7 +14,7 @@ const F_EXTRA = 4;
 const F_DETALHES = 5;
 const F_ACOES = 6;
 
-const CHAVE_SOM = "pcpr:somFimSimulado";
+export const CHAVE_SOM = "pcpr:somFimSimulado";
 const VOLUME = 0.22;
 
 // Anel do placar (viewBox com margem para o rótulo do piso).
@@ -30,7 +30,7 @@ function pontoNoAnel(fracao: number, raio: number) {
 
 type NomeSom = "whoosh" | "impacto" | "tick" | "ding" | "fanfarra" | "estrela" | "derrota" | "alarme" | "pop";
 
-class Som {
+export class Som {
   mudo: boolean;
   private ctx: AudioContext | null = null;
   private saida: GainNode | null = null;
@@ -244,7 +244,7 @@ const LIMITE_PARTICULAS = 900;
 const sorteia = (a: number, b: number) => a + Math.random() * (b - a);
 const umDe = <T,>(lista: T[]) => lista[Math.floor(Math.random() * lista.length)];
 
-class Particulas {
+export class Particulas {
   private canvas: HTMLCanvasElement;
   private ctx: CanvasRenderingContext2D | null;
   private lista: Particula[] = [];

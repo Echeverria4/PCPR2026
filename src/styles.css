@@ -12689,3 +12689,157 @@ button.prf-snt-cab:focus-visible { outline: 3px solid var(--poster-laranja); out
   line-height: 1.4;
   opacity: 0.85;
 }
+
+/* Comemoração da meta do dia (cursos): a mesma festa do simulado aprovado, numa tela curta. */
+.cm-overlay {
+  display: grid;
+  place-items: center;
+  padding: 24px 16px;
+}
+
+.cm-brilho {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 38%, rgba(242, 193, 78, 0.26), transparent 62%);
+  animation: fds-aparece 0.9s ease-out both;
+}
+
+.cm-conteudo {
+  position: relative;
+  z-index: 2;
+  width: min(420px, 100%);
+  text-align: center;
+}
+
+.cm-alvo {
+  font-size: 4.4rem;
+  line-height: 1;
+  animation: cm-pula 0.9s cubic-bezier(0.2, 1.6, 0.4, 1) 0.1s both;
+}
+
+.cm-alvo .emoji {
+  width: 1.2em;
+  height: 1.2em;
+  filter: drop-shadow(0 0 18px rgba(242, 193, 78, 0.6));
+}
+
+.cm-kicker {
+  margin: 14px 0 0;
+  color: var(--ouro-forte);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  animation: cm-sobe 0.5s ease-out 0.3s both;
+}
+
+.cm-titulo {
+  margin: 4px 0 0;
+  font-size: clamp(2.5rem, 12vw, 4.2rem);
+  font-weight: 900;
+  line-height: 1.02;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #fff6d6 0%, var(--ouro-forte) 48%, #b8832a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 3px 0 #6b4a12) drop-shadow(0 0 14px rgba(242, 193, 78, 0.55));
+  animation: cm-estoura 0.7s cubic-bezier(0.2, 1.5, 0.4, 1) 0.15s both;
+}
+
+.cm-sub {
+  margin: 18px 0 0;
+  color: var(--texto);
+  font-family: var(--fonte-corpo);
+  font-size: 1.1rem;
+  line-height: 1.5;
+  animation: cm-sobe 0.5s ease-out 0.6s both;
+}
+
+.cm-sub b {
+  color: var(--ouro-forte);
+}
+
+.cm-frase {
+  margin: 12px 0 0;
+  color: rgba(233, 238, 247, 0.78);
+  font-family: var(--fonte-corpo);
+  font-size: 0.98rem;
+  animation: cm-sobe 0.5s ease-out 0.8s both;
+}
+
+.cm-botao {
+  margin-top: 26px;
+  min-width: 220px;
+  min-height: 48px;
+  padding: 12px 22px;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ffd56b, var(--ouro-forte) 55%, var(--ouro));
+  color: #1a1204;
+  font-family: var(--fonte-cond);
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 6px 24px rgba(242, 193, 78, 0.35);
+  animation: cm-sobe 0.5s ease-out 1s both;
+  transition: transform 0.1s;
+}
+
+.cm-botao:active {
+  transform: scale(0.96);
+}
+
+.cm-botao:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+@keyframes cm-pula {
+  from {
+    opacity: 0;
+    transform: scale(0.2) rotate(-25deg);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes cm-estoura {
+  from {
+    opacity: 0;
+    transform: scale(1.8);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes cm-sobe {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cm-brilho,
+  .cm-alvo,
+  .cm-kicker,
+  .cm-titulo,
+  .cm-sub,
+  .cm-frase,
+  .cm-botao {
+    animation: none;
+  }
+}
