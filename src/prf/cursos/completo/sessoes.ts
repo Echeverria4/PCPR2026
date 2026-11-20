@@ -22,16 +22,35 @@ export function questoesDaAula(b: BancoCurso, aula: string): QuestaoCurso[] {
 
 export const questoesDaMateria = (b: BancoCurso, materia: string) => b.questoes.filter((q) => q.materia === materia);
 
-export function sessaoMateria(b: BancoCurso, materia: string, quantidade = 10): Sessao {
-  return shuffle(questoesDaMateria(b, materia)).slice(0, quantidade).map(embaralharAlternativas);
+/**
+ * Primeiro as nunca respondidas, depois as erradas na última vez, por fim as acertadas (cada grupo embaralhado).
+ * Com quantidade, as escolhidas vêm misturadas entre si; com "todas", as nunca respondidas vêm na frente.
+ */
+export function porPrioridade(
+  lista: QuestaoCurso[],
+  ultima: Map<string, boolean>,
+  quantidade: number | "todas",
+): QuestaoCurso[] {
+  const ordem = (q: QuestaoCurso) => {
+    const u = ultima.get(q.id);
+    return u === undefined ? 0 : u ? 2 : 1;
+  };
+  const ordenada = shuffle(lista).sort((x, y) => ordem(x) - ordem(y));
+  return quantidade === "todas" ? ordenada : shuffle(ordenada.slice(0, quantidade));
+}
+
+const SEM_RESPOSTAS = new Map<string, boolean>();
+
+export function sessaoMateria(b: BancoCurso, materia: string, quantidade = 10, ultima = SEM_RESPOSTAS): Sessao {
+  return porPrioridade(questoesDaMateria(b, materia), ultima, quantidade).map(embaralharAlternativas);
 }
 
 /** Simulado misto: a mesma parte de cada matéria que já tem questões. */
-export function sessaoSimulado(b: BancoCurso, quantidade = TAMANHO_SIMULADO): Sessao {
+export function sessaoSimulado(b: BancoCurso, quantidade = TAMANHO_SIMULADO, ultima = SEM_RESPOSTAS): Sessao {
   const materias = [...new Set(b.questoes.map((q) => q.materia))];
   if (materias.length === 0) return [];
   const cota = Math.ceil(quantidade / materias.length);
-  const questoes = materias.flatMap((m) => shuffle(questoesDaMateria(b, m)).slice(0, cota));
+  const questoes = materias.flatMap((m) => porPrioridade(questoesDaMateria(b, m), ultima, cota));
   return shuffle(questoes).slice(0, quantidade).map(embaralharAlternativas);
 }
 
@@ -99,19 +118,13 @@ export function sessaoPersonalizada(
   tentativas: TentativaCurso[],
   revisao: string[],
 ): Sessao {
-  const lista = shuffle(filtrarBanco(b, f, tentativas, revisao));
-  return (f.quantidade === "todas" ? lista : lista.slice(0, f.quantidade)).map(embaralharAlternativas);
+  const lista = filtrarBanco(b, f, tentativas, revisao);
+  return porPrioridade(lista, ultimaResposta(tentativas), f.quantidade).map(embaralharAlternativas);
 }
 
 /** Sorteio dentro da aula: primeiro as nunca respondidas, depois as erradas na última vez, por fim as acertadas. */
 export function sessaoFixacao(b: BancoCurso, aula: string, quantidade: number, tentativas: TentativaCurso[]): Sessao {
-  const ultima = ultimaResposta(tentativas);
-  const ordem = (q: QuestaoCurso) => {
-    const u = ultima.get(q.id);
-    return u === undefined ? 0 : u ? 2 : 1;
-  };
-  const lista = shuffle(questoesDaAula(b, aula)).sort((x, y) => ordem(x) - ordem(y));
-  return shuffle(lista.slice(0, quantidade)).map(embaralharAlternativas);
+  return porPrioridade(questoesDaAula(b, aula), ultimaResposta(tentativas), quantidade).map(embaralharAlternativas);
 }
 
 export interface ErroRecorrente {

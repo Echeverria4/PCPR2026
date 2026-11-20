@@ -7,9 +7,17 @@ interface ResultProps<M extends string> {
   onRevisarErros: () => void;
   /** Nome de cada matéria do curso (sem isso, as da PCPR). */
   nomes?: Record<M, string>;
+  /** Quantas destas você já tinha respondido antes (ficaram fora da contagem e do percentual geral). */
+  repetidas?: number;
 }
 
-export default function Result<M extends string = SubjectId>({ resultado, onVoltarHome, onRevisarErros, nomes }: ResultProps<M>) {
+export default function Result<M extends string = SubjectId>({
+  resultado,
+  onVoltarHome,
+  onRevisarErros,
+  nomes,
+  repetidas = 0,
+}: ResultProps<M>) {
   const percentual = resultado.total > 0 ? Math.round((resultado.acertos / resultado.total) * 100) : 0;
   const erros = resultado.respostas.filter((r) => !r.acertou).length;
 
@@ -30,6 +38,12 @@ export default function Result<M extends string = SubjectId>({ resultado, onVolt
         <div className="resultado-legenda">
           {percentual}% de acerto nesta sessão · {erros} questão(ões) para revisar
         </div>
+        {repetidas > 0 && (
+          <div className="resultado-repetidas">
+            🔁 {repetidas === 1 ? "1 destas você já tinha respondido antes" : `${repetidas} destas você já tinha respondido antes`}:
+            {repetidas === 1 ? " ficou fora" : " ficaram fora"} da sua contagem e do seu percentual geral.
+          </div>
+        )}
       </div>
 
       <h2 className="secao-titulo">Desempenho por matéria</h2>

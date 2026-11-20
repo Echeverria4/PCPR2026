@@ -86,6 +86,8 @@ interface QuizProps<M extends string> {
   onProgresso?: (respostas: AttemptRecord<M>[]) => void;
   /** Camada em volta do enunciado e das alternativas (a caneta da PRF). Sem isso, a tela fica como sempre. */
   envolverQuestao?: (questaoId: string, conteudo: ReactNode) => ReactNode;
+  /** Questões que você já tinha respondido antes desta sessão: ganham um aviso de que não entram no percentual. */
+  jaRespondidas?: ReadonlySet<string>;
 }
 
 export default function Quiz<M extends string = SubjectId>({
@@ -98,6 +100,7 @@ export default function Quiz<M extends string = SubjectId>({
   respostasIniciais,
   onProgresso,
   envolverQuestao,
+  jaRespondidas,
 }: QuizProps<M>) {
   const grava = gravacao ?? (GRAVACAO_PCPR as unknown as GravacaoQuiz<M>);
   const envolver = envolverQuestao ?? ((_id: string, conteudo: ReactNode) => conteudo);
@@ -228,6 +231,12 @@ export default function Quiz<M extends string = SubjectId>({
           <div className={`questao-selo ${selo.classe}`}>
             <strong>{selo.titulo}</strong>
             <span>{selo.detalhe}</span>
+          </div>
+        )}
+        {jaRespondidas?.has(questao.id) && (
+          <div className="questao-repetida">
+            🔁 <strong>Você já respondeu esta questão.</strong> Esta resposta não entra na sua contagem nem no seu
+            percentual.
           </div>
         )}
         <div className="questao-tags">

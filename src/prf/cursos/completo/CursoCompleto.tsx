@@ -51,6 +51,8 @@ interface SessaoAtiva {
   mode: QuizMode;
   questions: Question<string>[];
   iniciadoEm: string;
+  /** Questões que já tinham resposta quando a sessão começou: a nova resposta delas não conta no percentual. */
+  jaRespondidas: Set<string>;
 }
 
 interface CursoCompletoProps {
@@ -108,6 +110,7 @@ export default function CursoCompleto({
   const [erradas, setErradas] = useState<string[]>(() => progresso.erradas());
   const [sessao, setSessao] = useState<SessaoAtiva | null>(null);
   const [resultado, setResultado] = useState<QuizSessionResult<string> | null>(null);
+  const [repetidasNoResultado, setRepetidasNoResultado] = useState(0);
   // Aba para onde o quiz volta; a tela aberta nas aulas não se perde durante o quiz.
   const [origem, setOrigem] = useState<AbaCurso>("treino");
   const [telaAulas, setTelaAulas] = useState<TelaAulas>(() =>
@@ -180,27 +183,29 @@ export default function CursoCompleto({
 
   function abrirSessao(mode: QuizMode, questions: Question<string>[]) {
     if (questions.length === 0) return false;
-    setSessao({ mode, questions, iniciadoEm: new Date().toISOString() });
+    const jaRespondidas = new Set(progresso.tentativas().map((t) => t.questionId));
+    setSessao({ mode, questions, iniciadoEm: new Date().toISOString(), jaRespondidas });
     setView("quiz");
     return true;
   }
 
   function iniciarQuiz(mode: QuizMode, materia?: string) {
     let questions: Question<string>[] = [];
-    if (mode === "materia" && materia) questions = sessaoMateria(banco, materia);
-    else if (mode === "prova") questions = sessaoSimulado(banco);
+    const ultima = ultimaResposta(progresso.todasAsRespostas());
+    if (mode === "materia" && materia) questions = sessaoMateria(banco, materia, 10, ultima);
+    else if (mode === "prova") questions = sessaoSimulado(banco, undefined, ultima);
     else if (mode === "revisao") questions = sessaoRevisao(banco, progresso.erradas());
-    else if (mode === "treino-alvo" && materia) questions = sessaoMateria(banco, materia, 12);
+    else if (mode === "treino-alvo" && materia) questions = sessaoMateria(banco, materia, 12, ultima);
     abrirSessao(mode, questions);
   }
 
   function iniciarPersonalizado(filtros: FiltrosCurso) {
-    abrirSessao("personalizado", sessaoPersonalizada(banco, filtros, tentativas, erradas));
+    abrirSessao("personalizado", sessaoPersonalizada(banco, filtros, progresso.todasAsRespostas(), erradas));
   }
 
   /** Fixação da aula: ao terminar, o quiz volta para a mesma aula (ou para a aba de onde veio, como o Livro do CTB). */
   function fixarAula(aula: string, quantidade: number, volta: AbaCurso = "aulas"): boolean {
-    const ok = abrirSessao("personalizado", sessaoFixacao(banco, aula, quantidade, tentativas));
+    const ok = abrirSessao("personalizado", sessaoFixacao(banco, aula, quantidade, progresso.todasAsRespostas()));
     if (ok) setOrigem(volta);
     return ok;
   }
@@ -212,7 +217,8 @@ export default function CursoCompleto({
       materias: [materia],
       topicos: topico ? [chaveAssunto(materia, topico)] : [],
     };
-    if (abrirSessao("personalizado", sessaoPersonalizada(banco, filtros, tentativas, erradas))) setOrigem("semana");
+    if (abrirSessao("personalizado", sessaoPersonalizada(banco, filtros, progresso.todasAsRespostas(), erradas)))
+      setOrigem("semana");
   }
 
   /** Botões das atividades do cronograma; false = não havia o que abrir. Ao terminar o quiz, volta para o cronograma. */
@@ -231,7 +237,10 @@ export default function CursoCompleto({
           return true;
         }
         return doCronograma(
-          abrirSessao("personalizado", sessaoPersonalizada(banco, { ...FILTROS_PADRAO, materias: [grupo] }, tentativas, erradas)),
+          abrirSessao(
+            "personalizado",
+            sessaoPersonalizada(banco, { ...FILTROS_PADRAO, materias: [grupo] }, progresso.todasAsRespostas(), erradas),
+          ),
         );
       case "erros":
         return doCronograma(
@@ -241,7 +250,7 @@ export default function CursoCompleto({
                 sessaoPersonalizada(
                   banco,
                   { ...FILTROS_PADRAO, materias: [grupo], situacao: "revisao", quantidade: "todas" },
-                  tentativas,
+                  progresso.todasAsRespostas(),
                   erradas,
                 ),
               )
@@ -304,6 +313,7 @@ export default function CursoCompleto({
       iniciadoEm: sessao.iniciadoEm,
       finalizadoEm: new Date().toISOString(),
     });
+    setRepetidasNoResultado(respostas.filter((r) => sessao.jaRespondidas.has(r.questionId)).length);
     setTentativas(progresso.tentativas());
     setErradas(progresso.erradas());
     setSessao(null);
@@ -459,6 +469,7 @@ export default function CursoCompleto({
             gravacao={progresso.gravacao}
             curso={curso}
             envolverQuestao={comCaneta}
+            jaRespondidas={sessao.jaRespondidas}
           />
           {/* Espaço no fim para a barra da caneta não cobrir os últimos botões. */}
           <div className="prf-caneta-espaco" aria-hidden="true" />
@@ -470,6 +481,7 @@ export default function CursoCompleto({
           onVoltarHome={voltar}
           onRevisarErros={() => iniciarQuiz("revisao")}
           nomes={nomes}
+          repetidas={repetidasNoResultado}
         />
       )}
     </LayoutCurso>

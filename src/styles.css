@@ -12669,3 +12669,23 @@ button.prf-snt-cab:focus-visible { outline: 3px solid var(--poster-laranja); out
 @media (min-width: 900px) {
   .prf-mapa-poster .prf-snt { margin: 22px 26px 0; }
 }
+
+/* Questão repetida: a resposta não entra na contagem nem no percentual (20/11/26) */
+.questao-repetida {
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  border: 1px solid var(--borda-forte);
+  border-left: 4px solid var(--texto-fraco);
+  background: var(--bg-elevado);
+  border-radius: var(--raio-peq);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--texto);
+}
+
+.resultado-repetidas {
+  margin-top: 10px;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  opacity: 0.85;
+}

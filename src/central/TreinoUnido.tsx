@@ -260,10 +260,15 @@ export default function TreinoUnido() {
   const [qtdAleatorio, setQtdAleatorio] = useState<number>(20);
   const lingua: Lingua = LINGUA_CURSO;
   const [cotas, setCotas] = useState<Record<string, number>>({});
-  const [sessao, setSessao] = useState<{ questions: Question<string>[]; iniciadoEm: string; modo: QuizMode } | null>(
-    null,
-  );
+  const [sessao, setSessao] = useState<{
+    questions: Question<string>[];
+    iniciadoEm: string;
+    modo: QuizMode;
+    /** Já respondidas antes da sessão: a resposta nova não entra na contagem nem no percentual. */
+    jaRespondidas: Set<string>;
+  } | null>(null);
   const [resultado, setResultado] = useState<QuizSessionResult<string> | null>(null);
+  const [repetidas, setRepetidas] = useState(0);
   const [prova, setProva] = useState<{ salva: ProvaSalva; questoes: Question<string>[] } | null>(null);
   const [provaPendente, setProvaPendente] = useState<ProvaSalva | null>(lerProvaSalva);
   const [avisoProva, setAvisoProva] = useState("");
@@ -272,6 +277,8 @@ export default function TreinoUnido() {
 
   const tentativas = useMemo(() => progresso.tentativas(), [rodada]);
   const ultima = useMemo(() => ultimaResposta(tentativas), [tentativas]);
+  // Para sortear: a última resposta de verdade (com as repetidas), para a errada da última vez vir antes da acertada.
+  const ultimaSorteio = useMemo(() => ultimaResposta(progresso.todasAsRespostas()), [rodada]);
   const porMateria = useMemo(() => new Map(materias.map((m) => [m.id, m])), [materias]);
   const todas = DADOS.banco.questoes;
 
@@ -301,12 +308,13 @@ export default function TreinoUnido() {
   function iniciar(questoes: Question<string>[], modoQuiz: QuizMode = "personalizado") {
     if (questoes.length === 0) return;
     setResultado(null);
-    setSessao({ questions: questoes, iniciadoEm: new Date().toISOString(), modo: modoQuiz });
+    const jaRespondidas = new Set(progresso.tentativas().map((t) => t.questionId));
+    setSessao({ questions: questoes, iniciadoEm: new Date().toISOString(), modo: modoQuiz, jaRespondidas });
     paraOTopo();
   }
 
   function iniciarMateria() {
-    iniciar(paraSessao(escolher(escolhidas, qtdMateria, ultima)));
+    iniciar(paraSessao(escolher(escolhidas, qtdMateria, ultimaSorteio)));
   }
 
   function abrirProva(salva: ProvaSalva) {
@@ -326,7 +334,7 @@ export default function TreinoUnido() {
   function iniciarSimulado() {
     const lista = PROVA_2021.flatMap((b, bloco) =>
       b.itens.flatMap(([id, q]) =>
-        escolher(porMateria.get(idDaProva(id, lingua))?.questoes ?? [], q, ultima).map((questao) => ({ q: questao, bloco })),
+        escolher(porMateria.get(idDaProva(id, lingua))?.questoes ?? [], q, ultimaSorteio).map((questao) => ({ q: questao, bloco })),
       ),
     );
     if (lista.length > 0) abrirProva(novaProva(lista));
@@ -353,13 +361,13 @@ export default function TreinoUnido() {
   }
 
   function iniciarAleatorio() {
-    iniciar(paraSessao(escolher(todas, qtdAleatorio, ultima)));
+    iniciar(paraSessao(escolher(todas, qtdAleatorio, ultimaSorteio)));
   }
 
   function iniciarMontado() {
     const lista = materias.flatMap((m) => {
       const q = Math.min(cotas[m.id] ?? 0, m.questoes.length);
-      return q > 0 ? escolher(m.questoes, q, ultima) : [];
+      return q > 0 ? escolher(m.questoes, q, ultimaSorteio) : [];
     });
     iniciar(paraSessao(lista));
   }
@@ -377,6 +385,7 @@ export default function TreinoUnido() {
 
   function finalizar(respostas: TentativaCurso[]) {
     if (!sessao) return;
+    setRepetidas(respostas.filter((r) => sessao.jaRespondidas.has(r.questionId)).length);
     setResultado({
       mode: sessao.modo,
       total: respostas.length,
@@ -442,6 +451,7 @@ export default function TreinoUnido() {
           gravacao={progresso.gravacao}
           curso={CURSO}
           envolverQuestao={comCaneta}
+          jaRespondidas={sessao.jaRespondidas}
         />
         {/* Espaço no fim para a barra da caneta não cobrir os últimos botões. */}
         <div className="prf-caneta-espaco" aria-hidden="true" />
@@ -452,7 +462,13 @@ export default function TreinoUnido() {
   if (resultado) {
     return (
       <div className="cx-treino-quiz">
-        <Result resultado={resultado} onVoltarHome={voltar} onRevisarErros={revisarErros} nomes={NOMES} />
+        <Result
+          resultado={resultado}
+          onVoltarHome={voltar}
+          onRevisarErros={revisarErros}
+          nomes={NOMES}
+          repetidas={repetidas}
+        />
         <ConfiancaDaRodada tentativas={resultado.respostas} acasoDe={acasoDe} />
       </div>
     );

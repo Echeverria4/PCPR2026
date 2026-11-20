@@ -70,8 +70,58 @@ export function limpezasUnicas(): void {
   }
 }
 
+function diaDe(t: TentativaCurso): string {
+  const d = new Date(t.respondidaEm);
+  return `${d.getFullYear()}-${dois(d.getMonth() + 1)}-${dois(d.getDate())}`;
+}
+
+/**
+ * Separação única, pedida em 20/11/26: só a primeira resposta de cada questão conta na quantidade e no percentual.
+ * As respostas seguintes à mesma questão saem da lista de tentativas, vão para a lista das repetidas e são
+ * descontadas da contagem por dia. Roda uma vez em cada aparelho, em todos os cursos que já têm respostas.
+ */
+export function separarRepetidas(curso: string): void {
+  const feito = `curso:${curso}:repetidas-separadas:2026-11-20`;
+  try {
+    if (localStorage.getItem(feito)) return;
+    const lsTentativas = `curso:${curso}:attempts:v1`;
+    const lsRepetidas = `curso:${curso}:repetidas:v1`;
+    const lsPorDia = `curso:${curso}:questoesPorDia:v1`;
+    const todas = ler<TentativaCurso[]>(lsTentativas, []);
+    const lista = Array.isArray(todas) ? todas : [];
+    const vistas = new Set<string>();
+    const primeiras: TentativaCurso[] = [];
+    const repetidas: TentativaCurso[] = [];
+    for (const t of lista) {
+      if (vistas.has(t.questionId)) repetidas.push(t);
+      else {
+        vistas.add(t.questionId);
+        primeiras.push(t);
+      }
+    }
+    if (repetidas.length > 0) {
+      const porDia = ler<QuestoesPorDia>(lsPorDia, {});
+      for (const t of repetidas) {
+        const dia = diaDe(t);
+        const [n, a] = porDia[dia] ?? [0, 0];
+        porDia[dia] = [Math.max(0, n - 1), Math.max(0, a - (t.acertou ? 1 : 0))];
+      }
+      const antigas = ler<TentativaCurso[]>(lsRepetidas, []);
+      gravar(lsTentativas, primeiras);
+      gravar(lsPorDia, porDia);
+      gravar(lsRepetidas, [...(Array.isArray(antigas) ? antigas : []), ...repetidas].slice(-MAX_TENTATIVAS));
+    }
+    localStorage.setItem(feito, "1");
+  } catch {
+    // sem localStorage não há o que separar
+  }
+}
+
 export interface ProgressoCurso {
+  /** A primeira resposta de cada questão: é o que entra na quantidade e no percentual. */
   tentativas: () => TentativaCurso[];
+  /** Primeiras e repetidas juntas, em ordem de tempo: serve para saber a última resposta ao sortear e filtrar. */
+  todasAsRespostas: () => TentativaCurso[];
   erradas: () => string[];
   /** Questões respondidas e acertos desde a primeira resposta. */
   total: () => { respondidas: number; acertos: number };
@@ -84,39 +134,55 @@ export function progressoDoCurso(curso: string): ProgressoCurso {
   const lsTentativas = `curso:${curso}:attempts:v1`;
   const lsErradas = `curso:${curso}:wrong:v1`;
   const lsPorDia = `curso:${curso}:questoesPorDia:v1`;
+  const lsRepetidas = `curso:${curso}:repetidas:v1`;
 
   const tentativas = () => ler<TentativaCurso[]>(lsTentativas, []);
+  const repetidas = () => ler<TentativaCurso[]>(lsRepetidas, []);
   const erradas = () => ler<string[]>(lsErradas, []);
   const porDia = () => ler<QuestoesPorDia>(lsPorDia, {});
 
   function registrar(tentativa: TentativaCurso) {
-    const contagem = porDia();
-    somaNoDia(contagem, tentativa);
-    gravar(lsPorDia, contagem);
-
     const lista = tentativas();
-    lista.push(tentativa);
-    gravar(lsTentativas, lista.slice(-MAX_TENTATIVAS));
+    if (lista.some((t) => t.questionId === tentativa.questionId)) {
+      // Questão já respondida antes: fica guardada à parte e não entra na quantidade nem no percentual.
+      const outras = repetidas();
+      outras.push(tentativa);
+      gravar(lsRepetidas, outras.slice(-MAX_TENTATIVAS));
+    } else {
+      const contagem = porDia();
+      somaNoDia(contagem, tentativa);
+      gravar(lsPorDia, contagem);
+      lista.push(tentativa);
+      gravar(lsTentativas, lista.slice(-MAX_TENTATIVAS));
+    }
 
+    // A fila dos errados segue a última resposta: acertar de novo tira a questão dela.
     const fila = erradas().filter((id) => id !== tentativa.questionId);
     if (!tentativa.acertou) fila.unshift(tentativa.questionId);
     gravar(lsErradas, fila.slice(0, MAX_ERRADAS));
   }
 
   function atualizarConfianca(questionId: string, respondidaEm: string, confianca: Confianca | undefined) {
-    const lista = tentativas();
     const alvo = marca(questionId, respondidaEm);
-    for (let i = lista.length - 1; i >= 0; i--) {
-      if (marca(lista[i].questionId, lista[i].respondidaEm) === alvo) {
-        lista[i] = { ...lista[i], confianca };
-        gravar(lsTentativas, lista);
-        return;
+    for (const [chave, lista] of [
+      [lsTentativas, tentativas()],
+      [lsRepetidas, repetidas()],
+    ] as const) {
+      for (let i = lista.length - 1; i >= 0; i--) {
+        if (marca(lista[i].questionId, lista[i].respondidaEm) === alvo) {
+          lista[i] = { ...lista[i], confianca };
+          gravar(chave, lista);
+          return;
+        }
       }
     }
   }
 
   return {
     tentativas,
+    todasAsRespostas() {
+      return [...tentativas(), ...repetidas()].sort((x, y) => Date.parse(x.respondidaEm) - Date.parse(y.respondidaEm));
+    },
     erradas,
     total() {
       let respondidas = 0;
@@ -130,6 +196,10 @@ export function progressoDoCurso(curso: string): ProgressoCurso {
     zerarMateria(materia, idsDaMateria) {
       const restantes = tentativas().filter((t) => t.materia !== materia);
       gravar(lsTentativas, restantes);
+      gravar(
+        lsRepetidas,
+        repetidas().filter((t) => t.materia !== materia),
+      );
       gravar(
         lsErradas,
         erradas().filter((id) => !idsDaMateria.has(id)),
