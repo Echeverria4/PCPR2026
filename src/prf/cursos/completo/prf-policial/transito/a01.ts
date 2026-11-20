@@ -187,5 +187,71 @@ export const AULA: AulaEscrita = {
       pegadinha: "Reduzir trânsito a veículo em movimento.",
       conhecimento: "O art. 3º alcança veículos nacionais e estrangeiros.",
     },
+    {
+      topico: "Pegadinha Cebraspe",
+      subassunto: "Vias terrestres (art. 2º)",
+      dificuldade: 5,
+      raciocinio: "Comparar o item com a letra do art. 2º, palavra por palavra.",
+      enunciado:
+        "Item no estilo Cebraspe: “Para os efeitos do CTB, são consideradas vias terrestres as praias abertas à circulação pública, as vias internas pertencentes aos condomínios constituídos por unidades autônomas e as vias e áreas de estacionamento de estabelecimentos privados de uso exclusivo.” Esse item está",
+      alternativas: [
+        "certo, pois reproduz o parágrafo único do art. 2º, sem nenhuma troca",
+        "errado, pois as praias só entram no CTB quando forem pavimentadas",
+        "errado, pois a lei fala em estabelecimentos privados de uso coletivo",
+        "errado, pois as vias internas de condomínio ficam fora do Código",
+        "errado, pois só as ruas e rodovias públicas contam como vias terrestres",
+      ],
+      correta: 2,
+      explicacao:
+        "O parágrafo único do art. 2º fala em estabelecimentos privados de uso coletivo. O item trocou só essa palavra por “exclusivo”, e isso basta para deixá-lo errado.",
+      explicacaoErradas:
+        "“sem nenhuma troca” ignora a palavra trocada. “pavimentadas” não está na lei: basta a praia estar aberta à circulação pública. As vias internas de condomínio e as áreas de estacionamento estão no próprio artigo, ao lado das ruas e rodovias.",
+      pegadinha: "Palavra trocada: “uso coletivo” virou “uso exclusivo”, no fim da frase.",
+      conhecimento: "No Cebraspe, leia o item até a última palavra. Todo o resto da frase estava igual à lei.",
+    },
+    {
+      topico: "Pegadinha Cebraspe",
+      subassunto: "Velocidade sem placa (art. 61)",
+      dificuldade: 5,
+      raciocinio: "Conferir cada número do item com o art. 61, § 1º, II.",
+      enunciado:
+        "Item no estilo Cebraspe: “Em rodovia de pista simples sem sinalização regulamentadora, a velocidade máxima é de 100 km/h para automóveis, camionetas, caminhonetes e motocicletas e de 90 km/h para os demais veículos, ao passo que, nas estradas, o limite é de 80 km/h.” Esse item está",
+      alternativas: [
+        "errado, pois nas estradas o limite sem placa é de 60 km/h",
+        "certo, pois todos os limites citados constam do art. 61 do CTB",
+        "errado, pois na pista simples os automóveis vão até 110 km/h",
+        "errado, pois as caminhonetes seguem o limite de 90 km/h",
+        "errado, pois as motocicletas têm limite de 90 km/h nas rodovias",
+      ],
+      correta: 0,
+      explicacao:
+        "O começo do item está certo: na rodovia de pista simples, 100 km/h para automóveis, camionetas, caminhonetes e motocicletas e 90 km/h para os demais. O erro está no fim: nas estradas, o art. 61, § 1º, II, c, fixa 60 km/h.",
+      explicacaoErradas:
+        "“todos os limites” não confere, por causa das estradas. 110 km/h é o limite da pista dupla. Caminhonetes e motocicletas ficam no grupo do automóvel, com 100 km/h na pista simples.",
+      pegadinha: "Começo certo, final errado: os dois primeiros números batem com a lei, o último não.",
+      conhecimento: "Rodovia é via rural pavimentada. Estrada é via rural não pavimentada, com 60 km/h sem placa.",
+    },
+    {
+      topico: "Pegadinha Cebraspe",
+      subassunto: "Velocidade mínima (art. 62)",
+      dificuldade: 4,
+      raciocinio: "Nem todo item tem pegadinha: comparar com o art. 62 antes de marcar errado.",
+      enunciado:
+        "Item no estilo Cebraspe: “A velocidade mínima não poderá ser inferior à metade da velocidade máxima estabelecida, respeitadas as condições operacionais de trânsito e da via.” Esse item está",
+      alternativas: [
+        "errado, pois o mínimo é de um terço da velocidade máxima da via",
+        "errado, pois a velocidade mínima vale apenas nas vias rurais",
+        "errado, pois o mínimo é fixado só por placa, e nunca pela lei",
+        "errado, pois o mínimo vale sem olhar as condições do trânsito",
+        "certo, pois reproduz o art. 62 do CTB, palavra por palavra",
+      ],
+      correta: 4,
+      explicacao:
+        "O item copia o art. 62 sem trocar nada: a velocidade mínima não pode ser inferior à metade da máxima, respeitadas as condições operacionais de trânsito e da via.",
+      explicacaoErradas:
+        "“um terço” troca a metade. “só nas vias rurais” e “só por placa” criam limites que o artigo não tem. “sem olhar as condições” contraria o final do próprio artigo.",
+      pegadinha: "Achar que todo item longo tem uma palavra trocada. Este está certo.",
+      conhecimento: "Exemplo: em via com máxima de 80 km/h, a mínima é 40 km/h, se o trânsito e a via permitirem.",
+    },
   ],
 };

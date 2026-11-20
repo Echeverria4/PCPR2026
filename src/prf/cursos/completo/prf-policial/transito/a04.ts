@@ -223,5 +223,71 @@ export const AULA: AulaEscrita = {
       pegadinha: "Decorar o texto antigo da lei.",
       conhecimento: "A viagem só começa depois de cumprido todo o descanso, pelo § 6º.",
     },
+    {
+      topico: "Pegadinha Cebraspe",
+      subassunto: "Competências da PRF (art. 20, III)",
+      dificuldade: 4,
+      raciocinio: "Nem todo item tem pegadinha: comparar com o art. 20, III, antes de marcar errado.",
+      enunciado:
+        "Item no estilo Cebraspe: “Compete à Polícia Rodoviária Federal, no âmbito das rodovias e estradas federais, executar a fiscalização de trânsito, aplicar as penalidades de advertência por escrito e multa e as medidas administrativas cabíveis, com a notificação dos infratores e a arrecadação das multas aplicadas.” Esse item está",
+      alternativas: [
+        "errado, pois a advertência por escrito só pode ser aplicada pelo DNIT",
+        "errado, pois a PRF autua, mas quem arrecada as multas é o Detran",
+        "errado, pois a PRF não aplica medida administrativa, só autua",
+        "errado, pois a PRF aplica a multa, mas não notifica o infrator",
+        "certo, pois tudo o que o item cita consta do art. 20, III, do CTB",
+      ],
+      correta: 4,
+      explicacao:
+        "O item segue o art. 20, III: a PRF fiscaliza, aplica advertência por escrito e multa, aplica as medidas administrativas, notifica os infratores e arrecada as multas, nas rodovias e estradas federais.",
+      explicacaoErradas:
+        "O DNIT tem competência parecida nas rodovias federais, mas isso não tira a da PRF. O Detran não arrecada as multas da PRF. Medida administrativa e notificação estão no próprio inciso III.",
+      pegadinha: "Achar que a PRF só autua e que outro órgão pune, notifica ou arrecada. Este item está certo.",
+      conhecimento: "Na rodovia federal, a PRF faz o ciclo inteiro: fiscaliza, pune, notifica e arrecada.",
+    },
+    {
+      topico: "Pegadinha Cebraspe",
+      subassunto: "Recurso julgado pelo Cetran (art. 14)",
+      dificuldade: 5,
+      raciocinio: "O começo repete o art. 14, V. Ler o final com o parágrafo único na cabeça.",
+      enunciado:
+        "Item no estilo Cebraspe: “Compete aos Cetran julgar os recursos interpostos contra decisões das Jari, e, da decisão do conselho nesses casos, ainda cabe recurso ao Contran na esfera administrativa.” Esse item está",
+      alternativas: [
+        "certo, pois o Contran revê, por último, as decisões dos Cetran",
+        "errado, pois o recurso contra a decisão da Jari vai direto ao Contran",
+        "errado, pois da decisão do Cetran não cabe recurso administrativo",
+        "errado, pois os Cetran não julgam recursos, só respondem a consultas",
+        "errado, pois a decisão da Jari não admite nenhum tipo de recurso",
+      ],
+      correta: 2,
+      explicacao:
+        "O começo está certo: o Cetran julga recursos contra decisões das Jari (art. 14, V, a). O final está errado: pelo parágrafo único, dos casos do inciso V julgados pelo órgão, não cabe recurso na esfera administrativa. O caso termina ali, na via administrativa.",
+      explicacaoErradas:
+        "O CTB não dá ao Contran a tarefa de julgar recurso de multa. Contra a decisão da Jari cabe recurso, e ele vai ao Cetran quando a multa é de órgão estadual ou municipal. Responder a consultas também é tarefa do Cetran (inciso III), ao lado de julgar recursos.",
+      pegadinha: "Começo certo, final errado: depois do Cetran, não há mais recurso administrativo.",
+      conhecimento: "Caminho do recurso da multa estadual ou municipal: órgão que multou → Jari → Cetran, e fim.",
+    },
+    {
+      topico: "Pegadinha Cebraspe",
+      subassunto: "Pedestre no semáforo (art. 70, parágrafo único)",
+      dificuldade: 5,
+      raciocinio: "Imaginar a cena: o sinal abre para os carros com gente ainda no meio da faixa.",
+      enunciado:
+        "Item no estilo Cebraspe: “Nos locais em que houver sinalização semafórica de controle de passagem, será dada preferência aos pedestres que não tenham iniciado a travessia, mesmo em caso de mudança do semáforo liberando a passagem dos veículos.” Esse item está",
+      alternativas: [
+        "certo, pois quem ainda vai atravessar tem a preferência no semáforo",
+        "errado, pois a preferência é de quem não tenha concluído a travessia",
+        "errado, pois, aberto o sinal para os carros, o pedestre perde a vez",
+        "errado, pois a preferência no semáforo vale só para idosos e crianças",
+        "errado, pois a preferência só vale onde houver uma faixa elevada",
+      ],
+      correta: 1,
+      explicacao:
+        "O parágrafo único do art. 70 protege o pedestre que não tenha concluído a travessia, isto é, quem já está atravessando quando o sinal abre para os carros. Quem ainda não começou deve esperar o próximo sinal.",
+      explicacaoErradas:
+        "“quem ainda vai atravessar” é o erro do item. Mesmo com o sinal aberto para os carros, quem está no meio da travessia passa primeiro. A regra vale para todos os pedestres e não depende de faixa elevada.",
+      pegadinha: "Palavra trocada: “não tenham concluído” virou “não tenham iniciado”.",
+      conhecimento: "Quem já está na faixa termina a travessia, mesmo que o sinal mude.",
+    },
   ],
 };

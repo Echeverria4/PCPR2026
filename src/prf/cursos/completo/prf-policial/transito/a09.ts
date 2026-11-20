@@ -280,5 +280,71 @@ export const AULA: AulaEscrita = {
       pegadinha: "Inverter os artigos.",
       conhecimento: "O art. 176 também pune não preservar o local e não se identificar ao policial.",
     },
+    {
+      topico: "Pegadinha Cebraspe",
+      subassunto: "Dirigir sob influência de álcool (art. 165)",
+      dificuldade: 5,
+      raciocinio: "Conferir penalidade e medida administrativa do art. 165, até a última palavra.",
+      enunciado:
+        "Item no estilo Cebraspe: “Dirigir sob a influência de álcool é infração gravíssima, punida com multa multiplicada por dez e suspensão do direito de dirigir por doze meses, com as medidas administrativas de recolhimento do documento de habilitação e remoção do veículo.” Esse item está",
+      alternativas: [
+        "certo, pois penalidades e medidas são as previstas no art. 165",
+        "errado, pois a multa do art. 165 é multiplicada por cinco vezes",
+        "errado, pois a suspensão prevista no art. 165 é de seis meses",
+        "errado, pois a medida do art. 165 é a retenção do veículo",
+        "errado, pois o art. 165 não prevê o recolhimento da habilitação",
+      ],
+      correta: 3,
+      explicacao:
+        "Infração gravíssima, multa ×10, suspensão por 12 meses e recolhimento do documento de habilitação estão certos. O erro está na última medida: o art. 165 prevê a retenção do veículo, e não a remoção.",
+      explicacaoErradas:
+        "“certo” ignora a troca de “retenção” por “remoção”. A multa é multiplicada por dez, e a suspensão é de 12 meses. O recolhimento da habilitação está no próprio artigo.",
+      pegadinha: "Palavra trocada: “retenção” virou “remoção”, duas medidas parecidas.",
+      conhecimento: "Retenção: o veículo fica no local até aparecer um condutor habilitado. Se ninguém aparecer, aí sim ele é removido (art. 270, § 4º).",
+    },
+    {
+      topico: "Pegadinha Cebraspe",
+      subassunto: "Excesso de velocidade (art. 218)",
+      dificuldade: 5,
+      raciocinio: "As faixas estão certas. Ver se o art. 218 fixa prazo para a suspensão.",
+      enunciado:
+        "Item no estilo Cebraspe: “Transitar em velocidade superior à máxima permitida em até 20% é infração média; em mais de 20% até 50%, grave; e em mais de 50%, gravíssima, punida com multa multiplicada por três e suspensão do direito de dirigir por doze meses.” Esse item está",
+      alternativas: [
+        "certo, pois as três faixas e as penalidades são as do art. 218",
+        "errado, pois acima de 50% a infração é grave, e não gravíssima",
+        "errado, pois a faixa de até 20% acima do limite é infração leve",
+        "errado, pois o art. 218 não fixa doze meses para a suspensão",
+        "errado, pois acima de 50% a multa é multiplicada por dez vezes",
+      ],
+      correta: 3,
+      explicacao:
+        "As faixas estão certas: até 20%, média; de 20% a 50%, grave; acima de 50%, gravíssima com multa ×3 e suspensão. O erro está no fim: o art. 218, III, não fixa prazo para a suspensão. Vale então o art. 261, § 1º, II: de 2 a 8 meses.",
+      explicacaoErradas:
+        "“certo” ignora os doze meses acrescentados. Acima de 50% é gravíssima. Até 20% é média, e não leve. A multa é ×3, e não ×10.",
+      pegadinha: "Começo certo, final errado: os doze meses são do álcool (art. 165), e não da velocidade.",
+      conhecimento: "Infração com suspensão sem prazo próprio: 2 a 8 meses (art. 261, § 1º, II).",
+    },
+    {
+      topico: "Pegadinha Cebraspe",
+      subassunto: "Recusa ao teste de alcoolemia (art. 165-A)",
+      dificuldade: 4,
+      raciocinio: "Nem todo item tem pegadinha: comparar com o art. 165-A antes de marcar errado.",
+      enunciado:
+        "Item no estilo Cebraspe: “Recusar-se a ser submetido a teste, exame clínico, perícia ou outro procedimento que permita certificar influência de álcool é infração gravíssima, com multa multiplicada por dez e suspensão do direito de dirigir por doze meses.” Esse item está",
+      alternativas: [
+        "certo, pois a recusa tem as mesmas penalidades do art. 165",
+        "errado, pois a recusa ao teste do etilômetro é infração grave",
+        "errado, pois quem recusa o teste não pode ser punido sem prova",
+        "errado, pois a recusa gera só multa, sem suspender o direito",
+        "errado, pois a recusa é punida com multa multiplicada por cinco",
+      ],
+      correta: 0,
+      explicacao:
+        "O item segue o art. 165-A: a recusa é infração gravíssima, com multa ×10 e suspensão do direito de dirigir por 12 meses, as mesmas penalidades de quem dirige sob influência de álcool.",
+      explicacaoErradas:
+        "A recusa é gravíssima, e não grave. A própria recusa já é a infração, sem precisar provar o álcool. Há suspensão por 12 meses, e a multa é ×10.",
+      pegadinha: "Achar que recusar o teste é mais leve que dirigir alcoolizado. Este item está certo.",
+      conhecimento: "Recusar o bafômetro tem a mesma punição administrativa de dirigir alcoolizado.",
+    },
   ],
 };

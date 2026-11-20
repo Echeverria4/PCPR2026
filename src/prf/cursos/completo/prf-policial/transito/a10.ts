@@ -328,5 +328,71 @@ export const AULA: AulaEscrita = {
       pegadinha: "Exigir inquérito já aberto.",
       conhecimento: "O art. 312-A fixa as atividades da prestação de serviço à comunidade nos crimes dos arts. 302 a 312.",
     },
+    {
+      topico: "Pegadinha Cebraspe",
+      subassunto: "Lesão culposa e a Lei 9.099 (art. 291, § 1º)",
+      dificuldade: 5,
+      raciocinio: "Conferir a unidade da última exceção: porcentagem ou km/h.",
+      enunciado:
+        "Item no estilo Cebraspe: “Aplicam-se aos crimes de trânsito de lesão corporal culposa os arts. 74, 76 e 88 da Lei nº 9.099/1995, exceto se o agente estiver sob a influência de álcool, participando de corrida não autorizada ou transitando em velocidade superior à máxima permitida para a via em 50%.” Esse item está",
+      alternativas: [
+        "certo, pois as três exceções à Lei 9.099 são as do art. 291, § 1º",
+        "errado, pois a lesão culposa no trânsito nunca admite a Lei 9.099",
+        "errado, pois a exceção é de 50 km/h acima da máxima da via",
+        "errado, pois a exceção da velocidade é de 20% acima da máxima",
+        "errado, pois o álcool não está entre as exceções do art. 291",
+      ],
+      correta: 2,
+      explicacao:
+        "As duas primeiras exceções estão certas: álcool e corrida não autorizada. O erro está no fim: o art. 291, § 1º, III, fala em velocidade superior à máxima da via em 50 km/h, e não em 50%.",
+      explicacaoErradas:
+        "“certo” ignora a troca de km/h por %. A regra é aplicar a Lei 9.099; as exceções são só as três do § 1º. 20% não aparece no art. 291. O álcool é a primeira exceção (inciso I).",
+      pegadinha: "Unidade trocada: “50 km/h” virou “50%”. Os 50% são da infração do art. 218, III.",
+      conhecimento: "Crime (art. 291): 50 km/h acima. Infração gravíssima (art. 218, III): mais de 50% acima.",
+    },
+    {
+      topico: "Pegadinha Cebraspe",
+      subassunto: "Prova da embriaguez ao volante (art. 306, § 1º)",
+      dificuldade: 5,
+      raciocinio: "Os dois números estão certos. Ver em que líquido ou gás cada um é medido.",
+      enunciado:
+        "Item no estilo Cebraspe: “A conduta de conduzir veículo com capacidade psicomotora alterada pelo álcool será constatada por concentração igual ou superior a 6 decigramas de álcool por litro de sangue ou igual ou superior a 0,3 miligrama de álcool por litro de sangue.” Esse item está",
+      alternativas: [
+        "certo, pois os dois limites citados são os do art. 306, § 1º, I",
+        "errado, pois o limite no sangue é de 2 decigramas por litro",
+        "errado, pois o limite no ar alveolar é de 0,6 miligrama por litro",
+        "errado, pois a conduta só pode ser provada com exame de sangue",
+        "errado, pois os 0,3 miligrama são por litro de ar alveolar",
+      ],
+      correta: 4,
+      explicacao:
+        "Os números estão certos: 6 decigramas por litro de sangue ou 0,3 miligrama por litro de ar alveolar. O item trocou “ar alveolar” por “sangue” na segunda medida.",
+      explicacaoErradas:
+        "“certo” ignora a troca. No sangue, a marca do crime é 6 decigramas, e não 2. No ar, a marca é 0,3 miligrama, e não 0,6. O § 1º, II, admite outros sinais de alteração, e o § 2º admite outras provas, como vídeo e testemunha.",
+      pegadinha: "Palavra trocada: “ar alveolar” virou “sangue”, repetindo a palavra do começo da frase.",
+      conhecimento: "Crime: 6 dg/L no sangue ou 0,3 mg/L no ar dos pulmões (bafômetro).",
+    },
+    {
+      topico: "Pegadinha Cebraspe",
+      subassunto: "Socorro à vítima (art. 301)",
+      dificuldade: 5,
+      raciocinio: "Ler o art. 301 até o fim: ele afasta duas coisas, e não uma.",
+      enunciado:
+        "Item no estilo Cebraspe: “Ao condutor de veículo, nos casos de sinistros de trânsito que resultem em vítima, não se imporá a prisão em flagrante, mas se exigirá fiança, se prestar pronto e integral socorro àquela.” Esse item está",
+      alternativas: [
+        "certo, pois quem socorre a vítima evita o flagrante, mas paga fiança",
+        "errado, pois de quem socorre também não se exige fiança",
+        "errado, pois o socorro não impede a prisão em flagrante do condutor",
+        "errado, pois a regra só vale para sinistros que resultem em morte",
+        "errado, pois a regra exige que o socorro seja feito por ambulância",
+      ],
+      correta: 1,
+      explicacao:
+        "O art. 301 diz que, se o condutor prestar pronto e integral socorro à vítima, não se imporá a prisão em flagrante nem se exigirá fiança. O item trocou “nem se exigirá” por “mas se exigirá”.",
+      explicacaoErradas:
+        "“paga fiança” é o erro do item. O socorro afasta o flagrante. A regra vale para qualquer sinistro com vítima, e não só com morte. Quem socorre é o próprio condutor, e não uma ambulância.",
+      pegadinha: "Palavra trocada: “nem se exigirá fiança” virou “mas se exigirá fiança”.",
+      conhecimento: "Socorreu a vítima na hora e por completo: sem flagrante e sem fiança.",
+    },
   ],
 };

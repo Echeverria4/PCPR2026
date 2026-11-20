@@ -254,5 +254,71 @@ export const AULA: AulaEscrita = {
       pegadinha: "Achar que o CTB só alcança veículos brasileiros.",
       conhecimento: "O art. 3º já dizia que o CTB alcança veículos e condutores nacionais ou estrangeiros.",
     },
+    {
+      topico: "Pegadinha Cebraspe",
+      subassunto: "Lombadas e sonorizadores (art. 94)",
+      dificuldade: 5,
+      raciocinio: "Separar quem define os casos especiais de quem fixa os padrões.",
+      enunciado:
+        "Item no estilo Cebraspe: “É proibida a utilização das ondulações transversais e de sonorizadores como redutores de velocidade, salvo em casos especiais definidos pelo órgão ou entidade competente, nos padrões e critérios estabelecidos pelo Cetran.” Esse item está",
+      alternativas: [
+        "certo, pois os padrões das lombadas são fixados pelo conselho estadual",
+        "errado, pois as lombadas são proibidas em qualquer caso, sem exceção",
+        "errado, pois os casos especiais são definidos pelo Contran, não pelo órgão",
+        "errado, pois os padrões e os critérios são os estabelecidos pelo Contran",
+        "errado, pois o sonorizador pode ser usado à vontade como redutor",
+      ],
+      correta: 3,
+      explicacao:
+        "O parágrafo único do art. 94 tem duas partes: o órgão ou entidade competente define os casos especiais, e o Contran estabelece os padrões e critérios. O item trocou Contran por Cetran no fim da frase.",
+      explicacaoErradas:
+        "O conselho estadual (Cetran) não fixa esses padrões. A proibição tem exceção: os casos especiais. Quem define esses casos é o órgão ou entidade competente, e não o Contran. O sonorizador entra na mesma proibição da lombada.",
+      pegadinha: "Palavra trocada: Contran virou Cetran, duas siglas quase iguais.",
+      conhecimento: "Contran = regra nacional. Cetran = conselho do Estado. Padrão técnico de lombada é regra nacional.",
+    },
+    {
+      topico: "Pegadinha Cebraspe",
+      subassunto: "Aviso de interdição da via (art. 95, § 2º)",
+      dificuldade: 5,
+      raciocinio: "Conferir o prazo do item com o § 2º do art. 95.",
+      enunciado:
+        "Item no estilo Cebraspe: “Salvo em casos de emergência, a autoridade de trânsito com circunscrição sobre a via avisará a comunidade, por intermédio dos meios de comunicação social, com vinte e quatro horas de antecedência, de qualquer interdição da via, indicando-se os caminhos alternativos a serem utilizados.” Esse item está",
+      alternativas: [
+        "errado, pois o aviso deve ser dado com 48 horas de antecedência",
+        "certo, pois o prazo de aviso da interdição é de vinte e quatro horas",
+        "errado, pois o aviso é dispensado quando houver caminho alternativo",
+        "errado, pois quem avisa a comunidade é o responsável pela obra",
+        "errado, pois o aviso prévio é exigido até nos casos de emergência",
+      ],
+      correta: 0,
+      explicacao:
+        "Todo o resto do item segue o § 2º do art. 95. Só o prazo foi trocado: a lei manda avisar a comunidade com quarenta e oito horas de antecedência.",
+      explicacaoErradas:
+        "24 horas é o número trocado. Os caminhos alternativos são indicados no próprio aviso, e não o dispensam. O aviso é tarefa da autoridade de trânsito; ao responsável pela obra cabe sinalizar (§ 1º). A emergência é a exceção do próprio parágrafo.",
+      pegadinha: "Número trocado: 48 horas virou 24 horas, no meio de uma frase longa e certa.",
+      conhecimento: "Obra na via: permissão prévia do órgão, sinalização por quem executa e aviso 48 h antes.",
+    },
+    {
+      topico: "Pegadinha Cebraspe",
+      subassunto: "Modificação do veículo (art. 98)",
+      dificuldade: 4,
+      raciocinio: "Nem todo item tem pegadinha: comparar com o art. 98 antes de marcar errado.",
+      enunciado:
+        "Item no estilo Cebraspe: “Nenhum proprietário ou responsável poderá, sem prévia autorização da autoridade competente, fazer ou ordenar que sejam feitas no veículo modificações de suas características de fábrica.” Esse item está",
+      alternativas: [
+        "errado, pois a autorização só é exigida para trocar o motor",
+        "errado, pois basta comunicar a mudança ao órgão depois de feita",
+        "certo, pois reproduz o caput do art. 98, sem nenhuma troca",
+        "errado, pois a regra alcança o proprietário, e não o responsável",
+        "errado, pois a autorização prévia é dada pela própria montadora",
+      ],
+      correta: 2,
+      explicacao:
+        "O item copia o caput do art. 98: sem prévia autorização da autoridade competente, ninguém pode fazer nem mandar fazer modificações nas características de fábrica do veículo.",
+      explicacaoErradas:
+        "A lei fala em qualquer modificação de característica de fábrica, não só no motor. A autorização é prévia, e não um aviso depois. O artigo cita o proprietário e o responsável. Quem autoriza é a autoridade competente, e não a montadora.",
+      pegadinha: "Achar que todo item longo tem uma palavra trocada. Este está certo.",
+      conhecimento: "Primeiro a autorização, depois a mudança. Depois de feita, a característica nova vai para o registro (art. 123, III).",
+    },
   ],
 };

@@ -514,5 +514,71 @@ export const AULA: AulaEscrita = {
       conhecimento:
         "Sem indicação válida no prazo da NA, o proprietário responde pela infração (art. 6º), e a pessoa jurídica ainda recebe a multa do art. 257, § 8º, do CTB (art. 7º).",
     },
+    {
+      topico: "Pegadinha Cebraspe",
+      subassunto: "Advertência por escrito (art. 267)",
+      dificuldade: 5,
+      raciocinio: "Ver se o verbo do item é o mesmo da lei: “deverá” e “poderá” mudam tudo.",
+      enunciado:
+        "Item no estilo Cebraspe: “Poderá ser imposta a penalidade de advertência por escrito à infração de natureza leve ou média, passível de ser punida com multa, caso o infrator não tenha cometido nenhuma outra infração nos últimos doze meses.” Esse item está",
+      alternativas: [
+        "errado, pois, cumpridos os requisitos, a advertência deverá ser imposta",
+        "certo, pois a advertência é uma escolha da autoridade de trânsito",
+        "errado, pois a advertência alcança também a infração de natureza grave",
+        "errado, pois o prazo sem outra infração é de vinte e quatro meses",
+        "errado, pois a advertência vale para a infração leve, e não para a média",
+      ],
+      correta: 0,
+      explicacao:
+        "Desde a Lei 14.071/2020, o art. 267 diz “Deverá ser imposta”. Se a infração é leve ou média e o infrator não cometeu outra infração nos últimos 12 meses, a advertência por escrito é obrigatória, e não uma escolha.",
+      explicacaoErradas:
+        "“escolha da autoridade” era a ideia do texto antigo, que dizia “poderá”. A regra vale só para infração leve ou média, nunca para grave. O prazo é de 12 meses.",
+      pegadinha: "Palavra trocada: “Deverá” virou “Poderá”, logo na primeira palavra do item.",
+      conhecimento: "Leve ou média + 12 meses sem infração = advertência por escrito, obrigatória.",
+    },
+    {
+      topico: "Pegadinha Cebraspe",
+      subassunto: "Prazo da notificação da autuação (art. 281)",
+      dificuldade: 5,
+      raciocinio: "Conferir o prazo do item com o § 1º, II, e lembrar para que serve o § 2º.",
+      enunciado:
+        "Item no estilo Cebraspe: “O auto de infração será arquivado e seu registro julgado insubsistente se, no prazo máximo de sessenta dias, não for expedida a notificação da autuação.” Esse item está",
+      alternativas: [
+        "certo, pois o prazo máximo para expedir a notificação é de sessenta dias",
+        "errado, pois o prazo de trinta dias conta da instauração do processo",
+        "errado, pois o prazo máximo para expedir a notificação é de trinta dias",
+        "errado, pois a falta de notificação só reduz o valor da multa",
+        "errado, pois o auto só é arquivado se o condutor apresentar defesa",
+      ],
+      correta: 2,
+      explicacao:
+        "O art. 281, § 1º, II, manda arquivar o auto se a notificação da autuação não for expedida no prazo máximo de trinta dias. O item trocou o número por sessenta.",
+      explicacaoErradas:
+        "Sessenta dias é o número trocado. A contagem a partir da instauração do processo vale só para a suspensão do direito de dirigir e a cassação (§ 2º). Sem notificação no prazo, o auto é arquivado, e não só barateado. O arquivamento não depende de defesa.",
+      pegadinha: "Número trocado: 30 dias virou 60 dias.",
+      conhecimento: "Notificação da autuação fora dos 30 dias = auto arquivado, mesmo sem defesa.",
+    },
+    {
+      topico: "Pegadinha Cebraspe",
+      subassunto: "Suspensão por pontos (art. 261)",
+      dificuldade: 5,
+      raciocinio: "As faixas de pontos estão certas. Conferir o prazo da suspensão no § 1º.",
+      enunciado:
+        "Item no estilo Cebraspe: “A suspensão do direito de dirigir será aplicada sempre que o infrator atingir, em doze meses, 20 pontos, se constarem duas ou mais infrações gravíssimas, 30 pontos, se constar uma, ou 40 pontos, se não constar nenhuma, e, nesse caso, a suspensão será de dois a oito meses.” Esse item está",
+      alternativas: [
+        "certo, pois as faixas de pontos e o prazo são os do art. 261",
+        "errado, pois o limite é sempre de 20 pontos, sem olhar as gravíssimas",
+        "errado, pois com uma só gravíssima o limite é de 40 pontos",
+        "errado, pois a contagem dos pontos é feita em vinte e quatro meses",
+        "errado, pois, por pontos, a suspensão vai de seis meses a um ano",
+      ],
+      correta: 4,
+      explicacao:
+        "As faixas 20, 30 e 40 pontos estão certas (art. 261, I). O erro está no fim: na suspensão por pontos, o prazo é de 6 meses a 1 ano (§ 1º, I). De 2 a 8 meses é o prazo da suspensão por infração específica (§ 1º, II).",
+      explicacaoErradas:
+        "“certo” ignora o prazo trocado. O limite de 20 pontos vale só com duas ou mais gravíssimas. Com uma gravíssima, o limite é 30. A contagem é em 12 meses.",
+      pegadinha: "Começo certo, final errado: o prazo de 2 a 8 meses é o do inciso II, e não o dos pontos.",
+      conhecimento: "Pontos: 6 meses a 1 ano. Infração que já prevê suspensão: 2 a 8 meses, salvo prazo próprio.",
+    },
   ],
 };

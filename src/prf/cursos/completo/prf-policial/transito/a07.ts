@@ -487,5 +487,71 @@ export const AULA: AulaEscrita = {
       conhecimento:
         "A Permissão vale um ano, e nesse período o condutor não pode cometer infração grave ou gravíssima nem ser reincidente em média (art. 49).",
     },
+    {
+      topico: "Pegadinha Cebraspe",
+      subassunto: "Condutor de escolares (art. 138)",
+      dificuldade: 5,
+      raciocinio: "O item usa a redação antiga do inciso IV. Lembrar o texto dado pela Lei 14.071/2020.",
+      enunciado:
+        "Item no estilo Cebraspe: “O condutor de veículo destinado à condução de escolares deve ter idade superior a vinte e um anos, ser habilitado na categoria D, não ter cometido nenhuma infração grave ou gravíssima nos doze últimos meses e ser aprovado em curso especializado.” Esse item está",
+      alternativas: [
+        "certo, pois o art. 138 exige 21 anos, categoria D e ficha sem grave",
+        "errado, pois a lei barra quem tem mais de uma gravíssima em 12 meses",
+        "errado, pois o condutor de escolares deve ter mais de vinte e cinco anos",
+        "errado, pois basta a categoria B para dirigir o veículo de escolares",
+        "errado, pois a lei barra quem tem qualquer infração média no ano",
+      ],
+      correta: 1,
+      explicacao:
+        "Idade, categoria e curso estão certos. O erro está no inciso IV: desde a Lei 14.071/2020, o requisito é não ter cometido mais de uma infração gravíssima nos 12 últimos meses. Infração grave não barra mais o condutor de escolares.",
+      explicacaoErradas:
+        "“ficha sem grave” é a redação antiga, que a Lei 14.071/2020 trocou. A idade é superior a 21 anos, e não a 25. A categoria exigida é a D. Infração média não aparece no inciso IV atual.",
+      pegadinha: "Redação antiga: a banca troca o texto atual pelo texto de antes da Lei 14.071/2020.",
+      conhecimento: "Escolar hoje: mais de 21 anos, categoria D, no máximo uma gravíssima em 12 meses e curso especializado.",
+    },
+    {
+      topico: "Pegadinha Cebraspe",
+      subassunto: "Da Permissão para a CNH (art. 148, § 3º)",
+      dificuldade: 5,
+      raciocinio: "Não misturar a regra da Permissão para Dirigir com a regra do condutor de escolares.",
+      enunciado:
+        "Item no estilo Cebraspe: “A Carteira Nacional de Habilitação será conferida ao condutor no término de um ano, desde que ele não tenha cometido nenhuma infração de natureza grave ou gravíssima ou seja reincidente em infração média.” Esse item está",
+      alternativas: [
+        "errado, pois só fica sem a CNH quem tem mais de uma gravíssima",
+        "errado, pois a Permissão para Dirigir tem validade de dois anos",
+        "errado, pois a infração grave só gera multa, sem afetar a CNH",
+        "errado, pois quem não obtém a CNH refaz só o exame prático",
+        "certo, pois reproduz o § 3º do art. 148, sem nenhuma troca",
+      ],
+      correta: 4,
+      explicacao:
+        "O item segue o § 3º do art. 148: a CNH sai no fim de um ano, se o permissionário não cometeu infração grave ou gravíssima nem foi reincidente em infração média.",
+      explicacaoErradas:
+        "“mais de uma gravíssima” é a regra do condutor de escolares (art. 138, IV), e não a da Permissão. A Permissão vale um ano (§ 2º). Quem não obtém a CNH reinicia todo o processo de habilitação (§ 4º).",
+      pegadinha: "Confundir com o art. 138: lá a Lei 14.071/2020 afrouxou a regra; aqui, não.",
+      conhecimento: "Na Permissão, uma única infração grave já impede a CNH definitiva.",
+    },
+    {
+      topico: "Pegadinha Cebraspe",
+      subassunto: "Venda do veículo (arts. 123 e 134)",
+      dificuldade: 5,
+      raciocinio: "Conferir os dois prazos e, por último, o tipo de responsabilidade do vendedor.",
+      enunciado:
+        "Item no estilo Cebraspe: “Na transferência de propriedade, o novo proprietário tem trinta dias para adotar as providências para a expedição do novo Certificado de Registro de Veículo, e, expirado esse prazo sem essas providências, o antigo proprietário deverá encaminhar ao órgão executivo de trânsito, em sessenta dias, o comprovante de transferência, sob pena de responder subsidiariamente pelas penalidades impostas até a data da comunicação.” Esse item está",
+      alternativas: [
+        "certo, pois os prazos e a responsabilidade são os dos arts. 123 e 134",
+        "errado, pois o novo dono tem sessenta dias para pedir o novo CRV",
+        "errado, pois o antigo dono responde só até a data da venda",
+        "errado, pois a lei diz que o antigo dono responde solidariamente",
+        "errado, pois o antigo dono deve comunicar a venda em dez dias",
+      ],
+      correta: 3,
+      explicacao:
+        "Os prazos estão certos: trinta dias para o novo proprietário (art. 123, § 1º) e sessenta dias para o antigo enviar o comprovante (art. 134). A troca está no fim: o art. 134 diz que o antigo proprietário responde solidariamente pelas penalidades até a data da comunicação.",
+      explicacaoErradas:
+        "“certo” ignora a troca de “solidariamente” por “subsidiariamente”. Os trinta dias são do novo dono, e os sessenta, do antigo. A responsabilidade vai até a data da comunicação, e não até a data da venda. Dez dias não é prazo do art. 134.",
+      pegadinha: "Palavra trocada: “solidariamente” virou “subsidiariamente”, no fim de um item longo.",
+      conhecimento: "Solidário: cobram dos dois ao mesmo tempo. Subsidiário: só cobram de um se o outro não pagar.",
+    },
   ],
 };

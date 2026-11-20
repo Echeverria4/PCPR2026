@@ -588,5 +588,71 @@ export const AULA: AulaEscrita = {
       conhecimento:
         "O capacete é obrigatório para o condutor e para o passageiro, preso à cabeça pela cinta jugular e pelo engate, por baixo do maxilar inferior (art. 2º).",
     },
+    {
+      topico: "Pegadinha Cebraspe",
+      subassunto: "Preferência em cruzamento sem sinal (art. 29, III)",
+      dificuldade: 5,
+      raciocinio: "Conferir as três regras do art. 29, III, uma por uma, até o fim da frase.",
+      enunciado:
+        "Item no estilo Cebraspe: “Quando veículos, transitando por fluxos que se cruzem, se aproximarem de local não sinalizado, terá preferência de passagem: no caso de apenas um fluxo ser proveniente de rodovia, aquele que estiver circulando por ela; no caso de rotatória, aquele que estiver circulando por ela; e, nos demais casos, o que vier pela esquerda do condutor.” Esse item está",
+      alternativas: [
+        "certo, pois as três regras de preferência são as do art. 29, III",
+        "errado, pois nos demais casos passa primeiro quem vem pela direita",
+        "errado, pois na rotatória a preferência é de quem vai entrar nela",
+        "errado, pois quem vem da rodovia não tem preferência sobre os demais",
+        "errado, pois em local sem sinalização passa quem chegar primeiro",
+      ],
+      correta: 1,
+      explicacao:
+        "As duas primeiras regras estão certas: quem circula pela rodovia e quem circula pela rotatória têm a preferência. A troca está no fim: nos demais casos, o art. 29, III, c, dá a preferência a quem vier pela direita do condutor.",
+      explicacaoErradas:
+        "“certo” ignora a troca de “direita” por “esquerda”. Na rotatória, a preferência é de quem já está circulando nela. O fluxo que vem da rodovia tem a preferência (alínea a). “Quem chegar primeiro” não é regra do CTB.",
+      pegadinha: "Palavra trocada: “pela direita” virou “pela esquerda”, na última regra da lista.",
+      conhecimento: "Ordem para guardar: rodovia, rotatória e, por último, a direita.",
+    },
+    {
+      topico: "Pegadinha Cebraspe",
+      subassunto: "Viaturas em serviço de urgência (art. 29, VII)",
+      dificuldade: 5,
+      raciocinio: "O começo do item repete o art. 29, VII. Ler o final com a alínea d na cabeça.",
+      enunciado:
+        "Item no estilo Cebraspe: “Os veículos de polícia, quando em serviço de urgência e com alarme sonoro e iluminação intermitente acionados, gozam de prioridade no trânsito e de livre circulação, estacionamento e parada, e a prioridade de passagem na via e no cruzamento dispensa a observância das demais normas do Código.” Esse item está",
+      alternativas: [
+        "certo, pois em urgência a viatura fica livre das outras regras do CTB",
+        "errado, pois a viatura de polícia não tem livre estacionamento e parada",
+        "errado, pois a prioridade no trânsito vale só para ambulância e bombeiro",
+        "errado, pois a passagem exige velocidade reduzida e as demais normas",
+        "errado, pois a livre circulação vale só no policiamento ostensivo",
+      ],
+      correta: 3,
+      explicacao:
+        "O começo está certo: em serviço de urgência, a viatura tem prioridade, livre circulação, estacionamento e parada. O final está errado: pela alínea d, a prioridade de passagem deve se dar com velocidade reduzida, com os devidos cuidados de segurança e obedecidas as demais normas do Código.",
+      explicacaoErradas:
+        "“livre das outras regras” é justamente o erro do item. Estacionamento e parada livres estão no próprio inciso VII. A lista inclui polícia, fiscalização e operação de trânsito, socorro de incêndio e salvamento e ambulâncias. A livre circulação vale na urgência, no policiamento ostensivo e na preservação da ordem pública.",
+      pegadinha: "Começo certo, final errado: a prioridade não dispensa as demais normas do CTB.",
+      conhecimento: "Prioridade não é carta branca: a viatura passa primeiro, mas devagar e com cuidado.",
+    },
+    {
+      topico: "Pegadinha Cebraspe",
+      subassunto: "Faróis de dia na pista simples (art. 40, § 2º)",
+      dificuldade: 5,
+      raciocinio: "Procurar a palavra que falta: uma simples negação muda o sentido do § 2º.",
+      enunciado:
+        "Item no estilo Cebraspe: “Os veículos que dispuserem de luzes de rodagem diurna deverão manter acesos os faróis nas rodovias de pista simples situadas fora dos perímetros urbanos, mesmo durante o dia.” Esse item está",
+      alternativas: [
+        "errado, pois a regra é para quem não tem luz de rodagem diurna",
+        "certo, pois reproduz o § 2º do art. 40, sem nenhuma palavra trocada",
+        "errado, pois a regra vale também nas rodovias de pista dupla",
+        "errado, pois a regra vale também dentro dos perímetros urbanos",
+        "errado, pois o farol aceso de dia só é exigido dentro de túneis",
+      ],
+      correta: 0,
+      explicacao:
+        "O § 2º do art. 40 fala dos veículos que não dispuserem de luzes de rodagem diurna. Quem tem essas luzes já fica visível de dia; quem não tem precisa ligar os faróis na rodovia de pista simples fora da cidade.",
+      explicacaoErradas:
+        "“sem nenhuma palavra trocada” ignora o “não” que sumiu. O parágrafo fala só de pista simples e fora dos perímetros urbanos. De dia, o farol baixo também é exigido sob chuva, neblina ou cerração, e não só em túneis (art. 40, I, b).",
+      pegadinha: "Palavra trocada: tirar o “não” de “que não dispuserem” inverte a regra.",
+      conhecimento: "Luz de rodagem diurna (DRL) é a luz que acende sozinha de dia, na frente do carro.",
+    },
   ],
 };
