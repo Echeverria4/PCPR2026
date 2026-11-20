@@ -51,4 +51,15 @@ export const DADOS: DadosCursoCompleto = {
   redacao: () => import("./redacao/RedacaoPrf"),
   mapas: () => import("./mapas/MapasPrf"),
   livro: () => import("./livro/LivroCtb"),
+  modulos: [
+    {
+      id: "infracoes",
+      grupo: "transito",
+      emoji: "🚨",
+      titulo: "Infrações: de gravíssima a leve",
+      descricao: "Todas as infrações do CTB (arts. 161 a 255) por natureza, com o artigo, a multa, os pontos e as normas que completam.",
+      curto: "as infrações",
+      carregar: () => import("./infracoes/ModuloInfracoes"),
+    },
+  ],
 };

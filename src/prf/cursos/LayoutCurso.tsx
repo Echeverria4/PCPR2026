@@ -1,4 +1,4 @@
-import { lazy, Suspense, type ReactNode } from "react";
+import { lazy, Suspense, useEffect, useRef, type ReactNode } from "react";
 import { alternarCaderno, usePainelCaderno } from "../caderno/painel";
 import { ChipCronometro } from "../LayoutPrf";
 import { Emoji, TextoEmoji } from "../../icones/Emoji";
@@ -46,9 +46,25 @@ export default function LayoutCurso({
 }: LayoutCursoProps) {
   const caderno = usePainelCaderno();
   const irAoInicio = () => (mostrarVoltar && onVoltar ? onVoltar() : onTrocarAba(abas[0].id));
+  const topo = useRef<HTMLDivElement>(null);
+  // A barra fixa muda de altura com a largura (no celular passa de 170px). O scroll-margin-top dos artigos do Livro e
+  // dos itens de infração usa esta medida, para o começo do texto não ficar escondido embaixo dela.
+  useEffect(() => {
+    const el = topo.current;
+    if (!el || typeof ResizeObserver === "undefined") return;
+    const raiz = document.documentElement.style;
+    const medir = () => raiz.setProperty("--topo-fixo", `${Math.round(el.getBoundingClientRect().height)}px`);
+    medir();
+    const observador = new ResizeObserver(medir);
+    observador.observe(el);
+    return () => {
+      observador.disconnect();
+      raiz.removeProperty("--topo-fixo");
+    };
+  }, []);
   return (
     <div className="app-shell">
-      <div className="topo-fixo">
+      <div className="topo-fixo" ref={topo}>
         <header className="topbar">
           <div className="topbar-titulo" onClick={irAoInicio}>
             <img src={brasao} alt={brasaoAlt} className="brasao" />

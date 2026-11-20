@@ -4,7 +4,7 @@ import Result from "../../../components/Result";
 import type { CursoId } from "../../../data/cursos";
 import { computeStats, focoRecomendado } from "../../../lib/storage";
 import type { Question, QuizMode, QuizSessionResult } from "../../../lib/types";
-import type { ExtrasAula, TelaAulas } from "../../aulas/AulasCurso";
+import type { ExtrasAula, ModuloAulas, TelaAulas } from "../../aulas/AulasCurso";
 import { gruposAtuais } from "../../aulas/catalogo";
 import { abrirCaderno } from "../../caderno/painel";
 import CanetaPrf from "../../caneta/CanetaPrf";
@@ -127,6 +127,13 @@ export default function CursoCompleto({
   const [telaLivro, setTelaLivro] = useState<PropsLivro["tela"]>({ tipo: "inicio" });
   // O Livro do CTB também: só no curso que traz, e o texto da lei (uns 400 KB) só baixa ao abrir a aba.
   const Livro = useMemo(() => (dados.livro ? lazy(dados.livro) : null), [dados.livro]);
+  // Quem abre o Livro de dentro de um módulo das aulas ganha um botão para voltar a ele (o texto é o nome curto).
+  const [retornoLivro, setRetornoLivro] = useState<string | null>(null);
+  // Módulos extras das matérias, como o das infrações de trânsito: o código de cada um só baixa ao abrir.
+  const modulosCarregados = useMemo(
+    () => (dados.modulos ?? []).map((m) => ({ m, Comp: lazy(m.carregar) })),
+    [dados.modulos],
+  );
   const abas = useMemo(
     () => [
       ...ABAS,
@@ -326,6 +333,7 @@ export default function CursoCompleto({
   }
 
   function trocarAba(aba: AbaCurso) {
+    setRetornoLivro(null);
     // Tocar de novo na aba das aulas volta para a lista das matérias; na da semana, para a semana atual.
     if (aba === "aulas" && view === "aulas") setTelaAulas({});
     if (aba === "semana" && view === "semana") setSemanaAberta(null);
@@ -376,6 +384,28 @@ export default function CursoCompleto({
     fimSemQuestoes: "Parte concluída.",
   };
 
+  const modulosAulas: ModuloAulas[] = modulosCarregados.map(({ m, Comp }) => ({
+    id: m.id,
+    grupo: m.grupo,
+    emoji: m.emoji,
+    titulo: m.titulo,
+    descricao: m.descricao,
+    render: (voltarDoModulo) => (
+      <Suspense fallback={<div className="vazio">Carregando o módulo…</div>}>
+        <Comp
+          onVoltar={voltarDoModulo}
+          onLivro={(t) => {
+            if (!Livro) return;
+            setTelaLivro(t);
+            setRetornoLivro(m.curto);
+            setView("livro");
+          }}
+          onAula={(aula) => abrirAula({ grupo: m.grupo, aula })}
+        />
+      </Suspense>
+    ),
+  }));
+
   const noQuiz = view === "quiz" || view === "result";
   return (
     <LayoutCurso
@@ -405,7 +435,7 @@ export default function CursoCompleto({
       )}
       {view === "aulas" && (
         <Suspense fallback={<div className="vazio">Carregando as aulas…</div>}>
-          <AulasCurso tela={telaAulas} onTela={setTelaAulas} extras={extras} />
+          <AulasCurso tela={telaAulas} onTela={setTelaAulas} extras={extras} modulos={modulosAulas} />
         </Suspense>
       )}
       {view === "semana" && (
@@ -438,6 +468,17 @@ export default function CursoCompleto({
         <Suspense fallback={<div className="vazio">Carregando os mapas…</div>}>
           <Mapas tela={telaMapas} onTela={setTelaMapas} grupos={grupos} onAbrirAula={abrirAula} />
         </Suspense>
+      )}
+      {view === "livro" && Livro && retornoLivro && (
+        <button
+          className="prf-livro-retorno"
+          onClick={() => {
+            setRetornoLivro(null);
+            setView("aulas");
+          }}
+        >
+          ← Voltar para {retornoLivro}
+        </button>
       )}
       {view === "livro" && Livro && (
         <Suspense fallback={<div className="vazio">Carregando o Livro do CTB…</div>}>

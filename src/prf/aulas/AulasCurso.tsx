@@ -1,5 +1,5 @@
 import { Emoji, TextoEmoji } from "../../icones/Emoji";
-import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import BotaoCaderno from "../caderno/BotaoCaderno";
 import { abrirCaderno, usePainelCaderno } from "../caderno/painel";
@@ -46,6 +46,20 @@ import FormulasAula from "./resumos/FormulasAula";
 export interface TelaAulas {
   grupo?: string;
   aula?: string;
+  /** Módulo extra aberto dentro da matéria (só no curso que tem módulos). */
+  modulo?: string;
+}
+
+/** Módulo extra de uma matéria, que aparece em cima da lista de aulas dela. */
+export interface ModuloAulas {
+  id: string;
+  /** Matéria em que o módulo aparece. */
+  grupo: string;
+  emoji: string;
+  titulo: string;
+  descricao: string;
+  /** A tela do módulo; `voltar` leva de volta à lista de aulas da matéria. */
+  render: (voltar: () => void) => ReactNode;
 }
 
 /** O que só o curso com banco de questões tem: o resumo e as questões no fim da aula. Sem isto, a aula é PDF e vídeo. */
@@ -68,6 +82,7 @@ interface AulasCursoProps {
   tela: TelaAulas;
   onTela: (tela: TelaAulas) => void;
   extras?: ExtrasAula;
+  modulos?: ModuloAulas[];
 }
 
 const LIMITE_AVISO = 4 * 60 * 60 * 1000;
@@ -109,14 +124,16 @@ const TEXTO_RETOMAR: Record<Motivo, { olho: string; botao: string }> = {
 };
 
 /** A aba Aulas de qualquer curso: a lista vem do catálogo do curso aberto. */
-export default function AulasCurso({ tela, onTela, extras }: AulasCursoProps) {
+export default function AulasCurso({ tela, onTela, extras, modulos }: AulasCursoProps) {
   const estudo = useEstudo();
   const grupo = gruposAtuais().find((g) => g.id === tela.grupo);
   const aula = grupo?.aulas.find((a) => a.id === tela.aula);
+  const daMateria = grupo ? (modulos ?? []).filter((m) => m.grupo === grupo.id) : [];
+  const modulo = tela.modulo ? daMateria.find((m) => m.id === tela.modulo) : undefined;
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
-  }, [tela.grupo, tela.aula]);
+  }, [tela.grupo, tela.aula, tela.modulo]);
 
   return (
     <div className="prf-aulas">
@@ -129,8 +146,10 @@ export default function AulasCurso({ tela, onTela, extras }: AulasCursoProps) {
           onTela={onTela}
           extras={extras}
         />
+      ) : grupo && modulo ? (
+        modulo.render(() => onTela({ grupo: grupo.id }))
       ) : grupo ? (
-        <ListaAulas grupo={grupo} estudo={estudo} onTela={onTela} extras={extras} />
+        <ListaAulas grupo={grupo} estudo={estudo} onTela={onTela} extras={extras} modulos={daMateria} />
       ) : (
         <Inicio estudo={estudo} onTela={onTela} extras={extras} />
       )}
@@ -492,7 +511,13 @@ function CartaoGrupo({ grupo, vistos, tempo, onAbrir }: CartaoGrupoProps) {
 
 /* ---------- Matéria: trilha das aulas ---------- */
 
-function ListaAulas({ grupo, estudo, onTela, extras }: ListaProps & { grupo: GrupoCurso }) {
+function ListaAulas({
+  grupo,
+  estudo,
+  onTela,
+  extras,
+  modulos,
+}: ListaProps & { grupo: GrupoCurso; modulos: ModuloAulas[] }) {
   const tot = useMemo(() => totaisEstudo(estudo, Date.now()), [estudo]);
   const vistos = useMemo(() => new Set(estudo.vistos), [estudo.vistos]);
   const { feitos, total } = videosDoGrupo(grupo, vistos);
@@ -542,6 +567,22 @@ function ListaAulas({ grupo, estudo, onTela, extras }: ListaProps & { grupo: Gru
           </span>
         )}
       </header>
+
+      {modulos.map((m) => (
+        <button key={m.id} className="prf-modulo-card" onClick={() => onTela({ grupo: grupo.id, modulo: m.id })}>
+          <span className="prf-modulo-emoji" aria-hidden="true">
+            <Emoji e={m.emoji} />
+          </span>
+          <span className="prf-modulo-texto">
+            <span className="prf-modulo-olho">Módulo</span>
+            <span className="prf-modulo-titulo">{m.titulo}</span>
+            <span className="prf-modulo-desc">{m.descricao}</span>
+          </span>
+          <span className="prf-modulo-seta" aria-hidden="true">
+            →
+          </span>
+        </button>
+      ))}
 
       <ol className="prf-aulas-lista">
         {grupo.aulas.map((a) => {

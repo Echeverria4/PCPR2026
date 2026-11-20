@@ -40,6 +40,28 @@ export interface DadosCursoCompleto {
   mapas?: () => Promise<{ default: ComponentType<PropsMapas> }>;
   /** Aba do Livro do CTB (lei inteira com mapa por capítulo), carregada só quando aberta. */
   livro?: () => Promise<{ default: ComponentType<PropsLivro> }>;
+  /** Módulos extras dentro de uma matéria da aba Aulas, carregados só quando abertos. */
+  modulos?: ModuloCurso[];
+}
+
+export interface PropsModulo {
+  /** Volta para a lista de aulas da matéria. */
+  onVoltar: () => void;
+  /** Abre o Livro do CTB; a aba mostra um botão para voltar ao módulo. */
+  onLivro: (t: TelaLivro) => void;
+  onAula: (aula: string) => void;
+}
+
+export interface ModuloCurso {
+  id: string;
+  /** Id do grupo de aulas (matéria) em que o módulo aparece. */
+  grupo: string;
+  emoji: string;
+  titulo: string;
+  descricao: string;
+  /** Como o botão de volta do Livro chama o módulo ("Voltar para as infrações"). */
+  curto: string;
+  carregar: () => Promise<{ default: ComponentType<PropsModulo> }>;
 }
 
 export interface PropsRedacao {

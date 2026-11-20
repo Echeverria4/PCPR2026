@@ -12454,7 +12454,8 @@ img.emoji {
   margin: 0;
   padding: 12px 0;
   border-bottom: 1px solid var(--borda);
-  scroll-margin-top: 130px;
+  /* Altura da barra fixa, medida no LayoutCurso; sem ela, os 130px de antes. */
+  scroll-margin-top: calc(var(--topo-fixo, 118px) + 12px);
   overflow-wrap: anywhere;
 }
 .prf-livro-art:last-child,
@@ -12492,7 +12493,7 @@ img.emoji {
   .prf-livro-ali { padding-left: 20px; }
   .prf-livro-item { padding-left: 30px; }
   .prf-livro-art,
-  .prf-livro-termo { scroll-margin-top: 110px; }
+  .prf-livro-termo { scroll-margin-top: calc(var(--topo-fixo, 98px) + 12px); }
 }
 
 /* Na Central o título da seção já está no topo. */
@@ -12858,4 +12859,241 @@ button.prf-snt-cab:focus-visible { outline: 3px solid var(--poster-laranja); out
   .cm-botao {
     animation: none;
   }
+}
+
+/* ---------- Módulo extra dentro de uma matéria (aba Aulas) ---------- */
+.prf-modulo-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--borda-forte);
+  border-left: 4px solid var(--cor-materia, var(--ouro));
+  border-radius: var(--aulas-raio, var(--raio));
+  background: var(--bg-card);
+  color: var(--texto);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, transform 0.08s;
+}
+.prf-modulo-card:hover { border-color: var(--ouro); border-left-color: var(--cor-materia, var(--ouro)); background: var(--bg-elevado); }
+.prf-modulo-card:active { transform: translateY(1px); }
+.prf-modulo-card:focus-visible { outline: 2px solid var(--ouro-forte); outline-offset: 2px; }
+.prf-modulo-emoji { flex: none; font-size: 1.9rem; line-height: 1; }
+.prf-modulo-texto { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.prf-modulo-olho { font-family: var(--fonte-cond); font-size: 0.75rem; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; color: var(--texto-fraco); }
+.prf-modulo-titulo { font-family: var(--fonte-titulo); font-size: 1.12rem; font-weight: 700; line-height: 1.3; color: var(--texto); }
+.prf-modulo-desc { font-size: 0.9rem; line-height: 1.45; color: var(--texto-fraco); }
+.prf-modulo-seta { flex: none; font-size: 1.3rem; color: var(--ouro-forte); }
+
+/* Botão para voltar ao módulo quando o Livro foi aberto de dentro dele: fica à vista mesmo lá embaixo no artigo. */
+.prf-livro-retorno {
+  position: fixed;
+  left: 16px;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  z-index: 44;
+  max-width: calc(100vw - 32px);
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 1px solid var(--ouro);
+  border-radius: 999px;
+  background: var(--bg-elevado);
+  color: var(--texto);
+  font-family: var(--fonte-cond);
+  font-size: 0.95rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+.prf-livro-retorno:hover { background: #24466e; }
+.prf-livro-retorno:focus-visible { outline: 2px solid var(--ouro-forte); outline-offset: 2px; }
+.prf-livro-retorno + * { margin-bottom: 76px; }
+
+/* ---------- Módulo: infrações do CTB por natureza ---------- */
+/* Natureza é uma escala ordenada: um tom só, do vermelho forte (gravíssima) ao rosa claro (leve). */
+.prf-inf {
+  --inf-gravissima: #f0555b;
+  --inf-grave: #f58b88;
+  --inf-media: #fdb5b2;
+  --inf-leve: #ffdad7;
+}
+.prf-inf-ponto { display: inline-block; flex: none; width: 10px; height: 10px; border-radius: 50%; background: var(--inf-cor, var(--texto-fraco)); }
+
+.prf-inf-cabeca { display: flex; align-items: flex-start; gap: 14px; }
+.prf-inf-cabeca-icone { flex: none; font-size: 2.5rem; line-height: 1; }
+.prf-inf-cabeca-texto { min-width: 0; }
+.prf-inf-olho { display: flex; align-items: center; gap: 6px; margin: 0 0 4px; font-family: var(--fonte-cond); font-size: 0.78rem; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; color: var(--texto-fraco); }
+.prf-inf-titulo { margin: 0; font-family: var(--fonte-titulo); font-size: 1.5rem; line-height: 1.2; color: var(--texto); }
+.prf-inf-sub { margin: 6px 0 0; font-size: 0.98rem; line-height: 1.5; color: var(--texto-fraco); }
+.prf-inf-lista-cabeca { display: flex; flex-direction: column; }
+.prf-inf-com-cor { padding-left: 12px; border-left: 4px solid var(--inf-cor); }
+
+.prf-inf-naturezas,
+.prf-inf-atalhos,
+.prf-inf-opcoes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.prf-inf-nat,
+.prf-inf-todas,
+.prf-inf-atalho {
+  border: 1px solid var(--borda);
+  border-radius: var(--aulas-raio, var(--raio));
+  background: var(--bg-card);
+  color: var(--texto);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, transform 0.08s;
+}
+.prf-inf-nat:hover,
+.prf-inf-todas:hover,
+.prf-inf-atalho:hover { border-color: var(--ouro); background: var(--bg-elevado); }
+.prf-inf-nat:active,
+.prf-inf-todas:active,
+.prf-inf-atalho:active { transform: translateY(1px); }
+.prf-inf button:focus-visible { outline: 2px solid var(--ouro-forte); outline-offset: 2px; }
+.prf-inf-nat { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; padding: 12px 14px 14px; border-top: 5px solid var(--inf-cor); }
+.prf-inf-nat:hover { border-top-color: var(--inf-cor); }
+.prf-inf-nat-nome { margin-bottom: 4px; font-family: var(--fonte-cond); font-size: 1.05rem; font-weight: 900; letter-spacing: 0.04em; text-transform: uppercase; }
+.prf-inf-nat-num { font-size: 0.95rem; font-variant-numeric: tabular-nums; }
+.prf-inf-nat-qtd { margin-top: 6px; font-size: 0.85rem; color: var(--texto-fraco); }
+.prf-inf-todas { display: flex; align-items: center; gap: 12px; width: 100%; padding: 14px 16px; border-color: var(--borda-forte); }
+.prf-inf-todas-icone { flex: none; font-size: 1.6rem; line-height: 1; }
+.prf-inf-todas-texto { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.prf-inf-todas-texto strong { font-size: 1.02rem; }
+.prf-inf-todas-texto span { font-size: 0.88rem; line-height: 1.4; color: var(--texto-fraco); }
+.prf-inf-seta-grande { flex: none; font-size: 1.3rem; color: var(--ouro-forte); }
+.prf-inf-atalho { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; padding: 14px; }
+.prf-inf-atalho-icone { margin-bottom: 4px; font-size: 1.7rem; line-height: 1; }
+.prf-inf-atalho-titulo { font-size: 0.98rem; font-weight: 700; line-height: 1.3; }
+.prf-inf-atalho-texto { font-size: 0.85rem; line-height: 1.4; color: var(--texto-fraco); }
+
+/* Busca e filtros */
+.prf-inf-busca-linha { display: flex; flex-direction: column; gap: 10px; }
+.prf-inf-busca {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 14px;
+  border: 1px solid var(--borda-forte);
+  border-radius: var(--raio);
+  background: var(--bg-card);
+  color: var(--texto);
+  font: inherit;
+  font-size: 1rem;
+}
+.prf-inf-busca::placeholder { color: var(--texto-fraco); }
+.prf-inf-busca:focus-visible { outline: 2px solid var(--ouro-forte); outline-offset: 1px; }
+.prf-inf-filtros { display: flex; flex-wrap: wrap; gap: 8px; }
+.prf-inf-filtro { min-height: 38px; padding: 6px 13px; border: 1px solid var(--borda-forte); border-radius: 999px; background: transparent; color: var(--texto); font: inherit; font-size: 0.88rem; cursor: pointer; }
+.prf-inf-filtro:hover { border-color: var(--ouro); }
+.prf-inf-filtro[aria-pressed="true"] { border-color: var(--ouro); background: var(--bg-elevado); box-shadow: inset 0 0 0 1px var(--ouro); font-weight: 700; }
+.prf-inf-contagem { margin: 0; font-size: 0.9rem; color: var(--texto-fraco); }
+.prf-inf-vazio { padding: 16px; border: 1px dashed var(--borda-forte); border-radius: var(--raio); color: var(--texto-fraco); }
+.prf-inf-vazio p { margin: 0 0 12px; line-height: 1.5; }
+.prf-inf-vazio-botoes { display: flex; flex-wrap: wrap; gap: 10px; }
+
+/* Artigo e itens */
+.prf-inf-art { display: flex; flex-direction: column; gap: 8px; }
+.prf-inf-art-cabeca { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; }
+.prf-inf-art-num { margin: 0; font-family: var(--fonte-cond); font-size: 1.08rem; font-weight: 900; letter-spacing: 0.05em; text-transform: uppercase; color: var(--texto); }
+.prf-inf-art-livro { display: inline-flex; align-items: center; gap: 6px; margin-left: auto; min-height: 36px; padding: 4px 12px; border: 1px solid var(--borda); border-radius: 999px; background: transparent; color: var(--texto-fraco); font: inherit; font-size: 0.85rem; cursor: pointer; }
+.prf-inf-art-livro:hover { border-color: var(--ouro); color: var(--texto); }
+.prf-inf-art-caput { flex: 1 1 100%; margin: 0; font-size: 0.98rem; line-height: 1.5; color: var(--texto); }
+.prf-inf-itens { display: flex; flex-direction: column; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.prf-inf-item { border: 1px solid var(--borda); border-left: 4px solid var(--inf-cor); border-radius: var(--raio); background: var(--bg-card); scroll-margin-top: calc(var(--topo-fixo, 118px) + 12px); }
+.prf-inf-aberto { border-color: var(--borda-forte); border-left-color: var(--inf-cor); }
+.prf-inf-item-botao { display: flex; align-items: flex-start; gap: 10px; width: 100%; padding: 12px; border: 0; background: transparent; color: var(--texto); font: inherit; text-align: left; cursor: pointer; }
+.prf-inf .prf-inf-item-botao:focus-visible { outline-offset: -2px; }
+.prf-inf-inc { flex: none; min-width: 2.4em; padding-top: 1px; font-family: var(--fonte-cond); font-size: 0.95rem; font-weight: 900; color: var(--texto-fraco); }
+.prf-inf-inc:empty { display: none; }
+.prf-inf-corpo { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+.prf-inf-texto { font-size: 1rem; line-height: 1.5; }
+.prf-inf-extra { font-size: 0.92rem; line-height: 1.45; font-style: italic; }
+.prf-inf-alineas { display: flex; flex-direction: column; gap: 2px; font-size: 0.92rem; line-height: 1.45; color: var(--texto-fraco); }
+.prf-inf-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
+.prf-inf-chip { display: inline-flex; align-items: center; gap: 6px; padding: 3px 9px; border: 1px solid var(--borda); border-radius: 999px; background: rgba(255, 255, 255, 0.03); color: var(--texto); font-size: 0.82rem; line-height: 1.3; font-variant-numeric: tabular-nums; }
+.prf-inf-chip-nat,
+.prf-inf-chip-forte { border-color: var(--borda-forte); font-weight: 700; }
+.prf-inf-seta { flex: none; padding-top: 2px; color: var(--texto-fraco); }
+
+.prf-inf-detalhe { display: flex; flex-direction: column; gap: 12px; margin: 0 12px; padding: 12px 0 14px; border-top: 1px solid var(--borda); }
+.prf-inf-lei { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 6px 12px; margin: 0; font-size: 0.95rem; line-height: 1.5; }
+.prf-inf-lei dt { padding-top: 2px; font-family: var(--fonte-cond); font-size: 0.8rem; font-weight: 900; letter-spacing: 0.05em; text-transform: uppercase; color: var(--texto-fraco); }
+.prf-inf-lei dd { margin: 0; color: var(--texto); }
+.prf-inf-tabela-peso { margin: 6px 0 0; padding-left: 18px; font-size: 0.9rem; }
+.prf-inf-notas { display: flex; flex-direction: column; gap: 6px; margin: 0; padding-left: 20px; font-size: 0.95rem; line-height: 1.5; color: var(--texto); }
+.prf-inf-ligas { display: flex; flex-direction: column; gap: 8px; }
+.prf-inf-ligas-titulo { margin: 0; font-family: var(--fonte-cond); font-size: 0.85rem; font-weight: 900; letter-spacing: 0.06em; text-transform: uppercase; color: var(--texto-fraco); }
+.prf-inf-liga { display: flex; flex-direction: column; gap: 4px; padding: 10px 12px; border: 1px solid var(--borda); border-left: 3px solid var(--aco); border-radius: var(--raio-peq); background: var(--bg); }
+.prf-inf-liga-tipo { font-family: var(--fonte-cond); font-size: 0.75rem; font-weight: 900; letter-spacing: 0.06em; text-transform: uppercase; color: var(--texto-fraco); }
+.prf-inf-liga-titulo { font-size: 0.98rem; line-height: 1.35; color: var(--texto); }
+.prf-inf-liga-texto { margin: 0; font-size: 0.92rem; line-height: 1.5; color: var(--texto); }
+.prf-inf-liga-botao { display: inline-flex; align-items: center; gap: 6px; align-self: flex-start; margin-top: 4px; min-height: 38px; padding: 6px 13px; border: 1px solid var(--borda-forte); border-radius: 999px; background: var(--bg-elevado); color: var(--texto); font: inherit; font-size: 0.88rem; cursor: pointer; }
+.prf-inf-liga-botao:hover { border-color: var(--ouro); }
+.prf-inf-ler { display: inline-flex; align-items: center; gap: 8px; align-self: flex-start; }
+.prf-inf-pars { padding: 6px 12px; border: 1px dashed var(--borda); border-radius: var(--raio-peq); font-size: 0.92rem; line-height: 1.5; color: var(--texto); }
+.prf-inf-pars summary { min-height: 32px; padding: 6px 0; font-family: var(--fonte-cond); font-size: 0.85rem; font-weight: 900; letter-spacing: 0.05em; text-transform: uppercase; color: var(--texto-fraco); cursor: pointer; }
+.prf-inf-pars p { margin: 6px 0 8px; }
+
+/* Como a conta funciona, casos especiais e leis que completam */
+.prf-inf-bloco { display: flex; flex-direction: column; gap: 10px; padding: 16px; border: 1px solid var(--borda); border-radius: var(--aulas-raio, var(--raio)); background: var(--bg-card); }
+.prf-inf-bloco > p { margin: 0; font-size: 0.98rem; line-height: 1.55; color: var(--texto); }
+.prf-inf-bloco > .prf-inf-fonte,
+.prf-inf-bloco > .prf-inf-nota { font-size: 0.9rem; color: var(--texto-fraco); }
+.prf-inf-bloco-titulo { margin: 0; font-family: var(--fonte-titulo); font-size: 1.12rem; line-height: 1.3; color: var(--texto); }
+.prf-inf-bloco > .botao { display: inline-flex; align-items: center; gap: 8px; align-self: flex-start; }
+.prf-inf-tabela { width: 100%; border-collapse: collapse; font-size: 0.98rem; font-variant-numeric: tabular-nums; }
+.prf-inf-tabela th,
+.prf-inf-tabela td { padding: 8px 10px; border-bottom: 1px solid var(--borda); text-align: left; }
+.prf-inf-tabela thead th { font-family: var(--fonte-cond); font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--texto-fraco); }
+.prf-inf-tabela td,
+.prf-inf-tabela thead th + th { text-align: right; }
+.prf-inf-tabela tbody th { font-weight: 700; color: var(--texto); }
+.prf-inf-tabela tbody th .prf-inf-ponto { margin-right: 6px; }
+.prf-inf-especiais,
+.prf-inf-ligas-lista { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; }
+.prf-inf-especial { display: flex; flex-direction: column; gap: 8px; padding: 14px 16px; border: 1px solid var(--borda); border-radius: var(--aulas-raio, var(--raio)); background: var(--bg-card); }
+.prf-inf-especial-titulo { margin: 0; font-size: 1rem; font-weight: 700; line-height: 1.35; color: var(--texto); }
+.prf-inf-especial p { margin: 0; font-size: 0.95rem; line-height: 1.55; color: var(--texto); }
+.prf-inf-especial .prf-inf-liga-botao { margin-top: auto; }
+.prf-inf-liga-com-uso { display: flex; flex-direction: column; gap: 4px; }
+.prf-inf-liga-com-uso .prf-inf-liga { flex: 1 1 auto; }
+.prf-inf-uso { margin: 0; padding: 0 4px; font-size: 0.85rem; line-height: 1.4; color: var(--texto-fraco); }
+
+/* Teste rápido */
+.prf-inf-progresso { display: flex; align-items: center; gap: 10px; margin-top: 10px; font-size: 0.88rem; color: var(--texto-fraco); font-variant-numeric: tabular-nums; }
+.prf-inf-progresso .prf-medidor { flex: 1 1 auto; }
+.prf-inf-progresso > span:last-child { flex: none; white-space: nowrap; }
+.prf-inf-teste-card { padding: 16px; border: 1px solid var(--borda-forte); border-radius: var(--aulas-raio, var(--raio)); background: var(--bg-card); }
+.prf-inf-teste-caput { margin: 0 0 8px; font-size: 0.92rem; line-height: 1.5; color: var(--texto-fraco); }
+.prf-inf-teste-texto { margin: 0; font-size: 1.12rem; line-height: 1.55; color: var(--texto); }
+.prf-inf-teste-alineas { margin: 8px 0 0; padding-left: 18px; font-size: 0.95rem; line-height: 1.5; }
+.prf-inf-opcao { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px; padding: 10px; border: 1px solid var(--borda-forte); border-radius: var(--raio); background: var(--bg-card); color: var(--texto); font-family: var(--fonte-cond); font-size: 1rem; font-weight: 900; letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer; }
+.prf-inf-opcao:hover:not(:disabled) { border-color: var(--ouro); background: var(--bg-elevado); }
+.prf-inf-opcao:disabled { cursor: default; opacity: 0.5; }
+.prf-inf-opcao.prf-inf-certa { opacity: 1; border-color: var(--verde); box-shadow: inset 0 0 0 1px var(--verde); }
+.prf-inf-opcao.prf-inf-errada { opacity: 1; border-color: var(--vermelho); box-shadow: inset 0 0 0 1px var(--vermelho); }
+.prf-inf-retorno { display: flex; flex-direction: column; gap: 8px; padding: 14px 16px; border: 1px solid var(--borda); border-left: 4px solid var(--verde); border-radius: var(--raio); background: var(--bg-card); }
+.prf-inf-retorno-erro { border-left-color: var(--vermelho); }
+.prf-inf-retorno p { margin: 0; font-size: 0.95rem; line-height: 1.5; color: var(--texto); }
+.prf-inf-retorno .botao { align-self: flex-start; }
+.prf-inf-erros { display: flex; flex-direction: column; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.prf-inf-erros li { display: flex; flex-direction: column; gap: 4px; padding: 10px 12px; border: 1px solid var(--borda); border-left: 4px solid var(--inf-cor); border-radius: var(--raio); background: var(--bg-card); font-size: 0.95rem; line-height: 1.5; }
+
+@media (max-width: 640px) {
+  .prf-inf-titulo { font-size: 1.3rem; }
+  .prf-inf-lei { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .prf-inf-lei dd { margin-bottom: 8px; }
+  .prf-inf-art-livro { margin-left: 0; }
+}
+
+@media (min-width: 900px) {
+  .prf-inf-naturezas,
+  .prf-inf-atalhos,
+  .prf-inf-opcoes { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .prf-inf-especiais,
+  .prf-inf-ligas-lista { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
