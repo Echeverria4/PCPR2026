@@ -5,6 +5,7 @@ import { alternarLido, lerProgresso, salvarModoMemoria, salvarNotas, type Progre
 import { RESOLUCOES, type ResolucaoContran } from "./resolucoes";
 import type { CapituloCtb, ItemCapitulo, ParteArtigo, TelaLivro } from "./tipos";
 import { Arvore, Barra, Estrada, Nota, diaCurto, plural } from "../mapas/Poster";
+import DiagramaSnt, { MAPAS_COM_DIAGRAMA_SNT } from "../mapas/DiagramaSnt";
 import type { MapaAula } from "../mapas/tipos";
 import { GRUPOS } from "../grupos";
 import { nomeAula } from "../../../../aulas/rotulos";
@@ -704,6 +705,10 @@ function PosterLivro({ mapa, kicker, kickerEmoji, memoria, onModo }: PosterLivro
         </header>
 
         <Arvore mapa={mapa} memoria={memoria} abertos={abertos} onAlternar={alternar} />
+
+        {MAPAS_COM_DIAGRAMA_SNT.has(mapa.aula) && (
+          <DiagramaSnt memoria={memoria} abertos={abertos} onAlternar={alternar} />
+        )}
 
         <div className="prf-mapa-notas">
           <Nota

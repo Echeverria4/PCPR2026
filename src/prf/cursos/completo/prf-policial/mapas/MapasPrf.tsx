@@ -7,6 +7,7 @@ import FormulasAula from "../../../../aulas/resumos/FormulasAula";
 import { FORMULAS_FISICA } from "../fisica/formulas";
 import { FORMULAS_RLM } from "../rlm/formulas";
 import { MAPAS } from "./dados";
+import DiagramaSnt, { MAPAS_COM_DIAGRAMA_SNT } from "./DiagramaSnt";
 import { Emoji, TextoEmoji } from "../../../../../icones/Emoji";
 import { alternarRevisado, lerProgresso, salvarModoMemoria, type ProgressoMapas } from "./progresso";
 import type { Formula } from "../../../../aulas/resumos/tipos";
@@ -316,6 +317,10 @@ function TelaMapa({ materia, posicao, memoria, revisadoEm, onMemoria, onRevisado
 
         {formulas && (
           <FormulasAula formulas={formulas} nivel={3} memoria={memoria} abertos={abertos} onAlternar={alternar} />
+        )}
+
+        {MAPAS_COM_DIAGRAMA_SNT.has(mapa.aula) && (
+          <DiagramaSnt memoria={memoria} abertos={abertos} onAlternar={alternar} />
         )}
 
         <div className="prf-mapa-notas">

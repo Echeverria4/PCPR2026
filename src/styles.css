@@ -12499,3 +12499,173 @@ img.emoji {
 @media (max-width: 640px) {
   .prf-livro-fatos > div { grid-template-columns: 1fr; gap: 0; }
 }
+
+/* ===== Diagrama dos órgãos do SNT em 3 níveis (mapa da transito-04 e capítulo II do Livro do CTB) ===== */
+.prf-mapa-poster .prf-snt {
+  container-type: inline-size;
+  margin: 18px 14px 0;
+  border: 2px solid var(--poster-marinho);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+}
+.prf-snt-topo {
+  padding: 12px 14px;
+  border-bottom: 4px solid var(--poster-amarelo);
+  background: var(--poster-marinho);
+  color: #fff;
+}
+.prf-snt-titulo { margin: 0; font-family: var(--fonte-cond); font-size: 1.15rem; font-weight: 800; line-height: 1.2; }
+.prf-snt-sub { margin: 3px 0 0; font-size: 0.85rem; opacity: 0.88; }
+.prf-snt-aviso {
+  margin: 0;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--poster-linha);
+  background: #fff7d6;
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+.prf-snt-nivel {
+  --snt-fundo: #dbe8f6;
+  --snt-cab: #1d4f91;
+  --snt-cab-tinta: #fff;
+  --snt-titulo: #1d4f91;
+  padding: 12px;
+  background: var(--snt-fundo);
+}
+.prf-snt-nivel + .prf-snt-nivel { border-top: 1px solid var(--poster-linha); }
+.prf-snt-nivel[data-nivel="estadual"] { --snt-fundo: #dcefdf; --snt-cab: #1e6b34; --snt-titulo: #1e6b34; }
+.prf-snt-nivel[data-nivel="municipal"] { --snt-fundo: #fbf0c8; --snt-cab: #f2c230; --snt-cab-tinta: #241a03; --snt-titulo: #6e5200; }
+.prf-snt-nivel[data-nivel="todos"] { --snt-fundo: #e6e9ee; --snt-cab: var(--poster-asfalto); --snt-titulo: var(--poster-asfalto); }
+.prf-snt-nivel-nome {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 8px;
+  margin: 0 0 10px;
+  color: var(--snt-titulo);
+  font-family: var(--fonte-cond);
+  font-size: 0.98rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.prf-snt-nivel-nome small { font-size: 0.82rem; font-weight: 600; letter-spacing: 0; text-transform: none; opacity: 0.85; }
+.prf-snt-orgaos { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.prf-snt-orgao {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(15, 42, 79, 0.14);
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(15, 42, 79, 0.08);
+}
+.prf-snt-cab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 44px;
+  margin: 0;
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 0;
+  background: var(--snt-cab);
+  color: var(--snt-cab-tinta);
+  font: inherit;
+  text-align: left;
+}
+button.prf-snt-cab { cursor: pointer; }
+button.prf-snt-cab:hover { filter: brightness(1.08); }
+button.prf-snt-cab:focus-visible { outline: 3px solid var(--poster-laranja); outline-offset: -3px; }
+.prf-snt-emoji { flex: none; font-size: 1.3rem; line-height: 1; }
+.prf-snt-sigla {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: var(--fonte-cond);
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  overflow-wrap: anywhere;
+}
+.prf-snt-pista { flex: none; font-size: 0.75rem; font-weight: 700; opacity: 0.9; }
+.prf-snt-corpo { display: grid; gap: 8px; padding: 10px 12px 12px; }
+.prf-snt-nome { margin: 0; color: #0b1f3a; font-size: 0.95rem; font-weight: 700; line-height: 1.3; }
+.prf-snt-lei {
+  margin: 0;
+  padding: 6px 8px;
+  border-left: 4px solid var(--snt-cab);
+  border-radius: 4px;
+  background: var(--poster-cinza);
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+.prf-snt-rotulo {
+  display: block;
+  margin-bottom: 2px;
+  color: #4a5568;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.prf-snt-faz { display: grid; gap: 4px; margin: 0; padding: 0; list-style: none; font-size: 0.88rem; line-height: 1.4; }
+.prf-snt-faz li { position: relative; padding-left: 16px; }
+.prf-snt-faz li::before { content: "▸"; position: absolute; left: 0; color: var(--poster-laranja); font-weight: 900; }
+.prf-snt strong {
+  padding: 0 1px;
+  font-weight: 800;
+  color: #0b1f3a;
+  background: linear-gradient(transparent 58%, rgba(255, 204, 41, 0.75) 58%);
+}
+.prf-snt-caminho-titulo {
+  margin: 12px 0 6px;
+  color: var(--poster-asfalto);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.prf-snt-caminho { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; font-size: 0.86rem; line-height: 1.35; }
+.prf-snt-caminho > li { position: relative; }
+.prf-snt-passo {
+  display: block;
+  padding: 6px 10px;
+  border: 1px solid var(--poster-linha);
+  border-radius: 10px;
+  background: #fff;
+  font-weight: 600;
+}
+.prf-snt-caminho > li + li { padding-top: 18px; }
+.prf-snt-caminho > li + li::before {
+  content: "↓";
+  position: absolute;
+  top: -2px;
+  left: 14px;
+  color: var(--poster-laranja);
+  font-weight: 900;
+}
+.prf-snt-ou { display: grid; gap: 6px; }
+.prf-snt-ou-sep { color: #4a5568; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; text-align: center; }
+.prf-snt-quem {
+  display: grid;
+  gap: 8px;
+  padding: 12px 14px 14px;
+  border-top: 4px solid var(--poster-amarelo);
+  background: #fff;
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+.prf-snt-quem p { margin: 0; }
+@container (min-width: 640px) {
+  .prf-snt-nivel { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 14px; align-items: start; }
+  .prf-snt-nivel-nome { flex-direction: column; gap: 2px; margin: 4px 0 0; }
+  .prf-snt-orgaos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .prf-snt-jari { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 10px; align-items: start; }
+  .prf-snt-jari .prf-snt-orgaos { grid-template-columns: 1fr; grid-row: 1 / span 2; }
+  .prf-snt-jari .prf-snt-caminho-titulo { margin-top: 0; }
+  .prf-snt-quem { grid-template-columns: 1fr 1fr; gap: 14px; }
+}
+@media (min-width: 900px) {
+  .prf-mapa-poster .prf-snt { margin: 22px 26px 0; }
+}
