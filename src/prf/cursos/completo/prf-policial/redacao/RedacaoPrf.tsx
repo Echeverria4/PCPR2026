@@ -16,6 +16,7 @@ import {
   PESO_ERROS,
 } from "./guia";
 import { ORDEM_TEMAS, TEMAS, TEMA_POR_N } from "./index";
+import { MATERIAL_DOSSIE, MATERIAL_MANUAL, type RedacaoMaterial } from "./material";
 import { OFICIAL } from "./oficial";
 import {
   atualizarTema,
@@ -122,6 +123,7 @@ export default function RedacaoPrf({ tela, onTela }: { tela: TelaRedacaoPrf; onT
 
   if (tela.tipo === "guia") return <GuiaRedacao progresso={progresso} onProgresso={setProgresso} onTela={onTela} />;
   if (tela.tipo === "oficial") return <OficialRedacao progresso={progresso} onProgresso={setProgresso} onTela={onTela} />;
+  if (tela.tipo === "modelos") return <LeituraModelos onTela={onTela} />;
   const tema = tela.tipo === "tema" ? TEMA_POR_N[tela.n] : undefined;
   if (tema) return <FluxoTema key={tema.n} tema={tema} progresso={progresso} onProgresso={setProgresso} onTela={onTela} />;
   return <InicioRedacao progresso={progresso} onTela={onTela} />;
@@ -219,6 +221,15 @@ function InicioRedacao({ progresso, onTela }: { progresso: ProgressoRedacao; onT
           <span className="pi-card-meta">
             <span className={`pi-status ${guia.classe}`}>{guia.rotulo}</span>
             <span>{PASSOS_GUIA} passos curtos</span>
+          </span>
+        </button>
+        <button className="modo-card pi-red-card-guia" onClick={() => onTela({ tipo: "modelos" })}>
+          <h3>Todas as redações-modelo</h3>
+          <p>
+            As {TEMAS.length} redações do app e as {MATERIAL.length} do seu material, num lugar só, para ler e se basear.
+          </p>
+          <span className="pi-card-meta">
+            <span>só leitura</span>
           </span>
         </button>
       </div>
@@ -645,6 +656,175 @@ function TelaConectivos({ tema }: { tema: TemaPrf }) {
       </ul>
       <p className="pi-red-dica">Na próxima redação, use pelo menos dois deles. O guia traz mais opções, separadas por função.</p>
     </>
+  );
+}
+
+const MATERIAL = [...MATERIAL_DOSSIE, ...MATERIAL_MANUAL];
+const GRUPOS_MATERIAL = [...new Set(MATERIAL.map((m) => m.grupo))];
+const palavrasDe = (pars: string[]) => contarPalavras(pars.join(" ").replace(/\*\*/g, ""));
+
+/** Todas as redações-modelo num lugar só, para ler: as dos temas do app e as do material do aluno. */
+function LeituraModelos({ onTela }: { onTela: IrPara }) {
+  const [aba, setAba] = useState<"app" | "material">("app");
+  const voltar = (
+    <button className="botao" onClick={() => onTela(INICIO)}>
+      ← Redação
+    </button>
+  );
+  const botaoAba = (id: "app" | "material", rotulo: string) => (
+    <button
+      type="button"
+      role="tab"
+      aria-selected={aba === id}
+      className={`botao${aba === id ? " pi-red-opcao-ativa" : ""}`}
+      onClick={() => setAba(id)}
+    >
+      {rotulo}
+    </button>
+  );
+  return (
+    <article className="pi-licao">
+      {voltar}
+      <h2 className="secao-titulo">Redações-modelo</h2>
+      <div className="pi-gancho">
+        Para ler e se basear. Toque num tema para abrir o texto. Dica: tente escrever antes de ler; ler primeiro tira o treino.
+      </div>
+      <div className="pi-red-opcoes prf-red-leitura-abas" role="tablist" aria-label="De onde vêm as redações">
+        {botaoAba("app", `Do app · ${TEMAS.length}`)}
+        {botaoAba("material", `Do seu material · ${MATERIAL.length}`)}
+      </div>
+      {aba === "app" ? <ModelosApp onTela={onTela} /> : <ModelosMaterial />}
+      <div className="pi-acoes">{voltar}</div>
+    </article>
+  );
+}
+
+function ModelosApp({ onTela }: { onTela: IrPara }) {
+  return (
+    <>
+      <p className="pi-grupo-descricao">
+        No formato da prova da PRF: até 30 linhas, em 5 parágrafos. Em destaque, os conectivos que amarram as ideias.
+      </p>
+      {BLOCOS_REDACAO.map((b) => (
+        <section key={b.n}>
+          <h3 className="secao-titulo">
+            Bloco {b.n} · {b.titulo}
+          </h3>
+          {TEMAS.filter((t) => t.bloco === b.n).map((t) => (
+            <details key={t.n} className="prf-red-item">
+              <summary>
+                <span className="pi-card-num">{t.n}</span>
+                <span className="prf-red-item-titulo">{t.recorte}</span>
+              </summary>
+              <div className="prf-red-item-corpo">
+                <p className="prf-red-tema">{t.tema}</p>
+                {t.nota && <p className="pi-red-nota-tema">{t.nota}</p>}
+                <ol className="prf-red-aspectos prf-red-item-aspectos">
+                  {t.aspectos.map((a) => (
+                    <li key={a}>{a}</li>
+                  ))}
+                </ol>
+                {t.paragrafos.map((p, k) => (
+                  <div key={k}>
+                    <p className="pi-red-parte">
+                      {k + 1} · {ESQUELETO[k].parte}
+                    </p>
+                    <p className="pi-red-paragrafo">
+                      <Rico texto={p} termos={false} />
+                    </p>
+                  </div>
+                ))}
+                <p className="pi-red-dica">{palavrasDe(t.paragrafos)} palavras</p>
+                <Rotulo>Repertório</Rotulo>
+                <ul className="pi-red-chips prf-red-item-chips">
+                  {t.repertorio.map((r) => (
+                    <li key={r} className="pi-red-chip">
+                      {r}
+                    </li>
+                  ))}
+                </ul>
+                <button type="button" className="botao botao-ouro" onClick={() => onTela({ tipo: "tema", n: t.n })}>
+                  Treinar este tema →
+                </button>
+              </div>
+            </details>
+          ))}
+        </section>
+      ))}
+    </>
+  );
+}
+
+function ModelosMaterial() {
+  return (
+    <>
+      <p className="pi-grupo-descricao">
+        Os textos da pasta Redação PRF, conferidos em 20/11/2026: fatos errados foram corrigidos e exemplos de um só estado
+        trocados por nacionais. O dossiê já segue o formato da PRF (30 linhas, 3 aspectos). O manual usa 20 a 25 linhas, com
+        título: aproveite o conteúdo, o repertório e os conectivos.
+      </p>
+      {GRUPOS_MATERIAL.map((g) => (
+        <section key={g}>
+          <h3 className="secao-titulo">{g}</h3>
+          {MATERIAL.filter((m) => m.grupo === g).map((m) => (
+            <ItemMaterial key={m.id} m={m} />
+          ))}
+        </section>
+      ))}
+    </>
+  );
+}
+
+function ItemMaterial({ m }: { m: RedacaoMaterial }) {
+  const conectivos = (m.conectivos ?? "")
+    .split(";")
+    .map((c) => c.trim())
+    .filter(Boolean);
+  return (
+    <details className="prf-red-item">
+      <summary>
+        <span className="pi-card-num">{m.id.slice(1)}</span>
+        <span className="prf-red-item-titulo">{m.titulo}</span>
+      </summary>
+      <div className="prf-red-item-corpo">
+        {m.proposta && <p className="prf-red-motivador">{m.proposta}</p>}
+        {m.aspectos && (
+          <ol className="prf-red-aspectos prf-red-item-aspectos">
+            {m.aspectos.map((a) => (
+              <li key={a}>{a}</li>
+            ))}
+          </ol>
+        )}
+        {m.tituloTexto && <p className="pi-red-titulo-modelo">{m.tituloTexto}</p>}
+        {m.paragrafos.map((p, k) => (
+          <p key={k} className="pi-red-paragrafo">
+            <Rico texto={p} termos={false} />
+          </p>
+        ))}
+        <p className="pi-red-dica">
+          {palavrasDe(m.paragrafos)} palavras · {m.paragrafos.length} parágrafos
+        </p>
+        {m.repertorio && (
+          <>
+            <Rotulo>Repertório</Rotulo>
+            <p className="prf-red-item-rep">{m.repertorio}.</p>
+          </>
+        )}
+        {conectivos.length > 0 && (
+          <>
+            <Rotulo>Conectivos</Rotulo>
+            <ul className="pi-red-chips prf-red-item-chips">
+              {conectivos.map((c) => (
+                <li key={c} className="pi-red-chip pi-red-chip-conectivo">
+                  {c}
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+        {m.ajustado && <p className="pi-red-dica">Trechos deste texto foram corrigidos na conferência.</p>}
+      </div>
+    </details>
   );
 }
 

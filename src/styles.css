@@ -10655,6 +10655,22 @@ body.prf-cad-aberto .prf-cad-flutua.prf-cad-movido {
 .prf-red-motivador { font-style: italic; color: var(--texto-fraco); }
 .prf-red-tema { font-family: var(--fonte-titulo); font-size: 1.06rem; font-weight: 700; color: var(--texto); }
 .prf-red-aspectos { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 6px; line-height: 1.45; }
+
+/* Redações-modelo para leitura: cada tema abre e fecha no toque. */
+.prf-red-leitura-abas { margin: 14px 0 10px; }
+.prf-red-item { margin: 0 0 10px; border: 1px solid var(--borda-forte); border-radius: var(--raio); background: var(--bg-card); }
+.prf-red-item > summary { display: flex; align-items: center; gap: 10px; padding: 12px 14px; cursor: pointer; list-style: none; line-height: 1.4; }
+.prf-red-item > summary::-webkit-details-marker { display: none; }
+.prf-red-item > summary::after { content: "▾"; flex: none; color: var(--texto-fraco); transition: transform 0.15s; }
+.prf-red-item[open] > summary { border-bottom: 1px solid var(--borda); }
+.prf-red-item[open] > summary::after { transform: rotate(180deg); }
+.prf-red-item > summary .pi-card-num { flex: none; }
+.prf-red-item-titulo { flex: 1; min-width: 0; font-weight: 700; overflow-wrap: anywhere; }
+.prf-red-item-corpo { padding: 14px; overflow-wrap: anywhere; }
+.prf-red-item-corpo .prf-red-tema { margin: 0 0 10px; }
+.prf-red-item-aspectos { margin: 0 0 16px; }
+.prf-red-item-chips { margin-top: 6px; }
+.prf-red-item-rep { margin: 6px 0 12px; line-height: 1.55; }
 .prf-red-aspecto-pedido {
   display: block;
   margin: 0 0 4px;

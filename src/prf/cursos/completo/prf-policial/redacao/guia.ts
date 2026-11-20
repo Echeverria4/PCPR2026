@@ -77,7 +77,14 @@ export const CAMPOS_PLANO: { id: CampoPlano; rotulo: string; dica: string }[] = 
   { id: "fecho", rotulo: "Conclusão", dica: "Como vai retomar a tese? Uma síntese ou uma proposta." },
 ];
 
-export const BLOCOS_REDACAO: { n: 1 | 2 | 3 | 4 | 5; titulo: string; descricao: string }[] = [
+/** A ordem desta lista é a ordem de estudo: o bloco 6 vem primeiro porque tem grande chance de cair. */
+export const BLOCOS_REDACAO: { n: 1 | 2 | 3 | 4 | 5 | 6; titulo: string; descricao: string }[] = [
+  {
+    n: 6,
+    titulo: "Igualdade racial e direitos humanos",
+    descricao:
+      "Grande chance de cair: filtragem racial na abordagem, uso da força, a PRF e os direitos humanos, leis contra o racismo, a convenção interamericana, racismo de agentes e na internet, racismo estrutural e recreativo.",
+  },
   { n: 1, titulo: "Trânsito seguro", descricao: "Mortes no trânsito, motorista profissional e usuários vulneráveis." },
   {
     n: 2,
