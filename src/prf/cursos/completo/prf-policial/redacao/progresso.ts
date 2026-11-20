@@ -5,7 +5,7 @@
 import type { Avaliacao, CampoPlano, CriterioId } from "./tipos";
 
 const CHAVE = "curso:prf-policial:redacao:v1";
-export const TOTAL_TEMAS = 16;
+export const TOTAL_TEMAS = 23;
 
 export interface EstadoTema {
   /** Tela do passo a passo em que a pessoa parou (0 = abertura). */

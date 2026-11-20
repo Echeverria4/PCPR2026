@@ -77,7 +77,7 @@ export const CAMPOS_PLANO: { id: CampoPlano; rotulo: string; dica: string }[] = 
   { id: "fecho", rotulo: "Conclusão", dica: "Como vai retomar a tese? Uma síntese ou uma proposta." },
 ];
 
-export const BLOCOS_REDACAO: { n: 1 | 2 | 3 | 4; titulo: string; descricao: string }[] = [
+export const BLOCOS_REDACAO: { n: 1 | 2 | 3 | 4 | 5; titulo: string; descricao: string }[] = [
   { n: 1, titulo: "Trânsito seguro", descricao: "Mortes no trânsito, motorista profissional e usuários vulneráveis." },
   {
     n: 2,
@@ -93,6 +93,12 @@ export const BLOCOS_REDACAO: { n: 1 | 2 | 3 | 4; titulo: string; descricao: stri
     n: 4,
     titulo: "A nova PRF: rodovias, ferrovias e hidrovias",
     descricao: "PEC 18/2025: a ampliação da PRF, os rios de fronteira, os crimes contra a ferrovia e a integração com os estados.",
+  },
+  {
+    n: 5,
+    titulo: "Tecnologia, cidade e cidadania",
+    descricao:
+      "Drones do crime, reconhecimento facial, patinetes e ciclomotores, ataques cibernéticos, clima nas cidades, pessoa idosa e sistema prisional.",
   },
 ];
 
