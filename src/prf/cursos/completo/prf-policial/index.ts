@@ -13,6 +13,7 @@ import { AULAS_ADM_B } from "./adm-b";
 import { AULAS_ADM_A } from "./adm-a";
 import { AULAS_TRANSITO } from "./transito";
 import { QUESTOES_DETRAN_AL_2026 } from "./transito/detranAl2026";
+import { QUESTOES_DETRAN_AL_2026_BASICOS } from "./treino/detranAl2026Basicos";
 import { AULAS_ESPANHOL } from "./espanhol";
 import { AULAS_INGLES } from "./ingles";
 import { AULAS_GEOPOLITICA } from "./geopolitica";
@@ -46,7 +47,7 @@ function comCompartilhadas(banco: BancoCurso): BancoCurso {
  * na aula do assunto, com selo e fonte. Entram depois das outras para não mudar os ids montados por posição.
  */
 function comProvasTreino(banco: BancoCurso): BancoCurso {
-  return { ...banco, questoes: [...banco.questoes, ...QUESTOES_DETRAN_AL_2026] };
+  return { ...banco, questoes: [...banco.questoes, ...QUESTOES_DETRAN_AL_2026, ...QUESTOES_DETRAN_AL_2026_BASICOS] };
 }
 
 /** Cada matéria entra aqui quando o lote dela fica pronto. */

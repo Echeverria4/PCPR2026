@@ -581,7 +581,7 @@ export const QUESTOES_DETRAN_AL_2026: QuestaoCurso[] = [
     "subassunto": "Novo RENAVAM e nova PIV para o original (Res. 969/2022, art. 53)",
     "dificuldade": 4,
     "raciocinio": "Procedimento após a comprovação",
-    "enunciado": "Julgue o próximo item, referentes aos procedimentos de registro e emplacamento de veículos.\n\nAo concluir processo administrativo que resulte na comprovação de clonagem de veículo, o DETRAN deve atribuir novo número de RENAVAM e nova placa de identificação para o veículo original.",
+    "enunciado": "Julgue o próximo item, referente aos procedimentos de registro e emplacamento de veículos.\n\nAo concluir processo administrativo que resulte na comprovação de clonagem de veículo, o DETRAN deve atribuir novo número de RENAVAM e nova placa de identificação para o veículo original.",
     "alternativas": [
       "Certo",
       "Errado"
@@ -615,7 +615,7 @@ export const QUESTOES_DETRAN_AL_2026: QuestaoCurso[] = [
     "subassunto": "Tratores de construção e pavimentação (CTB, art. 115, § 4º)",
     "dificuldade": 4,
     "raciocinio": "Registro sem emplacamento",
-    "enunciado": "Julgue o próximo item, referentes aos procedimentos de registro e emplacamento de veículos.\n\nO número da placa constitui informação obrigatória para todos os veículos registrados no sistema RENAVAM, incluindo-se tratores destinados a trabalhos de construção ou pavimentação.",
+    "enunciado": "Julgue o próximo item, referente aos procedimentos de registro e emplacamento de veículos.\n\nO número da placa constitui informação obrigatória para todos os veículos registrados no sistema RENAVAM, incluindo-se tratores destinados a trabalhos de construção ou pavimentação.",
     "alternativas": [
       "Certo",
       "Errado"
@@ -650,7 +650,7 @@ export const QUESTOES_DETRAN_AL_2026: QuestaoCurso[] = [
     "subassunto": "Trilha de auditoria em todas as etapas (Res. 969/2022, art. 24)",
     "dificuldade": 4,
     "raciocinio": "\"Somente\" restringe o que a norma estende",
-    "enunciado": "Julgue o próximo item, referentes aos procedimentos de registro e emplacamento de veículos.\n\nNo processo produtivo da placa de identificação veicular, a trilha de auditoria comprobatória aplica-se somente às etapas de vinculação ao veículo e inserção dos dados no sistema informatizado de emplacamento.",
+    "enunciado": "Julgue o próximo item, referente aos procedimentos de registro e emplacamento de veículos.\n\nNo processo produtivo da placa de identificação veicular, a trilha de auditoria comprobatória aplica-se somente às etapas de vinculação ao veículo e inserção dos dados no sistema informatizado de emplacamento.",
     "alternativas": [
       "Certo",
       "Errado"
