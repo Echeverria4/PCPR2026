@@ -46,6 +46,8 @@ export interface OrigemProva {
   /** O que ainda falta confirmar (ex.: gabarito definitivo). */
   pendencia?: string;
   observacao?: string;
+  /** Título do selo de prova de outro concurso (ex.: "Concurso DETRAN-AL 2026 (Cebraspe)"); com ele, o selo aparece em qualquer curso. */
+  selo?: string;
 }
 
 /** M = ids de matéria do curso (padrão: PCPR). */

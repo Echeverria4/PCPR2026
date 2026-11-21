@@ -185,7 +185,7 @@ export const TOTAIS_TEMAS_POL: { materia: string; nome: string; temas: TotalTema
     materia: "transito",
     nome: "Trânsito",
     temas: [
-      { nome: "Crimes de trânsito", aula: "transito-10", proprias: 13, "prf-adm": 0, pcpr2026: 2 },
+      { nome: "Crimes de trânsito", aula: "transito-10", proprias: 19, "prf-adm": 0, pcpr2026: 2 },
     ],
   },
   {

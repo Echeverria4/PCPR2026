@@ -22,9 +22,17 @@ const GRAVACAO_PCPR: GravacaoQuiz<SubjectId> = { registrar: recordAttempt, atual
 /**
  * Selo das questões de prova real no curso da PRF: o último concurso (FUNCAB, 2014), o de 2012 (Cespe/UnB),
  * a prova da PF 2025 (Cebraspe), o CNU 2025 (FGV) e as originais da FGV. Aparece antes da resposta e só diz de onde a questão veio.
+ * Prova de outro concurso usada no treino (ex.: DETRAN-AL 2026) traz o título pronto em prova.selo.
  */
 function seloProvaPrf(q: Pick<Question<string>, "origem" | "prova" | "compartilhada">) {
   const p = q.origem === "prova" ? q.prova : undefined;
+  if (p?.selo) {
+    return {
+      classe: "questao-selo-outra",
+      titulo: p.selo,
+      detalhe: `${p.caderno} · prova de ${p.aplicadaEm} · item ${p.numero}`,
+    };
+  }
   if (p?.banca === "FUNCAB" && q.compartilhada) {
     // Em outro curso, "último concurso" engana: diz qual foi.
     return {
@@ -153,7 +161,7 @@ export default function Quiz<M extends string = SubjectId>({
     );
   }
 
-  const selo = curso === "prf-adm" || questao.compartilhada ? seloProvaPrf(questao) : null;
+  const selo = curso === "prf-adm" || questao.compartilhada || questao.prova?.selo ? seloProvaPrf(questao) : null;
   const certoErrado = questao.alternativas.length === 2;
   const letras = certoErrado ? LETRAS_CE : LETRAS;
 

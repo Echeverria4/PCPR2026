@@ -1465,6 +1465,17 @@ button {
   color: #ffab80;
 }
 
+/* Prova de outro concurso usada no treino (DETRAN, municípios) */
+.questao-selo-outra {
+  border-color: rgba(64, 196, 200, 0.45);
+  border-left-color: #40c4c8;
+  background: rgba(64, 196, 200, 0.1);
+}
+
+.questao-selo-outra strong {
+  color: #74dde0;
+}
+
 .questao-tag-fonte {
   color: var(--texto);
   background: transparent;

@@ -12,6 +12,7 @@ import { AULAS_CON } from "./constitucional";
 import { AULAS_ADM_B } from "./adm-b";
 import { AULAS_ADM_A } from "./adm-a";
 import { AULAS_TRANSITO } from "./transito";
+import { QUESTOES_DETRAN_AL_2026 } from "./transito/detranAl2026";
 import { AULAS_ESPANHOL } from "./espanhol";
 import { AULAS_INGLES } from "./ingles";
 import { AULAS_GEOPOLITICA } from "./geopolitica";
@@ -40,9 +41,17 @@ function comCompartilhadas(banco: BancoCurso): BancoCurso {
   return { ...banco, questoes: [...banco.questoes, ...compartilhadasPol(banco.questoes)] };
 }
 
+/**
+ * Provas públicas de outros concursos (DETRAN, municípios) no treino (21/11/26): itens originais com gabarito da banca,
+ * na aula do assunto, com selo e fonte. Entram depois das outras para não mudar os ids montados por posição.
+ */
+function comProvasTreino(banco: BancoCurso): BancoCurso {
+  return { ...banco, questoes: [...banco.questoes, ...QUESTOES_DETRAN_AL_2026] };
+}
+
 /** Cada matéria entra aqui quando o lote dela fica pronto. */
 export const DADOS: DadosCursoCompleto = {
-  banco: semEscondidas(comCompartilhadas(montarBanco("pol", { pt: AULAS_PT, rlm: AULAS_RLM, info: AULAS_INFO, fisica: AULAS_FISICA, etica: AULAS_ETICA, geopolitica: AULAS_GEOPOLITICA, [LINGUA]: { ingles: AULAS_INGLES, espanhol: AULAS_ESPANHOL }[LINGUA], transito: AULAS_TRANSITO, "adm-a": AULAS_ADM_A, "adm-b": AULAS_ADM_B, con: AULAS_CON, penal: AULAS_PENAL, proc: AULAS_PROC, especial: AULAS_ESPECIAL, dh: AULAS_DH, eca: AULAS_ECA, carreira: AULAS_CARREIRA, discursivas: AULAS_DISCURSIVAS }))),
+  banco: semEscondidas(comProvasTreino(comCompartilhadas(montarBanco("pol", { pt: AULAS_PT, rlm: AULAS_RLM, info: AULAS_INFO, fisica: AULAS_FISICA, etica: AULAS_ETICA, geopolitica: AULAS_GEOPOLITICA, [LINGUA]: { ingles: AULAS_INGLES, espanhol: AULAS_ESPANHOL }[LINGUA], transito: AULAS_TRANSITO, "adm-a": AULAS_ADM_A, "adm-b": AULAS_ADM_B, con: AULAS_CON, penal: AULAS_PENAL, proc: AULAS_PROC, especial: AULAS_ESPECIAL, dh: AULAS_DH, eca: AULAS_ECA, carreira: AULAS_CARREIRA, discursivas: AULAS_DISCURSIVAS })))),
   semQuestoes: ["carreira", "bizus", "trilha", "ebooks", "mentoria", ...AULAS_ESCONDIDAS],
   faixa: [
     { forte: "Sem edital", texto: "Novo concurso ainda sem edital nem banca definida" },
