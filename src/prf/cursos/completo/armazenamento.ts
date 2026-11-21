@@ -70,6 +70,61 @@ export function limpezasUnicas(): void {
   }
 }
 
+/**
+ * Limpeza única, pedida em 21/11/26: zera as respostas de Legislação de Trânsito da PRF Policial dadas até o corte,
+ * junto com a fila dos errados e as repetidas da matéria. A contagem por dia (cartão do curso e Semana) é refeita
+ * com as respostas que ficam. Roda uma vez em cada aparelho; as outras matérias não mudam.
+ */
+export function zerarTransitoPrfPolicial(): void {
+  const curso = "prf-policial";
+  const feito = `curso:${curso}:zerado-transito:2026-11-21`;
+  const corte = Date.parse("2026-11-21T18:30:00-03:00");
+  try {
+    if (localStorage.getItem(feito)) return;
+    const lsTentativas = `curso:${curso}:attempts:v1`;
+    const lsRepetidas = `curso:${curso}:repetidas:v1`;
+    const lsErradas = `curso:${curso}:wrong:v1`;
+    const lsPorDia = `curso:${curso}:questoesPorDia:v1`;
+    const sai = (t: TentativaCurso) => t.materia === "transito" && !(Date.parse(t.respondidaEm) >= corte);
+    const lista = ler<TentativaCurso[]>(lsTentativas, []);
+    const tentativas = Array.isArray(lista) ? lista : [];
+    const outras = ler<TentativaCurso[]>(lsRepetidas, []);
+    const repetidas = Array.isArray(outras) ? outras : [];
+    const idsQueSaem = new Set([...tentativas, ...repetidas].filter(sai).map((t) => t.questionId));
+    const ficam = tentativas.filter((t) => !sai(t));
+    if (tentativas.length < MAX_TENTATIVAS) {
+      // A lista ainda tem todas as primeiras respostas: a contagem por dia sai exata dela.
+      const porDia: QuestoesPorDia = {};
+      for (const t of ficam) somaNoDia(porDia, t);
+      gravar(lsPorDia, porDia);
+    } else {
+      descontarDoDia(lsPorDia, tentativas.filter(sai));
+    }
+    gravar(lsTentativas, ficam);
+    gravar(
+      lsRepetidas,
+      repetidas.filter((t) => !sai(t)),
+    );
+    const fila = ler<string[]>(lsErradas, []);
+    gravar(lsErradas, Array.isArray(fila) ? fila.filter((id) => !idsQueSaem.has(id)) : []);
+    localStorage.setItem(feito, "1");
+  } catch {
+    // sem localStorage não há o que zerar
+  }
+}
+
+/** Tira da contagem por dia as primeiras respostas apagadas. */
+function descontarDoDia(lsPorDia: string, apagadas: TentativaCurso[]) {
+  if (apagadas.length === 0) return;
+  const porDia = ler<QuestoesPorDia>(lsPorDia, {});
+  for (const t of apagadas) {
+    const dia = diaDe(t);
+    const [n, a] = porDia[dia] ?? [0, 0];
+    porDia[dia] = [Math.max(0, n - 1), Math.max(0, a - (t.acertou ? 1 : 0))];
+  }
+  gravar(lsPorDia, porDia);
+}
+
 function diaDe(t: TentativaCurso): string {
   const d = new Date(t.respondidaEm);
   return `${d.getFullYear()}-${dois(d.getMonth() + 1)}-${dois(d.getDate())}`;
@@ -194,7 +249,13 @@ export function progressoDoCurso(curso: string): ProgressoCurso {
       return { respondidas, acertos };
     },
     zerarMateria(materia, idsDaMateria) {
-      const restantes = tentativas().filter((t) => t.materia !== materia);
+      const lista = tentativas();
+      const restantes = lista.filter((t) => t.materia !== materia);
+      // O cartão do curso e a Semana somam a contagem por dia: as respostas apagadas saem dela também.
+      descontarDoDia(
+        lsPorDia,
+        lista.filter((t) => t.materia === materia),
+      );
       gravar(lsTentativas, restantes);
       gravar(
         lsRepetidas,
