@@ -1844,6 +1844,29 @@ button {
   color: var(--texto-fraco);
 }
 
+/* Aviso no lugar da tela branca quando uma parte do app não abre (ProtecaoErros.tsx). */
+.aviso-recarregar {
+  max-width: 420px;
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: center;
+  line-height: 1.5;
+  color: var(--texto-fraco);
+}
+
+.aviso-recarregar p {
+  margin: 0 0 12px;
+}
+
+.aviso-recarregar strong {
+  color: var(--texto);
+  font-size: 1.1rem;
+}
+
+.aviso-recarregar .botao-ouro:hover {
+  background: linear-gradient(180deg, var(--ouro-forte), var(--ouro));
+}
+
 .rodape {
   text-align: center;
   padding: 20px;

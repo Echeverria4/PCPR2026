@@ -7,6 +7,38 @@
     <link rel="icon" type="image/png" href="/favicon.png" />
     <title>Central de Estudos</title>
     <meta name="description" content="Central de estudos para concursos: treino de questões, conteúdo e simulados. PCPR 2026 — Agente de Polícia Judiciária." />
+    <script>
+      // Depois de cada deploy, os arquivos da versão anterior somem do servidor. Uma aba aberta antes
+      // (ou uma página antiga guardada pelo navegador) recarrega sozinha uma vez e pega a versão nova.
+      // Fica antes do script e do CSS do app para ouvir também a falha deles.
+      (function () {
+        var CHAVE = "app:recargaPorVersao";
+        function recarregar() {
+          if (!navigator.onLine) return;
+          try {
+            var ultima = Number(sessionStorage.getItem(CHAVE) || 0);
+            if (Date.now() - ultima < 30000) return; // no máximo uma vez a cada 30 s: nunca entra em laço
+            sessionStorage.setItem(CHAVE, String(Date.now()));
+          } catch (e) {
+            return;
+          }
+          location.reload();
+        }
+        // Script, CSS ou pré-carregamento do próprio app que não veio.
+        window.addEventListener(
+          "error",
+          function (e) {
+            var el = e.target;
+            if (!el || (el.tagName !== "SCRIPT" && el.tagName !== "LINK")) return;
+            var url = el.src || el.href || "";
+            if (url.indexOf(location.origin + "/assets/") === 0) recarregar();
+          },
+          true
+        );
+        // Parte carregada sob demanda (aba ou tela) que já não existe.
+        window.addEventListener("vite:preloadError", recarregar);
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
