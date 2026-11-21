@@ -289,5 +289,116 @@ export const AULA: AulaEscrita = {
       pegadinha: "Palavra trocada: “não tenham concluído” virou “não tenham iniciado”.",
       conhecimento: "Quem já está na faixa termina a travessia, mesmo que o sinal mude.",
     },
+    {
+      topico: "Certo ou Errado (Cebraspe)",
+      subassunto: "Registrador de tempo (art. 67-E, § 4º)",
+      dificuldade: 4,
+      raciocinio: "Veja quem a lei põe como responsável pelos dados do registrador: o dono ou quem dirige?",
+      enunciado:
+        "Pedro é dono de um caminhão equipado com registrador instantâneo inalterável de velocidade e de tempo, o tacógrafo. João, motorista profissional, dirige esse caminhão.\n\nNessa situação hipotética, a guarda, a preservação e a exatidão das informações do registrador são de responsabilidade de Pedro, por ser o proprietário do caminhão.",
+      alternativas: ["Certo", "Errado"],
+      correta: 1,
+      ordemFixa: true,
+      explicacao:
+        "O art. 67-E, § 4º, diz que a guarda, a preservação e a exatidão das informações contidas no registrador “são de responsabilidade do condutor”. Aqui, de João.",
+      pegadinha: "Trocar o condutor pelo proprietário.",
+      conhecimento:
+        "O tempo de direção pode ser controlado pelo registrador, por diário de bordo, papeleta ou ficha de trabalho externo, ou por meios eletrônicos instalados no veículo, conforme norma do Contran (art. 67-E, § 2º).",
+    },
+    {
+      topico: "Certo ou Errado (Cebraspe)",
+      subassunto: "Situação excepcional (art. 67-C, §§ 2º e 8º)",
+      dificuldade: 5,
+      raciocinio: "Lembre o que a lei permite quando não dá para parar por um motivo excepcional, justificado e registrado.",
+      enunciado:
+        "Rita, motorista profissional de transporte de cargas, completou 5 horas e meia de direção ininterrupta. Os pontos de parada da rota estavam com todas as vagas ocupadas, e essa situação excepcional e justificada foi devidamente registrada.\n\nNessa situação hipotética, o tempo de direção de Rita poderá ser elevado pelo período necessário para que ela, o veículo e a carga cheguem a um lugar que ofereça a segurança e o atendimento de que precisam, desde que não haja comprometimento da segurança rodoviária.",
+      alternativas: ["Certo", "Errado"],
+      correta: 0,
+      ordemFixa: true,
+      explicacao:
+        "É o que diz o art. 67-C, § 2º: em situações excepcionais de inobservância justificada, devidamente registradas, o tempo de direção pode ser elevado pelo período necessário para chegar a um lugar que ofereça “a segurança e o atendimento demandados”, desde que não haja comprometimento da segurança rodoviária. O § 8º cita o “exaurimento das vagas de estacionamento” nos pontos de parada, e cabe ao Contran regulamentar esses casos.",
+      pegadinha: "Achar que o limite de 5 horas e meia não tem nenhuma exceção.",
+      conhecimento:
+        "Quando ocorre a situação excepcional do § 8º do art. 67-C, o motorista de cargas não fica sujeito às penalidades do CTB por não observar os períodos de direção e de descanso (art. 67-E, § 1º-A).",
+    },
+    {
+      topico: "Certo ou Errado (Cebraspe)",
+      subassunto: "Intervalo no transporte de passageiros (art. 67-C, § 1º-A)",
+      dificuldade: 4,
+      raciocinio: "Separe carga e passageiros: o intervalo de 30 minutos tem um prazo diferente para cada um.",
+      enunciado:
+        "Marcos é motorista profissional de ônibus de transporte rodoviário coletivo de passageiros.\n\nNessa situação hipotética, Marcos deve observar 30 minutos para descanso dentro de cada 6 horas na condução, a mesma regra dos motoristas de transporte de carga.",
+      alternativas: ["Certo", "Errado"],
+      correta: 1,
+      ordemFixa: true,
+      explicacao:
+        "Os 30 minutos dentro de cada 6 horas são do transporte de carga (art. 67-C, § 1º). No transporte rodoviário de passageiros, o § 1º-A manda observar 30 minutos para descanso “a cada 4 (quatro) horas” na condução.",
+      pegadinha: "Aplicar ao ônibus a regra das 6 horas, que é do caminhão.",
+      conhecimento:
+        "O limite de 5 horas e meia ininterruptas ao volante vale para os dois: ônibus rodoviário e caminhão (art. 67-C, caput).",
+    },
+    {
+      topico: "Certo ou Errado (Cebraspe)",
+      subassunto: "O que é tempo de direção (art. 67-C, § 4º)",
+      dificuldade: 4,
+      raciocinio: "Tempo de direção é só o tempo ao volante, no caminho entre a origem e o destino.",
+      enunciado:
+        "João, motorista profissional de transporte de cargas, ficou 3 horas fora do caminhão, no pátio de um armazém, esperando a descarga.\n\nNessa situação hipotética, essas 3 horas contam como tempo de direção.",
+      alternativas: ["Certo", "Errado"],
+      correta: 1,
+      ordemFixa: true,
+      explicacao:
+        "O art. 67-C, § 4º, diz que tempo de direção ou de condução é “apenas o período em que o condutor estiver efetivamente ao volante, em curso entre a origem e o destino”. Fora do caminhão, esperando a descarga, João não está ao volante.",
+      pegadinha: "Confundir tempo de direção com tempo de trabalho.",
+      conhecimento: "Quem controla e registra o tempo de condução é o próprio motorista profissional (art. 67-E, caput).",
+    },
+    {
+      topico: "Certo ou Errado (Cebraspe)",
+      subassunto: "Motorista subcontratado (art. 67-C, §§ 6º e 7º)",
+      dificuldade: 5,
+      raciocinio: "A proibição de mandar viajar sem o descanso completo vale até para o motorista subcontratado.",
+      enunciado:
+        "Pedro, dono de uma transportadora, subcontratou João, motorista profissional autônomo, para uma viagem de carga. João acabou de voltar de outra viagem e ainda não cumpriu o descanso obrigatório.\n\nNessa situação hipotética, Pedro não pode ordenar que João comece a nova viagem antes de cumprir integralmente esse descanso, mesmo João sendo subcontratado.",
+      alternativas: ["Certo", "Errado"],
+      correta: 0,
+      ordemFixa: true,
+      explicacao:
+        "O art. 67-C, § 6º, diz que o condutor só iniciará uma viagem após cumprir integralmente o descanso do § 3º. E o § 7º proíbe o transportador de ordenar a qualquer motorista a seu serviço, “ainda que subcontratado”, que dirija sem observar o § 6º.",
+      pegadinha: "Achar que o motorista subcontratado fica fora da regra.",
+      conhecimento:
+        "A mesma proibição vale para o embarcador, o consignatário de cargas, o operador de terminais de carga, o operador de transporte multimodal de cargas e o agente de cargas (art. 67-C, § 7º).",
+    },
+    {
+      topico: "Certo ou Errado (Cebraspe)",
+      subassunto: "Início de viagem (art. 67-C, § 5º)",
+      dificuldade: 5,
+      raciocinio: "Veja a definição de início de viagem: ela fala em ida e em retorno, com ou sem carga.",
+      enunciado:
+        "Lúcia, motorista profissional de transporte de cargas, entregou a carga em outra cidade e vai voltar com o caminhão vazio.\n\nNessa situação hipotética, a partida de volta, mesmo sem carga, é considerada início de viagem.",
+      alternativas: ["Certo", "Errado"],
+      correta: 0,
+      ordemFixa: true,
+      explicacao:
+        "O art. 67-C, § 5º, diz que início de viagem é “a partida do veículo na ida ou no retorno, com ou sem carga”. As partidas nos dias seguintes, até o destino, são continuação da mesma viagem.",
+      pegadinha: "Achar que caminhão vazio não está em viagem.",
+      conhecimento:
+        "O motorista só inicia uma viagem depois de cumprir por inteiro o descanso mínimo de 11 horas dentro de 24 horas (art. 67-C, §§ 3º e 6º).",
+    },
+    {
+      topico: "Certo ou Errado (Cebraspe)",
+      subassunto: "Quem tem limite de tempo ao volante (arts. 67-A e 67-C)",
+      dificuldade: 4,
+      raciocinio: "Veja para quem vale o limite de 5 horas e meia: para todo motorista ou só para alguns?",
+      enunciado:
+        "Beatriz, de férias, dirigiu o carro da família por 7 horas seguidas, sem parar, numa rodovia federal.\n\nNessa situação hipotética, Beatriz cometeu infração de trânsito por ultrapassar o tempo máximo de 5 horas e meia de direção ininterrupta.",
+      alternativas: ["Certo", "Errado"],
+      correta: 1,
+      ordemFixa: true,
+      explicacao:
+        "O limite do art. 67-C é para o motorista profissional que dirige veículo de transporte rodoviário coletivo de passageiros ou de transporte rodoviário de cargas. A infração do art. 230, XXIII, também só vale “quando se tratar de veículo de transporte de carga ou coletivo de passageiros”. Beatriz dirigia o carro da família.",
+      pegadinha: "Achar que o limite de 5 horas e meia vale para todo motorista.",
+      conhecimento:
+        "O CTB não fixa limite de horas ao volante para o motorista comum, mas todo condutor deve ter, a todo momento, domínio do veículo (art. 28).",
+    },
   ],
 };

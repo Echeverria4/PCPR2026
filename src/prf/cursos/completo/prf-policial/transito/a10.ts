@@ -394,5 +394,21 @@ export const AULA: AulaEscrita = {
       pegadinha: "Palavra trocada: “nem se exigirá fiança” virou “mas se exigirá fiança”.",
       conhecimento: "Socorreu a vítima na hora e por completo: sem flagrante e sem fiança.",
     },
+    {
+      topico: "Certo ou Errado (Cebraspe)",
+      subassunto: "Entregar a direção a quem está embriagado (art. 310)",
+      dificuldade: 5,
+      raciocinio: "Leia o art. 310 até o fim: além do não habilitado, ele fala de quem não está em condições de dirigir.",
+      enunciado:
+        "Otávio emprestou o carro a Lucas, que é habilitado, mas estava visivelmente embriagado.\n\nNessa situação hipotética, Otávio não comete crime de trânsito, pois o art. 310 do CTB só pune quem entrega a direção a pessoa não habilitada.",
+      alternativas: ["Certo", "Errado"],
+      correta: 1,
+      ordemFixa: true,
+      explicacao:
+        "O art. 310 pune quem permite, confia ou entrega a direção a pessoa não habilitada, com habilitação cassada ou com o direito de dirigir suspenso, “ou, ainda, a quem, por seu estado de saúde, física ou mental, ou por embriaguez, não esteja em condições de conduzi-lo com segurança”. A pena é detenção, de seis meses a um ano, ou multa.",
+      pegadinha: "Ler só o começo do art. 310 e achar que a habilitação de Lucas livra Otávio.",
+      conhecimento:
+        "Na via administrativa, confiar ou entregar a direção a quem, mesmo habilitado, por seu estado físico ou psíquico, não está em condições de dirigir com segurança é a infração do art. 166: gravíssima, com multa.",
+    },
   ],
 };

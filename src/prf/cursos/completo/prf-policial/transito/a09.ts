@@ -756,5 +756,82 @@ export const AULA: AulaEscrita = {
       pegadinha: "Achar que a distância de 1,50 m é gravíssima e a velocidade, média.",
       conhecimento: "No art. 255, a bicicleta é removida mediante recibo para o pagamento da multa.",
     },
+    {
+      topico: "Certo ou Errado (Cebraspe)",
+      subassunto: "Entregar a direção a quem tem outra categoria (arts. 162, III, e 163)",
+      dificuldade: 5,
+      raciocinio: "Quem dirige com a categoria errada comete o art. 162, III. Quem entrega a direção comete o art. 163, com a mesma infração e a mesma penalidade.",
+      enunciado:
+        "Sílvio é dono de um caminhão que exige habilitação na categoria C. Ele entregou a direção a Hugo, que só tem habilitação na categoria B.\n\nNessa situação hipotética, Sílvio e Hugo cometem, cada um, infração gravíssima, punida com multa multiplicada por duas vezes.",
+      alternativas: ["Certo", "Errado"],
+      correta: 0,
+      ordemFixa: true,
+      explicacao:
+        "Hugo dirige com habilitação de categoria diferente da do veículo: art. 162, III, gravíssima, multa (duas vezes) e retenção do veículo até a apresentação de condutor habilitado. Sílvio entrega a direção a pessoa nessa condição: art. 163, com a mesma infração e a mesma penalidade. São duas infrações: uma de Hugo, que dirigiu, e outra de Sílvio, que entregou a direção.",
+      pegadinha: "Achar que só quem dirige comete a infração.",
+      conhecimento: "Sem nenhuma habilitação, a multa seria multiplicada por três vezes (art. 162, I).",
+    },
+    {
+      topico: "Certo ou Errado (Cebraspe)",
+      subassunto: "Natureza do excesso de tempo ao volante (art. 230, XXIII)",
+      dificuldade: 4,
+      raciocinio: "Lembre a natureza do art. 230, XXIII, e a medida que garante o descanso.",
+      enunciado:
+        "Renato, motorista profissional de transporte de cargas, foi flagrado depois de dirigir 8 horas seguidas, sem nenhum intervalo. É a primeira vez em 12 meses que ele comete essa infração.\n\nNessa situação hipotética, a infração é de natureza média, e a medida administrativa é a retenção do veículo para cumprimento do tempo de descanso aplicável.",
+      alternativas: ["Certo", "Errado"],
+      correta: 0,
+      ordemFixa: true,
+      explicacao:
+        "Conduzir em desacordo com o art. 67-C, quanto ao tempo ao volante e aos intervalos para descanso, em veículo de carga ou coletivo de passageiros, é o art. 230, XXIII: infração média, multa e retenção do veículo para cumprimento do tempo de descanso aplicável.",
+      pegadinha: "Achar que uma infração tão perigosa já nasce grave ou gravíssima. Na primeira vez, ela é média.",
+      conhecimento: "Se o condutor cometeu infração igual nos últimos 12 meses, ela passa automaticamente a grave (art. 230, § 1º).",
+    },
+    {
+      topico: "Certo ou Errado (Cebraspe)",
+      subassunto: "Condutor estrangeiro (art. 230, § 2º)",
+      dificuldade: 5,
+      raciocinio: "Lembre a regra extra do art. 230 para o condutor estrangeiro: o veículo só é liberado com a multa paga ou depositada.",
+      enunciado:
+        "Juan, motorista profissional estrangeiro, dirigia um caminhão de carga numa rodovia federal e foi flagrado depois de 7 horas ao volante sem nenhum intervalo. O caminhão foi retido.\n\nNessa situação hipotética, a liberação do veículo fica condicionada ao pagamento ou ao depósito, judicial ou administrativo, da multa.",
+      alternativas: ["Certo", "Errado"],
+      correta: 0,
+      ordemFixa: true,
+      explicacao:
+        "Juan cometeu a infração do art. 230, XXIII. O § 2º desse artigo diz que, “em se tratando de condutor estrangeiro, a liberação do veículo fica condicionada ao pagamento ou ao depósito, judicial ou administrativo, da multa”.",
+      pegadinha: "Achar que basta cumprir o descanso para liberar o caminhão. Para o estrangeiro, também é preciso pagar ou depositar a multa.",
+      conhecimento: "A retenção do art. 230, XXIII, serve para o cumprimento do tempo de descanso aplicável.",
+    },
+    {
+      topico: "Certo ou Errado (Cebraspe)",
+      subassunto: "Permitir que outro pegue o carro (art. 164)",
+      dificuldade: 5,
+      raciocinio: "Não é só quem entrega a direção que comete infração. Quem permite que a pessoa tome posse do veículo e dirija também comete.",
+      enunciado:
+        "Fábio deixou o filho Caio, de 16 anos, pegar o carro da família e sair dirigindo pela rua.\n\nNessa situação hipotética, mesmo sem ter entregado a direção pessoalmente, Fábio comete infração gravíssima, punida com multa multiplicada por três vezes.",
+      alternativas: ["Certo", "Errado"],
+      correta: 0,
+      ordemFixa: true,
+      explicacao:
+        "O art. 164 pune quem permite que pessoa nas condições do art. 162 “tome posse do veículo automotor e passe a conduzi-lo na via”, com a mesma infração e a mesma penalidade do art. 162. Caio, de 16 anos, não tem habilitação: art. 162, I, gravíssima, com multa (três vezes).",
+      pegadinha: "Achar que só há infração quando o dono entrega a direção (art. 163).",
+      conhecimento:
+        "Permitir que pessoa não habilitada dirija também é crime do art. 310, mesmo sem perigo concreto de dano (Súmula 575 do STJ).",
+    },
+    {
+      topico: "Certo ou Errado (Cebraspe)",
+      subassunto: "Sem o curso especializado obrigatório (arts. 162, VII, e 163)",
+      dificuldade: 5,
+      raciocinio: "Confira a natureza e também a multa: nem todo inciso do art. 162 multiplica a multa.",
+      enunciado:
+        "Marta é dona de uma carreta que transporta produtos perigosos. Ela entregou a direção a Paulo, habilitado na categoria E, mas sem o curso especializado obrigatório para esse transporte.\n\nNessa situação hipotética, Paulo e Marta cometem infração gravíssima, punida com multa multiplicada por duas vezes.",
+      alternativas: ["Certo", "Errado"],
+      correta: 1,
+      ordemFixa: true,
+      explicacao:
+        "Dirigir sem os cursos especializados ou específicos obrigatórios é o art. 162, VII: infração gravíssima, com multa simples, e retenção do veículo até a apresentação de condutor habilitado. Marta comete o art. 163, com a mesma infração e a mesma penalidade. A natureza está certa, mas a multa não é multiplicada.",
+      pegadinha: "Começo certo, final errado: a multa de duas vezes é do art. 162, III (categoria diferente), e não do inciso VII.",
+      conhecimento:
+        "Para conduzir veículo de produto perigoso, é preciso ser aprovado em curso especializado e em curso de treinamento de prática veicular em situação de risco (art. 145, IV).",
+    },
   ],
 };

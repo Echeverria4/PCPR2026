@@ -580,5 +580,115 @@ export const AULA: AulaEscrita = {
       pegadinha: "Começo certo, final errado: o prazo de 2 a 8 meses é o do inciso II, e não o dos pontos.",
       conhecimento: "Pontos: 6 meses a 1 ano. Infração que já prevê suspensão: 2 a 8 meses, salvo prazo próprio.",
     },
+    {
+      topico: "Certo ou Errado (Cebraspe)",
+      subassunto: "Tempo de direção: quem responde (arts. 257 e 67-E)",
+      dificuldade: 4,
+      raciocinio: "Pergunte quem praticou o ato. Dirigir além do tempo é ato de quem está ao volante, e não do dono do veículo.",
+      enunciado:
+        "Pedro é dono de um caminhão. João, motorista profissional de transporte de cargas e empregado de Pedro, dirigiu esse caminhão por mais de 8 horas ininterruptas.\n\nNessa situação hipotética, Pedro, por ser o proprietário do caminhão, responde pela infração de trânsito cometida.",
+      alternativas: ["Certo", "Errado"],
+      correta: 1,
+      ordemFixa: true,
+      explicacao:
+        "O limite é de 5 horas e meia ininterruptas (art. 67-C). Passar dele é a infração do art. 230, XXIII, um ato praticado na direção do veículo. O art. 257, § 3º, diz que cabe ao condutor “a responsabilidade pelas infrações decorrentes de atos praticados na direção do veículo”. E o art. 67-E, § 1º, diz que não observar os descansos do art. 67-C sujeita “o motorista profissional” às penalidades. Quem responde é João. Pedro, como proprietário, só recebe a notificação para pagar a multa (art. 282, § 3º).",
+      pegadinha: "Achar que o dono do veículo responde por tudo o que acontece com ele.",
+      conhecimento:
+        "Ao proprietário cabe sempre a infração ligada ao próprio veículo: regularização e formalidades, conservação, características e habilitação legal e compatível de quem dirige (art. 257, § 2º).",
+    },
+    {
+      topico: "Certo ou Errado (Cebraspe)",
+      subassunto: "Responsabilidade do proprietário (art. 257, § 2º)",
+      dificuldade: 4,
+      raciocinio: "Veja do que trata a infração. A conservação do veículo é assunto do proprietário, mesmo quando outra pessoa dirige.",
+      enunciado:
+        "Carlos emprestou o carro à filha Ana, que é habilitada. Numa fiscalização, o carro foi flagrado em mau estado de conservação, comprometendo a segurança.\n\nNessa situação hipotética, cabe a Carlos, proprietário do carro, a responsabilidade pela infração referente à conservação do veículo, mesmo ele não estando ao volante.",
+      alternativas: ["Certo", "Errado"],
+      correta: 0,
+      ordemFixa: true,
+      explicacao:
+        "O art. 257, § 2º, diz que ao proprietário “caberá sempre” a responsabilidade pela infração referente à conservação e à inalterabilidade das características do veículo. Ana responde pelos atos que pratica na direção (§ 3º). A conservação do carro é com Carlos.",
+      pegadinha: "Achar que a palavra “sempre” deixa o item errado. Aqui, ela está na própria lei.",
+      conhecimento:
+        "Quando dono e condutor têm culpa na mesma falta, os dois são punidos ao mesmo tempo, e cada um responde por si (art. 257, § 1º).",
+    },
+    {
+      topico: "Certo ou Errado (Cebraspe)",
+      subassunto: "Prazo para indicar o condutor (art. 257, § 7º)",
+      dificuldade: 4,
+      raciocinio: "Lembre o prazo atual para indicar o condutor e de quando ele começa a contar.",
+      enunciado:
+        "O carro de Carla foi flagrado por radar acima da velocidade permitida. Quem dirigia era o irmão dela, Rui, e o condutor não foi identificado na hora.\n\nNessa situação hipotética, Carla terá o prazo de 15 dias, contado da notificação da autuação, para indicar Rui como condutor.",
+      alternativas: ["Certo", "Errado"],
+      correta: 1,
+      ordemFixa: true,
+      explicacao:
+        "O art. 257, § 7º, dá ao principal condutor ou ao proprietário o prazo de 30 dias, contado da notificação da autuação, para apresentar o condutor, na forma que o Contran dispuser.",
+      pegadinha: "Prazo antigo: eram 15 dias. A Lei 14.071/2020 mudou para 30 dias.",
+      conhecimento: "O prazo conta da notificação da autuação, e não do dia da infração.",
+    },
+    {
+      topico: "Certo ou Errado (Cebraspe)",
+      subassunto: "Principal condutor (art. 257, §§ 7º e 10)",
+      dificuldade: 5,
+      raciocinio: "Leia o fim do § 7º. Passado o prazo, quem fica responsável primeiro? O proprietário só entra na falta de quem?",
+      enunciado:
+        "Márcia indicou o filho Davi como principal condutor do carro dela. Davi aceitou, e o nome dele consta no cadastro do veículo. O carro foi autuado por radar, sem identificação do condutor na hora, e ninguém indicou o condutor no prazo legal.\n\nNessa situação hipotética, Márcia será considerada responsável pela infração, por ser a proprietária do carro.",
+      alternativas: ["Certo", "Errado"],
+      correta: 1,
+      ordemFixa: true,
+      explicacao:
+        "Pelo art. 257, § 7º, passado o prazo sem indicação, é considerado responsável pela infração “o principal condutor ou, em sua ausência, o proprietário do veículo”. Como Davi consta como principal condutor, a infração fica com ele, e não com Márcia.",
+      pegadinha: "Pular o principal condutor e ir direto ao proprietário.",
+      conhecimento:
+        "O proprietário pode indicar o principal condutor ao órgão executivo de trânsito. Depois de aceitar a indicação, ele tem o nome inscrito no cadastro do veículo no Renavam (art. 257, § 10).",
+    },
+    {
+      topico: "Certo ou Errado (Cebraspe)",
+      subassunto: "Quem paga a multa do condutor (art. 282, § 3º)",
+      dificuldade: 5,
+      raciocinio: "Separe duas coisas: de quem é a infração e quem recebe a notificação para pagar a multa.",
+      enunciado:
+        "Pedro é dono de um caminhão. João, empregado dele, foi parado numa fiscalização e autuado como condutor por dirigir além do tempo permitido. Depois, a penalidade de multa foi imposta a João.\n\nNessa situação hipotética, a notificação da multa será encaminhada a Pedro, proprietário do caminhão, responsável pelo seu pagamento.",
+      alternativas: ["Certo", "Errado"],
+      correta: 0,
+      ordemFixa: true,
+      explicacao:
+        "O art. 282, § 3º, diz que, sempre que a penalidade de multa for imposta a condutor, a notificação “será encaminhada ao proprietário do veículo, responsável pelo seu pagamento”. A infração continua sendo de João, e os pontos vão para ele (art. 259, § 4º). O pagamento cabe a Pedro.",
+      pegadinha: "Achar que, se a infração é do condutor, a notificação da multa vai só para ele.",
+      conhecimento:
+        "O veículo só é considerado licenciado com as multas de trânsito vinculadas a ele quitadas, seja quem for o responsável pelas infrações (art. 131, § 2º).",
+    },
+    {
+      topico: "Certo ou Errado (Cebraspe)",
+      subassunto: "Excesso de peso com vários embarcadores (art. 257, § 5º)",
+      dificuldade: 5,
+      raciocinio: "Conte quantos embarcadores mandaram carga e compare o peso declarado com o limite legal.",
+      enunciado:
+        "João dirige um caminhão da Transportadora Delta com carga de três empresas diferentes. A soma dos pesos declarados nas notas fiscais está dentro do limite legal, mas, na balança, o caminhão passou do peso bruto total permitido.\n\nNessa situação hipotética, a responsabilidade pela infração de excesso de peso é do transportador.",
+      alternativas: ["Certo", "Errado"],
+      correta: 0,
+      ordemFixa: true,
+      explicacao:
+        "O art. 257, § 5º, diz que o transportador é o responsável quando “a carga proveniente de mais de um embarcador ultrapassar o peso bruto total”. O embarcador só responde sozinho quando é o único remetente e o peso declarado é menor que o aferido (§ 4º). E os dois respondem juntos quando o peso declarado já passa do limite legal (§ 6º).",
+      pegadinha: "Culpar as empresas que mandaram a carga, ou o motorista, pelo excesso de peso.",
+      conhecimento:
+        "O excesso de peso é a infração do art. 231, V. Conforme o caso, responde o embarcador, o transportador ou os dois juntos (art. 257, §§ 4º a 6º).",
+    },
+    {
+      topico: "Certo ou Errado (Cebraspe)",
+      subassunto: "Peso declarado acima do limite (art. 257, § 6º)",
+      dificuldade: 5,
+      raciocinio: "Compare o peso declarado na nota com o limite legal, e não só com o peso da balança.",
+      enunciado:
+        "A empresa Beta é a única remetente da carga de um caminhão da Transportadora Gama. O peso declarado na nota fiscal já passa do limite legal de peso bruto total, e a balança confirma exatamente esse peso.\n\nNessa situação hipotética, apenas a empresa Beta, como embarcadora, responde pela infração de excesso de peso bruto total.",
+      alternativas: ["Certo", "Errado"],
+      correta: 1,
+      ordemFixa: true,
+      explicacao:
+        "Como o peso declarado na nota fiscal é superior ao limite legal, o art. 257, § 6º, diz que o transportador e o embarcador são “solidariamente responsáveis”. A Beta não responde sozinha. Ela só responderia sozinha (§ 4º) se o peso declarado fosse menor que o aferido.",
+      pegadinha: "Ver “única remetente” e aplicar o § 4º, que também exige peso declarado menor que o aferido.",
+      conhecimento: "Solidariamente quer dizer que embarcador e transportador respondem juntos pela mesma infração.",
+    },
   ],
 };
