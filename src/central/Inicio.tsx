@@ -13,6 +13,7 @@ import {
   useMapas,
 } from "./comum";
 import HojeCronograma from "./HojeCronograma";
+import QuadroMaterias, { useAvancoPrf } from "./QuadroMaterias";
 import { Emoji, TextoEmoji } from "../icones/Emoji";
 import {
   INFO_CURSO,
@@ -324,6 +325,9 @@ export default function Inicio({ onAbrir, onIr }: InicioProps) {
         </div>
       </div>
 
+      {/* O que a PRF Policial cobre nos outros concursos de 2027. */}
+      <CartaoConcursos onIr={onIr} />
+
       {/* Memorizar e acompanhar. */}
       <div className="cx-colunas">
         <div className="cx-coluna">
@@ -436,5 +440,26 @@ export default function Inicio({ onAbrir, onIr }: InicioProps) {
         </div>
       </div>
     </div>
+  );
+}
+
+function CartaoConcursos({ onIr }: { onIr: (s: Secao, extra?: Record<string, string>) => void }) {
+  const avanco = useAvancoPrf();
+  return (
+    <section className="cx-card cq-cartao">
+      <div className="cx-card-topo">
+        <h2 className="cx-card-titulo">
+          <Emoji e="🗂️" /> Matérias em comum · 2027
+        </h2>
+        <button type="button" className="cx-link" onClick={() => onIr("concursos")}>
+          Ver detalhes →
+        </button>
+      </div>
+      <p className="cq-texto-fraco">
+        O que você estuda pela PRF cai também na PMPR, na Polícia Penal Federal (PPF) e na Polícia Penal do Paraná
+        (PPPR).
+      </p>
+      <QuadroMaterias resumido avanco={avanco} onMateria={(id) => onIr("concursos", { materia: id })} />
+    </section>
   );
 }

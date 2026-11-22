@@ -14,8 +14,9 @@ const Redacoes = lazy(() => import("./Hubs").then((m) => ({ default: m.Redacoes 
 const Tempo = lazy(() => import("./Tempo"));
 const Provas = lazy(() => import("./ProvasAnteriores"));
 const Livro = lazy(() => import("./LivroCentral"));
+const Concursos = lazy(() => import("./Concursos"));
 
-export type Secao = "inicio" | "cursos" | "questoes" | "provas" | "mapas" | "livro" | "redacoes" | "tempo";
+export type Secao = "inicio" | "cursos" | "questoes" | "provas" | "mapas" | "livro" | "redacoes" | "tempo" | "concursos";
 
 const SECOES: { id: Secao; rotulo: string; titulo: string; icone: string }[] = [
   { id: "inicio", rotulo: "Início", titulo: "Início", icone: "🏠" },
@@ -26,6 +27,7 @@ const SECOES: { id: Secao; rotulo: string; titulo: string; icone: string }[] = [
   { id: "livro", rotulo: "Livro do CTB", titulo: "Livro do CTB", icone: "📖" },
   { id: "redacoes", rotulo: "Redações", titulo: "Redações", icone: "✍️" },
   { id: "tempo", rotulo: "Tempo semanal", titulo: "Tempo semanal", icone: "⏱️" },
+  { id: "concursos", rotulo: "Concursos 2027", titulo: "Concursos 2027", icone: "🗂️" },
 ];
 
 export type AbrirCurso = (id: CursoId, entrada?: EntradaCurso) => void;
@@ -153,6 +155,7 @@ export default function Central({ onAbrir }: { onAbrir: AbrirCurso }) {
             {secao === "livro" && <Livro onAbrir={onAbrir} onIr={ir} />}
             {secao === "redacoes" && <Redacoes onAbrir={onAbrir} />}
             {secao === "tempo" && <Tempo onAbrir={onAbrir} />}
+            {secao === "concursos" && <Concursos onAbrir={onAbrir} />}
           </Suspense>
         </main>
       </div>

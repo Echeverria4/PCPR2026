@@ -2187,3 +2187,387 @@
   height: 22px;
   flex: none;
 }
+
+/* ---------- Concursos 2027: quadro de ✓ (Início e aba) ---------- */
+
+.cq-leitor {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.cq-texto-fraco {
+  margin: 0 0 12px;
+  font-size: 0.88rem;
+  color: var(--texto-fraco);
+}
+
+.cq-tabela {
+  width: 100%;
+  max-width: 640px;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 0.9rem;
+}
+
+.cq-col {
+  width: 48px;
+}
+
+.cq-tabela th,
+.cq-tabela td {
+  padding: 7px 2px;
+  border-bottom: 1px solid var(--borda);
+  vertical-align: middle;
+}
+
+.cq-tabela thead th {
+  font-family: var(--fonte-cond);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--texto-fraco);
+  text-align: center;
+}
+
+.cq-tabela thead th:first-child,
+.cq-tabela tbody th,
+.cq-tabela tfoot th {
+  text-align: left;
+  padding-left: 8px;
+}
+
+.cq-tabela tbody th {
+  font-weight: 600;
+}
+
+.cq-em-todos th {
+  box-shadow: inset 3px 0 0 var(--verde);
+}
+
+.cq-tabela td {
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 800;
+  position: relative;
+}
+
+.cq-tabela .cq-sim,
+.cq-chip.cq-sim {
+  color: var(--verde);
+}
+
+.cq-tabela .cq-parte,
+.cq-chip.cq-parte {
+  color: var(--ouro-forte);
+}
+
+.cq-tabela .cq-nao {
+  color: var(--texto-fraco);
+  font-weight: 400;
+  opacity: 0.6;
+}
+
+.cq-tabela tfoot th,
+.cq-tabela tfoot td {
+  border-bottom: 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--texto-fraco);
+}
+
+.cq-parcial {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--ouro-forte);
+}
+
+.cq-nome {
+  border: 0;
+  background: none;
+  padding: 0;
+  color: var(--texto);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.cq-nome:hover {
+  color: var(--ouro-forte);
+  text-decoration: underline;
+}
+
+.cq-nome:focus-visible,
+.cq-materia > summary:focus-visible {
+  outline: 2px solid var(--ouro-forte);
+  outline-offset: 2px;
+}
+
+.cq-avanco {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--texto-fraco);
+}
+
+.cq-barra {
+  flex: 1 1 auto;
+  max-width: 90px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--borda);
+  overflow: hidden;
+}
+
+.cq-barra > span {
+  display: block;
+  height: 100%;
+  border-radius: 2px;
+  background: var(--verde);
+}
+
+.cq-avanco-num {
+  white-space: nowrap;
+}
+
+.cq-legenda {
+  margin: 8px 0 0;
+  font-size: 0.78rem;
+  color: var(--texto-fraco);
+}
+
+/* ---------- aba Concursos 2027 ---------- */
+
+.cq-pagina {
+  max-width: 920px;
+}
+
+.cq-destaque {
+  box-shadow: inset 3px 0 0 var(--verde);
+}
+
+.cq-destaque p {
+  margin: 10px 0 0;
+}
+
+.cq-total {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  color: var(--texto-fraco);
+}
+
+.cq-total .cq-barra {
+  max-width: 220px;
+}
+
+.cq-total .cq-avanco {
+  font-size: 0.8rem;
+}
+
+.cq-subtitulo {
+  margin: 22px 0 10px;
+  font-family: var(--fonte-cond);
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.cq-concursos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.cq-concursos.cq-quatro {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr));
+}
+
+.cq-concurso {
+  min-width: 0;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--borda);
+  border-radius: var(--cx-raio);
+}
+
+.cq-concurso h3 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.cq-concurso p {
+  margin: 6px 0 0;
+  font-size: 0.86rem;
+  line-height: 1.45;
+  color: var(--texto-fraco);
+}
+
+.cq-sigla {
+  display: inline-block;
+  margin-right: 4px;
+  padding: 1px 7px;
+  border-radius: 6px;
+  background: var(--bg-elevado);
+  color: var(--ouro-forte);
+  font-family: var(--fonte-cond);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+}
+
+.cq-concurso .cq-previsao {
+  color: var(--ouro-forte);
+  font-weight: 700;
+}
+
+.cq-concurso .cq-conta {
+  color: var(--verde);
+  font-weight: 700;
+}
+
+.cq-concurso .cq-dica {
+  color: var(--texto);
+}
+
+.cq-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.cq-chip {
+  display: inline-block;
+  padding: 1px 7px;
+  border: 1px solid var(--borda-forte);
+  border-radius: 999px;
+  font-family: var(--fonte-cond);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--texto-fraco);
+  white-space: nowrap;
+}
+
+.cq-chip.cq-sim {
+  border-color: var(--verde);
+}
+
+.cq-chip.cq-parte {
+  border-color: var(--ouro-forte);
+}
+
+.cq-chip.cq-nao {
+  opacity: 0.7;
+}
+
+.cq-materias {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.cq-materia {
+  background: var(--bg-card);
+  border: 1px solid var(--borda);
+  border-radius: var(--cx-raio);
+  scroll-margin-top: 72px;
+}
+
+.cq-materia > summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  padding: 12px 16px;
+  list-style: none;
+  cursor: pointer;
+}
+
+.cq-materia > summary::-webkit-details-marker {
+  display: none;
+}
+
+.cq-materia > summary::after {
+  content: "▾";
+  margin-left: auto;
+  color: var(--texto-fraco);
+  transition: transform 0.15s;
+}
+
+.cq-materia[open] > summary {
+  border-bottom: 1px solid var(--borda);
+}
+
+.cq-materia[open] > summary::after {
+  transform: rotate(180deg);
+}
+
+.cq-materia-nome {
+  flex: 1 1 100%;
+  font-weight: 700;
+}
+
+.cq-materia > summary .cq-avanco {
+  margin-top: 0;
+}
+
+.cq-corpo {
+  display: grid;
+  gap: 12px;
+  padding: 14px 16px 16px;
+}
+
+.cq-corpo p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.cq-nucleo {
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--bg-elevado);
+  box-shadow: inset 3px 0 0 var(--verde);
+}
+
+.cq-bloco h4 {
+  margin: 0 0 4px;
+  font-size: 0.92rem;
+}
+
+.cq-bloco .cq-falta {
+  margin-top: 6px;
+}
+
+.cq-falta strong {
+  color: var(--ouro-forte);
+}
+
+.cq-corpo .cq-nao-cai {
+  font-size: 0.85rem;
+  color: var(--texto-fraco);
+}
+
+.cq-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+}
+
+.cq-fontes {
+  margin-top: 20px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cq-materia > summary::after {
+    transition: none;
+  }
+}
