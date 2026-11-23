@@ -10,4 +10,13 @@ export const TITULOS: Record<string, string> = {
   "pt-a08": "Sintaxe II: complementos, adjuntos e vozes verbais",
   "pt-a09": "Período composto: coordenação e subordinação",
   "pt-a10": "Concordância, regência, colocação, crase e pontuação",
+  "rlm-a01": "Razão, proporção, regra de três e porcentagem",
+  "rlm-a02": "Lógica I: princípios, proposições, negação, E e OU",
+  "rlm-a03": "Lógica II: condicional, bicondicional e ou exclusivo",
+  "rlm-a04": "Conjuntos, diagramas e intervalos",
+  "rlm-a05": "Análise combinatória",
+  "rlm-a06": "Geometria plana",
+  "rlm-a07": "Geometria espacial",
+  "rlm-a08": "Estatística I: média, moda e mediana",
+  "rlm-a09": "Estatística II: tabelas, gráficos, frequências e separatrizes",
 };
