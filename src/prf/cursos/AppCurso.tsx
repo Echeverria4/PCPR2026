@@ -34,7 +34,8 @@ const CURSOS_SO_AULAS: Partial<Record<CursoId, CursoSoAulas>> = {
     curto: "PMPR",
     brasao: pmprBrasao,
     brasaoAlt: "Brasão da Polícia Militar do Paraná",
-    aulas: () => import("./dados/pmpr"),
+    aulas: () => import("./completo/pmpr/grupos"),
+    completo: () => import("./completo/pmpr"),
   },
   "prf-policial": {
     curto: "PRF Policial",
