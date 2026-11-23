@@ -1,6 +1,14 @@
 import { useEffect, useState } from "react";
 import type { AbrirCurso } from "./Central";
-import { CONCURSOS, MATERIAS_COMUNS, MATERIAS_FORA, contagem, emQuantos, type MateriaComum } from "./concursos2027";
+import {
+  CONCURSOS,
+  MATERIAS_COMUNS,
+  MATERIAS_FORA,
+  contagem,
+  emQuantos,
+  totalNoQuadro,
+  type MateriaComum,
+} from "./concursos2027";
 import QuadroMaterias, { BarraAvanco, SIMBOLO, TEXTO_COBRE, useAvancoPrf, type Avanco } from "./QuadroMaterias";
 import { Emoji } from "../icones/Emoji";
 
@@ -51,8 +59,8 @@ export default function Concursos({ onAbrir }: { onAbrir: AbrirCurso }) {
     <div className="cq-pagina">
       <p className="cx-intro">
         Você estuda pela PRF Policial. Aqui está o que dessas matérias cai também na PM do Paraná, na Polícia Penal
-        Federal e na Polícia Penal do Paraná. Tudo saiu do último edital de cada concurso: quando sair o edital novo,
-        pode mudar.
+        Federal e na Polícia Penal do Paraná, e as matérias que só os outros cobram, como História e Geografia na PMPR.
+        Tudo saiu do último edital de cada concurso: quando sair o edital novo, pode mudar.
       </p>
 
       <section className="cx-card cq-destaque">
@@ -81,6 +89,7 @@ export default function Concursos({ onAbrir }: { onAbrir: AbrirCurso }) {
               {c.id !== "prf" && (
                 <p className="cq-conta">
                   {n.sim} matérias da PRF caem aqui{n.parte > 0 ? ` (+${n.parte} em parte)` : ""}.
+                  {totalNoQuadro(c.id) > n.sim && ` Com as de fora da PRF, são ${totalNoQuadro(c.id)} no quadro.`}
                 </p>
               )}
               <p className="cq-dica">{c.dica}</p>
@@ -117,7 +126,7 @@ export default function Concursos({ onAbrir }: { onAbrir: AbrirCurso }) {
       <p className="cq-texto-fraco">A PRF não cobra estas matérias: elas ficam para estudar à parte.</p>
       <div className="cq-concursos">
         {MATERIAS_FORA.map((f) => (
-          <section key={f.id} className="cq-concurso">
+          <section key={f.id} id={`cq-${f.id}`} className="cq-concurso">
             <h3>
               <Emoji e={f.icone} /> {f.nome}
             </h3>

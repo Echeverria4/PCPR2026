@@ -2244,6 +2244,20 @@
   font-weight: 600;
 }
 
+.cq-tabela .cq-grupo th {
+  padding: 14px 8px 5px;
+  font-family: var(--fonte-cond);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+}
+
+.cq-tabela tbody:first-of-type .cq-grupo th {
+  padding-top: 8px;
+}
+
 .cq-em-todos th {
   box-shadow: inset 3px 0 0 var(--verde);
 }

@@ -349,6 +349,8 @@ export const MATERIAS_COMUNS: MateriaComum[] = [
 export interface MateriaFora {
   id: string;
   nome: string;
+  /** Nome curto para o quadro. Sem ele, a matéria fica só no cartão (a redação é prova, não matéria). */
+  curto?: string;
   icone: string;
   concursos: ConcursoId[];
   topicos: string;
@@ -360,6 +362,7 @@ export interface MateriaFora {
 export const MATERIAS_FORA: MateriaFora[] = [
   {
     id: "lep",
+    curto: "Execução Penal (LEP)",
     nome: "Execução Penal (LEP)",
     icone: "⛓️",
     concursos: ["ppf", "pppr"],
@@ -367,6 +370,7 @@ export const MATERIAS_FORA: MateriaFora[] = [
   },
   {
     id: "hist",
+    curto: "História",
     nome: "História do Brasil e do Paraná",
     icone: "🏺",
     concursos: ["pmpr"],
@@ -375,6 +379,7 @@ export const MATERIAS_FORA: MateriaFora[] = [
   },
   {
     id: "geo",
+    curto: "Geografia",
     nome: "Geografia",
     icone: "🗺️",
     concursos: ["pmpr"],
@@ -383,6 +388,7 @@ export const MATERIAS_FORA: MateriaFora[] = [
   },
   {
     id: "leginst",
+    curto: "Leg. Institucional",
     nome: "Legislação Institucional",
     icone: "🎖️",
     concursos: ["pmpr"],
@@ -402,6 +408,7 @@ export const MATERIAS_FORA: MateriaFora[] = [
   },
   {
     id: "penal-federal",
+    curto: "Sistema Penit. Federal",
     nome: "Execução Penal e sistema penitenciário federal",
     icone: "🏢",
     concursos: ["ppf"],
@@ -409,6 +416,7 @@ export const MATERIAS_FORA: MateriaFora[] = [
   },
   {
     id: "atualidades-ppf",
+    curto: "Atualidades",
     nome: "Atualidades (só na discursiva)",
     icone: "📰",
     concursos: ["ppf"],
@@ -416,12 +424,40 @@ export const MATERIAS_FORA: MateriaFora[] = [
   },
   {
     id: "penitenciario-pr",
+    curto: "Penitenciário e Criminologia",
     nome: "Direito Penitenciário e Criminologia",
     icone: "📚",
     concursos: ["pppr"],
     topicos: "Estatuto Penitenciário do Paraná, Lei Complementar 245/2022 (quadro da Polícia Penal do Paraná), Lei 21.404/2023 (Conselho da Polícia Penal) e noções de Criminologia: conceito, objeto, método e histórico.",
   },
 ];
+
+/** Matérias de fora da PRF no formato do quadro: ✓ nos concursos que cobram e – nos outros (pedido de 23/11/26). */
+export interface MateriaOutra {
+  id: string;
+  curto: string;
+  em: Record<ConcursoId, Cobre>;
+}
+
+export const MATERIAS_OUTRAS: MateriaOutra[] = MATERIAS_FORA.flatMap((f) =>
+  f.curto
+    ? [
+        {
+          id: f.id,
+          curto: f.curto,
+          em: Object.fromEntries(CONCURSOS.map((c) => [c.id, f.concursos.includes(c.id) ? "sim" : "nao"])) as Record<
+            ConcursoId,
+            Cobre
+          >,
+        },
+      ]
+    : [],
+);
+
+/** Quantas matérias do quadro todo (as da PRF e as outras) caem em cheio no concurso. */
+export function totalNoQuadro(c: ConcursoId): number {
+  return [...MATERIAS_COMUNS, ...MATERIAS_OUTRAS].filter((m) => m.em[c] === "sim").length;
+}
 
 /** Quantas matérias do quadro caem em cada concurso (a parcial conta à parte). */
 export function contagem(c: ConcursoId): { sim: number; parte: number } {
