@@ -56,4 +56,8 @@ export const TITULOS: Record<string, string> = {
   "leginst-a03": "Constituição do Paraná: militares e segurança pública",
   "leginst-a04": "Subsídio dos militares do Paraná (Lei 17.169/2012)",
   "leginst-a05": "Processo disciplinar militar do Paraná (Lei 16.544/2010)",
+  "hist-a01": "Brasil Colônia e a ocupação do Paraná",
+  "hist-a02": "Brasil Império e a Província do Paraná",
+  "hist-a03": "Brasil República: da Espada à abertura",
+  "hist-a04": "Nova República, cidadania e segurança pública",
 };
