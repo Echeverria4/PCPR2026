@@ -7,6 +7,6 @@ import type { CursoId } from "../../../data/cursos";
 export const TOTAIS_BANCO: Partial<
   Record<CursoId, { questoes: number; resumos: number; materias: number; compartilhadas?: number }>
 > = {
-  "prf-policial": { questoes: 2164, resumos: 215, materias: 18, compartilhadas: 985 },
-  pmpr: { questoes: 370, resumos: 37, materias: 4, compartilhadas: 0 },
+  "prf-policial": { questoes: 2164, resumos: 215, materias: 18, compartilhadas: 1005 },
+  pmpr: { questoes: 400, resumos: 40, materias: 5, compartilhadas: 0 },
 };

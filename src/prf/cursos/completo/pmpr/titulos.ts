@@ -37,4 +37,7 @@ export const TITULOS: Record<string, string> = {
   "con-a05": "Administração pública, servidores e militares dos Estados",
   "con-a06": "Poder Judiciário",
   "con-a07": "Defesa do Estado e segurança pública",
+  "dh-a01": "Declaração Universal dos Direitos Humanos",
+  "dh-a02": "Convenção Americana (Pacto de São José), arts. 1º a 32",
+  "dh-a03": "Código de Conduta para os Funcionários Responsáveis pela Aplicação da Lei",
 };

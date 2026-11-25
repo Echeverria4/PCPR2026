@@ -2,10 +2,12 @@
  * PMPR Soldado como fonte do banco por tema (pedido de 25/11/26: "coloque essas questões no banco"). Cada aula da PMPR
  * tem um tema padrão; o assunto (tópico) ou a questão podem trocar esse tema. null = a PRF Policial não tem aula do
  * assunto: lógica proposicional, hardware, Linux, Android, LibreOffice, backup, funções da linguagem, variação
- * linguística, figuras de linguagem, princípios fundamentais, partidos, Poder Judiciário e militares dos Estados.
+ * linguística, figuras de linguagem, princípios fundamentais, partidos, Poder Judiciário, militares dos Estados e o
+ * Código de Conduta da ONU para os agentes da lei.
  */
 import type { TemaPt } from "./temasPt";
 import type { TemaCon } from "./temasCon";
+import type { TemaDh } from "./temasDh";
 
 type Tabela = Record<string, string | null>;
 
@@ -154,5 +156,12 @@ export const PMPR_CON_ADM: TabelaPmpr = {
     "con-a05|Responsabilidade do Estado": "adm.responsabilidade",
     "con-a05|Militares dos Estados": null,
   },
+  questao: {},
+};
+
+/** Direitos Humanos (lote 5): a DUDH e a Convenção Americana têm aula na PRF Policial; o Código de Conduta da ONU, não. */
+export const PMPR_DH: TabelaPmpr = {
+  aula: { "dh-a01": "dh.dudh", "dh-a02": "dh.interamericano", "dh-a03": null } satisfies Record<string, TemaDh | null>,
+  topico: {},
   questao: {},
 };
