@@ -11,5 +11,11 @@ import { AULA as a09 } from "./a09";
 import { AULA as a10 } from "./a10";
 import { AULA as a11 } from "./a11";
 import { AULA as a12 } from "./a12";
+import { AULA as a13 } from "./a13";
+import { AULA as a14 } from "./a14";
+import { AULA as a15 } from "./a15";
+import { AULA as a16 } from "./a16";
+import { AULA as a17 } from "./a17";
+import { AULA as a18 } from "./a18";
 
-export const AULAS_GEO: AulaEscrita[] = [a01, a02, a03, a04, a05, a06, a07, a08, a09, a10, a11, a12];
+export const AULAS_GEO: AulaEscrita[] = [a01, a02, a03, a04, a05, a06, a07, a08, a09, a10, a11, a12, a13, a14, a15, a16, a17, a18];

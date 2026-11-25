@@ -75,7 +75,7 @@ export const TITULOS: Record<string, string> = {
   "geo-a13": "Conflitos geopolíticos emergentes",
   "geo-a14": "Ordem mundial e organizações internacionais",
   "geo-a15": "Cartografia: orientação, coordenadas e escala",
-  "geo-a16": "Cartografia: fusos horários",
+  "geo-a16": "Cartografia: fusos, projeções e curvas de nível",
   "geo-a17": "Paraná: localização, clima e vegetação",
   "geo-a18": "Paraná: relevo e hidrografia",
 };
