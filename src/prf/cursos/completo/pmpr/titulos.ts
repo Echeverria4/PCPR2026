@@ -30,4 +30,11 @@ export const TITULOS: Record<string, string> = {
   "info-a09": "Segurança da informação",
   "info-a10": "LibreOffice Writer",
   "info-a11": "LibreOffice Calc",
+  "con-a01": "Princípios fundamentais",
+  "con-a02": "Direitos e deveres individuais e coletivos",
+  "con-a03": "Nacionalidade",
+  "con-a04": "Direitos políticos e partidos",
+  "con-a05": "Administração pública, servidores e militares dos Estados",
+  "con-a06": "Poder Judiciário",
+  "con-a07": "Defesa do Estado e segurança pública",
 };
