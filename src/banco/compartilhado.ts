@@ -12,6 +12,8 @@ import { QUESTOES_TI } from "../data/questions/ti";
 import { QUESTOES_TI_SEGURANCA } from "../data/questions/ti-seguranca";
 import { QUESTOES_PRF_POR_MATERIA } from "../prf/questoes";
 import type { QuestaoCurso } from "../prf/cursos/completo/tipos";
+import { DADOS as DADOS_PMPR } from "../prf/cursos/completo/pmpr";
+import { PMPR_CON, PMPR_CON_ADM, PMPR_INFO, PMPR_PT, PMPR_RLM, temaPmpr } from "./temasPmpr";
 import {
   AULA_POL_DO_TEMA,
   TEMA_QUESTAO_ADM,
@@ -87,7 +89,7 @@ import { AULA_POL_DO_TEMA_TRANSITO, TEMA_QUESTAO_PCPR_TRANSITO, TEMA_TOPICO_PCPR
  * Fonte nova (ex.: PF) = uma entrada em fontes da matéria; a questão aparece sozinha em todos os cursos com o mesmo tema.
  * Matéria nova = uma entrada em MATERIAS_POL, com a tabela de temas dela (src/banco/temas*.ts).
  */
-export type CursoFonte = "prf-adm" | "pcpr2026";
+export type CursoFonte = "prf-adm" | "pcpr2026" | "pmpr";
 
 interface FonteBanco {
   curso: CursoFonte;
@@ -110,6 +112,9 @@ function temaPor(porQuestao: TemaDe, porTopico: TemaDe) {
 // Na PRF ADM, "delegacia da PRF", "competência delegada", o inquérito do PAD e o art. 144 são conteúdo do curso.
 const PRF_ADM = { curso: "prf-adm", prefixo: "cmp-adm", selo: "Do curso PRF ADM", barraPoliciaCivil: false } as const;
 const PCPR = { curso: "pcpr2026", prefixo: "cmp-pcpr", selo: "Do curso PCPR 2026", barraPoliciaCivil: true } as const;
+// Na PMPR, as polícias (art. 144) e a Justiça Militar são conteúdo; Paraná não entra nas matérias que vêm para cá.
+const PMPR = { curso: "pmpr", prefixo: "cmp-pmpr", selo: "Do curso PMPR", barraPoliciaCivil: false } as const;
+const daPmpr = (materia: string) => () => DADOS_PMPR.banco.questoes.filter((q) => q.materia === materia);
 
 interface MateriaBanco {
   /** Id da matéria na PRF Policial. */
@@ -128,6 +133,7 @@ const MATERIAS_POL: MateriaBanco[] = [
     fontes: [
       { ...PRF_ADM, questoes: () => QUESTOES_PRF_POR_MATERIA.pt, tema: temaPor(TEMA_QUESTAO_ADM, TEMA_TOPICO_ADM) },
       { ...PCPR, questoes: () => PT_PCPR, tema: temaPor(TEMA_QUESTAO_PCPR, TEMA_TOPICO_PCPR) },
+      { ...PMPR, questoes: daPmpr("pt"), tema: temaPmpr(PMPR_PT) },
     ],
   },
   {
@@ -137,6 +143,7 @@ const MATERIAS_POL: MateriaBanco[] = [
     fontes: [
       { ...PRF_ADM, questoes: () => QUESTOES_PRF_POR_MATERIA.rlm, tema: temaPor(TEMA_QUESTAO_ADM_RLM, TEMA_TOPICO_ADM_RLM) },
       { ...PCPR, questoes: () => RLM_PCPR, tema: temaPor(TEMA_QUESTAO_PCPR_RLM, TEMA_TOPICO_PCPR_RLM) },
+      { ...PMPR, questoes: daPmpr("rlm"), tema: temaPmpr(PMPR_RLM) },
     ],
   },
   {
@@ -150,6 +157,7 @@ const MATERIAS_POL: MateriaBanco[] = [
         questoes: () => [...QUESTOES_TI, ...QUESTOES_TI_SEGURANCA],
         tema: temaPor(TEMA_QUESTAO_PCPR_INFO, TEMA_TOPICO_PCPR_INFO),
       },
+      { ...PMPR, questoes: daPmpr("info"), tema: temaPmpr(PMPR_INFO) },
     ],
   },
   {
@@ -169,6 +177,7 @@ const MATERIAS_POL: MateriaBanco[] = [
       { ...PRF_ADM, questoes: () => QUESTOES_PRF_POR_MATERIA.leg, tema: temaPor(TEMA_QUESTAO_ADM_LEG_CON, TEMA_TOPICO_ADM_LEG_CON) },
       { ...PCPR, questoes: () => CON_PCPR, tema: temaPor(TEMA_QUESTAO_PCPR_CON, TEMA_TOPICO_PCPR_CON) },
       { ...PCPR, questoes: () => PROC_PCPR, tema: temaPor(TEMA_QUESTAO_PCPR_PP_CON, TEMA_TOPICO_PCPR_PP_CON) },
+      { ...PMPR, questoes: daPmpr("con"), tema: temaPmpr(PMPR_CON) },
     ],
   },
   {
@@ -181,6 +190,8 @@ const MATERIAS_POL: MateriaBanco[] = [
       // Na PRF ADM, o regime disciplinar, a LAI e o conflito de interesses estão em Ética.
       { ...PRF_ADM, questoes: () => QUESTOES_PRF_POR_MATERIA.etica, tema: temaPor(TEMA_QUESTAO_ADM_ETICA_ADM, TEMA_TOPICO_ADM_ETICA_ADM) },
       { ...PCPR, questoes: () => ADM_PCPR, tema: temaPor(TEMA_QUESTAO_PCPR_ADM, TEMA_TOPICO_PCPR_ADM) },
+      // Na PMPR, a administração pública da CF está em Constituição Federal.
+      { ...PMPR, questoes: daPmpr("con"), tema: temaPmpr(PMPR_CON_ADM) },
     ],
   },
   {
@@ -262,14 +273,16 @@ function textoDa(q: Question<string>) {
 }
 
 const normalizar = (s: string) => s.toLowerCase().replace(/\W+/g, " ").trim();
+/** Enunciado curto ("Assinale a frase…") se repete em questões diferentes: a chave leva também as alternativas. */
+const chaveDa = (q: { enunciado: string; alternativas: string[] }) => normalizar([q.enunciado, ...q.alternativas].join(" "));
 
 /**
  * Questões das outras fontes para a PRF Policial, já na aula certa, com o tema como tópico e selo de origem.
- * Ficam fora: as do mesmo enunciado que uma questão do curso, as inéditas (o selo delas fala de outra prova),
+ * Ficam fora: as de mesmo enunciado e alternativas que uma questão já vista, as inéditas (o selo delas fala de outra prova),
  * as com Paraná (ou, da PCPR, Polícia Civil) e as de tema que a PRF Policial não tem.
  */
 export function compartilhadasPol(proprias: QuestaoCurso[]): QuestaoCurso[] {
-  const vistos = new Set(proprias.map((q) => normalizar(q.enunciado)));
+  const vistos = new Set(proprias.map((q) => chaveDa(q)));
   const saida: QuestaoCurso[] = [];
   for (const m of MATERIAS_POL) {
     const nome = new Map(m.temas.map((t) => [t.id, t.nome]));
@@ -277,7 +290,7 @@ export function compartilhadasPol(proprias: QuestaoCurso[]): QuestaoCurso[] {
       for (const q of f.questoes()) {
         const tema = f.tema(q);
         if (!tema || !(tema in m.aula) || q.origem === "inedita" || (f.barraPoliciaCivil ? FORA_PCPR : FORA_PARANA).test(textoDa(q))) continue;
-        const chave = normalizar(q.enunciado);
+        const chave = chaveDa(q);
         if (vistos.has(chave)) continue;
         vistos.add(chave);
         // O tópico vira o nome do tema: o filtro de assuntos do treino ganha um chip por tema, não os tópicos do outro curso.
