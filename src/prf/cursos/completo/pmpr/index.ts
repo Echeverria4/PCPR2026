@@ -7,6 +7,7 @@ import { AULAS_DH } from "./dh";
 import { AULAS_LEG } from "./leg";
 import { AULAS_LEGINST } from "./leginst";
 import { AULAS_HIST } from "./hist";
+import { AULAS_GEO } from "./geo";
 
 /**
  * Curso completo da PMPR Soldado (pedido de 23/11/26): cada PDF do Drive vira uma aula com resumo e questões no
@@ -14,7 +15,7 @@ import { AULAS_HIST } from "./hist";
  * Paraná, para servirem também à PRF Policial. Cada matéria entra aqui quando o lote dela fica pronto.
  */
 export const DADOS: DadosCursoCompleto = {
-  banco: montarBanco("pm", { pt: AULAS_PT, rlm: AULAS_RLM, info: AULAS_INFO, con: AULAS_CON, dh: AULAS_DH, leg: AULAS_LEG, leginst: AULAS_LEGINST, hist: AULAS_HIST }),
+  banco: montarBanco("pm", { pt: AULAS_PT, rlm: AULAS_RLM, info: AULAS_INFO, con: AULAS_CON, dh: AULAS_DH, leg: AULAS_LEG, leginst: AULAS_LEGINST, hist: AULAS_HIST, geo: AULAS_GEO }),
   semQuestoes: ["discursiva", "intensivo"],
   faixa: [
     { forte: "Edital 2025", texto: "Último concurso: IBFC, 60 questões de A a E e redação" },
