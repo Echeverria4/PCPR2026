@@ -69,7 +69,7 @@ export const TOTAIS_TEMAS_POL: { materia: string; nome: string; temas: TotalTema
     materia: "info",
     nome: "Informática",
     temas: [
-      { nome: "Fundamentos de redes", aula: "info-01", proprias: 6, "prf-adm": 1, pcpr2026: 4, pmpr: 0 },
+      { nome: "Redes e transformação digital", aula: "info-01", proprias: 6, "prf-adm": 1, pcpr2026: 5, pmpr: 0 },
       { nome: "Internet e TCP/IP", aula: "info-02", proprias: 7, "prf-adm": 4, pcpr2026: 10, pmpr: 5 },
       { nome: "Redes privadas e VPN", aula: "info-03", proprias: 7, "prf-adm": 3, pcpr2026: 1, pmpr: 1 },
       { nome: "Computação em nuvem", aula: "info-04", proprias: 8, "prf-adm": 5, pcpr2026: 3, pmpr: 2 },

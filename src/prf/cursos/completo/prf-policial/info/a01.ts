@@ -4,7 +4,7 @@ export const AULA: AulaEscrita = {
   aula: "info-01",
   resumo: {
     ideia:
-      "Rede é um conjunto de terminais, equipamentos e meios de transmissão que trocam dados. Esta aula classifica redes pelo sentido do sinal, pelo meio, pelo alcance e pelo desenho.",
+      "Rede é um conjunto de terminais, equipamentos e meios de transmissão que trocam dados. Esta aula classifica redes pelo sentido do sinal, pelo meio, pelo alcance e pelo desenho e fecha com a transformação digital: IoT, big data e IA.",
     itens: [
       {
         termo: "Tipo de ligação",
@@ -63,7 +63,28 @@ export const AULA: AulaEscrita = {
       },
       {
         termo: "Internet das Coisas (IoT)",
-        faz: "Objetos do dia a dia ligados à rede, que coletam e trocam dados: câmeras, sensores, relógios, carros.",
+        faz: "Objetos do dia a dia ligados à rede, que coletam e trocam dados: câmeras, sensores, relógios, carros. É uma das bases da transformação digital, ao lado do big data e da IA.",
+        pista: "Aparelho de IoT com a senha de fábrica é alvo fácil: invadido, pode virar parte de uma botnet.",
+      },
+      {
+        termo: "Big data",
+        faz: "Bases de dados enormes, que chegam rápido e em formatos variados (texto, imagem, sinal de sensor). Os 3 Vs: volume, velocidade e variedade; muitos materiais somam veracidade e valor.",
+        pista: "O ganho está em cruzar as bases para achar padrões, não só em guardar muito dado.",
+      },
+      {
+        termo: "Inteligência artificial (IA)",
+        faz: "Sistema que aprende padrões com dados e faz previsões ou classificações, como no reconhecimento de imagem. No aprendizado de máquina, a regra não é escrita à mão: o modelo a tira dos exemplos.",
+        pista: "A IA generativa cria texto, imagem ou áudio e pode inventar, com toda a segurança, uma resposta ou uma lei que não existe.",
+      },
+      {
+        termo: "Viés algorítmico",
+        faz: "Se os dados de treino já trazem desigualdade, a IA repete e aumenta o erro. Exemplo: reconhecimento facial com muito mais falsos positivos para um grupo de pessoas.",
+        pista: "O resultado da IA é ponto de partida: precisa de conferência humana e de outras provas.",
+      },
+      {
+        termo: "Deepfake",
+        faz: "Vídeo, foto ou voz falsos, feitos com IA. A voz clonada de um parente pedindo Pix com urgência junta deepfake de áudio e engenharia social.",
+        pista: "Vídeo ou áudio suspeito vai para perícia antes de valer como prova.",
       },
     ],
     cuidado:

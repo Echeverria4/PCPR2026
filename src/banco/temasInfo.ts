@@ -22,7 +22,7 @@ export type TemaInfo =
   | "info.windows11";
 
 export const TEMAS_INFO: { id: TemaInfo; nome: string }[] = [
-  { id: "info.redes", nome: "Fundamentos de redes" },
+  { id: "info.redes", nome: "Redes e transformação digital" },
   { id: "info.internet", nome: "Internet e TCP/IP" },
   { id: "info.intranet", nome: "Redes privadas e VPN" },
   { id: "info.nuvem", nome: "Computação em nuvem" },
@@ -102,6 +102,8 @@ export const TEMA_QUESTAO_PCPR_INFO: Record<string, TemaInfo | null> = {
   "ti-079": "info.redes",
   "ti-101": "info.redes",
   "ti-106": "info.redes",
+  // Transformação digital (IA): a PRF Policial trata IoT, big data e IA na info-01.
+  "ti-031": "info.redes",
   "ti-019": "info.internet",
   "ti-027": "info.internet",
   "ti-057": "info.internet",
