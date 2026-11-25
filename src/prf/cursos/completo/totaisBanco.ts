@@ -8,5 +8,5 @@ export const TOTAIS_BANCO: Partial<
   Record<CursoId, { questoes: number; resumos: number; materias: number; compartilhadas?: number }>
 > = {
   "prf-policial": { questoes: 2164, resumos: 215, materias: 18, compartilhadas: 1071 },
-  pmpr: { questoes: 510, resumos: 51, materias: 6, compartilhadas: 0 },
+  pmpr: { questoes: 560, resumos: 56, materias: 7, compartilhadas: 0 },
 };

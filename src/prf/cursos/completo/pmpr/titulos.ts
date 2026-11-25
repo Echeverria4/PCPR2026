@@ -51,4 +51,9 @@ export const TITULOS: Record<string, string> = {
   "leg-a09": "Igualdade Racial e Crimes de Racismo (Leis 12.288/2010 e 7.716/1989)",
   "leg-a10": "Estatuto da Criança e do Adolescente (Lei 8.069/1990)",
   "leg-a11": "Lei seca da Legislação",
+  "leginst-a01": "Lei Orgânica Nacional das PMs e Bombeiros (Lei 14.751/2023)",
+  "leginst-a02": "Código da PM do Paraná e Regulamento de Ética (Lei 1.943/1954 e Decreto 5.075/1998)",
+  "leginst-a03": "Constituição do Paraná: militares e segurança pública",
+  "leginst-a04": "Subsídio dos militares do Paraná (Lei 17.169/2012)",
+  "leginst-a05": "Processo disciplinar militar do Paraná (Lei 16.544/2010)",
 };
