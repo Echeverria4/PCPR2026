@@ -8,6 +8,7 @@
 import type { TemaPt } from "./temasPt";
 import type { TemaCon } from "./temasCon";
 import type { TemaDh } from "./temasDh";
+import type { TemaEspecial } from "./temasEspecial";
 
 type Tabela = Record<string, string | null>;
 
@@ -164,4 +165,34 @@ export const PMPR_DH: TabelaPmpr = {
   aula: { "dh-a01": "dh.dudh", "dh-a02": "dh.interamericano", "dh-a03": null } satisfies Record<string, TemaDh | null>,
   topico: {},
   questao: {},
+};
+
+/**
+ * Legislação (lote 6): hediondos, tortura, armas, drogas, crime organizado e abuso de autoridade têm aula na PRF
+ * Policial. Maria da Penha, pessoa idosa, igualdade racial e a parte não penal do ECA, não. Na lei seca, cada questão
+ * segue a sua lei.
+ */
+export const PMPR_LEG: TabelaPmpr = {
+  aula: {
+    "leg-a01": "esp.hediondos",
+    "leg-a02": "esp.tortura",
+    "leg-a03": "esp.armas",
+    "leg-a04": "esp.drogas",
+    "leg-a05": "esp.orcrim",
+    "leg-a06": "esp.tortura",
+    "leg-a07": null,
+    "leg-a08": null,
+    "leg-a09": null,
+    "leg-a10": null,
+    "leg-a11": null,
+  } satisfies Record<string, TemaEspecial | null>,
+  topico: {},
+  questao: {
+    "pm-leg-a11-01": "esp.drogas",
+    "pm-leg-a11-02": "esp.orcrim",
+    "pm-leg-a11-03": "esp.tortura",
+    "pm-leg-a11-07": "esp.eca",
+    "pm-leg-a11-08": "esp.eca",
+    "pm-leg-a11-09": "esp.hediondos",
+  } satisfies Record<string, TemaEspecial | null>,
 };

@@ -13,7 +13,7 @@ import { QUESTOES_TI_SEGURANCA } from "../data/questions/ti-seguranca";
 import { QUESTOES_PRF_POR_MATERIA } from "../prf/questoes";
 import type { QuestaoCurso } from "../prf/cursos/completo/tipos";
 import { DADOS as DADOS_PMPR } from "../prf/cursos/completo/pmpr";
-import { PMPR_CON, PMPR_CON_ADM, PMPR_DH, PMPR_INFO, PMPR_PT, PMPR_RLM, temaPmpr } from "./temasPmpr";
+import { PMPR_CON, PMPR_CON_ADM, PMPR_DH, PMPR_INFO, PMPR_LEG, PMPR_PT, PMPR_RLM, temaPmpr } from "./temasPmpr";
 import {
   AULA_POL_DO_TEMA,
   TEMA_QUESTAO_ADM,
@@ -226,6 +226,7 @@ const MATERIAS_POL: MateriaBanco[] = [
       { ...PCPR, questoes: () => LEG_PCPR, tema: temaPor(TEMA_QUESTAO_PCPR_LEG_ESPECIAL, TEMA_TOPICO_PCPR_ESPECIAL) },
       { ...PCPR, questoes: () => PROC_PCPR, tema: temaPor(TEMA_QUESTAO_PCPR_PP_ESPECIAL, TEMA_TOPICO_PCPR_ESPECIAL) },
       { ...PCPR, questoes: () => DH_PCPR, tema: temaPor(TEMA_QUESTAO_PCPR_DH_ESPECIAL, TEMA_TOPICO_PCPR_ESPECIAL) },
+      { ...PMPR, questoes: daPmpr("leg"), tema: temaPmpr(PMPR_LEG) },
     ],
   },
   {
