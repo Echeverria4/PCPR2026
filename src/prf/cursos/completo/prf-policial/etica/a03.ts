@@ -4,48 +4,139 @@ export const AULA: AulaEscrita = {
   aula: "etica-03",
   resumo: {
     ideia:
-      "O Decreto 6.029/2007 organiza o Sistema de Gestão da Ética do Poder Executivo Federal e define como uma suposta falta ética é apurada.",
+      "O Decreto 6.029/2007 cria o Sistema de Gestão da Ética do Poder Executivo Federal: diz quem faz parte (CEP e Comissões de Ética), o que cada um faz, como funciona a Rede de Ética e como uma suposta falta ética é apurada, do início até a decisão.",
     itens: [
       {
-        termo: "Quem integra o sistema",
-        faz: "A Comissão de Ética Pública (CEP), as Comissões de Ética dos órgãos e as demais comissões equivalentes.",
+        parte: "1. O sistema",
+        termo: "Finalidade (art. 1º)",
+        faz: "Promover a conduta ética no Executivo Federal. Compete ao sistema: integrar órgãos, programas e ações de ética pública; ajudar a fazer políticas públicas com transparência e acesso à informação como ferramentas da gestão da ética; compatibilizar normas e procedimentos sobre ética; e articular ações que melhorem o desempenho institucional nessa gestão.",
       },
       {
-        termo: "CEP",
-        faz: "7 brasileiros, designados pelo Presidente da República, com mandato de 3 anos e uma única recondução.",
-        pista: "Não recebem remuneração. É serviço público relevante.",
+        termo: "Quem integra (art. 2º)",
+        faz: "I) a Comissão de Ética Pública (CEP), criada por decreto de 26/5/1999; II) as Comissões de Ética do Decreto 1.171/1994; III) as demais Comissões de Ética e equivalentes nos órgãos e entidades do Executivo Federal.",
       },
       {
-        termo: "Comissão do órgão",
-        faz: "3 titulares e 3 suplentes do quadro permanente, designados pelo dirigente máximo, com mandato de 3 anos.",
+        parte: "2. Comissão de Ética Pública (CEP)",
+        termo: "Composição (art. 3º)",
+        faz: "7 brasileiros com idoneidade moral, reputação ilibada e notória experiência em administração pública, designados pelo Presidente da República, para mandatos de 3 anos, não coincidentes, com uma única recondução.",
+        pista: "CEP tem 7 membros escolhidos pelo Presidente da República. A comissão do órgão tem 3 titulares + 3 suplentes escolhidos pelo dirigente máximo.",
       },
       {
-        termo: "Princípios dos trabalhos",
-        faz: "Proteger a honra do investigado, manter o denunciante em reserva se ele quiser, e agir com independência e imparcialidade.",
+        termo: "Sem remuneração e voto de qualidade",
+        faz: "Atuar na CEP não dá remuneração: é prestação de relevante serviço público. O presidente da CEP tem voto de qualidade (desempata) nas deliberações e, pelo regimento interno, mandato de 1 ano, com recondução.",
       },
       {
-        termo: "Quem pode provocar",
-        faz: "Qualquer cidadão, agente público, pessoa jurídica de direito privado, associação ou entidade de classe.",
+        termo: "Competências da CEP (art. 4º)",
+        faz: "I) ser instância consultiva do Presidente da República e dos Ministros em ética pública; II) administrar o Código de Conduta da Alta Administração: propor ao Presidente melhorias, tirar dúvidas e decidir casos omissos, apurar (por denúncia ou de ofício) condutas das autoridades sujeitas a ele; III) tirar dúvidas de interpretação do Código de Ética do Decreto 1.171; IV) coordenar, avaliar e supervisionar o sistema; V) aprovar seu regimento interno; VI) escolher o seu presidente.",
+        pista: "Quem escolhe o presidente da CEP são os próprios membros, não o Presidente da República.",
       },
       {
-        termo: "Prazos",
-        faz: "10 dias para a manifestação por escrito e mais 10 dias se surgir prova nova.",
+        termo: "Secretaria-Executiva da CEP",
+        faz: "Fica vinculada à Casa Civil da Presidência da República e dá apoio técnico e administrativo à Comissão.",
+        pista: "Na prova pode aparecer como “vinculada a um Ministério”: está errado, é a Casa Civil.",
       },
       {
-        termo: "Reserva",
-        faz: "O procedimento fica como “reservado” até concluir, mas o investigado tem vista dos autos.",
+        parte: "3. Comissões de Ética dos órgãos",
+        termo: "Composição (art. 5º)",
+        faz: "3 membros titulares e 3 suplentes, do quadro permanente do órgão, designados pelo dirigente máximo, para mandatos não coincidentes de 3 anos.",
       },
       {
-        termo: "Lacunas",
-        faz: "A comissão não pode deixar de decidir por omissão da norma: usa analogia e os princípios.",
+        termo: "Competências (art. 7º)",
+        faz: "I) ser instância consultiva de dirigentes e servidores do órgão; II) aplicar o Código de Ética do Decreto 1.171: propor à CEP melhorias, tirar dúvidas e decidir casos omissos, apurar (por denúncia ou de ofício) condutas contrárias às normas éticas, e recomendar, acompanhar e avaliar ações de divulgação, capacitação e treinamento em ética e disciplina; III) representar o órgão na Rede de Ética; IV) supervisionar a observância do Código de Conduta da Alta Administração e comunicar à CEP possíveis descumprimentos.",
       },
       {
-        termo: "Decisões",
-        faz: "Saem em ementa, sem os nomes dos investigados.",
+        termo: "Secretaria-Executiva da comissão",
+        faz: "Cada comissão tem a sua, vinculada administrativamente à instância máxima do órgão, para cumprir o plano de trabalho aprovado pela comissão e dar apoio técnico e material. É chefiada por servidor ou empregado do quadro permanente, em cargo de direção compatível, sem aumento de despesa.",
+      },
+      {
+        termo: "Dever do titular do órgão (art. 6º)",
+        faz: "Garantir condições de trabalho às comissões, inclusive para que os membros não sofram prejuízo ou dano por causa da função, e conduzir no órgão a avaliação da gestão da ética, no processo coordenado pela CEP.",
+      },
+      {
+        termo: "Instâncias superiores (art. 8º)",
+        faz: "Observar e fazer observar as normas de ética e disciplina; constituir a Comissão de Ética; garantir recursos humanos, materiais e financeiros a ela; atender com prioridade às solicitações da CEP.",
+      },
+      {
+        termo: "Trabalho prioritário (art. 19)",
+        faz: "O trabalho na comissão é relevante e tem prioridade sobre as tarefas do cargo do membro, quando ele não atua só na comissão.",
+      },
+      {
+        termo: "Falta de membro (art. 21)",
+        faz: "Infração ética cometida por membro de Comissão de Ética de órgão é apurada pela CEP.",
+      },
+      {
+        termo: "Elo com a CEP (art. 23)",
+        faz: "Os representantes das comissões funcionam como ligação com a CEP, que regula essa atividade por resolução própria.",
+      },
+      {
+        parte: "4. Rede de Ética",
+        termo: "Rede de Ética (art. 9º)",
+        faz: "Reúne representantes da CEP e das demais comissões para cooperação técnica e avaliação em gestão da ética. Os integrantes se reúnem, sob coordenação da CEP, pelo menos uma vez por ano, em fórum específico, para avaliar o programa e as ações de promoção da ética.",
+      },
+      {
+        parte: "5. Como a falta ética é apurada",
+        termo: "Princípios (art. 10)",
+        faz: "Os trabalhos devem ser feitos com celeridade e com: I) proteção à honra e à imagem do investigado; II) proteção à identidade do denunciante, mantida em reserva se ele quiser; III) independência e imparcialidade dos membros.",
+      },
+      {
+        termo: "Quem pode provocar (art. 11)",
+        faz: "Qualquer cidadão, agente público, pessoa jurídica de direito privado, associação ou entidade de classe, contra agente público, órgão ou setor de ente estatal.",
+        pista: "Agente público, aqui, é quem presta serviço permanente, temporário, excepcional ou eventual, mesmo sem remuneração, a órgão ou entidade federal.",
+      },
+      {
+        termo: "Abertura e defesa (art. 12)",
+        faz: "O processo abre de ofício ou por denúncia fundamentada, sempre com contraditório e ampla defesa. O investigado é notificado para se manifestar por escrito em 10 dias e pode juntar prova documental. A comissão pode requisitar documentos, fazer diligências e pedir parecer de especialista. Se surgir prova nova depois da manifestação, abre-se novo prazo de 10 dias.",
+      },
+      {
+        termo: "Decisão e providências (art. 12, §§ 4º e 5º)",
+        faz: "Concluída a instrução, sai decisão conclusiva e fundamentada. Se houver falta ética, além da censura, a comissão pode: I) sugerir a exoneração do cargo ou função de confiança, ou a devolução ao órgão de origem; II) enviar à CGU ou ao órgão de correição para exame de falta disciplinar; III) recomendar processo administrativo, se a conduta for grave.",
+      },
+      {
+        termo: "Reserva (art. 13)",
+        faz: "O procedimento fica com a chancela de “reservado” até ser concluído. Depois da conclusão e da deliberação, deixa de ser reservado. Documento com sigilo legal só é visto por quem já teria esse direito no órgão de origem; ao fim, é retirado dos autos, lacrado e guardado.",
+      },
+      {
+        termo: "Direitos do investigado (art. 14)",
+        faz: "Saber o que lhe imputam, conhecer a acusação e ter vista dos autos no local da comissão, mesmo antes de ser notificado. Pode tirar cópia e pedir certidão.",
+      },
+      {
+        termo: "Lacunas (art. 16)",
+        faz: "A comissão não pode deixar de decidir alegando omissão do código: supre a falta por analogia e pelos princípios da legalidade, impessoalidade, moralidade, publicidade e eficiência. Se houver dúvida sobre legalidade, ouve antes a área jurídica do órgão.",
+        pista: "A CEP responde consultas de outras comissões, de órgãos e de pessoas indicadas a cargos da alta administração.",
+      },
+      {
+        termo: "Crime, improbidade ou falta disciplinar (art. 17)",
+        faz: "Se a comissão notar possível ilícito penal, civil, de improbidade ou infração disciplinar, envia cópia dos autos à autoridade competente, sem deixar de tomar as medidas que lhe cabem.",
+      },
+      {
+        termo: "Decisões publicadas (art. 18)",
+        faz: "As decisões são resumidas em ementa, sem os nomes dos investigados, divulgadas no site do órgão e enviadas à CEP.",
+      },
+      {
+        termo: "Pedido de documentos (art. 20)",
+        faz: "Os órgãos dão prioridade aos pedidos de documentos das comissões. Autoridade não pode alegar sigilo para negar informação. Quem descumpre pode ter recomendada a abertura de processo administrativo.",
+      },
+      {
+        termo: "Banco de sanções (art. 22)",
+        faz: "A CEP mantém um banco de dados com as sanções das comissões e as suas, para consulta em nomeações para cargo em comissão ou de alta relevância pública.",
+      },
+      {
+        parte: "6. Posse, licença e revogações",
+        termo: "Compromisso solene (art. 15)",
+        faz: "Toda posse, investidura em função pública ou contrato de trabalho vem com compromisso solene de cumprir o Código de Conduta da Alta Administração, o Código de Ética do Decreto 1.171 e o código do órgão, conforme o caso.",
+        pista: "Quem vai tomar posse em cargo sujeito ao Código de Conduta da Alta Administração deve antes consultar a CEP sobre possível conflito de interesses.",
+      },
+      {
+        termo: "Licença (art. 24)",
+        faz: "As normas dos códigos valem, no que couber, mesmo para quem está de licença.",
+      },
+      {
+        termo: "Revogações (art. 25)",
+        faz: "Revogou os incisos XVII, XIX, XX, XXI, XXIII e XXV do Decreto 1.171 e partes dos decretos antigos da CEP. Por isso as regras de funcionamento das comissões estão hoje no Decreto 6.029.",
       },
     ],
     cuidado:
-      "Falta ética de membro de comissão de órgão é apurada pela CEP, e não pela própria comissão.",
+      "Falta ética de membro de comissão de órgão é apurada pela CEP, e não pela própria comissão. E o prazo de 10 dias aparece duas vezes: para a primeira manifestação escrita e de novo se chegar prova nova.",
   },
   questoes: [
     {

@@ -3,6 +3,8 @@ export interface ItemResumo {
   termo: string;
   faz: string;
   pista?: string;
+  /** Abre um bloco novo no resumo, com este subtítulo (resumos longos ficam divididos em partes). */
+  parte?: string;
 }
 
 /** Resumo rápido de uma aula, mostrado antes das questões. Texto próprio do app (não copia o material do curso). */

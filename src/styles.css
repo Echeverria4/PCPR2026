@@ -8333,6 +8333,21 @@ button.prf-bloco-link {
   background: rgba(255, 255, 255, 0.04);
 }
 
+.prf-resumo-parte {
+  margin-top: 10px;
+  padding: 2px 2px 4px;
+  border-bottom: 2px solid var(--aulas-linha);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--azul);
+}
+
+.prf-resumo-parte:first-child {
+  margin-top: 0;
+}
+
 .prf-resumo-termo {
   font-size: 0.95rem;
   color: var(--azul);

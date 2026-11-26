@@ -841,8 +841,15 @@ export function ResumoRapido({ resumo }: { resumo: ResumoAula }) {
     <div className="prf-resumo-cartao">
       <p className="prf-resumo-ideia">{resumo.ideia}</p>
       <ul className="prf-resumo-itens">
-        {resumo.itens.map((it) => (
-          <li key={it.termo} className="prf-resumo-item">
+        {resumo.itens.flatMap((it, i) => [
+          ...(it.parte
+            ? [
+                <li key={`parte-${i}`} className="prf-resumo-parte" role="presentation">
+                  {it.parte}
+                </li>,
+              ]
+            : []),
+          <li key={`item-${i}`} className="prf-resumo-item">
             <b className="prf-resumo-termo">{it.termo}</b>
             <span className="prf-resumo-faz">{it.faz}</span>
             {it.pista && (
@@ -850,8 +857,8 @@ export function ResumoRapido({ resumo }: { resumo: ResumoAula }) {
                 <span className="prf-resumo-rotulo">Como identificar:</span> {it.pista}
               </span>
             )}
-          </li>
-        ))}
+          </li>,
+        ])}
       </ul>
       {resumo.cuidado && (
         <p className="prf-resumo-cuidado">
