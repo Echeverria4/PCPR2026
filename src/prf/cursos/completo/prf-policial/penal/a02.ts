@@ -4,74 +4,187 @@ export const AULA: AulaEscrita = {
   aula: "penal-02",
   resumo: {
     ideia:
-      "A lei penal rege os fatos praticados durante sua vigência e só retroage para beneficiar. Para saber qual lei vale, fixe quando o crime foi praticado (atividade) e onde (ubiquidade).",
+      "A aula mostra como a lei penal é aplicada: os tipos de norma penal (incriminadora, permissiva, explicativa e em branco), a lei penal no tempo (quando a lei nova vale para fatos antigos), no espaço (quando a lei brasileira vale para crimes fora do Brasil) e em relação às pessoas (sujeitos do crime e imunidades), além das disposições finais da parte geral (arts. 8º a 12 do CP), da interpretação da lei penal e do conflito aparente de normas.",
     itens: [
       {
+        parte: "1. Classificação das normas penais",
+        termo: "Incriminadoras × não incriminadoras",
+        faz: "Incriminadora é a que descreve o crime e comina a pena (ex.: art. 121, “matar alguém”). Não incriminadora não cria crime: pode ser permissiva (autoriza a conduta, como as excludentes do art. 23) ou explicativa/complementar (esclarece um conceito, como o de funcionário público do art. 327).",
+        pista: "Nem toda norma penal cria crime ou pena.",
+      },
+      {
         termo: "Norma penal em branco",
-        faz: "Precisa de complemento. Homogênea: o complemento vem de lei. Heterogênea: vem de ato de outra instância, como a portaria da Anvisa na Lei de Drogas.",
+        faz: "Tem a pena definida, mas a conduta precisa de complemento de outra norma. Homogênea (em sentido amplo): o complemento vem de outra lei. Heterogênea (em sentido estrito): vem de ato de outra natureza, como a portaria da Anvisa que lista as drogas proibidas. Em branco ao revés (inversa): a conduta está completa, mas a pena está em outra lei.",
+        pista: "Na em branco ao revés, o complemento da pena tem de vir de lei, nunca de portaria.",
+      },
+      {
+        parte: "2. Lei penal no tempo",
+        termo: "Regra: atividade",
+        faz: "A lei penal se aplica aos fatos praticados durante a sua vigência. A exceção é a extra-atividade da lei mais benéfica: ela retroage (vale para fatos anteriores) e é ultra-ativa (continua valendo para os fatos da sua época, mesmo depois de revogada por lei pior).",
+      },
+      {
+        termo: "Lei nova pior",
+        faz: "A lei que cria crime (novatio legis incriminadora) ou que agrava a situação do réu (novatio legis in pejus) não retroage: só vale para fatos posteriores.",
+      },
+      {
+        termo: "Lei nova melhor (novatio legis in mellius)",
+        faz: "A lei que de qualquer modo favorece o réu retroage, mesmo que já exista condenação definitiva (art. 2º, parágrafo único).",
       },
       {
         termo: "Abolitio criminis",
-        faz: "Lei nova deixa de considerar o fato crime: cessam a execução e os efeitos penais da sentença, mas os efeitos civis ficam (art. 2º).",
+        faz: "Lei nova deixa de considerar o fato crime (art. 2º, caput). Cessam a execução da pena e os efeitos penais da condenação (ex.: deixa de gerar reincidência). Os efeitos civis (extrapenais), como o dever de reparar o dano, continuam.",
       },
       {
-        termo: "Lei mais benéfica",
-        faz: "Retroage mesmo depois do trânsito em julgado. Nesse caso, quem aplica é o juízo da execução (Súmula 611 do STF).",
-        pista: "Não se combinam partes de duas leis (Súmula 501 do STJ).",
+        termo: "Continuidade normativo-típica",
+        faz: "O artigo é revogado, mas a conduta passa a ser crime em outro artigo: não há abolitio criminis. Ex.: o antigo atentado violento ao pudor foi revogado em 2009, mas a conduta passou a integrar o estupro (art. 213).",
       },
       {
-        termo: "Leis excepcional e temporária",
-        faz: "Continuam valendo para os fatos praticados na sua vigência, mesmo depois de terminado o período (art. 3º).",
+        termo: "Combinação de leis e lei intermediária",
+        faz: "Se a lei nova tem partes boas e ruins, prevalece que não se podem juntar as partes boas das duas leis: aplica-se a que, no todo, for melhor (Súmula 501 do STJ, sobre a Lei de Drogas). Se entre o fato e a sentença vigorou uma lei intermediária mais benéfica, ela é aplicada, mesmo já revogada.",
       },
       {
-        termo: "Tempo do crime",
-        faz: "Momento da ação ou omissão, ainda que outro seja o do resultado (art. 4º).",
+        termo: "Quem aplica a lei mais benéfica",
+        faz: "Com o processo em andamento, o juiz ou tribunal da causa. Depois do trânsito em julgado, o juízo da execução (Súmula 611 do STF).",
       },
       {
-        termo: "Continuado e permanente",
-        faz: "Aplica-se a lei mais grave se ela entrou em vigor antes de cessar a continuidade ou a permanência (Súmula 711 do STF).",
+        termo: "Leis excepcionais e temporárias (art. 3º)",
+        faz: "Temporária é a que tem prazo de vigência marcado; excepcional é a feita para uma situação anormal (guerra, calamidade). Ambas continuam valendo para os fatos praticados durante a vigência, mesmo depois de vencido o prazo ou encerrada a situação (ultra-atividade). Só deixam de valer se lei posterior abolir expressamente a conduta.",
       },
       {
-        termo: "Lugar do crime",
-        faz: "Tanto onde ocorreu a ação ou omissão quanto onde se produziu ou deveria produzir-se o resultado (art. 6º).",
-        pista: "Lugar: ubiquidade. Tempo: atividade.",
+        termo: "Tempo do crime (art. 4º)",
+        faz: "Teoria da atividade: o crime considera-se praticado no momento da ação ou omissão, ainda que o resultado venha depois. Ex.: a idade do agente (maior ou menor de 18) é vista no dia da conduta.",
       },
       {
-        termo: "Território por extensão",
-        faz: "Embarcações e aeronaves brasileiras públicas ou a serviço do governo, onde estiverem. As privadas, em alto-mar ou no espaço aéreo correspondente.",
+        termo: "Crimes permanentes e continuados (Súmula 711 do STF)",
+        faz: "Enquanto não cessar a permanência (ex.: sequestro) ou a continuidade, o crime está sendo praticado. Se nesse período surgir lei mais grave, ela se aplica a todo o crime.",
       },
       {
-        termo: "Extraterritorialidade incondicionada",
-        faz: "Art. 7º, I: vida ou liberdade do Presidente, patrimônio ou fé pública das entidades públicas, administração pública por quem está a seu serviço, e genocídio de agente brasileiro ou domiciliado no Brasil.",
+        parte: "3. Lei penal no espaço: território",
+        termo: "Territorialidade temperada (art. 5º)",
+        faz: "Regra: aplica-se a lei brasileira ao crime cometido no território nacional, ressalvados tratados e convenções internacionais. “Temperada” porque há exceções nos dois sentidos.",
       },
       {
-        termo: "Extraterritorialidade condicionada",
-        faz: "Art. 7º, II: exige todas as condições do § 2º, entre elas entrar no território nacional e o fato ser punível também onde foi praticado.",
+        termo: "Território nacional",
+        faz: "Solo, rios, lagos, mar territorial (12 milhas náuticas), subsolo e espaço aéreo correspondente.",
       },
       {
-        termo: "Imunidades",
-        faz: "O diplomata fica sujeito à lei do seu país. O cônsul só tem imunidade pelos atos do ofício.",
+        termo: "Território por extensão (art. 5º, § 1º)",
+        faz: "Navios e aeronaves brasileiros públicos ou a serviço do governo, onde quer que estejam; navios e aeronaves brasileiros mercantes ou particulares, quando em alto-mar ou no espaço aéreo correspondente.",
       },
       {
-        termo: "Prazo penal",
-        faz: "O dia do começo entra na conta, e o calendário é o comum (art. 10). Frações de dia são desprezadas (art. 11).",
+        termo: "Estrangeiros no Brasil (art. 5º, § 2º)",
+        faz: "Aplica-se a lei brasileira ao crime cometido a bordo de aeronave ou embarcação estrangeira particular que esteja em pouso no território nacional ou em voo no espaço aéreo brasileiro, ou em porto ou mar territorial do Brasil.",
+        pista: "Passagem inocente: navio estrangeiro só atravessando o mar territorial, sem parar, segue a lei da bandeira se o crime não afetar o Brasil.",
       },
       {
-        termo: "Sujeito ativo e passivo",
-        faz: "Ativo é quem pratica o crime. Passivo é o dono do bem atingido: o Estado é sempre passivo constante, e a vítima é o passivo eventual.",
-        pista: "Pessoa jurídica pode ser sujeito ativo de crime ambiental (CF, art. 225, § 3º).",
+        termo: "Embaixadas",
+        faz: "Não são extensão do território do país que representam. A embaixada estrangeira no Brasil é território brasileiro; o que existe são imunidades das pessoas e inviolabilidade do local.",
       },
       {
+        termo: "Lugar do crime (art. 6º)",
+        faz: "Teoria da ubiquidade: considera-se praticado o crime tanto onde ocorreu a ação ou omissão quanto onde se produziu ou deveria produzir-se o resultado. Serve para os crimes à distância, que envolvem mais de um país.",
+        pista: "Crime que passa por duas cidades do Brasil é questão de competência, resolvida pelo CPP (em regra, local da consumação), não pelo art. 6º.",
+      },
+      {
+        parte: "4. Extraterritorialidade (art. 7º)",
+        termo: "Princípios",
+        faz: "Nacionalidade ativa (crime praticado por brasileiro); nacionalidade passiva (crime contra brasileiro); defesa ou real (crime contra bens jurídicos do Brasil); justiça universal (crimes que o Brasil se comprometeu a reprimir por tratado); representação ou bandeira (crime em navio ou aeronave brasileira particular no exterior, quando lá não for julgado).",
+      },
+      {
+        termo: "Incondicionada (art. 7º, I)",
+        faz: "Crimes contra a vida ou a liberdade do Presidente da República; contra o patrimônio ou a fé pública da União, do DF, de Estado, Território, Município, empresa pública, sociedade de economia mista, autarquia ou fundação pública; contra a administração pública, por quem está a seu serviço; genocídio, quando o agente for brasileiro ou domiciliado no Brasil.",
+        pista: "Basta o crime: o agente é punido no Brasil mesmo que já absolvido ou condenado lá fora (§ 1º).",
+      },
+      {
+        termo: "Condicionada (art. 7º, II)",
+        faz: "Crimes que o Brasil se obrigou a reprimir por tratado; praticados por brasileiro; praticados em aeronaves ou embarcações brasileiras mercantes ou particulares em território estrangeiro, quando lá não forem julgados.",
+      },
+      {
+        termo: "Condições (art. 7º, § 2º)",
+        faz: "Todas juntas: entrar o agente no território nacional; o fato ser punível também no país onde foi praticado; o crime estar entre os que a lei brasileira permite extraditar; não ter sido absolvido nem ter cumprido pena no estrangeiro; não ter sido perdoado nem estar extinta a punibilidade pela lei mais favorável.",
+      },
+      {
+        termo: "Hipercondicionada (art. 7º, § 3º)",
+        faz: "Crime de estrangeiro contra brasileiro fora do Brasil. Além das condições do § 2º, exige que a extradição não tenha sido pedida ou tenha sido negada e que haja requisição do Ministro da Justiça.",
+      },
+      {
+        parte: "5. Lei penal em relação às pessoas",
+        termo: "Sujeito ativo",
+        faz: "Quem pratica o crime, como autor ou partícipe. A pessoa jurídica pode ser sujeito ativo de crime ambiental (art. 225, § 3º, da CF); STF e STJ não exigem mais que a pessoa física seja processada junto (dupla imputação).",
+      },
+      {
+        termo: "Sujeito passivo",
+        faz: "Quem sofre a ofensa. Formal (mediato, constante): sempre o Estado. Material (imediato, eventual): o titular do bem jurídico atingido; o próprio Estado pode ser, como nos crimes contra o patrimônio público. Morto e animal não são sujeito passivo: podem ser objeto material.",
+      },
+      {
+        termo: "Imunidade diplomática",
+        faz: "Prevista na Convenção de Viena e baseada na reciprocidade. É dada em razão do cargo, não da pessoa. O agente diplomático e sua família não se submetem à jurisdição penal brasileira: respondem pelas leis do seu país. Só o país de origem pode renunciar a ela.",
+        pista: "Cônsul só tem imunidade pelos atos praticados no exercício da função.",
+      },
+      {
+        termo: "Imunidade material (art. 53 da CF)",
+        faz: "Deputados e senadores são invioláveis, civil e penalmente, por opiniões, palavras e votos ligados ao mandato, mesmo fora do Congresso (ex.: entrevista). Prevalece que o fato é atípico. Vereadores também têm, mas só na circunscrição do município e com relação com o mandato (art. 29, VIII).",
+      },
+      {
+        termo: "Imunidade formal para a prisão (art. 53, § 2º)",
+        faz: "Desde a diplomação, deputados e senadores não podem ser presos, salvo em flagrante de crime inafiançável; os autos vão em 24 horas à Casa, que decide pela maioria absoluta. O STF também admite a prisão por condenação definitiva.",
+      },
+      {
+        termo: "Imunidade formal para o processo (art. 53, § 3º)",
+        faz: "Recebida a denúncia por crime ocorrido após a diplomação, o STF avisa a Casa, que, por iniciativa de partido político nela representado e voto da maioria absoluta, pode sustar o andamento da ação até o fim do mandato. A sustação suspende a prescrição.",
+      },
+      {
+        termo: "Alcance das imunidades parlamentares",
+        faz: "São irrenunciáveis. Valem para deputados estaduais; vereadores só têm a material. Não alcançam suplentes nem o parlamentar afastado para ser ministro ou secretário. Durante o estado de sítio, só podem ser suspensas pelo voto de 2/3 da Casa.",
+      },
+      {
+        parte: "6. Disposições finais da parte geral (arts. 8º a 12)",
         termo: "Pena cumprida no estrangeiro (art. 8º)",
-        faz: "Pelo mesmo crime, a pena cumprida fora atenua a pena imposta no Brasil, quando são diferentes, ou é descontada dela, quando são iguais.",
+        faz: "Se a pena lá fora for da mesma natureza, é descontada da pena aplicada no Brasil; se for diferente, atenua a pena brasileira.",
       },
       {
         termo: "Sentença estrangeira (art. 9º)",
-        faz: "Pode ser homologada pelo STJ para obrigar o condenado a reparar o dano e a outros efeitos civis, ou para aplicar medida de segurança.",
+        faz: "Pode ser homologada no Brasil (pelo STJ) para obrigar o condenado a reparar o dano e a outros efeitos civis, a pedido da parte interessada, ou para sujeitá-lo a medida de segurança, se houver tratado de extradição ou requisição do Ministro da Justiça. Só se homologa sentença com trânsito em julgado (Súmula 420 do STF).",
+        pista: "Para gerar reincidência, a condenação estrangeira não precisa ser homologada (art. 63).",
+      },
+      {
+        termo: "Contagem de prazo (art. 10)",
+        faz: "O dia do começo é incluído no prazo; os dias, meses e anos contam-se pelo calendário comum. O prazo penal não se suspende nem se prorroga em feriados, fins de semana ou recesso.",
+        pista: "Prazo penal (art. 10 do CP) é diferente do processual (CPP), que exclui o dia do começo.",
+      },
+      {
+        termo: "Frações não computáveis (art. 11)",
+        faz: "Desprezam-se as frações de dia nas penas privativas de liberdade e restritivas de direitos, e as frações de moeda (centavos) na pena de multa.",
+      },
+      {
+        termo: "Legislação especial (art. 12)",
+        faz: "As regras gerais do Código Penal valem também para os crimes de leis especiais, se estas não dispuserem de modo diferente.",
+      },
+      {
+        parte: "7. Interpretação e conflito aparente de normas",
+        termo: "Interpretação quanto ao sujeito",
+        faz: "Autêntica: feita pelo próprio legislador, no texto da lei (ex.: art. 327). Doutrinária: feita pelos estudiosos, sem força obrigatória; a exposição de motivos do CP entra aqui, porque não é lei. Judicial: feita pelos juízes nas decisões.",
+      },
+      {
+        termo: "Quanto ao método e ao resultado",
+        faz: "Método: literal (gramatical), teleológica (finalidade da lei), sistemática (lei no conjunto do ordenamento), histórica, lógica e progressiva (adapta a lei à realidade atual). Resultado: declaratória (a lei disse o que queria), extensiva (disse menos do que queria) ou restritiva (disse mais).",
+        pista: "Analogia não é interpretação: é integração, para suprir a falta de lei.",
+      },
+      {
+        termo: "Conflito aparente de normas",
+        faz: "Um só fato parece caber em duas normas, mas só uma se aplica. Resolve-se por especialidade, subsidiariedade, consunção e alternatividade.",
+      },
+      {
+        termo: "Especialidade e subsidiariedade",
+        faz: "Especialidade: a norma especial tem todos os elementos da geral e mais algum, e prevalece (ex.: o infanticídio, art. 123, prevalece sobre o homicídio quando a mãe mata o filho sob influência do estado puerperal). Subsidiariedade: a norma primária, mais grave, afasta a subsidiária, que descreve grau menor de violação do mesmo bem; pode ser expressa (“se o fato não constitui crime mais grave”) ou tácita.",
+      },
+      {
+        termo: "Consunção e alternatividade",
+        faz: "Consunção (absorção): o crime-fim absorve o crime-meio ou a fase anterior (ex.: falso que se esgota no estelionato, Súmula 17 do STJ); inclui crime progressivo, progressão criminosa e antefato e pós-fato impuníveis. Alternatividade: em tipos com vários verbos (ex.: art. 33 da Lei de Drogas), praticar mais de um verbo no mesmo contexto é crime único.",
       },
     ],
     cuidado:
-      "A abolitio apaga os efeitos penais, inclusive a reincidência, mas a obrigação de indenizar continua.",
+      "Abolitio criminis apaga os efeitos penais, mas não os civis. Tempo do crime = atividade; lugar do crime = ubiquidade. E o prazo penal inclui o dia do começo.",
   },
   questoes: [
     {

@@ -4,68 +4,199 @@ export const AULA: AulaEscrita = {
   aula: "penal-09",
   resumo: {
     ideia:
-      "Os crimes contra a fé pública protegem a confiança nas moedas, nos documentos e nos sinais oficiais. A falsidade precisa ser capaz de enganar: a grosseira não preenche esses tipos.",
+      "Os crimes contra a fé pública protegem a confiança que todos depositam no dinheiro, nos papéis oficiais, nos documentos, nos sinais de identificação de veículos e no sigilo dos concursos. A vítima principal é sempre a coletividade. Regra de ouro: a falsificação precisa ser capaz de enganar o homem comum; a grosseira não preenche esses tipos. Também é preciso separar a falsidade material (o documento em si é falso) da ideológica (o documento é verdadeiro, mas a informação é mentira).",
     itens: [
       {
-        termo: "Moeda falsa",
-        faz: "Art. 289: reclusão de 3 a 12 anos e multa. Quem guarda ou põe em circulação tem a mesma pena.",
+        parte: "1. Moeda falsa (art. 289)",
+        termo: "Falsificar moeda",
+        faz: "Fabricar ou alterar moeda metálica ou papel-moeda de curso legal no Brasil ou no exterior: reclusão de 3 a 12 anos e multa. Crime comum, só doloso, que se consuma com a fabricação ou alteração, mesmo que a cédula nunca circule. Admite tentativa.",
+        pista: "Os tribunais superiores não aplicam o princípio da insignificância à moeda falsa, ainda que seja uma única cédula de pouco valor.",
       },
       {
-        termo: "Recebeu de boa-fé",
-        faz: "Quem repassa depois de saber da falsidade responde pelo § 2º: detenção de 6 meses a 2 anos e multa.",
+        termo: "Circular moeda falsa (§ 1º)",
+        faz: "Tem a mesma pena quem, por conta própria ou alheia, importa, exporta, adquire, vende, troca, cede, empresta, guarda ou introduz na circulação moeda falsa. Vale para quem já recebeu a cédula sabendo que era falsa.",
+      },
+      {
+        termo: "Recebeu de boa-fé (§ 2º)",
+        faz: "Quem recebeu a moeda falsa achando que era verdadeira e, depois de descobrir a falsidade, a repassa: detenção de 6 meses a 2 anos e multa. É a forma privilegiada.",
+        pista: "Se recebeu já sabendo, não é o § 2º: é o § 1º, com a pena cheia.",
+      },
+      {
+        termo: "Funcionário e banco de emissão (§§ 3º e 4º)",
+        faz: "O funcionário público ou o diretor, gerente ou fiscal de banco de emissão que fabrica, emite ou autoriza moeda com título ou peso inferior ao da lei, ou papel-moeda acima da quantidade autorizada: reclusão de 3 a 15 anos e multa (crime próprio). Mesma pena para quem desvia e faz circular moeda cuja circulação ainda não foi autorizada (§ 4º, crime comum).",
       },
       {
         termo: "Cédula grosseira",
-        faz: "Se não imita bem, não há moeda falsa. A Súmula 73 do STJ aponta estelionato, em tese, na Justiça Estadual.",
+        faz: "Se a imitação é tão ruim que não engana ninguém, não há moeda falsa: falta a imitação da verdade. Se mesmo assim alguém é enganado e perde dinheiro, a Súmula 73 do STJ aponta, em tese, estelionato, da competência da Justiça Estadual.",
+        pista: "A moeda falsa de boa qualidade é crime da Justiça Federal, porque atinge o serviço da União de emitir moeda.",
       },
       {
-        termo: "Documento público",
-        faz: "Art. 297: reclusão de 2 a 6 anos e multa. O § 2º equipara títulos ao portador, ações, livros mercantis e testamento particular.",
+        parte: "2. Crimes parecidos com moeda falsa (arts. 290 a 292)",
+        termo: "Cédula com fragmentos ou recolhida (art. 290)",
+        faz: "Montar cédula com pedaços de cédulas verdadeiras; apagar, em cédula recolhida, o sinal de que foi inutilizada, para fazê-la voltar a circular; ou pôr de novo em circulação cédula nessas condições ou já recolhida: reclusão de 2 a 8 anos e multa. O máximo sobe para 12 anos se o autor é funcionário que trabalha na repartição onde o dinheiro estava recolhido ou tem fácil acesso a ela pelo cargo.",
       },
       {
-        termo: "Documento particular",
-        faz: "Art. 298: reclusão de 1 a 5 anos e multa. Cartão de crédito ou débito entra aqui.",
+        termo: "Petrechos para falsificar moeda (art. 291)",
+        faz: "Fabricar, adquirir, fornecer, possuir ou guardar máquina, aparelho ou objeto especialmente destinado à falsificação de moeda: reclusão de 2 a 6 anos e multa. É um ato preparatório que a lei transformou em crime autônomo.",
+        pista: "O objeto precisa ser destinado especialmente a falsificar. Uma impressora comum, que serve a muitos usos, não basta.",
       },
       {
-        termo: "Falsidade ideológica",
-        faz: "Art. 299: o papel é verdadeiro, e a mentira está no conteúdo. Exige fim de prejudicar direito, criar obrigação ou alterar fato relevante.",
-        pista: "Material ataca a forma. Ideológica ataca o conteúdo.",
+        termo: "Título ao portador sem permissão (art. 292)",
+        faz: "Emitir, sem permissão legal, nota, bilhete, ficha, vale ou título com promessa de pagar em dinheiro ao portador, ou sem o nome de quem deve receber: detenção de 1 a 6 meses ou multa. Quem recebe ou usa esse papel como dinheiro: detenção de 15 dias a 3 meses ou multa. Consuma-se com a emissão.",
       },
       {
-        termo: "Uso de documento falso",
-        faz: "Art. 304: pena da falsificação. Quem falsifica e usa responde só pelo falso, na posição majoritária.",
+        parte: "3. Títulos e papéis públicos (arts. 293 a 295)",
+        termo: "Falsificação de papéis públicos (art. 293)",
+        faz: "Fabricar ou alterar selo de controle tributário, papel selado ou papel destinado a arrecadar tributo, papel de crédito público que não seja moeda, vale postal, cautela de penhor, caderneta de depósito de caixa econômica, talão, recibo, guia ou alvará de arrecadação de rendas públicas, e bilhete ou passe de empresa de transporte administrada pelo poder público: reclusão de 2 a 8 anos e multa.",
       },
       {
-        termo: "Competência do uso",
-        faz: "Súmula 546 do STJ: define-se pelo órgão a quem o documento foi apresentado, e não por quem o expede.",
+        termo: "Condutas equiparadas (§§ 1º e 5º)",
+        faz: "Mesma pena para quem usa, guarda ou possui esses papéis falsificados; para quem negocia ou restitui à circulação selo tributário falsificado; e para quem, em atividade comercial ou industrial, lida com produto em que foi aplicado selo falsificado ou que está sem o selo oficial obrigatório. O comércio irregular ou clandestino, até em rua ou em casa, conta como atividade comercial.",
       },
       {
-        termo: "Falso e estelionato",
-        faz: "Súmula 17 do STJ: o falso que se esgota no estelionato, sem mais potencial de dano, é absorvido.",
+        termo: "Supressão de carimbo e boa-fé (§§ 2º a 4º)",
+        faz: "Apagar, em papel legítimo, o carimbo ou sinal de inutilização para reaproveitá-lo: reclusão de 1 a 4 anos e multa; quem usa o papel assim alterado tem a mesma pena. Quem recebeu o papel falso de boa-fé e o usa ou repassa depois de saber da falsidade: detenção de 6 meses a 2 anos ou multa.",
       },
       {
-        termo: "Falsa identidade",
-        faz: "Art. 307: atribuir-se identidade falsa, sem usar documento. Subsidiário. Súmula 522 do STJ: a autodefesa não afasta o crime.",
+        termo: "Petrechos e funcionário (arts. 294 e 295)",
+        faz: "Fabricar, adquirir, fornecer, possuir ou guardar objeto especialmente destinado a falsificar esses papéis: reclusão de 1 a 3 anos e multa. Se o autor dos arts. 293 ou 294 é funcionário público e se aproveita do cargo, a pena aumenta de 1/6.",
       },
       {
-        termo: "Documento alheio",
-        faz: "Art. 308: usar como próprio documento verdadeiro de outra pessoa, ou cedê-lo para isso. Subsidiário.",
+        parte: "4. Selo ou sinal público (art. 296)",
+        termo: "Falsificar selo ou sinal público",
+        faz: "Fabricar ou alterar selo público que autentica atos da União, de Estado ou de Município, ou selo ou sinal atribuído por lei a entidade de direito público, a autoridade ou sinal público de tabelião: reclusão de 2 a 6 anos e multa. É crime formal: basta falsificar, sem precisar de prejuízo.",
       },
       {
-        termo: "Sinal de veículo",
-        faz: "Art. 311: reclusão de 3 a 6 anos e multa. O § 2º, III, pune quem conduz veículo que devia saber adulterado ou remarcado.",
+        termo: "Formas equiparadas (§ 1º)",
+        faz: "Mesma pena para quem usa o selo ou sinal falsificado (desde que não seja o próprio falsificador, que responde só pela falsificação); para quem usa indevidamente o selo ou sinal verdadeiro, em prejuízo de outro ou em proveito próprio ou alheio; e para quem altera, falsifica ou usa indevidamente marcas, logotipos, siglas ou símbolos de órgãos ou entidades da administração pública.",
+        pista: "Se o autor é funcionário público e se aproveita do cargo, a pena aumenta de 1/6 (§ 2º).",
       },
       {
-        termo: "Fraude em certame",
-        faz: "Art. 311-A: reclusão de 1 a 4 anos e multa. Com dano à administração, 2 a 6 anos. Funcionário público: mais 1/3.",
+        parte: "5. Documento público e documento particular (arts. 297 e 298)",
+        termo: "Falsidade material × ideológica",
+        faz: "Na falsidade material o documento não é autêntico: foi criado falso ou era verdadeiro e foi adulterado (ataca a forma). Na ideológica o documento é formalmente verdadeiro, mas traz informação falsa ou omite a que devia constar (ataca o conteúdo).",
+        pista: "Material: o papel mente. Ideológica: o papel é verdadeiro, quem mente é o conteúdo.",
       },
       {
-        termo: "Sinal de metal e de alfândega (art. 306)",
-        faz: "Falsificar, ou usar falsificada, a marca do poder público que atesta metal precioso ou a fiscalização alfandegária. Pena de 2 a 6 anos.",
+        termo: "Documento público (art. 297)",
+        faz: "Falsificar, no todo ou em parte, documento público, ou alterar documento público verdadeiro: reclusão de 2 a 6 anos e multa, aumentada de 1/6 se o autor é funcionário que se aproveita do cargo. Não importa se o documento é nacional ou estrangeiro.",
+      },
+      {
+        termo: "Equiparados a documento público (§ 2º)",
+        faz: "Para fins penais, contam como públicos o documento de entidade paraestatal, o título ao portador ou transmissível por endosso (como o cheque), as ações de sociedade comercial, os livros mercantis e o testamento particular.",
+        pista: "Falsificar cheque é falsificar documento público por equiparação, e não documento particular.",
+      },
+      {
+        termo: "Documentos da previdência (§§ 3º e 4º)",
+        faz: "Mesma pena para quem insere ou faz inserir, em folha de pagamento, carteira de trabalho ou documento contábil que deva produzir efeito perante a previdência social, pessoa sem a qualidade de segurado ou declaração falsa, e para quem omite nesses documentos o nome do segurado, seus dados, a remuneração ou a vigência do contrato.",
+        pista: "Súmula 62 do STJ: a falsa anotação na carteira de trabalho atribuída a empresa privada é julgada pela Justiça Estadual.",
+      },
+      {
+        termo: "Documento particular (art. 298)",
+        faz: "Falsificar, no todo ou em parte, documento particular ou alterar documento particular verdadeiro: reclusão de 1 a 5 anos e multa. O conceito é por exclusão: é particular todo documento que não seja público nem equiparado. O cartão de crédito ou de débito é equiparado a documento particular, por isso a clonagem de cartão entra aqui.",
+        pista: "Documentos emitidos pela OAB são particulares para fins penais, porque ela não integra a administração pública.",
+      },
+      {
+        parte: "6. Falsidade ideológica e falsos ligados a funções (arts. 299 a 303)",
+        termo: "Falsidade ideológica (art. 299)",
+        faz: "Omitir em documento público ou particular declaração que devia constar, ou inserir ou fazer inserir declaração falsa ou diferente da que devia ser escrita, com o fim de prejudicar direito, criar obrigação ou alterar a verdade sobre fato juridicamente relevante: reclusão de 1 a 5 anos e multa (documento público) ou de 1 a 3 anos e multa (particular). Aumenta de 1/6 se o autor é funcionário que se aproveita do cargo ou se a falsidade é em registro civil.",
+        pista: "Sem a finalidade especial não há crime: a mentira feita só por brincadeira, sem relevância jurídica, não basta.",
+      },
+      {
+        termo: "Quando não há falsidade ideológica",
+        faz: "Os tribunais entendem que não há crime se a declaração está sujeita a conferência obrigatória pela autoridade, porque a checagem tira a capacidade de enganar. O STJ também já considerou atípico inserir informação falsa no currículo da plataforma Lattes, que não é documento assinado e precisa ser conferido por quem o usa.",
+      },
+      {
+        termo: "Falso reconhecimento de firma (art. 300)",
+        faz: "Reconhecer como verdadeira, no exercício de função pública, firma ou letra que não é: reclusão de 1 a 5 anos e multa (documento público) ou de 1 a 3 anos e multa (particular). Crime próprio de quem tem essa atribuição, como o tabelião.",
+      },
+      {
+        termo: "Certidão ou atestado falso (art. 301)",
+        faz: "O funcionário que atesta ou certifica falsamente, em razão da função, fato que habilite alguém a obter cargo público, isenção de ônus ou de serviço público ou outra vantagem: detenção de 2 meses a 1 ano (crime próprio, falsidade ideológica). Quem falsifica ou altera atestado ou certidão com esse fim (§ 1º): detenção de 3 meses a 2 anos (crime comum, falsidade material). Com fim de lucro, também multa.",
+      },
+      {
+        termo: "Atestado médico falso (art. 302)",
+        faz: "Dar o médico, no exercício da profissão, atestado falso: detenção de 1 mês a 1 ano; com fim de lucro, também multa. Só o médico pratica (dentista ou outro profissional de saúde responde pelo art. 299). Consuma-se com a entrega do atestado. O paciente que usa o atestado responde por uso de documento falso.",
+      },
+      {
+        termo: "Selo ou peça filatélica (art. 303)",
+        faz: "Reproduzir ou alterar selo ou peça filatélica com valor para coleção, salvo se a reprodução estiver visivelmente anotada nela: detenção de 1 a 3 anos e multa; mesma pena para quem usa a peça para fins de comércio. Há entendimento de que o tema passou a ser regulado pela lei dos serviços postais (Lei 6.538/1978).",
+      },
+      {
+        parte: "7. Uso de documento falso e supressão (arts. 304 e 305)",
+        termo: "Uso de documento falso (art. 304)",
+        faz: "Fazer uso de qualquer dos papéis falsificados ou alterados dos arts. 297 a 302: a pena é a mesma da falsificação ou alteração correspondente. Crime comum e formal, que se consuma com a apresentação do documento, sem precisar de vantagem ou prejuízo.",
+        pista: "Também há crime quando o documento falso é exibido porque a polícia pediu, como a CNH falsa mostrada na fiscalização.",
+      },
+      {
+        termo: "Quem falsifica e usa",
+        faz: "Na posição tradicional e majoritária, quem falsifica e depois usa o mesmo documento responde só pela falsificação: o uso é fato posterior não punível. Há decisão mais recente do STJ em sentido contrário, mandando punir só pelo uso.",
+      },
+      {
+        termo: "Competência do uso (Súmula 546 do STJ)",
+        faz: "A competência é fixada pelo órgão ou entidade a quem o documento falso foi apresentado, e não por quem o expediu. Ex.: CNH falsa (expedida por órgão estadual) apresentada à PRF é crime da Justiça Federal.",
+        pista: "Súmula 200 do STJ: no uso de passaporte falso, o juízo federal competente é o do lugar onde o crime se consumou.",
+      },
+      {
+        termo: "Falso e outro crime (Súmula 17 do STJ)",
+        faz: "Quando o falso se esgota no estelionato, sem mais capacidade de causar dano, é absorvido por ele. Na mesma linha, o STJ já entendeu que recibos falsos usados só para pagar menos imposto ficam absorvidos pelo crime tributário.",
+        pista: "Se o documento falso continua podendo ser usado em outros golpes, não há absorção: são dois crimes.",
+      },
+      {
+        termo: "Supressão de documento (art. 305)",
+        faz: "Destruir, suprimir ou ocultar, em benefício próprio ou de outro, ou em prejuízo alheio, documento público ou particular verdadeiro de que não podia dispor: reclusão de 2 a 6 anos e multa (público) ou de 1 a 5 anos e multa (particular). O próprio dono do documento pode cometer o crime, se não podia dispor dele.",
+      },
+      {
+        parte: "8. Outras falsidades (arts. 306 a 310)",
+        termo: "Sinal de metal precioso e de alfândega (art. 306)",
+        faz: "Fabricar ou alterar marca ou sinal usado pelo poder público para atestar metal precioso ou na fiscalização alfandegária, ou usar marca desse tipo falsificada por outro: reclusão de 2 a 6 anos e multa. Se o sinal é o da fiscalização sanitária, ou serve para autenticar ou lacrar objetos ou comprovar formalidade legal: reclusão ou detenção de 1 a 3 anos e multa.",
+      },
+      {
+        termo: "Falsa identidade (art. 307)",
+        faz: "Atribuir a si ou a outra pessoa identidade falsa para obter vantagem, para si ou para outro, ou para causar dano: detenção de 3 meses a 1 ano ou multa, se o fato não for elemento de crime mais grave (subsidiariedade expressa). Aqui não se usa documento: a mentira é sobre quem a pessoa é.",
+        pista: "Súmula 522 do STJ: mentir a identidade para a polícia é crime, mesmo alegando autodefesa (ex.: para escapar de mandado de prisão).",
+      },
+      {
+        termo: "Tentativa na falsa identidade",
+        faz: "Feita verbalmente e em pessoa, não admite tentativa (é ato único). Se a conduta pode ser fracionada, como numa carta ou mensagem que não chega ao destino, a tentativa é possível.",
+      },
+      {
+        termo: "Documento de identidade alheio (art. 308)",
+        faz: "Usar como próprio passaporte, título de eleitor, caderneta de reservista ou qualquer documento de identidade de outra pessoa, ou ceder documento desse tipo, próprio ou de terceiro, para que outro o use: detenção de 4 meses a 2 anos e multa, se não for crime mais grave.",
+        pista: "Documento verdadeiro de outra pessoa é art. 308. Documento falso é art. 304. Sem documento nenhum, só a mentira, é art. 307.",
+      },
+      {
+        termo: "Fraudes ligadas a estrangeiros (arts. 309 e 310)",
+        faz: "O estrangeiro que usa nome que não é o seu para entrar ou permanecer no Brasil: detenção de 1 a 3 anos e multa. Atribuir a estrangeiro qualidade falsa para promover sua entrada: reclusão de 1 a 4 anos e multa. Servir de testa de ferro, figurando como dono de ação, título ou valor de estrangeiro quando a lei proíbe que ele os tenha: detenção de 6 meses a 3 anos e multa.",
+      },
+      {
+        parte: "9. Adulteração de sinal identificador de veículo (art. 311)",
+        termo: "Conduta e pena",
+        faz: "Adulterar, remarcar ou suprimir número de chassi, monobloco, motor, placa de identificação ou qualquer sinal identificador de veículo automotor, elétrico, híbrido, reboque, semirreboque ou suas combinações, ou de seus componentes, sem autorização do órgão competente: reclusão de 3 a 6 anos e multa. Aumenta de 1/3 se cometido no exercício da função pública ou em razão dela. Crime formal; admite tentativa.",
+        pista: "O STJ entende que cobrir ou alterar caracteres da placa com fita adesiva configura o crime. Tirar a placa da moto para fugir de multas também está no tipo (suprimir).",
+      },
+      {
+        termo: "Condutas equiparadas (§ 2º)",
+        faz: "Mesma pena para: (I) o funcionário que contribui para licenciar ou registrar o veículo adulterado, fornecendo material ou informação oficial; (II) quem adquire, transporta, fabrica, fornece, possui ou guarda objeto destinado especialmente a adulterar sinal identificador; (III) quem adquire, recebe, transporta, conduz, oculta, desmonta, monta, vende ou de qualquer forma utiliza veículo com sinal adulterado ou remarcado que sabe ou deveria saber estar assim.",
+        pista: "O inciso III pune até quem só conduz o veículo, se sabia ou deveria saber da adulteração: situação típica da fiscalização na rodovia.",
+      },
+      {
+        termo: "Forma qualificada (§§ 3º e 4º)",
+        faz: "Praticar as condutas dos incisos II ou III do § 2º no exercício de atividade comercial ou industrial: reclusão de 4 a 8 anos e multa. Conta como atividade comercial qualquer comércio irregular ou clandestino, inclusive o feito em casa. Como a pena mínima é 4 anos, não cabe acordo de não persecução penal.",
+      },
+      {
+        parte: "10. Fraudes em certames de interesse público (art. 311-A)",
+        termo: "Conduta e pena",
+        faz: "Utilizar ou divulgar indevidamente conteúdo sigiloso de concurso público, avaliação ou exame públicos, processo seletivo para o ensino superior ou exame ou processo seletivo previsto em lei, com o fim de beneficiar a si ou a outro ou de comprometer a credibilidade do certame: reclusão de 1 a 4 anos e multa. Vale para provas como o ENEM e o exame da OAB, não só para concursos.",
+        pista: "“Indevidamente” é elemento normativo: quem divulga o gabarito no momento certo, por dever da função, não comete crime.",
+      },
+      {
+        termo: "Consumação e formas do art. 311-A",
+        faz: "Consuma-se quando o conteúdo sigiloso é usado ou divulgado, mesmo que ninguém seja beneficiado (crime formal); admite tentativa. Mesma pena para quem permite ou facilita o acesso de pessoas não autorizadas às informações (§ 1º). Se resulta dano à administração pública: reclusão de 2 a 6 anos e multa (§ 2º). Funcionário público: pena aumentada de 1/3 (§ 3º).",
       },
     ],
     cuidado:
-      "Documento verdadeiro de outra pessoa é art. 308. Documento falso é art. 304. Sem documento nenhum, é art. 307.",
+      "Falsificação grosseira não é crime de falso (no máximo, estelionato). Cheque é documento público por equiparação; cartão de crédito é documento particular por equiparação. Documento verdadeiro de outra pessoa é art. 308; documento falso é art. 304; sem documento, art. 307. No uso de documento falso, a competência segue o órgão a quem ele foi apresentado.",
   },
   questoes: [
     {

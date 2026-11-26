@@ -4,63 +4,211 @@ export const AULA: AulaEscrita = {
   aula: "penal-07",
   resumo: {
     ideia:
-      "Os crimes contra o patrimônio giram em torno de uma pergunta: como o bem saiu da vítima? Sem violência é furto, com violência é roubo, com colaboração forçada é extorsão, com engano é estelionato. As penas subiram muito em 2026.",
+      "Os crimes contra o patrimônio giram em torno de uma pergunta: como o bem saiu da vítima? Sem violência é furto, com violência é roubo, com colaboração forçada é extorsão, com engano é estelionato, e quando o agente já tinha a posse é apropriação indébita. A aula vê também usurpação, dano, outras fraudes, receptação, imunidades e os patrimoniais hediondos. As penas subiram muito em 2026 (Leis 15.358, 15.397 e 15.517).",
     itens: [
       {
-        termo: "Furto",
-        faz: "Reclusão de 1 a 6 anos desde a Lei 15.397/2026. Repouso noturno aumenta de metade. Consuma-se com a inversão da posse, mesmo por pouco tempo.",
+        parte: "1. Furto: noções (arts. 155 e 156)",
+        termo: "Furto simples e consumação",
+        faz: "Subtrair, para si ou para outrem, coisa alheia móvel: reclusão de 1 a 6 anos e multa desde a Lei 15.397/2026. Consuma-se com a inversão da posse, ainda que por pouco tempo e sem posse mansa e pacífica (teoria adotada pelo STJ e pelo STF). Energia elétrica ou outra com valor econômico é equiparada a coisa móvel (§ 3º).",
+        pista: "Furto de uso (pegar e devolver logo, sem intenção de ficar) é atípico. Vigilância eletrônica ou de seguranças, por si só, não torna o crime impossível (Súmula 567 do STJ).",
       },
       {
-        termo: "Furto qualificado",
-        faz: "2 a 8 anos. Sobe para 4 a 10 em explosivo, fraude eletrônica, veículo levado a outro Estado, animais, celular e computador, arma de fogo e combustíveis.",
+        termo: "Repouso noturno (§ 1º)",
+        faz: "A pena aumenta de metade se o furto ocorre durante o repouso noturno. Segundo o STJ, esse aumento não se aplica ao furto qualificado.",
       },
       {
-        termo: "Privilégio",
-        faz: "Primário e coisa de pequeno valor. Vale também no furto qualificado, se a qualificadora for objetiva (Súmula 511 do STJ).",
+        termo: "Privilégio (§ 2º)",
+        faz: "Se o agente é primário e a coisa é de pequeno valor (em regra, até um salário mínimo), o juiz pode trocar reclusão por detenção, reduzir a pena de 1/3 a 2/3 ou aplicar só multa. Vale também no furto qualificado, se a qualificadora for objetiva (Súmula 511 do STJ).",
       },
       {
-        termo: "Fraude",
-        faz: "Se o engano distrai a vítima e o agente subtrai, é furto mediante fraude. Se a vítima entrega o bem enganada, é estelionato.",
+        termo: "Furto de coisa comum (art. 156)",
+        faz: "O condômino, coerdeiro ou sócio subtrai a coisa comum de quem a detém legitimamente: detenção de 6 meses a 2 anos ou multa, mediante representação. Não é punível a subtração de coisa fungível cujo valor não excede a quota do agente.",
       },
       {
-        termo: "Roubo",
-        faz: "Reclusão de 6 a 10 anos. Próprio: a violência vem antes ou durante. Impróprio: vem logo depois, para garantir a coisa ou a impunidade.",
+        parte: "2. Furto qualificado e formas especiais",
+        termo: "Furto qualificado (§ 4º)",
+        faz: "Reclusão de 2 a 8 anos e multa: destruição ou rompimento de obstáculo; abuso de confiança, fraude, escalada ou destreza; chave falsa; concurso de duas ou mais pessoas; e, desde 2026, subtração de bens que comprometam o funcionamento de órgãos públicos ou de serviços essenciais (V).",
+        pista: "No furto pelo concurso de pessoas não se aplica, por analogia, o aumento do roubo (Súmula 442 do STJ).",
       },
       {
-        termo: "Aumentos do roubo",
-        faz: "1/3 até metade: concurso, arma branca, celular e outros. 2/3: arma de fogo. Dobro: arma de uso restrito ou proibido.",
+        termo: "Formas de 4 a 10 anos",
+        faz: "Explosivo ou artefato análogo que cause perigo comum (§ 4º-A, hediondo); fraude eletrônica por dispositivo eletrônico ou informático (§ 4º-B); veículo automotor levado para outro Estado ou para o exterior (§ 5º); semovente de produção ou animal doméstico, e celular, computador, tablet ou similar (§ 6º); explosivos ou acessórios e arma de fogo (§ 7º); furto por integrante de facção ou milícia (§ 9º, Lei 15.358/2026).",
       },
       {
-        termo: "Latrocínio",
-        faz: "Morte: 24 a 30 anos. Com a morte consumada, o crime é consumado, mesmo sem levar nada. O julgamento é do juiz singular.",
+        termo: "Aumentos da fraude eletrônica (§ 4º-C)",
+        faz: "No furto mediante fraude eletrônica, a pena aumenta de 1/3 a 2/3 se usado servidor mantido fora do país, e de 1/3 ao dobro se a vítima é idosa ou vulnerável.",
+        pista: "Desde 2026, o furto por fraude eletrônica (4 a 10) tem pena maior que o estelionato por fraude eletrônica (4 a 8).",
       },
       {
-        termo: "Extorsão",
-        faz: "A vítima precisa colaborar. Consuma-se sem a vantagem (Súmula 96 do STJ). Com restrição da liberdade, é o sequestro relâmpago: 6 a 12 anos.",
+        termo: "Fios e cabos (§ 8º)",
+        faz: "Subtrair fios, cabos ou equipamentos de energia elétrica, telefonia ou transmissão de dados, ou materiais ferroviários e metroviários: reclusão de 2 a 8 anos e multa, com possibilidade do privilégio do § 2º.",
       },
       {
-        termo: "Extorsão mediante sequestro",
-        faz: "8 a 15 anos. Consuma-se com a privação da liberdade. Quem denuncia e facilita a libertação tem redução de um a dois terços.",
+        termo: "Combustíveis (§§ 10 a 12, Lei 15.517/2026)",
+        faz: "Subtrair petróleo e derivados, gás natural, álcool carburante, demais combustíveis e lubrificantes de estabelecimentos de produção, armazenamento ou transporte, inclusive dutos: reclusão de 4 a 10 anos e multa. Aumenta de 1/3 com rompimento de obstáculo, concurso de pessoas, abuso de confiança ou vínculo com a vítima, ou agente que ocupa cargo público; de 2/3 se resulta paralisação, desabastecimento, incêndio, poluição, lesão grave ou morte.",
       },
       {
-        termo: "Estelionato",
-        faz: "Reclusão de 1 a 5 anos. A representação caiu em 2026, com a revogação do § 5º. Ceder conta laranja entrou no § 2º, VII.",
+        termo: "Furto mediante fraude × estelionato",
+        faz: "Se o engano serve para distrair a vigilância e o agente subtrai a coisa, é furto mediante fraude. Se a vítima, enganada, entrega o bem por vontade própria, é estelionato.",
       },
       {
-        termo: "Apropriação indébita",
-        faz: "O agente já tinha a posse legítima, e o dolo vem depois. Se o dolo vem antes de receber, é estelionato.",
+        parte: "3. Roubo (art. 157)",
+        termo: "Roubo próprio e impróprio",
+        faz: "Subtrair coisa alheia móvel mediante grave ameaça ou violência a pessoa, ou depois de reduzir sua capacidade de resistência (violência imprópria, como drogar a vítima): reclusão de 6 a 10 anos e multa desde 2026. Próprio: a violência vem antes ou durante. Impróprio (§ 1º): logo depois de subtraída a coisa, para garantir a posse ou a impunidade.",
+        pista: "Consuma-se com a inversão da posse, mesmo breve e logo recuperada (Súmula 582 do STJ). Não se aplica a insignificância.",
       },
       {
-        termo: "Receptação",
-        faz: "Dolosa: 2 a 6 anos. Comercial: 3 a 8 anos. Culposa: 1 mês a 1 ano. Não existe mais perdão judicial na forma culposa.",
+        termo: "Bens de serviços essenciais (§ 1º-A)",
+        faz: "Desde a Lei 15.397/2026, roubo de bens que comprometam o funcionamento de órgãos públicos ou de estabelecimentos que prestem serviços essenciais: reclusão de 6 a 12 anos e multa.",
       },
       {
-        termo: "Imunidades",
-        faz: "Art. 181 isenta de pena entre cônjuges e parentes em linha reta. Não vale com violência, para o estranho nem contra maior de 60 anos.",
+        termo: "Aumento de 1/3 até a metade (§ 2º)",
+        faz: "Concurso de duas ou mais pessoas; vítima em serviço de transporte de valores, sabendo o agente disso; veículo levado para outro Estado ou para o exterior; vítima mantida em poder do agente, com restrição da liberdade (hediondo); subtração de explosivos ou acessórios; arma branca; e, desde 2026, subtração de celular, computador ou similar (IX), de arma de fogo (X) e de combustíveis (XI).",
+        pista: "Várias majorantes não autorizam, sozinhas, aumento maior que o mínimo: o juiz precisa fundamentar no caso concreto (Súmula 443 do STJ).",
+      },
+      {
+        termo: "Aumento de 2/3 e dobro (§§ 2º-A e 2º-B)",
+        faz: "Aumenta de 2/3 com emprego de arma de fogo (hediondo), com destruição ou rompimento de obstáculo por explosivo, ou se o roubo de combustível causa paralisação, desabastecimento, incêndio ou poluição. A pena é aplicada em dobro com arma de fogo de uso restrito ou proibido (hediondo).",
+        pista: "Simulacro e arma de brinquedo servem como grave ameaça, mas não geram o aumento. A apreensão e a perícia da arma podem ser dispensadas se outras provas mostram que foi usada.",
+      },
+      {
+        termo: "Lesão grave e latrocínio (§ 3º)",
+        faz: "Se da violência resulta lesão grave: reclusão de 7 a 18 anos e multa. Se resulta morte (latrocínio): reclusão de 24 a 30 anos e multa desde 2026. Ambos são hediondos. Há latrocínio consumado quando a morte se consuma, ainda que o agente não leve nada (Súmula 610 do STF); se a morte não ocorre, é tentativa de latrocínio.",
+        pista: "O julgamento é do juiz singular, não do júri (Súmula 603 do STF). A morte precisa vir da violência; a grave ameaça que causa morte não forma latrocínio.",
+      },
+      {
+        termo: "Roubo por facção ou milícia (§§ 4º e 5º)",
+        faz: "Pela Lei 15.358/2026, o roubo cometido por integrante de organização criminosa ultraviolenta, grupo paramilitar ou milícia privada tem a pena do caput aplicada em triplo, desprezadas as outras causas de aumento; com resultado morte, reclusão de 20 a 40 anos e multa.",
+      },
+      {
+        parte: "4. Extorsão (arts. 158 a 160)",
+        termo: "Extorsão (art. 158)",
+        faz: "Constranger alguém, com violência ou grave ameaça, a fazer, tolerar que se faça ou deixar de fazer algo, para obter vantagem econômica indevida: reclusão de 4 a 10 anos e multa. Aumenta de 1/3 até a metade com duas ou mais pessoas ou arma. Com violência que causa lesão grave ou morte, aplicam-se as penas do roubo do § 3º. Por facção ou milícia, pena em triplo (§ 4º, 2026).",
+        pista: "É crime formal: consuma-se com o constrangimento, sem precisar da vantagem (Súmula 96 do STJ). No roubo o agente pega a coisa; na extorsão a colaboração da vítima é indispensável.",
+      },
+      {
+        termo: "Sequestro relâmpago (art. 158, § 3º)",
+        faz: "Extorsão com restrição da liberdade da vítima, quando essa condição é necessária para obter a vantagem (ex.: levar a vítima ao caixa eletrônico para sacar): reclusão de 6 a 12 anos e multa; com lesão grave ou morte, as penas da extorsão mediante sequestro (16 a 24 e 24 a 30).",
+      },
+      {
+        termo: "Extorsão mediante sequestro (art. 159)",
+        faz: "Sequestrar pessoa para obter qualquer vantagem como condição ou preço do resgate: reclusão de 8 a 15 anos. De 12 a 20 se dura mais de 24 horas, se a vítima é menor de 18 ou maior de 60 anos ou se cometida por associação criminosa; de 16 a 24 com lesão grave; de 24 a 30 com morte. É hediondo em todas as formas. Por facção ou milícia, aumenta de 2/3 (§ 5º, 2026).",
+        pista: "Consuma-se com a privação da liberdade; o pagamento do resgate é exaurimento. O concorrente que denuncia à autoridade e facilita a libertação tem a pena reduzida de 1/3 a 2/3 (§ 4º).",
+      },
+      {
+        termo: "Extorsão indireta (art. 160)",
+        faz: "Exigir ou receber, como garantia de dívida e abusando da situação de alguém, documento que pode dar causa a procedimento criminal contra a vítima ou terceiro (ex.: cheque sem fundos dado em garantia): reclusão de 1 a 3 anos e multa.",
+      },
+      {
+        parte: "5. Usurpação (arts. 161 e 162)",
+        termo: "Alteração de limites, usurpação de águas e esbulho",
+        faz: "Suprimir ou deslocar marco ou sinal de divisa para se apropriar de imóvel alheio; desviar ou represar águas alheias; invadir terreno ou edifício alheio com violência, grave ameaça ou mais de duas pessoas, para tomar a posse (esbulho possessório): detenção de 1 a 6 meses e multa, mais a pena da violência. Se a propriedade é particular e não há violência, a ação é privada.",
+      },
+      {
+        termo: "Supressão ou alteração de marca em animais (art. 162)",
+        faz: "Suprimir ou alterar, indevidamente, em gado ou rebanho alheio, marca ou sinal de propriedade: detenção de 6 meses a 3 anos e multa.",
+      },
+      {
+        parte: "6. Dano (arts. 163 a 167)",
+        termo: "Dano simples e qualificado (art. 163)",
+        faz: "Destruir, inutilizar ou deteriorar coisa alheia: detenção de 1 a 6 meses ou multa. Qualificado (6 meses a 3 anos e multa, mais a pena da violência): com violência ou grave ameaça; com substância inflamável ou explosiva, se não for crime mais grave; contra patrimônio da União, Estado, DF, Município, autarquia, fundação, empresa pública, sociedade de economia mista ou concessionária; por motivo egoístico ou com prejuízo considerável.",
+        pista: "Não existe dano culposo no CP. O STJ entende que o preso que danifica a cela só para fugir não comete dano, por faltar a intenção de prejudicar.",
+      },
+      {
+        termo: "Outros danos e ação penal (arts. 164 a 167)",
+        faz: "Introduzir ou deixar animais em propriedade alheia, com prejuízo (art. 164). Dano em coisa tombada (art. 165) e alteração de local protegido (art. 166): a doutrina entende que foram substituídos pelos arts. 62 e 63 da Lei de Crimes Ambientais (Lei 9.605/1998). A ação é privada no dano simples, no dano por motivo egoístico ou prejuízo considerável e no art. 164 (art. 167); nos demais, pública incondicionada.",
+      },
+      {
+        parte: "7. Apropriação indébita (arts. 168 a 170)",
+        termo: "Apropriação indébita (art. 168)",
+        faz: "Apropriar-se de coisa alheia móvel de que tem a posse ou a detenção: reclusão de 1 a 4 anos e multa. O agente recebe a coisa de forma legítima e só depois decide ficar com ela. Aumenta de 1/3 no depósito necessário, se o agente é tutor, curador, inventariante, testamenteiro ou depositário judicial, ou em razão de ofício, emprego ou profissão.",
+        pista: "Se o dolo de ficar com a coisa já existia antes de recebê-la, o crime é estelionato.",
+      },
+      {
+        termo: "Apropriação indébita previdenciária (art. 168-A)",
+        faz: "Deixar de repassar à Previdência as contribuições recolhidas dos contribuintes: reclusão de 2 a 5 anos e multa. Extingue a punibilidade quem declara, confessa e paga antes do início da ação fiscal (§ 2º); o juiz pode dar perdão judicial ou aplicar só multa ao primário de bons antecedentes que paga antes da denúncia ou deve valor pequeno (§ 3º). Pela LC 225/2026, a extinção da punibilidade pelo pagamento não vale para o devedor contumaz inscrito no Cadin.",
+        pista: "A jurisprudência também admite a extinção pelo pagamento integral feito antes do trânsito em julgado. O parcelamento só suspende a pretensão punitiva.",
+      },
+      {
+        termo: "Coisa havida por erro, tesouro e coisa achada (art. 169)",
+        faz: "Apropriar-se de coisa alheia que chegou às mãos por erro, caso fortuito ou força da natureza; da quota do tesouro que cabe ao dono do terreno; ou de coisa perdida, sem devolvê-la ao dono nem entregá-la à autoridade em 15 dias: detenção de 1 mês a 1 ano ou multa. O privilégio do furto vale para todo o capítulo (art. 170).",
+      },
+      {
+        parte: "8. Estelionato (arts. 171 e 171-A)",
+        termo: "Estelionato (art. 171)",
+        faz: "Obter vantagem ilícita, em prejuízo alheio, induzindo ou mantendo alguém em erro, por artifício, ardil ou outro meio fraudulento: reclusão de 1 a 5 anos e multa. Exige fraude, erro da vítima, vantagem ilícita e prejuízo. Privilégio (§ 1º): primário e prejuízo de pequeno valor.",
+        pista: "Desde a Lei 15.397/2026, o § 5º (representação) foi revogado: o estelionato voltou a ser de ação pública incondicionada.",
+      },
+      {
+        termo: "Figuras equiparadas (§ 2º)",
+        faz: "Vender ou dar em garantia coisa alheia como própria; vender ou onerar coisa própria inalienável, gravada ou litigiosa, calando sobre isso; defraudar penhor; fraudar a entrega de coisa; lesar o próprio corpo ou destruir a coisa segurada para receber seguro; emitir cheque sem fundos ou frustrar seu pagamento; e, desde 2026, ceder conta bancária para que nela passem recursos de atividade criminosa (conta laranja, VII).",
+        pista: "O pagamento do cheque sem fundos antes do recebimento da denúncia impede a ação penal (Súmula 554 do STF, a contrario). Se o falso se esgota no estelionato, é absorvido (Súmula 17 do STJ).",
+      },
+      {
+        termo: "Fraude eletrônica e aumentos (§§ 2º-A a 4º)",
+        faz: "Fraude com informações dadas pela vítima ou por terceiro enganado por redes sociais, telefonema, e-mail fraudulento, duplicação de dispositivo ou meio análogo: reclusão de 4 a 8 anos e multa. Aumenta de 1/3 a 2/3 com servidor fora do país; de 1/3 contra entidade de direito público ou de economia popular, assistência social ou beneficência; de 1/3 ao dobro contra idoso ou vulnerável.",
+        pista: "No estelionato por cheque sem fundos, depósito ou transferência (como o Pix), a competência é do domicílio da vítima (art. 70, § 4º, do CPP).",
+      },
+      {
+        termo: "Fraude com ativos virtuais (art. 171-A)",
+        faz: "Organizar, gerir, ofertar ou distribuir carteiras, ou intermediar operações com ativos virtuais, valores mobiliários ou outros ativos financeiros, para obter vantagem ilícita enganando alguém: reclusão de 4 a 8 anos e multa (Lei 14.478/2022).",
+      },
+      {
+        parte: "9. Outras fraudes (arts. 172 a 179)",
+        termo: "Duplicata simulada, abuso de incapazes e especulação",
+        faz: "Emitir fatura, duplicata ou nota que não corresponda à venda ou ao serviço (art. 172, detenção de 2 a 4 anos e multa). Abusar da necessidade, paixão ou inexperiência de menor ou da deficiência mental de alguém para fazê-lo praticar ato que produza efeito jurídico prejudicial (art. 173, reclusão de 2 a 6 anos e multa). Induzir pessoa inexperiente ou simples a jogo, aposta ou especulação que sabe ser ruinosa (art. 174).",
+      },
+      {
+        termo: "Fraude no comércio e calote (arts. 175 e 176)",
+        faz: "Enganar o consumidor vendendo mercadoria falsificada ou deteriorada como verdadeira ou perfeita, ou entregando uma por outra (art. 175). Tomar refeição em restaurante, hospedar-se em hotel ou usar transporte sem ter dinheiro para pagar (art. 176): detenção de 15 dias a 2 meses ou multa, mediante representação; o juiz pode deixar de aplicar a pena.",
+      },
+      {
+        termo: "Sociedades, warrant e fraude à execução (arts. 177 a 179)",
+        faz: "Fraudes na fundação ou administração de sociedade por ações (art. 177); emitir conhecimento de depósito ou warrant em desacordo com a lei (art. 178); fraudar execução alienando, desviando, destruindo ou danificando bens ou simulando dívidas (art. 179, detenção de 6 meses a 2 anos ou multa, só mediante queixa).",
+      },
+      {
+        parte: "10. Receptação (arts. 180 e 180-A)",
+        termo: "Receptação dolosa (caput)",
+        faz: "Adquirir, receber, transportar, conduzir ou ocultar coisa que sabe ser produto de crime (própria), ou influir para que terceiro de boa-fé a adquira, receba ou oculte (imprópria): reclusão de 2 a 6 anos e multa desde 2026. É punível mesmo que o autor do crime anterior seja desconhecido ou isento de pena (§ 4º).",
+        pista: "Produto de contravenção não gera receptação: a lei fala em produto de crime.",
+      },
+      {
+        termo: "Receptação qualificada (§§ 1º e 2º)",
+        faz: "No exercício de atividade comercial ou industrial, com coisa que deve saber ser produto de crime: reclusão de 3 a 8 anos e multa. Equipara-se a atividade comercial o comércio irregular ou clandestino, inclusive na residência.",
+      },
+      {
+        termo: "Receptação culposa (§ 3º)",
+        faz: "Adquirir ou receber coisa que, pela natureza, pela desproporção entre valor e preço ou pela condição de quem oferece, deve presumir obtida por meio criminoso: detenção de 1 mês a 1 ano ou multa, ou ambas.",
+        pista: "O § 5º, que previa perdão judicial na culposa e o privilégio na dolosa, foi revogado pela Lei 15.358/2026.",
+      },
+      {
+        termo: "Bens públicos, facção e animais",
+        faz: "Bens da União, Estado, DF, Município, autarquia, fundação, empresa pública, sociedade de economia mista ou concessionária: pena do caput em dobro (§ 6º). Por integrante de facção ou milícia: aumenta de 2/3 (§ 8º, 2026). Receptação de semovente de produção ou de animal doméstico que sabe ou deve saber ser produto de crime (art. 180-A): reclusão de 3 a 8 anos e multa (Lei 15.397/2026). O estabelecimento usado na receptação pode ter o CNPJ suspenso por 180 dias (art. 92, IV).",
+      },
+      {
+        parte: "11. Disposições gerais e patrimoniais hediondos",
+        termo: "Imunidade absoluta (art. 181)",
+        faz: "É isento de pena quem comete crime patrimonial contra o cônjuge, durante a sociedade conjugal, ou contra ascendente ou descendente. O fato continua sendo crime; só não há pena.",
+      },
+      {
+        termo: "Imunidade relativa (art. 182)",
+        faz: "A ação passa a depender de representação se o crime for contra cônjuge separado judicialmente, irmão, ou tio ou sobrinho com quem o agente more.",
+      },
+      {
+        termo: "Exceções (art. 183)",
+        faz: "As imunidades não valem no roubo, na extorsão e em qualquer crime com violência ou grave ameaça à pessoa; para o estranho que participa do crime; e quando a vítima tem 60 anos ou mais.",
+      },
+      {
+        termo: "Instituições financeiras e segurança privada (art. 183-A)",
+        faz: "Crimes patrimoniais contra instituições financeiras e prestadores de serviço de segurança privada têm a pena aumentada de 1/3 até o dobro (Lei 14.967/2024).",
+      },
+      {
+        termo: "Patrimoniais hediondos (Lei 8.072/1990)",
+        faz: "Roubo com restrição da liberdade da vítima (§ 2º, V), com arma de fogo (§ 2º-A, I), com arma de uso restrito ou proibido (§ 2º-B) e qualificado por lesão grave ou morte (§ 3º); extorsão qualificada pela restrição da liberdade, lesão ou morte; extorsão mediante sequestro em todas as formas; furto com explosivo ou artefato que cause perigo comum (§ 4º-A).",
       },
     ],
     cuidado:
-      "O PDF traz penas antigas de furto, roubo, estelionato e receptação. Vale o texto atual do Código, que mudou em 2026.",
+      "O PDF traz penas antigas de furto, roubo, latrocínio, estelionato e receptação e ainda mostra a representação no estelionato. Vale o texto atual do Código, que mudou em 2026: furto 1 a 6, roubo 6 a 10, latrocínio 24 a 30, receptação 2 a 6, estelionato de ação incondicionada e sem perdão judicial na receptação culposa.",
   },
   questoes: [
     {

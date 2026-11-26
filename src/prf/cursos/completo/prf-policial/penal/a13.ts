@@ -4,60 +4,139 @@ export const AULA: AulaEscrita = {
   aula: "penal-13",
   resumo: {
     ideia:
-      "Os crimes em licitações e contratos estão no Código Penal, arts. 337-E a 337-P. A ação é pública incondicionada, e a multa nunca fica abaixo de 2% do valor do contrato.",
+      "Os crimes em licitações e contratos estão no Código Penal, arts. 337-E a 337-P. A ação é pública incondicionada, e a multa nunca fica abaixo de 2% do valor do contrato. Eles vieram da Lei 14.133/2021, que revogou os crimes da antiga Lei 8.666/1993. Para cada crime, observe três pontos: quem pode cometer (só o servidor, só o licitante ou qualquer pessoa), se precisa de prejuízo e se cabe tentativa.",
     itens: [
       {
+        parte: "1. Regras gerais",
+        termo: "Origem e lei no tempo",
+        faz: "Vários tipos novos continuam crimes antigos da Lei 8.666/1993 (ex.: o art. 337-E sucede o antigo art. 89). Houve continuidade normativo-típica: a conduta não deixou de ser crime. Como as penas subiram, a pena nova não alcança fatos anteriores. O art. 337-O é crime totalmente novo.",
+      },
+      {
+        termo: "Pontos comuns a todos",
+        faz: "Todos são dolosos, sem forma culposa, e todos têm prisão mais multa. O único de menor potencial ofensivo é o do art. 337-N. Aprovação das contas pelo Tribunal de Contas não afasta o crime. Por ser crime contra a administração pública, a progressão de regime depende de reparar o dano ou devolver o produto do crime (art. 33, § 4º, do CP).",
+      },
+      {
+        termo: "Onde se aplicam",
+        faz: "Na administração direta, autárquica e fundacional e também nas licitações e contratos de empresas públicas e sociedades de economia mista (Lei 13.303/2016), por força do art. 185 da Lei 14.133/2021. A vítima principal é o ente lesado; o particular prejudicado também pode ser vítima.",
+      },
+      {
+        termo: "Suspensão condicional do processo",
+        faz: "Cabe quando a pena mínima é de até 1 ano: arts. 337-G, 337-I, 337-M (caput), 337-N e 337-O. Não cabe nos de pena mínima maior, como 337-E, 337-F, 337-H, 337-J, 337-K e 337-L.",
+      },
+      {
+        parte: "2. Contratação direta ilegal (art. 337-E)",
         termo: "Contratação direta ilegal",
         faz: "Art. 337-E: fora das hipóteses legais. Reclusão de 4 a 8 anos e multa. Crime próprio e material.",
       },
       {
+        termo: "Detalhes da contratação direta",
+        faz: "Verbos: admitir, possibilitar ou dar causa à contratação sem licitação fora dos casos de dispensa ou inexigibilidade. É norma penal em branco: as hipóteses estão na Lei 14.133/2021. Só o servidor comete, mas o particular que concorre também responde. Para o STJ, exige intenção de causar dano ao erário e prejuízo efetivo; parte da doutrina o vê como formal. O antigo art. 89 tinha detenção de 3 a 5 anos.",
+      },
+      {
+        termo: "Advogado sem licitação",
+        faz: "A contratação direta de advogado ou consultoria jurídica por inexigibilidade é possível se houver notória especialização e trabalho de natureza intelectual (art. 74, III, da Lei 14.133/2021). Ter corpo jurídico próprio não impede, por si só, essa contratação (STJ).",
+      },
+      {
+        parte: "3. Frustração da competição (art. 337-F)",
         termo: "Frustração do caráter competitivo",
         faz: "Art. 337-F: reclusão de 4 a 8 anos e multa. Exige o intuito de obter vantagem da adjudicação. Crime formal.",
       },
       {
+        termo: "Detalhes da frustração",
+        faz: "Frustrar ou fraudar a competição (ex.: empresas combinam quem vai ganhar). Crime comum: pode ser o particular que quer o contrato ou o servidor que ajuda. Consuma-se com a realização do procedimento fraudado. Admite tentativa. Sucede o antigo art. 90 da Lei 8.666/1993.",
+        pista: "Súmula 645 do STJ: o crime de fraude à licitação é formal e não depende de prova de prejuízo nem de vantagem obtida.",
+      },
+      {
+        parte: "4. Patrocínio e modificação irregular (arts. 337-G e 337-H)",
         termo: "Patrocínio de interesse privado",
         faz: "Art. 337-G: dá causa a licitação ou contrato depois invalidado pelo Judiciário. Reclusão de 6 meses a 3 anos e multa.",
+      },
+      {
+        termo: "Detalhes do patrocínio",
+        faz: "Só o servidor que se vale da sua condição comete, mas pode agir em conjunto com um particular. A consumação é discutida; o certo é que não basta interceder pelo particular. Para muitos, o crime se consuma com a abertura da licitação ou a assinatura do contrato, e a anulação pelo Judiciário é condição para punir; para outros, só com o trânsito em julgado dessa anulação.",
       },
       {
         termo: "Modificação ou pagamento irregular",
         faz: "Art. 337-H: vantagem ao contratado sem autorização, ou fatura fora da ordem cronológica. Reclusão de 4 a 8 anos e multa.",
       },
       {
+        termo: "Detalhes da modificação",
+        faz: "Duas formas: admitir, possibilitar ou dar causa a modificação ou vantagem ao contratado, inclusive prorrogação, sem previsão em lei, edital ou contrato; ou pagar fatura antes da vez. Se há previsão legal, no edital ou no contrato, não há crime. Crime próprio do servidor. A doutrina o vê como formal; o STJ já exigiu intenção de lesar e dano efetivo. Admite tentativa.",
+      },
+      {
+        parte: "5. Perturbação e violação de sigilo (arts. 337-I e 337-J)",
         termo: "Perturbação de licitação",
         faz: "Art. 337-I: impedir, perturbar ou fraudar ato do processo. Detenção de 6 meses a 3 anos e multa.",
+      },
+      {
+        termo: "Detalhes da perturbação",
+        faz: "Crime comum. Basta perturbar ou fraudar um ato (ex.: rasurar o protocolo para aceitar proposta entregue fora do prazo), sem precisar impedir o certame nem causar prejuízo. Se a fraude atinge a própria competição, o crime é o do art. 337-F.",
       },
       {
         termo: "Violação de sigilo",
         faz: "Art. 337-J: devassar proposta ou dar a chance a terceiro. Detenção de 2 a 3 anos e multa.",
       },
       {
+        termo: "Detalhes da violação de sigilo",
+        faz: "Crime comum, com dolo simples, sem finalidade especial. Consuma-se quando o conteúdo da proposta chega ao conhecimento de quem a devassou ou do terceiro. O sigilo protege a igualdade entre os concorrentes.",
+      },
+      {
+        parte: "6. Afastamento de licitante (art. 337-K)",
         termo: "Afastamento de licitante",
         faz: "Art. 337-K: afastar ou tentar afastar. Reclusão de 3 a 5 anos e multa, mais a pena da violência. Quem desiste por vantagem tem a mesma pena.",
         pista: "Tentar já consuma o crime.",
       },
       {
+        termo: "Detalhes do afastamento",
+        faz: "Meios: violência, grave ameaça, fraude ou oferta de vantagem de qualquer tipo. Crime comum. Por ser crime de atentado, não há forma tentada. Com violência, soma-se a pena dela (cúmulo material). Quem se abstém ou desiste por vantagem comete crime omissivo puro, sem tentativa.",
+        pista: "Os arts. 337-I e 337-K substituíram, nas licitações, o antigo art. 335 do CP (aula 11).",
+      },
+      {
+        parte: "7. Fraude na licitação ou no contrato (art. 337-L)",
         termo: "Fraude em licitação ou contrato",
         faz: "Art. 337-L: mercadoria diversa, falsificada, vencida ou trocada. Reclusão de 4 a 8 anos e multa.",
       },
       {
+        termo: "Detalhes da fraude",
+        faz: "Fraudar, em prejuízo da administração, por: I – qualidade ou quantidade diferente da prevista; II – mercadoria falsificada, deteriorada, inservível ou vencida entregue como perfeita; III – uma mercadoria por outra; IV – alteração da substância, qualidade ou quantidade; V – qualquer fraude que encareça a proposta ou o contrato. Só o licitante ou o contratado comete. Várias condutas no mesmo contexto formam crime único. Material e com tentativa.",
+      },
+      {
+        parte: "8. Inidôneo, registro cadastral e projetista (arts. 337-M a 337-O)",
         termo: "Inidôneo",
         faz: "Art. 337-M: admitir à licitação tem 1 a 3 anos. Celebrar contrato tem 3 a 6 anos. O inidôneo que participa também responde.",
+      },
+      {
+        termo: "Detalhes do inidôneo",
+        faz: "A declaração de inidoneidade é a sanção mais grave da Lei 14.133/2021 (art. 156: advertência, multa, impedimento de licitar e contratar, declaração de inidoneidade). O servidor que admite ou contrata comete crime próprio; admitir é formal e sem tentativa; celebrar se consuma com o contrato. O próprio inidôneo responde: com a pena do caput se participa, com a do § 1º se contrata.",
       },
       {
         termo: "Registro cadastral",
         faz: "Art. 337-N: reclusão de 6 meses a 2 anos e multa. É o único de menor potencial ofensivo.",
       },
       {
+        termo: "Detalhes do registro cadastral",
+        faz: "Chamado de impedimento indevido: impedir, dificultar ou barrar sem justa causa a inscrição de interessado no registro cadastral, ou alterar, suspender ou cancelar o registro sem motivo. Para a maioria, só o servidor comete. É formal; parte da doutrina vê a segunda forma como material. Cabe Juizado Especial e suspensão condicional do processo.",
+      },
+      {
         termo: "Projetista",
         faz: "Art. 337-O: omite ou altera levantamento cadastral ou condição de contorno. Reclusão de 6 meses a 3 anos e multa.",
       },
       {
+        termo: "Detalhes do projetista",
+        faz: "Crime novo. Vale para contratação de anteprojeto, projeto básico ou executivo, diálogo competitivo ou procedimento de manifestação de interesse, com dados muito distantes da realidade que frustram a competição ou prejudicam a melhor proposta. Condição de contorno: sondagens, topografia, estudos de demanda e condições ambientais necessários para definir o projeto e o preço. Formal; na forma omitir, sem tentativa. § 2º: pena em dobro se o fim é obter benefício, mesmo que não o obtenha.",
+      },
+      {
+        parte: "9. Multa (art. 337-P)",
         termo: "Multa",
         faz: "Art. 337-P: nunca inferior a 2% do valor do contrato licitado ou celebrado com contratação direta.",
       },
+      {
+        termo: "Cálculo da multa",
+        faz: "Segue o sistema do CP, em duas fases: 10 a 360 dias-multa, e cada dia-multa de 1/30 a 5 vezes o maior salário mínimo (art. 49). O piso é de 2% do contrato (ex.: contrato de R$ 5 milhões, multa de pelo menos R$ 100 mil). Vai para o Fundo Penitenciário. Na lei antiga, ficava entre 2% e 5% e ia para a Fazenda do ente lesado.",
+      },
     ],
     cuidado:
-      "Os artigos da antiga Lei 8.666 não valem mais para esses crimes. Use os arts. 337-E a 337-P do CP.",
+      "Os artigos da antiga Lei 8.666 não valem mais para esses crimes. Use os arts. 337-E a 337-P do CP. A contratação direta ilegal exige prejuízo para o STJ; a frustração da competição, não (Súmula 645). No afastamento de licitante, tentar já consuma. Só o art. 337-N é de menor potencial ofensivo.",
   },
   questoes: [
     {

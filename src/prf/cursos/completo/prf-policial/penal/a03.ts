@@ -4,66 +4,209 @@ export const AULA: AulaEscrita = {
   aula: "penal-03",
   resumo: {
     ideia:
-      "Crime é fato típico, ilícito e culpável. Esta aula cuida das duas primeiras partes: como a conduta se liga ao resultado, o que é dolo e culpa, até onde o crime chegou e quando a lei autoriza o fato.",
+      "A aula monta a teoria do crime: o que é crime e como ele se diferencia da contravenção; os elementos do fato típico (conduta, resultado, nexo causal e tipicidade) e as classificações dos crimes; dolo, culpa e preterdolo; as etapas do crime (iter criminis), a tentativa, o crime impossível, a desistência e os arrependimentos; e a ilicitude com suas excludentes (estado de necessidade, legítima defesa, estrito cumprimento do dever legal, exercício regular de direito, consentimento do ofendido) e o excesso punível.",
     itens: [
       {
-        termo: "Fato típico",
-        faz: "Conduta, resultado, nexo causal e tipicidade.",
+        parte: "1. Conceito de crime e contravenção",
+        termo: "Três conceitos de crime",
+        faz: "Formal (legal): é o que a lei define como crime. Material: conduta que lesa ou expõe a perigo um bem jurídico relevante. Analítico: prevalece o tripartido, em que crime é fato típico, ilícito e culpável.",
       },
       {
-        termo: "Causa superveniente",
-        faz: "Se é relativamente independente e produz sozinha o resultado, corta a imputação, e o agente responde só pelos atos anteriores (art. 13, § 1º).",
-        pista: "Acidente da ambulância corta. Infecção do ferimento não corta.",
+        termo: "Crime × contravenção (art. 1º da Lei de Introdução ao CP)",
+        faz: "Crime (ou delito) tem pena de reclusão ou detenção, sozinha, alternativa ou junto com multa. Contravenção tem prisão simples ou multa, ou as duas. A diferença é de grau (gravidade), escolhida pelo legislador.",
       },
       {
-        termo: "Omissão imprópria",
-        faz: "Quem devia e podia agir responde pelo resultado: dever legal, assunção do encargo ou risco criado antes (art. 13, § 2º).",
+        termo: "Regras próprias da contravenção",
+        faz: "Tentativa de contravenção não é punida; a lei brasileira não alcança contravenção praticada no exterior; a ação penal é pública incondicionada; a prisão simples não passa de 5 anos; e a Justiça Federal não julga contravenção, mesmo contra interesse da União.",
       },
       {
-        termo: "Dolo e culpa",
-        faz: "Dolo direto: quis. Eventual: assumiu o risco. Culpa consciente: previu, mas confiou que não ocorreria. Inconsciente: não previu o que era previsível.",
+        termo: "Porte de droga para uso pessoal",
+        faz: "O art. 28 da Lei de Drogas prevê penas sem prisão (advertência, prestação de serviços, medida educativa). Em 2024, o STF decidiu que o porte de maconha para consumo próprio é ilícito administrativo, não penal, presumindo uso pessoal até 40 g ou 6 plantas fêmeas.",
+      },
+      {
+        parte: "2. Conduta",
+        termo: "Teoria finalista",
+        faz: "Adotada pelo CP: conduta é a ação ou omissão humana, consciente e voluntária, dirigida a uma finalidade. Por isso dolo e culpa ficam dentro da conduta (no fato típico), e não na culpabilidade.",
+      },
+      {
+        termo: "Comissiva, omissiva e mista",
+        faz: "Comissiva: fazer o que a lei proíbe. Omissiva própria: deixar de fazer o que a lei manda, e o próprio tipo descreve a omissão (ex.: omissão de socorro). Mista: o tipo junta ação e omissão (ex.: apropriação de coisa achada, que exige achar e não devolver).",
+      },
+      {
+        termo: "Omissão imprópria (art. 13, § 2º)",
+        faz: "Também chamada de crime comissivo por omissão: quem tinha o dever de agir para evitar o resultado e podia agir responde pelo resultado como se o tivesse causado. Tem esse dever (garantidor) quem: tem por lei obrigação de cuidado, proteção ou vigilância (ex.: pais); assumiu de outra forma a responsabilidade de impedir o resultado (ex.: babá, salva-vidas contratado); com o comportamento anterior, criou o risco.",
+        pista: "Mãe que deixa o bebê morrer de fome responde por homicídio, não por omissão de socorro.",
+      },
+      {
+        parte: "3. Resultado e nexo causal",
+        termo: "Resultado naturalístico × jurídico",
+        faz: "Naturalístico é a mudança no mundo real (ex.: a morte). Só os crimes materiais exigem esse resultado; nos formais ele pode ocorrer, mas não é necessário; nos de mera conduta nem existe. Resultado jurídico (normativo) é a lesão ou o perigo ao bem jurídico: está sempre presente.",
+      },
+      {
+        termo: "Equivalência dos antecedentes (art. 13, caput)",
+        faz: "Causa é toda ação ou omissão sem a qual o resultado não teria ocorrido. Para saber, elimina-se mentalmente a conduta: se o resultado desaparece, ela é causa. O excesso de causas (até o fabricante da arma) é filtrado pela exigência de dolo ou culpa.",
+      },
+      {
+        termo: "Concausas absolutamente independentes",
+        faz: "Causas que produzem o resultado sozinhas, sem relação com a conduta do agente, sejam anteriores, simultâneas ou posteriores (ex.: a vítima, já baleada, morre de envenenamento feito por outra pessoa). O agente responde só pelo que fez (tentativa), nunca pelo resultado.",
+      },
+      {
+        termo: "Concausas relativamente independentes",
+        faz: "Somam-se à conduta. Se anteriores ou simultâneas (ex.: doença que a vítima já tinha), o agente responde pelo resultado. Se posteriores e, por si sós, produzirem o resultado, rompem o nexo (art. 13, § 1º): o agente responde só pelos atos praticados (ex.: a ambulância que leva o ferido capota e ele morre do acidente).",
+        pista: "Erro médico e infecção hospitalar, para o STJ, não rompem o nexo: estão na linha do risco criado.",
+      },
+      {
+        termo: "Imputação objetiva",
+        faz: "Teoria que limita o nexo: só se atribui o resultado a quem criou ou aumentou um risco proibido, se esse risco se realizou no resultado e se ele está dentro do alcance do tipo. Quem cria risco permitido (ex.: vender um carro) não responde.",
+      },
+      {
+        parte: "4. Tipicidade e tipo penal",
+        termo: "Tipicidade formal, material e conglobante",
+        faz: "Formal: a conduta se encaixa na descrição da lei. Material: a conduta lesa ou ameaça de forma relevante o bem jurídico (é onde atua a insignificância). Conglobante: teoria que exige também que a conduta seja contrária ao ordenamento como um todo; o que o Direito manda ou incentiva (ex.: o oficial de justiça que cumpre penhora) nem chega a ser típico.",
+      },
+      {
+        termo: "Elementos do tipo",
+        faz: "Objetivos (descritivos): entendidos só pela leitura, como “matar alguém”. Normativos: exigem juízo de valor jurídico ou cultural, como “documento”, “indevidamente”. Subjetivos: o dolo e as finalidades especiais, como “para si ou para outrem”.",
+      },
+      {
+        termo: "Espécies e funções do tipo",
+        faz: "Tipo fundamental (simples) e derivado (qualificado ou privilegiado); fechado (descrição completa) e aberto (o juiz completa, como nos culposos). O tipo tem função de garantia (só é crime o que está descrito) e indiciária: o fato típico faz presumir, até prova em contrário, que também é ilícito.",
+      },
+      {
+        parte: "5. Classificação dos crimes",
+        termo: "Pelo resultado e pelo sujeito",
+        faz: "Materiais, formais e de mera conduta (ver resultado). Comum: qualquer pessoa pratica. Próprio: exige qualidade especial do agente, mas admite coautoria e participação (ex.: peculato). De mão própria: só o próprio agente pode executar, sem coautoria (ex.: falso testemunho).",
+      },
+      {
+        termo: "Pelo bem jurídico e pelo tempo",
+        faz: "De dano: exige lesão. De perigo: basta o risco, que pode ser concreto (precisa ser provado) ou abstrato (a lei presume). Instantâneo: consuma num momento só. Permanente: a consumação se prolonga no tempo (ex.: sequestro; cabe flagrante a qualquer tempo). Instantâneo de efeitos permanentes: consuma num instante, mas o efeito fica (ex.: homicídio).",
+      },
+      {
+        termo: "Pela estrutura e pelos atos",
+        faz: "Simples (um tipo só) × complexo (soma de dois tipos, como o roubo, que junta furto e ameaça ou lesão). Unissubsistente (um ato só, não admite tentativa) × plurissubsistente (vários atos). De ação múltipla (tipo misto alternativo): vários verbos, crime único se praticados no mesmo contexto. Habitual: exige reiteração (ex.: curandeirismo).",
+      },
+      {
+        termo: "Outras classificações",
+        faz: "Monossubjetivo (pode ser praticado por um) × plurissubjetivo (exige vários, como associação criminosa). De atentado: a tentativa tem a mesma pena da consumação. Vago: o sujeito passivo é a coletividade sem personalidade jurídica. Principal × acessório (depende de crime anterior, como a receptação). De forma livre × vinculada. Multitudinário: praticado por multidão em tumulto.",
+      },
+      {
+        termo: "Nomes que confundem",
+        faz: "Putativo: o agente pensa que comete crime, mas o fato não é crime. Falho: é a tentativa perfeita (fez tudo, mas o resultado não veio). Exaurido: depois da consumação, o agente ainda atinge o objetivo (ex.: recebe o resgate no sequestro já consumado). Liliputiano (anão): outro nome da contravenção. À distância: envolve mais de um país; plurilocal: mais de uma cidade no Brasil.",
+      },
+      {
+        parte: "6. Exclusão do fato típico",
+        termo: "Hipóteses em que não há conduta ou tipicidade",
+        faz: "Coação física irresistível (o agente é usado como instrumento); atos reflexos, sonambulismo e hipnose (não há vontade); força da natureza e caso fortuito; erro de tipo inevitável (afasta dolo e culpa); insignificância e adequação social (afastam a tipicidade material).",
+        pista: "Coação física irresistível exclui a conduta. Coação moral irresistível exclui a culpabilidade.",
+      },
+      {
+        parte: "7. Dolo, culpa e preterdolo",
+        termo: "Dolo (art. 18, I)",
+        faz: "O CP adotou a teoria da vontade (dolo direto: o agente quis o resultado) e a do assentimento (dolo eventual: assumiu o risco de produzi-lo). Dolo direto de 1º grau é o fim desejado; de 2º grau são os efeitos colaterais certos do meio escolhido (ex.: a bomba no avião para matar um passageiro mata todos).",
+      },
+      {
+        termo: "Outras espécies de dolo",
+        faz: "Alternativo: o agente aceita um ou outro resultado (ferir ou matar). Genérico × específico: a vontade de praticar o verbo × a finalidade especial exigida pelo tipo. Geral (erro sucessivo): o agente pensa que já consumou e, com nova conduta, é que causa o resultado; responde pelo crime pretendido, consumado.",
+      },
+      {
+        termo: "Culpa (art. 18, II)",
+        faz: "Resultado não querido, mas previsível, causado por quebra do dever de cuidado: imprudência (agir sem cuidado, ex.: dirigir em alta velocidade), negligência (deixar de tomar o cuidado devido, ex.: não revisar o freio) ou imperícia (falta de aptidão técnica na profissão). Só há crime culposo quando a lei prevê expressamente (art. 18, parágrafo único).",
+      },
+      {
+        termo: "Culpa consciente × dolo eventual",
+        faz: "Na culpa consciente o agente prevê o resultado, mas confia sinceramente que não vai acontecer. No dolo eventual ele prevê e não se importa (“tanto faz”). Na culpa inconsciente, nem chega a prever o que era previsível.",
+      },
+      {
+        termo: "Culpa imprópria, compensação e concorrência",
+        faz: "Culpa imprópria: o agente quer o resultado, mas por erro evitável sobre uma situação de fato (descriminante putativa) e responde por crime culposo; é o único caso de culposo que admite tentativa. No Direito Penal não há compensação de culpas: a culpa da vítima não apaga a do agente (só pesa na pena). Se dois agem com culpa sem combinar (concorrência), cada um responde pela sua.",
       },
       {
         termo: "Preterdolo",
-        faz: "Dolo no antecedente e culpa no consequente. O resultado agravador só pesa se causado ao menos culposamente (art. 19).",
+        faz: "Dolo na conduta anterior e culpa no resultado mais grave (ex.: lesão corporal seguida de morte, art. 129, § 3º). O resultado agravador só se imputa a quem o causou ao menos culposamente (art. 19). Não admite tentativa.",
       },
       {
-        termo: "Tentativa",
-        faz: "Iniciada a execução, não se consuma por circunstâncias alheias à vontade: reduz de um a dois terços, conforme a proximidade da consumação (art. 14).",
-      },
-      {
-        termo: "Desistência e arrependimento eficaz",
-        faz: "O agente interrompe a execução ou impede o resultado e responde só pelos atos já praticados (art. 15).",
-      },
-      {
-        termo: "Arrependimento posterior",
-        faz: "Sem violência ou grave ameaça, com reparação voluntária até o recebimento da denúncia ou queixa: reduz de um a dois terços (art. 16).",
-      },
-      {
-        termo: "Crime impossível",
-        faz: "Ineficácia absoluta do meio ou impropriedade absoluta do objeto (art. 17). Não há tentativa punível.",
-      },
-      {
-        termo: "Estado de necessidade",
-        faz: "Salvar direito de perigo atual não provocado por vontade própria, sem outro modo de evitar. Quem tem dever legal de enfrentar o perigo não pode alegar.",
-      },
-      {
-        termo: "Legítima defesa",
-        faz: "Repelir agressão injusta, atual ou iminente, com meios necessários e moderação. Inclui o agente de segurança que protege refém (art. 25, parágrafo único).",
-      },
-      {
+        parte: "8. Etapas do crime, tentativa e crime impossível",
         termo: "Iter criminis",
-        faz: "O caminho do crime: cogitação, preparação, execução e consumação. Cogitar nunca é punido; preparar, em regra, também não. A punição começa na execução.",
-        pista: "Exceção: quando o próprio ato preparatório é crime, como a associação criminosa (art. 288).",
+        faz: "Cogitação (pensar: nunca punida) → atos preparatórios (em regra não punidos, salvo quando a lei os torna crime autônomo, como a associação criminosa) → atos executórios (começa a punição) → consumação (art. 14, I: estão reunidos todos os elementos do tipo) → exaurimento (efeitos depois da consumação).",
       },
       {
-        termo: "Crime × contravenção",
-        faz: "Crime tem pena de reclusão ou detenção; contravenção, de prisão simples ou multa (Lei de Introdução ao CP, art. 1º).",
-        pista: "A tentativa de contravenção não é punida (LCP, art. 4º).",
+        termo: "Tentativa (art. 14, II)",
+        faz: "Iniciada a execução, o crime não se consuma por circunstâncias alheias à vontade do agente. Pena do consumado reduzida de 1/3 a 2/3 (teoria objetiva); quanto mais perto da consumação, menor a redução. Perfeita (acabada): esgotou os atos e o resultado não veio. Imperfeita: foi interrompido. Branca: a vítima não é atingida. Cruenta: é atingida.",
+      },
+      {
+        termo: "Não admitem tentativa",
+        faz: "Crimes culposos (salvo culpa imprópria), preterdolosos, contravenções (tentativa não punida), omissivos próprios, unissubsistentes, habituais e de atentado (a tentativa já é o próprio crime).",
+      },
+      {
+        termo: "Crime impossível (art. 17)",
+        faz: "Não se pune a tentativa quando o meio é absolutamente ineficaz (ex.: arma de brinquedo para matar) ou o objeto é absolutamente impróprio (ex.: “matar” quem já está morto). Teoria objetiva temperada: se a ineficácia for só relativa, há tentativa punível.",
+        pista: "Câmeras e seguranças na loja não tornam o furto impossível por si sós (Súmula 567 do STJ). Flagrante preparado pela polícia torna o crime impossível (Súmula 145 do STF).",
+      },
+      {
+        parte: "9. Desistência e arrependimentos",
+        termo: "Desistência voluntária e arrependimento eficaz (art. 15)",
+        faz: "Desistência: o agente podia continuar a execução e para por vontade própria. Arrependimento eficaz: já terminou a execução, mas age e impede o resultado. Nos dois, não responde pela tentativa, só pelos atos já praticados (ex.: desistiu de matar, responde pela lesão já causada).",
+        pista: "Na tentativa, “quero, mas não posso”. Na desistência, “posso, mas não quero”. O ato precisa ser voluntário, mas não precisa ser espontâneo.",
+      },
+      {
+        termo: "Arrependimento posterior (art. 16)",
+        faz: "Nos crimes sem violência ou grave ameaça à pessoa, se o agente repara o dano ou restitui a coisa, por ato voluntário, até o recebimento da denúncia ou queixa, a pena é reduzida de 1/3 a 2/3. Depois do recebimento e até a sentença, a reparação é só atenuante (art. 65, III, b).",
+      },
+      {
+        parte: "10. Ilicitude e estado de necessidade",
+        termo: "Ilicitude (antijuridicidade)",
+        faz: "É a contrariedade do fato típico ao ordenamento jurídico. Todo fato típico é, em princípio, ilícito, salvo se houver uma excludente: estado de necessidade, legítima defesa, estrito cumprimento do dever legal, exercício regular de direito (art. 23) e a causa supralegal do consentimento do ofendido. O agente precisa saber que age amparado (elemento subjetivo).",
+      },
+      {
+        termo: "Estado de necessidade (art. 24)",
+        faz: "Sacrificar um bem para salvar direito próprio ou alheio de perigo atual, que o agente não provocou por vontade própria e não podia evitar de outro modo, quando não era razoável exigir o sacrifício do bem ameaçado (ex.: arrombar a casa para fugir de um incêndio).",
+      },
+      {
+        termo: "Teoria unitária e dever de enfrentar o perigo",
+        faz: "O CP adotou a teoria unitária: se o bem salvo vale o mesmo ou mais que o sacrificado, exclui a ilicitude; se vale menos, há crime, mas a pena pode cair de 1/3 a 2/3 (§ 2º). Quem tem o dever legal de enfrentar o perigo (ex.: bombeiro) não pode alegar estado de necessidade (§ 1º), salvo quando o enfrentamento já é impossível.",
+      },
+      {
+        termo: "Espécies do estado de necessidade",
+        faz: "Próprio (salva bem seu) ou de terceiro. Agressivo (sacrifica bem de quem não criou o perigo; deve indenizar) ou defensivo (sacrifica bem de quem causou o perigo). Real (o perigo existe) ou putativo (só existe na cabeça do agente).",
+      },
+      {
+        parte: "11. Legítima defesa",
+        termo: "Requisitos (art. 25)",
+        faz: "Repelir agressão injusta, atual ou iminente, a direito próprio ou alheio, usando moderadamente os meios necessários. Contra agressão justa (ex.: prisão legal) não há legítima defesa. Agressão de inimputável (ex.: doente mental) é injusta e permite legítima defesa.",
+        pista: "Ataque espontâneo de animal = estado de necessidade. Animal atiçado pelo dono = legítima defesa (o animal é a arma).",
+      },
+      {
+        termo: "Agente de segurança e refém (art. 25, parágrafo único)",
+        faz: "Incluído pelo Pacote Anticrime (2019): também age em legítima defesa o agente de segurança pública que repele agressão ou risco de agressão a vítima mantida refém durante a prática de crimes, desde que presentes os requisitos do caput.",
+      },
+      {
+        termo: "Legítima defesa recíproca e sucessiva",
+        faz: "Não existe legítima defesa real contra legítima defesa real (uma das agressões teria de ser justa). Cabe legítima defesa real contra a putativa, e putativa contra putativa. Legítima defesa sucessiva: quem se defendia se excede, e o agressor original passa a poder se defender do excesso.",
+      },
+      {
+        termo: "Legítima defesa de terceiro e da honra",
+        faz: "Bem disponível do terceiro (ex.: patrimônio): é preciso que ele concorde. Bem indisponível (vida): pode-se defender mesmo contra a vontade dele. A tese da “legítima defesa da honra” em feminicídio e agressões contra mulheres é inconstitucional (ADPF 779, STF, 2023) e não pode ser usada em nenhuma fase, inclusive no Júri.",
+      },
+      {
+        parte: "12. Outras excludentes e excesso",
+        termo: "Estrito cumprimento do dever legal",
+        faz: "Quem cumpre um dever imposto por lei, dentro dos limites, não comete crime (ex.: o policial que cumpre mandado de prisão e usa a força necessária). Fora dos limites, há excesso.",
+      },
+      {
+        termo: "Exercício regular de direito",
+        faz: "Quem exerce um direito previsto no ordenamento não comete crime: prisão em flagrante feita por qualquer pessoa do povo (art. 301 do CPP), lesões em esporte dentro das regras, intervenção médica com consentimento. Os ofendículos (cerca elétrica, cacos de vidro no muro) são, para a maioria, exercício regular de direito ao serem instalados.",
+      },
+      {
+        termo: "Consentimento do ofendido",
+        faz: "Causa supralegal (não escrita) de exclusão da ilicitude. Exige bem disponível (ex.: patrimônio, nunca a vida), vítima capaz de consentir e consentimento dado antes ou durante o fato. Se o dissenso da vítima é elemento do tipo (ex.: violação de domicílio, “contra a vontade”), o consentimento afasta a própria tipicidade.",
+      },
+      {
+        termo: "Excesso punível (art. 23, parágrafo único)",
+        faz: "Em qualquer excludente, o agente responde pelo excesso doloso ou culposo (ex.: o policial que, após prender, agride o preso). A doutrina admite ainda o excesso exculpante, por medo ou susto intensos, que afasta a culpabilidade.",
       },
     ],
     cuidado:
-      "O excesso é punível em todas as excludentes de ilicitude, seja doloso, seja culposo (art. 23, parágrafo único).",
+      "Tentativa não cabe em crime culposo, preterdoloso, omissivo próprio nem contravenção. Na desistência e no arrependimento eficaz, o agente responde só pelos atos praticados; no arrependimento posterior, há crime consumado com pena reduzida.",
   },
   questoes: [
     {

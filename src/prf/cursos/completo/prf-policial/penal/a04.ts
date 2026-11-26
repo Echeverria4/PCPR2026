@@ -4,60 +4,122 @@ export const AULA: AulaEscrita = {
   aula: "penal-04",
   resumo: {
     ideia:
-      "Culpabilidade é o juízo de reprovação sobre quem agiu: imputabilidade, potencial consciência da ilicitude e exigibilidade de conduta diversa. A aula também separa os erros: o de tipo mexe no dolo, o de proibição mexe na culpabilidade, e o acidental quase nunca muda o crime.",
+      "A aula fecha a teoria do crime com a culpabilidade: o que ela é, as teorias e os três elementos (imputabilidade, potencial consciência da ilicitude e exigibilidade de conduta diversa), com as causas que excluem cada um. Depois trata dos erros: erro de tipo, descriminantes putativas, erro de proibição e os erros acidentais (sobre o objeto, sobre a pessoa, na execução, resultado diverso do pretendido e sobre o nexo causal).",
     itens: [
       {
-        termo: "Imputabilidade",
-        faz: "Doença mental usa critério biopsicológico (art. 26). Menoridade usa critério biológico: menor de 18 anos é inimputável (art. 27).",
+        parte: "1. Culpabilidade: conceito e teorias",
+        termo: "Conceito",
+        faz: "Juízo de reprovação sobre o agente que praticou o fato típico e ilícito: pergunta-se se dava para exigir dele outro comportamento, levando em conta suas condições pessoais.",
       },
       {
-        termo: "Semi-imputável",
-        faz: "Não é isento: a pena cai de um a dois terços ou é substituída por medida de segurança, nunca as duas (art. 26, parágrafo único, e art. 98).",
+        termo: "Teorias da culpabilidade",
+        faz: "Psicológica: culpabilidade era o dolo ou a culpa, com a imputabilidade como pressuposto. Psicológico-normativa: somou a exigibilidade de conduta diversa, mas manteve o dolo dentro da culpabilidade. Normativa pura (finalista): o dolo e a culpa vão para a conduta, e a culpabilidade fica com imputabilidade, potencial consciência da ilicitude e exigibilidade de conduta diversa.",
       },
       {
-        termo: "Emoção e embriaguez",
-        faz: "Emoção, paixão e embriaguez voluntária ou culposa não excluem a imputabilidade. Só a embriaguez completa por caso fortuito ou força maior isenta (art. 28).",
-        pista: "Incompleta e fortuita: reduz de um a dois terços.",
+        termo: "Teoria limitada (adotada pelo CP)",
+        faz: "É uma versão da normativa pura. A diferença está na descriminante putativa por erro sobre a situação de fato: a teoria limitada a trata como erro de tipo (art. 20, § 1º); a extremada trataria tudo como erro de proibição.",
       },
       {
-        termo: "Actio libera in causa",
-        faz: "Quem se embriaga livremente é avaliado pelo momento em que bebeu, e não pelo momento do fato.",
+        parte: "2. Imputabilidade",
+        termo: "Conceito e critérios",
+        faz: "Capacidade de entender que o fato é ilícito e de agir conforme esse entendimento, medida no momento da conduta. Critério biológico: basta a condição (adotado na menoridade). Biopsicológico: exige a condição e, no caso concreto, a falta de entendimento ou de autocontrole (adotado na doença mental e na embriaguez fortuita).",
       },
       {
-        termo: "Coação",
-        faz: "Moral irresistível: exclui a culpabilidade, e só o coator é punido. Física irresistível: não há conduta. Coação resistível: atenuante.",
+        termo: "Menoridade (art. 27)",
+        faz: "Menores de 18 anos são inimputáveis, pelo critério puramente biológico: não importa se entendiam o que faziam. Ficam sujeitos ao ECA.",
       },
       {
-        termo: "Obediência hierárquica",
-        faz: "Ordem não manifestamente ilegal de superior, em relação de direito público: só o superior é punido (art. 22).",
+        termo: "Doença mental (art. 26)",
+        faz: "É isento de pena quem, por doença mental ou desenvolvimento mental incompleto ou retardado, era, ao tempo do fato, inteiramente incapaz de entender o caráter ilícito ou de se determinar de acordo com esse entendimento. Recebe absolvição imprópria, com medida de segurança.",
       },
       {
-        termo: "Erro de tipo",
-        faz: "O agente não sabe o que faz. Exclui o dolo sempre; se evitável, permite culpa quando a lei prevê crime culposo (art. 20).",
+        termo: "Semi-imputabilidade (art. 26, parágrafo único)",
+        faz: "Se a capacidade era só parcial, o agente é condenado, com pena reduzida de 1/3 a 2/3. Se precisar de tratamento especial, o juiz pode trocar a pena por medida de segurança (sistema vicariante: uma ou outra, nunca as duas).",
       },
       {
-        termo: "Erro de proibição",
-        faz: "O agente sabe o que faz, mas acha permitido. Inevitável: isenta. Evitável: reduz de um sexto a um terço (art. 21).",
+        termo: "Emoção, paixão e embriaguez (art. 28)",
+        faz: "Emoção e paixão não excluem a imputabilidade (no máximo, atenuam ou privilegiam). Embriaguez voluntária ou culposa, por álcool ou substância de efeito parecido, também não exclui: o agente responde normalmente.",
       },
       {
-        termo: "Descriminante putativa",
-        faz: "Erro justificado sobre a situação de fato isenta de pena; se derivar de culpa, responde por crime culposo, se houver (art. 20, § 1º).",
+        termo: "Embriaguez fortuita e actio libera in causa",
+        faz: "Só a embriaguez completa por caso fortuito ou força maior (ex.: alguém põe droga na bebida sem a pessoa saber) que deixa o agente inteiramente incapaz isenta de pena; se incompleta, a pena cai de 1/3 a 2/3. Na embriaguez voluntária vale a actio libera in causa: a imputabilidade é vista no momento em que o agente, livre, escolheu se embriagar.",
+        pista: "Embriaguez preordenada (beber para tomar coragem e cometer o crime) é agravante (art. 61, II, l). Embriaguez patológica (doença) é tratada como doença mental.",
       },
       {
-        termo: "Erro sobre a pessoa",
-        faz: "Confunde a vítima: valem as qualidades de quem o agente queria atingir (art. 20, § 3º).",
+        parte: "3. Potencial consciência da ilicitude",
+        termo: "Conceito",
+        faz: "O agente precisa ter, ao menos, a possibilidade de saber que o fato é proibido, considerando suas condições (escolaridade, meio em que vive). Não se exige que conheça a lei, só que pudesse perceber que a conduta é errada. Quem age achando que é lícito comete erro de proibição.",
       },
       {
-        termo: "Erro na execução",
-        faz: "Falha o golpe e acerta outra pessoa: mesma regra do erro sobre a pessoa. Se acerta as duas, concurso formal (art. 73).",
+        parte: "4. Exigibilidade de conduta diversa",
+        termo: "Coação moral irresistível (art. 22)",
+        faz: "Alguém obriga o agente a cometer o crime sob ameaça grave e impossível de resistir (ex.: “assine ou mato seu filho”). O coagido fica isento de pena; só o coator responde, e com a pena aumentada. Se a coação era resistível, o coagido responde, com atenuante (art. 65, III, c).",
+        pista: "Coação física irresistível não é caso de culpabilidade: elimina a própria conduta (fato atípico).",
       },
       {
-        termo: "Resultado diverso",
-        faz: "Quis atingir coisa e atingiu pessoa: responde por culpa, se houver crime culposo (art. 74).",
+        termo: "Obediência hierárquica (art. 22)",
+        faz: "Quem cumpre ordem não manifestamente ilegal de superior hierárquico fica isento de pena; só o superior responde. Exige relação de direito público (prevalece que não vale entre particulares, como patrão e empregado). Se a ordem era claramente ilegal, os dois respondem.",
+      },
+      {
+        termo: "Causas supralegais",
+        faz: "A doutrina admite outras situações em que não era possível exigir conduta diferente, mesmo sem previsão expressa na lei, como base para afastar a culpabilidade (ex.: certos casos de excesso por medo intenso).",
+      },
+      {
+        parte: "5. Erro de tipo",
+        termo: "Erro de tipo essencial (art. 20, caput)",
+        faz: "O agente se engana sobre um elemento do tipo: não sabe o que está fazendo (ex.: leva a mala de outra pessoa achando que é a sua). Sempre exclui o dolo. Se inevitável (escusável), exclui também a culpa e o fato fica atípico. Se evitável (inescusável), responde por crime culposo, se houver previsão.",
+      },
+      {
+        termo: "Erro provocado por terceiro (art. 20, § 2º)",
+        faz: "Responde pelo crime quem provocou o erro (ex.: o médico que entrega à enfermeira injeção com veneno dizendo ser remédio). Quem foi enganado pode não responder ou responder por culpa, conforme o erro fosse evitável ou não.",
+      },
+      {
+        termo: "Descriminantes putativas por erro de fato (art. 20, § 1º)",
+        faz: "O agente imagina uma situação que, se existisse, tornaria a conduta legítima (ex.: pensa que o vizinho vai sacar uma arma e atira, mas era um celular). Se o erro era plenamente justificado, fica isento de pena. Se evitável, responde por culpa, se houver crime culposo: é a culpa imprópria.",
+      },
+      {
+        parte: "6. Erro de proibição",
+        termo: "Desconhecimento da lei × erro sobre a ilicitude (art. 21)",
+        faz: "Desconhecer a lei é inescusável: não livra ninguém, só atenua a pena (art. 65, II). Já o erro sobre a ilicitude do fato (o agente sabe o que faz, mas acha que é permitido) isenta de pena se inevitável e reduz a pena de 1/6 a 1/3 se evitável.",
+        pista: "Erro de tipo: o agente não sabe o que faz. Erro de proibição: sabe o que faz, mas acha que pode.",
+      },
+      {
+        termo: "Espécies de erro de proibição",
+        faz: "Direto: o agente acha que a conduta não é proibida (ex.: turista que acha permitido algo proibido aqui). Indireto: sabe que a conduta é proibida em regra, mas acha que existe uma permissão a seu favor ou erra sobre os limites dela (descriminante putativa por erro de proibição). Mandamental: erro sobre o dever de agir nos crimes omissivos.",
+      },
+      {
+        termo: "Quando o erro é evitável",
+        faz: "Considera-se evitável o erro quando o agente atua sem consciência da ilicitude, mas lhe era possível, nas circunstâncias, ter ou atingir essa consciência (art. 21, parágrafo único).",
+      },
+      {
+        parte: "7. Erros acidentais",
+        termo: "Erro acidental: regra geral",
+        faz: "O erro recai sobre detalhes que não mudam o crime: o agente sabe o que faz e que é proibido. Não exclui dolo nem culpa; ele responde normalmente.",
+      },
+      {
+        termo: "Erro sobre o objeto",
+        faz: "O agente quer uma coisa e atinge outra (ex.: furta açúcar pensando ser farinha). Responde pelo crime praticado; o erro é irrelevante.",
+      },
+      {
+        termo: "Erro sobre a pessoa (art. 20, § 3º)",
+        faz: "O agente confunde a vítima: atinge quem está ali achando que é outra pessoa. Consideram-se as condições da vítima que ele queria atingir, não as da atingida (ex.: quer matar o pai, mata um estranho parecido: responde com a agravante de crime contra ascendente).",
+      },
+      {
+        termo: "Erro na execução (aberratio ictus, art. 73)",
+        faz: "Não há confusão de pessoa, mas falha no golpe: mira em A e, por erro de pontaria, acerta B. Responde como se tivesse atingido a vítima pretendida. Se atingir as duas, aplica-se o concurso formal (art. 70).",
+        pista: "Erro sobre a pessoa = confusão de identidade. Aberratio ictus = erro de mira.",
+      },
+      {
+        termo: "Resultado diverso do pretendido (aberratio criminis, art. 74)",
+        faz: "O agente quer um resultado e, por erro na execução, produz outro de natureza diferente (ex.: joga uma pedra para quebrar a vitrine e fere uma pessoa). Responde pelo resultado produzido a título de culpa, se previsto como crime culposo. Se produzir os dois, concurso formal.",
+      },
+      {
+        termo: "Erro sobre o nexo causal (aberratio causae)",
+        faz: "O resultado acontece, mas por um caminho diferente do planejado (ex.: empurra a vítima da ponte para que se afogue, e ela morre ao bater a cabeça na pilastra). O agente responde pelo crime consumado; o erro é irrelevante. Inclui o dolo geral, em que o agente acha que já matou e, ao esconder o “corpo”, é que causa a morte.",
       },
     ],
     cuidado:
-      "O desconhecimento da lei é inescusável e serve só como atenuante (art. 65, II). Erro de proibição é outra coisa: falta a noção de que o fato é ilícito.",
+      "Erro de tipo inevitável = fato atípico; erro de proibição inevitável = isenção de pena. No erro sobre a pessoa e na aberratio ictus, vale a vítima pretendida; na aberratio criminis, o resultado diverso responde por culpa.",
   },
   questoes: [
     {

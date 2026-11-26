@@ -4,57 +4,151 @@ export const AULA: AulaEscrita = {
   aula: "penal-01",
   resumo: {
     ideia:
-      "O Direito Penal só pune o que uma lei anterior descreve e só entra quando os outros ramos não bastam. Os princípios limitam o Estado; as fontes dizem quem cria a norma e como ela aparece.",
+      "A aula apresenta o Direito Penal e os limites que a Constituição impõe a ele: os princípios (legalidade e seus desdobramentos, individualização, intranscendência, humanidade, presunção de inocência, ofensividade, intervenção mínima, insignificância e outros), o conceito e as fontes do Direito Penal e as regras da Constituição sobre crimes graves, Tribunal do Júri e menoridade penal.",
     itens: [
       {
-        termo: "Legalidade",
-        faz: "Não há crime sem lei anterior que o defina, nem pena sem prévia cominação (art. 1º do CP e art. 5º, XXXIX, da CF).",
-        pista: "A lei precisa ser anterior, escrita, estrita e certa.",
+        parte: "1. Legalidade e seus desdobramentos",
+        termo: "Legalidade (art. 1º do CP e art. 5º, XXXIX, da CF)",
+        faz: "Não há crime sem lei anterior que o defina, nem pena sem prévia cominação legal. Desdobra-se em reserva legal, anterioridade e taxatividade.",
       },
       {
         termo: "Reserva legal",
-        faz: "Crime e pena dependem de lei federal em sentido estrito. Medida provisória e lei delegada não criam crime.",
+        faz: "Só lei em sentido estrito, votada pelo Congresso (em regra, lei ordinária federal), pode criar crime e pena. Decreto, resolução e lei delegada não podem. A Constituição proíbe medida provisória sobre direito penal; há quem admita MP que só beneficie o réu, e o STF já aceitou nesse caso.",
+        pista: "MP para criar crime ou agravar pena: sempre proibida, mesmo que a pena só valha depois da conversão em lei.",
       },
       {
-        termo: "Intervenção mínima",
-        faz: "Subsidiariedade: o Direito Penal é o último recurso. Fragmentariedade: protege só os bens mais importantes contra os ataques mais graves.",
+        termo: "Anterioridade",
+        faz: "A lei penal precisa existir antes do fato. A lei que prejudica o réu não retroage; a que beneficia, retroage (art. 5º, XL, da CF).",
       },
       {
-        termo: "Insignificância",
-        faz: "Exclui a tipicidade material quando a ofensa é mínima, sem periculosidade social, com reprovabilidade reduzida e lesão inexpressiva.",
-        pista: "O STJ a afasta na violência doméstica contra a mulher (Súmula 589).",
+        termo: "Taxatividade",
+        faz: "O tipo penal precisa ser claro e preciso. Termos vagos (ex.: “atentar contra os bons costumes”) violam a legalidade, porque o cidadão não sabe o que é proibido.",
       },
       {
-        termo: "Adequação social",
-        faz: "Conduta aceita pela sociedade pode deixar de ser típica, mas a tolerância não revoga lei.",
+        termo: "Analogia × interpretação analógica",
+        faz: "Analogia é aplicar a um caso sem lei a regra de um caso parecido: no Direito Penal só é permitida a favor do réu (in bonam partem); contra ele (in malam partem) é proibida. Interpretação analógica é quando a própria lei dá exemplos e fecha com fórmula genérica (“ou outro meio insidioso ou cruel”): é permitida, até contra o réu.",
+        pista: "A interpretação extensiva (ampliar o alcance da palavra da lei) divide a doutrina.",
+      },
+      {
+        parte: "2. Princípios ligados à pena",
+        termo: "Individualização da pena",
+        faz: "A pena é ajustada a cada réu em três fases: na lei (o legislador fixa mínimo e máximo), na sentença (o juiz dosa a pena, art. 59) e na execução (regime, progressão, benefícios).",
+      },
+      {
+        termo: "Intranscendência (pessoalidade)",
+        faz: "A pena não passa da pessoa do condenado. A obrigação de reparar o dano e o perdimento de bens podem alcançar os sucessores, até o limite da herança recebida (art. 5º, XLV, da CF).",
+        pista: "A pena de multa é pena: morre com o condenado e não passa aos herdeiros.",
+      },
+      {
+        termo: "Humanidade (limitação das penas)",
+        faz: "Não haverá penas de morte (salvo guerra declarada), de caráter perpétuo, de trabalhos forçados, de banimento ou cruéis (art. 5º, XLVII). Lei com pena mínima absurda, que na prática vira prisão perpétua, também viola o princípio.",
+      },
+      {
+        termo: "Proporcionalidade",
+        faz: "A resposta penal tem de ser proporcional à gravidade do fato: proíbe o excesso (pena exagerada) e também a proteção insuficiente (deixar bem jurídico importante sem proteção).",
+      },
+      {
+        termo: "Culpabilidade",
+        faz: "Não há responsabilidade penal objetiva: só se pune quem agiu com dolo ou culpa e pode ser censurado pelo que fez.",
+      },
+      {
+        parte: "3. Presunção de inocência",
+        termo: "Presunção de inocência (não culpabilidade)",
+        faz: "Ninguém é considerado culpado até o trânsito em julgado da sentença penal condenatória (art. 5º, LVII), isto é, até não caber mais recurso. Na dúvida, absolve-se (in dubio pro reo).",
+        pista: "No recebimento da denúncia e na pronúncia vale o in dubio pro societate: na dúvida, o processo segue.",
+      },
+      {
+        termo: "Execução da pena",
+        faz: "Depois de admitir a prisão após a 2ª instância, o STF voltou ao entendimento clássico (ADCs 43, 44 e 54): só se executa a pena após o trânsito em julgado; antes disso, só prisão cautelar. Exceção: a condenação pelo Tribunal do Júri pode ser executada logo, pela soberania dos veredictos, seja qual for a pena.",
+      },
+      {
+        termo: "Súmula 444 do STJ",
+        faz: "Inquéritos e ações penais em curso não podem ser usados para aumentar a pena-base. É desdobramento da presunção de inocência.",
+      },
+      {
+        parte: "4. Princípios que limitam o poder de punir",
+        termo: "Ofensividade (lesividade)",
+        faz: "Só há crime se houver lesão ou perigo concreto de lesão a um bem jurídico. Pensamento, intenção não exteriorizada e simples modo de ser não são crime.",
       },
       {
         termo: "Alteridade",
-        faz: "Não se pune quem fere apenas a si. Se a conduta atinge terceiro, o princípio não protege.",
+        faz: "Só se pune conduta que atinge bem jurídico de outra pessoa. Quem lesa só a si mesmo (ex.: autolesão, tentativa de suicídio) não comete crime.",
       },
       {
-        termo: "Intranscendência",
-        faz: "A pena não passa do condenado. Reparação do dano e perdimento de bens alcançam os sucessores até o limite do patrimônio transferido.",
+        termo: "Adequação social",
+        faz: "Conduta aceita pela sociedade não deve ser crime, mesmo que se encaixe num tipo penal (ex.: furar a orelha de bebê para brinco). O princípio orienta o legislador e o intérprete, mas não revoga lei: costume não revoga crime.",
       },
       {
-        termo: "Humanidade",
-        faz: "Proíbe penas de morte (salvo guerra declarada), perpétuas, de trabalhos forçados, de banimento e cruéis.",
+        termo: "Intervenção mínima (ultima ratio)",
+        faz: "O Direito Penal é o último recurso: só deve agir quando os outros ramos do Direito não bastam. Desdobra-se em fragmentariedade e subsidiariedade.",
       },
       {
-        termo: "Fontes",
-        faz: "Material: a União, que legisla sobre Direito Penal. Formal imediata: a lei. Formais mediatas: costumes e princípios gerais, que ajudam a interpretar, mas não criam crime.",
+        termo: "Fragmentariedade × subsidiariedade",
+        faz: "Fragmentariedade: o Direito Penal protege só um fragmento dos bens jurídicos, os mais importantes contra os ataques mais graves. Subsidiariedade: ele só entra se os outros meios de controle (civil, administrativo, moral) falharem.",
+        pista: "Fragmentário = escolhe o que proteger. Subsidiário = entra por último.",
       },
       {
-        termo: "Analogia e interpretação analógica",
-        faz: "Analogia para piorar a situação do réu é proibida; para beneficiar, é aceita. A interpretação analógica segue uma fórmula aberta da própria lei e é válida.",
+        termo: "Ne bis in idem",
+        faz: "Ninguém pode ser punido, processado ou ter a pena agravada duas vezes pelo mesmo fato. Ex.: absolvido de forma definitiva por legítima defesa na Justiça comum, não pode ser processado de novo pelo mesmo fato em outra Justiça.",
       },
       {
-        termo: "Individualização da pena",
-        faz: "A pena se ajusta a cada caso em três momentos: o legislador fixa os limites (cominação), o juiz calcula a pena (dosimetria) e a execução se adapta ao condenado (CF, art. 5º, XLVI).",
+        termo: "Confiança",
+        faz: "Quem age corretamente pode esperar que os outros também ajam. Ex.: quem passa no sinal verde e é atingido por quem furou o vermelho não responde pelo acidente.",
+      },
+      {
+        parte: "5. Insignificância e bagatela imprópria",
+        termo: "Insignificância (bagatela)",
+        faz: "A conduta é formalmente típica, mas a lesão é tão pequena que não há tipicidade material: o fato é atípico. O STF exige 4 vetores: mínima ofensividade da conduta, nenhuma periculosidade social da ação, reduzidíssimo grau de reprovabilidade e inexpressividade da lesão jurídica.",
+        pista: "Exclui a tipicidade material. Não é causa de exclusão da ilicitude nem da culpabilidade.",
+      },
+      {
+        termo: "Onde não se aplica",
+        faz: "Crimes com violência ou grave ameaça (como roubo), tráfico de drogas, moeda falsa e crimes contra a fé pública, apropriação indébita e sonegação previdenciárias, furto com corrupção de menor, e crimes ou contravenções contra a mulher no âmbito doméstico (Súmula 589 do STJ).",
+      },
+      {
+        termo: "Reincidência e furto qualificado",
+        faz: "Reincidência, maus antecedentes, reiteração e furto qualificado em regra afastam a insignificância, mas STJ e STF admitem a aplicação excepcional se o caso concreto mostrar lesão inexpressiva.",
+      },
+      {
+        termo: "Administração pública, descaminho e contrabando",
+        faz: "Crimes contra a administração pública: em regra não se aplica (Súmula 599 do STJ), salvo exceção de lesão ínfima. Descaminho e crimes tributários federais: aplica-se se o tributo devido não passar de R$ 20 mil. Contrabando: em regra não se aplica, salvo pequena quantidade de remédio para uso próprio e cigarros até 1.000 maços (sem reiteração).",
+      },
+      {
+        termo: "Bagatela imprópria",
+        faz: "O crime existe (fato típico, ilícito e culpável), mas fatos posteriores (ex.: reparação do dano, réu primário, longo tempo) mostram que a pena é desnecessária: o juiz deixa de aplicá-la, com base no art. 59 do CP.",
+        pista: "Insignificância: não há crime. Bagatela imprópria: há crime, mas a pena é dispensada.",
+      },
+      {
+        parte: "6. Conceito e fontes",
+        termo: "Conceito",
+        faz: "Ramo do Direito Público que escolhe os bens jurídicos mais importantes e os protege criando crimes, sob ameaça de pena.",
+      },
+      {
+        termo: "Fonte material (de produção)",
+        faz: "Quem produz a norma penal: a União, que legisla privativamente sobre direito penal (art. 22, I, da CF). Lei complementar pode autorizar os Estados a legislar sobre questões específicas.",
+      },
+      {
+        termo: "Fontes formais (de conhecimento)",
+        faz: "Imediata: só a lei em sentido estrito, a única que cria crime e pena. Mediatas (secundárias): costumes, princípios gerais do Direito e atos administrativos, que ajudam a interpretar, mas não criam crime.",
+      },
+      {
+        parte: "7. Regras da Constituição",
+        termo: "Crimes graves (art. 5º, XLII a XLIV)",
+        faz: "Inafiançáveis: racismo; ação de grupos armados contra a ordem constitucional e o Estado Democrático; tortura, tráfico de drogas, terrorismo e hediondos. Imprescritíveis: só racismo e ação de grupos armados. Sem graça nem anistia: só tortura, tráfico, terrorismo e hediondos.",
+        pista: "Todos são inafiançáveis; imprescritíveis são só os dois primeiros; os outros quatro não admitem graça nem anistia.",
+      },
+      {
+        termo: "Tribunal do Júri",
+        faz: "A Constituição garante a plenitude de defesa, o sigilo das votações, a soberania dos veredictos e a competência para os crimes dolosos contra a vida e os crimes conexos a eles.",
+        pista: "Latrocínio não vai a júri: é crime contra o patrimônio, julgado pelo juiz singular (Súmula 603 do STF).",
+      },
+      {
+        termo: "Menoridade penal",
+        faz: "Menores de 18 anos são penalmente inimputáveis e ficam sujeitos à legislação especial (art. 228 da CF; ECA). Respondem por ato infracional, com medida socioeducativa, que não é pena.",
       },
     ],
     cuidado:
-      "Costume não revoga lei penal, e o desuso não apaga a infração: a norma vale até outra lei a modificar ou revogar.",
+      "Insignificância afasta a tipicidade material (não há crime); bagatela imprópria dispensa a pena de um crime que existe. E analogia contra o réu é proibida, mas interpretação analógica é permitida.",
   },
   questoes: [
     {

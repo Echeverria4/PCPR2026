@@ -4,59 +4,151 @@ export const AULA: AulaEscrita = {
   aula: "penal-05",
   resumo: {
     ideia:
-      "Punibilidade é o poder do Estado de punir, que nasce com o crime e pode acabar por várias causas do art. 107, cujo rol é só exemplificativo. A prescrição é a principal delas: o tempo passa, e o Estado perde esse poder.",
+      "A aula trata da extinção da punibilidade: quando o Estado perde o direito de punir, mesmo que o crime tenha existido. Vê as causas do art. 107 do CP (morte, anistia, graça, indulto, abolitio criminis, decadência, perempção, renúncia, perdão, retratação e perdão judicial), outras causas espalhadas pela lei e, em detalhe, a prescrição: prazos, redução, início, interrupção, suspensão e as modalidades (punitiva, superveniente, retroativa e executória).",
     itens: [
       {
-        termo: "Morte do agente",
-        faz: "Extingue a punibilidade, não se comunica aos coautores e acaba com a multa. Reparação e perdimento alcançam os sucessores até o limite da herança.",
+        parte: "1. Noções de extinção da punibilidade",
+        termo: "Conceito e rol do art. 107",
+        faz: "Punibilidade é a possibilidade de o Estado aplicar a pena. Certos fatos a extinguem: o crime continua tendo existido, mas não pode mais ser punido. O rol do art. 107 é exemplificativo: há outras causas no CP e em leis especiais.",
+      },
+      {
+        termo: "Art. 108",
+        faz: "A extinção da punibilidade de um crime que é pressuposto, elemento ou agravante de outro não se estende a este (ex.: prescrito o furto, a receptação continua punível). Nos crimes conexos, a extinção de um não impede a agravação da pena do outro pela conexão.",
+      },
+      {
+        parte: "2. Morte, clemência do Estado e abolitio criminis",
+        termo: "Morte do agente (art. 107, I)",
+        faz: "Extingue a punibilidade porque a pena não passa da pessoa do condenado (inclusive a multa). Prova-se com a certidão de óbito. Se a certidão era falsa, o STF admite revogar a decisão e retomar o processo.",
       },
       {
         termo: "Anistia",
-        faz: "Lei do Congresso sobre fatos. Apaga os efeitos penais, mas não os extrapenais.",
+        faz: "Concedida por lei do Congresso Nacional, apaga o fato criminoso: alcança fatos (em geral políticos), atinge todos os efeitos penais (inclusive a reincidência) e pode vir antes ou depois da condenação. Os efeitos civis, como o dever de indenizar, permanecem.",
       },
       {
         termo: "Graça e indulto",
-        faz: "Graça é individual, e indulto é coletivo, ambos do Presidente. Atingem a pena, e não a condenação, que segue valendo para reincidência.",
+        faz: "Concedidos por decreto do Presidente da República (art. 84, XII, da CF; pode delegar a ministros, ao PGR ou ao AGU). Graça (indulto individual) é para uma pessoa determinada; indulto é coletivo, para quem preencher os requisitos do decreto. Extinguem só a pena: os demais efeitos penais e extrapenais continuam (Súmula 631 do STJ), como a reincidência.",
+        pista: "Não cabem para tortura, tráfico, terrorismo e hediondos (art. 5º, XLIII, da CF). Comutação é o indulto parcial, que reduz a pena.",
       },
       {
+        termo: "Abolitio criminis (art. 107, III)",
+        faz: "Lei nova deixa de considerar o fato crime: cessam a execução e os efeitos penais da condenação, mas não os civis.",
+      },
+      {
+        parte: "3. Causas ligadas à ação penal privada",
         termo: "Decadência",
-        faz: "Seis meses, contados de quando se soube quem é o autor. Na violência doméstica contra a mulher, 12 meses (art. 103, parágrafo único).",
+        faz: "Perda do direito de queixa ou de representação por não exercê-lo no prazo: em regra 6 meses, contados do dia em que a vítima soube quem é o autor do crime (art. 103). O prazo é penal: inclui o dia do começo e não se suspende nem se prorroga.",
+        pista: "Desde a Lei 15.438/2026, nos crimes de violência doméstica e familiar contra a mulher o prazo é de 12 meses (art. 103, parágrafo único, do CP). Por ser mais longo, só vale para fatos posteriores à lei.",
       },
       {
         termo: "Perempção",
-        faz: "Inércia do querelante na ação privada exclusiva ou personalíssima: 30 dias parado, 60 dias sem sucessor, falta sem justificativa, ausência de pedido de condenação.",
+        faz: "Sanção ao querelante que abandona a ação penal privada já iniciada: por exemplo, deixar de dar andamento por 30 dias seguidos, não comparecer sem motivo a ato do processo, não pedir a condenação nas alegações finais ou não haver sucessor em 60 dias após a morte do querelante (art. 60 do CPP). Só existe na ação privada exclusiva.",
       },
       {
-        termo: "Renúncia e perdão",
-        faz: "Renúncia: antes da ação, unilateral. Perdão: depois da queixa, até o trânsito, e depende de aceitação. O perdão a um aproveita a todos, mas quem o recusa segue no processo.",
+        termo: "Renúncia ao direito de queixa",
+        faz: "Desistência antes de iniciar a ação privada. É ato unilateral (não precisa ser aceito), pode ser expressa ou tácita (atitude incompatível com a vontade de processar) e, feita a um dos autores, vale para todos. Receber a indenização do dano não é renúncia pelo CP (art. 104, parágrafo único), mas o acordo civil homologado no Juizado Especial é (Lei 9.099/1995, art. 74).",
       },
       {
-        termo: "Prazos do art. 109",
-        faz: "20 anos (acima de 12), 16 (acima de 8 até 12), 12 (acima de 4 até 8), 8 (acima de 2 até 4), 4 (de 1 até 2), 3 (abaixo de 1).",
+        termo: "Perdão do ofendido",
+        faz: "Desistência depois de iniciada a ação privada, até o trânsito em julgado. É ato bilateral: só produz efeito para o querelado que aceitar. Concedido a um, estende-se a todos, mas não extingue a punibilidade de quem recusar.",
+        pista: "Renúncia: antes da ação, unilateral. Perdão do ofendido: durante a ação, bilateral.",
       },
       {
-        termo: "Pretensão punitiva",
-        faz: "Antes do trânsito, pela pena máxima em abstrato. A prescrição retroativa usa a pena aplicada, sem termo anterior à denúncia ou queixa (art. 110, § 1º).",
+        parte: "4. Retratação, perdão judicial e outras causas",
+        termo: "Retratação do agente",
+        faz: "O agente volta atrás no que disse, nos casos em que a lei admite: calúnia e difamação, antes da sentença (art. 143; não cabe na injúria); falso testemunho e falsa perícia, antes da sentença no processo em que ocorreu o ilícito (art. 342, § 2º).",
       },
       {
-        termo: "Pretensão executória",
-        faz: "Depois do trânsito, pela pena aplicada, com mais um terço se o condenado é reincidente.",
+        termo: "Perdão judicial (art. 107, IX, e art. 120)",
+        faz: "O juiz deixa de aplicar a pena nos casos previstos em lei, como no homicídio e na lesão culposos quando as consequências atingem o próprio agente de forma tão grave que a pena se torna desnecessária (ex.: pai que causa a morte do filho num acidente). A sentença é declaratória: não gera reincidência nem outros efeitos de condenação (Súmula 18 do STJ).",
       },
       {
-        termo: "Redução pela metade",
-        faz: "Menor de 21 ao tempo do crime ou maior de 70 na sentença, salvo crime de violência sexual contra a mulher (art. 115).",
+        termo: "Causas fora do art. 107",
+        faz: "Exemplos: reparação do dano no peculato culposo antes da sentença definitiva (art. 312, § 3º); fim do período de prova do sursis, do livramento condicional ou da suspensão condicional do processo sem revogação; cumprimento do acordo de não persecução penal; pagamento integral do tributo nos crimes tributários.",
+        pista: "O casamento da vítima com o agente deixou de extinguir a punibilidade em 2005.",
       },
       {
-        termo: "Interrupção",
-        faz: "Recebimento, pronúncia, confirmatória, sentença ou acórdão condenatórios recorríveis, início da pena e reincidência (art. 117). Depois dela, o prazo recomeça inteiro.",
+        parte: "5. Prescrição: noções e prazos",
+        termo: "Conceito e espécies",
+        faz: "Perda do direito de punir pelo decurso do tempo. Prescrição da pretensão punitiva (PPP): ocorre antes do trânsito em julgado e impede a condenação. Prescrição da pretensão executória (PPE): ocorre depois do trânsito em julgado e impede executar a pena já aplicada.",
       },
       {
-        termo: "Perdão judicial",
-        faz: "Só nos casos previstos em lei. A sentença é declaratória (Súmula 18 do STJ) e não gera reincidência (art. 120).",
+        termo: "Imprescritíveis",
+        faz: "Só os crimes que a Constituição aponta: racismo e ação de grupos armados contra a ordem constitucional e o Estado Democrático (art. 5º, XLII e XLIV). Prevalece que lei comum não pode criar outros casos. Medidas socioeducativas do ECA também prescrevem (Súmula 338 do STJ).",
+      },
+      {
+        termo: "Tabela do art. 109",
+        faz: "Pela pena máxima em abstrato: mais de 12 anos → 20 anos; mais de 8 até 12 → 16; mais de 4 até 8 → 12; mais de 2 até 4 → 8; de 1 até 2 → 4; menos de 1 ano → 3 anos. As penas restritivas de direitos seguem os mesmos prazos.",
+        pista: "Ex.: furto simples (máximo de 4 anos) prescreve em 8; homicídio simples (máximo de 20) prescreve em 20.",
+      },
+      {
+        termo: "Multa (art. 114) e penas mais leves (art. 118)",
+        faz: "A multa sozinha (cominada ou aplicada isoladamente) prescreve em 2 anos. Se vier junto ou como alternativa à pena de prisão, prescreve no mesmo prazo dela. As penas mais leves prescrevem com as mais graves.",
+      },
+      {
+        parte: "6. Cálculo, redução e início do prazo",
+        termo: "O que entra no cálculo",
+        faz: "Na pena em abstrato, contam as causas de aumento (pelo máximo) e de diminuição (pelo mínimo), como a tentativa. Agravantes e atenuantes não contam. No concurso de crimes, cada crime prescreve separadamente (art. 119), e no crime continuado não se soma o acréscimo da continuidade (Súmula 497 do STF).",
+      },
+      {
+        termo: "Redução pela metade (art. 115)",
+        faz: "Os prazos caem pela metade se o agente tinha menos de 21 anos na data do crime ou mais de 70 na data da sentença. Desde a Lei 15.160/2025, a redução não vale se o crime envolver violência sexual contra a mulher; por ser mais grave, só alcança fatos posteriores a julho de 2025.",
+      },
+      {
+        termo: "Termo inicial da PPP (art. 111)",
+        faz: "Do dia da consumação; na tentativa, do dia em que cessou a atividade; nos permanentes, de quando cessou a permanência; na bigamia e na falsificação de registro civil, de quando o fato se tornou conhecido; nos crimes contra a dignidade sexual ou que envolvam violência contra criança e adolescente, da data em que a vítima faz 18 anos, salvo se a ação já tiver começado.",
+      },
+      {
+        parte: "7. Interrupção e suspensão",
+        termo: "Interrupção (art. 117)",
+        faz: "Zera o prazo, que recomeça do início: recebimento da denúncia ou queixa; pronúncia; decisão que confirma a pronúncia; publicação da sentença ou acórdão condenatório recorrível (o acórdão que confirma a condenação também interrompe, segundo o STF); início ou continuação do cumprimento da pena; reincidência.",
+      },
+      {
+        termo: "Alcance da interrupção",
+        faz: "Interrompida para um autor, interrompe para todos; nos crimes conexos julgados no mesmo processo, a interrupção de um vale para os demais. Exceção: o início do cumprimento da pena e a reincidência são pessoais.",
+      },
+      {
+        termo: "Suspensão (art. 116)",
+        faz: "O prazo para e depois volta a correr de onde parou. Antes do trânsito em julgado: enquanto não resolvida em outro processo questão de que dependa a existência do crime; enquanto o agente cumpre pena no exterior; na pendência de embargos de declaração ou recursos aos tribunais superiores inadmissíveis; enquanto não cumprido ou rescindido o acordo de não persecução penal. Depois do trânsito: enquanto o condenado está preso por outro motivo.",
+        pista: "Interrupção: o prazo recomeça do zero. Suspensão: continua de onde parou.",
+      },
+      {
+        parte: "8. Prescrição pela pena aplicada",
+        termo: "Superveniente (intercorrente)",
+        faz: "Usa a pena aplicada na sentença, quando já não cabe recurso da acusação (art. 110, § 1º, e Súmula 146 do STF). Conta da sentença para a frente: se o prazo correspondente à pena aplicada passar antes do trânsito em julgado definitivo, a punibilidade se extingue.",
+      },
+      {
+        termo: "Retroativa",
+        faz: "Também usa a pena aplicada, mas conta para trás, entre os marcos já passados (recebimento da denúncia → sentença). Desde a Lei 12.234/2010, não pode ter como termo inicial data anterior ao recebimento da denúncia ou queixa; para crimes anteriores a essa lei, ainda vale a contagem desde o fato.",
+      },
+      {
+        termo: "Prescrição virtual (em perspectiva)",
+        faz: "Seria reconhecer a prescrição antes da sentença, com base na pena que provavelmente seria aplicada. Não é admitida (Súmula 438 do STJ).",
+      },
+      {
+        termo: "Efeitos da PPP",
+        faz: "Como o Estado perdeu o direito de condenar, a decisão não gera nenhum efeito de condenação: não há reincidência, maus antecedentes nem título para cobrar indenização no cível.",
+      },
+      {
+        parte: "9. Prescrição da pretensão executória",
+        termo: "Prazo da PPE (art. 110)",
+        faz: "Regula-se pela pena aplicada, com os prazos do art. 109, aumentados de 1/3 se o condenado for reincidente. A reincidência não influi na prescrição da pretensão punitiva (Súmula 220 do STJ).",
+      },
+      {
+        termo: "Termo inicial da PPE (art. 112)",
+        faz: "A lei fala no trânsito em julgado para a acusação, mas o STF decidiu (Tema 788, 2023) que o prazo só começa com o trânsito em julgado para ambas as partes, quando a pena já pode ser executada. Corre também da revogação do sursis ou do livramento e do dia em que a execução é interrompida (ex.: fuga).",
+      },
+      {
+        termo: "Fuga e revogação (art. 113)",
+        faz: "Se o condenado foge ou tem o livramento condicional revogado, a prescrição é calculada pelo tempo que falta da pena.",
+      },
+      {
+        termo: "Efeitos da PPE",
+        faz: "Extingue só a pena. Os efeitos secundários da condenação continuam: gera reincidência, vale como maus antecedentes e serve de título para a vítima cobrar indenização.",
+        pista: "PPP apaga a condenação; PPE apaga só a execução da pena.",
       },
     ],
     cuidado:
-      "A prescrição em perspectiva, baseada em pena hipotética, não é admitida (Súmula 438 do STJ).",
+      "Renúncia é antes da ação e não precisa de aceitação; perdão do ofendido é durante a ação e precisa. Interrupção zera o prazo; suspensão só o pausa. E a prescrição virtual não é aceita.",
   },
   questoes: [
     {
