@@ -4,54 +4,184 @@ export const AULA: AulaEscrita = {
   aula: "geopolitica-01",
   resumo: {
     ideia:
-      "O mapa do Brasil nasceu de tratados, ocupação e decisões políticas. A aula separa nação, Estado e território e mostra como a Federação e as fronteiras chegaram ao desenho atual.",
+      "O mapa do Brasil nasceu de tratados, de ciclos econômicos e de decisões políticas. A aula mostra como o território foi formado (da Colônia à Constituição de 1988), como a economia ocupou o espaço, como são as fronteiras e a faixa de fronteira, como o Estado se organiza e como o país é dividido em regiões.",
     itens: [
       {
-        termo: "Nação",
-        faz: "Grupo com origem, língua e costumes em comum, que se reconhece como um só povo.",
-        pista: "É identidade, não governo.",
+        parte: "1. Conceitos de base",
+        termo: "Nação, Estado e território",
+        faz: "Nação é um grupo que se reconhece como um só povo (origem, língua, costumes). Estado é a organização política que exerce soberania sobre um povo e um território. Território é o espaço delimitado e apropriado por relações de poder.",
+        pista: "Nação é identidade; Estado é poder organizado.",
       },
       {
-        termo: "Território",
-        faz: "Espaço delimitado e apropriado por relações de poder.",
+        termo: "Fronteira e limite",
+        faz: "As linhas de fronteira indicam até onde vai o território em que o Estado exerce soberania. Demarcar esses limites é direito e dever do Estado.",
       },
       {
-        termo: "Estado",
-        faz: "Organização política que exerce soberania sobre um povo e um território.",
+        parte: "2. Formação do território na Colônia",
+        termo: "Tratado de Tordesilhas (1494)",
+        faz: "Linha a 370 léguas a oeste de Cabo Verde: a leste, terras de Portugal; a oeste, da Espanha. Parte do Brasil já era portuguesa antes da chegada, em 1500.",
+      },
+      {
+        termo: "Início da colonização (1530 em diante)",
+        faz: "Até 1530 as terras ficaram quase abandonadas. Concorrência no comércio do Oriente, ameaça estrangeira no litoral e esperança de achar ouro levaram Portugal a colonizar. Em 1532 foi fundada São Vicente, a primeira vila, com o primeiro engenho.",
+      },
+      {
+        termo: "Sesmarias",
+        faz: "Grandes lotes de terra dados a colonos, com a obrigação de produzir em alguns anos. Foram o embrião do latifúndio monocultor, escravista e exportador.",
+      },
+      {
+        termo: "Capitanias hereditárias (1534)",
+        faz: "Primeira divisão político-administrativa: 15 capitanias, dadas a 12 donatários, em faixas a partir do litoral. Eram autônomas e desligadas entre si (descentralização). A maioria fracassou por falta de dinheiro e de defesa.",
+      },
+      {
+        termo: "Governo-Geral (1548/1549)",
+        faz: "Administração centralizada para coordenar as capitanias, instalada em Salvador, a primeira capital. Em 1763 a capital foi para o Rio de Janeiro, no mesmo ano em que o Brasil virou Vice-Reino.",
+      },
+      {
+        termo: "Entradas, Bandeiras e Descidas",
+        faz: "Entradas: expedições do governo, com dinheiro público, que em geral respeitavam Tordesilhas. Bandeiras: expedições particulares, saindo de São Paulo, que não respeitavam a linha; buscavam metais e índios para escravizar. Descidas: expedições de jesuítas para levar indígenas às missões.",
+        pista: "Na União Ibérica (1580–1640) a linha de Tordesilhas perdeu o sentido e o Brasil triplicou de tamanho.",
       },
       {
         termo: "Tratado de Madri (1750)",
-        faz: "Trocou a linha de Tordesilhas pelo critério da ocupação efetiva da terra.",
+        faz: "Adotou o uti possidetis: cada país fica com a terra que de fato ocupa. Portugal daria a Colônia do Sacramento e receberia os Sete Povos das Missões. Não foi cumprido e foi anulado pelo Tratado do Pardo (1761).",
       },
       {
-        termo: "Federação",
-        faz: "Veio com a República, em 1889. As províncias viraram estados, com as mesmas fronteiras.",
+        termo: "Santo Ildefonso (1777) e Badajós (1801)",
+        faz: "Santo Ildefonso seguiu os limites de Madri, mas Portugal perdeu Sacramento sem ganhar os Sete Povos. Em 1801, depois de novo conflito, Badajós incorporou de vez os Sete Povos ao atual Rio Grande do Sul.",
       },
       {
-        termo: "Organização do Estado",
-        faz: "União, Estados, Distrito Federal e Municípios, todos autônomos.",
+        termo: "Capitanias da Coroa (1759)",
+        faz: "As hereditárias voltaram à Coroa (compra ou confisco). As novas capitanias eram governadas por nomeados do rei e divididas em gerais e subordinadas, em nove blocos regionais.",
+      },
+      {
+        parte: "3. Império e República",
+        termo: "Províncias (1822)",
+        faz: "Com a Independência, as capitanias viraram províncias: 18 no início. No Império só surgiram mais duas: Amazonas (1850, saída do Pará) e outra em 1853, separada de São Paulo.",
+      },
+      {
+        termo: "República e federalismo (1889)",
+        faz: "As províncias viraram estados, com as mesmas fronteiras, e entrou o federalismo (Decreto nº 1, de 15/11/1889). A federação nasceu com 20 estados e o Distrito Federal, que era o antigo município neutro do Rio de Janeiro.",
+      },
+      {
+        termo: "Brasília (1960)",
+        faz: "A construção começou em 1956 e a capital foi transferida para o Centro-Oeste em 1960.",
+      },
+      {
+        termo: "Acre",
+        faz: "Comprado da Bolívia pelo Tratado de Petrópolis (1903). Primeiro foi território federal; virou estado em 1962.",
+      },
+      {
+        termo: "Territórios federais",
+        faz: "Unidades sem autonomia, geridas pela União (sem assembleia nem senadores; governador nomeado). Admitidos pela Constituição de 1934. Na década de 1940, na Segunda Guerra, o governo criou seis: Guaporé, Amapá, Ponta Porã, Iguaçu, Rio Branco e Fernando de Noronha, para proteger as fronteiras.",
+        pista: "Ponta Porã e Iguaçu acabaram em 1946. Guaporé virou Rondônia (estado em 1981). Rio Branco passou a se chamar Roraima em 1962.",
       },
       {
         termo: "Constituição de 1988",
-        faz: "Criou o Tocantins, tornou Amapá e Roraima estados e anexou Fernando de Noronha a Pernambuco.",
-        pista: "É a mudança mais recente do mapa.",
+        faz: "Fez de Amapá e Roraima estados, criou o Tocantins (saído de Goiás) e anexou Fernando de Noronha a Pernambuco. Ainda permite criar novos territórios federais.",
+        pista: "É a mudança mais recente do mapa dos estados. Mato Grosso do Sul veio antes, em 1977, da divisão de Mato Grosso.",
       },
       {
-        termo: "Faixa de fronteira",
-        faz: "Até 150 km ao longo das fronteiras terrestres, com regras próprias de ocupação.",
+        parte: "4. Economia e ocupação do território",
+        termo: "Ciclos econômicos",
+        faz: "Cada ciclo foi uma monocultura de exportação numa região: açúcar (séculos XVI–XVII, litoral do Nordeste, com escravizados africanos), ouro (fim do XVII e XVIII, Minas Gerais), café (XIX–XX, Sudeste) e borracha (fim do XIX e início do XX, Amazônia).",
+      },
+      {
+        termo: "Arquipélago econômico",
+        faz: "Até meados do século XX, o Brasil era um conjunto de regiões exportadoras quase isoladas, cada uma ligada a um porto, que se comunicavam só por cabotagem. Não havia mercado nacional.",
+      },
+      {
+        termo: "Pecuária",
+        faz: "Atividade de apoio ao açúcar e ao ouro (carne, couro, animais de tração). Subiu o rio São Francisco e o sertão e foi, mais que o ouro, a que alargou e fixou o território, criando estradas e fazendas.",
+      },
+      {
+        termo: "Conquista da Amazônia",
+        faz: "Feita por militares (fortes) e jesuítas (missões) subindo os rios, sem um ciclo econômico por trás. O forte de Manaus é de 1669.",
+      },
+      {
+        termo: "Borracha e café",
+        faz: "A borracha trouxe mais de um milhão de nordestinos fugidos da seca de 1877: a primeira grande onda de migração interna. Caiu a partir de 1910, com as plantações da Ásia. O café usou mão de obra assalariada de imigrantes e organizou o espaço em torno da ferrovia.",
+      },
+      {
+        termo: "Industrialização e integração",
+        faz: "A partir das décadas de 1920 e 1930, o café paulista lançou as bases da indústria no Sudeste, que criou o mercado interno nacional e acabou com o isolamento das regiões. Brasília (1960) e as rodovias de integração levaram a ocupação ao Centro-Oeste.",
+        pista: "A indústria concentrada no Sudeste limitou o Sul e, mais ainda, o Nordeste.",
+      },
+      {
+        termo: "Modernização do campo",
+        faz: "Desde os anos 1970, culturas mecanizadas (soja) dispensaram mão de obra e reconcentraram a terra, empurrando migrantes para o Centro-Oeste, a Amazônia, as capitais e as cidades médias.",
+      },
+      {
+        parte: "5. Fronteiras",
+        termo: "Quem fixou as fronteiras",
+        faz: "O período colonial fixou só cerca de 17% da fronteira terrestre atual. O Império fixou pouco mais da metade (Uruguai, Paraguai e outros vizinhos). No início da República, o Barão do Rio Branco (1902–1912) fixou cerca de um terço, incluindo o Acre e áreas no Amapá, Roraima e Amazonas.",
+      },
+      {
+        termo: "Números das fronteiras",
+        faz: "O Brasil tem o 5º maior território do mundo. A fronteira terrestre é maior que a marítima. Faz fronteira com quase todos os países da América do Sul: só não com Chile e Equador. Vizinhos: Bolívia, Peru, Venezuela, Colômbia, Guiana, Paraguai, Argentina, Uruguai, Suriname e Guiana Francesa (departamento ultramarino da França).",
       },
       {
         termo: "Limites marítimos",
-        faz: "Mar territorial de 12 milhas, zona contígua até 24 e zona econômica exclusiva até 200.",
+        faz: "Mar territorial: 12 milhas (22,2 km), soberania plena. Zona contígua: até 24 milhas (44,4 km), controle administrativo e fiscal. Zona econômica exclusiva: até 200 milhas (370 km), direitos econômicos sobre a água, o fundo e o subsolo. Plataforma continental: pode ir até 350 milhas (648 km), direitos sobre o fundo e o subsolo.",
+        pista: "As regras vêm da Convenção da ONU sobre o Direito do Mar, em vigor desde 1994. A soberania também cobre o espaço aéreo.",
       },
       {
-        termo: "Geopolítica",
-        faz: "Estuda a relação entre o espaço geográfico (território, posição, recursos, fronteiras) e o poder dos Estados.",
-        pista: "O termo foi criado pelo sueco Rudolf Kjellén no fim do século XIX.",
+        termo: "Faixa de fronteira",
+        faz: "Até 150 km de largura ao longo das fronteiras terrestres (Constituição de 1988). Tem regras especiais de uso do solo, propriedade e exploração econômica: obras e mineração dependem de autorização do governo federal.",
+      },
+      {
+        termo: "Fronteira como integração",
+        faz: "Antes vistas só como faixas de segurança, as fronteiras hoje também são vistas como espaço de integração econômica e cultural com os vizinhos.",
+      },
+      {
+        termo: "Amazônia internacional e OTCA",
+        faz: "A floresta abrange oito países (Brasil, Peru, Bolívia, Equador, Colômbia, Venezuela, Guiana e Suriname) e a Guiana Francesa. Todos, menos a Guiana Francesa, estão na Organização do Tratado de Cooperação Amazônica (tratado de 1978), que reconhece a soberania de cada país e busca preservar e desenvolver a região.",
+      },
+      {
+        termo: "Vigilância e crimes na fronteira",
+        faz: "Há poucos postos e falta efetivo e tecnologia, então a fronteira sofre com ilícitos (tráfico, contrabando, descaminho). Esses crimes são caso de polícia e não ameaçam a soberania. A vigilância é maior no Sul e no Centro-Oeste, mais povoados.",
+      },
+      {
+        termo: "Calha Norte e Sisfron",
+        faz: "Calha Norte (1985): projeto militar de ocupação e desenvolvimento da Amazônia, com postos na fronteira; hoje cobre toda a região amazônica. Sisfron: Sistema Integrado de Monitoramento de Fronteiras, com radares, drones e mais militares.",
+      },
+      {
+        termo: "Povos indígenas na fronteira",
+        faz: "A Constituição garante a demarcação das terras indígenas também na faixa de fronteira. Muitos povos vivem em dois países (como os Yanomami, no Brasil e na Venezuela) e podem circular livremente entre eles.",
+      },
+      {
+        termo: "Cidades gêmeas",
+        faz: "Municípios cortados pela linha de fronteira, com grande integração econômica e cultural com a cidade vizinha, às vezes separados só por uma rua. Cidades com menos de 2 mil habitantes não entram. Hoje passam de 30, sobretudo no Rio Grande do Sul e no Mato Grosso do Sul.",
+        pista: "Exemplos: Ponta Porã e Pedro Juan Caballero, Santana do Livramento e Rivera, Tabatinga e Letícia.",
+      },
+      {
+        parte: "6. Organização do Estado",
+        termo: "Federação e presidencialismo",
+        faz: "União indissolúvel de Estados, Municípios e Distrito Federal, em Estado Democrático de Direito: 26 estados, o DF e mais de 5.500 municípios. O DF não se divide em municípios. O presidente é chefe de Estado e de governo, eleito para 4 anos, com uma reeleição.",
+      },
+      {
+        termo: "Poderes e voto",
+        faz: "Três poderes independentes e harmônicos: Legislativo (Câmara e Senado), Executivo e Judiciário. Estados seguem Constituições estaduais; municípios, Leis Orgânicas. Voto obrigatório dos 18 aos 70 anos; facultativo para analfabetos, maiores de 70 e jovens de 16 e 17.",
+        pista: "No Império o voto era censitário (por renda). Mulheres votam desde 1932; analfabetos, desde 1985.",
+      },
+      {
+        parte: "7. Divisão regional",
+        termo: "Divisão oficial (IBGE)",
+        faz: "Agrupa estados com traços físicos, humanos, econômicos e sociais parecidos, para planejar políticas. A primeira (1913) usava só aspectos físicos; a partir de 1940 entraram os socioeconômicos. A atual, de cerca de 1970, tem 5 regiões: Norte, Nordeste, Centro-Oeste, Sudeste e Sul.",
+        pista: "Depois de 1988, o Tocantins entrou na Região Norte.",
+      },
+      {
+        termo: "Regiões geoeconômicas (anos 1960)",
+        faz: "Proposta não oficial, baseada na formação histórica e na industrialização: Amazônia (maior e menos povoada, extrativismo e Zona Franca de Manaus), Centro-Sul (economia mais forte, cerca de 70% da população) e Nordeste (a mais antiga e a mais pobre).",
+        pista: "Não segue as divisas dos estados: o norte de Minas fica no Nordeste e o resto de Minas no Centro-Sul.",
+      },
+      {
+        termo: "Os “quatro Brasis”",
+        faz: "Regionalização pelo meio técnico-científico-informacional (técnica, informação e finanças distribuídas de forma desigual): Amazônia (baixa densidade de gente e de técnica), Nordeste (povoado primeiro, agricultura pouco mecanizada), Centro-Oeste (agricultura moderna) e Região Concentrada (Sudeste e Sul: mais povoada, industrializada e com melhor infraestrutura).",
       },
     ],
     cuidado:
-      "Não troque as datas do mapa: Acre estado em 1962, Mato Grosso do Sul em 1977 e Tocantins em 1988.",
+      "Não troque as datas do mapa: Acre estado em 1962, Rondônia em 1981, Mato Grosso do Sul em 1977, Tocantins, Amapá e Roraima em 1988. E zona contígua vai até 24 milhas, não 24 km.",
   },
   questoes: [
     {

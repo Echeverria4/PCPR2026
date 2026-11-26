@@ -4,48 +4,171 @@ export const AULA: AulaEscrita = {
   aula: "geopolitica-04",
   resumo: {
     ideia:
-      "Campo, indústria e cidade formam uma só cadeia, ligada pelos transportes. A aula mostra onde a produção agrícola avança e por que a carga do país roda tanto em rodovia.",
+      "A aula liga o campo à indústria e à cidade: conceitos do espaço rural, modernização da agricultura e agronegócio, avanço da fronteira agrícola e seus desafios, estrutura fundiária, os principais produtos e rebanhos e, por fim, a rede de transportes: matriz desequilibrada, cada modal com vantagens e desvantagens, as grandes rodovias, ferrovias, hidrovias, portos, aeroportos, dutos e a intermodalidade.",
     itens: [
       {
-        termo: "Agroindústria",
-        faz: "Une lavoura, indústria e serviços em uma mesma cadeia de produção.",
+        parte: "1. Espaço rural e formas de produzir",
+        termo: "Espaço rural",
+        faz: "Não é só lavoura: é espaço de vida, cultura e produção. Multifuncional (funções produtiva, social e ambiental) e multissetorial (agricultura, pecuária, extrativismo, turismo, conservação). Tem densidade baixa e está cada vez mais ligado à cidade.",
       },
       {
-        termo: "Centro-Oeste",
-        faz: "Região que mais produz grãos. Mato Grosso tem o maior rebanho bovino.",
+        termo: "Desenvolvimento rural e agropecuária",
+        faz: "Desenvolvimento rural é criar capacidades (humanas, técnicas, políticas) para a população do campo melhorar de vida. Agropecuária é agricultura + pecuária: o setor primário do PIB.",
       },
       {
+        termo: "Intensivo × extensivo",
+        faz: "Intensivo: muito capital, máquinas, insumos e tecnologia, com alta produtividade por área. Extensivo: pouco capital e técnica, grandes áreas e baixa produtividade.",
+      },
+      {
+        termo: "Familiar × empresarial (patronal)",
+        faz: "Familiar: a família administra e trabalha, sendo ou não dona da terra; ocupa cerca de 1/4 da área, mas produz grande parte dos alimentos do mercado interno. Empresarial: trabalhadores contratados, propriedades médias e grandes, produtividade alta.",
+      },
+      {
+        termo: "Agronegócio",
+        faz: "Toda a cadeia da agropecuária empresarial: pesquisa, máquinas, insumos (adubos, defensivos), a lavoura, a agroindústria, o transporte e a distribuição. Abastece o país, mas é voltado sobretudo à exportação de commodities.",
+        pista: "A agropecuária sozinha é pouco do PIB; somada a toda a cadeia (agronegócio), passa de 1/5 do PIB e cerca de metade das exportações.",
+      },
+      {
+        termo: "Relações de trabalho no campo",
+        faz: "Mão de obra familiar, assalariado permanente, assalariado temporário (boia-fria), posseiro, parceria (paga com parte da produção), arrendamento (aluga a terra) e, de forma criminosa, trabalho análogo ao de escravo. Agricultura de subsistência: produz para o consumo da própria família.",
+      },
+      {
+        parte: "2. Modernização: campo, indústria e cidade",
+        termo: "Revolução Verde",
+        faz: "Desde os anos 1960–70: adubos químicos, agrotóxicos, sementes melhoradas e máquinas. A produção cresceu muito (o número de tratores mais que triplicou nos anos 1970), mas a fome no mundo não acabou.",
+      },
+      {
+        termo: "Efeitos da modernização",
+        faz: "Barateou alimentos, mas tirou trabalho do campo: êxodo rural forte entre 1970 e 1990, inchando as periferias; e desmatamento de Cerrado, Caatinga, Mata Atlântica e Amazônia. O número de trabalhadores rurais cai desde 1985.",
+      },
+      {
+        termo: "Agricultura integrada à indústria",
+        faz: "Hoje o que decide onde plantar é mais a ação humana (infraestrutura, energia, transporte, armazéns, mercado) que o meio natural. O campo virou parte de redes com indústria e serviços. Mesmo assim, resistem a agricultura de subsistência e a familiar no sertão e no interior da Amazônia.",
+      },
+      {
+        termo: "Grilagem e madeira ilegal",
+        faz: "Grilagem: falsificar documentos para tomar terra de forma ilegal (o nome vem dos grilos usados para envelhecer o papel). Madeireiros ilegais cortam árvores em terras devolutas da União, em áreas pouco fiscalizadas. A pecuária extensiva e a soja estão entre as maiores causas do desmatamento da Amazônia; o Sisbov rastreia o gado para barrar carne de área ilegal.",
+      },
+      {
+        parte: "3. Fronteira agrícola e desafios",
         termo: "Fronteira agrícola",
-        faz: "Avança ao Norte e ao Nordeste. Matopiba reúne áreas de Maranhão, Tocantins, Piauí e Bahia.",
+        faz: "Área onde a agropecuária avança sobre a vegetação nativa. Começou na Mata Atlântica, foi ao Sul e, desde 1970, ao Cerrado; hoje entra nas bordas da Amazônia.",
+      },
+      {
+        termo: "Calagem",
+        faz: "Aplicar calcário para corrigir a acidez dos solos do Cerrado (latossolos ácidos e pouco férteis). Foi o que abriu o Cerrado à soja.",
+      },
+      {
+        termo: "Matopiba",
+        faz: "A principal fronteira agrícola atual: partes do Maranhão, Tocantins, Piauí e Bahia, com produção de grãos em forte alta.",
+        pista: "MA + TO + PI + BA.",
+      },
+      {
+        termo: "Desafios ambientais",
+        faz: "Desmatamento do Cerrado e da Amazônia, polêmica de agrotóxicos e transgênicos, e pressão de ruralistas para enfraquecer unidades de conservação.",
+      },
+      {
+        termo: "Desafios sociais",
+        faz: "Conflito com a demarcação de terras indígenas e quilombolas, disputa entre grandes proprietários e sem-terra ou posseiros, violência no campo e casos de trabalho escravo. Uma portaria de 2017 que dificultava a fiscalização foi suspensa pelo STF.",
+      },
+      {
+        termo: "Desafio de infraestrutura",
+        faz: "Faltam silos e portos adequados, e o transporte, quase todo por rodovia, encarece o produto vendido aqui e o exportado.",
+      },
+      {
+        parte: "4. Estrutura fundiária",
+        termo: "Concentração da terra",
+        faz: "Pouca gente com muita terra e muita gente com pouca ou nenhuma. Os estabelecimentos de 1.000 ha ou mais são cerca de 1% do total e ocupam quase metade da área; os de até 50 ha são mais de 80% e ocupam pouco mais de 1/10. O quadro quase não mudou nos últimos censos.",
+        pista: "A origem está na colonização (sesmarias e latifúndio de exportação). A saída apontada é a reforma agrária.",
+      },
+      {
+        parte: "5. Produção agropecuária",
+        termo: "Lugar do Brasil no mundo",
+        faz: "Um dos maiores produtores agrícolas e exportadores de alimentos (atrás dos EUA). Maior produtor e exportador de soja, açúcar, café e suco de laranja; maior exportador de carne bovina; entre os maiores de milho e carne de frango.",
+      },
+      {
+        termo: "Produtos e estados",
+        faz: "A soja é o principal produto agrícola, bem à frente do milho e da cana. Mato Grosso é a grande potência agrícola (maior produtor de soja e milho), e o Centro-Oeste é a região de maior valor de produção.",
+      },
+      {
+        termo: "Soja",
+        faz: "Veio do Sul nos anos 1970, subiu para o Centro-Oeste e hoje chega às bordas do Norte e do Nordeste. Mais forte no Cerrado. Críticas: desmatamento, agrotóxicos e sementes transgênicas.",
+      },
+      {
+        termo: "Cana, milho, café e algodão",
+        faz: "Cana: São Paulo tem cerca de 60%; a Zona da Mata nordestina vem em 2º, desde o século XVI; puxada pelo etanol. Milho: plantado em todo o país, da subsistência à exportação, vira ração e mais de 150 produtos. Café: Minas Gerais lidera, depois Espírito Santo; cerca de 70% arábica (altitude) e 30% canéfora. Algodão: Mato Grosso e Bahia.",
+      },
+      {
+        termo: "Outras culturas",
+        faz: "Laranja e suco: São Paulo. Fumo: Rio Grande do Sul, com produtor familiar ligado às indústrias de cigarro. Arroz: Rio Grande do Sul, com cerca de 70%, irrigado. Trigo: Sul.",
       },
       {
         termo: "Pecuária",
-        faz: "Bovinos em criação predominantemente extensiva. O Sul lidera leite e aves, e o Nordeste, caprinos e ovinos.",
+        faz: "Mais gado que gente (mais de 230 milhões de bois), mas o maior rebanho é o de galináceos. Criação de gado sobretudo extensiva. Bovinos: Mato Grosso, Pará e Goiás; Centro-Oeste e depois Norte. Leite: o Sul é a maior região, Minas o maior estado. Aves e suínos: Sul (Santa Catarina lidera suínos). Caprinos e ovinos: Nordeste.",
       },
       {
-        termo: "Estrutura fundiária",
-        faz: "A terra é concentrada: poucos imóveis grandes ocupam a maior parte da área.",
+        parte: "6. Matriz de transporte",
+        termo: "Matriz desequilibrada",
+        faz: "Mais de 60% das cargas e cerca de 96% dos passageiros vão por rodovia (rodoviarismo), embora ferrovia e hidrovia sejam melhores para grande volume e longa distância. Resultado: frete caro, que encarece o produto aqui e lá fora.",
+        pista: "Argentina e EUA levam vantagem por usar mais trem e barco.",
+      },
+      {
+        termo: "Como chegamos a isso",
+        faz: "Até o século XIX, navegação. Primeira ferrovia em 1854 (Estrada de Ferro Mauá); “era das ferrovias” de 1870 a 1920, ligando áreas produtoras aos portos (leque do café até Santos); ápice da malha em 1960. Primeira rodovia pavimentada em 1928 (Rio–Petrópolis). Desde os anos 1950, montadoras e política rodoviarista; nos 1980, crise e estradas degradadas; nos 1990, concessões e volta a ferrovias, hidrovias e intermodalidade.",
+      },
+      {
+        termo: "Qual modal para qual carga",
+        faz: "Rodovia: curta distância, carga urgente e não muito volumosa, porta a porta. Ferrovia: média e longa distância, grande volume. Hidrovia: grande volume, sem pressa. Avião: frete mais caro, carga delicada, perecível ou urgente. Duto: fluxo contínuo de gás, petróleo ou minério.",
+      },
+      {
+        parte: "7. Modal rodoviário",
+        termo: "Características",
+        faz: "Flexível, de alta capilaridade (chega a quase todo lugar) e fácil de integrar aos outros modais. Malha mais densa no Centro-Sul e em volta do DF. Só cerca de 12% da malha é pavimentada (federais cerca de 80%, municipais quase nada), e muitas estradas estão em estado regular, ruim ou péssimo.",
       },
       {
         termo: "Numeração das BRs",
-        faz: "0 radial, 1 longitudinal, 2 transversal, 3 diagonal e 4 ligação.",
-        pista: "O primeiro algarismo dá a direção.",
+        faz: "O 1º algarismo diz o tipo: 0 = radial (sai de Brasília); 1 = longitudinal (norte–sul); 2 = transversal (leste–oeste); 3 = diagonal; 4 = ligação entre rodovias.",
+        pista: "BR-040 radial, BR-116 e BR-101 longitudinais, BR-364 e BR-381 diagonais.",
       },
       {
+        termo: "Principais rodovias",
+        faz: "BR-116: a principal e a maior totalmente pavimentada, do Ceará ao Rio Grande do Sul, por 10 estados. BR-101: a mais extensa, litorânea, de Touros (RN) a São José do Norte (RS), por 12 estados. BR-381: São Paulo–Minas–Espírito Santo. BR-040: Brasília–Rio de Janeiro. BR-364: diagonal de cerca de 4.300 km, de Limeira (SP) a Rodrigues Alves (AC).",
+      },
+      {
+        parte: "8. Ferrovias, hidrovias e portos",
         termo: "Ferrovia",
-        faz: "Boa para carga pesada em longa distância, com baixo custo e baixa emissão.",
+        faz: "Grande volume e longa distância, frete baixo, pouca poluição e serviço confiável, mas pouca flexibilidade e obra cara; quase sempre precisa da rodovia. É o 2º modal de carga (cerca de 1/5). Sucateada depois dos anos 1950, modernizada com as concessões dos anos 1990. Leva sobretudo minério de ferro (cerca de 3/4), depois soja e milho. Malha concentrada no Sul e em partes do Sudeste e do Centro-Oeste.",
+        pista: "O Brasil tem malha ferroviária pouco densa para um país do seu tamanho.",
       },
       {
-        termo: "Hidrovia",
-        faz: "Usa rios e, ao contrário dos demais modais, tem seu maior peso na bacia do Amazonas.",
+        termo: "Hidrovia (navegação interior)",
+        faz: "Barata por tonelada e de grande capacidade, mas lenta e pouco flexível. Cerca de 63 mil km de rios, uns 42 mil navegáveis e menos de 19 mil usados. É o modal mais importante no Norte (Amazonas, Pará, Acre, Roraima): a bacia amazônica tem rios de planície, sem precisar de eclusas, e falta estrada. Outras: as do rio Paraguai e do Tietê (bacia do Prata), Uruguai, São Francisco e Parnaíba.",
+        pista: "É o único modal que não se concentra no Centro-Sul.",
       },
       {
         termo: "Cabotagem",
-        faz: "Navegação entre portos do próprio país.",
+        faz: "Navegação entre portos do próprio país, pelo mar, ou pelo mar e rios. Não confundir com longo curso (para outros países).",
+      },
+      {
+        termo: "Portos",
+        faz: "Santos (SP) é o de maior movimentação de cargas da América Latina. Manaus (AM) é o maior porto fluvial de cargas e passageiros do Brasil. Outros grandes portos ficam sobretudo no Sul e no Sudeste (Itaguaí, Itajaí, Vitória e outros). O transporte marítimo leva mais de 90% do comércio exterior em toneladas.",
+      },
+      {
+        parte: "9. Aéreo, dutos e intermodal",
+        termo: "Modal aéreo",
+        faz: "Rápido e seguro, chega a lugares de difícil acesso, mas é o frete mais caro: passageiros e cargas de alto valor, perecíveis ou urgentes. O Brasil é o 2º país em número de aeroportos (cerca de 4 mil pistas, a maioria pequenas e sem estrutura), mas o movimento se concentra em São Paulo, Rio, Minas e DF.",
+      },
+      {
+        termo: "Modal dutoviário",
+        faz: "Tubos que levam muita carga de um só tipo (petróleo, derivados, gás e minério) por longa distância, 24 horas por dia, com menos acidente, roubo e caminhão perigoso na estrada. Desvantagens: obra cara, lento (2 a 8 km/h) e pouco flexível. Exemplos: Gasoduto Brasil–Bolívia (cerca de 3.150 km) e o mineroduto Paragominas–Barcarena (PA).",
+      },
+      {
+        termo: "Intermodalidade",
+        faz: "Usar dois ou mais modais de forma planejada no mesmo transporte, para aproveitar o melhor de cada um conforme a carga, a distância e o percurso, cortando tempo, custo e dano ambiental. É a base dos planos atuais para equilibrar a matriz.",
       },
     ],
     cuidado:
-      "Só uma pequena parte da malha rodoviária é pavimentada, embora a rodovia seja o modal que mais leva carga.",
+      "Rodovia lidera tanto em carga quanto em passageiros; a ferrovia é a 2ª em carga, levando sobretudo minério. E a hidrovia é a exceção: forte no Norte, e não no Centro-Sul.",
   },
   questoes: [
     {

@@ -4,49 +4,143 @@ export const AULA: AulaEscrita = {
   aula: "geopolitica-02",
   resumo: {
     ideia:
-      "O Brasil virou um país urbano em poucas décadas. A aula mostra como isso aconteceu, como as cidades se organizam em rede e que problemas vieram com esse crescimento.",
+      "A aula explica como o Brasil virou um país urbano: o ritmo e as causas da urbanização, as diferenças entre as regiões, as tendências de hoje (desmetropolização e cidades médias), a dinâmica das metrópoles (conurbação, regiões metropolitanas, RIDEs, megalópole), a hierarquia da rede urbana do IBGE e os problemas das cidades: moradia, mobilidade, violência, saneamento, lixo e poluição.",
     itens: [
       {
+        parte: "1. Conceitos de base",
+        termo: "Município × cidade × espaço urbano",
+        faz: "Município é unidade política da Federação, com sede e distritos, e pode ter zona urbana e rural. Cidade é a área urbana do município, separada do campo pelo perímetro urbano fixado em lei. Espaço urbano é a parte do espaço ocupada por área urbana.",
+        pista: "Cidade é termo genérico; município é divisão político-administrativa. Não são sinônimos.",
+      },
+      {
         termo: "Urbanização",
-        faz: "A população urbana cresce mais que a rural e passa a ser maioria.",
-        pista: "Não é só a cidade ficar maior.",
+        faz: "Processo em que a população urbana cresce mais rápido que a rural, até a sociedade passar a ser urbana (mais gente na cidade que no campo). Fenômeno recente, que começa com a Revolução Industrial e se espalha pelo mundo no século XX.",
+        pista: "No mundo, a população urbana só passou de 50% por volta de 2008.",
       },
       {
-        termo: "Ritmo brasileiro",
-        faz: "Tardio e acelerado, ligado à indústria depois da Segunda Guerra.",
+        termo: "Por que as cidades crescem",
+        faz: "A divisão social do trabalho se aprofunda: comércio e indústria rompem o isolamento do campo, ampliam os mercados e multiplicam as cidades.",
       },
       {
+        parte: "2. Urbanização brasileira",
+        termo: "Ritmo",
+        faz: "Em 1950 cerca de 2/3 da população era rural. A urbana passou a rural por volta de 1965 e, no Censo 2022, chegou a cerca de 87%. Foi rápida, ligada à industrialização do pós-guerra.",
+        pista: "O Brasil fez em poucas décadas o que a Europa levou mais de um século para fazer.",
+      },
+      {
+        termo: "Êxodo rural",
+        faz: "Fatores de repulsão no campo (concentração de terra, mecanização, falta de trabalho) somados aos fatores de atração da cidade (emprego na indústria e nos serviços).",
+      },
+      {
+        termo: "Características",
+        faz: "Concentradora (poucas grandes cidades recebem a maior parte da população) e sem planejamento, o que gerou periferias precárias e falta de infraestrutura.",
+      },
+      {
+        termo: "Diferenças entre as regiões (Censo 2022)",
+        faz: "Sudeste: a mais urbanizada (94,4%), urbana desde os anos 1950. Centro-Oeste: 2ª (91,3%), puxada por Brasília (1960), rodovias e agropecuária mecanizada. Sul: 88,2%, lenta até 1970 por causa da pequena propriedade familiar, depois acelerada pela mecanização. Norte: 78,4%, concentrada em Manaus e Belém e nas cidades ao longo das rodovias. Nordeste: a menos urbanizada (77,6%).",
+        pista: "Maior: Sudeste. Menor: Nordeste. A diferença reflete a desigualdade econômica entre as regiões.",
+      },
+      {
+        parte: "3. Tendências atuais",
         termo: "Desmetropolização",
-        faz: "Desde os anos 1990, as metrópoles crescem menos que outras cidades. Elas não esvaziam.",
+        faz: "Desde os anos 1990 as metrópoles crescem mais devagar e as cidades médias crescem mais. Não quer dizer que as metrópoles perdem força.",
+        pista: "Dentro da região metropolitana, a periferia cresce mais que o núcleo.",
       },
       {
+        termo: "Cidades médias",
+        faz: "Entre cerca de 100 mil e 500 mil habitantes, com papel intermediário entre as pequenas e as metrópoles. Ficaram com cerca de 2/3 do crescimento urbano entre 2010 e 2022, atraem novas indústrias e se ligam às redes produtivas globais. Muitas cidades pequenas perderam população.",
+      },
+      {
+        parte: "4. Dinâmica metropolitana",
         termo: "Conurbação",
-        faz: "Cidades vizinhas se unem fisicamente e passam a funcionar juntas.",
+        faz: "Cidades vizinhas crescem até as manchas urbanas se encontrarem e passam a ter ligação funcional: fluxos de pessoas, mercadorias, informações e serviços.",
+        pista: "Só encostar não basta: precisa haver a ligação funcional.",
+      },
+      {
+        termo: "Área metropolitana e metrópole",
+        faz: "A conurbação pode formar uma área metropolitana com uma cidade central, a metrópole (do grego: cidade-mãe), que oferece serviços sofisticados e influencia as cidades vizinhas.",
       },
       {
         termo: "Região metropolitana",
-        faz: "Criada pelo Estado, por lei complementar.",
+        faz: "Criada por lei complementar estadual (art. 25, § 3º, da CF) para integrar a organização, o planejamento e a execução de funções públicas de interesse comum dos municípios.",
+        pista: "É região administrativa. Quem cria é o Estado, não a União.",
       },
       {
-        termo: "RIDE",
-        faz: "Região integrada que envolve mais de uma unidade da Federação e é criada pela União.",
-        pista: "Exemplos: DF e Entorno, Petrolina-Juazeiro e Grande Teresina.",
+        termo: "RIDE (Região Integrada de Desenvolvimento)",
+        faz: "Região que junta municípios de mais de uma unidade da Federação. Criada por lei complementar federal e administrada com a União. Exemplos: DF e Entorno, Petrolina (PE)–Juazeiro (BA) e Grande Teresina (PI–MA).",
+        pista: "Passou de um Estado? É RIDE, e quem cria é a União.",
       },
       {
+        termo: "Migração pendular",
+        faz: "Deslocamento diário de ida e volta entre a cidade onde a pessoa mora e a cidade onde trabalha ou estuda, comum nas regiões metropolitanas.",
+      },
+      {
+        termo: "Megalópole em formação",
+        faz: "A junção das áreas metropolitanas de São Paulo e Rio de Janeiro e das cidades no caminho, ligadas por eixos como a Via Dutra (BR-116) e, no interior paulista, as rodovias Bandeirantes e Anhanguera.",
+      },
+      {
+        parte: "5. Rede urbana (REGIC/IBGE)",
         termo: "Rede urbana",
-        faz: "O IBGE ordena as cidades pela influência que exercem, em cinco níveis, da metrópole ao centro local.",
+        faz: "Conjunto de cidades ligadas por fluxos e por uma hierarquia: as maiores oferecem bens e serviços raros e polarizam as menores. O IBGE mede isso no estudo Regiões de Influência das Cidades (REGIC).",
       },
       {
-        termo: "Déficit habitacional",
-        faz: "Falta de moradia digna. O peso do aluguel é o maior fator, e há imóveis vagos ao mesmo tempo.",
+        termo: "Metrópoles (1º nível)",
+        faz: "15 no total, em três tipos: grande metrópole nacional (São Paulo); metrópoles nacionais (Rio de Janeiro e Brasília); e 12 metrópoles regionais. Campinas é a única metrópole que não é capital.",
+        pista: "São Paulo é a única grande metrópole nacional e também é cidade global.",
       },
       {
-        termo: "Autossegregação",
-        faz: "Grupos de alta renda escolhem se isolar em condomínios fechados.",
+        termo: "Os outros 4 níveis",
+        faz: "Capital regional (97 cidades, subníveis A, B e C); centro sub-regional (352, A e B); centro de zona (398, A e B); centro local (cerca de 4 mil cidades, a grande maioria, com influência só no próprio município).",
+        pista: "Ordem: metrópole → capital regional → centro sub-regional → centro de zona → centro local.",
+      },
+      {
+        termo: "Cidade global",
+        faz: "Centro de comando da economia mundial: sedes de grandes empresas, bancos, bolsa e serviços avançados, ligada às outras cidades globais. No Brasil, São Paulo.",
+      },
+      {
+        parte: "6. Problemas urbanos",
+        termo: "Moradia",
+        faz: "Déficit habitacional na casa dos 6 milhões de moradias. Causas: renda baixa, aluguel caro e especulação imobiliária, que empurra os pobres para a periferia (periferização) e para áreas de risco (encostas, beira de rio). Movimentos sociais, como o dos trabalhadores sem teto, cobram moradia.",
+      },
+      {
+        termo: "Segregação e autossegregação",
+        faz: "Segregação socioespacial: separação dos grupos pela renda no espaço da cidade. Autossegregação: os mais ricos se isolam por vontade própria em condomínios fechados.",
+      },
+      {
+        termo: "Gentrificação",
+        faz: "Área antiga ou popular é reformada e valorizada; o custo de vida sobe e os moradores pobres são expulsos, substituídos por gente de renda maior.",
+        pista: "Não é favelização nem periferização: é valorização com exclusão.",
+      },
+      {
+        termo: "Mobilidade",
+        faz: "Dependência do carro e transporte coletivo defasado geram congestionamento, horas perdidas e poluição. Respostas: rodízio de placas, corredores de ônibus, metrô e ciclovias.",
+      },
+      {
+        termo: "Violência urbana",
+        faz: "O Brasil está entre os países com mais homicídios no mundo. Fatores: ausência do Estado em áreas da periferia, desigualdade, desemprego e tráfico de drogas.",
+      },
+      {
+        termo: "Saneamento",
+        faz: "Parte da população ainda não tem água tratada (cerca de 16%), quase metade não tem coleta de esgoto e menos da metade do esgoto é tratada.",
+        pista: "Falta mais esgoto que água.",
+      },
+      {
+        termo: "Lixo",
+        faz: "Lixão: céu aberto, sem controle (pior). Aterro controlado: lixo coberto com terra, sem proteção completa do solo. Aterro sanitário: solo impermeabilizado, tratamento do chorume e dos gases (o correto). A Política Nacional de Resíduos Sólidos (Lei 12.305/2010) manda acabar com os lixões.",
+      },
+      {
+        termo: "Poluição do ar e ilha de calor",
+        faz: "Carros e indústrias poluem o ar. Asfalto, concreto e pouca vegetação deixam o centro da cidade mais quente que a periferia e o campo: é a ilha de calor. Arborizar ajuda a reduzir.",
+      },
+      {
+        parte: "7. Gestão ambiental urbana",
+        termo: "Agenda Nacional de Qualidade Ambiental Urbana",
+        faz: "Programa federal com seis eixos: Combate ao Lixo no Mar, Lixão Zero, Cidades+Verdes, Qualidade do Ar, Saneamento e Qualidade das Águas, e Áreas Contaminadas.",
+        pista: "São 6 eixos. Desconfie de lista que troca um deles por “energia” ou “mineração”.",
       },
     ],
     cuidado:
-      "Cidade crescer não prova urbanização. É preciso que a fatia urbana no total da população aumente.",
+      "Região metropolitana é criada pelo Estado (lei complementar estadual); RIDE, que passa de um Estado, pela União. E desmetropolização não é perda de força das metrópoles: é crescimento maior das cidades médias.",
   },
   questoes: [
     {
