@@ -4,44 +4,163 @@ export const AULA: AulaEscrita = {
   aula: "proc-02",
   resumo: {
     ideia:
-      "Prova é o que se produz em juízo, com contraditório. O que a polícia colhe no inquérito é elemento informativo e, sozinho, não basta para condenar. Prova obtida com violação da lei é inadmissível.",
+      "Prova é o que se produz em juízo, com contraditório. O que a polícia colhe no inquérito é elemento informativo e, sozinho, não basta para condenar. Prova obtida com violação da lei é inadmissível. A aula cobre o conceito, os sistemas de avaliação, o objeto, as classificações, o ônus, os princípios, as provas ilegais do art. 157 e a cadeia de custódia.",
     itens: [
       {
+        parte: "1. Conceito, finalidade e destinatários",
         termo: "Prova x elemento informativo",
         faz: "Prova nasce no processo, com as partes. Elemento informativo nasce na investigação, sem contraditório obrigatório.",
+        pista: "Elemento informativo serve para medidas cautelares e para formar a opinião do MP sobre denunciar; para condenar, precisa ser confirmado em juízo.",
       },
       {
+        termo: "Dois sentidos de prova",
+        faz: "Sentido objetivo: a atividade de provar e os meios usados (testemunha, perícia, documento). Sentido subjetivo: o resultado, a convicção que se forma na mente do juiz.",
+      },
+      {
+        termo: "Finalidade e verdade",
+        faz: "A prova busca convencer o juiz sobre os fatos. A verdade alcançada é a processual: a reconstrução mais fiel possível, nunca absoluta. O processo penal fala em verdade real ou material (buscar o que de fato ocorreu), em oposição à verdade formal (contentar-se com o que as partes trouxeram), mas sempre dentro das regras e dos limites da lei.",
+      },
+      {
+        termo: "Destinatários da prova",
+        faz: "O destinatário principal é o juiz, que decide. As partes são destinatárias secundárias: também tiram conclusões da prova e a usam em seus pedidos e recursos.",
+      },
+      {
+        termo: "Etapas da prova",
+        faz: "Proposição (a parte pede: o MP na denúncia, a defesa na resposta à acusação), admissão (o juiz defere ou indefere), produção (a prova entra nos autos) e valoração (o juiz pesa cada prova e fundamenta).",
+        pista: "Pedida no momento certo, a prova só é negada se impertinente; pedida fora dele, pode ser negada por desnecessária.",
+      },
+      {
+        parte: "2. Art. 155 e provas urgentes",
         termo: "Art. 155",
         faz: "O juiz não pode condenar só com base no inquérito. Exceções: provas cautelares, não repetíveis e antecipadas.",
         pista: "Nas exceções, o contraditório é diferido: a defesa discute depois.",
       },
       {
+        termo: "Cautelares, não repetíveis e antecipadas",
+        faz: "Cautelar: feita com urgência, muitas vezes sem aviso à parte, para não se perder (ex.: interceptação telefônica); a defesa contesta depois. Não repetível: não pode ser refeita mais tarde, porque o vestígio some (ex.: exame de lesão leve que cicatriza). Antecipada: produzida antes da hora normal, com ordem judicial e contraditório real naquele momento (ex.: ouvir testemunha muito idosa ou gravemente doente, art. 225).",
+        pista: "Súmula 455 do STJ: a produção antecipada com base no art. 366 (réu citado por edital que some) exige fundamento concreto; o simples passar do tempo não basta.",
+      },
+      {
+        parte: "3. Sistemas de avaliação da prova",
         termo: "Convencimento motivado",
         faz: "Regra no Brasil: o juiz avalia livremente, mas fundamenta. Os jurados do Júri votam por íntima convicção, sem motivar.",
       },
       {
-        termo: "Resquícios da prova tarifada",
-        faz: "Certidão de óbito para extinguir a punibilidade (art. 62), corpo de delito nos crimes com vestígio (art. 158) e estado das pessoas pela lei civil (art. 155, parágrafo único).",
+        termo: "Limites do convencimento motivado",
+        faz: "Também chamado de persuasão racional. O juiz é livre para dar peso às provas, mas: deve fundamentar a decisão (art. 93, IX, da CF), só pode usar o que está nos autos e deve analisar o conjunto. Nenhuma prova vale de forma absoluta: nem a confissão (art. 197). O sistema não é taxativo: valem também provas que a lei não lista, desde que lícitas.",
       },
       {
+        termo: "Íntima convicção e prova tarifada",
+        faz: "Íntima convicção (certeza moral do juiz): decide sem dizer por quê; no Brasil, só os jurados. Prova tarifada (prova legal ou certeza moral do legislador): a lei fixa o peso de cada prova, e o juiz apenas soma; não é a regra, mas deixou restos no CPP.",
+      },
+      {
+        termo: "Resquícios da prova tarifada",
+        faz: "Certidão de óbito para extinguir a punibilidade (art. 62), corpo de delito nos crimes com vestígio (art. 158) e estado das pessoas pela lei civil (art. 155, parágrafo único).",
+        pista: "Súmula 74 do STJ: a menoridade do réu, para efeitos penais, só se prova por documento hábil (ex.: certidão de nascimento), não por testemunha.",
+      },
+      {
+        parte: "4. Objeto da prova",
         termo: "Objeto da prova",
         faz: "Fatos da acusação. Fato incontroverso também precisa de prova. Dispensam prova: fatos notórios, axiomáticos, inúteis e presunções legais.",
       },
       {
+        termo: "Direito que precisa de prova",
+        faz: "Em regra, o direito não se prova: o juiz conhece a lei. Mas quem alega direito municipal, estadual, estrangeiro ou costumeiro pode ter de provar o teor e a vigência (regra do processo civil usada por analogia). A doutrina inclui atos normativos pouco conhecidos, como regulamentos e portarias.",
+      },
+      {
+        termo: "Fatos que dispensam prova",
+        faz: "Axiomáticos ou evidentes: decorrem de raciocínio lógico (quem nasceu em data certa tem idade certa). Notórios (verdade sabida): conhecidos de todos (ex.: datas festivas, uma pandemia mundial). Presunções legais: a lei já os dá por verdadeiros; a absoluta não admite prova em contrário, a relativa admite (a inocência é presunção relativa). Inúteis ou irrelevantes: nada mudam na causa.",
+        pista: "Na presunção, o fato que a gera ainda precisa ser provado: para a vulnerabilidade do menor de 14 anos, prova-se a idade.",
+      },
+      {
+        termo: "Fato incontroverso no processo penal",
+        faz: "Diferente do processo civil, não se presume verdadeiro o fato que o réu deixa de contestar, nem o que ele admite. A acusação ainda precisa provar, porque o que está em jogo é a liberdade.",
+      },
+      {
+        parte: "5. Classificações da prova",
+        termo: "Pelo objeto, valor e sujeito",
+        faz: "Objeto: direta (prova o próprio fato, como a testemunha que viu) ou indireta (chega ao fato por dedução, como o álibi ou o indício). Valor: plena (permite juízo de certeza e pode, sozinha, sustentar a decisão) ou não plena (só reforça, como o indício). Sujeito: real (vem de coisa, como cadáver ou documento) ou pessoal (vem de pessoa, como testemunho ou interrogatório).",
+      },
+      {
+        termo: "Pela finalidade",
+        faz: "Positiva: busca confirmar que o fato ocorreu. Negativa (ou contrária): busca mostrar que o fato não ocorreu.",
+      },
+      {
+        termo: "Pela previsão legal",
+        faz: "Nominada: a lei dá o nome. Típica: a lei prevê a prova e o procedimento. Atípica: para uns, a que a lei não prevê (igual à inominada); para outros, também a prevista sem procedimento definido. Irritual: típica, mas feita fora do modelo legal, por isso com nulidade. Anômala: prova típica usada para fim diferente do previsto. Fora da terra: produzida em outro juízo, por carta precatória. Crítica: outro nome da prova pericial.",
+      },
+      {
+        termo: "Prova emprestada",
+        faz: "Produzida em um processo e levada para outro. Para o STJ, não precisa haver as mesmas partes; o que se exige é contraditório sobre ela no processo novo. Com os requisitos, vale como as demais provas; sem eles, vira mero indício (prova não plena).",
+        pista: "O STF admite (Tema 990) que a Receita Federal e a UIF compartilhem com o MP e a polícia, sem ordem judicial, dados fiscais e bancários completos, por canal formal e com sigilo.",
+      },
+      {
+        termo: "Serendipidade",
+        faz: "Encontro fortuito de prova: investigando um crime de forma lícita, acha-se por acaso prova de outro fato ou de outra pessoa. Essa prova pode ser usada para fundamentar decisões sobre o fato achado.",
+      },
+      {
+        parte: "6. Ônus da prova e iniciativa do juiz",
         termo: "Ônus da prova",
         faz: "Cabe a quem alega (art. 156). Não há inversão no processo penal. A dúvida favorece o réu.",
+        pista: "A acusação prova materialidade, autoria, nexo causal e dolo ou culpa. A defesa prova o que alega para excluir ou mudar a acusação (álibi, legítima defesa); mas, havendo dúvida fundada sobre a excludente, o juiz absolve (art. 386, VI).",
+      },
+      {
+        termo: "Ônus subjetivo e objetivo",
+        faz: "Subjetivo: diz qual parte deve produzir a prova. Objetivo: é a regra de julgamento quando a prova falta; no processo penal, quem perde é a acusação (in dubio pro reo). O ônus é da fase judicial; no inquérito, quem colhe tudo é a autoridade policial.",
       },
       {
         termo: "Estrutura acusatória",
         faz: "Art. 3º-A: o juiz não investiga nem substitui a acusação. O STF permite diligência pontual para tirar dúvida relevante.",
       },
       {
+        termo: "Juiz que produz prova (art. 156, I e II)",
+        faz: "I: antes da ação, ordenar prova antecipada urgente e relevante, com necessidade, adequação e proporcionalidade; com o pacote anticrime, a doutrina vê esse poder de ofício na investigação como incompatível com o juiz das garantias. II: no curso da instrução ou antes da sentença, mandar fazer diligência para tirar dúvida sobre ponto relevante (ex.: ouvir testemunha não arrolada, art. 209). STF e STJ tratam a iniciativa do juiz como válida, mas excepcional e complementar.",
+      },
+      {
+        termo: "Standards probatórios",
+        faz: "Grau de certeza exigido em cada etapa. Para começar a investigar: mera possibilidade. Para receber a denúncia (justa causa): prova da materialidade e probabilidade de autoria. Para condenar: certeza além de qualquer dúvida razoável, que o art. 386, VI e VII, expressa ao mandar absolver na dúvida.",
+      },
+      {
+        termo: "Perda de uma chance probatória",
+        faz: "STJ (2023): se a acusação, sem justificativa, deixa de produzir prova que estava ao seu alcance e poderia confirmar a tese da defesa (ex.: não requisitar as câmeras do local), essa omissão pesa contra a acusação e pode levar à absolvição.",
+      },
+      {
+        parte: "7. Princípios da prova",
+        termo: "Comunhão da prova",
+        faz: "Produzida, a prova serve a todos, não só a quem a pediu.",
+        pista: "Também chamado de aquisição da prova: a testemunha arrolada pela defesa pode acabar ajudando a acusação.",
+      },
+      {
+        termo: "Contraditório e autorresponsabilidade",
+        faz: "Contraditório: toda prova de uma parte pode ser contestada pela outra, com contraprova. Autorresponsabilidade: cada parte arca com o resultado de não provar o que lhe cabia; se a acusação não prova autoria e materialidade, o réu é absolvido.",
+      },
+      {
+        termo: "Oralidade e seus subprincípios",
+        faz: "A prova, quando possível, é produzida oralmente diante do juiz. Concentração: tudo em audiência única, com debates orais ao final (arts. 400 e 403). Imediação: o juiz tem contato direto com a prova; a videoconferência a atenua. Publicidade: atos abertos (arts. 5º, LX, e 93, IX, da CF), com restrição quando a intimidade ou o interesse social exigir. Identidade física: o juiz que presidiu a instrução sentencia (art. 399, § 2º).",
+      },
+      {
+        termo: "Liberdade probatória e seus limites",
+        faz: "Vale qualquer meio lícito, sobre qualquer fato relevante, e documentos podem ser juntados em qualquer fase (art. 231). Limites: estado das pessoas segue a lei civil (art. 155, parágrafo único); no Júri, documento lido em plenário precisa ter sido juntado com 3 dias úteis de antecedência (art. 479); o juiz pode negar provas irrelevantes, impertinentes ou protelatórias (art. 400, § 1º).",
+      },
+      {
+        termo: "Não autoincriminação",
+        faz: "Ninguém é obrigado a produzir prova contra si: o acusado pode calar, não participar da reprodução simulada, não fornecer material para exame grafotécnico e não fazer o teste do bafômetro nem exame de sangue (STJ). Se fizer de forma voluntária, a prova é válida.",
+        pista: "No trânsito, a recusa ao bafômetro não gera crime, mas é infração administrativa (art. 165-A do CTB), e o STF julgou essa punição constitucional (Tema 1.079).",
+      },
+      {
+        parte: "8. Provas ilegais (art. 157)",
         termo: "Ilícita x ilegítima",
         faz: "Ilícita viola norma material, em regra fora do processo. Ilegítima viola norma processual e gera nulidade. O art. 157 trata ambas como ilícitas.",
+        pista: "Provas ilegais é o gênero: ilícitas, ilícitas por derivação e ilegítimas. São ilícitas: interceptação sem ordem judicial, busca em casa sem mandado fora das exceções, violação de correspondência, confissão sob tortura.",
+      },
+      {
+        termo: "Ilegítima e as nulidades",
+        faz: "A prova ilegítima segue o regime das nulidades, não o do art. 157. Nulidade absoluta: a prova não se usa, mas STF e STJ exigem demonstrar o prejuízo. Nulidade relativa: a prova é usada se a parte não reclamar a tempo ou se o defeito for sanado; o juiz não a reconhece de ofício.",
       },
       {
         termo: "Desentranhamento",
         faz: "Prova ilícita sai dos autos e, preclusa a decisão, é inutilizada (art. 157, § 3º).",
+        pista: "As partes podem acompanhar a inutilização. Reconhecer uma prova ilícita não tranca a ação se ainda há outras provas válidas (STF).",
       },
       {
         termo: "Provas derivadas",
@@ -49,16 +168,44 @@ export const AULA: AulaEscrita = {
         pista: "A definição do § 2º lembra a descoberta inevitável.",
       },
       {
-        termo: "Ilícita a favor do réu",
-        faz: "Pela proporcionalidade, a doutrina e a jurisprudência admitem prova ilícita para absolver.",
+        termo: "Frutos da árvore envenenada",
+        faz: "A prova derivada é lícita em si, mas só existe por causa da ilícita (ex.: a arma achada pelo que se arrancou sob tortura). Se a ilícita contamina a derivada, ambas saem. Não há contaminação quando não há nexo causal entre elas.",
       },
       {
-        termo: "Comunhão da prova",
-        faz: "Produzida, a prova serve a todos, não só a quem a pediu.",
+        termo: "Fonte independente e descoberta inevitável",
+        faz: "Fonte independente (§ 2º): a prova chegaria aos autos por um caminho próprio e lícito, seguindo os passos normais da investigação (ex.: a testemunha também foi indicada por outra pessoa, em depoimento livre). Descoberta inevitável (ou fonte hipotética independente): pelas circunstâncias, a prova seria achada de qualquer modo, de forma lícita, mesmo sem a prova ilícita.",
+        pista: "A chamada exceção da boa-fé (o agente achava que agia dentro da lei) não é acolhida pelos tribunais brasileiros.",
+      },
+      {
+        termo: "Ilícita a favor do réu",
+        faz: "Pela proporcionalidade, a doutrina e a jurisprudência admitem prova ilícita para absolver.",
+        pista: "A prova não vira lícita: serve só para inocentar o réu e não pode ser usada contra o verdadeiro autor que ela revela.",
+      },
+      {
+        termo: "Juiz que viu a prova ilícita",
+        faz: "O § 5º do art. 157 (Lei 13.964/2019) proibia esse juiz de sentenciar. O STF, nas ADIs 6.298, 6.299, 6.300 e 6.305, declarou o dispositivo inconstitucional.",
+      },
+      {
+        termo: "Congelamento de dados na internet",
+        faz: "STF (HC 222.141, 2024): são nulas as provas obtidas de dados de contas na internet preservados (congelados) a pedido direto do MP, sem ordem judicial de quebra de sigilo e fora das hipóteses legais.",
+      },
+      {
+        parte: "9. Cadeia de custódia (art. 158-A)",
+        termo: "Conceito de cadeia de custódia",
+        faz: "Conjunto de procedimentos para manter e documentar a história do vestígio, do reconhecimento ao descarte, para rastrear quem o teve e como foi manuseado. Começa com a preservação do local do crime ou com o ato policial ou pericial que detecta o vestígio.",
+        pista: "Vestígio é todo objeto ou material bruto, visível ou latente, constatado ou recolhido, que se relaciona à infração penal (§ 3º). O agente público que reconhece um possível vestígio fica responsável por preservá-lo (§ 2º).",
+      },
+      {
+        termo: "As 10 etapas (art. 158-B)",
+        faz: "Reconhecimento, isolamento, fixação, coleta, acondicionamento, transporte, recebimento, processamento, armazenamento e descarte.",
+      },
+      {
+        termo: "Quebra da cadeia de custódia",
+        faz: "Uma visão diz que qualquer falha torna a prova ilícita, com desentranhamento, haja boa ou má-fé. A visão do STJ: a falha não anula a prova por si só; o juiz avalia, com as demais provas, se ela continua confiável.",
       },
     ],
     cuidado:
-      "O § 5º do art. 157 ainda aparece no texto do CPP, mas o STF o declarou inconstitucional em 2023: o juiz que viu a prova ilícita pode sentenciar.",
+      "O § 5º do art. 157 ainda aparece no texto do CPP, mas o STF o declarou inconstitucional em 2023: o juiz que viu a prova ilícita pode sentenciar. Prova ilícita pode ser usada para absolver, nunca para condenar. Fato que o réu não contesta continua precisando de prova.",
   },
   questoes: [
     {

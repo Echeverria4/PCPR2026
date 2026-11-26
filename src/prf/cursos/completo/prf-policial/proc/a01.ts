@@ -4,11 +4,38 @@ export const AULA: AulaEscrita = {
   aula: "proc-01",
   resumo: {
     ideia:
-      "A ação penal leva o caso ao juiz. Quem acusa depende do crime: o Ministério Público na ação pública, a vítima na ação privada. Antes dela, o MP pode arquivar ou propor o acordo de não persecução penal.",
+      "O processo é o caminho que o Estado usa para julgar; o procedimento é o rito desse caminho. A ação penal leva o caso ao juiz, e quem acusa depende do crime: o Ministério Público na ação pública, a vítima na ação privada. Antes dela, o MP pode arquivar ou propor o acordo de não persecução penal. Depois, tudo anda por atos processuais com prazos contados de um jeito próprio.",
     itens: [
       {
+        parte: "1. Processo, procedimento e relação processual",
+        termo: "Processo x procedimento",
+        faz: "Processo é o instrumento pelo qual o Estado exerce a jurisdição (diz o direito no caso concreto). Procedimento é o rito, a forma de andar desse processo. No penal, o processo começa por iniciativa do MP (ação pública) ou do ofendido (ação privada).",
+      },
+      {
+        termo: "Sujeitos da relação processual",
+        faz: "A relação tem três sujeitos: acusação (MP ou ofendido), juiz e acusado. O objeto é a aplicação da lei penal ao caso, que termina na sentença. Peritos, defensor e outros atuam no processo, mas não integram essa relação.",
+        pista: "A pessoa jurídica pode ser autora (art. 37). Como ré, o STF e o STJ só aceitam nos crimes ambientais (art. 225, § 3º, da CF e Lei 9.605/1998).",
+      },
+      {
+        termo: "Pressupostos processuais",
+        faz: "Subjetivos, do juiz: investidura (ingresso na magistratura), competência e imparcialidade. Das partes: capacidade de ser parte, capacidade processual e capacidade postulatória (o habeas corpus dispensa advogado). Objetivos: extrínsecos, a falta de fatos impeditivos como litispendência e coisa julgada; intrínsecos, como procedimento adequado, citação válida e ausência de nulidades.",
+      },
+      {
+        termo: "Procedimento comum",
+        faz: "Ordinário se a pena máxima for igual ou superior a 4 anos; sumário se inferior a 4 anos; sumaríssimo para menor potencial ofensivo, pena máxima de até 2 anos (art. 394). Lei com procedimento especial prevalece.",
+      },
+      {
+        parte: "2. Condições da ação",
         termo: "Condições da ação",
         faz: "Legitimidade, interesse e possibilidade do pedido, além da justa causa (indícios de autoria e prova do crime). Sem elas, a denúncia é rejeitada (art. 395).",
+      },
+      {
+        termo: "Interesse e possibilidade do pedido",
+        faz: "Interesse de agir: no penal a via judicial é obrigatória para punir; o que se exige é usar a via adequada (o MP não oferece queixa em homicídio). Possibilidade jurídica: o fato precisa ser crime e o acusado precisa poder ser condenado (não se acusa alguém por fato que deixou de ser crime nem um menor de 18 anos).",
+      },
+      {
+        termo: "Legitimidade e justa causa",
+        faz: "Legitimidade ativa é do titular da ação (MP ou ofendido); a passiva, do suposto autor. Justa causa é o lastro mínimo de autoria e materialidade; parte da doutrina não a trata como condição. O STJ a analisa olhando para trás (o que a investigação reuniu) e também para frente (o que a instrução pode reforçar).",
       },
       {
         termo: "Rejeição da denúncia",
@@ -16,55 +43,213 @@ export const AULA: AulaEscrita = {
         pista: "Inepta é a peça que não descreve o fato (art. 41).",
       },
       {
-        termo: "Pública incondicionada",
-        faz: "Regra geral. Só o MP denuncia, sem depender da vontade da vítima, e não pode desistir (art. 42).",
+        parte: "3. Ação pública incondicionada e seus princípios",
+        termo: "Espécies de ação penal",
+        faz: "Pública incondicionada; pública condicionada à representação do ofendido ou à requisição do Ministro da Justiça; privada exclusiva, personalíssima e subsidiária da pública. Se a lei não diz nada sobre o crime, a ação é pública incondicionada.",
       },
       {
-        termo: "Pública condicionada",
-        faz: "Depende de representação da vítima ou de requisição do Ministro da Justiça. A representação fica irretratável depois de oferecida a denúncia (art. 25).",
-        pista: "Prazo de 6 meses; 12 meses na violência doméstica contra a mulher (art. 38).",
+        termo: "Pública incondicionada",
+        faz: "Regra geral. Só o MP denuncia, sem depender da vontade da vítima, e não pode desistir (art. 42).",
+        pista: "O MP tem a ação de forma privativa (art. 129, I, da CF e art. 257, I, do CPP). Não existe ação penal iniciada de ofício pelo juiz.",
+      },
+      {
+        termo: "Quem pode provocar o MP",
+        faz: "Qualquer pessoa do povo pode levar ao MP, por escrito, informações sobre fato e autoria (art. 27), inclusive nos crimes de ação condicionada (aí o MP ainda depende da representação). Juiz ou tribunal que encontra crime de ação pública remete cópias ao MP (art. 40).",
       },
       {
         termo: "Bens públicos",
         faz: "Art. 24, § 2º: crime contra patrimônio ou interesse da União, Estado ou Município é sempre de ação pública.",
       },
       {
+        termo: "Obrigatoriedade",
+        faz: "Com indícios de autoria e prova da materialidade, o MP deve denunciar; não escolhe por conveniência. O princípio está mitigado pelos instrumentos de não persecução (transação penal e acordo de não persecução). Arquivar quando falta base não viola a obrigatoriedade.",
+      },
+      {
+        termo: "Indisponibilidade e oficialidade",
+        faz: "Proposta a ação, o MP não pode desistir (art. 42); pode pedir a absolvição, mas o juiz não fica preso a esse pedido. Oficialidade: a ação pública é movida por órgão oficial, o MP; a exceção é a ação privada subsidiária, quando o MP fica inerte.",
+      },
+      {
+        termo: "Divisibilidade e intranscendência",
+        faz: "Na ação pública, o MP pode denunciar só alguns autores e depois aditar a denúncia ou propor outra ação contra os demais; por isso o STJ rejeita o arquivamento implícito. Intranscendência vale para toda ação penal: ela não passa da pessoa do autor (o filho não responde pelo crime do pai).",
+      },
+      {
+        termo: "Prazo da denúncia",
+        faz: "Art. 46: 5 dias com réu preso e 15 dias com réu solto, contados do recebimento do inquérito.",
+        pista: "São prazos impróprios: a denúncia atrasada vale enquanto não extinta a punibilidade. Com provas suficientes, o MP pode denunciar sem inquérito (art. 39, § 5º).",
+      },
+      {
         termo: "Arquivamento",
         faz: "O MP decide e comunica vítima, investigado e polícia (art. 28). O STF exige que a manifestação seja submetida ao juiz. A vítima pode pedir revisão em 30 dias.",
+        pista: "Quem pede a revisão é a vítima ou seu representante, à instância de revisão do próprio MP (art. 28, § 1º). Crime contra União, Estado ou Município: a revisão pode ser provocada pela chefia do órgão que representa o ente em juízo (§ 2º). O delegado nunca manda arquivar inquérito (art. 17).",
       },
       {
         termo: "Súmula 524 do STF",
         faz: "Arquivado o inquérito por falta de provas, a ação só começa com provas novas.",
+        pista: "Art. 18 do CPP: depois do arquivamento por falta de base, a polícia pode fazer novas pesquisas se souber de outras provas. Arquivamento por atipicidade ou extinção da punibilidade faz coisa julgada material e não se reabre.",
       },
       {
+        parte: "4. Ação pública condicionada",
+        termo: "Pública condicionada",
+        faz: "Depende de representação da vítima ou de requisição do Ministro da Justiça. A representação fica irretratável depois de oferecida a denúncia (art. 25).",
+        pista: "Prazo de 6 meses; 12 meses na violência doméstica contra a mulher (art. 38).",
+      },
+      {
+        termo: "Representação",
+        faz: "É condição de procedibilidade e também de perseguibilidade: sem ela nem o inquérito começa (art. 5º, § 4º). Não tem forma rígida; basta mostrar a vontade de ver o fato apurado. Pode ser feita pessoalmente ou por procurador com poderes especiais, por escrito ou oralmente, ao juiz, ao MP ou à autoridade policial (art. 39). A titularidade da ação continua sendo só do MP.",
+        pista: "Exemplos: ameaça (salvo contra a mulher por razões da condição do sexo feminino, que é incondicionada, art. 147 do CP) e, em regra, estelionato (art. 171, § 5º, do CP).",
+      },
+      {
+        termo: "Quem representa",
+        faz: "O ofendido maior de 18 anos e capaz; se menor ou incapaz, o representante legal; sem representante ou com interesses em conflito, um curador nomeado pelo juiz (art. 33). Morto ou declarado ausente o ofendido, o direito passa ao cônjuge, ascendente, descendente ou irmão, nessa ordem (art. 24, § 1º).",
+        pista: "Súmula 594 do STF: ofendido e representante legal exercem o direito de forma independente.",
+      },
+      {
+        termo: "Prazo da representação",
+        faz: "6 meses do dia em que a vítima soube quem é o autor (art. 38). É prazo decadencial, de direito material: conta o dia do começo e não se prorroga. Perdido o prazo, extingue-se a punibilidade. Na morte da vítima, os sucessores têm só o tempo que faltava. Para a vítima menor, o prazo dela corre a partir dos 18 anos, se o representante não agiu antes.",
+        pista: "Nos crimes de violência doméstica e familiar contra a mulher, o prazo é de 12 meses (art. 38, § 2º, incluído pela Lei 15.438/2026).",
+      },
+      {
+        termo: "Retratação e falta de representação",
+        faz: "A retratação vale até o oferecimento da denúncia, não até o recebimento. Cabe a retratação da retratação (representar de novo), dentro do prazo decadencial. A falta de representação pode ser suprida em juízo, também dentro do prazo. A representação é indivisível: vale contra todos os autores do fato.",
+      },
+      {
+        termo: "Retratação na Lei Maria da Penha",
+        faz: "Na ação condicionada da Lei 11.340/2006, a renúncia (retratação) só vale perante o juiz, em audiência própria, antes do recebimento da denúncia e ouvido o MP (art. 16). Para o STJ (Tema 1167), essa audiência só confirma a retratação: o juiz não a marca de ofício nem para confirmar a representação.",
+        pista: "Súmula 542 do STJ: a lesão corporal na violência doméstica contra a mulher é de ação pública incondicionada.",
+      },
+      {
+        termo: "Requisição do Ministro da Justiça",
+        faz: "Exigida em poucos crimes com juízo político, como o crime contra a honra do Presidente da República (art. 145, parágrafo único, do CP). Não tem prazo decadencial (cabe enquanto não extinta a punibilidade). Para a maioria, não admite retratação. Não obriga o MP a denunciar: é uma autorização.",
+      },
+      {
+        termo: "Súmulas sobre a ação",
+        faz: "Súmula 609 do STF: sonegação fiscal é de ação pública incondicionada. Súmula 714 do STF: no crime contra a honra de servidor em razão da função, a legitimidade é concorrente entre o ofendido (queixa) e o MP (com representação).",
+      },
+      {
+        parte: "5. Ação penal privada",
         termo: "Ação privada",
         faz: "A vítima oferece queixa em 6 meses. A personalíssima só a vítima ajuíza, e hoje só existe no art. 236 do CP.",
+        pista: "A lei indica a exclusiva com a frase \"somente se procede mediante queixa\" (ex.: exercício arbitrário sem violência, art. 345, parágrafo único, do CP).",
       },
       {
+        termo: "Princípios da ação privada",
+        faz: "Oportunidade: a vítima decide se ajuíza. Disponibilidade: pode desistir depois (perdão, perempção). Indivisibilidade: se acusar, tem de acusar todos os autores, e o MP vela por isso (art. 48). Intranscendência: a ação não passa do autor.",
+        pista: "Para a jurisprudência, a ação privada é indivisível e a pública é divisível.",
+      },
+      {
+        termo: "Quem oferece a queixa",
+        faz: "A vítima ou seu representante legal; morta ou ausente a vítima, cônjuge, ascendente, descendente ou irmão, nessa ordem (art. 31). Pode ser por procurador com poderes especiais (art. 44); se a vítima assina a queixa junto com o advogado, a procuração especial é dispensada. Associações e sociedades também podem ser querelantes (art. 37).",
+      },
+      {
+        termo: "Prazo da queixa",
+        faz: "6 meses, decadenciais, contados de quando a vítima soube quem é o autor. Queixa ajuizada no prazo, ainda que em juízo incompetente, afasta a decadência. Se a vítima morre antes da queixa, os sucessores têm o tempo que faltava; com a ação em curso, têm 60 dias para assumi-la, sob pena de perempção.",
+      },
+      {
+        termo: "Renúncia",
+        faz: "A vítima abre mão da queixa antes de ajuizar a ação. Pode ser expressa ou tácita (ato incompatível com a vontade de processar). É unilateral, sem depender de aceitação. Feita a um dos autores, vale para todos (art. 49). Omitir um autor por esquecimento não é renúncia: o MP pede que a vítima se manifeste.",
+      },
+      {
+        termo: "Perdão do ofendido",
+        faz: "Depois de ajuizada a ação, a vítima perdoa o querelado. É bilateral: depende de aceitação. Intimado, o querelado tem 3 dias para dizer se aceita, e o silêncio vale como aceitação (art. 58). Pode ser expresso ou tácito, no processo ou fora dele. Dado a um, aproveita a todos, mas não atinge quem recusar (art. 51).",
+      },
+      {
+        termo: "Perempção",
+        faz: "Perda do direito de seguir na ação por inércia do querelante (art. 60): I – deixar o processo parado por 30 dias seguidos; II – morte ou incapacidade sem que os sucessores assumam em 60 dias; III – faltar sem motivo a ato em que deva estar presente ou não pedir a condenação nas alegações finais; IV – extinção da pessoa jurídica querelante sem sucessor.",
+        pista: "Renúncia, perdão e perempção só existem na privada exclusiva e na personalíssima, nunca na subsidiária da pública.",
+      },
+      {
+        termo: "Personalíssima e papel do MP",
+        faz: "Na personalíssima só a vítima ajuíza; se ela morre, extingue-se a punibilidade. Hoje só no induzimento a erro essencial e ocultação de impedimento ao casamento (art. 236 do CP). Na privada exclusiva, o MP pode aditar a queixa só em pontos acessórios, sem incluir fato ou réu novo, e não oferece denúncia substitutiva (art. 45).",
+      },
+      {
+        parte: "6. Ação privada subsidiária da pública",
         termo: "Subsidiária da pública",
         faz: "Cabe só se o MP ficar inerte no prazo (art. 29). O MP pode aditar, repudiar a queixa e oferecer denúncia substitutiva.",
         pista: "Se a vítima perde os 6 meses, o MP ainda pode denunciar.",
       },
       {
-        termo: "Prazo da denúncia",
-        faz: "Art. 46: 5 dias com réu preso e 15 dias com réu solto, contados do recebimento do inquérito.",
+        termo: "Requisitos da subsidiária",
+        faz: "Crime de ação pública; inércia total do MP no prazo legal (5 dias com preso, 15 com solto), sem denúncia, arquivamento ou pedido de diligência; queixa em 6 meses contados do fim do prazo do MP. Nesses 6 meses a legitimidade é concorrente; depois, volta a ser só do MP. É a decadência imprópria: o prazo da vítima acaba, mas a punibilidade não se extingue.",
       },
       {
+        termo: "MP na subsidiária",
+        faz: "Atua como interveniente adesivo obrigatório: adita a queixa (inclusive com réu ou fato novo), repudia a queixa e oferece denúncia substitutiva, intervém em todos os atos, produz prova, recorre e, se o querelante for negligente, retoma a ação como parte principal (art. 29).",
+      },
+      {
+        parte: "7. Requisitos da denúncia e da queixa",
+        termo: "Requisitos do art. 41",
+        faz: "Exposição do fato criminoso com todas as circunstâncias; qualificação do acusado ou dados que permitam identificá-lo; classificação do crime; e, quando necessário, rol de testemunhas. Faltando o essencial, a peça é inepta e deve ser rejeitada; se recebida, cabe pedir o trancamento da ação.",
+      },
+      {
+        termo: "Fato, qualificação e classificação",
+        faz: "A descrição vaga ou genérica impede a defesa, porque o réu se defende dos fatos narrados. Sem nome certo, bastam sinais que identifiquem a pessoa: a falta do nome não atrasa a ação quando certa a identidade física (art. 259). A classificação errada não anula a peça: o juiz corrige depois (emendatio libelli).",
+      },
+      {
+        termo: "Testemunhas e forma da peça",
+        faz: "O rol vem com a denúncia ou queixa: até 8 testemunhas no rito ordinário e até 5 no sumário; a defesa arrola as suas na resposta à acusação. A peça é escrita em português, dirigida ao juízo competente (erro de endereçamento é mera irregularidade) e assinada pelo promotor ou pelo advogado do querelante.",
+        pista: "Se o MP vê nova definição jurídica do fato, deve aditar a denúncia em 5 dias, reduzindo a termo o aditamento oral (art. 384).",
+      },
+      {
+        parte: "8. Acordo de não persecução penal (art. 28-A)",
         termo: "Acordo de não persecução",
         faz: "Art. 28-A: crime sem violência ou grave ameaça, pena mínima inferior a 4 anos e confissão formal. Cumprido, extingue a punibilidade.",
         pista: "Não cabe para reincidente nem na violência doméstica.",
       },
       {
-        termo: "Prazos processuais",
-        faz: "Contínuos e peremptórios. Exclui-se o dia do começo e inclui-se o do vencimento (art. 798). Intimação na sexta: o prazo começa na segunda (Súmula 310 do STF).",
+        termo: "Requisitos do acordo",
+        faz: "Não ser caso de arquivamento; confissão formal e circunstanciada; infração (crime ou contravenção) sem violência ou grave ameaça à pessoa; pena mínima inferior a 4 anos (com pena mínima de 4 anos não cabe); acordo necessário e suficiente para reprovar e prevenir o crime. Na pena mínima entram as causas de aumento e de diminuição do caso (§ 1º).",
+        pista: "Tentativa reduz a pena mínima pela fração máxima; aumento de metade sobre mínimo de 3 anos já impede o acordo.",
       },
       {
-        termo: "Procedimento comum",
-        faz: "Ordinário se a pena máxima for igual ou superior a 4 anos; sumário se inferior; sumaríssimo para menor potencial ofensivo (art. 394).",
+        termo: "Condições do acordo",
+        faz: "Ajustadas de forma cumulativa ou alternativa: I – reparar o dano ou restituir a coisa, salvo impossibilidade; II – renunciar a bens e direitos que sejam instrumento, produto ou proveito do crime; III – prestar serviço à comunidade pelo tempo da pena mínima reduzida de 1/3 a 2/3; IV – pagar prestação pecuniária a entidade pública ou de interesse social; V – outra condição proporcional, por prazo determinado. Não há pena de prisão no acordo.",
+      },
+      {
+        termo: "Quando não cabe",
+        faz: "§ 2º: se couber transação penal (Juizado); investigado reincidente ou com conduta criminal habitual, reiterada ou profissional, salvo infrações anteriores insignificantes; benefício de acordo, transação ou suspensão condicional do processo nos 5 anos anteriores; violência doméstica ou familiar, ou crime contra a mulher por razões da condição do sexo feminino. STF e STJ também o vedam nos crimes raciais, inclusive a injúria racial.",
+      },
+      {
+        termo: "Recusa, formalização e homologação",
+        faz: "Se o MP recusa propor, o investigado pede a remessa ao órgão superior do MP (§ 14). O acordo é escrito e assinado por MP, investigado e defensor (§ 3º). O juiz homologa em audiência, ouvindo o investigado com o defensor para ver a voluntariedade e a legalidade (§ 4º). Condição inadequada, insuficiente ou abusiva: volta ao MP para reformular (§ 5º). Pode recusar a homologação (§ 7º), e dessa decisão cabe recurso em sentido estrito (art. 581, XXV).",
+      },
+      {
+        termo: "Execução e descumprimento",
+        faz: "Homologado, o MP inicia a execução no juízo da execução (§ 6º); para o STJ, é competente o juízo que homologou, que pode deprecar a fiscalização para o domicílio do beneficiado. A vítima é intimada da homologação e do descumprimento (§ 9º). O acordo não faz coisa julgada: descumprido, é rescindido e o MP denuncia (§ 10), e pode usar isso para negar a suspensão condicional do processo (§ 11). O STJ dispensa intimar o investigado para justificar antes da rescisão.",
+      },
+      {
+        termo: "Efeitos e jurisprudência",
+        faz: "Cumprido, o juiz declara extinta a punibilidade (§ 13). Não gera reincidência nem consta de certidão de antecedentes, salvo para impedir novo acordo em 5 anos (§ 12). STF (HC 185.913, 2024): cabe em processo que já corria quando a Lei 13.964/2019 entrou em vigor, mesmo sem confissão até então, se pedido antes do trânsito em julgado. Quem ficou em silêncio no inquérito pode depois ser informado da chance de confessar.",
+      },
+      {
+        parte: "9. Atos processuais",
+        termo: "Atos e seus defeitos",
+        faz: "Os atos das partes, do juiz (atos jurisdicionais) e dos auxiliares movem o processo. Ato típico é o praticado na forma da lei. Defeitos, do mais grave ao mais leve: inexistência (ex.: sentença dada por quem não tem jurisdição, como juiz aposentado), nulidade absoluta ou relativa (o ato existe, mas não produz efeitos) e mera irregularidade (não afeta a finalidade; ex.: perito que esquece de rubricar uma folha).",
+      },
+      {
+        termo: "Lugar dos atos",
+        faz: "Em regra, públicos e na sede do juízo, em dia e hora certos (art. 792). Em caso de necessidade, podem ser na residência do juiz ou em outro local designado (§ 2º). Algumas autoridades depõem onde indicarem (art. 221). Ato em outra comarca é por carta precatória; em outro país, rogatória; por juiz subordinado ao tribunal, carta de ordem.",
+      },
+      {
+        parte: "10. Prazos processuais",
+        termo: "Prazos processuais",
+        faz: "Contínuos e peremptórios. Exclui-se o dia do começo e inclui-se o do vencimento (art. 798). Intimação na sexta: o prazo começa na segunda (Súmula 310 do STF).",
+        pista: "Prazo que termina em domingo ou feriado vai ao dia útil seguinte (§ 3º). Prazo de direito material (decadência) conta o dia do começo.",
+      },
+      {
+        termo: "Dias dos atos e recesso",
+        faz: "Atos podem ocorrer em qualquer dia, mas sessões de julgamento não são marcadas para domingo ou feriado; iniciadas em dia útil, seguem (art. 797). De 20 de dezembro a 20 de janeiro os prazos ficam suspensos e não há audiências nem sessões (art. 798-A), salvo réu preso no próprio processo, Lei Maria da Penha e medidas urgentes.",
+      },
+      {
+        termo: "Início do prazo",
+        faz: "Corre da ciência da parte: intimação, audiência em que foi cientificada ou manifestação de ciência nos autos. Súmula 710 do STF: conta-se da data da intimação, e não da juntada do mandado ou da carta precatória.",
+      },
+      {
+        termo: "Prazos do juiz",
+        faz: "Contados do termo de conclusão (art. 800): 10 dias para decisão definitiva ou interlocutória mista, 5 dias para interlocutória simples e 1 dia para despacho de expediente. Com motivo justo, podem ser dobrados. Não há preclusão para o juiz: o ato é praticado mesmo atrasado. Juiz ou promotor que retarda perde dias de vencimento (art. 801).",
       },
     ],
     cuidado:
-      "A retratação da representação só vale até o oferecimento da denúncia. O recebimento pelo juiz é o marco da Lei Maria da Penha, não da regra geral.",
+      "A retratação da representação só vale até o oferecimento da denúncia. O recebimento pelo juiz é o marco da Lei Maria da Penha, não da regra geral. Renúncia é antes da ação e unilateral; perdão é depois e precisa ser aceito. No acordo de não persecução, pena mínima igual a 4 anos já não permite o acordo.",
   },
   questoes: [
     {
