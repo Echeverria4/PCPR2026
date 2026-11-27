@@ -4,11 +4,13 @@ export const AULA: AulaEscrita = {
   aula: "especial-05",
   resumo: {
     ideia:
-      "Os crimes do ECA protegem a criança e o adolescente de quem deveria cuidar deles e de quem os explora. Todos são de ação pública incondicionada, e nenhum admite a Lei 9.099, qualquer que seja a pena.",
+      "Os crimes do ECA (arts. 225 a 244-C) protegem a criança e o adolescente de quem deveria cuidar deles e de quem os explora. Todos são de ação pública incondicionada, e nenhum admite a Lei 9.099, qualquer que seja a pena. A Lei 15.487/2026 reescreveu os crimes de violência sexual (arts. 240 a 241-E): penas maiores, material feito com inteligência artificial e aumento para quem esconde o IP.",
     itens: [
       {
+        parte: "1. Regras gerais",
         termo: "Regras gerais",
         faz: "Valem a Parte Geral do CP e o CPP (art. 226). A ação é pública incondicionada (art. 227). Não se aplica a Lei 9.099, qualquer que seja a pena (art. 226, § 1º).",
+        pista: "Os crimes podem ser praticados por ação ou por omissão, sem prejuízo dos crimes do Código Penal e de outras leis (art. 225).",
       },
       {
         termo: "Violência doméstica",
@@ -19,6 +21,28 @@ export const AULA: AulaEscrita = {
         faz: "Para o servidor que pratica crime do ECA com abuso de autoridade, a perda do cargo depende de reincidência, e aí independe da pena aplicada (art. 227-A).",
       },
       {
+        termo: "Ocultar o IP",
+        faz: "A pena de qualquer crime do ECA aumenta de 1/3 a 2/3 se o autor usa proxy, VPN ou outra técnica para esconder, falsificar ou anonimizar o IP ou outro identificador digital, a fim de não ser identificado (art. 226-A, Lei 15.487/2026).",
+        pista: "Não há aumento no uso legítimo de ferramentas de privacidade e segurança digital, como proteger dados pessoais ou da empresa (parágrafo único).",
+      },
+      {
+        termo: "Vítima e custos",
+        faz: "A criança ou o adolescente vítima ou testemunha de violência sexual tem direito a atendimento psicológico e psicossocial contínuo, também no SUS, em local reservado e longe do agressor (art. 227-B). Quem causa lesão ou violência física, sexual ou psicológica paga todo o tratamento, até o ressarcimento ao SUS (art. 227-C).",
+        pista: "O atendimento considera também o dano de o material continuar circulando na internet. Os dois artigos vieram da Lei 15.487/2026.",
+      },
+      {
+        parte: "2. Gestante e recém-nascido",
+        termo: "Registro e declaração",
+        faz: "O encarregado de serviço ou o dirigente de estabelecimento de saúde da gestante que não mantém o registro das atividades (art. 10) ou não entrega, na alta, a declaração de nascimento com as intercorrências do parto e do bebê: detenção de 6 meses a 2 anos (art. 228).",
+        pista: "Tem forma culposa: detenção de 2 a 6 meses, ou multa.",
+      },
+      {
+        termo: "Identificar o bebê",
+        faz: "O médico, o enfermeiro ou o dirigente do estabelecimento que não identifica corretamente o recém-nascido e a mãe no parto, ou não faz os exames do art. 10: detenção de 6 meses a 2 anos (art. 229).",
+        pista: "Também tem forma culposa, com a mesma pena do art. 228: 2 a 6 meses, ou multa. São os únicos crimes culposos do ECA.",
+      },
+      {
+        parte: "3. Apreensão e liberdade",
         termo: "Apreensão ilegal",
         faz: "Apreender criança ou adolescente sem flagrante de ato infracional e sem ordem escrita do juiz, ou sem as formalidades legais: detenção de 6 meses a 2 anos (art. 230).",
         pista: "A Lei 15.163/2025 repetiu no próprio art. 230 que a Lei 9.099 não se aplica.",
@@ -26,27 +50,140 @@ export const AULA: AulaEscrita = {
       {
         termo: "Depois da apreensão",
         faz: "A autoridade policial deve comunicar logo o juiz e a família ou a pessoa indicada (art. 231). A autoridade que sabe da ilegalidade deve liberar na hora (art. 234).",
+        pista: "Não comunicar (art. 231) ou não liberar sem justa causa (art. 234): detenção de 6 meses a 2 anos. Se os pais ou o responsável comparecem, o adolescente é liberado na hora, com termo de compromisso de apresentá-lo ao MP no mesmo dia ou no primeiro dia útil, salvo se a gravidade do ato exigir a internação para a segurança dele ou a ordem pública (art. 174).",
+      },
+      {
+        termo: "Prazos do adolescente",
+        faz: "Descumprir, sem justificativa, prazo que o ECA fixa em favor do adolescente privado de liberdade: detenção de 6 meses a 2 anos (art. 235).",
+        pista: "Exemplo de prazo: a internação provisória, antes da sentença, dura no máximo 45 dias (art. 108).",
       },
       {
         termo: "Vexame",
         faz: "Submeter a vexame ou constrangimento criança ou adolescente sob sua autoridade, guarda ou vigilância: detenção de 6 meses a 2 anos (art. 232).",
+        pista: "A tortura de criança, que era o art. 233, foi revogada e hoje é crime da Lei 9.455/1997.",
       },
       {
+        termo: "Impedir as autoridades",
+        faz: "Impedir ou embaraçar a ação do juiz, do membro do Conselho Tutelar ou do MP no exercício de função prevista no ECA: detenção de 6 meses a 2 anos (art. 236).",
+        pista: "Todos os crimes dos arts. 228 a 236 têm detenção. A reclusão começa no art. 237.",
+      },
+      {
+        parte: "4. Lar substituto, venda e exterior",
         termo: "Lar substituto e venda de filho",
         faz: "Subtrair de quem tem a guarda para pôr em lar substituto: 2 a 6 anos (art. 237). Prometer ou entregar filho mediante paga: 1 a 4 anos, também para quem paga (art. 238).",
+        pista: "Os dois têm reclusão e multa. No art. 238, basta a promessa para o crime se consumar.",
+      },
+      {
+        termo: "ECA ou Código Penal",
+        faz: "Se a subtração do art. 237 visa pôr a criança em lar substituto, vale o ECA (reclusão de 2 a 6 anos e multa). Sem essa finalidade, é a subtração de incapazes do CP (art. 249): detenção de 2 meses a 2 anos, se o fato não for elemento de outro crime.",
+        pista: "O que separa os dois crimes é o fim de colocar a criança em outra família.",
       },
       {
         termo: "Envio ao exterior",
         faz: "Promover ou auxiliar o envio ao exterior sem as formalidades legais ou para lucrar: 4 a 6 anos. Com violência, grave ameaça ou fraude: 6 a 8, mais a pena da violência (art. 239).",
+        pista: "Basta uma das duas situações: falta de formalidade legal ou intenção de lucro.",
       },
       {
+        parte: "5. Violência sexual: produção e venda",
+        termo: "Novo nome do crime",
+        faz: "Desde a Lei 15.487/2026, a lei não fala mais em “cena de sexo explícito ou pornográfica”, mas em “conteúdo de violência sexual contra criança ou adolescente” (arts. 240 a 241-E).",
+        pista: "As penas também subiram. Materiais antigos ainda trazem as penas de 2008.",
+      },
+      {
+        termo: "Produzir o conteúdo",
+        faz: "Produzir, reproduzir, dirigir, fotografar, filmar ou registrar, por qualquer meio, conteúdo de violência sexual contra criança ou adolescente: reclusão de 4 a 10 anos e multa (art. 240).",
+        pista: "Antes de 2026, a pena era de 4 a 8 anos.",
+      },
+      {
+        termo: "Quem participa",
+        faz: "Responde igual quem financia, agencia, facilita, recruta, coage ou intermedeia a participação da criança ou do adolescente, ou contracena com ela (art. 240, § 1º, I). E quem exibe ou transmite o conteúdo em tempo real, pela internet, por aplicativo ou outro meio digital (II).",
+        pista: "A transmissão ao vivo entrou em 2024 (Lei 14.811). Quem financia entrou em 2026.",
+      },
+      {
+        termo: "Aumento do art. 240",
+        faz: "A pena aumenta de 1/3 a 2/3 se o autor: age no exercício de cargo ou função pública, ou a pretexto de exercê-la (I); se aproveita de relações domésticas, de coabitação ou de hospitalidade (II); é parente até o 3º grau, tutor, curador, preceptor, empregador ou tem autoridade sobre a vítima, ou age com o consentimento dessas pessoas (III) (§ 2º).",
+        pista: "Antes de 2026, o aumento era fixo de 1/3.",
+      },
+      {
+        termo: "Vender o material",
+        faz: "Vender ou expor à venda fotografia, vídeo ou outro registro com violência sexual contra criança ou adolescente: reclusão de 4 a 10 anos e multa, mais a perda dos bens e valores recebidos, em favor do Fundo dos Direitos da Criança do estado ou do DF (art. 241).",
+        pista: "Aumenta de 1/3 se a venda for pela internet ou por redes sociais (parágrafo único). Ressalva-se o direito do terceiro de boa-fé.",
+      },
+      {
+        parte: "6. Divulgação, posse e acesso",
+        termo: "Divulgar o material",
+        faz: "Oferecer, trocar, disponibilizar, transmitir, distribuir, publicar ou divulgar o material por qualquer meio, inclusive sistema de informática: reclusão de 4 a 10 anos e multa (art. 241-A).",
+        pista: "Aumenta de 1/3 se for publicado ou compartilhado em mais de uma plataforma, rede social ou aplicativo aberto ao público (§ 3º).",
+      },
+      {
+        termo: "Provedor e site",
+        faz: "Responde igual quem garante o armazenamento do material (I) ou o acesso a ele pela rede (II), e quem cria, administra, hospeda ou modera site, chat ou fórum feito para guardar, compartilhar ou produzir esse material (III) (art. 241-A, § 1º).",
+        pista: "Nos incisos I e II, o responsável pelo serviço só é punido se, notificado oficialmente, não tira o conteúdo do ar (§ 2º). O inciso III não depende de notificação.",
+      },
+      {
+        termo: "Justiça competente",
+        faz: "Se o material foi publicado na internet, em página que qualquer pessoa do mundo pode acessar, a competência é da Justiça Federal, por ser crime com alcance internacional (STF, RE 628.624). Se a troca foi privada, em conversa por aplicativo ou chat entre pessoas determinadas, é da Justiça Estadual (STJ, CC 150.564).",
+        pista: "Na troca privada, só vai para a Justiça Federal se houver prova de que o material saiu ou entrou no país.",
+      },
+      {
+        termo: "Posse e acesso",
+        faz: "Adquirir, possuir, armazenar ou solicitar, por qualquer meio, o material: reclusão de 3 a 6 anos e multa (art. 241-B). Responde igual quem acessa ou assiste a site, aplicativo ou streaming com esse material para satisfazer a própria lascívia ou a de outro (§ 4º).",
+        pista: "Pequena quantidade: a pena diminui de 1/6 a 1/3 (§ 1º). Antes de 2026, a pena era de 1 a 4 anos e a redução, de 1 a 2/3.",
+      },
+      {
+        termo: "Posse para denunciar",
+        faz: "Não há crime se a posse serve para comunicar o fato às autoridades, quando feita por: agente público no exercício da função (I); membro de entidade legalmente constituída que recebe e encaminha essas denúncias (II); representante legal ou funcionário de provedor, até entregar o material à polícia, ao MP ou ao Judiciário (III) (art. 241-B, § 2º).",
+        pista: "Essas pessoas devem manter o material em sigilo (§ 3º).",
+      },
+      {
+        parte: "7. Montagem, aliciamento e conceito",
+        termo: "Montagem e IA",
+        faz: "Simular a participação de criança ou adolescente em conteúdo de violência sexual por montagem ou alteração de foto, vídeo ou outra imagem, com qualquer recurso que mude a imagem ou a voz da vítima, inclusive inteligência artificial: reclusão de 3 a 5 anos e multa (art. 241-C).",
+        pista: "Responde igual quem vende, divulga, compra, possui ou guarda esse material montado (parágrafo único). Antes de 2026, a pena era de 1 a 3 anos.",
+      },
+      {
+        termo: "Aliciamento",
+        faz: "Aliciar, assediar, convidar, instigar ou constranger, por qualquer meio, menor de 14 anos, para praticar ato libidinoso: reclusão de 3 a 5 anos e multa, se não for crime mais grave (art. 241-D).",
+        pista: "Antes de 2026, a vítima era só a criança (até 12 anos incompletos) e o meio era de comunicação. Hoje é qualquer menor de 14 anos, por qualquer meio.",
+      },
+      {
+        termo: "Formas do aliciamento",
+        faz: "Responde igual quem permite, facilita ou induz o acesso do menor de 14 anos a material com sexo explícito ou nudez, para com ele praticar ato libidinoso (I), e quem alicia para induzi-lo a se exibir de forma lasciva ou sexualmente explícita (II) (art. 241-D, § 1º).",
+      },
+      {
+        termo: "Aumento do aliciamento",
+        faz: "Aumenta de 1/3 a 2/3 se o autor: usa IA, deepfake ou filtro para se passar por criança ou adolescente (I); usa perfil falso ou esconde a idade (II); usa aplicativo de mensagem, chat, rede social ou jogo online (III); promete vantagem à vítima (IV); se vale de relação de confiança, autoridade, cuidado, educação ou convivência (V) (art. 241-D, § 2º).",
+      },
+      {
+        termo: "O que é o material",
+        faz: "Material de violência sexual é qualquer representação de criança ou adolescente, real ou fictícia, mesmo criada ou manipulada por tecnologia ou IA, que mostre: atividade sexual explícita, real ou simulada (I); nudez total ou parcial com fim sexual (II); ou pose ou situação com conotação sexual, ainda que os órgãos genitais não apareçam ou estejam cobertos (III) (art. 241-E).",
+        pista: "Para saber se é sexual, olham-se o contexto, o modo de produção, o enquadramento e a finalidade (parágrafo único).",
+      },
+      {
+        parte: "8. Arma, bebida e fogos",
         termo: "Arma, bebida e fogos",
         faz: "Arma a criança ou adolescente: 3 a 6 anos (art. 242), hoje só para arma que não seja de fogo. Bebida alcoólica: 2 a 4 anos, com aumento de 1/3 até a metade se a vítima consumir (art. 243). Fogos: 6 meses a 2 anos (art. 244).",
         pista: "Arma de fogo, munição ou explosivo vão para o Estatuto do Desarmamento (art. 16, § 1º, V).",
       },
       {
+        termo: "Arma branca",
+        faz: "Vender, fornecer, mesmo de graça, ou entregar arma a criança ou adolescente: reclusão de 3 a 6 anos (art. 242). Como o Estatuto do Desarmamento é lei posterior e especial, o art. 242 ficou para as armas que não são de fogo, como facas e punhais.",
+      },
+      {
+        termo: "Bebida e outros produtos",
+        faz: "Vender, fornecer, servir, ministrar ou entregar, mesmo de graça, bebida alcoólica a criança ou adolescente, ou, sem justa causa, outro produto que cause dependência física ou psíquica: detenção de 2 a 4 anos e multa, se não for crime mais grave (art. 243).",
+        pista: "A bebida não precisa de justa causa para ser crime. O aumento de 1/3 até a metade, quando a vítima usa ou consome o produto, veio da Lei 15.234/2025. Droga ilícita é tráfico (Lei 11.343).",
+      },
+      {
+        termo: "Fogos de artifício",
+        faz: "Vender, fornecer, mesmo de graça, ou entregar fogos de estampido ou de artifício a criança ou adolescente: detenção de 6 meses a 2 anos e multa (art. 244).",
+        pista: "Ficam de fora os fogos tão fracos que não podem causar nenhum dano físico, mesmo usados de forma errada.",
+      },
+      {
+        parte: "9. Exploração, corrupção e desaparecimento",
         termo: "Exploração sexual",
         faz: "Submeter criança ou adolescente à exploração sexual: 4 a 10 anos. O dono, o gerente ou o responsável pelo local respondem igual, e a licença do estabelecimento é cassada (art. 244-A).",
+        pista: "A pena é de reclusão e multa, mais a perda dos bens e valores usados no crime, em favor do Fundo dos Direitos da Criança do estado ou do DF, ressalvado o terceiro de boa-fé (Lei 13.440/2017). A cassação da licença é efeito obrigatório da condenação. Só se aplica se o fato não for crime mais grave (Lei 15.487/2026).",
       },
       {
         termo: "Corrupção de menores",
@@ -54,12 +191,18 @@ export const AULA: AulaEscrita = {
         pista: "É crime formal: não é preciso provar que o menor foi corrompido (Súmula 500 do STJ). Dois adolescentes, dois crimes.",
       },
       {
+        termo: "Corrupção: detalhes",
+        faz: "A pena é de reclusão. Vale também o crime praticado por meio eletrônico, como salas de bate-papo na internet (§ 1º). O aumento de 1/3 vale quando a infração está no rol da Lei 8.072/1990 (§ 2º).",
+        pista: "Com dois adolescentes no mesmo crime, há dois crimes de corrupção de menores, em concurso formal (STJ).",
+      },
+      {
         termo: "Desaparecimento",
         faz: "Pai, mãe ou responsável que, de propósito, não comunicam à autoridade o desaparecimento da criança ou do adolescente: 2 a 4 anos (art. 244-C).",
+        pista: "Reclusão e multa (Lei 14.811/2024). Só existe na forma dolosa: o esquecimento não é crime.",
       },
     ],
     cuidado:
-      "A Lei 15.487/2026 trocou os termos dos arts. 240 a 241-E por “violência sexual contra criança ou adolescente” e incluiu o material feito com inteligência artificial. A Lei 15.234/2025 criou o aumento do art. 243.",
+      "A Lei 15.487/2026 trocou os termos dos arts. 240 a 241-E por “violência sexual contra criança ou adolescente”, incluiu o material feito com inteligência artificial e subiu as penas: produzir, vender e divulgar, 4 a 10 anos; possuir ou acessar, 3 a 6; montagem e aliciamento de menor de 14 anos, 3 a 5. Também criou o aumento de 1/3 a 2/3 para quem esconde o IP (art. 226-A). A Lei 15.234/2025 criou o aumento do art. 243.",
   },
   questoes: [
     {

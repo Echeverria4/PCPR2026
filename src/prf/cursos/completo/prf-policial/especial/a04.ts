@@ -4,63 +4,237 @@ export const AULA: AulaEscrita = {
   aula: "especial-04",
   resumo: {
     ideia:
-      "O Estatuto do Desarmamento separa ter a arma em casa ou no trabalho (posse) de levá-la consigo (porte), e arma de uso permitido de arma de uso restrito ou proibido. Os crimes são de perigo abstrato: não precisa haver perigo concreto, nem munição na arma.",
+      "O Estatuto do Desarmamento (Lei 10.826/2003) cria o Sinarm, regula registro, posse e porte de armas e define crimes. Ele separa ter a arma em casa ou no trabalho (posse) de levá-la consigo (porte), e arma de uso permitido de arma de uso restrito ou proibido. Os crimes são de perigo abstrato: não precisa haver perigo concreto, nem munição na arma. A aula traz ainda a Lei 5.553/1968, que proíbe reter documento de identidade.",
     itens: [
       {
+        parte: "1. Sinarm, Sigma e classes de armas",
+        termo: "Sinarm",
+        faz: "Sistema Nacional de Armas, instituído no Ministério da Justiça, no âmbito da Polícia Federal, com atuação em todo o país (art. 1º). Cadastra armas produzidas, importadas e vendidas, registros e portes concedidos pela PF, transferências, perdas, furtos, roubos e apreensões (art. 2º).",
+        pista: "Também cadastra e licencia armeiros, registra fabricantes, atacadistas, varejistas, exportadores e importadores, guarda a identificação do cano e as marcas de raiamento e microestriamento do projétil, e informa as Secretarias de Segurança dos estados e do DF.",
+      },
+      {
+        termo: "Sigma",
+        faz: "As armas das Forças Armadas e das Forças Auxiliares (PM e Corpo de Bombeiros Militar) não entram no Sinarm: ficam nos registros próprios, no Sigma, sistema do Exército (art. 2º, parágrafo único).",
+        pista: "PF, PRF, Polícia Civil, polícias legislativas, agentes prisionais e guardas municipais ficam no Sinarm. Pelo regulamento, ABIN e GSI ficam no Sigma.",
+      },
+      {
+        termo: "Classes de armas",
+        faz: "A classificação em uso permitido, restrito ou proibido é feita por ato do Presidente da República, por proposta do Exército (art. 23). Uso permitido: armas curtas semiautomáticas ou de repetição de até 407 joules (300 libras-pé), armas portáteis de alma lisa, armas longas de alma lisa de repetição de calibre 12 ou menor e armas de pressão de até 6 mm.",
+        pista: "Semiautomática ou de repetição: um disparo a cada acionamento do gatilho, sem rajada. O revólver é de repetição.",
+      },
+      {
+        termo: "Arma restrita ou proibida",
+        faz: "Uso restrito: armas automáticas de qualquer calibre, armas não portáteis, curtas acima de 407 joules e longas de alma raiada acima de 1.620 joules. Uso proibido: as proibidas por tratados de que o Brasil é parte e as disfarçadas com aparência de objeto inofensivo, como uma arma em forma de caneta.",
+        pista: "Arma automática nunca é de uso permitido. Arma não portátil é a que precisa de mais de uma pessoa ou de veículo para ser levada, ou fica presa em estrutura fixa.",
+      },
+      {
+        termo: "Referendo de 2005",
+        faz: "O art. 35 proibia a venda de armas e munições no país, mas dependia de referendo popular. Em outubro de 2005, a população rejeitou a proibição: a venda continua permitida, dentro das regras da lei.",
+      },
+      {
+        parte: "2. Registro e compra",
+        termo: "Registro obrigatório",
+        faz: "Toda arma de fogo precisa de registro no órgão competente (art. 3º). A de uso restrito é registrada no Comando do Exército.",
+        pista: "Ter registro não dá direito de levar a arma consigo: isso é o porte, que tem regras próprias.",
+      },
+      {
+        termo: "Requisitos da compra",
+        faz: "Para comprar arma de uso permitido, a pessoa declara a efetiva necessidade e prova: idoneidade, com certidões negativas das Justiças Federal, Estadual, Militar e Eleitoral, sem responder a inquérito ou processo criminal (I); ocupação lícita e residência certa (II); capacidade técnica e aptidão psicológica (III) (art. 4º).",
+        pista: "As certidões podem ser obtidas pela internet. Quem já tem porte de arma com as mesmas características fica dispensado do inciso III (§ 8º).",
+      },
+      {
+        termo: "Autorização e munição",
+        faz: "O Sinarm expede autorização de compra em nome do requerente, intransferível (§ 1º), e responde em até 30 dias úteis (§ 6º). Só se compra munição do calibre da arma registrada, na quantidade do regulamento (§ 2º). Venda de arma, acessório ou munição entre particulares depende de autorização do Sinarm (§ 5º).",
+        pista: "A loja comunica cada venda à autoridade, mantém banco de dados com as características da arma e do comprador e responde pelas armas até vendê-las (§§ 3º e 4º).",
+      },
+      {
+        termo: "Certificado de registro",
+        faz: "Vale em todo o país e permite manter a arma só dentro de casa ou de suas dependências, ou no local de trabalho de que o dono é titular ou responsável legal (art. 5º). É expedido pela PF, com autorização do Sinarm (§ 1º).",
+        pista: "Na zona rural, toda a área do imóvel conta como residência (§ 5º, Lei 13.870/2019). Para renovar o certificado, os requisitos do art. 4º são provados de novo em prazo não inferior a 3 anos (§ 2º).",
+      },
+      {
+        termo: "Menor de 25 anos",
+        faz: "É proibido a quem tem menos de 25 anos comprar arma de fogo (art. 28). A exceção vale para os integrantes dos incisos I, II, III, V, VI, VII e X do art. 6º: Forças Armadas, polícias, guardas municipais, ABIN e GSI, polícias legislativas, agentes prisionais e guardas portuárias, e auditores.",
+        pista: "Não estão na exceção: empresas de segurança privada (VIII), entidades de desporto (IX) e servidores de segurança de tribunais e MP (XI).",
+      },
+      {
+        parte: "3. Porte: quem tem",
+        termo: "Porte proibido como regra",
+        faz: "O porte é proibido em todo o país, salvo os casos da lei (art. 6º): Forças Armadas (I); polícias do art. 144 da CF e Força Nacional (II); guardas municipais (III); ABIN e GSI (V); polícias legislativas (VI); agentes prisionais, escoltas de presos e guardas portuárias (VII); empresas de segurança privada e de transporte de valores (VIII); entidades de desporto (IX); auditores da Receita Federal e do Trabalho (X); servidores de segurança dos tribunais e do MP (XI).",
+        pista: "O inciso IV, das guardas de cidades médias, perdeu efeito com a decisão do STF sobre as guardas municipais. As polícias legislativas das assembleias estaduais entraram em 2025 (Lei 15.306/2025).",
+      },
+      {
+        termo: "Porte do policial",
+        faz: "Integrantes dos órgãos do art. 144 da Constituição, como a PRF, podem portar arma da corporação ou particular, também fora de serviço, em todo o país (art. 6º, II e § 1º).",
+        pista: "A Força Nacional de Segurança Pública tem o mesmo direito. Para comprar arma, militares e policiais ficam dispensados dos requisitos do art. 4º, I a III (§ 4º).",
+      },
+      {
+        termo: "Guardas municipais",
+        faz: "As guardas de qualquer município têm porte, em serviço ou fora dele: o STF derrubou os limites de população que a lei fazia (ADC 38 e ADIs 5538 e 5948, 2021).",
+        pista: "Dependem de formação em escola de polícia, fiscalização e controle interno (§ 3º). Lei estadual ou distrital não pode dar porte a outras categorias, como agentes de trânsito: o tema é da União (STF, ADI 3996).",
+      },
+      {
+        termo: "Fora de serviço",
+        faz: "Forças Armadas, polícias, guardas municipais, ABIN e GSI e polícias legislativas podem portar arma particular ou da instituição também fora de serviço; o porte vale em todo o país, menos para as guardas municipais (§ 1º). Agentes prisionais fora de serviço precisam de dedicação exclusiva, formação e controle interno (§ 1º-B).",
+        pista: "ABIN e GSI, polícias legislativas, agentes prisionais e guardas portuárias, e auditores precisam provar capacidade técnica e aptidão psicológica (§ 2º).",
+      },
+      {
+        termo: "Caçador de subsistência",
+        faz: "Morador da zona rural, maior de 25 anos, que depende da caça para sustentar a família pode receber da PF porte de caçador: uma arma de uso permitido, de tiro simples, com um ou dois canos, alma lisa e calibre igual ou menor que 16 (§ 5º).",
+        pista: "Apresenta identidade, comprovante de residência rural e atestado de bons antecedentes. Usar a arma para outro fim é porte ilegal ou disparo, conforme o caso (§ 6º).",
+      },
+      {
+        parte: "4. Porte: empresas, tribunais e cidadão",
+        termo: "Segurança privada",
+        faz: "As armas usadas por vigilantes das empresas de segurança privada e dos condomínios e empresas com segurança própria pertencem à empresa, ficam sob sua guarda e só podem ser usadas em serviço. Registro e porte saem em nome da empresa (art. 7º, Lei 14.967/2024).",
+        pista: "O vigilante não leva a arma para casa ao fim do turno. Perda, furto ou roubo vão à polícia e à PF em 24 horas; se não, o dono ou diretor responde pelo art. 13, parágrafo único. A lista de funcionários habilitados é atualizada a cada seis meses no Sinarm.",
+      },
+      {
+        termo: "Tribunais e MP",
+        faz: "Os servidores que atuam na segurança dos tribunais e do MP portam armas da instituição, só em serviço, sem pagar taxa (art. 7º-A).",
+        pista: "Precisam dos requisitos do art. 4º, formação e controle interno; a lista é atualizada a cada seis meses e a perda da arma é comunicada em 24 horas. O limite de 50% dos servidores de segurança foi derrubado pelo STF (ADI 5157).",
+      },
+      {
+        termo: "Desporto, estrangeiros e CAC",
+        faz: "Entidades de desporto, como clubes de tiro, guardam as armas pelas regras do órgão competente e respeitam a lei ambiental (arts. 6º, IX, e 8º). O Ministério da Justiça autoriza o porte dos seguranças de estrangeiros em visita ou sediados no Brasil (art. 9º).",
+        pista: "Pela lei, o Exército cuida do registro e do porte de trânsito de colecionadores, atiradores e caçadores (CAC) e de atiradores estrangeiros em competição oficial no país (arts. 9º e 24). O CAC leva a arma com guia de trânsito, desmuniciada.",
+      },
+      {
+        termo: "Porte para o cidadão",
+        faz: "O particular pode obter da PF, com autorização do Sinarm, porte de arma de uso permitido, provando efetiva necessidade (atividade de risco ou ameaça), os requisitos do art. 4º e a propriedade e o registro da arma (art. 10). O porte pode ser temporário e limitado a uma região (§ 1º).",
+        pista: "Perde efeito na hora se o portador for detido ou abordado embriagado ou sob efeito de drogas (§ 2º). Isso vale só para este porte, não para os profissionais do art. 6º, e só se ele estiver com a arma.",
+      },
+      {
+        termo: "Taxas e credenciamento",
+        faz: "Há taxas para registro, renovação, segunda via e porte (art. 11). Ficam isentos os integrantes dos incisos I a VII e X do art. 6º e o caçador de subsistência (§ 2º).",
+        pista: "O Ministério da Justiça credencia psicólogos e instrutores de tiro. O psicólogo não pode cobrar acima da média do conselho da profissão; o instrutor, acima de R$ 80,00 mais o custo da munição. Quem cobra a mais é descredenciado (art. 11-A).",
+      },
+      {
+        parte: "5. Crimes de posse e porte",
         termo: "Posse irregular",
-        faz: "Ter arma de uso permitido, sem registro, em casa ou no local de trabalho de que se é titular ou responsável: detenção de 1 a 3 anos (art. 12).",
-        pista: "Caminhão e táxi não são local de trabalho para a posse: arma ali é porte (STJ).",
+        faz: "Possuir ou manter sob guarda arma, acessório ou munição de uso permitido, em desacordo com a lei ou o regulamento, em casa ou no local de trabalho de que se é titular ou responsável: detenção de 1 a 3 anos e multa (art. 12).",
+        pista: "Caminhão e táxi não são local de trabalho para a posse: arma ali é porte (STJ). Os arts. 12 e 13 são os únicos crimes da lei com detenção.",
       },
       {
         termo: "Omissão de cautela",
-        faz: "Deixar de tomar cuidado e permitir que menor de 18 anos ou pessoa com deficiência mental se apodere da arma: detenção de 1 a 2 anos (art. 13). É crime culposo.",
-        pista: "A empresa de segurança que não comunica furto ou extravio de arma em 24 horas responde igual (parágrafo único).",
+        faz: "Deixar de tomar cuidado e permitir que menor de 18 anos ou pessoa com deficiência mental se apodere da arma: detenção de 1 a 2 anos (art. 13). É crime culposo. Fala só de arma de fogo, não de munição ou acessório, e exige que a pessoa de fato pegue a arma.",
+        pista: "O dono ou diretor de empresa de segurança ou de transporte de valores que não registra ocorrência e não comunica à PF, em 24 horas, perda, furto ou roubo de arma, acessório ou munição responde igual (parágrafo único). Este é doloso.",
       },
       {
         termo: "Porte ilegal",
         faz: "Portar, transportar ou ceder arma de uso permitido sem autorização: reclusão de 2 a 4 anos (art. 14).",
+        pista: "Os verbos são muitos: portar, deter, adquirir, fornecer, receber, ter em depósito, transportar, ceder (mesmo de graça), emprestar, remeter, empregar, manter sob guarda ou ocultar arma, acessório ou munição. Fora de casa ou do trabalho, até guardar a arma é crime do art. 14.",
       },
       {
         termo: "Disparo",
         faz: "Disparar arma em lugar habitado, via pública ou em direção a ela: reclusão de 2 a 4 anos (art. 15), desde que o disparo não vise outro crime.",
+        pista: "Também é crime só acionar munição nesses lugares ou nas proximidades. Se o disparo era para ferir ou matar, responde-se por esse crime, não pelo art. 15.",
       },
       {
         termo: "Uso restrito e proibido",
         faz: "Posse ou porte de arma de uso restrito: reclusão de 3 a 6 anos (art. 16). Se de uso proibido: 4 a 12 anos, e é hediondo (art. 16, § 2º).",
-        pista: "Numeração raspada leva ao art. 16, § 1º, IV, mesmo em arma de uso permitido.",
+        pista: "Numeração raspada leva ao art. 16, § 1º, IV, mesmo em arma de uso permitido. Se a arma raspada for de uso proibido, aplica-se o § 2º.",
       },
       {
+        termo: "Mesma pena do art. 16",
+        faz: "Respondem com 3 a 6 anos quem: suprime ou altera marca ou numeração (I); modifica a arma para torná-la de uso restrito ou proibido, ou para enganar polícia, perito ou juiz (II); possui, fabrica ou emprega explosivo ou artefato incendiário sem autorização (III); porta arma com numeração raspada ou adulterada (IV); vende ou entrega arma, munição ou explosivo a criança ou adolescente (V); produz, recarrega ou recicla munição ou explosivo sem autorização, ou os adultera (VI) (§ 1º).",
+        pista: "Granada de gás lacrimogêneo ou de pimenta não é explosivo para o inciso III, porque não lança fragmentos perigosos (STJ, REsp 1.627.028).",
+      },
+      {
+        parte: "6. Comércio, tráfico e aumentos",
         termo: "Comércio e tráfico internacional",
         faz: "Comércio ilegal: 6 a 12 anos (art. 17). Tráfico internacional: 8 a 16 anos (art. 18). Ambos hediondos. Vale a venda a agente policial disfarçado, se havia conduta criminosa anterior.",
+        pista: "O art. 17 é crime próprio de quem exerce atividade comercial ou industrial; conta até a atividade irregular, clandestina ou feita em casa (§ 1º). O art. 18 é importar, exportar ou favorecer a entrada ou a saída da arma, a qualquer título. Agente disfarçado não é agente infiltrado.",
+      },
+      {
+        termo: "Julgados do tráfico",
+        faz: "Trazer arma, acessório ou munição do exterior é tráfico internacional (art. 18), e não contrabando (CP, art. 334-A): vale a lei especial. Já importar colete à prova de balas sem autorização do Exército é contrabando, porque colete não é arma, acessório nem munição (STJ, RHC 62.851).",
+        pista: "Quem conduz arma no exercício do comércio responde pelo art. 17, não pelo porte do art. 14.",
       },
       {
         termo: "Aumentos",
         faz: "Metade nos arts. 17 e 18 se a arma for de uso proibido ou restrito (art. 19). Metade nos arts. 14 a 18 se o autor for integrante dos órgãos dos arts. 6º, 7º e 8º ou reincidente específico (art. 20).",
       },
       {
+        termo: "Arma e drogas",
+        faz: "As penas dos arts. 12, 14 e 16 aumentam 2/3 se o crime for praticado junto com crime da Lei de Drogas, estiver diretamente ligado ao tráfico ou a arma tiver servido para garantir a venda da droga (art. 21-A, Lei 15.358/2026).",
+        pista: "Na Lei de Drogas, o art. 40, IV, também aumenta a pena do tráfico feito com arma de fogo.",
+      },
+      {
+        termo: "Hediondos",
+        faz: "Desde a Lei 13.964/2019, são hediondos a posse ou o porte de arma de uso proibido (art. 16, § 2º), o comércio ilegal (art. 17) e o tráfico internacional (art. 18) de arma, acessório ou munição (Lei 8.072, art. 1º, parágrafo único).",
+        pista: "Posse ou porte de arma de uso restrito (art. 16, caput) não é hediondo. Hediondo é sempre inafiançável.",
+      },
+      {
+        parte: "7. Julgados e regras dos crimes",
         termo: "Perigo abstrato",
         faz: "Arma desmuniciada ainda é crime. Só não há crime se o laudo mostrar que a arma é totalmente incapaz de disparar.",
-        pista: "Pouquíssima munição, sem arma, pode ser insignificante, mas só em casos excepcionais.",
+        pista: "Pouquíssima munição, sem arma, pode ser insignificante, mas só em casos excepcionais (em geral, de 1 a 4 cartuchos sem arma capaz de dispará-los).",
       },
       {
         termo: "Registro vencido",
         faz: "Posse em casa com registro vencido é só irregularidade administrativa. Porte com registro ou autorização vencidos continua sendo crime.",
+        pista: "Na posse, cabem apreensão da arma e multa, mas não crime (STJ, Corte Especial, APn 686). A regra vale só para o art. 12, nunca para o porte (art. 14) nem para a arma de uso restrito (art. 16).",
       },
       {
-        termo: "Porte do policial",
-        faz: "Integrantes dos órgãos do art. 144 da Constituição, como a PRF, podem portar arma da corporação ou particular, também fora de serviço, em todo o país (art. 6º, II e § 1º).",
+        termo: "Concurso de crimes",
+        faz: "Armas de uso permitido e de uso restrito encontradas no mesmo contexto geram concurso formal de crimes (STF e STJ).",
+        pista: "Nos crimes de posse e porte, a vítima é a coletividade: protege-se a segurança pública e a paz social. São normas penais em branco, completadas pelo regulamento.",
       },
       {
+        termo: "Fiança e liberdade",
+        faz: "O STF derrubou a proibição de fiança dos arts. 14 e 15 e a de liberdade provisória do art. 21 (ADI 3.112). Hoje esses crimes admitem fiança e liberdade provisória, conforme o caso.",
+        pista: "Os crimes hediondos da lei (art. 16, § 2º, e arts. 17 e 18) continuam inafiançáveis, pela Constituição e pela Lei 8.072/1990.",
+      },
+      {
+        parte: "8. Disposições gerais",
         termo: "Armas apreendidas",
         faz: "Depois do laudo, e sem interesse para o processo, o juiz as envia ao Exército em até 48 horas, para destruição ou doação (art. 25).",
+        pista: "A doação vai para órgãos de segurança pública ou Forças Armadas. As armas apreendidas no tráfico de drogas vão, de preferência, para a segurança pública e o sistema prisional do estado que as apreendeu (§ 1º-A). O juiz decreta a perda em favor do órgão, que faz o transporte e o registro.",
       },
       {
+        termo: "Entrega voluntária",
+        faz: "O dono de arma pode entregá-la à PF a qualquer tempo, com recibo e indenização (art. 31). Quem entrega a arma espontaneamente tem boa-fé presumida e fica extinta a punibilidade de eventual posse irregular (art. 32).",
+        pista: "A extinção alcança só a posse irregular daquela arma. Os prazos de transição dos arts. 29 e 30 para registrar armas antigas já acabaram (31/12/2008).",
+      },
+      {
+        termo: "Simulacros e uso restrito",
+        faz: "É proibido fabricar, vender, comercializar e importar brinquedos, réplicas e simulacros que se possam confundir com arma de fogo, salvo os de instrução, adestramento ou coleção de usuário autorizado (art. 26).",
+        pista: "O Exército pode autorizar, excepcionalmente, a compra de arma de uso restrito; isso não vale para os comandos militares (art. 27).",
+      },
+      {
+        termo: "Munição e marcação",
+        faz: "Caixas de munição levam código de barras (art. 23, § 1º). A munição vendida aos órgãos do art. 6º tem o lote e o comprador gravados no culote (§ 2º). Armas fabricadas depois de 1 ano da lei têm dispositivo de segurança e identificação gravado no corpo, salvo as dos órgãos do art. 6º (§ 3º).",
+        pista: "Escolas de polícia, guardas municipais e escolas de formação de vigilantes podem comprar máquinas e insumos de recarga de munição, só para uso próprio e com autorização (§ 4º, Lei 14.967/2024).",
+      },
+      {
+        termo: "Perfis balísticos",
+        faz: "O Banco Nacional de Perfis Balísticos guarda características de projéteis e estojos disparados por armas ligadas a crimes, para ajudar nas investigações. É gerido pela perícia oficial, os dados são sigilosos e a venda deles é proibida (art. 34-A, Lei 13.964/2019).",
+        pista: "Quem usa os dados para outro fim responde nas esferas civil, penal e administrativa.",
+      },
+      {
+        termo: "Eventos e transportes",
+        faz: "Quem promove evento em local fechado com mais de 1.000 pessoas deve impedir a entrada de pessoas armadas, salvo os eventos religiosos protegidos pela CF (art. 34). As empresas de transporte interestadual e internacional de passageiros devem impedir o embarque de passageiros armados (parágrafo único).",
+        pista: "Empresa de transporte que deixa levar arma sem autorização e empresa de armas que faz propaganda estimulando o uso de armas, fora das publicações especializadas, pagam multa de R$ 100 mil a R$ 300 mil (art. 33).",
+      },
+      {
+        parte: "9. Lei 5.553/1968: documentos",
         termo: "Documento de identidade",
         faz: "Ninguém pode reter documento de identificação. Quem exige o documento tem até 5 dias para tirar os dados; na entrada de prédios, anota e devolve na hora. Reter é contravenção penal (Lei 5.553, arts. 1º a 3º).",
+        pista: "Vale até para cópia autenticada. Passados os 5 dias, só com ordem judicial (art. 2º, § 1º).",
+      },
+      {
+        termo: "Quais documentos",
+        faz: "A regra vale para pessoa física e jurídica, pública ou privada. A lei cita como exemplos: comprovante de serviço militar, título de eleitor, carteira profissional, certidões de nascimento e de casamento, comprovante de naturalização e identidade de estrangeiro (art. 1º).",
+        pista: "O proibido é reter, não pedir para ver o documento. CNH e passaporte não aparecem na lista, que é só de exemplos.",
+      },
+      {
+        termo: "Pena e responsável",
+        faz: "Reter documento: prisão simples de 1 a 3 meses ou multa (art. 3º). Em pessoa jurídica, responde quem mandou reter; o funcionário só responde se desobedeceu a ordens ou instruções expressas (parágrafo único).",
       },
     ],
     cuidado:
-      "Desde a Lei 15.358/2026, o art. 21-A aumenta de 2/3 as penas dos arts. 12, 14 e 16 quando a arma está ligada ao tráfico de drogas. E o STF derrubou as proibições de fiança dos arts. 14 e 15 e de liberdade provisória do art. 21 (ADI 3.112).",
+      "Desde a Lei 15.358/2026, o art. 21-A aumenta de 2/3 as penas dos arts. 12, 14 e 16 quando a arma está ligada ao tráfico de drogas. O STF derrubou as proibições de fiança dos arts. 14 e 15 e de liberdade provisória do art. 21 (ADI 3.112), e tirou os limites de população para o porte das guardas municipais. Posse ou porte de arma de uso restrito não é hediondo; de uso proibido, é.",
   },
   questoes: [
     {

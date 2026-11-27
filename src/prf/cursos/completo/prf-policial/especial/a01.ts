@@ -4,62 +4,265 @@ export const AULA: AulaEscrita = {
   aula: "especial-01",
   resumo: {
     ideia:
-      "A Lei 9.605/1998 pune quem mata, caça, transporta ou vende fauna sem autorização, quem destrói flora, polui ou funciona sem licença. Na rodovia, o que mais aparece é transporte: animais, pescado, madeira e produtos perigosos.",
+      "A Lei 9.605/1998 pune quem mata, caça, transporta ou vende fauna sem autorização, quem destrói flora, polui, funciona sem licença, picha ou atrapalha a fiscalização. Pessoa jurídica também responde. Na rodovia, o que mais aparece é transporte: animais, pescado, madeira, carvão e produtos perigosos.",
     itens: [
       {
-        termo: "Apreensão",
-        faz: "Animais voltam de preferência ao habitat. Perecíveis e madeira são avaliados e doados. Instrumentos são vendidos, descaracterizados por reciclagem (art. 25).",
+        parte: "1. Quem responde e como se pune",
+        termo: "Quem responde",
+        faz: "Quem de qualquer forma concorre para o crime responde na medida da sua culpa. Diretor, administrador, gerente, auditor ou preposto de empresa também responde se sabia do crime de outra pessoa, podia evitá-lo e não evitou (art. 2º).",
       },
       {
+        termo: "Pessoa jurídica",
+        faz: "A empresa responde no campo administrativo, civil e penal quando o crime vem de decisão do seu representante ou órgão colegiado, no interesse ou em benefício dela (art. 3º). Isso não livra as pessoas físicas autoras ou partícipes (parágrafo único).",
+        pista: "A Constituição prevê essa responsabilidade no art. 225, § 3º.",
+      },
+      {
+        termo: "Desconsideração",
+        faz: "O juiz pode desconsiderar a pessoa jurídica sempre que ela for obstáculo para ressarcir o dano ao meio ambiente (art. 4º).",
+      },
+      {
+        termo: "Penas restritivas",
+        faz: "Substituem a prisão em crime culposo ou com pena aplicada menor que 4 anos, se as circunstâncias indicarem que basta (art. 7º). São: serviços à comunidade, interdição temporária de direitos, suspensão de atividades, prestação pecuniária e recolhimento domiciliar (art. 8º).",
+        pista: "A interdição é temporária: 5 anos no crime doloso e 3 no culposo (art. 10). Não existe interdição permanente.",
+      },
+      {
+        termo: "Prestação pecuniária",
+        faz: "Dinheiro pago à vítima ou a entidade com fim social, de 1 a 360 salários mínimos. O valor é descontado de uma futura indenização civil (art. 12).",
+      },
+      {
+        termo: "Atenuantes e agravantes",
+        faz: "Atenuam: pouca instrução, reparar o dano por vontade própria, avisar antes do perigo e colaborar com a fiscalização (art. 14). Agravam, entre outras: reincidência ambiental, buscar lucro, agir à noite, em domingo ou feriado, em seca ou inundação, em defeso, com método cruel ou com ajuda de funcionário público (art. 15).",
+      },
+      {
+        termo: "Sursis e multa",
+        faz: "A suspensão condicional da pena cabe em condenação de até 3 anos (art. 16). A multa segue o Código Penal; se ficar ineficaz mesmo no máximo, pode ser aumentada até 3 vezes, conforme a vantagem obtida (art. 18).",
+      },
+      {
+        termo: "Perícia e reparação",
+        faz: "A perícia do dano, sempre que possível, fixa o prejuízo para fiança e multa, e pode ser feita já no inquérito. Perícia do inquérito civil ou do juízo cível pode ser usada no processo penal, com contraditório (art. 19). A sentença fixa, quando possível, o valor mínimo da reparação (art. 20).",
+      },
+      {
+        termo: "Penas da empresa",
+        faz: "Multa, restritivas de direitos e serviços à comunidade, isoladas ou juntas (art. 21). Restritivas: suspensão de atividades, interdição de estabelecimento e proibição de contratar com o poder público, por até 10 anos (art. 22). Serviços: custear projetos ambientais, recuperar áreas, manter espaços públicos e contribuir com entidades (art. 23).",
+      },
+      {
+        termo: "Empresa de fachada",
+        faz: "Empresa criada ou usada principalmente para permitir, facilitar ou esconder crime ambiental tem liquidação forçada. O patrimônio vira instrumento do crime e vai para o Fundo Penitenciário Nacional (art. 24).",
+      },
+      {
+        parte: "2. Apreensão e processo",
+        termo: "Apreensão",
+        faz: "Constatada a infração, produtos e instrumentos são apreendidos, com auto (art. 25). Animais voltam de preferência ao habitat; se não der, vão para zoológico ou entidade com técnico responsável. Perecíveis e madeira são avaliados e doados. Produtos da fauna não perecíveis são destruídos ou doados. Instrumentos são vendidos, descaracterizados por reciclagem.",
+        pista: "Até a entrega, o órgão que apreendeu cuida do bem-estar dos animais no transporte e na guarda (§ 2º).",
+      },
+      {
+        termo: "Ação penal",
+        faz: "Em todos os crimes desta lei, a ação é pública incondicionada (art. 26).",
+      },
+      {
+        termo: "Transação ambiental",
+        faz: "No crime de menor potencial ofensivo, a transação penal só pode ser proposta depois da composição do dano ambiental, salvo se for comprovadamente impossível (art. 27).",
+      },
+      {
+        termo: "Suspensão do processo",
+        faz: "A lei manda aplicar o art. 89 da Lei 9.099 aos seus crimes de menor potencial ofensivo, com uma diferença: a extinção da punibilidade depende de laudo que comprove a reparação do dano. Se a reparação não estiver completa, o prazo é prorrogado até o máximo mais 1 ano, com a prescrição suspensa (art. 28).",
+      },
+      {
+        parte: "3. Crimes contra a fauna",
         termo: "Fauna silvestre",
-        faz: "Matar, caçar, apanhar ou utilizar sem autorização. Quem transporta, vende ou guarda espécime sem autorização responde igual (art. 29, § 1º, III).",
-        pista: "Guarda doméstica de espécie não ameaçada: o juiz pode deixar de aplicar a pena.",
+        faz: "Matar, perseguir, caçar, apanhar ou utilizar espécime silvestre, nativo ou em rota migratória, sem autorização ou em desacordo com ela: detenção de 6 meses a 1 ano e multa (art. 29).",
+        pista: "Guarda doméstica de espécie não ameaçada: o juiz pode deixar de aplicar a pena (§ 2º).",
+      },
+      {
+        termo: "Mesmas penas",
+        faz: "Responde igual quem impede a procriação da fauna, destrói ninho, abrigo ou criadouro natural, e quem vende, compra, guarda, tem em cativeiro ou transporta ovos, larvas, espécimes ou produtos deles sem autorização ou vindos de criadouro não autorizado (art. 29, § 1º).",
+        pista: "Transportar ave silvestre sem autorização na rodovia é o caso típico do inciso III.",
+      },
+      {
+        termo: "O que é silvestre",
+        faz: "Toda espécie nativa, migratória ou outra, aquática ou terrestre, que passe todo ou parte do ciclo de vida no território ou nas águas brasileiras (art. 29, § 3º).",
       },
       {
         termo: "Aumentos na caça",
-        faz: "De metade: espécie ameaçada, período proibido, noite, abuso de licença, unidade de conservação, destruição em massa. Até o triplo: caça profissional (art. 29, §§ 4º e 5º).",
+        faz: "De metade: espécie rara ou ameaçada (mesmo que só no local), período proibido à caça, noite, abuso de licença, unidade de conservação e meios de destruição em massa. Até o triplo: caça profissional (art. 29, §§ 4º e 5º).",
+        pista: "O art. 29 não se aplica à pesca (§ 6º).",
+      },
+      {
+        termo: "Peles e espécie de fora",
+        faz: "Exportar peles e couros de anfíbios e répteis em bruto sem autorização: reclusão de 1 a 3 anos (art. 30). Introduzir animal no país sem parecer técnico oficial favorável e licença: detenção de 3 meses a 1 ano (art. 31).",
       },
       {
         termo: "Maus-tratos",
-        faz: "Regra: detenção de 3 meses a 1 ano. Cão ou gato: reclusão de 2 a 5 anos, multa e proibição da guarda. Morte do animal: mais 1/6 a 1/3 (art. 32).",
-        pista: "Desde 2025, tatuagem e piercing estéticos em cão e gato também; desde 2026, desastre ambiental que prejudique animais.",
+        faz: "Abusar, maltratar, ferir ou mutilar animal silvestre, doméstico ou domesticado, nativo ou exótico: detenção de 3 meses a 1 ano e multa. Cão ou gato: reclusão de 2 a 5 anos, multa e proibição da guarda (§ 1º-A). Morte do animal: mais 1/6 a 1/3 (art. 32, § 2º).",
+        pista: "Experiência dolorosa ou cruel em animal vivo, mesmo para ensino ou ciência, quando há alternativa, tem a mesma pena (§ 1º).",
       },
       {
+        termo: "Novas formas de maus-tratos",
+        faz: "Tatuagem ou piercing estético em cão ou gato, feito ou permitido, tem a pena de cão e gato (§ 1º-B, Lei 15.150/2025). Provocar desastre ambiental que prejudique a vida, a saúde ou o bem-estar de animais silvestres ou domésticos também é maus-tratos (§ 1º-C, Lei 15.355/2026).",
+      },
+      {
+        termo: "Fauna aquática",
+        faz: "Matar peixes e outros animais aquáticos por lançamento de efluentes ou materiais em rios, lagos, açudes, baías ou águas brasileiras: detenção de 1 a 3 anos, ou multa, ou ambas (art. 33). Também: degradar viveiros públicos, explorar algas e invertebrados sem licença e lançar detritos ou fundear sobre bancos de moluscos ou corais marcados em carta náutica.",
+      },
+      {
+        parte: "4. Pesca e abate permitido",
         termo: "Pesca",
-        faz: "Pescar em período ou lugar proibido. Quem transporta ou vende o pescado da pesca proibida responde igual (art. 34).",
-        pista: "O art. 29 (caça) não se aplica à pesca.",
+        faz: "Pescar em período proibido ou em lugar interditado: detenção de 1 a 3 anos, ou multa, ou ambas (art. 34). Responde igual quem pesca espécie protegida ou abaixo do tamanho, pesca acima da quantidade ou com aparelho proibido, e quem transporta, vende ou industrializa o pescado da pesca proibida.",
+      },
+      {
+        termo: "Pesca com explosivo",
+        faz: "Pescar com explosivo, substância que tenha efeito parecido na água, substância tóxica ou outro meio proibido: reclusão de 1 a 5 anos (art. 35).",
+      },
+      {
+        termo: "O que é pesca",
+        faz: "Todo ato que tenta retirar, coletar, apanhar ou capturar peixes, crustáceos, moluscos ou vegetais aquáticos, com ou sem valor econômico. Espécies ameaçadas das listas oficiais ficam fora desse conceito (art. 36).",
+        pista: "Basta tentar: o ato tendente a capturar já é pesca.",
+      },
+      {
+        termo: "Insignificância na pesca",
+        faz: "O STJ já aplicou a insignificância a quem pescou um único peixe de forma irregular e o devolveu vivo, sem espécie ameaçada e sem sinal de atividade profissional. Nos crimes ambientais, a análise é sempre caso a caso.",
       },
       {
         termo: "Abate que não é crime",
-        faz: "Para matar a fome do agente ou da família; para proteger lavoura ou rebanho, com autorização; animal nocivo assim declarado pelo órgão (art. 37).",
+        faz: "Abater animal não é crime: para matar a fome do agente ou da família (estado de necessidade); para proteger lavoura, pomar ou rebanho de animal predador, com autorização expressa; ou quando o órgão competente declarou o animal nocivo (art. 37).",
+      },
+      {
+        parte: "5. Crimes contra a flora",
+        termo: "Preservação permanente",
+        faz: "Destruir ou danificar floresta de preservação permanente, mesmo em formação, ou usá-la contra as normas: detenção de 1 a 3 anos, ou multa, ou ambas (art. 38). Cortar árvores nela sem permissão: mesma pena (art. 39).",
+        pista: "O art. 38 tem forma culposa, com a pena reduzida à metade. Cortar com autorização não é crime.",
+      },
+      {
+        termo: "Mata Atlântica",
+        faz: "Destruir ou danificar vegetação primária ou secundária, em estágio médio ou avançado de regeneração, do bioma Mata Atlântica: detenção de 1 a 3 anos, ou multa, ou ambas. Culposo: pena pela metade (art. 38-A).",
+      },
+      {
+        termo: "Unidades de conservação",
+        faz: "Causar dano direto ou indireto a unidade de conservação: reclusão de 1 a 5 anos; culposo, pela metade (art. 40). Proteção integral: estações ecológicas, reservas biológicas, parques, monumentos naturais e refúgios de vida silvestre. Uso sustentável: APAs, florestas nacionais, reservas extrativistas, de fauna e particulares, entre outras.",
+        pista: "Dano a espécie ameaçada dentro da unidade é agravante. Entrar na unidade levando instrumento de caça ou de exploração florestal sem licença também é crime (art. 52).",
       },
       {
         termo: "Incêndio",
-        faz: "Provocar incêndio em floresta ou em qualquer outra forma de vegetação: reclusão de 2 a 4 anos. Culposo: detenção (art. 41).",
+        faz: "Provocar incêndio em floresta ou em demais formas de vegetação: reclusão de 2 a 4 anos e multa. Culposo: detenção de 6 meses a 1 ano e multa (art. 41).",
       },
       {
         termo: "Balões",
-        faz: "Fabricar, vender, transportar ou soltar balões que possam provocar incêndio (art. 42).",
+        faz: "Fabricar, vender, transportar ou soltar balões que possam provocar incêndio em florestas e outras vegetações, em áreas urbanas ou em qualquer assentamento humano: detenção de 1 a 3 anos, ou multa, ou ambas (art. 42).",
+        pista: "Basta o balão poder causar incêndio: não precisa que o fogo aconteça.",
+      },
+      {
+        termo: "Minerais",
+        faz: "Extrair pedra, areia, cal ou outro mineral de floresta pública ou de preservação permanente sem autorização: detenção de 6 meses a 1 ano e multa (art. 44).",
+      },
+      {
+        termo: "Madeira de lei",
+        faz: "Cortar ou transformar em carvão madeira de lei, assim classificada pelo poder público, contra as determinações legais, para qualquer exploração: reclusão de 1 a 2 anos e multa (art. 45).",
       },
       {
         termo: "Madeira e carvão",
-        faz: "Transportar ou guardar sem licença válida para todo o tempo da viagem ou do armazenamento (art. 46, parágrafo único).",
+        faz: "Receber ou comprar madeira, lenha ou carvão para comércio ou indústria sem exigir a licença do vendedor e a via que acompanha o produto: detenção de 6 meses a 1 ano e multa (art. 46). Responde igual quem vende, guarda, tem em depósito ou transporta sem licença válida para todo o tempo da viagem ou do armazenamento (parágrafo único).",
+        pista: "É o crime da carga de madeira ou carvão parada na fiscalização sem documento válido.",
+      },
+      {
+        termo: "Regeneração",
+        faz: "Impedir ou dificultar a regeneração natural de florestas e outras vegetações: detenção de 6 meses a 1 ano e multa (art. 48). Para o STJ, a área não precisa ser de preservação permanente.",
+        pista: "Se a pessoa só queria construir em solo não edificável, o art. 64 absorve o art. 48.",
+      },
+      {
+        termo: "Plantas ornamentais",
+        faz: "Destruir, danificar ou maltratar planta de ornamentação de logradouro público ou de propriedade privada alheia: detenção de 3 meses a 1 ano, ou multa, ou ambas. Culposo: 1 a 6 meses, ou multa (art. 49).",
+        pista: "Desde a Lei 15.299/2025, não é crime podar ou cortar árvore com risco de acidente atestado por profissional se o órgão ambiental não responder ao pedido em 45 dias (§ 2º).",
+      },
+      {
+        termo: "Florestas e dunas",
+        faz: "Destruir ou danificar florestas nativas ou plantadas, ou vegetação que fixa dunas ou protege mangues, objeto de especial preservação: detenção de 3 meses a 1 ano e multa (art. 50).",
+      },
+      {
+        termo: "Floresta em terra pública",
+        faz: "Desmatar, explorar ou degradar floresta em terra pública ou devoluta sem autorização: reclusão de 2 a 4 anos e multa. Acima de 1.000 hectares, mais 1 ano por milhar de hectares (art. 50-A).",
+        pista: "Não é crime se necessário à subsistência imediata do agente ou da família (§ 1º).",
+      },
+      {
+        termo: "Motosserra",
+        faz: "Vender motosserra ou usá-la em florestas e outras vegetações sem licença ou registro: detenção de 3 meses a 1 ano e multa (art. 51).",
+      },
+      {
+        termo: "Aumentos na flora",
+        faz: "Mais 1/6 a 1/3 se o fato diminui águas naturais, causa erosão ou muda o clima, ou se é cometido na queda das sementes, na formação da vegetação, contra espécie rara ou ameaçada, em seca ou inundação, ou à noite, em domingo ou feriado (art. 53).",
+      },
+      {
+        parte: "6. Poluição e outros crimes",
+        termo: "Poluição",
+        faz: "Causar poluição de qualquer tipo em nível que cause ou possa causar dano à saúde humana, mortandade de animais ou destruição significativa da flora: reclusão de 1 a 4 anos e multa. Culposo: detenção de 6 meses a 1 ano (art. 54).",
+        pista: "Basta o risco de dano à saúde. Poluição sonora também entra, e o STJ não exige mais perícia se houver outras provas.",
+      },
+      {
+        termo: "Poluição qualificada",
+        faz: "Reclusão de 1 a 5 anos se a poluição torna a área imprópria para morar, obriga a retirar moradores, interrompe o abastecimento de água, impede o uso das praias ou vem de lançamento de resíduos ou óleo contra as normas (art. 54, § 2º).",
+        pista: "Mesma pena para quem não adota medida de precaução exigida pela autoridade diante de risco de dano grave ou irreversível (§ 3º).",
+      },
+      {
+        termo: "Mineração",
+        faz: "Pesquisar, lavrar ou extrair minério sem autorização, ou em desacordo com ela: detenção de 6 meses a 1 ano e multa. Responde igual quem não recupera a área explorada (art. 55).",
       },
       {
         termo: "Produto perigoso",
-        faz: "Transportar, guardar ou usar produto tóxico em desacordo com as normas; abandoná-lo também é crime. Nuclear ou radioativo: mais 1/6 a 1/3 (art. 56).",
+        faz: "Produzir, vender, transportar, guardar ou usar produto tóxico, perigoso ou nocivo contra as exigências das leis ou regulamentos: reclusão de 1 a 4 anos e multa (art. 56). Também quem abandona esses produtos e quem dá destino errado a resíduo perigoso. Nuclear ou radioativo: mais 1/6 a 1/3. Culposo: detenção de 6 meses a 1 ano.",
+        pista: "É crime de perigo abstrato. Para o STJ, transportar produto perigoso contra as regras da ANTT (Resolução 420/2004) já configura o crime, sem perícia (REsp 1.439.150).",
+      },
+      {
+        termo: "Resultado mais grave",
+        faz: "Nos crimes dolosos desta seção, a pena aumenta: 1/6 a 1/3 se o dano à flora ou ao ambiente é irreversível; 1/3 até a metade se há lesão grave em alguém; até o dobro se alguém morre (art. 58). Só vale se não houver crime mais grave.",
       },
       {
         termo: "Sem licença",
-        faz: "Fazer funcionar atividade poluidora sem licença: detenção de 6 meses a 2 anos, ou multa. Até o dobro se exigir estudo de impacto ambiental (art. 60).",
+        faz: "Construir, reformar, ampliar, instalar ou fazer funcionar obra ou atividade potencialmente poluidora sem licença ambiental, ou contra as normas: detenção de 6 meses a 2 anos, ou multa, ou ambas. Até o dobro se o licenciamento exigir estudo prévio de impacto ambiental (art. 60, Lei 15.190/2025).",
+      },
+      {
+        termo: "Pragas e doenças",
+        faz: "Espalhar doença, praga ou espécie que possa causar dano à agricultura, pecuária, fauna, flora ou ecossistemas: reclusão de 1 a 4 anos e multa (art. 61).",
+        pista: "Esse artigo substituiu o caput do art. 259 do Código Penal. A forma culposa do art. 259 continua no CP.",
+      },
+      {
+        parte: "7. Cidade e patrimônio cultural",
+        termo: "Bem protegido",
+        faz: "Destruir, inutilizar ou deteriorar bem especialmente protegido, ou arquivo, museu, biblioteca ou instalação científica protegida: reclusão de 1 a 3 anos e multa. Culposo: detenção de 6 meses a 1 ano (art. 62).",
+      },
+      {
+        termo: "Alterar local protegido",
+        faz: "Mudar o aspecto ou a estrutura de edificação ou local protegido por seu valor paisagístico, histórico, cultural, religioso ou outro, sem autorização: reclusão de 1 a 3 anos e multa (art. 63).",
+      },
+      {
+        termo: "Solo não edificável",
+        faz: "Construir em solo não edificável, ou no entorno, protegido por seu valor paisagístico, ecológico, histórico ou outro, sem autorização: detenção de 6 meses a 1 ano e multa (art. 64).",
+      },
+      {
+        termo: "Pichação",
+        faz: "Pichar ou sujar de outro modo edificação ou monumento urbano: detenção de 3 meses a 1 ano e multa. Em monumento ou coisa tombada: 6 meses a 1 ano (art. 65).",
+        pista: "Grafite não é crime se feito para valorizar o bem, com consentimento do dono (ou locatário) ou, no bem público, com autorização do órgão (§ 2º).",
+      },
+      {
+        parte: "8. Crimes contra a administração ambiental",
+        termo: "Informação falsa do servidor",
+        faz: "Funcionário público que afirma algo falso ou enganoso, omite a verdade ou esconde dados técnicos em autorização ou licenciamento ambiental: reclusão de 1 a 3 anos e multa (art. 66).",
+      },
+      {
+        termo: "Licença ilegal",
+        faz: "Funcionário público que concede, de forma dolosa, licença, autorização ou permissão que sabe estar contra as normas ambientais: detenção de 1 a 3 anos e multa (art. 67, Lei 15.190/2025).",
+        pista: "A forma culposa do art. 67 foi revogada em 2025. Hoje só existe a dolosa.",
+      },
+      {
+        termo: "Dever ambiental",
+        faz: "Quem tem dever legal ou de contrato e deixa de cumprir obrigação de relevante interesse ambiental: detenção de 1 a 3 anos e multa. Culposo: 3 meses a 1 ano (art. 68).",
       },
       {
         termo: "Administração ambiental",
-        faz: "Obstar a fiscalização ambiental (art. 69). Apresentar laudo ou estudo falso ou enganoso no licenciamento (art. 69-A).",
+        faz: "Obstar ou dificultar a fiscalização ambiental do poder público: detenção de 1 a 3 anos e multa (art. 69). Elaborar ou apresentar estudo, laudo ou relatório falso ou enganoso, mesmo por omissão, no licenciamento ou em outro procedimento: reclusão de 3 a 6 anos e multa (art. 69-A).",
+        pista: "O art. 69-A tem forma culposa (detenção de 1 a 3 anos) e aumento de 1/3 a 2/3 se houver dano significativo ao ambiente.",
       },
     ],
     cuidado:
-      "Materiais antigos falam em incêndio “em mata ou floresta”. Desde a Lei 14.944/2024, o art. 41 diz “em floresta ou em demais formas de vegetação”.",
+      "Muitos materiais estão desatualizados. Desde a Lei 15.190/2025, o art. 60 tem pena de 6 meses a 2 anos (até o dobro com estudo de impacto) e o art. 67 só pune a forma dolosa. O art. 41 fala em incêndio “em floresta ou em demais formas de vegetação” (Lei 14.944/2024). O art. 32 ganhou tatuagem e piercing em cão e gato (2025) e desastre ambiental (2026).",
   },
   questoes: [
     {

@@ -4,11 +4,13 @@ export const AULA: AulaEscrita = {
   aula: "especial-06",
   resumo: {
     ideia:
-      "Quem tem documento civil não passa por identificação criminal, salvo nos casos da Lei 12.037. A Lei 12.850 define organização criminosa, cria o crime de integrá-la e dá à investigação meios especiais, como a colaboração premiada, a ação controlada e a infiltração.",
+      "Quem tem documento civil não passa por identificação criminal, salvo nos casos da Lei 12.037. A Lei 12.850 define organização criminosa, cria o crime de integrá-la e dá à investigação meios especiais, como a colaboração premiada, a ação controlada e a infiltração. As duas leis mudaram em 2025: perfil genético nos crimes graves e novos crimes de quem ataca agentes, testemunhas ou jurados para proteger a organização.",
     itens: [
       {
+        parte: "1. Identificação civil e exceções",
         termo: "Regra da identificação",
         faz: "O civilmente identificado não é submetido a identificação criminal, salvo nos casos da lei (art. 1º). Valem RG, carteira de trabalho, profissional ou funcional, passaporte, outro documento público e documento militar (art. 2º).",
+        pista: "A regra vem da Constituição (art. 5º, LVIII). Os documentos militares são equiparados aos civis (art. 2º, parágrafo único).",
       },
       {
         termo: "Exceções",
@@ -16,21 +18,86 @@ export const AULA: AulaEscrita = {
         pista: "Só o caso da investigação (inciso IV) depende de despacho do juiz.",
       },
       {
+        termo: "Investigação essencial",
+        faz: "No inciso IV, o juiz decide de ofício ou a pedido do delegado, do MP ou da defesa (art. 3º, IV). A defesa pode querer a identificação, por exemplo, para provar que o investigado não é o autor.",
+        pista: "Mesmo quando o documento for insuficiente, a cópia dele vai para os autos do inquérito (parágrafo único).",
+      },
+      {
+        termo: "Sem constrangimento",
+        faz: "Quando a identificação criminal for necessária, a autoridade toma as providências para evitar o constrangimento do identificado (art. 4º).",
+        pista: "Antes, a lei antiga (Lei 10.054/2000) mandava identificar só por causa do tipo de crime. A Lei 12.037/2009 acabou com isso, mas a Lei 15.295/2025 voltou a prever casos ligados a crimes graves.",
+      },
+      {
+        parte: "2. Perfil genético e bancos de dados",
+        termo: "Como se identifica",
+        faz: "A identificação criminal inclui o processo datiloscópico (digitais) e o fotográfico, juntados ao auto de prisão em flagrante, ao inquérito ou a outra investigação (art. 5º).",
+        pista: "Nos casos dos incisos IV e VII do art. 3º, inclui também a coleta de material biológico para o perfil genético, o exame de DNA (art. 5º, § 1º).",
+      },
+      {
         termo: "Crimes graves",
         faz: "Desde a Lei 15.295/2025, há identificação criminal com coleta de perfil genético no recebimento da denúncia e no flagrante por crime com grave violência contra a pessoa, crimes sexuais, certos crimes do ECA e organização criminosa armada (arts. 3º, VII, e 5º).",
+        pista: "Os crimes do ECA são os de material de violência sexual (arts. 240 a 241-C). Os crimes sexuais são os contra a liberdade sexual e contra vulnerável. A organização criminosa conta se usa ou tem armas de fogo à disposição.",
+      },
+      {
+        termo: "Banco de perfis genéticos",
+        faz: "Os perfis ficam em banco de dados gerido por unidade oficial de perícia criminal (art. 5º-A). Não podem revelar traços físicos ou de comportamento, salvo o sexo. Os dados são sigilosos, e quem os usa para outro fim responde nas esferas civil, penal e administrativa.",
+        pista: "A coincidência de perfis vai para laudo assinado por perito oficial (§ 3º).",
       },
       {
         termo: "Sigilo e exclusão",
         faz: "A identificação criminal não aparece em atestado de antecedentes antes do trânsito em julgado (art. 6º). O perfil genético sai do banco com a absolvição ou, se houver condenação, a pedido, 20 anos depois do fim da pena (art. 7º-A).",
+        pista: "Antes da Lei 13.964/2019, o perfil saía do banco com a prescrição do crime.",
       },
       {
+        termo: "Retirada da foto",
+        faz: "Sem denúncia, com denúncia rejeitada ou com absolvição, o investigado ou réu pode pedir a retirada da identificação fotográfica do inquérito ou do processo, depois do arquivamento definitivo ou do trânsito em julgado, provando sua identificação civil (art. 7º).",
+        pista: "O artigo fala só da foto, não das digitais.",
+      },
+      {
+        termo: "Banco multibiométrico",
+        faz: "A lei autoriza o Banco Nacional Multibiométrico e de Impressões Digitais, no Ministério da Justiça, com digitais e, quando possível, íris, face e voz, para apoiar investigações federais, estaduais e distritais (art. 7º-C, Lei 13.964/2019).",
+        pista: "Pode receber dados de presos provisórios ou definitivos. Bancos civis, administrativos ou eleitorais só compartilham as digitais e os dados para identificar o titular. A venda dos dados é proibida, e delegado e MP pedem acesso ao juiz.",
+      },
+      {
+        parte: "3. Organização criminosa: conceito",
         termo: "Organização criminosa",
         faz: "Quatro ou mais pessoas, estrutura ordenada, divisão de tarefas e objetivo de vantagem, com infrações de pena máxima acima de 4 anos ou de caráter transnacional (art. 1º, § 1º).",
         pista: "Associação criminosa do CP: 3 ou mais pessoas, sem as demais exigências.",
       },
       {
+        termo: "Requisitos em detalhe",
+        faz: "A divisão de tarefas pode ser informal. A vantagem pode ser de qualquer natureza, obtida de forma direta ou indireta. A pena máxima deve ser superior a 4 anos: exatamente 4 não basta, salvo se a infração for transnacional.",
+      },
+      {
+        termo: "Alcance da lei",
+        faz: "A lei vale também para as infrações previstas em tratado ou convenção internacional quando a execução começa no Brasil e o resultado ocorre ou deveria ocorrer no exterior, ou o contrário (art. 1º, § 2º, I). E para as organizações terroristas (II).",
+        pista: "Os atos de terrorismo estão definidos na Lei 13.260/2016. A Lei 12.850 revogou a antiga lei do crime organizado (Lei 9.034/1995).",
+      },
+      {
+        termo: "Associação criminosa",
+        faz: "A Lei 12.850 também reescreveu o art. 288 do CP: associarem-se 3 ou mais pessoas para o fim específico de cometer crimes, com reclusão de 1 a 3 anos. A pena aumenta até a metade se a associação é armada ou tem criança ou adolescente.",
+        pista: "O antigo nome era quadrilha ou bando. A lei também subiu a pena do falso testemunho (CP, art. 342) para 2 a 4 anos.",
+      },
+      {
+        parte: "4. O crime e as consequências",
         termo: "O crime e as penas",
         faz: "Promover, constituir, financiar ou integrar: reclusão de 3 a 8 anos, mais as penas dos outros crimes (art. 2º). Arma de fogo: até a metade a mais. Comando: pena agravada. Criança, funcionário público, exterior, outras organizações ou transnacionalidade: 1/6 a 2/3.",
+        pista: "Vale agir pessoalmente ou por interposta pessoa. O comando é agravado mesmo que o líder não pratique atos de execução (§ 3º).",
+      },
+      {
+        termo: "Embaraçar a investigação",
+        faz: "Responde com a mesma pena de 3 a 8 anos quem impede ou, de qualquer forma, embaraça a investigação de infração que envolva organização criminosa, se o fato não for crime mais grave (art. 2º, § 1º).",
+        pista: "A ressalva do crime mais grave entrou com a Lei 15.245/2025.",
+      },
+      {
+        termo: "Aumentos de 1/6 a 2/3",
+        faz: "A pena aumenta de 1/6 a 2/3 se: há participação de criança ou adolescente, ou a organização se destina aos crimes do ECA (I); há funcionário público, e a organização se vale disso (II); o produto do crime vai, no todo ou em parte, para o exterior (III); há conexão com outras organizações independentes (IV); a organização é transnacional (V) (art. 2º, § 4º).",
+        pista: "A parte dos crimes do ECA, no inciso I, entrou com a Lei 15.487/2026.",
+      },
+      {
+        termo: "Líderes e benefícios",
+        faz: "Os líderes de organização armada, ou que tenha armas à disposição, começam a cumprir a pena em presídio de segurança máxima (§ 8º). O condenado por integrar organização criminosa não progride de regime nem obtém livramento condicional ou outros benefícios se houver prova de que mantém o vínculo (§ 9º).",
+        pista: "O § 8º fala do tipo de presídio, não do regime inicial. Os dois parágrafos vieram da Lei 13.964/2019.",
       },
       {
         termo: "Funcionário público",
@@ -38,29 +105,119 @@ export const AULA: AulaEscrita = {
         pista: "Se houver indício de policial envolvido, a Corregedoria instaura inquérito e avisa o Ministério Público (§ 7º).",
       },
       {
+        parte: "5. Meios de prova e colaboração",
+        termo: "Meios de obtenção da prova",
+        faz: "Em qualquer fase da persecução: colaboração premiada; captação ambiental; ação controlada; acesso a registros de ligações, dados cadastrais e informações eleitorais ou comerciais; interceptação telefônica e telemática; quebra dos sigilos financeiro, bancário e fiscal; infiltração de policiais; cooperação entre órgãos (art. 3º).",
+        pista: "A captação ambiental colhe sinais eletromagnéticos, ópticos ou acústicos. A interceptação e a quebra de sigilos seguem as leis próprias, como a Lei 9.296/1996 e a Lei Complementar 105/2001.",
+      },
+      {
+        termo: "Negócio jurídico",
+        faz: "O acordo de colaboração é negócio jurídico processual e meio de obtenção de prova, e exige utilidade e interesse públicos (art. 3º-A). O recebimento da proposta abre as negociações e marca o início do sigilo: divulgá-la é violar o sigilo e a boa-fé (art. 3º-B).",
+        pista: "A proposta pode ser negada de forma sumária, com justificativa. Se não for, as partes assinam Termo de Confidencialidade, e a proposta não pode mais ser negada sem justa causa. Isso não suspende a investigação.",
+      },
+      {
+        termo: "Advogado sempre",
+        faz: "Nenhuma conversa sobre colaboração ocorre sem advogado ou defensor público (art. 3º-C, § 1º). O colaborador deve narrar todos os crimes de que participou que tenham relação direta com os fatos investigados (§ 3º).",
+        pista: "Se quem iria celebrar o acordo desiste dele, não pode usar para nenhum fim as informações e provas que o colaborador deu de boa-fé (art. 3º-B, § 6º).",
+      },
+      {
         termo: "Colaboração premiada",
         faz: "Perdão judicial, redução de até 2/3 ou troca por pena restritiva, se a colaboração trouxer resultado. Depois da sentença: redução até a metade ou progressão sem os requisitos objetivos (art. 4º).",
         pista: "O Ministério Público só deixa de denunciar se o fato era desconhecido e o colaborador não é o líder e foi o primeiro a colaborar.",
       },
       {
-        termo: "Limites da delação",
-        faz: "O juiz não negocia o acordo. Só a palavra do colaborador não basta para medida cautelar, recebimento da denúncia ou condenação. O delatado fala depois do delator (art. 4º, §§ 6º, 10-A e 16).",
+        termo: "Resultados exigidos",
+        faz: "A colaboração deve ser efetiva e voluntária e trazer ao menos um resultado: identificar coautores e partícipes e seus crimes (I); revelar a hierarquia e a divisão de tarefas (II); prevenir crimes da organização (III); recuperar o produto ou o proveito dos crimes (IV); localizar a vítima com a integridade física preservada (V) (art. 4º).",
+        pista: "O juiz considera a personalidade do colaborador, a natureza, as circunstâncias, a gravidade e a repercussão do fato e a eficácia da colaboração (§ 1º).",
       },
       {
+        termo: "Perdão e suspensão",
+        faz: "O MP, a qualquer tempo, ou o delegado, no inquérito e ouvido o MP, podem pedir o perdão judicial ao colaborador, mesmo que não estivesse na proposta (§ 2º). O prazo da denúncia ou o processo podem ficar suspensos por até 6 meses, prorrogáveis por igual período, e a prescrição também para (§ 3º).",
+        pista: "Há conhecimento prévio do fato, e o MP não pode deixar de denunciar, quando já existe inquérito ou procedimento sobre os fatos contados pelo colaborador (§ 4º-A).",
+      },
+      {
+        parte: "6. Colaboração: acordo e garantias",
+        termo: "Limites da delação",
+        faz: "O juiz não negocia o acordo. Só a palavra do colaborador não basta para medida cautelar, recebimento da denúncia ou condenação. O delatado fala depois do delator (art. 4º, §§ 6º, 10-A e 16).",
+        pista: "A negociação é feita pelo delegado, com o investigado e o defensor e a manifestação do MP, ou pelo MP com o investigado ou acusado e o defensor (§ 6º).",
+      },
+      {
+        termo: "Homologação",
+        faz: "O juiz recebe o termo, as declarações e a cópia da investigação, ouve o colaborador em sigilo, com o defensor, e confere: regularidade e legalidade; se os benefícios estão na lei; se os resultados mínimos foram alcançados; e a voluntariedade, sobretudo se o colaborador estava sob medida cautelar (§ 7º).",
+        pista: "São nulas as cláusulas que mudam as regras de regime inicial e de progressão, e a renúncia ao direito de recorrer da homologação (§§ 7º e 7º-B). O juiz pode recusar a homologação e devolver o acordo para ajustes (§ 8º).",
+      },
+      {
+        termo: "Retratação e rescisão",
+        faz: "As partes podem se retratar da proposta; nesse caso, as provas que o colaborador produziu contra si não podem ser usadas só contra ele (§ 10). O acordo homologado pode ser rescindido se o colaborador omitir fatos de propósito ou continuar no crime ligado ao acordo (§§ 17 e 18).",
+        pista: "A sentença aprecia os termos do acordo e sua eficácia (§ 11).",
+      },
+      {
+        termo: "Depoimento do colaborador",
+        faz: "Nos depoimentos, o colaborador renuncia ao direito ao silêncio, na presença do defensor, e presta compromisso de dizer a verdade (§ 14). Sempre está assistido por defensor (§ 15). Mesmo com perdão ou sem denúncia, pode ser ouvido em juízo (§ 12).",
+        pista: "As conversas e os atos da colaboração devem ser gravados, e o colaborador recebe cópia (§ 13).",
+      },
+      {
+        termo: "Termo e sigilo",
+        faz: "O termo é escrito e traz o relato da colaboração, as condições, a aceitação do colaborador e do defensor, as assinaturas e as medidas de proteção (art. 6º). O pedido de homologação é distribuído em sigilo, e o juiz decide em 48 horas (art. 7º).",
+        pista: "O acordo e os depoimentos ficam em sigilo até o recebimento da denúncia ou da queixa, e o juiz não pode torná-los públicos antes disso (§ 3º, Lei 13.964/2019).",
+      },
+      {
+        termo: "Direitos do colaborador",
+        faz: "Medidas de proteção; nome, imagem e dados preservados; ser levado ao juízo separado dos corréus; audiência sem contato visual com os outros acusados; não ter a identidade revelada, nem ser fotografado ou filmado sem autorização escrita; cumprir pena ou prisão cautelar em presídio diferente dos corréus (art. 5º).",
+      },
+      {
+        termo: "Julgados da colaboração",
+        faz: "A homologação feita pelo juiz que parecia competente quando decidiu continua válida, mesmo que depois apareça autoridade com foro especial: é a teoria do juízo aparente (STJ, Rcl 31.629). O material da colaboração pode ser compartilhado com outra investigação ou outro juízo (STF, PET 7.065).",
+      },
+      {
+        parte: "7. Ação controlada e infiltração",
         termo: "Ação controlada",
         faz: "Retardar a intervenção policial ou administrativa para agir no momento mais eficaz, com aviso prévio ao juiz, que fixa os limites (art. 8º). Se cruzar a fronteira, exige cooperação dos outros países (art. 9º).",
+        pista: "É o flagrante retardado ou diferido. Não depende de autorização, só de comunicação prévia ao juiz, que avisa o MP. A comunicação é sigilosa, e no fim se faz auto circunstanciado (§§ 1º a 4º).",
       },
       {
         termo: "Infiltração",
         faz: "De agentes de polícia, com autorização judicial sigilosa, se a prova não puder ser obtida de outro modo, por até 6 meses renováveis (art. 10). O agente responde pelos excessos, mas não pelo crime que não podia evitar (art. 13).",
+        pista: "Só policial pode ser infiltrado. Representação do delegado ou requerimento do MP; se o pedido é do delegado, o juiz ouve antes o MP (§ 1º).",
       },
       {
+        termo: "Pedido de infiltração",
+        faz: "O pedido mostra a necessidade, o alcance das tarefas, quando possível os nomes ou apelidos dos investigados e o local (art. 11). É distribuído em sigilo, e o juiz decide em 24 horas (art. 12).",
+        pista: "Se houver risco iminente ao agente, a operação é sustada (§ 3º). Os autos da infiltração acompanham a denúncia, preservada a identidade do agente (§ 2º).",
+      },
+      {
+        termo: "Infiltração virtual",
+        faz: "Policiais podem se infiltrar na internet para investigar os crimes da lei, com os mesmos requisitos, por até 6 meses renováveis, desde que o total não passe de 720 dias (art. 10-A, Lei 13.964/2019).",
+        pista: "Não comete crime o policial que esconde a identidade na internet para colher provas (art. 10-C). No fim, todos os atos eletrônicos são gravados e entregues ao juiz e ao MP. A prova obtida fora dessas regras é nula (art. 10-A, § 7º).",
+      },
+      {
+        termo: "Direitos do agente",
+        faz: "Recusar ou fazer cessar a infiltração; ter a identidade alterada e as medidas de proteção a testemunhas; ter nome, imagem, voz e dados preservados, salvo decisão judicial; não ter a identidade revelada nem ser fotografado ou filmado sem autorização escrita (art. 14).",
+      },
+      {
+        parte: "8. Dados, crimes e processo",
         termo: "Dados e crimes da lei",
         faz: "Delegado e Ministério Público acessam sem ordem judicial só qualificação, filiação e endereço (art. 15). A lei pune expor o colaborador, delatar falsamente, quebrar sigilo, negar dados requisitados e, desde 2025, obstruir ações contra o crime organizado (arts. 18 a 21-B).",
+        pista: "Os dados vêm da Justiça Eleitoral, de telefônicas, bancos, provedores de internet e administradoras de cartão. Empresas de transporte dão acesso às reservas por 5 anos, e telefônicas guardam os registros de ligações por 5 anos (arts. 16 e 17).",
+      },
+      {
+        termo: "Penas dos crimes",
+        faz: "Revelar a identidade, fotografar ou filmar o colaborador sem autorização escrita: 1 a 3 anos (art. 18). Acusar falsamente inocente, a pretexto de colaborar, ou dar informação falsa sobre a organização: 1 a 4 anos (art. 19). Descumprir o sigilo da ação controlada ou da infiltração: 1 a 4 anos (art. 20). Recusar ou omitir dados requisitados: 6 meses a 2 anos (art. 21).",
+        pista: "Todos com reclusão e multa. Responde igual ao art. 21 quem se apossa, divulga ou usa indevidamente os dados cadastrais.",
+      },
+      {
+        termo: "Obstrução e conspiração",
+        faz: "Pedir, com promessa de vantagem, ou ordenar violência ou grave ameaça contra agente público, advogado, defensor dativo, jurado, testemunha, colaborador ou perito, para impedir ou retaliar investigação ou processo de organização criminosa: reclusão de 4 a 12 anos e multa (art. 21-A). Duas ou mais pessoas que se ajustam para isso: mesma pena (art. 21-B).",
+        pista: "Vale também contra o cônjuge, o companheiro e os parentes até o 3º grau dessas pessoas. A pena da violência é somada. O condenado começa a pena, e o preso provisório fica, em presídio federal de segurança máxima (Lei 15.245/2025).",
+      },
+      {
+        termo: "Procedimento",
+        faz: "Os crimes da lei seguem o procedimento ordinário do CPP. Com réu preso, a instrução não pode passar de 120 dias, prorrogáveis por igual período, por decisão fundamentada na complexidade da causa ou em demora causada pelo réu (art. 22).",
+        pista: "O juiz pode decretar o sigilo da investigação, mas o defensor tem acesso às provas já documentadas, com autorização judicial, e vista dos autos pelo menos 3 dias antes do depoimento do investigado (art. 23).",
       },
     ],
     cuidado:
-      "Duas mudanças recentes não estão no material: a Lei 15.295/2025 (perfil genético nos crimes graves, arts. 3º, VII, e 5º da Lei 12.037) e a Lei 15.245/2025 (arts. 21-A e 21-B da Lei 12.850, com pena de 4 a 12 anos e início em presídio federal de segurança máxima).",
+      "Duas mudanças recentes não estão no material: a Lei 15.295/2025 (perfil genético nos crimes graves, arts. 3º, VII, e 5º da Lei 12.037) e a Lei 15.245/2025 (arts. 21-A e 21-B da Lei 12.850, com pena de 4 a 12 anos e início em presídio federal de segurança máxima). A Lei 15.487/2026 incluiu no aumento do art. 2º, § 4º, I, a organização voltada aos crimes do ECA.",
   },
   questoes: [
     {

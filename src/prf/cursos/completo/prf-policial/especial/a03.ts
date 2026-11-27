@@ -4,20 +4,33 @@ export const AULA: AulaEscrita = {
   aula: "especial-03",
   resumo: {
     ideia:
-      "Abuso de autoridade só existe com uma intenção especial: prejudicar alguém, beneficiar a si ou a outro, ou agir por capricho. Tortura é outra coisa: causa sofrimento físico ou mental intenso, é equiparada a hediondo e faz o agente público perder o cargo automaticamente.",
+      "A Lei 13.869/2019 pune o agente público que abusa do poder, sempre com uma intenção especial: prejudicar alguém, beneficiar a si ou a outro, ou agir por capricho. Todos os crimes são de detenção e muitos são de menor potencial ofensivo. A Lei 9.455/1997 define a tortura: causa sofrimento físico ou mental intenso, é equiparada a hediondo e faz o agente público perder o cargo automaticamente.",
     itens: [
       {
+        parte: "1. Abuso: regras gerais",
         termo: "Intenção especial",
         faz: "O crime de abuso exige a finalidade de prejudicar outrem, beneficiar a si mesmo ou a terceiro, ou mero capricho ou satisfação pessoal (art. 1º, § 1º).",
         pista: "Divergência na interpretação da lei ou na avaliação de fatos e provas não é abuso (art. 1º, § 2º).",
       },
       {
+        termo: "Sem forma culposa",
+        faz: "Todos os crimes da lei são dolosos e exigem a intenção especial. Não existe abuso de autoridade culposo. A lei vale para o agente no exercício da função ou a pretexto de exercê-la (art. 1º).",
+        pista: "A lei revogou a antiga Lei 4.898/1965, o § 2º do art. 150 e o art. 350 do Código Penal (art. 44). Entrou em vigor 120 dias após a publicação.",
+      },
+      {
         termo: "Quem pratica",
         faz: "Qualquer agente público, servidor ou não, mesmo transitório e sem remuneração (art. 2º). O particular que participa sabendo dessa condição responde junto (CP, art. 30).",
+        pista: "A lista do art. 2º é só exemplo: servidores e militares, membros dos Poderes Legislativo, Executivo e Judiciário, do MP e dos tribunais ou conselhos de contas. Vale qualquer vínculo: eleição, nomeação, designação ou contratação.",
       },
       {
         termo: "Ação penal",
         faz: "Pública incondicionada. Se o MP não agir no prazo, cabe queixa subsidiária do ofendido em 6 meses (art. 3º).",
+        pista: "Mesmo na queixa subsidiária, o MP pode aditar, repudiar e oferecer denúncia substitutiva, produzir provas, recorrer e retomar a ação se o querelante for negligente.",
+      },
+      {
+        parte: "2. Efeitos, penas e processo",
+        termo: "Indenização",
+        faz: "A condenação torna certa a obrigação de indenizar o dano. A pedido do ofendido, o juiz fixa na sentença um valor mínimo de reparação, conforme os prejuízos sofridos (art. 4º, I).",
       },
       {
         termo: "Perder o cargo",
@@ -29,24 +42,150 @@ export const AULA: AulaEscrita = {
         faz: "Prestação de serviços ou suspensão do cargo de 1 a 6 meses, com perda dos vencimentos, aplicadas sozinhas ou juntas (art. 5º).",
       },
       {
-        termo: "Na captura e na custódia",
-        faz: "É crime não se identificar ao preso (art. 16), constrangê-lo a se exibir ou a produzir prova (art. 13) e interrogá-lo à noite, salvo flagrante ou consentimento com advogado (art. 18).",
+        termo: "Esferas independentes",
+        faz: "A pena criminal não impede as sanções civis e administrativas (art. 6º). Se a notícia do crime também descreve falta funcional, ela é enviada à autoridade competente para apurar.",
+        pista: "O que o juiz criminal decide sobre a existência do fato ou a autoria vale nas outras esferas (art. 7º). A sentença que reconhece legítima defesa, estado de necessidade, estrito cumprimento do dever legal ou exercício regular de direito faz coisa julgada no cível e no administrativo (art. 8º).",
       },
       {
+        termo: "Tamanho das penas",
+        faz: "Todos os crimes têm detenção e multa, em três faixas: 3 meses a 1 ano (só o art. 15-A), 6 meses a 2 anos e 1 a 4 anos. O processo segue o CPP e a Lei 9.099/1995 (art. 39).",
+        pista: "Penas máximas até 2 anos são de menor potencial ofensivo. As de 1 a 4 anos admitem suspensão condicional do processo, porque a pena mínima é de 1 ano.",
+      },
+      {
+        parte: "3. Crimes ligados à prisão",
+        termo: "Prisão ilegal decretada",
+        faz: "Decretar privação da liberdade em manifesta desconformidade com a lei: detenção de 1 a 4 anos (art. 9º). Responde igual o juiz que, em prazo razoável, deixa de relaxar prisão manifestamente ilegal, de substituir a preventiva ou conceder liberdade provisória quando manifestamente cabível, ou de deferir habeas corpus cabível.",
+        pista: "As omissões do parágrafo único são crimes só da autoridade judiciária. O crime é formal: consuma-se com a própria decisão.",
+      },
+      {
+        termo: "Condução coercitiva",
+        faz: "Decretar condução coercitiva de testemunha ou investigado manifestamente descabida, ou sem intimação prévia para comparecer: detenção de 1 a 4 anos (art. 10).",
+        pista: "O STF proibiu a condução coercitiva de investigado ou réu para interrogatório (ADPF 395 e 444).",
+      },
+      {
+        termo: "Comunicar a prisão",
+        faz: "Deixar, sem justificativa, de comunicar o flagrante ao juiz no prazo legal: detenção de 6 meses a 2 anos (art. 12). Responde igual quem não comunica logo ao juiz o cumprimento de temporária ou preventiva, não avisa logo a família ou pessoa indicada sobre a prisão e o local, ou não entrega a nota de culpa em 24 horas.",
+        pista: "Também é crime prolongar a prisão, sem motivo justo e excepcional, deixando de cumprir na hora o alvará de soltura ou de soltar o preso quando acaba o prazo judicial ou legal (art. 12, IV).",
+      },
+      {
+        termo: "Pedido do preso",
+        faz: "Impedir ou retardar, sem justificativa, o envio do pedido do preso ao juiz que avalia a legalidade da prisão ou da custódia: detenção de 1 a 4 anos (art. 19).",
+        pista: "O juiz que sabe da demora e não age, ou que não é competente e não envia o pedido a quem é, responde igual.",
+      },
+      {
+        parte: "4. Crimes contra o preso",
+        termo: "Na captura e na custódia",
+        faz: "É crime não se identificar ao preso (art. 16), constrangê-lo a se exibir ou a produzir prova (art. 13) e interrogá-lo à noite, salvo flagrante ou consentimento com advogado (art. 18).",
+        pista: "Arts. 16 e 18: detenção de 6 meses a 2 anos. Art. 13: detenção de 1 a 4 anos.",
+      },
+      {
+        termo: "Constranger o preso",
+        faz: "Obrigar o preso, com violência, grave ameaça ou reduzindo sua resistência, a se exibir à curiosidade pública, a passar por situação vexatória não prevista em lei ou a produzir prova contra si ou contra outro (art. 13). A pena da violência é somada.",
+        pista: "Algemas: o artigo da lei sobre elas foi vetado. Vale a Súmula Vinculante 11: só com resistência, risco de fuga ou perigo à integridade, justificado por escrito.",
+      },
+      {
+        termo: "Identificação falsa",
+        faz: "Não se identificar, ou se identificar falsamente, ao preso na captura ou durante a custódia (art. 16). Responde igual quem conduz o interrogatório na investigação e não se identifica ou usa identidade, cargo ou função falsos.",
+        pista: "O preso tem direito de saber quem o prendeu e quem o interroga (CF, art. 5º, LXIV).",
+      },
+      {
+        termo: "Sigilo e silêncio",
+        faz: "Constranger a depor, sob ameaça de prisão, quem deve guardar sigilo pela função, ministério, ofício ou profissão: detenção de 1 a 4 anos (art. 15). Responde igual quem continua o interrogatório de quem decidiu ficar em silêncio, ou de quem pediu advogado e está sem ele.",
+      },
+      {
+        termo: "Advogado do preso",
+        faz: "Impedir, sem justa causa, a conversa pessoal e reservada do preso com o advogado: detenção de 6 meses a 2 anos (art. 20). Também impedir preso, réu solto ou investigado de falar a sós com o advogado antes da audiência, ou de sentar ao lado dele e se comunicar durante ela.",
+        pista: "Exceções: durante o interrogatório e em audiência por videoconferência.",
+      },
+      {
+        termo: "Presos na mesma cela",
+        faz: "Manter presos de ambos os sexos na mesma cela ou espaço de confinamento: detenção de 1 a 4 anos (art. 21). Também manter criança ou adolescente com adulto na mesma cela, ou em ambiente inadequado, conforme o ECA.",
+      },
+      {
+        parte: "5. Casa, provas e apuração",
         termo: "Entrar em casa",
         faz: "É crime entrar sem ordem judicial fora das hipóteses legais e cumprir mandado de busca após as 21h ou antes das 5h (art. 22). Não há crime para socorro ou com fundados indícios de flagrante ou desastre (§ 2º).",
+        pista: "O caput também pune quem permanece no imóvel nas mesmas condições. O § 1º, I, pune quem coage alguém, com violência ou grave ameaça, a liberar o acesso. Pena: detenção de 1 a 4 anos.",
+      },
+      {
+        termo: "Fraude na apuração",
+        faz: "Alterar de forma artificiosa o estado de lugar, coisa ou pessoa, durante diligência, investigação ou processo, para fugir da responsabilidade, incriminar alguém ou piorar sua situação: detenção de 1 a 4 anos (art. 23).",
+        pista: "Responde igual quem age para fugir da responsabilidade civil ou administrativa por excesso, ou omite dados ou divulga dados incompletos para desviar a apuração.",
+      },
+      {
+        termo: "Morto levado ao hospital",
+        faz: "Constranger, com violência ou grave ameaça, funcionário de hospital público ou privado a internar pessoa já morta, para mudar o local ou o momento do crime e atrapalhar a apuração: detenção de 1 a 4 anos, mais a pena da violência (art. 24).",
       },
       {
         termo: "Prova ilícita",
         faz: "Obter prova por meio manifestamente ilícito ou usá-la sabendo da ilicitude (art. 25).",
+        pista: "Detenção de 1 a 4 anos. Vale em investigação ou fiscalização; o uso só é crime quando feito contra o investigado ou fiscalizado.",
       },
       {
+        termo: "Gravação divulgada",
+        faz: "Divulgar gravação ou trecho sem relação com a prova buscada, expondo a intimidade ou a vida privada, ou ferindo a honra ou a imagem do investigado ou acusado: detenção de 1 a 4 anos (art. 28).",
+      },
+      {
+        parte: "6. Vítimas, investigação e processo",
         termo: "Violência institucional",
         faz: "Submeter vítima ou testemunha a procedimentos desnecessários ou repetitivos que a façam reviver a violência (art. 15-A). Pena aumentada de 2/3 se o agente deixa terceiro intimidá-la; em dobro se ele mesmo intimida.",
+        pista: "Detenção de 3 meses a 1 ano, a menor pena da lei (Lei 14.321/2022). Protege a vítima de qualquer infração e a testemunha de crime violento; procedimentos invasivos também contam.",
+      },
+      {
+        termo: "Investigação sem indício",
+        faz: "Requisitar ou instaurar procedimento investigatório penal ou administrativo contra alguém sem nenhum indício de crime, ilícito funcional ou infração administrativa: detenção de 6 meses a 2 anos (art. 27).",
+        pista: "Não há crime em sindicância ou investigação preliminar sumária, devidamente justificada.",
+      },
+      {
+        termo: "Informação falsa",
+        faz: "Prestar informação falsa sobre procedimento judicial, policial, fiscal ou administrativo para prejudicar o interesse do investigado: detenção de 6 meses a 2 anos (art. 29).",
+      },
+      {
+        termo: "Persecução sem justa causa",
+        faz: "Iniciar ou levar adiante persecução penal, civil ou administrativa sem justa causa fundamentada, ou contra quem sabe inocente: detenção de 1 a 4 anos (art. 30).",
+        pista: "Compare com o art. 27: lá falta qualquer indício para abrir a investigação, e a pena é menor.",
+      },
+      {
+        termo: "Investigação demorada",
+        faz: "Estender sem justificativa a investigação, atrasando-a em prejuízo do investigado ou fiscalizado: detenção de 6 meses a 2 anos (art. 31). Quando não há prazo, responde quem estende o procedimento sem motivo.",
+      },
+      {
+        termo: "Acesso aos autos",
+        faz: "Negar ao interessado, ao defensor ou ao advogado acesso a investigação preliminar, termo circunstanciado, inquérito ou outro procedimento, ou impedir cópias: detenção de 6 meses a 2 anos (art. 32).",
+        pista: "Pode-se negar acesso às peças de diligências em curso ou futuras cujo sigilo seja imprescindível. A Súmula Vinculante 14 garante ao defensor as provas já documentadas.",
       },
       {
         termo: "Carteirada",
         faz: "Invocar a condição de agente público para fugir de obrigação legal ou obter vantagem indevida (art. 33, parágrafo único).",
+        pista: "O caput pune quem exige informação ou o cumprimento de obrigação sem expresso amparo legal. Os dois têm detenção de 6 meses a 2 anos.",
+      },
+      {
+        termo: "Juízes e tribunais",
+        faz: "Bloquear valores muito acima da dívida e não corrigir depois de demonstrado o excesso: detenção de 1 a 4 anos (art. 36). Pedir vista em órgão colegiado e demorar demais, sem justificativa, para atrasar o julgamento: detenção de 6 meses a 2 anos (art. 37).",
+      },
+      {
+        termo: "Antecipar a culpa",
+        faz: "O responsável pela investigação que, por qualquer meio de comunicação, inclusive rede social, atribui culpa antes de concluída a apuração e formalizada a acusação: detenção de 6 meses a 2 anos (art. 38).",
+      },
+      {
+        parte: "7. Mudanças em outras leis",
+        termo: "Prisão temporária",
+        faz: "O mandado deve trazer o prazo da prisão e o dia da soltura. Vencido o prazo, quem guarda o preso o solta na hora, sem nova ordem, salvo se já soube da prorrogação ou da preventiva. O dia do cumprimento do mandado conta no prazo (Lei 7.960, art. 2º, §§ 4º-A, 7º e 8º).",
+      },
+      {
+        termo: "Interceptação ilegal",
+        faz: "Interceptar comunicações telefônicas, de informática ou telemática, fazer escuta ambiental ou quebrar segredo da Justiça sem autorização judicial ou com objetivo não autorizado em lei: reclusão de 2 a 4 anos e multa (Lei 9.296, art. 10). O juiz que determina isso com objetivo ilegal responde igual.",
+      },
+      {
+        termo: "ECA e advogado",
+        faz: "Nos crimes do ECA praticados por servidor com abuso de autoridade, a perda do cargo depende de reincidência e, nesse caso, não depende da pena aplicada (ECA, art. 227-A). Violar as prerrogativas do advogado dos incisos II a V do art. 7º do Estatuto da OAB é crime (art. 7º-B).",
+        pista: "A pena do art. 7º-B hoje é detenção de 2 a 4 anos e multa (Lei 14.365/2022). Materiais antigos ainda trazem 3 meses a 1 ano.",
+      },
+      {
+        parte: "8. Tortura: tipos e características",
+        termo: "Tortura na Constituição",
+        faz: "A CF proíbe a tortura e o tratamento desumano ou degradante (art. 5º, III) e a torna inafiançável e insuscetível de graça ou anistia; respondem mandantes, executores e quem podia evitar e se omitiu (art. 5º, XLIII).",
+        pista: "A tortura não é imprescritível. Imprescritíveis são só o racismo e a ação de grupos armados contra a ordem constitucional.",
       },
       {
         termo: "Tortura: tipos",
@@ -54,21 +193,52 @@ export const AULA: AulaEscrita = {
         pista: "O inciso II é crime próprio: só quem tem a vítima sob guarda, poder ou autoridade.",
       },
       {
-        termo: "Omissão",
-        faz: "Quem tinha o dever de evitar ou apurar a tortura e se omite: detenção de 1 a 4 anos (art. 1º, § 2º), sem regime inicial fechado obrigatório (§ 7º).",
+        termo: "Características",
+        faz: "Nos incisos I e II, exige violência ou grave ameaça e causa sofrimento físico ou mental; o sofrimento só mental também basta. O inciso I é crime comum: qualquer pessoa pode praticar, até um particular. É crime material, admite tentativa e a ação penal é pública incondicionada. Pena das formas básicas: reclusão de 2 a 8 anos.",
+        pista: "Nos maus-tratos (CP, art. 136) há abuso dos meios de correção. A tortura-castigo exige intenso sofrimento físico ou mental.",
       },
       {
+        termo: "Mulher na violência doméstica",
+        faz: "Submeter mulher, de forma reiterada, a intenso sofrimento físico ou mental no contexto de violência doméstica e familiar (art. 1º, III, Lei 15.410/2026). A lei ressalva as penas de outros crimes praticados junto.",
+      },
+      {
+        termo: "Tortura do preso",
+        faz: "Submeter pessoa presa ou sob medida de segurança a sofrimento físico ou mental por ato não previsto em lei ou não resultante de medida legal: mesma pena de 2 a 8 anos (art. 1º, § 1º).",
+        pista: "É a única forma que não exige finalidade especial do agente.",
+      },
+      {
+        termo: "Omissão",
+        faz: "Quem tinha o dever de evitar ou apurar a tortura e se omite: detenção de 1 a 4 anos (art. 1º, § 2º), sem regime inicial fechado obrigatório (§ 7º).",
+        pista: "Só responde quem tinha o dever de agir. A omissão é dolosa: não existe tortura culposa.",
+      },
+      {
+        parte: "9. Tortura: resultado, pena e efeitos",
         termo: "Resultado e aumentos",
         faz: "Lesão grave ou gravíssima: 4 a 10 anos; morte: 8 a 16 anos (§ 3º). Aumento de 1/6 a 1/3 se o autor é agente público, contra vulneráveis ou mediante sequestro (§ 4º).",
         pista: "Lesão leve não qualifica a tortura.",
       },
       {
+        termo: "Aumentos: detalhes",
+        faz: "Vulneráveis, para o § 4º: criança, gestante, pessoa com deficiência, adolescente ou maior de 60 anos. O aumento por ser agente público não vale quando essa condição já é elemento do crime, para não punir duas vezes. O aumento por sequestro só vale quando a privação da liberdade vai além do necessário para torturar.",
+        pista: "Se o agente quer matar e usa a tortura como meio, é homicídio qualificado (CP, art. 121, § 2º, III). O § 3º serve para a morte que o agente não quis.",
+      },
+      {
         termo: "Efeitos da tortura",
         faz: "Perda do cargo e interdição pelo dobro da pena (§ 5º). Inafiançável e sem graça ou anistia (§ 6º), mas prescritível. Vale também para vítima brasileira fora do país (art. 2º).",
+        pista: "Para o STF e o STJ, a perda do cargo é automática, sem precisar ser declarada na sentença. A Lei 8.072/1990 também proíbe o indulto.",
+      },
+      {
+        termo: "Regime inicial",
+        faz: "A lei manda começar a pena no regime fechado, salvo na omissão do § 2º (art. 1º, § 7º).",
+        pista: "O STF afastou o regime fechado obrigatório nos crimes hediondos e equiparados (HC 111.840), e o STJ aplica isso à tortura: o juiz fixa o regime pelas regras do Código Penal.",
+      },
+      {
+        termo: "Origem e alcance",
+        faz: "O conceito vem da Convenção da ONU contra a Tortura (1984), promulgada pelo Brasil em 1991. A lei vale para crime fora do país também quando o agente está em local sob jurisdição brasileira (art. 2º). Ela revogou o antigo crime de tortura do ECA (art. 233).",
       },
     ],
     cuidado:
-      "Desde a Lei 15.410/2026, a Lei de Tortura tem o inciso III (mulher, violência doméstica). E o artigo sobre algemas da Lei de Abuso foi vetado: o uso de algemas segue a Súmula Vinculante 11.",
+      "Desde a Lei 15.410/2026, a Lei de Tortura tem o inciso III (mulher, violência doméstica). E o artigo sobre algemas da Lei de Abuso foi vetado: o uso de algemas segue a Súmula Vinculante 11. Vários artigos vetados voltaram com a derrubada do veto, como os arts. 9º, 16, 20, 30, 32 e 38. A pena do crime contra prerrogativa do advogado é de 2 a 4 anos desde 2022.",
   },
   questoes: [
     {
