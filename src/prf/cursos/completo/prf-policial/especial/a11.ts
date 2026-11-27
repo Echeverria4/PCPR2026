@@ -4,62 +4,266 @@ export const AULA: AulaEscrita = {
   aula: "especial-11",
   resumo: {
     ideia:
-      "Os Juizados Especiais Criminais cuidam das infrações de menor potencial ofensivo com um rito rápido e, de preferência, sem prisão: termo circunstanciado, audiência preliminar com composição dos danos e transação penal e, sem acordo, o procedimento sumariíssimo. A Lei 10.259/2001 leva esse modelo à Justiça Federal.",
+      "Os Juizados Especiais Criminais cuidam das infrações de menor potencial ofensivo com um rito rápido e, de preferência, sem prisão: termo circunstanciado, audiência preliminar com composição dos danos e transação penal e, sem acordo, o procedimento sumariíssimo. A Lei 10.259/2001 leva esse modelo à Justiça Federal. Esta aula cobre toda a parte criminal da Lei 9.099/1995 (arts. 60 a 92) e o essencial da Lei 10.259.",
     itens: [
+      {
+        parte: "1. Base e conceito",
+        termo: "Base na Constituição",
+        faz: "A Constituição manda a União, no DF e nos Territórios, e os Estados criarem juizados especiais, com juízes togados, ou togados e leigos, para conciliar, julgar e executar causas cíveis de menor complexidade e infrações penais de menor potencial ofensivo, por procedimento oral e sumariíssimo, com transação e recursos julgados por turmas de juízes de primeiro grau (art. 98, I).",
+        pista: "Lei federal cria os juizados da Justiça Federal (art. 98, § 1º): é a Lei 10.259/2001. A Lei 9.099/1995 é a lei geral.",
+      },
       {
         termo: "Menor potencial ofensivo",
         faz: "As contravenções penais e os crimes com pena máxima de até 2 anos, cumulada ou não com multa (Lei 9.099/1995, art. 61).",
-        pista: "Conta a pena máxima, não a mínima.",
+        pista: "Conta a pena máxima, não a mínima. As contravenções entram sempre, qualquer que seja a pena. Desde a Lei 11.313/2006, a regra vale também para crimes com rito especial.",
       },
       {
+        termo: "Juizado Especial Criminal",
+        faz: "Formado por juízes togados ou togados e leigos, cuida da conciliação, do julgamento e da execução das infrações de menor potencial ofensivo, respeitadas as regras de conexão e continência (art. 60).",
+        pista: "O juiz leigo é auxiliar da Justiça, escolhido entre advogados com mais de 5 anos de experiência (art. 7º). Quem decide é o juiz togado: no cível, a decisão do leigo só vale depois de homologada (art. 40).",
+      },
+      {
+        termo: "Conexão com crime mais grave",
+        faz: "Se a infração de menor potencial estiver ligada a outra mais grave (conexão ou continência), os processos podem ser reunidos no juízo comum ou no tribunal do júri. Mesmo lá, a transação penal e a composição dos danos devem ser observadas (art. 60, parágrafo único; Lei 10.259, art. 2º, parágrafo único).",
+        pista: "A regra entrou nas duas leis com a Lei 11.313/2006.",
+      },
+      {
+        parte: "2. Critérios e atos do processo",
         termo: "Critérios",
         faz: "Oralidade, simplicidade, informalidade, economia processual e celeridade, buscando a reparação do dano e a pena não privativa de liberdade (art. 62).",
+        pista: "A “simplicidade” foi acrescentada pela Lei 13.603/2018. São cinco critérios.",
       },
       {
+        termo: "Lugar e horário",
+        faz: "A competência é do Juizado do lugar em que a infração foi praticada (art. 63). Os atos são públicos e podem ser feitos à noite e em qualquer dia da semana, conforme a organização judiciária (art. 64).",
+      },
+      {
+        termo: "Validade dos atos",
+        faz: "O ato vale se cumpriu sua finalidade, e não se declara nulidade sem prejuízo (art. 65, § 1º). Atos em outra comarca podem ser pedidos por qualquer meio hábil de comunicação (§ 2º). Só os atos essenciais vão por escrito; a audiência de instrução pode ser gravada (§ 3º).",
+      },
+      {
+        termo: "Citação e intimação",
+        faz: "A citação é pessoal, feita no próprio Juizado sempre que possível, ou por mandado (art. 66). A intimação vai por correspondência com aviso de recebimento, por oficial de justiça sem precisar de mandado ou precatória, ou por qualquer meio idôneo. Na pessoa jurídica, basta entregar ao encarregado da recepção, que deve ser identificado (art. 67).",
+        pista: "O que acontece na audiência já vale como intimação para as partes, os interessados e os defensores (art. 67, parágrafo único).",
+      },
+      {
+        termo: "Advogado obrigatório",
+        faz: "A intimação do autor do fato e a citação do acusado avisam que ele deve vir com advogado; se não tiver, recebe defensor público (art. 68).",
+        pista: "No Juizado Cível, o advogado é dispensável nas causas de até 20 salários mínimos (art. 9º). No Criminal, a defesa técnica é sempre exigida.",
+      },
+      {
+        parte: "3. Fase policial",
         termo: "Termo circunstanciado",
-        faz: "A autoridade policial lavra o termo e o envia logo ao Juizado, com o autor e a vítima, sem inquérito (art. 69).",
+        faz: "A autoridade policial lavra o termo e o envia logo ao Juizado, com o autor e a vítima, sem inquérito, e requisita os exames periciais necessários (art. 69).",
         pista: "Para a PRF, está no art. 58, XII, do Anexo I do Decreto 11.348/2023.",
+      },
+      {
+        termo: "Quem lavra o termo",
+        faz: "O termo é um relato simples do fato, com a identificação dos envolvidos. O STF já decidiu que lavrá-lo não é exclusivo da polícia judiciária: a PRF (ADI 6264) e a polícia militar (ADI 5637) também podem.",
       },
       {
         termo: "Sem flagrante nem fiança",
         faz: "Se o autor for encaminhado ao Juizado ou assumir o compromisso de comparecer, não se impõe prisão em flagrante nem se exige fiança (art. 69, parágrafo único).",
+        pista: "Se o autor se recusar a ir ao Juizado e também a assumir o compromisso, a prisão em flagrante e a fiança voltam a ser possíveis.",
+      },
+      {
+        termo: "Afastamento do lar",
+        faz: "Em caso de violência doméstica, o juiz pode determinar, como cautela, que o autor saia do lar, do domicílio ou do local de convivência com a vítima (art. 69, parágrafo único, Lei 10.455/2002).",
+        pista: "Isso vale para a violência doméstica fora da Lei 11.340/2006. Se a vítima for mulher, a Lei 9.099 não se aplica (art. 41 daquela lei).",
+      },
+      {
+        termo: "Droga para consumo pessoal",
+        faz: "No porte de droga para consumo (Lei 11.343/2006, art. 28), não se impõe prisão em flagrante: lavra-se o termo circunstanciado e o autor vai ao juízo ou assume o compromisso de comparecer (art. 48, § 2º). Sem juiz presente, a autoridade policial toma as providências no local, sem deter o agente (§ 3º).",
+        pista: "Diferente da regra geral, a lei não põe condição: mesmo sem o compromisso, não se lavra o flagrante.",
+      },
+      {
+        parte: "4. Audiência preliminar",
+        termo: "Audiência preliminar",
+        faz: "Se não der para fazer a audiência na hora, marca-se data próxima, e autor e vítima já saem cientes (art. 70); quem faltar é intimado (art. 71). Na audiência, com o Ministério Público, o autor, a vítima e, se possível, o responsável civil, todos com advogados, o juiz explica a composição dos danos e a proposta de pena não privativa de liberdade (art. 72).",
+      },
+      {
+        termo: "Conciliador",
+        faz: "A conciliação é conduzida pelo juiz ou por conciliador sob sua orientação. Conciliadores são auxiliares da Justiça, recrutados pela lei local de preferência entre bacharéis em Direito, excluídos os que trabalham na administração da Justiça Criminal (art. 73).",
       },
       {
         termo: "Composição dos danos",
         faz: "Acordo homologado por sentença irrecorrível, que vale como título a executar no juízo cível. Na ação privada ou pública condicionada, ele acarreta renúncia à queixa ou à representação (art. 74).",
+        pista: "Na ação pública incondicionada, o acordo civil não impede a transação penal nem a denúncia.",
       },
       {
         termo: "Representação",
         faz: "Feita de forma verbal na audiência e reduzida a termo. Se não for oferecida ali, não há decadência: pode vir no prazo legal (art. 75). Lesões corporais leves e culposas dependem de representação (art. 88).",
+        pista: "O prazo legal, em regra, é de 6 meses a contar do dia em que a vítima soube quem é o autor (CP, art. 103; CPP, art. 38).",
       },
       {
+        parte: "5. Transação penal",
         termo: "Transação penal",
         faz: "O Ministério Público propõe pena restritiva de direitos ou multa. Não cabe a quem foi condenado por crime a pena privativa de liberdade por sentença definitiva, a quem teve o benefício nos últimos 5 anos ou se as circunstâncias não indicarem. Não gera reincidência nem consta da certidão de antecedentes (art. 76).",
+        pista: "Quem propõe é o Ministério Público, não o juiz. O registro serve só para impedir novo benefício em 5 anos (§ 4º).",
       },
       {
+        termo: "Como a transação corre",
+        faz: "Se a multa for a única pena aplicável, o juiz pode reduzi-la até a metade (art. 76, § 1º). O autor e o defensor aceitam, e a proposta vai ao juiz (§ 3º). Da sentença que a acolhe cabe apelação (§ 5º). A sanção não tem efeitos civis: a vítima pode ir ao juízo cível (§ 6º).",
+        pista: "Na composição e na transação, as despesas do processo são reduzidas, conforme a lei estadual (art. 87).",
+      },
+      {
+        termo: "Descumprimento da transação",
+        faz: "A homologação não faz coisa julgada material. Se o autor descumpre o acordo, volta-se à situação anterior, e o Ministério Público pode oferecer denúncia ou requisitar inquérito (STF, Súmula Vinculante 35).",
+        pista: "Quando cabe transação penal, não cabe acordo de não persecução penal (CPP, art. 28-A, § 2º, I).",
+      },
+      {
+        termo: "Transação na ação privada",
+        faz: "A lei fala em representação ou ação pública incondicionada, mas a jurisprudência majoritária admite a transação também na ação privada. Nesse caso, quem decide propor é o ofendido, e não o Ministério Público nem o juiz.",
+      },
+      {
+        parte: "6. Procedimento sumariíssimo",
         termo: "Procedimento sumariíssimo",
         faz: "Denúncia oral com base no termo, sem inquérito; o boletim médico pode suprir o exame de corpo de delito (art. 77). Não há citação por edital: o acusado não encontrado vai ao juízo comum (art. 66).",
+        pista: "A denúncia oral vem quando não houve transação, porque o autor faltou ou porque o benefício não coube ou não foi aceito, desde que não faltem diligências indispensáveis (art. 77, caput).",
       },
       {
+        termo: "Caso complexo e queixa oral",
+        faz: "Se a complexidade ou as circunstâncias do caso não permitirem a denúncia, o Ministério Público pede que as peças sigam ao juízo comum (art. 77, § 2º). Na ação privada, a vítima pode oferecer queixa oral, e o juiz também pode mandar o caso ao juízo comum se ele for complexo (§ 3º).",
+        pista: "São dois caminhos para o juízo comum: acusado não encontrado para a citação (art. 66) e caso complexo (art. 77, §§ 2º e 3º).",
+      },
+      {
+        termo: "Citação na audiência",
+        faz: "A denúncia ou queixa é reduzida a termo e o acusado recebe uma cópia: com ela, fica citado e já sabe a data da audiência de instrução e julgamento. O Ministério Público, a vítima, o responsável civil e os advogados também ficam cientes (art. 78).",
+        pista: "Se o acusado não estiver presente, é citado pelos arts. 66 e 68 e deve trazer suas testemunhas ou pedir a intimação delas pelo menos 5 dias antes da audiência (art. 78, § 1º).",
+      },
+      {
+        termo: "Nova chance de acordo",
+        faz: "Se na fase preliminar não houve como tentar a conciliação nem a proposta do Ministério Público, isso é feito no começo da audiência de instrução e julgamento, pelas regras dos arts. 72 a 75 (art. 79).",
+      },
+      {
+        termo: "Nenhum ato adiado",
+        faz: "Na audiência de instrução e julgamento, nenhum ato é adiado. Se for indispensável, o juiz manda conduzir à força quem deveria comparecer (art. 80).",
+        pista: "O STF proibiu a condução coercitiva do investigado ou do réu para interrogatório (ADPFs 395 e 444, 2018). Testemunhas e vítima ainda podem ser conduzidas.",
+      },
+      {
+        termo: "Ordem da audiência",
+        faz: "Primeiro o defensor responde à acusação; depois o juiz recebe ou rejeita a denúncia ou queixa. Recebida, ouvem-se a vítima e as testemunhas de acusação e de defesa, interroga-se o acusado, se presente, e seguem os debates orais e a sentença (art. 81).",
+        pista: "A defesa fala antes de a denúncia ser recebida, e o interrogatório vem depois das testemunhas.",
+      },
+      {
+        termo: "Provas e dignidade da vítima",
+        faz: "Todas as provas são produzidas na audiência, e o juiz pode limitar ou excluir as excessivas, impertinentes ou protelatórias (art. 81, § 1º). Todos devem respeitar a dignidade da vítima, sob pena de responsabilidade civil, penal e administrativa: são proibidas falas sobre fatos alheios ao processo e linguagem, informações ou material que ofendam a vítima ou as testemunhas (§ 1º-A).",
+        pista: "O § 1º-A veio da Lei 14.245/2021, que criou regra igual no CPP.",
+      },
+      {
+        termo: "Termo e sentença",
+        faz: "Da audiência se lavra um termo, assinado pelo juiz e pelas partes, com um breve resumo dos fatos relevantes e a sentença (art. 81, § 2º). A sentença dispensa o relatório, mas deve citar os elementos que convenceram o juiz (§ 3º).",
+      },
+      {
+        parte: "7. Recursos e execução",
         termo: "Apelação",
         faz: "Em 10 dias, por petição escrita com as razões e o pedido, podendo ser julgada por turma de 3 juízes de primeiro grau (art. 82).",
+        pista: "Cabe contra a rejeição da denúncia ou queixa e contra a sentença. As razões vão junto com a petição; no CPP, são 5 dias para apelar e 8 para as razões (arts. 593 e 600).",
       },
       {
+        termo: "Resposta e julgamento",
+        faz: "O recorrido tem 10 dias para responder por escrito (art. 82, § 2º). As partes podem pedir a transcrição da gravação da audiência (§ 3º) e são intimadas da data do julgamento pela imprensa (§ 4º). Se a turma confirmar a sentença pelos próprios fundamentos, a súmula do julgamento serve de acórdão (§ 5º).",
+      },
+      {
+        termo: "Embargos de declaração",
+        faz: "Cabem quando a sentença ou o acórdão tiver obscuridade, contradição ou omissão. São opostos por escrito ou oralmente, em 5 dias da ciência da decisão, e interrompem o prazo para os outros recursos. Erros materiais podem ser corrigidos de ofício (art. 83).",
+        pista: "Antes do CPC de 2015 (Lei 13.105/2015), cabiam também por “dúvida” e apenas suspendiam o prazo.",
+      },
+      {
+        termo: "Recursos aos tribunais",
+        faz: "Contra a decisão da turma recursal não cabe recurso especial ao STJ (Súmula 203 do STJ), mas cabe recurso extraordinário ao STF (Súmula 640 do STF).",
+        pista: "O mandado de segurança contra ato do Juizado é julgado pela própria turma recursal (Súmula 376 do STJ).",
+      },
+      {
+        termo: "Pagamento da multa",
+        faz: "Se a pena for só de multa, o pagamento é feito na Secretaria do Juizado. Pago, o juiz declara extinta a punibilidade, e a condenação não fica nos registros criminais, salvo para requisição judicial (art. 84). As penas privativas de liberdade e restritivas de direitos, ou a multa junto com elas, são executadas no órgão competente (art. 86).",
+        pista: "O art. 85 ainda fala em converter a multa não paga em prisão, mas isso não vale mais: a multa é dívida de valor (CP, art. 51).",
+      },
+      {
+        parte: "8. Suspensão condicional do processo",
         termo: "Suspensão condicional do processo",
         faz: "Nos crimes com pena mínima de até 1 ano, dentro ou fora da lei, o Ministério Público pode propor a suspensão por 2 a 4 anos, com condições. A prescrição não corre nesse período (art. 89).",
-        pista: "Vale também para crimes que não são de menor potencial ofensivo.",
+        pista: "Vale também para crimes que não são de menor potencial ofensivo, como a embriaguez ao volante (CTB, art. 306: 6 meses a 3 anos).",
       },
       {
+        termo: "Requisitos da suspensão",
+        faz: "O Ministério Público propõe ao oferecer a denúncia, se o acusado não estiver sendo processado nem tiver sido condenado por outro crime e se estiverem presentes os requisitos da suspensão condicional da pena (CP, art. 77). O acusado e o defensor aceitam na presença do juiz, que recebe a denúncia e suspende o processo (art. 89, caput e § 1º).",
+        pista: "Se o acusado não aceitar, o processo segue normalmente (§ 7º).",
+      },
+      {
+        termo: "Condições do período de prova",
+        faz: "Reparar o dano, salvo impossibilidade; não frequentar certos lugares; não sair da comarca onde mora sem autorização do juiz; e comparecer pessoalmente ao juízo todo mês para informar e justificar suas atividades (art. 89, § 1º). O juiz pode fixar outras condições adequadas ao fato e à situação da pessoa (§ 2º).",
+      },
+      {
+        termo: "Revogação e extinção",
+        faz: "A revogação é obrigatória se o beneficiário passar a ser processado por outro crime ou não reparar o dano sem motivo justificado (§ 3º). É facultativa se for processado por contravenção ou descumprir outra condição (§ 4º). Terminado o prazo sem revogação, o juiz declara extinta a punibilidade (§ 5º).",
+        pista: "Processo por crime: revogação obrigatória. Processo por contravenção: revogação facultativa.",
+      },
+      {
+        termo: "Súmulas da suspensão",
+        faz: "No concurso de crimes ou no crime continuado, não cabe se a pena mínima, somada ou com o aumento, passar de 1 ano (STJ, Súmula 243; STF, Súmula 723, com o aumento mínimo de 1/6). Se o promotor se recusar a propor, o juiz que discordar manda a questão ao Procurador-Geral (STF, Súmula 696). Cabe também na desclassificação do crime e na procedência parcial da acusação (STJ, Súmula 337).",
+      },
+      {
+        parte: "9. Onde a lei não se aplica",
         termo: "Onde a lei não se aplica",
         faz: "Na Justiça Militar (art. 90-A) e nos crimes com violência doméstica e familiar contra a mulher, qualquer que seja a pena (Lei 11.340/2006, art. 41).",
+        pista: "Na Lei Maria da Penha não cabem transação penal nem suspensão condicional do processo (STJ, Súmula 536), e a lesão corporal contra a mulher no ambiente doméstico, mesmo leve, é de ação pública incondicionada (STJ, Súmula 542).",
       },
       {
-        termo: "Juizados Federais",
-        faz: "O Juizado Especial Federal Criminal julga as infrações de menor potencial de competência da Justiça Federal. Contravenção vai à Justiça Estadual, mesmo contra a União. O Cível julga causas federais de até 60 salários mínimos (Lei 10.259/2001, arts. 2º e 3º).",
+        termo: "Processos já em curso",
+        faz: "A lei não se aplica aos processos penais cuja instrução já tinha começado quando ela entrou em vigor (art. 90). O STF decidiu que essa trava não alcança as regras penais mais favoráveis ao réu, como a exigência de representação, que retroagem (ADI 1719).",
+        pista: "O CP e o CPP se aplicam de forma subsidiária, no que não forem incompatíveis com a Lei 9.099 (art. 92).",
       },
       {
+        termo: "Estatuto da Pessoa Idosa",
+        faz: "Nos crimes do Estatuto da Pessoa Idosa (Lei 10.741/2003) com pena máxima de até 4 anos, segue-se o procedimento da Lei 9.099 (art. 94).",
+        pista: "O STF decidiu que só o rito rápido se aplica: o autor não ganha composição, transação nem os outros benefícios da lei (ADI 3096).",
+      },
+      {
+        parte: "10. Crimes de trânsito",
         termo: "Lesão culposa no trânsito",
         faz: "Aplicam-se os arts. 74, 76 e 88 da Lei 9.099, salvo se o motorista estiver sob influência de álcool ou droga, em racha ou a mais de 50 km/h acima do limite; nesses casos, há inquérito (CTB, art. 291).",
+        pista: "As exceções do § 1º: álcool ou outra substância psicoativa que cause dependência (I); corrida, disputa, exibição ou manobra de perícia não autorizada em via pública (II); velocidade mais de 50 km/h acima da máxima da via (III).",
+      },
+      {
+        termo: "Regra geral do CTB",
+        faz: "Aos crimes de trânsito do CTB aplicam-se as normas gerais do CP e do CPP, se o capítulo não dispuser de outra forma, e a Lei 9.099, no que couber (art. 291, caput).",
+        pista: "O juiz fixa a pena-base pelo art. 59 do CP, com atenção especial à culpabilidade e às circunstâncias e consequências do crime (art. 291, § 4º, Lei 13.546/2017).",
+      },
+      {
+        termo: "Crimes de trânsito de menor potencial",
+        faz: "A lesão corporal culposa simples (art. 303, caput: 6 meses a 2 anos) e os crimes dos arts. 304, 305, 307, 309, 310, 311 e 312, todos com pena de 6 meses a 1 ano, são de menor potencial ofensivo.",
+        pista: "Embriaguez ao volante (art. 306) e racha (art. 308) têm pena máxima de 3 anos: não são de menor potencial, mas admitem a suspensão condicional do processo.",
+      },
+      {
+        termo: "Socorro à vítima",
+        faz: "No sinistro de trânsito com vítima, o condutor que prestar pronto e integral socorro não é preso em flagrante nem paga fiança (CTB, art. 301).",
+        pista: "A palavra “sinistro” veio com a Lei 14.599/2023; antes, o artigo falava em “acidente”.",
+      },
+      {
+        parte: "11. Juizados Especiais Federais",
+        termo: "Juizados Federais",
+        faz: "O Juizado Especial Federal Criminal julga as infrações de menor potencial de competência da Justiça Federal. Contravenção vai à Justiça Estadual, mesmo contra a União. O Cível julga causas federais de até 60 salários mínimos (Lei 10.259/2001, arts. 2º e 3º).",
+        pista: "Contravenção nunca vai à Justiça Federal (CF, art. 109, IV; STJ, Súmula 38). A Lei 9.099 se aplica aos Juizados Federais no que não conflitar com a Lei 10.259 (art. 1º).",
+      },
+      {
+        termo: "Fora do Juizado Federal Cível",
+        faz: "Não entram: as causas do art. 109, II, III e XI, da Constituição (Estado estrangeiro ou organismo internacional, tratados e direitos indígenas); mandado de segurança, desapropriação, divisão e demarcação, ações populares, execuções fiscais, improbidade e ações sobre direitos difusos, coletivos ou individuais homogêneos (art. 3º, § 1º, I); bens imóveis da União, autarquias e fundações federais (II); anulação de ato administrativo federal, salvo o previdenciário e o lançamento fiscal (III); e impugnação de demissão de servidor civil ou de sanção disciplinar a militar (IV).",
+      },
+      {
+        termo: "Valor e competência absoluta",
+        faz: "Em obrigações que ainda vão vencer, a soma de 12 parcelas não pode passar de 60 salários mínimos (art. 3º, § 2º). Onde houver vara do Juizado Federal instalada, a competência dele é absoluta (§ 3º).",
+        pista: "No Juizado estadual cível, o limite é de 40 salários mínimos, e o autor pode optar por ele (Lei 9.099, art. 3º).",
+      },
+      {
+        termo: "Partes no Juizado Federal",
+        faz: "Podem ser autores as pessoas físicas, as microempresas e as empresas de pequeno porte. Podem ser réus a União, as autarquias, as fundações e as empresas públicas federais (art. 6º).",
+        pista: "Sociedade de economia mista federal não é ré no Juizado Federal: responde na Justiça Estadual (STJ, Súmula 42). Nos Juizados estaduais, o microempreendedor individual também pode ser autor (Lei 9.099, art. 8º, § 1º, II).",
+      },
+      {
+        termo: "Prazos e representantes",
+        faz: "Os entes públicos não têm prazo diferenciado, nem para recorrer, e a citação para a audiência de conciliação deve ser feita com pelo menos 30 dias de antecedência (art. 9º). As partes podem indicar por escrito representantes, advogados ou não, e os representantes dos entes federais podem conciliar, transigir ou desistir (art. 10). Não há reexame necessário (art. 13).",
+        pista: "Na audiência de composição dos danos de um crime, o representante do ente público que comparecer pode acordar, desistir ou transigir (art. 11, parágrafo único).",
       },
     ],
     cuidado:

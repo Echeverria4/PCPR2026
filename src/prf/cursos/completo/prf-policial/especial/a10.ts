@@ -4,53 +4,138 @@ export const AULA: AulaEscrita = {
   aula: "especial-10",
   resumo: {
     ideia:
-      "As competências da PRF vêm de quatro fontes que se somam: o art. 144, § 2º, da Constituição, o art. 20 do CTB, o Decreto 1.655/1995 e o art. 58 do Anexo I do Decreto 11.348/2023, que trata da estrutura do Ministério da Justiça e Segurança Pública.",
+      "As competências da PRF vêm de quatro fontes que se somam: o art. 144, § 2º, da Constituição, o art. 20 do CTB, o Decreto 1.655/1995 e o art. 58 do Anexo I do Decreto 11.348/2023, que trata da estrutura do Ministério da Justiça e Segurança Pública. Boa parte se repete entre elas, e a prova costuma cobrar justamente as diferenças.",
     itens: [
       {
+        parte: "1. Constituição e fontes",
         termo: "Constituição",
         faz: "A PRF é órgão permanente, organizado e mantido pela União e estruturado em carreira, destinado ao patrulhamento ostensivo das rodovias federais (art. 144, § 2º).",
+        pista: "Patrulhamento ostensivo é o policiamento visível, fardado e presente na via. Rodovias e estradas são vias rurais (CTB, art. 60, II).",
       },
       {
+        termo: "Decreto e CTB lado a lado",
+        faz: "O Decreto 1.655/1995 é anterior ao CTB (1997). O art. 20 do CTB repetiu quase todas as competências do decreto, trouxe outras novas e deixou de fora três: escolta de autoridades, tráfico de menores e combate a crimes (incisos VIII, IX e X do decreto).",
+        pista: "As duas normas valem juntas. Na prova, veja de qual delas o enunciado fala, porque a redação muda de uma para a outra.",
+      },
+      {
+        parte: "2. Decreto 11.348/2023, art. 58",
         termo: "Decreto 11.348/2023, art. 58",
         faz: "Manda a PRF exercer as competências da Constituição, do art. 20 do CTB e do Decreto 1.655/1995 e lista competências específicas: prevenir e reprimir crimes nas rodovias e estradas federais e nas áreas de interesse da União, exercer a autoridade de trânsito e lavrar o termo circunstanciado da Lei 9.099/1995.",
         pista: "O decreto novo soma competências; não revoga o Decreto 1.655.",
       },
       {
-        termo: "Patrulhamento e crimes",
-        faz: "Patrulhamento ostensivo para preservar a ordem, a incolumidade das pessoas e o patrimônio da União e de terceiros. A PRF colabora e atua na prevenção e repressão de crimes como roubo de veículos, tráfico, contrabando, descaminho e crimes ambientais (Decreto 1.655, art. 1º, I e X).",
+        termo: "Art. 58: policiamento e trânsito",
+        faz: "Planejar, coordenar e executar o policiamento, a prevenção e a repressão de crimes nas rodovias federais e nas áreas de interesse da União (I); ser autoridade de trânsito (II); policiar, fiscalizar e inspecionar o trânsito e o transporte de pessoas, cargas e bens (III); prevenir acidentes e salvar vítimas (IV); fazer levantamentos de locais, boletins, perícias de trânsito, testes de dosagem alcoólica e investigações para esclarecer acidentes (V).",
       },
       {
+        termo: "Art. 58: via, educação e escoltas",
+        faz: "Garantir a livre circulação, sobretudo em acidentes, manifestações sociais e calamidades (VI); trocar informações com órgãos de trânsito, transporte, segurança, inteligência e defesa civil (VII); educação para o trânsito e prevenção contínua de acidentes (VIII); avisar o órgão de infraestrutura sobre problemas da via e pedir medidas de emergência (IX); credenciar, contratar e fiscalizar recolhimento, remoção, guarda e escoltas (X); escoltar autoridades (XI); lavrar o termo circunstanciado (XII).",
+      },
+      {
+        termo: "Termo circunstanciado",
+        faz: "A PRF pode lavrar o termo circunstanciado do art. 69 da Lei 9.099/1995 nas infrações de menor potencial ofensivo (Decreto 11.348/2023, art. 58, XII).",
+        pista: "O STF julgou constitucional a lavratura do termo pela PRF nos crimes federais de menor potencial ofensivo: o termo não é exclusivo da polícia judiciária (ADI 6264, 2023).",
+      },
+      {
+        parte: "3. Patrulhamento, autoridade e crimes",
+        termo: "Patrulhamento e crimes",
+        faz: "Patrulhamento ostensivo para preservar a ordem, a incolumidade das pessoas e o patrimônio da União e de terceiros. A PRF colabora e atua na prevenção e repressão de crimes como roubo de veículos, tráfico, contrabando, descaminho e crimes ambientais (Decreto 1.655, art. 1º, I e X).",
+        pista: "O patrulhamento está no inciso I do decreto e no inciso II do CTB.",
+      },
+      {
+        termo: "Autoridade de trânsito",
+        faz: "Pelo decreto, a PRF exerce os poderes de autoridade de polícia de trânsito, cumprindo e fazendo cumprir a legislação, inspeciona e fiscaliza o trânsito e pode firmar convênios com organizações similares (art. 1º, II). No CTB, a regra é cumprir e fazer cumprir a legislação e as normas de trânsito (art. 20, I).",
+        pista: "“Cumprir” vem antes de “fazer cumprir”: o próprio policial e a viatura devem respeitar as regras que fiscalizam.",
+      },
+      {
+        termo: "Crimes da lista do decreto",
+        faz: "A PRF colabora e atua na prevenção e na repressão dos crimes contra a vida, os costumes, o patrimônio, a ecologia e o meio ambiente, dos furtos e roubos de veículos e bens, do tráfico de drogas, do contrabando, do descaminho e dos demais crimes previstos em lei (Decreto 1.655, art. 1º, X).",
+        pista: "Os incisos V e X do decreto foram questionados no STF por invadirem a área da polícia judiciária (ADI 4447). Sem decisão definitiva, eles continuam valendo.",
+      },
+      {
+        parte: "4. Multas e penalidades",
         termo: "Trânsito no CTB",
         faz: "Nas rodovias e estradas federais, a PRF fiscaliza, aplica advertência por escrito e multa, adota medidas administrativas e arrecada multas e valores de estadia, remoção e escolta (art. 20, III).",
+        pista: "A redação atual do inciso III veio da Lei 14.071/2020 e inclui a notificação dos infratores.",
+      },
+      {
+        termo: "Multas e valores",
+        faz: "O decreto manda aplicar e arrecadar as multas e os valores de estadia e remoção de veículos, objetos e animais e de escolta de veículos de “cargas excepcionais” (art. 1º, III). O CTB fala em escolta de cargas “superdimensionadas ou perigosas” (art. 20, III).",
+        pista: "O art. 58, X, do Decreto 11.348 fala em escolta de produtos perigosos e de cargas superdimensionadas e indivisíveis.",
       },
       {
         termo: "Suspensão do direito de dirigir",
         faz: "A PRF aplica a suspensão quando ela é prevista de forma específica para a infração e comunica ao órgão máximo executivo de trânsito da União (CTB, art. 20, XII, Lei 14.071/2020).",
+        pista: "Fora desses casos, o processo de suspensão e a cassação da habilitação ficam com o órgão executivo de trânsito do Estado ou do DF (CTB, art. 22, II).",
       },
       {
+        parte: "5. Sinistros",
         termo: "Sinistros de trânsito",
         faz: "Levantamento dos locais e atendimento, socorro e salvamento de vítimas (IV), estatísticas e estudos sobre as causas, enviados ao órgão rodoviário federal (VII), e perícia administrativa nos locais (XIII).",
         pista: "Desde a Lei 14.599/2023, o CTB fala em “sinistro”, e não mais em “acidente”.",
       },
       {
+        termo: "Prevenção e salvamento",
+        faz: "O decreto manda executar serviços de prevenção, atendimento de acidentes e salvamento de vítimas nas rodovias federais (art. 1º, IV). O art. 58 manda planejar, coordenar e executar esses serviços (IV) e desenvolver um trabalho contínuo e permanente de prevenção de acidentes (VIII).",
+        pista: "Com os estudos sobre as causas dos sinistros, a PRF adota ou indica medidas operacionais preventivas (CTB, art. 20, VII).",
+      },
+      {
+        termo: "Perícias e investigações",
+        faz: "A PRF faz perícias, levantamentos de locais, boletins de ocorrência, investigações, testes de dosagem alcoólica e outros procedimentos previstos em lei, indispensáveis para esclarecer os acidentes de trânsito (Decreto 1.655, art. 1º, V; Decreto 11.348, art. 58, V).",
+        pista: "No CTB, a perícia administrativa nos locais de sinistro só entrou em 2021, no inciso XIII (Lei 14.229/2021, hoje com a redação da Lei 14.599/2023).",
+      },
+      {
+        parte: "6. Via, escoltas e educação",
         termo: "Livre circulação",
         faz: "A PRF assegura a livre circulação, pode pedir ao órgão rodoviário medidas emergenciais e zela pelo direito de vizinhança, promovendo a interdição de construções e instalações não autorizadas (CTB, art. 20, VI).",
+        pista: "O decreto fala em interdição de construções, obras e instalações (art. 1º, VII). O art. 58, VI, destaca a livre circulação em acidentes, manifestações sociais e calamidades públicas.",
       },
       {
         termo: "Escoltas",
         faz: "Credencia os serviços de escolta e fiscaliza a remoção de veículos e o transporte de carga indivisível (CTB, art. 20, V). Também planeja a segurança nos deslocamentos de autoridades, sob a coordenação do órgão competente (Decreto 1.655, art. 1º, VIII).",
       },
       {
+        termo: "Escolta de autoridades",
+        faz: "Pelo Decreto 1.655, a PRF executa segurança, planejamento e escolta nos deslocamentos do Presidente da República, dos Ministros de Estado, de Chefes de Estado, de diplomatas estrangeiros e de outras autoridades, quando necessário e sob a coordenação do órgão competente (art. 1º, VIII).",
+        pista: "O art. 58, XI, do Decreto 11.348 inclui o Vice-Presidente e permite a escolta também fora das rodovias federais (“e em outras áreas”), quando a autoridade competente pedir. O CTB não fala em escolta de autoridades.",
+      },
+      {
+        termo: "Educação de trânsito",
+        faz: "A PRF implementa as medidas da Política Nacional de Segurança e Educação de Trânsito (CTB, art. 20, VIII) e promove e participa de projetos e programas de educação e segurança, conforme as diretrizes do Contran (IX).",
+        pista: "O art. 58, VIII, do Decreto 11.348 fala em orientação e educação para a segurança no trânsito.",
+      },
+      {
+        termo: "Integração no SNT",
+        faz: "A PRF se integra aos outros órgãos do Sistema Nacional de Trânsito para arrecadar e compensar as multas da sua área, buscando unificar o licenciamento e tornar mais simples e rápidas as transferências de veículos e de prontuários de condutores entre os Estados (CTB, art. 20, X).",
+      },
+      {
+        parte: "7. Menores, meio ambiente e identidade",
         termo: "Menores e meio ambiente",
         faz: "Fiscaliza e controla o tráfico de menores nas rodovias federais, com as providências do ECA (Decreto 1.655, art. 1º, IX). Fiscaliza a emissão de poluentes e ruído dos veículos e apoia os órgãos ambientais quando solicitada (CTB, art. 20, XI).",
+        pista: "O inciso XI do CTB remete ao art. 66, que foi vetado. O apoio aos órgãos ambientais depende de pedido.",
+      },
+      {
+        termo: "Criança desaparecida",
+        faz: "A investigação do desaparecimento de criança ou adolescente começa logo após a notificação. Os órgãos competentes avisam portos, aeroportos, Polícia Rodoviária e empresas de transporte interestadual e internacional, com os dados para identificar o desaparecido (ECA, art. 208, § 2º).",
       },
       {
         termo: "Identidade funcional",
         faz: "Confere ao policial livre porte de arma e franco acesso aos locais sob fiscalização do órgão e, quando em serviço, prioridade em todos os tipos de transporte e comunicação (Decreto 1.655, art. 2º).",
+        pista: "Porte e acesso não dependem de estar em serviço. Só a prioridade em transporte e comunicação exige o serviço.",
+      },
+      {
+        parte: "8. Diferenças entre as normas",
+        termo: "Só no CTB",
+        faz: "Não estão no Decreto 1.655: implementar a política nacional de educação de trânsito (VIII), programas de educação do Contran (IX), integração no SNT (X), poluentes e ruído (XI), suspensão do direito de dirigir (XII) e perícia administrativa nos locais de sinistro (XIII).",
+      },
+      {
+        termo: "Incisos que trocam de número",
+        faz: "O que é inciso I no decreto (patrulhamento) é II no CTB; o II do decreto (autoridade de trânsito) é I no CTB. Multas e valores são III nas duas. Credenciar escoltas é VI no decreto e V no CTB; livre circulação é VII no decreto e VI no CTB.",
+        pista: "Atendimento de acidentes e perícias (IV e V do decreto) aparecem no CTB nos incisos IV, VII e XIII.",
       },
     ],
     cuidado:
-      "O Decreto 11.348/2023 já foi alterado por vários decretos: confira no Planalto se o art. 58 mudou. A PEC 18/2025 (PEC da Segurança Pública) propõe mudanças no art. 144 que alcançam a PRF; se for promulgada, confira o novo texto.",
+      "Conferido no Planalto em novembro de 2026: o art. 58 do Decreto 11.348/2023 não mudou, mas outras partes do decreto já foram alteradas; confira de novo antes da prova. Os incisos V e X do Decreto 1.655 são questionados no STF (ADI 4447), ainda sem decisão definitiva. A PEC 18/2025 (PEC da Segurança Pública) propõe mudanças no art. 144 que alcançam a PRF; se for promulgada, confira o novo texto.",
   },
   questoes: [
     {

@@ -4,57 +4,210 @@ export const AULA: AulaEscrita = {
   aula: "especial-09",
   resumo: {
     ideia:
-      "A segunda parte da Lei 13.675/2018 trata do Plano Nacional, da avaliação das políticas, do controle da atividade policial, do Sinesp e da formação e valorização dos profissionais de segurança.",
+      "A segunda parte da Lei 13.675/2018 trata do Plano Nacional, da avaliação das políticas, do controle da atividade policial, do Sinesp e da formação e valorização dos profissionais de segurança. Esta aula cobre os arts. 22 a 50, inclusive as regras de saúde e de prevenção ao suicídio dos profissionais, que entraram em 2023.",
     itens: [
       {
+        parte: "1. Plano Nacional",
         termo: "Plano Nacional",
         faz: "Instituído pela União, dura 10 anos. Prioriza a prevenção à criminalidade e as ações preventivas e fiscalizatórias nas divisas, fronteiras, portos e aeroportos (art. 22).",
         pista: "A política de segurança não se restringe ao Susp: envolve educação, saúde, lazer e cultura (art. 22, § 1º).",
       },
       {
-        termo: "Planos locais",
-        faz: "Estados, DF e Municípios fazem os seus em até 2 anos da publicação do plano nacional, sob pena de não receberem recursos da União para segurança pública (art. 22, § 5º).",
+        termo: "Para que serve o Plano",
+        faz: "Articular as ações do poder público para: melhorar a gestão das políticas de segurança; ajudar a organizar os Conselhos; garantir produção de conhecimento, definição de metas e avaliação dos resultados; e priorizar a segurança interna nas divisas, fronteiras, portos e aeroportos (art. 22, I a IV).",
       },
       {
+        termo: "Papel da União",
+        faz: "Pelo ministério da área, a União elabora os objetivos, as ações estratégicas, as metas, as prioridades, os indicadores e as formas de financiamento e gestão das políticas de segurança (art. 22, § 4º).",
+        pista: "As ações de prevenção à criminalidade são prioritárias na elaboração do Plano (§ 3º).",
+      },
+      {
+        termo: "Planos locais",
+        faz: "Estados, DF e Municípios fazem os seus em até 2 anos da publicação do plano nacional, sob pena de não receberem recursos da União para segurança pública (art. 22, § 5º).",
+        pista: "O poder público deve dar ampla divulgação ao conteúdo das políticas e dos planos (§ 6º).",
+      },
+      {
+        parte: "2. Diretrizes e metas dos planos",
+        termo: "Diretrizes: parcerias e integração",
+        faz: "Na elaboração e na execução dos planos, os agentes públicos devem: articular órgãos públicos, entidades privadas, polícias e organismos internacionais em parcerias; integrar programas de saúde, planejamento familiar, educação, trabalho, assistência e previdência social, cultura, desporto e lazer para prevenir crimes e desastres; harmonizar o trabalho conjunto do Susp; garantir o planejamento e a execução das políticas (art. 24).",
+      },
+      {
+        termo: "Diretrizes: escola, sociedade e egressos",
+        faz: "Ampla participação social em todas as fases das políticas; programas com escolas, sociedade e família para prevenir crimes e desastres; incentivo a disciplinas de prevenção da violência e de desastres nos currículos; mais opções de inserção econômica e social dos egressos do sistema prisional, com escolarização e qualificação profissional (art. 24).",
+      },
+      {
+        termo: "Diretrizes: estudos e cidades",
+        faz: "Garantir a efetividade dos programas; monitorar e avaliar as políticas; incentivar grupos de estudo de agentes do Susp, professores e pesquisadores sobre a criminalidade; estudos de planejamento urbano para que a prevenção entre no plano diretor das cidades, com reforço na iluminação pública e atenção a pessoas e famílias em risco social e criminal (art. 24).",
+      },
+      {
+        termo: "Metas de excelência",
+        faz: "Os integrantes do Susp fixam todo ano metas de excelência, para prevenir e reprimir infrações penais e administrativas e prevenir desastres. Elas servem para: organizar a educação gerencial, técnica e operacional com os Estados; promover educação qualificada e continuada; propor novos métodos de ensino; propor formas de valorização profissional; apoiar o sistema de saúde e o sistema habitacional dos profissionais (art. 25).",
+        pista: "As quatro primeiras finalidades são quase iguais às do Sievap (art. 38). Saúde e habitação dos profissionais só aparecem nas metas.",
+      },
+      {
+        parte: "3. Avaliação e Sinaped",
         termo: "Avaliação",
         faz: "A União faz avaliações anuais do plano, com os outros entes (art. 23). O relatório vai aos Conselhos (art. 27, § 2º). Participam Legislativo, Executivo, Judiciário, Ministério Público, Defensoria e Conselhos (art. 29), e o Legislativo de cada ente acompanha (art. 30).",
+        pista: "A primeira avaliação foi prevista para o segundo ano de vigência da lei, com acompanhamento do Legislativo federal (art. 23, parágrafo único).",
       },
       {
         termo: "Sinaped",
         faz: "Sistema de acompanhamento e avaliação das políticas. Usa autoavaliação, avaliação externa e análise global, com caráter público de todos os dados e resultados (arts. 26 e 31).",
+        pista: "A avaliação externa olha instalações físicas, relações institucionais, compromisso social, atividades e finalidades das corporações (art. 31, II).",
+      },
+      {
+        termo: "Objetivos do Sinaped",
+        faz: "Organizar e integrar os membros do Susp, seus projetos, diagnósticos, planos, resultados e avaliações; dar conhecimento dos programas e melhorar sua gestão; garantir diagnóstico, gestão e resultados das políticas de prevenção e controle da violência (art. 26).",
+        pista: "Nesse terceiro objetivo, verifica: se o orçamento combina com as necessidades, a eficácia do uso do dinheiro público, a manutenção do fluxo financeiro, o cumprimento dos compromissos assumidos e a articulação entre instituições e setores.",
+      },
+      {
+        termo: "Relatório e resultados",
+        faz: "Ao fim da avaliação sai um relatório com histórico, recomendações e prazos para cumpri-las (art. 27). Os resultados servem para: planejar metas e prioridades; reestruturar ou ampliar programas de prevenção e controle; ajustar objetivos dos programas; firmar acordos de cooperação para corrigir problemas; aumentar o financiamento; melhorar a capacitação do Susp (§ 1º).",
+      },
+      {
+        termo: "Dever de colaborar",
+        faz: "Autoridades, gestores, entidades e órgãos de segurança devem colaborar com a avaliação, facilitando o acesso a instalações, documentos e tudo o que for necessário (art. 28).",
       },
       {
         termo: "Comissões de avaliação",
         faz: "Uma comissão permanente coordena; comissões temporárias, com no mínimo 3 membros, avaliam. Não pode ser avaliador o servidor do órgão avaliado que seja parente até o 3º grau de quem trabalha lá ou que responda a processo criminal ou administrativo (art. 32).",
       },
       {
+        parte: "4. Controle e Sinesp",
         termo: "Correição e ouvidoria",
         faz: "Correição, com autonomia, apura a responsabilidade funcional por sindicância e processo disciplinar (art. 33). Ouvidoria, com autonomia e independência, recebe reclamações, elogios e sugestões de qualquer pessoa, encaminha ao órgão com atribuição e responde a quem reclamou (art. 34).",
+        pista: "A correição também propõe melhorias para as atividades dos órgãos. A ouvidoria deve existir na União, nos Estados, no DF e nos Municípios.",
       },
       {
         termo: "Sinesp",
         faz: "Banco nacional de dados de segurança, sistema prisional, armas e munições, perfil genético e digitais, drogas e, desde a Lei 14.899/2024, violência doméstica contra a mulher (art. 35). Também produz dados sobre saúde, vitimização (até fora do serviço) e saúde mental dos profissionais (art. 36, Lei 14.531/2023).",
+        pista: "Os dados sobre os profissionais incluem os que ficaram com deficiência por vitimização, os dependentes químicos em razão da atividade e os casos de transtorno mental e comportamento suicida.",
+      },
+      {
+        termo: "Objetivos do Sinesp",
+        faz: "Coletar, analisar, atualizar, sistematizar, integrar e interpretar dados de segurança; oferecer estudos, estatísticas e indicadores para as políticas públicas; integrar as redes de dados de segurança, criminais, prisionais e sobre drogas; garantir a interoperabilidade dos sistemas, nos padrões do conselho gestor (art. 36).",
+        pista: "Segue os padrões federais de integridade, disponibilidade, confidencialidade, confiabilidade e tempestividade (parágrafo único).",
+      },
+      {
+        termo: "Quem integra o Sinesp",
+        faz: "Todos os entes federados, por órgãos criados ou designados para isso. Os dados são padronizados e categorizados, e os próprios integrantes os fornecem e atualizam (art. 37, § 1º). O ministério pode firmar convênios com órgãos do Executivo de fora do Susp, com o Judiciário e com o MP, ressalvado o sigilo, se o foco for prevenir e reprimir a violência (§ 3º).",
+      },
+      {
+        termo: "Violência contra a mulher",
+        faz: "Para integrar os dados de violência doméstica e familiar contra a mulher, o Sinesp deve ter interoperabilidade, no que couber, com o Registro Unificado de Dados e Informações sobre Violência contra as Mulheres (Lei 14.232/2021), respeitadas as restrições de publicidade (art. 35, parágrafo único, Lei 14.899/2024).",
       },
       {
         termo: "Quem não informa",
         faz: "O ente que não fornece ou não atualiza os dados pode ficar sem recursos e parcerias com a União, inclusive do Funpen e do Pronasci. O agente omisso responde administrativamente (arts. 37, 46 e 48).",
+        pista: "O art. 37 diz que o ente “poderá não receber”. Já as leis do Funpen e do Pronasci, alteradas pelos arts. 46 e 48, dizem que “não poderão receber”.",
       },
       {
+        parte: "5. Sievap e formação",
         termo: "Sievap",
         faz: "Sistema de educação e valorização profissional. Programas: matriz curricular nacional, Renaesp (rede de instituições de ensino superior, com graduação, extensão e pós), Rede EaD-Senasp (escola virtual) e programa de qualidade de vida (arts. 38 a 41).",
         pista: "A matriz curricular segue os direitos humanos e a andragogia, que é a educação de adultos (art. 39, § 1º).",
       },
       {
-        termo: "Pró-Vida",
-        faz: "Programa de qualidade de vida: atenção psicossocial, saúde no trabalho e prevenção da violência contra os profissionais. Publica todo ano os dados de saúde e vitimização (art. 42).",
+        termo: "Finalidades do Sievap",
+        faz: "Planejar, pactuar, implementar, coordenar e supervisionar a educação gerencial, técnica e operacional, com os Estados; propor novos métodos de ensino; promover educação qualificada, continuada e integrada; propor formas de valorização profissional (art. 38).",
+        pista: "Os órgãos do Susp têm acesso às ações de educação do Sievap conforme a política do ministério (§ 2º).",
       },
       {
+        termo: "Matriz curricular nacional",
+        faz: "É o referencial teórico, metodológico e avaliativo da educação dos profissionais de segurança. Vale no ingresso, no aperfeiçoamento, na atualização, na capacitação e na especialização, presencial ou a distância, respeitado o regime de cada instituição (art. 39).",
+        pista: "Além dos direitos humanos e da andragogia, apoia-se nas teorias da construção do conhecimento. Os programas de educação devem seguir os seus princípios (§ 2º).",
+      },
+      {
+        termo: "Renaesp",
+        faz: "Rede de instituições de ensino superior, contratadas conforme as normas de licitação. Objetivos: cursos de graduação, extensão e pós-graduação em segurança; integração das ações dos profissionais; compreensão do fenômeno da violência; cidadania, direitos humanos e educação para a paz; unir a prática dos profissionais ao conhecimento acadêmico; cultura de segurança baseada em inteligência e informação; produção técnico-científica para o Susp (art. 40).",
+      },
+      {
+        termo: "Rede EaD-Senasp",
+        faz: "Escola virtual dos profissionais de segurança. Quer dar acesso ao aprendizado sem barreiras geográficas e sociais, para democratizar a educação em segurança pública (art. 41).",
+      },
+      {
+        parte: "6. Pró-Vida e prevenção ao suicídio",
+        termo: "Pró-Vida",
+        faz: "Programa de qualidade de vida: atenção psicossocial, saúde no trabalho e prevenção da violência contra os profissionais. Publica todo ano os dados de saúde e vitimização (art. 42).",
+        pista: "Também cuida da integração das unidades de saúde dos órgãos do Susp.",
+      },
+      {
+        termo: "Ações do Pró-Vida",
+        faz: "O ano todo, desenvolve ações de saúde biopsicossocial, saúde ocupacional e segurança do trabalho, além de mecanismos de proteção e valorização dos profissionais (art. 42, § 1º). Também previne e enfrenta todas as formas de violência sofridas por eles (§ 3º). As ações são pactuadas entre União, Estados, DF e Municípios nos planos de segurança (§ 4º).",
+        pista: "Os dados publicados todo ano são os mesmos que o Sinesp produz sobre os profissionais: saúde, vitimização, deficiência, dependência química e saúde mental (§ 2º).",
+      },
+      {
+        termo: "Prevenção ao suicídio",
+        faz: "O Pró-Vida produz diretrizes para prevenir a violência autoprovocada e o suicídio (art. 42-A). O Ministério da Justiça e Segurança Pública divulga, com a Rede Pró-Vida, diretrizes de prevenção e atendimento das emergências psiquiátricas, adaptadas a cada órgão (§ 1º).",
+        pista: "As ações se fazem por prevenção primária, secundária e terciária (§ 3º).",
+      },
+      {
+        termo: "Diretrizes: atendimento",
+        faz: "Abordagem multiprofissional; atendimento e escuta multidisciplinar e de proximidade; discrição e respeito à intimidade; ações integradas e intersetoriais; ações baseadas em evidências científicas; atendimento não compulsório; respeito à dignidade humana; sensibilização dos agentes (art. 42-A, § 2º).",
+        pista: "O atendimento não é obrigatório: o profissional não pode ser forçado a ele.",
+      },
+      {
+        termo: "Diretrizes: rede e gestão",
+        faz: "Articulação com a rede pública de saúde e outros parceiros; ações ou disciplinas nos cursos de formação; assistência social e saúde mental preventiva e inclusiva para a família; melhor infraestrutura das unidades; carga horária humanizada; remuneração compatível com a responsabilidade do trabalho policial; gestão administrativa humanizada (art. 42-A, § 2º).",
+      },
+      {
+        termo: "Prevenção primária",
+        faz: "Para todos os profissionais. Exemplos: aproximar a família do local de trabalho; promover qualidade de vida; campanhas de informação sobre o suicídio; palestras sobre qualidade de vida e ambiente de trabalho; saúde mental em todos os níveis de formação; capacitar para identificar e encaminhar casos de risco; espaços de escuta onde o profissional se sinta seguro (art. 42-A, § 4º).",
+      },
+      {
+        termo: "Prevenção secundária",
+        faz: "Para quem já está em situação de risco de violência autoprovocada. Exemplos: programas sobre álcool e drogas; rede de cuidado para diagnóstico precoce, com toda a instituição atenta a mudanças de comportamento; notificação de ideação e tentativa de suicídio na vigilância epidemiológica, sem expor a identidade; acompanhamento psicológico regular, após ocorrências traumáticas e para quem está preso ou responde a processo (art. 42-A, § 5º).",
+      },
+      {
+        termo: "Prevenção terciária",
+        faz: "Para quem comunicou ideação suicida ou tem histórico de violência autoprovocada. Exemplos: envolver a família no tratamento; enfrentar isolamento, desqualificação ou violência no trabalho; restringir o porte e o uso de arma de fogo; acompanhamento psicológico e, se preciso, médico; outros apoios da instituição (art. 42-A, § 6º).",
+        pista: "Restringir a arma é medida da prevenção terciária, não da primária nem da secundária.",
+      },
+      {
+        termo: "Polícias legislativas",
+        faz: "As regras de prevenção ao suicídio também se aplicam às polícias da Câmara, do Senado e das Assembleias Legislativas, conforme a regulamentação de cada Casa (art. 42-A, § 7º).",
+      },
+      {
+        parte: "7. Proteção e saúde do profissional",
+        termo: "Direitos do profissional",
+        faz: "Os mecanismos de proteção dos direitos humanos dos profissionais incluem: leis e regulamentos disciplinares adequados à Constituição e aos tratados de direitos humanos; participação na formulação das políticas; equipamentos de proteção individual e coletiva adequados, com treinamento e reposição; veículos renovados e instalações dignas; combate a toda discriminação; respeito à gestação, à amamentação e ao cuidado com os filhos das profissionais (art. 42-B).",
+        pista: "O inciso III foi vetado.",
+      },
+      {
+        termo: "Carreira e amparo",
+        faz: "Valorizar os profissionais idosos e as equipes de várias idades; preparar para a aposentadoria; acessibilidade e vagas reservadas a pessoas com deficiência; formação continuada como direito, com meta de graduação universitária para todos; usar dados de processos disciplinares para achar falhas de treinamento e de gestão; assistência jurídica à família em caso de morte; amparo a quem foi vitimado ou ficou com sequela; promoção por merecimento com critérios objetivos (art. 42-B).",
+      },
+      {
+        termo: "Saúde ocupacional",
+        faz: "Prevenir acidentes e doenças do trabalho com mapeamento de riscos; estudar as doenças ocupacionais; reduzir riscos e danos; melhorar as condições de trabalho para evitar morte prematura ou incapacidade; formação regular em segurança, saúde e higiene; combate à discriminação; acessibilidade; reabilitação e reintegração após lesões ou doenças; readaptação em nova função em vez de afastamento definitivo (art. 42-C).",
+      },
+      {
+        termo: "Segurança no trabalho",
+        faz: "Acesso rápido a toda informação necessária, sobretudo à legislação; fim das punições com maus-tratos ou tratamento cruel, desumano ou degradante, inclusive em formação e treinamento; combate ao assédio sexual e moral, com canais de denúncia; atos de punição, escala, lotação e transferência motivados e publicados; jornada que permita convivência familiar; Cipa com composição paritária entre profissionais e direção (art. 42-C).",
+      },
+      {
+        termo: "Atenção especial",
+        faz: "Recebem atenção especial nas diretrizes de saúde ocupacional: jornadas de trabalho; proteção à maternidade; trabalho noturno; equipamentos de proteção individual; trabalho em ambiente de risco ou insalubre; higiene de alojamentos, banheiros e áreas de descanso; política de remuneração com negociação coletiva; segurança no processo de trabalho (art. 42-D).",
+      },
+      {
+        termo: "Saúde biopsicossocial",
+        faz: "Avaliação de saúde multidisciplinar periódica, com exames; atendimento em saúde mental contra depressão e estresse; acompanhamento de quem atuou em ações com resultado letal ou de alto estresse; prevenção e tratamento de alcoolismo, tabagismo e dependência química; programas de prevenção do suicídio; exercício físico contado na jornada; horas em audiência judicial ou policial contadas; cartilhas de reeducação alimentar (art. 42-E).",
+        pista: "Todos os arts. 42-A a 42-E entraram com a Lei 14.531/2023.",
+      },
+      {
+        parte: "8. Disposições finais",
         termo: "Outras regras",
         faz: "A identidade funcional é padronizada, tem fé pública e vale em todo o país (art. 43). Há conferências a cada 5 anos para debater as diretrizes dos planos (art. 45).",
+        pista: "A padronização da identidade é feita por ato do ministro da área. O art. 44 foi vetado.",
+      },
+      {
+        termo: "Mudanças em outras leis",
+        faz: "A lei alterou as regras do Funpen e do Pronasci para cortar recursos de quem não alimenta o Sinesp (arts. 46 e 48), mudou a lei do FNSP (art. 47) e revogou os arts. 1º a 8º da Lei 12.681/2012, que tratavam do Sinesp antigo (art. 49).",
+        pista: "A lei entrou em vigor 30 dias depois de publicada (art. 50).",
       },
     ],
     cuidado:
-      "O texto da lei ainda fala em “Ministério Extraordinário da Segurança Pública”: hoje a área fica no Ministério da Justiça e Segurança Pública. A violência contra a mulher no Sinesp (Lei 14.899/2024) e os dados de saúde e vitimização dos profissionais (Lei 14.531/2023) são acréscimos recentes.",
+      "O texto da lei ainda fala em “Ministério Extraordinário da Segurança Pública”: hoje a área fica no Ministério da Justiça e Segurança Pública. A violência contra a mulher no Sinesp (Lei 14.899/2024), os dados de saúde e vitimização dos profissionais e os arts. 42-A a 42-E, sobre prevenção ao suicídio e saúde do profissional (Lei 14.531/2023), são acréscimos recentes.",
   },
   questoes: [
     {

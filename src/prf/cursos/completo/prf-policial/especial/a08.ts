@@ -4,9 +4,10 @@ export const AULA: AulaEscrita = {
   aula: "especial-08",
   resumo: {
     ideia:
-      "A Lei 13.675/2018 cria o Susp, sistema que une os órgãos de segurança dos três níveis de governo, e a Política Nacional de Segurança Pública e Defesa Social (PNSPDS). O objetivo é que atuem juntos, de forma coordenada, sem perder cada um a sua competência.",
+      "A Lei 13.675/2018 cria o Susp, sistema que une os órgãos de segurança dos três níveis de governo, e a Política Nacional de Segurança Pública e Defesa Social (PNSPDS). O objetivo é que atuem juntos, de forma coordenada, sem perder cada um a sua competência. Esta aula cobre os arts. 1º a 21: a política, a composição e o funcionamento do Susp e os Conselhos.",
     itens: [
       {
+        parte: "1. Lei e finalidade",
         termo: "Finalidade",
         faz: "Preservar a ordem pública e a incolumidade das pessoas e do patrimônio, com atuação conjunta, coordenada, sistêmica e integrada, em articulação com a sociedade (art. 1º).",
       },
@@ -17,14 +18,94 @@ export const AULA: AulaEscrita = {
       {
         termo: "Quem faz a política",
         faz: "A União estabelece a política nacional. Estados, DF e Municípios fazem as suas, observando as diretrizes da nacional (art. 3º).",
+        pista: "As políticas locais devem cuidar sobretudo dos riscos à convivência social, com destaque para as emergências e os crimes interestaduais e transnacionais.",
       },
       {
+        termo: "Política pública",
+        faz: "Política pública é o conjunto de programas, ações e decisões do governo, com participação de entes públicos ou privados, para garantir um direito. A PNSPDS se apoia em três pilares: princípios, diretrizes e objetivos.",
+      },
+      {
+        termo: "Exames de ingresso",
+        faz: "A lei de cada ente deve exigir, para o ingresso na instituição de segurança, aprovação em exame de saúde e em exame toxicológico de larga janela de detecção (art. 4º-A, Lei 14.751/2023).",
+        pista: "O regulamento da lei vai trazer as regras do exame toxicológico aleatório (parágrafo único).",
+      },
+      {
+        parte: "2. Princípios",
         termo: "Princípios, diretrizes e objetivos",
         faz: "Princípios: valores, como o uso comedido e proporcional da força e a proteção dos profissionais (art. 4º). Diretrizes: o modo de agir, como o atendimento imediato ao cidadão e a unidade de registro de ocorrência (art. 5º). Objetivos: os resultados buscados, como reprimir crimes transfronteiriços (art. 6º).",
+        pista: "A prova costuma trocar um pelo outro: apresenta uma diretriz como se fosse princípio, ou pede o único objetivo entre vários princípios.",
+      },
+      {
+        termo: "Princípios: direitos",
+        faz: "Respeito ao ordenamento jurídico e aos direitos e garantias individuais e coletivos; proteção, valorização e reconhecimento dos profissionais de segurança; proteção dos direitos humanos e da dignidade da pessoa humana; participação e controle social; resolução pacífica de conflitos; proteção da vida, do patrimônio e do meio ambiente (art. 4º).",
+      },
+      {
+        termo: "Princípios: eficiência",
+        faz: "Eficiência na prevenção e no controle das infrações penais; eficiência na repressão e na apuração; eficiência na prevenção e na redução de riscos em emergências e desastres; otimização dos recursos materiais, humanos e financeiros; simplicidade, informalidade, economia procedimental e celeridade no serviço à sociedade (art. 4º).",
+      },
+      {
+        termo: "Princípios: força e transparência",
+        faz: "Uso comedido e proporcional da força, pautado nos documentos internacionais de direitos humanos assinados pelo Brasil; publicidade das informações não sigilosas; produção de conhecimento sobre segurança pública; relação harmônica e colaborativa entre os Poderes; transparência, responsabilização e prestação de contas (art. 4º).",
+        pista: "A referência aos documentos internacionais no uso da força entrou com a Lei 14.751/2023.",
+      },
+      {
+        parte: "3. Diretrizes",
+        termo: "Diretrizes: atendimento e integração",
+        faz: "Atendimento imediato ao cidadão; planejamento estratégico e sistêmico; prevenção e resolução pacífica de conflitos, priorizando a redução da letalidade violenta, com ênfase nos grupos vulneráveis; atuação integrada dos entes; coordenação, cooperação e colaboração dos órgãos em todas as fases das ações (art. 5º).",
+      },
+      {
+        termo: "Diretrizes: gestão e pessoal",
+        faz: "Formação e capacitação continuada, conforme a matriz curricular nacional; investimento e inovação tecnológica; padronização de estruturas, capacitação, tecnologia e equipamentos; distribuição do efetivo por critérios técnicos; servidores da carreira nos cargos de chefia, por mérito e experiência; deontologia policial e de bombeiro militar comuns (art. 5º).",
+      },
+      {
+        termo: "Diretrizes: dados e proximidade",
+        faz: "Sistematização e compartilhamento nacional das informações de segurança, prisionais e sobre drogas; atuação com base em pesquisas e diagnósticos; unidade de registro de ocorrência policial; sistema integrado de informações e dados eletrônicos; ênfase no policiamento de proximidade, com foco na resolução de problemas (art. 5º).",
+      },
+      {
+        termo: "Diretrizes: sociedade e Poderes",
+        faz: "Atendimento prioritário e humanizado a pessoas vulneráveis; participação social; integração dos três Poderes na legislação penal; colaboração do Judiciário, do MP e da Defensoria nas estratégias e metas; reinserção social dos egressos; cultura de paz e segurança comunitária; modernização da legislação; parcerias com agências de vigilância privada, respeitada a lei de licitações (art. 5º).",
+      },
+      {
+        parte: "4. Objetivos",
+        termo: "Objetivos: integração e prevenção",
+        faz: "Integrar ações estratégicas, operacionais, de inteligência e de gerenciamento de crises; apoiar a manutenção da ordem pública; modernizar equipamentos, investigação e perícia; prevenir a violência, com prioridade para a letalidade da população jovem negra, das mulheres e de outros grupos vulneráveis; promover a participação social nos Conselhos (art. 6º).",
+      },
+      {
+        termo: "Objetivos: informação e fronteira",
+        faz: "Interoperabilidade dos sistemas; estudos e diagnósticos para as políticas públicas; prevenção, controle e fiscalização contra os crimes transfronteiriços; troca de inteligência com instituições estrangeiras; integração das informações de segurança, prisionais e sobre drogas; padronização da formação dos profissionais (art. 6º).",
+      },
+      {
+        termo: "Objetivos: penas e prisões",
+        faz: "Aperfeiçoar as medidas restritivas de direitos e as penas alternativas; ajustar os regimes de pena à gravidade dos crimes; racionalizar e humanizar o sistema penitenciário; estudar a política sobre drogas e a redução de danos aos usuários; combater de forma permanente o crime organizado e a corrupção (art. 6º).",
+      },
+      {
+        termo: "Objetivos: proteção e crimes graves",
+        faz: "Monitorar e avaliar as ações; aproximar a segurança pública do sistema de justiça; estimular medidas protetivas a pessoas vulneráveis; proteger os agentes públicos e suas famílias; valorizar a saúde e a qualidade de vida dos profissionais; reduzir a letalidade violenta; fortalecer a investigação de hediondos e homicídios, a fiscalização de armas e munições e o combate aos crimes cibernéticos (art. 6º).",
+        pista: "Os objetivos orientam o Plano Nacional de Segurança Pública e Defesa Social, que traz estratégias, metas, indicadores e ações.",
+      },
+      {
+        parte: "5. Estratégias e instrumentos",
+        termo: "Estratégias",
+        faz: "A PNSPDS se implementa por estratégias de integração, coordenação e cooperação federativa, interoperabilidade, liderança situacional, modernização da gestão, valorização e proteção dos profissionais, complementaridade, dotação de recursos humanos, diagnóstico dos problemas, excelência técnica, avaliação continuada dos resultados e regularidade orçamentária (art. 7º).",
       },
       {
         termo: "Meios e instrumentos",
         faz: "Planos de segurança, o Sinesp (dados de segurança, prisionais, armas, material genético, digitais e drogas), o Pró-Vida (qualidade de vida dos profissionais), entre outros (art. 8º).",
+      },
+      {
+        termo: "Sistema de informações",
+        faz: "O Sistema Nacional de Informações e de Gestão de Segurança Pública e Defesa Social reúne: o Sinaped (acompanhamento e avaliação das políticas); o Sinesp (informações de segurança, prisionais, rastreabilidade de armas e munições, material genético, digitais e drogas); o Sievap (educação e valorização profissional); a Renaesp (rede de altos estudos); e o Pró-Vida (art. 8º, II).",
+      },
+      {
+        termo: "Planos e mecanismos",
+        faz: "Também são instrumentos: os planos de segurança pública e defesa social (I); o Plano Nacional de Enfrentamento de Homicídios de Jovens (IV); os órgãos de prevenção e controle de ilícitos contra a Administração e de lavagem de bens, direitos e valores (V); e o Plano Nacional de Prevenção e Enfrentamento à Violência contra a Mulher (VI, Lei 14.330/2022) (art. 8º).",
+        pista: "O inciso III foi vetado.",
+      },
+      {
+        parte: "6. Composição do Susp",
+        termo: "Órgão central",
+        faz: "O Susp tem como órgão central o Ministério da Segurança Pública e é integrado pelos órgãos do art. 144 da Constituição, pelos agentes penitenciários, pelas guardas municipais e pelos demais integrantes estratégicos e operacionais, que atuam de forma cooperativa, sistêmica e harmônica, nos limites das suas competências (art. 9º).",
+        pista: "A lei ainda fala em “Ministério Extraordinário da Segurança Pública”. Hoje a pasta é o Ministério da Justiça e Segurança Pública.",
       },
       {
         termo: "Integrantes estratégicos",
@@ -36,25 +117,89 @@ export const AULA: AulaEscrita = {
         pista: "Ministério Público, Judiciário e Defensoria não integram o Susp: só têm representante nos Conselhos.",
       },
       {
+        termo: "Detalhes da lista",
+        faz: "Os institutos são os oficiais de criminalística, medicina legal e identificação. A polícia legislativa é a da Câmara, do Senado e das Assembleias, e entrou na lista com a Lei 14.531/2023. Dois incisos foram vetados (III e IX).",
+        pista: "O STF reconheceu que as guardas municipais integram o sistema de segurança pública do art. 144 (ADPF 995).",
+      },
+      {
+        termo: "Sistemas locais",
+        faz: "Os sistemas estaduais, distrital e municipais implementam os próprios programas, ações e projetos de segurança, com liberdade de organização e funcionamento, respeitada a lei (art. 9º, § 4º).",
+      },
+      {
+        parte: "7. Funcionamento e metas",
         termo: "Funcionamento",
         faz: "Operações integradas, estratégias comuns, aceitação mútua de registro de ocorrência, informações compartilhadas com o Sisbin e o Sinesp (art. 10). Nas operações combinadas, os próprios participantes planejam e coordenam juntos.",
+        pista: "O Susp é coordenado pelo ministério, mas a coordenação de cada operação combinada é conjunta, dos participantes (§§ 1º e 3º).",
+      },
+      {
+        termo: "Operações combinadas",
+        faz: "Planejadas e feitas em equipe, podem ser ostensivas, investigativas, de inteligência ou mistas. Podem contar com o Sisbin e com outros órgãos, mesmo que não sejam de segurança pública, sobretudo contra organizações criminosas (art. 10, § 2º).",
+      },
+      {
+        termo: "Informações e cursos",
+        faz: "O compartilhamento de informações é feito de preferência por meio eletrônico, com acesso recíproco aos bancos de dados (§ 4º). A troca de conhecimento se faz, entre outras formas, com vagas recíprocas em cursos de especialização, aperfeiçoamento e estudos estratégicos, seguindo quando possível a matriz curricular nacional (§ 5º).",
       },
       {
         termo: "Metas",
         faz: "O Ministério fixa metas anuais com indicadores públicos (art. 11). Na polícia judiciária, contam a elucidação, sobretudo de crimes dolosos com morte e de roubo, separando as autorias de flagrante das que vêm de investigação (art. 12).",
+        pista: "As metas miram a prevenção e a repressão das infrações penais e administrativas e a prevenção dos desastres.",
+      },
+      {
+        termo: "Como cada órgão é medido",
+        faz: "Polícia judiciária: elucidação, prisão dos autores, mandados cumpridos e recuperação do produto do crime. Perícia: laudos e provas de qualidade. Polícia ostensiva: maior ou menor incidência de infrações na área, pelos parâmetros do Sinesp. Bombeiros: prevenção, tempo de resposta e recuperação dos locais atingidos (art. 12, I a IV).",
+      },
+      {
+        termo: "Sistema prisional",
+        faz: "A eficiência prisional é medida pelo número de vagas, pela relação entre presos e vagas, pelo índice de reiteração criminal dos egressos e pelos presos atendidos segundo critérios objetivos e transparentes (art. 12, V).",
+        pista: "A medição considera a estrutura física, os equipamentos e o efetivo (§ 1º).",
+      },
+      {
+        parte: "8. Ministério, área de atuação e recursos",
+        termo: "Ações do Ministério",
+        faz: "Gestor do Susp, orienta e acompanha os órgãos, apoia o aparelhamento e a modernização, mantém o sistema nacional de informações, promove o intercâmbio entre polícias e guardas, valoriza a autonomia técnica dos institutos de perícia, qualifica os profissionais, consolida estatísticas de criminalidade e vitimização e coordena a inteligência integrada ao Sisbin (art. 13).",
+        pista: "Também desenvolve a doutrina de inteligência policial.",
+      },
+      {
+        termo: "Sistema padronizado",
+        faz: "O Ministério deve oferecer sistema padronizado, informatizado e seguro para a troca de informações no Susp, avaliar a infraestrutura tecnológica e a segurança das redes e fixar cronograma para que os integrantes se adaptem (art. 14).",
       },
       {
         termo: "Onde atuar",
         faz: "Os órgãos do Susp podem atuar em vias, rodovias, terminais, ferrovias, hidrovias, portos e aeroportos de qualquer ente, nas suas competências e integrados ao órgão do local, ressalvado o sigilo das investigações (art. 16).",
       },
       {
+        termo: "Apoio e recursos",
+        faz: "A União pode apoiar os entes que não tenham condições técnicas e operacionais para implementar o Susp (art. 15). Regulamento define a aplicação dos recursos do Fundo Nacional de Segurança Pública (FNSP) e do Fundo Penitenciário Nacional (Funpen), com metas e resultados (art. 17). As compras seguem critérios de qualidade, modernidade, eficiência e resistência (art. 18).",
+        pista: "Os critérios do FNSP incluem metas de prevenção e combate à violência contra a mulher (art. 17, parágrafo único, Lei 14.316/2022).",
+      },
+      {
+        parte: "9. Conselhos",
         termo: "Conselhos",
         faz: "Criados por proposta do chefe do Executivo enviada ao Legislativo. São colegiados consultivos, sugestivos e de acompanhamento social: podem recomendar providências, não mandar (art. 20).",
         pista: "Mandato de 2 anos, com uma só recondução ou reeleição, e um suplente por conselheiro (art. 21).",
       },
+      {
+        termo: "Estrutura dos conselhos",
+        faz: "A estrutura formal do Susp se dá pelos Conselhos permanentes (art. 19). Há conselhos na União, nos Estados, no DF e nos Municípios. O Conselho Nacional tem representantes dos quatro entes, e suas atribuições e composição ficam no regulamento (art. 20, § 1º).",
+        pista: "Os conselheiros têm poder de decisão dentro das suas estruturas de governo, mas o conselho respeita as instâncias decisórias da Administração (§ 2º).",
+      },
+      {
+        termo: "O que acompanham",
+        faz: "Os Conselhos acompanham os integrantes operacionais e propõem diretrizes para as políticas de segurança. Olham as condições de trabalho e o respeito à integridade dos profissionais, o alcance das metas, a rapidez das corregedorias nas denúncias e a confiança da população no órgão (art. 20, §§ 3º a 5º).",
+      },
+      {
+        termo: "Composição",
+        faz: "Representantes de cada órgão do Susp, do Judiciário, do Ministério Público, da OAB, da Defensoria, de entidades da sociedade ligadas à segurança pública e de entidades de profissionais de segurança (art. 21).",
+        pista: "Os representantes das entidades da sociedade e dos profissionais são eleitos em processo aberto, por convocação pública e critérios objetivos (§ 1º).",
+      },
+      {
+        termo: "Conselhos locais",
+        faz: "Os conselhos estaduais, distrital e municipais têm também representantes da sociedade civil organizada e dos trabalhadores, e podem ser descentralizados ou reunidos por região (art. 20, § 7º).",
+        pista: "Se faltar representante de algum órgão ou entidade, aplica-se essa mesma regra (art. 21, § 4º).",
+      },
     ],
     cuidado:
-      "O texto da lei ainda chama o órgão central de “Ministério Extraordinário da Segurança Pública”, mas hoje a área está no Ministério da Justiça e Segurança Pública. Se a PEC 18/2025 (PEC da Segurança Pública) for promulgada, confira as mudanças no art. 144 da Constituição.",
+      "O texto da lei ainda chama o órgão central de “Ministério Extraordinário da Segurança Pública”, mas hoje a área está no Ministério da Justiça e Segurança Pública. Mudanças posteriores ao material: exames de saúde e toxicológico no ingresso (art. 4º-A, Lei 14.751/2023), polícia legislativa no Susp (Lei 14.531/2023) e dados de violência contra a mulher no Sinesp (Lei 14.899/2024). Se a PEC 18/2025 (PEC da Segurança Pública) for promulgada, confira as mudanças no art. 144 da Constituição.",
   },
   questoes: [
     {
